@@ -1,5 +1,5 @@
 // Program registers 145302 globals at index 7 starting from Global_1835008
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x189FACDC ^0x189FACDC
 {
 	Global_1835422 = true;
 	Global_1835423 = -1;

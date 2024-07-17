@@ -14,7 +14,7 @@
 	int iLocal_11 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x7065A39B ^0x7065A39B
 {
 	int i;
 
@@ -43,7 +43,7 @@ void main() // Position - 0x0
 	return;
 }
 
-int func_1(var uParam0, int iParam1) // Position - 0x6A
+int func_1(var uParam0, int iParam1) // Position - 0x6A Hash - 0xA93BC18C ^0x96231383
 {
 	func_12(uParam0, iParam1);
 	func_8(uParam0, iParam1);
@@ -54,7 +54,7 @@ int func_1(var uParam0, int iParam1) // Position - 0x6A
 	return 1;
 }
 
-void func_2(var uParam0, int iParam1) // Position - 0xA0
+void func_2(var uParam0, int iParam1) // Position - 0xA0 Hash - 0x50E0F4CB ^0xD3607679
 {
 	var unk;
 
@@ -117,7 +117,7 @@ void func_2(var uParam0, int iParam1) // Position - 0xA0
 	return;
 }
 
-void func_3(int iParam0, int iParam1, var uParam2, BOOL bParam3) // Position - 0x40E
+void func_3(int iParam0, int iParam1, var uParam2, BOOL bParam3) // Position - 0x40E Hash - 0xA1F236AB ^0x4D5AF257
 {
 	var unk;
 	Vector3 vector;
@@ -494,7 +494,7 @@ void func_3(int iParam0, int iParam1, var uParam2, BOOL bParam3) // Position - 0
 	return;
 }
 
-Vector3 func_4(float fParam0, var uParam1, var uParam2, float fParam3) // Position - 0xD8B
+Vector3 func_4(float fParam0, var uParam1, var uParam2, float fParam3) // Position - 0xD8B Hash - 0x8959C4D1 ^0x8922A2E2
 {
 	float num;
 	float num2;
@@ -508,7 +508,7 @@ Vector3 func_4(float fParam0, var uParam1, var uParam2, float fParam3) // Positi
 	return num;
 }
 
-struct<6> func_5(int iParam0, int iParam1) // Position - 0xDCF
+struct<6> func_5(int iParam0, int iParam1) // Position - 0xDCF Hash - 0x2496BBBB ^0x92F2F3E
 {
 	var unk;
 	BOOL flag;
@@ -525,7 +525,7 @@ struct<6> func_5(int iParam0, int iParam1) // Position - 0xDCF
 	return unk;
 }
 
-BOOL func_6(int iParam0, var uParam1) // Position - 0xE11
+BOOL func_6(int iParam0, var uParam1) // Position - 0xE11 Hash - 0x797D0AB4 ^0xA68CAD90
 {
 	switch (iParam0)
 	{
@@ -584,7 +584,7 @@ BOOL func_6(int iParam0, var uParam1) // Position - 0xE11
 	return false;
 }
 
-struct<6> func_7(int iParam0) // Position - 0xF2C
+struct<6> func_7(int iParam0) // Position - 0xF2C Hash - 0xC73C1158 ^0x2A6D4A6F
 {
 	var unk;
 
@@ -810,7 +810,7 @@ struct<6> func_7(int iParam0) // Position - 0xF2C
 	return unk;
 }
 
-void func_8(var uParam0, int iParam1) // Position - 0x1622
+void func_8(var uParam0, int iParam1) // Position - 0x1622 Hash - 0x59239C41 ^0xB11933F2
 {
 	var unk;
 
@@ -1148,7 +1148,7 @@ void func_8(var uParam0, int iParam1) // Position - 0x1622
 	return;
 }
 
-void func_9(int iParam0, var uParam1, var uParam2, int iParam3) // Position - 0x2972
+void func_9(int iParam0, var uParam1, var uParam2, int iParam3) // Position - 0x2972 Hash - 0x3F59E3D3 ^0x16923DFB
 {
 	var unk;
 
@@ -1340,7 +1340,7 @@ void func_9(int iParam0, var uParam1, var uParam2, int iParam3) // Position - 0x
 	return;
 }
 
-void func_10(int iParam0, int iParam1, var uParam2, int iParam3, BOOL bParam4) // Position - 0x2E0D
+void func_10(int iParam0, int iParam1, var uParam2, int iParam3, BOOL bParam4) // Position - 0x2E0D Hash - 0x91B5CD4A ^0x91B5CD4A
 {
 	var unk;
 	Vector3 vector;
@@ -2166,7 +2166,7 @@ void func_10(int iParam0, int iParam1, var uParam2, int iParam3, BOOL bParam4) /
 	return;
 }
 
-struct<6> func_11(int iParam0, BOOL bParam1) // Position - 0x447B
+struct<6> func_11(int iParam0, BOOL bParam1) // Position - 0x447B Hash - 0x293B24C9 ^0x49F602D8
 {
 	var unk;
 
@@ -2588,7 +2588,7 @@ struct<6> func_11(int iParam0, BOOL bParam1) // Position - 0x447B
 	return unk;
 }
 
-void func_12(var uParam0, int iParam1) // Position - 0x5031
+void func_12(var uParam0, int iParam1) // Position - 0x5031 Hash - 0x7F4C8FC1 ^0xEDD4C396
 {
 	var unk;
 
@@ -2653,7 +2653,7 @@ void func_12(var uParam0, int iParam1) // Position - 0x5031
 	return;
 }
 
-void func_13(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, int iParam7) // Position - 0x532D
+void func_13(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, int iParam7) // Position - 0x532D Hash - 0x1A9A1B3A ^0xAFEB7172
 {
 	var unk;
 	var unk7;
@@ -2720,7 +2720,7 @@ void func_13(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	return;
 }
 
-void func_14(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, Vector3 vParam12, var uParam13, var uParam14, var uParam15, var uParam16, var uParam17, var uParam18) // Position - 0x5563
+void func_14(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, Vector3 vParam12, var uParam13, var uParam14, var uParam15, var uParam16, var uParam17, var uParam18) // Position - 0x5563 Hash - 0xAF03D6C6 ^0x10EE8207
 {
 	Vector3 vector;
 
@@ -2768,7 +2768,7 @@ void func_14(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, va
 	return;
 }
 
-BOOL func_15(float fParam0, var uParam1, var uParam2, float fParam3, var uParam4, var uParam5, BOOL bParam6) // Position - 0x56BD
+BOOL func_15(float fParam0, var uParam1, var uParam2, float fParam3, var uParam4, var uParam5, BOOL bParam6) // Position - 0x56BD Hash - 0x2D46096D ^0xEA41378F
 {
 	if (bParam6)
 		return fParam0 == fParam3 && fParam0.f_1 == fParam3.f_1;
@@ -2776,7 +2776,7 @@ BOOL func_15(float fParam0, var uParam1, var uParam2, float fParam3, var uParam4
 	return fParam0 == fParam3 && fParam0.f_1 == fParam3.f_1 && fParam0.f_2 == fParam3.f_2;
 }
 
-void func_16() // Position - 0x5704
+void func_16() // Position - 0x5704 Hash - 0x6A66861 ^0x9005B360
 {
 	int i;
 	var unk;
@@ -3149,7 +3149,7 @@ void func_16() // Position - 0x5704
 	return;
 }
 
-void func_17() // Position - 0x76A6
+void func_17() // Position - 0x76A6 Hash - 0xD7E02368 ^0xF5C2847F
 {
 	Global_4282659[0 /*10*/] = { -0.2508f, -32.3f, 0.8727f };
 	Global_4282659[0 /*10*/].f_3 = 0f;
@@ -3219,7 +3219,7 @@ void func_17() // Position - 0x76A6
 	return;
 }
 
-void func_18(int iParam0, var uParam1, float fParam2) // Position - 0x7AAC
+void func_18(int iParam0, var uParam1, float fParam2) // Position - 0x7AAC Hash - 0x9E1BADF3 ^0x9E1BADF3
 {
 	switch (iParam0)
 	{

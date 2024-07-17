@@ -5,7 +5,7 @@
 	Object obScriptParam_0 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0xD5989013 ^0x9B786532
 {
 	if (PLAYER::HAS_FORCE_CLEANUP_OCCURRED(2))
 		func_1();
@@ -57,7 +57,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0xAF
+void func_1() // Position - 0xAF Hash - 0x6CD529F1 ^0x571F0FBD
 {
 	func_2("ob_abattoir Terminated >>>>>>>>>>>>>>>>>\\n");
 	STREAMING::REMOVE_ANIM_DICT("MISSMIC2");
@@ -65,13 +65,13 @@ void func_1() // Position - 0xAF
 	return;
 }
 
-void func_2(char* sParam0) // Position - 0xC8
+void func_2(char* sParam0) // Position - 0xC8 Hash - 0x646928F0 ^0x646928F0
 {
 	func_3(sParam0);
 	return;
 }
 
-void func_3(char* sParam0) // Position - 0xD6
+void func_3(char* sParam0) // Position - 0xD6 Hash - 0xF54A2398 ^0xC5887C42
 {
 	MISC::ARE_STRINGS_EQUAL(sParam0, sParam0);
 	return;

@@ -11,7 +11,7 @@
 	BOOL bLocal_9 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x68A8A2E0 ^0xA7C4AB59
 {
 	uLocal_1 = { 613f, 6438f, 31f };
 	fLocal_5 = 5f;
@@ -79,7 +79,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0x1A7
+void func_1() // Position - 0x1A7 Hash - 0xDEDA35C7 ^0x651033F9
 {
 	VEHICLE::SET_RANDOM_TRAINS(true);
 	SCRIPT::TERMINATE_THIS_THREAD();

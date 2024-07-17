@@ -21,7 +21,7 @@
 	int iLocal_19 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	iLocal_2 = 1;
 	iLocal_3 = 134;
@@ -111,7 +111,7 @@ void main() // Position - 0x0
 	return;
 }
 
-BOOL func_1() // Position - 0x126
+BOOL func_1() // Position - 0x126 Hash - 0x57EB5377 ^0xDC0824ED
 {
 	if (Global_20930.f_1 == 1 || Global_20930.f_1 == 3 || Global_20930.f_1 == 0 || Global_20874 == 1)
 	{
@@ -122,14 +122,14 @@ BOOL func_1() // Position - 0x126
 	return false;
 }
 
-void func_2() // Position - 0x169
+void func_2() // Position - 0x169 Hash - 0x69A1DA9C ^0x69B442C4
 {
 	AUDIO::RELEASE_NAMED_SCRIPT_AUDIO_BANK("DLC_MPHEIST/HEIST_HACK_SNAKE");
 	SCRIPT::TERMINATE_THIS_THREAD();
 	return;
 }
 
-BOOL func_3() // Position - 0x17C
+BOOL func_3() // Position - 0x17C Hash - 0x1F39C732 ^0x92A1ED04
 {
 	if (Global_9406 == 1 || Global_20930.f_1 < 7)
 	{
@@ -140,7 +140,7 @@ BOOL func_3() // Position - 0x17C
 	return false;
 }
 
-void func_4() // Position - 0x1A5
+void func_4() // Position - 0x1A5 Hash - 0x99C604A0 ^0x4895CE4
 {
 	if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 		AUDIO::PLAY_SOUND_FRONTEND(-1, "Menu_Back", &Global_20919, true);
@@ -148,7 +148,7 @@ void func_4() // Position - 0x1A5
 	return;
 }
 
-void func_5() // Position - 0x1C6
+void func_5() // Position - 0x1C6 Hash - 0xEEAE6AD0 ^0xEEAE6AD0
 {
 	if (Global_20918)
 	{
@@ -166,7 +166,7 @@ void func_5() // Position - 0x1C6
 	return;
 }
 
-void func_6(int iParam0, char* sParam1, float fParam2, float fParam3, float fParam4, float fParam5, float fParam6, char* sParam7, const char* sParam8, const char* sParam9, const char* sParam10, const char* sParam11) // Position - 0x258
+void func_6(int iParam0, char* sParam1, float fParam2, float fParam3, float fParam4, float fParam5, float fParam6, char* sParam7, const char* sParam8, const char* sParam9, const char* sParam10, const char* sParam11) // Position - 0x258 Hash - 0x39E054FF ^0x41D02682
 {
 	GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam0, sParam1);
 	GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(SYSTEM::ROUND(fParam2));
@@ -202,14 +202,14 @@ void func_6(int iParam0, char* sParam1, float fParam2, float fParam3, float fPar
 	return;
 }
 
-void func_7(const char* sParam0) // Position - 0x30B
+void func_7(const char* sParam0) // Position - 0x30B Hash - 0x8E2F5FE2 ^0x29D9D432
 {
 	GRAPHICS::BEGIN_TEXT_COMMAND_SCALEFORM_STRING(sParam0);
 	GRAPHICS::END_TEXT_COMMAND_SCALEFORM_STRING();
 	return;
 }
 
-BOOL func_8(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Position - 0x31D
+BOOL func_8(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Position - 0x31D Hash - 0xBB00BE4E ^0xA27687FD
 {
 	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
 	{
@@ -226,7 +226,7 @@ BOOL func_8(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Po
 	return false;
 }
 
-void func_9() // Position - 0x38F
+void func_9() // Position - 0x38F Hash - 0x96BFE9BA ^0x96BFE9BA
 {
 	if (Global_20918)
 	{
@@ -244,7 +244,7 @@ void func_9() // Position - 0x38F
 	return;
 }
 
-void func_10() // Position - 0x421
+void func_10() // Position - 0x421 Hash - 0xBBAF8A6C ^0xED915788
 {
 	if (iLocal_19 == 0)
 	{
@@ -295,7 +295,7 @@ void func_10() // Position - 0x421
 	return;
 }
 
-void func_11(int iParam0, char* sParam1, float fParam2, int iParam3, int iParam4, int iParam5, int iParam6) // Position - 0x56F
+void func_11(int iParam0, char* sParam1, float fParam2, int iParam3, int iParam4, int iParam5, int iParam6) // Position - 0x56F Hash - 0x5F496D0E ^0x86F8205
 {
 	GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iParam0, sParam1);
 	GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_INT(SYSTEM::ROUND(fParam2));

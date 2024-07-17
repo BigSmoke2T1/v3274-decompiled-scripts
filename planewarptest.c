@@ -28,7 +28,7 @@
 	var uLocal_26 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	iLocal_2 = 1;
 	iLocal_3 = 134;
@@ -79,7 +79,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0x136
+void func_1() // Position - 0x136 Hash - 0x943CFC05 ^0xF17B05FB
 {
 	if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 		TASK::CLEAR_PED_TASKS_IMMEDIATELY(PLAYER::PLAYER_PED_ID());

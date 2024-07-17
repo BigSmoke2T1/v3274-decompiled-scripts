@@ -1,4 +1,4 @@
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0xEDDA4DE7 ^0xAF425951
 {
 	func_1();
 	Global_2696105 = true;
@@ -6,7 +6,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0x15
+void func_1() // Position - 0x15 Hash - 0xB86ED997 ^0x2C168794
 {
 	Global_1680145[0] = joaat("MPPLY_AWD_FM_CR_RACES_MADE");
 	Global_1680145[1] = joaat("MPPLY_AWD_FM_CR_DM_MADE");

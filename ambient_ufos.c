@@ -105,7 +105,7 @@
 	BOOL bLocal_103 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	int i;
 
@@ -297,7 +297,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0x3A3
+void func_1() // Position - 0x3A3 Hash - 0x17BF001D ^0x7F8F1759
 {
 	Vehicle vehiclePedIsIn;
 
@@ -315,7 +315,7 @@ void func_1() // Position - 0x3A3
 	return;
 }
 
-BOOL func_2(Vehicle veParam0) // Position - 0x3DF
+BOOL func_2(Vehicle veParam0) // Position - 0x3DF Hash - 0x7E47BB06 ^0x692E6B64
 {
 	if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(veParam0))
 		if (VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false))
@@ -325,7 +325,7 @@ BOOL func_2(Vehicle veParam0) // Position - 0x3DF
 	return false;
 }
 
-BOOL _DOES_ENTITY_EXIST_AND_IS_ALIVE(Vehicle veParam0) // Position - 0x409
+BOOL _DOES_ENTITY_EXIST_AND_IS_ALIVE(Vehicle veParam0) // Position - 0x409 Hash - 0x3D210083 ^0xF7E7C389
 {
 	if (ENTITY::DOES_ENTITY_EXIST(veParam0))
 		if (!ENTITY::IS_ENTITY_DEAD(veParam0, false))
@@ -334,7 +334,7 @@ BOOL _DOES_ENTITY_EXIST_AND_IS_ALIVE(Vehicle veParam0) // Position - 0x409
 	return false;
 }
 
-void func_4(var uParam0) // Position - 0x42A
+void func_4(var uParam0) // Position - 0x42A Hash - 0x4D96479A ^0x9A0BB87
 {
 	if (*uParam0 != -1)
 	{
@@ -346,7 +346,7 @@ void func_4(var uParam0) // Position - 0x42A
 	return;
 }
 
-void func_5() // Position - 0x44B
+void func_5() // Position - 0x44B Hash - 0xF01075AA ^0xF6490E37
 {
 	Vehicle vehiclePedIsIn;
 
@@ -364,7 +364,7 @@ void func_5() // Position - 0x44B
 	return;
 }
 
-void func_6() // Position - 0x491
+void func_6() // Position - 0x491 Hash - 0xF29362C3 ^0x822DB9BD
 {
 	if (bLocal_103)
 	{
@@ -387,7 +387,7 @@ void func_6() // Position - 0x491
 	return;
 }
 
-void func_7() // Position - 0x4DB
+void func_7() // Position - 0x4DB Hash - 0xC77AB36C ^0x6D733F4E
 {
 	if (bLocal_102)
 	{
@@ -410,7 +410,7 @@ void func_7() // Position - 0x4DB
 	return;
 }
 
-void func_8() // Position - 0x525
+void func_8() // Position - 0x525 Hash - 0x1367464F ^0xC8C0D800
 {
 	Vector3 vector;
 
@@ -428,7 +428,7 @@ void func_8() // Position - 0x525
 	return;
 }
 
-Vector3 func_9(float fParam0, var uParam1, var uParam2) // Position - 0x593
+Vector3 func_9(float fParam0, var uParam1, var uParam2) // Position - 0x593 Hash - 0xFB6A39D2 ^0x80C9C759
 {
 	float num;
 	float num2;
@@ -450,12 +450,12 @@ Vector3 func_9(float fParam0, var uParam1, var uParam2) // Position - 0x593
 	return fParam0;
 }
 
-BOOL func_10(Ped pedParam0, Vector3 vParam1, var uParam2, var uParam3, float fParam4, BOOL bParam5) // Position - 0x5D2
+BOOL func_10(Ped pedParam0, Vector3 vParam1, var uParam2, var uParam3, float fParam4, BOOL bParam5) // Position - 0x5D2 Hash - 0x9A4C1B16 ^0x6EACDAB9
 {
 	return SYSTEM::VDIST2(ENTITY::GET_ENTITY_COORDS(pedParam0, bParam5), vParam1) <= fParam4 * fParam4;
 }
 
-BOOL func_11(Ped pedParam0) // Position - 0x5F0
+BOOL func_11(Ped pedParam0) // Position - 0x5F0 Hash - 0x251F0A94 ^0x6A446318
 {
 	if (!ENTITY::DOES_ENTITY_EXIST(pedParam0))
 		return false;
@@ -463,7 +463,7 @@ BOOL func_11(Ped pedParam0) // Position - 0x5F0
 	return !ENTITY::IS_ENTITY_DEAD(pedParam0, false);
 }
 
-void func_12() // Position - 0x60E
+void func_12() // Position - 0x60E Hash - 0xD4EF48F0 ^0x3559F037
 {
 	if (STREAMING::IS_IPL_ACTIVE("ufo"))
 		STREAMING::REMOVE_IPL("ufo");

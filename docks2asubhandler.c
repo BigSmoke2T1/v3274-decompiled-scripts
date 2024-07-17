@@ -6,7 +6,7 @@
 	var uScriptParam_1 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x94BC7ACC ^0x7C3177F
 {
 	float num;
 
@@ -63,7 +63,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0x105
+void func_1() // Position - 0x105 Hash - 0x960CE90E ^0xC3A498DD
 {
 	ENTITY::SET_VEHICLE_AS_NO_LONGER_NEEDED(&veLocal_0);
 	ENTITY::SET_ENTITY_AS_NO_LONGER_NEEDED(&eLocal_1);

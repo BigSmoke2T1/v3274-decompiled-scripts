@@ -64,7 +64,7 @@
 	var uLocal_62 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	iLocal_2 = 1;
 	iLocal_3 = 134;
@@ -106,13 +106,13 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0xA2
+void func_1() // Position - 0xA2 Hash - 0xD8C6DE12 ^0xD8C6DE12
 {
 	func_2();
 	return;
 }
 
-void func_2() // Position - 0xAE
+void func_2() // Position - 0xAE Hash - 0x9849FBAF ^0xF10EECE0
 {
 	int i;
 	eEventType eventAtIndex;
@@ -140,7 +140,7 @@ void func_2() // Position - 0xAE
 	return;
 }
 
-void func_3(var uParam0) // Position - 0x116
+void func_3(var uParam0) // Position - 0x116 Hash - 0x4D586789 ^0x72E5C9C2
 {
 	eEventType type;
 
@@ -152,17 +152,17 @@ void func_3(var uParam0) // Position - 0x116
 	return;
 }
 
-BOOL func_4(eEventType eetParam0) // Position - 0x14F
+BOOL func_4(eEventType eetParam0) // Position - 0x14F Hash - 0x6AE23759 ^0x6AE23759
 {
 	return eetParam0 == EVENT_ERRORS_INSTRUCTION_LIMIT || eetParam0 == EVENT_ERRORS_STACK_OVERFLOW || eetParam0 == EVENT_0x063E563B || eetParam0 == EVENT_ERRORS_ARRAY_OVERFLOW;
 }
 
-BOOL _IS_FMMC_ACTIVE() // Position - 0x17D
+BOOL _IS_FMMC_ACTIVE() // Position - 0x17D Hash - 0x9A79549B ^0x4A0EF303
 {
 	return Global_1845281[PLAYER::PLAYER_ID() /*883*/].f_193 != 0;
 }
 
-int func_6(var uParam0) // Position - 0x194
+int func_6(var uParam0) // Position - 0x194 Hash - 0xF9C22FE1 ^0x58D68A6C
 {
 	if (Global_33227.f_61 < 20)
 	{
@@ -174,7 +174,7 @@ int func_6(var uParam0) // Position - 0x194
 	return 0;
 }
 
-BOOL func_7(var uParam0, var uParam1) // Position - 0x1C7
+BOOL func_7(var uParam0, var uParam1) // Position - 0x1C7 Hash - 0x8236090F ^0x52F4D4BC
 {
 	*uParam1 = 0;
 	*uParam1 = 0;
@@ -190,7 +190,7 @@ BOOL func_7(var uParam0, var uParam1) // Position - 0x1C7
 	return false;
 }
 
-void func_8(eEventGroup eegParam0, int iParam1, eEventType eetParam2, var uParam3) // Position - 0x215
+void func_8(eEventGroup eegParam0, int iParam1, eEventType eetParam2, var uParam3) // Position - 0x215 Hash - 0xE80F0CB3 ^0x3305D20C
 {
 	var eventData;
 
@@ -201,7 +201,7 @@ void func_8(eEventGroup eegParam0, int iParam1, eEventType eetParam2, var uParam
 	return;
 }
 
-void func_9(var uParam0) // Position - 0x25A
+void func_9(var uParam0) // Position - 0x25A Hash - 0x69039F36 ^0x23DFCE77
 {
 	*uParam0 = -1;
 	uParam0->f_1 = -1;
@@ -209,17 +209,17 @@ void func_9(var uParam0) // Position - 0x25A
 	return;
 }
 
-BOOL func_10(eEventType eetParam0) // Position - 0x270
+BOOL func_10(eEventType eetParam0) // Position - 0x270 Hash - 0x3E978ED3 ^0x3E978ED3
 {
 	return func_4(eetParam0);
 }
 
-BOOL func_11() // Position - 0x27E
+BOOL func_11() // Position - 0x27E Hash - 0x98B7EFDD ^0x98B7EFDD
 {
 	return false;
 }
 
-void func_12() // Position - 0x287
+void func_12() // Position - 0x287 Hash - 0xCE5FB49E ^0x52B72321
 {
 	MISC::NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME();
 	return;

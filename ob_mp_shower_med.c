@@ -449,7 +449,7 @@
 	Object obScriptParam_0 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	Vector3 vector;
 	BOOL flag;
@@ -1071,12 +1071,12 @@ void main() // Position - 0x0
 	return;
 }
 
-int func_1() // Position - 0x1F3F
+int func_1() // Position - 0x1F3F Hash - 0x47FF56D2 ^0x47FF56D2
 {
 	return Global_2640096;
 }
 
-void func_2() // Position - 0x1F4B
+void func_2() // Position - 0x1F4B Hash - 0xC25A497A ^0xC25A497A
 {
 	int num;
 	int num2;
@@ -1774,7 +1774,7 @@ void func_2() // Position - 0x1F4B
 	return;
 }
 
-void func_3() // Position - 0x350B
+void func_3() // Position - 0x350B Hash - 0x30BC511A ^0xA2F9B9D7
 {
 	TASK::CLEAR_PED_TASKS(PLAYER::PLAYER_PED_ID());
 	CAM::STOP_RENDERING_SCRIPT_CAMS_USING_CATCH_UP(false, 1f, 3, 0);
@@ -1798,7 +1798,7 @@ void func_3() // Position - 0x350B
 	return;
 }
 
-BOOL _STOPWATCH_HAS_TIME_PASSED(var pStopwatch, int millis, BOOL useLocalTimer) // Position - 0x3596
+BOOL _STOPWATCH_HAS_TIME_PASSED(var pStopwatch, int millis, BOOL useLocalTimer) // Position - 0x3596 Hash - 0x154EA353 ^0xBFA672B0
 {
 	if (millis == -1)
 		return true;
@@ -1814,7 +1814,7 @@ BOOL _STOPWATCH_HAS_TIME_PASSED(var pStopwatch, int millis, BOOL useLocalTimer) 
 	return false;
 }
 
-void _STOPWATCH_INITIALIZE(var pStopwatch, BOOL useLocalTimer, BOOL useAccurateTime) // Position - 0x35F4
+void _STOPWATCH_INITIALIZE(var pStopwatch, BOOL useLocalTimer, BOOL useAccurateTime) // Position - 0x35F4 Hash - 0x6F79B86B ^0x7B76DD66
 {
 	if (pStopwatch->f_1 == 0)
 	{
@@ -1832,12 +1832,12 @@ void _STOPWATCH_INITIALIZE(var pStopwatch, BOOL useLocalTimer, BOOL useAccurateT
 	return;
 }
 
-BOOL _STOPWATCH_IS_INITIALIZED(var uParam0) // Position - 0x3639
+BOOL _STOPWATCH_IS_INITIALIZED(var uParam0) // Position - 0x3639 Hash - 0xD73B9827 ^0x2D8CE86B
 {
 	return uParam0->f_1;
 }
 
-void func_7() // Position - 0x3645
+void func_7() // Position - 0x3645 Hash - 0x98B01C6E ^0x52AA566C
 {
 	if (!func_326(PLAYER::PLAYER_ID(), true) && bLocal_446)
 	{
@@ -1856,7 +1856,7 @@ void func_7() // Position - 0x3645
 	return;
 }
 
-void func_8(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bParam4) // Position - 0x36A4
+void func_8(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bParam4) // Position - 0x36A4 Hash - 0x3549802C ^0xD30207CB
 {
 	int num;
 	BOOL flag;
@@ -1934,7 +1934,7 @@ void func_8(Ped pedParam0, BOOL bParam1, BOOL bParam2, int iParam3, BOOL bParam4
 	return;
 }
 
-void func_9(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5, BOOL bParam6) // Position - 0x383C
+void func_9(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5, BOOL bParam6) // Position - 0x383C Hash - 0xFA1DE813 ^0xFA1DE813
 {
 	int i;
 	Hash outComponent;
@@ -1992,7 +1992,7 @@ void func_9(Ped pedParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 	return;
 }
 
-void func_10(var uParam0) // Position - 0x396D
+void func_10(var uParam0) // Position - 0x396D Hash - 0x925C1493 ^0x925C1493
 {
 	eControlAction i;
 	Hash outComponent;
@@ -2036,7 +2036,7 @@ void func_10(var uParam0) // Position - 0x396D
 	return;
 }
 
-void func_11(eControlAction ecaParam0, BOOL bParam1) // Position - 0x3A13
+void func_11(eControlAction ecaParam0, BOOL bParam1) // Position - 0x3A13 Hash - 0x7E796A2F ^0x7E796A2F
 {
 	int num;
 	int i;
@@ -2065,7 +2065,7 @@ void func_11(eControlAction ecaParam0, BOOL bParam1) // Position - 0x3A13
 	return;
 }
 
-void func_12(Ped pedParam0, int iParam1, int iParam2) // Position - 0x3A8D
+void func_12(Ped pedParam0, int iParam1, int iParam2) // Position - 0x3A8D Hash - 0xF1FAB61C ^0x56DCCE92
 {
 	switch (iParam1)
 	{
@@ -2868,7 +2868,7 @@ void func_12(Ped pedParam0, int iParam1, int iParam2) // Position - 0x3A8D
 	return;
 }
 
-BOOL func_13(int iParam0, int iParam1, eControlAction ecaParam2) // Position - 0x4DF5
+BOOL func_13(int iParam0, int iParam1, eControlAction ecaParam2) // Position - 0x4DF5 Hash - 0x88D35F02 ^0x2E277B33
 {
 	ePedComponentType type;
 	ePedComponentType type2;
@@ -6145,7 +6145,7 @@ BOOL func_13(int iParam0, int iParam1, eControlAction ecaParam2) // Position - 0
 	return false;
 }
 
-BOOL _IS_EXCLUSIVE_CONTENT_UNLOCKED() // Position - 0xA625
+BOOL _IS_EXCLUSIVE_CONTENT_UNLOCKED() // Position - 0xA625 Hash - 0x44DD83CC ^0x7B62A376
 {
 	int profileSetting;
 
@@ -6188,12 +6188,12 @@ BOOL _IS_EXCLUSIVE_CONTENT_UNLOCKED() // Position - 0xA625
 	return false;
 }
 
-BOOL IS_ROCKSTAR_DEV() // Position - 0xA6DD
+BOOL IS_ROCKSTAR_DEV() // Position - 0xA6DD Hash - 0x11DC3931 ^0x820FC5
 {
 	return DLC::IS_DLC_PRESENT(-1762644250);
 }
 
-BOOL func_16(eControlAction ecaParam0, int iParam1) // Position - 0xA6EE
+BOOL func_16(eControlAction ecaParam0, int iParam1) // Position - 0xA6EE Hash - 0x75CF6A28 ^0x4A659B70
 {
 	int num;
 	int num2;
@@ -6206,12 +6206,12 @@ BOOL func_16(eControlAction ecaParam0, int iParam1) // Position - 0xA6EE
 	return IS_BIT_SET(num, func_17(num2));
 }
 
-int func_17(int iParam0) // Position - 0xA71D
+int func_17(int iParam0) // Position - 0xA71D Hash - 0x9042BAD4 ^0x9042BAD4
 {
 	return iParam0 % 32;
 }
 
-int func_18(int iParam0, int iParam1) // Position - 0xA72A
+int func_18(int iParam0, int iParam1) // Position - 0xA72A Hash - 0xCC2D4398 ^0xCC2D4398
 {
 	int num;
 
@@ -6219,7 +6219,7 @@ int func_18(int iParam0, int iParam1) // Position - 0xA72A
 	return num;
 }
 
-int func_19(int iParam0) // Position - 0xA742
+int func_19(int iParam0) // Position - 0xA742 Hash - 0xF08C5B2E ^0xA4BC8B65
 {
 	int num;
 	int num2;
@@ -6398,22 +6398,22 @@ int func_19(int iParam0) // Position - 0xA742
 	return 14835;
 }
 
-int func_20() // Position - 0xAABD
+int func_20() // Position - 0xAABD Hash - 0x21D64237 ^0x21D64237
 {
 	return Global_32949;
 }
 
-int func_21() // Position - 0xAAC8
+int func_21() // Position - 0xAAC8 Hash - 0x21D64237 ^0x21D64237
 {
 	return Global_32948;
 }
 
-int func_22(int iParam0) // Position - 0xAAD3
+int func_22(int iParam0) // Position - 0xAAD3 Hash - 0x195EBE32 ^0x195EBE32
 {
 	return iParam0 / 32;
 }
 
-ePedComponentType func_23(int iParam0, int iParam1) // Position - 0xAAE0
+ePedComponentType func_23(int iParam0, int iParam1) // Position - 0xAAE0 Hash - 0x744E461C ^0x36023077
 {
 	Hash statHash;
 	int outValue;
@@ -6429,12 +6429,12 @@ ePedComponentType func_23(int iParam0, int iParam1) // Position - 0xAAE0
 	return 0;
 }
 
-Hash func_24(int iParam0, int iParam1) // Position - 0xAB0F
+Hash func_24(int iParam0, int iParam1) // Position - 0xAB0F Hash - 0x505A9F99 ^0x8B00E935
 {
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(0, iParam0, func_25(iParam1));
 }
 
-int func_25(int iParam0) // Position - 0xAB24
+int func_25(int iParam0) // Position - 0xAB24 Hash - 0x1A3F3220 ^0x1A3F3220
 {
 	int num;
 	int num2;
@@ -6460,7 +6460,7 @@ int func_25(int iParam0) // Position - 0xAB24
 	return num;
 }
 
-BOOL func_26(int iParam0, int iParam1) // Position - 0xAB58
+BOOL func_26(int iParam0, int iParam1) // Position - 0xAB58 Hash - 0x5137F6D6 ^0x3B535546
 {
 	Hash statHash;
 	BOOL outValue;
@@ -6473,12 +6473,12 @@ BOOL func_26(int iParam0, int iParam1) // Position - 0xAB58
 	return false;
 }
 
-Hash func_27(int iParam0, int iParam1) // Position - 0xAB7C
+Hash func_27(int iParam0, int iParam1) // Position - 0xAB7C Hash - 0x1D62A43E ^0x33D7B335
 {
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(2, iParam0, func_25(iParam1));
 }
 
-BOOL func_28(BOOL bParam0, BOOL bParam1) // Position - 0xAB91
+BOOL func_28(BOOL bParam0, BOOL bParam1) // Position - 0xAB91 Hash - 0xD0D50F3D ^0xC1EE6703
 {
 	int num;
 	int i;
@@ -6501,7 +6501,7 @@ BOOL func_28(BOOL bParam0, BOOL bParam1) // Position - 0xAB91
 	return true;
 }
 
-BOOL func_29(Player plParam0, int iParam1, int iParam2) // Position - 0xABE5
+BOOL func_29(Player plParam0, int iParam1, int iParam2) // Position - 0xABE5 Hash - 0x42C22233 ^0x42C22233
 {
 	int num;
 
@@ -6519,12 +6519,12 @@ BOOL func_29(Player plParam0, int iParam1, int iParam2) // Position - 0xABE5
 	return true;
 }
 
-Player _INVALID_PLAYER_INDEX() // Position - 0xAC20
+Player _INVALID_PLAYER_INDEX() // Position - 0xAC20 Hash - 0x478900E4 ^0x478900E4
 {
 	return -1;
 }
 
-BOOL func_31(int iParam0) // Position - 0xAC29
+BOOL func_31(int iParam0) // Position - 0xAC29 Hash - 0xE48228D0 ^0xE48228D0
 {
 	switch (iParam0)
 	{
@@ -6537,7 +6537,7 @@ BOOL func_31(int iParam0) // Position - 0xAC29
 	return false;
 }
 
-BOOL func_32(int iParam0, int iParam1) // Position - 0xAC52
+BOOL func_32(int iParam0, int iParam1) // Position - 0xAC52 Hash - 0x5137F6D6 ^0x3B535546
 {
 	Hash statHash;
 	BOOL outValue;
@@ -6550,12 +6550,12 @@ BOOL func_32(int iParam0, int iParam1) // Position - 0xAC52
 	return false;
 }
 
-Hash func_33(int iParam0, int iParam1) // Position - 0xAC76
+Hash func_33(int iParam0, int iParam1) // Position - 0xAC76 Hash - 0x1C1291EE ^0x14578FFE
 {
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(10, iParam0, func_25(iParam1));
 }
 
-ePedComponentType func_34(int iParam0, int iParam1, int iParam2) // Position - 0xAC8C
+ePedComponentType func_34(int iParam0, int iParam1, int iParam2) // Position - 0xAC8C Hash - 0x80259D9F ^0x80259D9F
 {
 	iParam2 == 0;
 
@@ -10647,7 +10647,7 @@ ePedComponentType func_34(int iParam0, int iParam1, int iParam2) // Position - 0
 	return 999;
 }
 
-ePedComponentType func_35(int iParam0, int iParam1) // Position - 0xDE45
+ePedComponentType func_35(int iParam0, int iParam1) // Position - 0xDE45 Hash - 0x5137F6D6 ^0x4CA951A0
 {
 	Hash statHash;
 	ePedComponentType outValue;
@@ -10660,12 +10660,12 @@ ePedComponentType func_35(int iParam0, int iParam1) // Position - 0xDE45
 	return PV_COMP_HEAD;
 }
 
-Hash func_36(int iParam0, int iParam1) // Position - 0xDE69
+Hash func_36(int iParam0, int iParam1) // Position - 0xDE69 Hash - 0x44FC0648 ^0x78F4F029
 {
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(8, iParam0, func_25(iParam1));
 }
 
-BOOL func_37(eControlAction ecaParam0, int iParam1, BOOL bParam2) // Position - 0xDE7F
+BOOL func_37(eControlAction ecaParam0, int iParam1, BOOL bParam2) // Position - 0xDE7F Hash - 0x49421A98 ^0x49421A98
 {
 	if (ecaParam0 == -1)
 		if (bParam2)
@@ -10676,12 +10676,12 @@ BOOL func_37(eControlAction ecaParam0, int iParam1, BOOL bParam2) // Position - 
 	return func_16(ecaParam0, -1) || func_38(ecaParam0, -1);
 }
 
-BOOL func_38(eControlAction ecaParam0, int iParam1) // Position - 0xDEBB
+BOOL func_38(eControlAction ecaParam0, int iParam1) // Position - 0xDEBB Hash - 0x37B55199 ^0x37B55199
 {
 	return _STAT_GET_PACKED_BOOL(func_39(ecaParam0), iParam1);
 }
 
-int func_39(eControlAction ecaParam0) // Position - 0xDECF
+int func_39(eControlAction ecaParam0) // Position - 0xDECF Hash - 0x85CDA395 ^0x189EF421
 {
 	int num;
 	eControlAction action;
@@ -10735,7 +10735,7 @@ int func_39(eControlAction ecaParam0) // Position - 0xDECF
 	return num;
 }
 
-eControlAction func_40(int iParam0, Hash hParam1) // Position - 0xDFB3
+eControlAction func_40(int iParam0, Hash hParam1) // Position - 0xDFB3 Hash - 0xF58FDC97 ^0x803B7A87
 {
 	int tattooShopDlcItemIndex;
 
@@ -10747,7 +10747,7 @@ eControlAction func_40(int iParam0, Hash hParam1) // Position - 0xDFB3
 	return -1;
 }
 
-BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0xDFD5
+BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0xDFD5 Hash - 0x6099A833 ^0x46750A9D
 {
 	if (iParam1 == -1)
 		iParam1 = func_56();
@@ -10755,7 +10755,7 @@ BOOL _STAT_GET_PACKED_BOOL(int iParam0, int iParam1) // Position - 0xDFD5
 	return STATS::GET_PACKED_STAT_BOOL_CODE(iParam0, iParam1);
 }
 
-BOOL func_42(Ped pedParam0, const char* sParam1, eControlAction ecaParam2, int iParam3, Hash hParam4, BOOL bParam5, BOOL bParam6, BOOL bParam7, BOOL bParam8) // Position - 0xDFF1
+BOOL func_42(Ped pedParam0, const char* sParam1, eControlAction ecaParam2, int iParam3, Hash hParam4, BOOL bParam5, BOOL bParam6, BOOL bParam7, BOOL bParam8) // Position - 0xDFF1 Hash - 0x69D10458 ^0x71D52412
 {
 	Hash entityModel;
 	int num;
@@ -11236,7 +11236,7 @@ BOOL func_42(Ped pedParam0, const char* sParam1, eControlAction ecaParam2, int i
 	return true;
 }
 
-char* func_43(int iParam0) // Position - 0xE819
+char* func_43(int iParam0) // Position - 0xE819 Hash - 0xE6862179 ^0xB77184EE
 {
 	switch (iParam0)
 	{
@@ -11541,7 +11541,7 @@ char* func_43(int iParam0) // Position - 0xE819
 	return "";
 }
 
-int func_44(Hash hParam0, const char* sParam1, int iParam2) // Position - 0xEE5C
+int func_44(Hash hParam0, const char* sParam1, int iParam2) // Position - 0xEE5C Hash - 0x2D6EA43C ^0x2D6EA43C
 {
 	switch (iParam2)
 	{
@@ -12442,7 +12442,7 @@ int func_44(Hash hParam0, const char* sParam1, int iParam2) // Position - 0xEE5C
 	return -1;
 }
 
-BOOL func_45(char* sParam0, eControlAction ecaParam1, int iParam2, Ped pedParam3, int iParam4) // Position - 0xFE8E
+BOOL func_45(char* sParam0, eControlAction ecaParam1, int iParam2, Ped pedParam3, int iParam4) // Position - 0xFE8E Hash - 0xAADB79C4 ^0xBBE2B876
 {
 	Hash entityModel;
 	int num;
@@ -13599,7 +13599,7 @@ BOOL func_45(char* sParam0, eControlAction ecaParam1, int iParam2, Ped pedParam3
 	return sParam0->f_11 != -1;
 }
 
-void func_46(char* sParam0, int iParam1, int iParam2, int iParam3) // Position - 0x12F79
+void func_46(char* sParam0, int iParam1, int iParam2, int iParam3) // Position - 0x12F79 Hash - 0xC0E60EB1 ^0xA6231434
 {
 	int decorationIndex;
 	int numTattooShopDlcItems;
@@ -13631,7 +13631,7 @@ void func_46(char* sParam0, int iParam1, int iParam2, int iParam3) // Position -
 	return;
 }
 
-int func_47() // Position - 0x1300B
+int func_47() // Position - 0x1300B Hash - 0xAF3D3332 ^0xE009CBFC
 {
 	int outValue;
 	int outValue2;
@@ -13703,7 +13703,7 @@ int func_47() // Position - 0x1300B
 	return 0;
 }
 
-int func_48() // Position - 0x13144
+int func_48() // Position - 0x13144 Hash - 0xAF10CE31 ^0xCCA83A01
 {
 	int outValue;
 	int outValue2;
@@ -13746,17 +13746,17 @@ int func_48() // Position - 0x13144
 	return 0;
 }
 
-int func_49() // Position - 0x131FA
+int func_49() // Position - 0x131FA Hash - 0xFD255207 ^0xFD255207
 {
 	return 1;
 }
 
-int func_50() // Position - 0x13203
+int func_50() // Position - 0x13203 Hash - 0xFD255207 ^0xFD255207
 {
 	return 1;
 }
 
-void func_51(char* sParam0, int iParam1, Ped pedParam2, char* sParam3, char* sParam4, char* sParam5, char* sParam6, int iParam7, int iParam8, int iParam9) // Position - 0x1320C
+void func_51(char* sParam0, int iParam1, Ped pedParam2, char* sParam3, char* sParam4, char* sParam5, char* sParam6, int iParam7, int iParam8, int iParam9) // Position - 0x1320C Hash - 0xBE814674 ^0x20110C9C
 {
 	var unk;
 
@@ -13821,7 +13821,7 @@ void func_51(char* sParam0, int iParam1, Ped pedParam2, char* sParam3, char* sPa
 	return;
 }
 
-BOOL func_52(eControlAction ecaParam0, int iParam1) // Position - 0x134C3
+BOOL func_52(eControlAction ecaParam0, int iParam1) // Position - 0x134C3 Hash - 0x562E4F3B ^0x562E4F3B
 {
 	int num;
 	int num2;
@@ -13838,7 +13838,7 @@ BOOL func_52(eControlAction ecaParam0, int iParam1) // Position - 0x134C3
 	return IS_BIT_SET(num, num2);
 }
 
-int func_53(eControlAction ecaParam0, int iParam1) // Position - 0x13502
+int func_53(eControlAction ecaParam0, int iParam1) // Position - 0x13502 Hash - 0x63B9C993 ^0x36665188
 {
 	int num;
 	int num2;
@@ -13855,7 +13855,7 @@ int func_53(eControlAction ecaParam0, int iParam1) // Position - 0x13502
 	return num2;
 }
 
-int func_54(int iParam0) // Position - 0x13548
+int func_54(int iParam0) // Position - 0x13548 Hash - 0xF08C5B2E ^0xA4BC8B65
 {
 	int num;
 	int num2;
@@ -14042,7 +14042,7 @@ int func_54(int iParam0) // Position - 0x13548
 	return 14835;
 }
 
-int func_55(Ped pedParam0) // Position - 0x138E9
+int func_55(Ped pedParam0) // Position - 0x138E9 Hash - 0x48F0132B ^0x6FD5FB98
 {
 	if (PED::IS_PED_DEAD_OR_DYING(pedParam0, true))
 		return 0;
@@ -14068,12 +14068,12 @@ int func_55(Ped pedParam0) // Position - 0x138E9
 	return 0;
 }
 
-int func_56() // Position - 0x1394C
+int func_56() // Position - 0x1394C Hash - 0x47FF56D2 ^0x47FF56D2
 {
 	return Global_1574926;
 }
 
-BOOL func_57(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x13958
+BOOL func_57(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x13958 Hash - 0xE9FFFAF1 ^0xE6D3A89D
 {
 	int pedDrawableVariation;
 	int pedTextureVariation;
@@ -14206,7 +14206,7 @@ BOOL func_57(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x13958
 	return 0;
 }
 
-Hash func_58(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2, int iParam3) // Position - 0x13C18
+Hash func_58(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2, int iParam3) // Position - 0x13C18 Hash - 0x3B4EF0B2 ^0x11322F71
 {
 	var outProp;
 	int componentId;
@@ -14263,7 +14263,7 @@ Hash func_58(ePedComponentType epctParam0, ePedComponentType epctParam1, int iPa
 	return -1;
 }
 
-ePedComponentType func_59(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x13D32
+ePedComponentType func_59(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x13D32 Hash - 0x765E2190 ^0x765E2190
 {
 	switch (epctParam0)
 	{
@@ -14479,7 +14479,7 @@ ePedComponentType func_59(ePedComponentType epctParam0, ePedComponentType epctPa
 	return -99;
 }
 
-ePedComponentType func_60(int iParam0) // Position - 0x140DB
+ePedComponentType func_60(int iParam0) // Position - 0x140DB Hash - 0xF91DA7A7 ^0xF91DA7A7
 {
 	switch (iParam0)
 	{
@@ -14523,7 +14523,7 @@ ePedComponentType func_60(int iParam0) // Position - 0x140DB
 	return 0;
 }
 
-int func_61(ePedComponentType epctParam0) // Position - 0x1418B
+int func_61(ePedComponentType epctParam0) // Position - 0x1418B Hash - 0xC0824942 ^0x8EB5258
 {
 	switch (epctParam0)
 	{
@@ -14549,7 +14549,7 @@ int func_61(ePedComponentType epctParam0) // Position - 0x1418B
 	return -99;
 }
 
-ePedComponentType func_62(Ped pedParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x141EC
+ePedComponentType func_62(Ped pedParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x141EC Hash - 0x6AEB8E24 ^0x393FEB8F
 {
 	ePedComponentType i;
 	ePedComponentType j;
@@ -14593,7 +14593,7 @@ ePedComponentType func_62(Ped pedParam0, int iParam1, ePedComponentType epctPara
 	return -99;
 }
 
-ePedComponentType func_63(Ped pedParam0, int iParam1) // Position - 0x1428D
+ePedComponentType func_63(Ped pedParam0, int iParam1) // Position - 0x1428D Hash - 0x5DC76C2F ^0x122A4DD3
 {
 	ePedComponentType componentId;
 	int pedDrawableVariation;
@@ -14608,7 +14608,7 @@ ePedComponentType func_63(Ped pedParam0, int iParam1) // Position - 0x1428D
 	return func_64(pedParam0, pedDrawableVariation, pedTextureVariation, iParam1);
 }
 
-ePedComponentType func_64(Ped pedParam0, int iParam1, int iParam2, int iParam3) // Position - 0x142ED
+ePedComponentType func_64(Ped pedParam0, int iParam1, int iParam2, int iParam3) // Position - 0x142ED Hash - 0x8F4AAD60 ^0xD2AF7F3D
 {
 	ePedComponentType componentId;
 	int numberOfPedDrawableVariations;
@@ -14634,7 +14634,7 @@ ePedComponentType func_64(Ped pedParam0, int iParam1, int iParam2, int iParam3) 
 	return -99;
 }
 
-ePedComponentType func_65(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x14344
+ePedComponentType func_65(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x14344 Hash - 0xA9FF3076 ^0xC030B76B
 {
 	int pedPropIndex;
 	int pedPropTextureIndex;
@@ -14651,7 +14651,7 @@ ePedComponentType func_65(Ped pedParam0, ePedComponentType epctParam1) // Positi
 	return func_66(pedParam0, pedPropIndex, pedPropTextureIndex, epctParam1);
 }
 
-ePedComponentType func_66(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, ePedComponentType epctParam3) // Position - 0x1438B
+ePedComponentType func_66(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, ePedComponentType epctParam3) // Position - 0x1438B Hash - 0x3F809B31 ^0x8E48393
 {
 	Hash entityModel;
 	Hash hashNameForProp;
@@ -14703,7 +14703,7 @@ ePedComponentType func_66(Ped pedParam0, ePedComponentType epctParam1, ePedCompo
 	return func_70(epctParam3);
 }
 
-int func_67(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x14487
+int func_67(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x14487 Hash - 0xB8AC6F7F ^0x2249C2B3
 {
 	Hash entityModel;
 
@@ -14785,7 +14785,7 @@ int func_67(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x14487
 	return -99;
 }
 
-ePedComponentType func_68(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2, int iParam3) // Position - 0x145C5
+ePedComponentType func_68(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2, int iParam3) // Position - 0x145C5 Hash - 0x37A3B7AE ^0x8CDB7FD1
 {
 	var outfit;
 	int i;
@@ -14828,7 +14828,7 @@ ePedComponentType func_68(ePedComponentType epctParam0, ePedComponentType epctPa
 	return -99;
 }
 
-int func_69(Hash hParam0) // Position - 0x14680
+int func_69(Hash hParam0) // Position - 0x14680 Hash - 0x3694542E ^0xA74289BE
 {
 	switch (hParam0)
 	{
@@ -14854,7 +14854,7 @@ int func_69(Hash hParam0) // Position - 0x14680
 	return -99;
 }
 
-ePedComponentType func_70(ePedComponentType epctParam0) // Position - 0x146DF
+ePedComponentType func_70(ePedComponentType epctParam0) // Position - 0x146DF Hash - 0xEE599357 ^0xEE599357
 {
 	switch (epctParam0)
 	{
@@ -14889,7 +14889,7 @@ ePedComponentType func_70(ePedComponentType epctParam0) // Position - 0x146DF
 	return 0;
 }
 
-BOOL func_71(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x14765
+BOOL func_71(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x14765 Hash - 0xEAF08AE1 ^0xBD027042
 {
 	ePedComponentType entityModel;
 	ePedComponentType type;
@@ -15084,7 +15084,7 @@ BOOL func_71(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epct
 	return false;
 }
 
-BOOL func_72(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, var uParam3) // Position - 0x14BC0
+BOOL func_72(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, var uParam3) // Position - 0x14BC0 Hash - 0x26B2FF44 ^0xDA957258
 {
 	Hash componentHash;
 	int shopPedApparelVariantComponentCount;
@@ -15133,7 +15133,7 @@ BOOL func_72(ePedComponentType epctParam0, int iParam1, ePedComponentType epctPa
 	return false;
 }
 
-BOOL func_73(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, var uParam3) // Position - 0x14C69
+BOOL func_73(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, var uParam3) // Position - 0x14C69 Hash - 0x26B2FF44 ^0xDA957258
 {
 	Hash componentHash;
 	int shopPedApparelVariantComponentCount;
@@ -15182,7 +15182,7 @@ BOOL func_73(ePedComponentType epctParam0, int iParam1, ePedComponentType epctPa
 	return false;
 }
 
-BOOL func_74(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x14D11
+BOOL func_74(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x14D11 Hash - 0x9FDCB820 ^0xF3833F7A
 {
 	switch (epctParam0)
 	{
@@ -15205,7 +15205,7 @@ BOOL func_74(ePedComponentType epctParam0, int iParam1, ePedComponentType epctPa
 	return false;
 }
 
-BOOL func_75(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2, ePedComponentType epctParam3, var uParam4, int iParam5) // Position - 0x14D64
+BOOL func_75(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2, ePedComponentType epctParam3, var uParam4, int iParam5) // Position - 0x14D64 Hash - 0x4EAC6644 ^0x84ED5CC8
 {
 	var unk;
 	int i;
@@ -15364,7 +15364,7 @@ BOOL func_75(ePedComponentType epctParam0, ePedComponentType epctParam1, int iPa
 	return false;
 }
 
-BOOL func_76(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x15368
+BOOL func_76(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x15368 Hash - 0xCC83E9BC ^0xCC83E9BC
 {
 	switch (epctParam0)
 	{
@@ -15468,7 +15468,7 @@ BOOL func_76(ePedComponentType epctParam0, int iParam1, ePedComponentType epctPa
 	return false;
 }
 
-BOOL func_77(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x155E5
+BOOL func_77(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x155E5 Hash - 0x261C127A ^0x57548E07
 {
 	if (epctParam0 == joaat("Player_Zero"))
 	{
@@ -15554,7 +15554,7 @@ BOOL func_77(ePedComponentType epctParam0, int iParam1, ePedComponentType epctPa
 	return false;
 }
 
-BOOL func_78(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x15A0A
+BOOL func_78(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x15A0A Hash - 0xAC33D304 ^0xAC33D304
 {
 	switch (epctParam0)
 	{
@@ -15614,7 +15614,7 @@ BOOL func_78(ePedComponentType epctParam0, int iParam1, ePedComponentType epctPa
 	return false;
 }
 
-BOOL func_79(Hash hParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x15CFD
+BOOL func_79(Hash hParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x15CFD Hash - 0x1194ADFB ^0x1194ADFB
 {
 	switch (hParam0)
 	{
@@ -15657,7 +15657,7 @@ BOOL func_79(Hash hParam0, int iParam1, ePedComponentType epctParam2) // Positio
 	return false;
 }
 
-struct<10> func_80(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x15D96
+struct<10> func_80(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x15D96 Hash - 0x2A30F768 ^0x18171033
 {
 	int i;
 	var unk;
@@ -16048,7 +16048,7 @@ struct<10> func_80(ePedComponentType epctParam0, ePedComponentType epctParam1) /
 	return unk;
 }
 
-void func_81(var uParam0, Hash hParam1, int iParam2, int iParam3) // Position - 0x166C5
+void func_81(var uParam0, Hash hParam1, int iParam2, int iParam3) // Position - 0x166C5 Hash - 0xE5FA3D79 ^0xC01023AA
 {
 	int num;
 	Hash itemHash;
@@ -16097,7 +16097,7 @@ void func_81(var uParam0, Hash hParam1, int iParam2, int iParam3) // Position - 
 	return;
 }
 
-void func_82(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9) // Position - 0x167EF
+void func_82(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9) // Position - 0x167EF Hash - 0xF7320378 ^0xF7320378
 {
 	uParam0->[0] = iParam1;
 	uParam0->[1] = iParam2;
@@ -16111,7 +16111,7 @@ void func_82(var uParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	return;
 }
 
-struct<17> func_83(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x16837
+struct<17> func_83(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x16837 Hash - 0x10D20E1D ^0x38BDAFC5
 {
 	int i;
 	var unk;
@@ -16987,7 +16987,7 @@ struct<17> func_83(ePedComponentType epctParam0, ePedComponentType epctParam1) /
 	return unk;
 }
 
-void func_84(var uParam0, Hash hParam1, ePedComponentType epctParam2, int iParam3) // Position - 0x18681
+void func_84(var uParam0, Hash hParam1, ePedComponentType epctParam2, int iParam3) // Position - 0x18681 Hash - 0xD805D094 ^0x25EDFC78
 {
 	int num;
 	Hash outfit;
@@ -17082,7 +17082,7 @@ void func_84(var uParam0, Hash hParam1, ePedComponentType epctParam2, int iParam
 	return;
 }
 
-int func_85(ePedComponentType epctParam0) // Position - 0x1886B
+int func_85(ePedComponentType epctParam0) // Position - 0x1886B Hash - 0xF91DA7A7 ^0xF91DA7A7
 {
 	switch (epctParam0)
 	{
@@ -17126,7 +17126,7 @@ int func_85(ePedComponentType epctParam0) // Position - 0x1886B
 	return 0;
 }
 
-void func_86(var uParam0, int iParam1, int iParam2, ePedComponentType epctParam3, ePedComponentType epctParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13) // Position - 0x1891B
+void func_86(var uParam0, int iParam1, int iParam2, ePedComponentType epctParam3, ePedComponentType epctParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13) // Position - 0x1891B Hash - 0xEC425A3E ^0xEC425A3E
 {
 	uParam0->[0] = iParam1;
 	uParam0->[2] = iParam2;
@@ -17145,7 +17145,7 @@ void func_86(var uParam0, int iParam1, int iParam2, ePedComponentType epctParam3
 	return;
 }
 
-struct<14> func_87(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x1898C
+struct<14> func_87(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x1898C Hash - 0x2257F879 ^0x68AE5A32
 {
 	func_130();
 
@@ -17157,7 +17157,7 @@ struct<14> func_87(ePedComponentType epctParam0, int iParam1, ePedComponentType 
 	return Global_79172[0 /*14*/];
 }
 
-void func_88(int iParam0, ePedComponentType epctParam1, Hash hParam2) // Position - 0x189CD
+void func_88(int iParam0, ePedComponentType epctParam1, Hash hParam2) // Position - 0x189CD Hash - 0x9AF0DF05 ^0x9AF0DF05
 {
 	switch (iParam0)
 	{
@@ -17225,7 +17225,7 @@ void func_88(int iParam0, ePedComponentType epctParam1, Hash hParam2) // Positio
 	return;
 }
 
-void func_89(ePedComponentType epctParam0) // Position - 0x18AD9
+void func_89(ePedComponentType epctParam0) // Position - 0x18AD9 Hash - 0xB745E49C ^0xB745E49C
 {
 	BOOL flag;
 	int num;
@@ -17376,7 +17376,7 @@ void func_89(ePedComponentType epctParam0) // Position - 0x18AD9
 	return;
 }
 
-void func_90(int iParam0, int iParam1, ePedComponentType epctParam2, char* sParam3, int iParam4, int iParam5, int iParam6, BOOL bParam7, int iParam8, int iParam9, BOOL bParam10) // Position - 0x18C94
+void func_90(int iParam0, int iParam1, ePedComponentType epctParam2, char* sParam3, int iParam4, int iParam5, int iParam6, BOOL bParam7, int iParam8, int iParam9, BOOL bParam10) // Position - 0x18C94 Hash - 0xA2DFD38C ^0xCA7EA132
 {
 	int num;
 	int num2;
@@ -17515,7 +17515,7 @@ void func_90(int iParam0, int iParam1, ePedComponentType epctParam2, char* sPara
 	return;
 }
 
-BOOL func_91(int iParam0, int iParam1, var uParam2) // Position - 0x19036
+BOOL func_91(int iParam0, int iParam1, var uParam2) // Position - 0x19036 Hash - 0x805F0D09 ^0xD5FF8259
 {
 	*uParam2 = 979;
 
@@ -17800,7 +17800,7 @@ BOOL func_91(int iParam0, int iParam1, var uParam2) // Position - 0x19036
 	return *uParam2 != 979;
 }
 
-int func_92(int iParam0, int iParam1) // Position - 0x1943B
+int func_92(int iParam0, int iParam1) // Position - 0x1943B Hash - 0x4CEDF2DA ^0xD4A47B95
 {
 	switch (iParam1)
 	{
@@ -18028,7 +18028,7 @@ int func_92(int iParam0, int iParam1) // Position - 0x1943B
 	return 936;
 }
 
-int func_93(int iParam0, int iParam1) // Position - 0x19836
+int func_93(int iParam0, int iParam1) // Position - 0x19836 Hash - 0x4CEDF2DA ^0x7536052F
 {
 	switch (iParam1)
 	{
@@ -18256,7 +18256,7 @@ int func_93(int iParam0, int iParam1) // Position - 0x19836
 	return 884;
 }
 
-BOOL func_94(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, int iParam5, int iParam6) // Position - 0x19C31
+BOOL func_94(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, int iParam5, int iParam6) // Position - 0x19C31 Hash - 0xDF4F0B01 ^0xAAD287D4
 {
 	if (iParam0 == 0)
 	{
@@ -18696,7 +18696,7 @@ BOOL func_94(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	return false;
 }
 
-BOOL func_95(ePedComponentType epctParam0, int iParam1, BOOL bParam2, BOOL bParam3, int iParam4) // Position - 0x1AAD4
+BOOL func_95(ePedComponentType epctParam0, int iParam1, BOOL bParam2, BOOL bParam3, int iParam4) // Position - 0x1AAD4 Hash - 0x8D68F96D ^0x8D68F96D
 {
 	int num;
 	int num2;
@@ -18717,7 +18717,7 @@ BOOL func_95(ePedComponentType epctParam0, int iParam1, BOOL bParam2, BOOL bPara
 	return false;
 }
 
-BOOL func_96(ePedComponentType epctParam0, int iParam1, var uParam2, var uParam3, BOOL bParam4, BOOL bParam5) // Position - 0x1AB12
+BOOL func_96(ePedComponentType epctParam0, int iParam1, var uParam2, var uParam3, BOOL bParam4, BOOL bParam5) // Position - 0x1AB12 Hash - 0x1B8A3878 ^0xCF4EEAF5
 {
 	int fmMaleShopPedApparelItemIndex;
 
@@ -21565,12 +21565,12 @@ BOOL func_96(ePedComponentType epctParam0, int iParam1, var uParam2, var uParam3
 	return *uParam2 != 14835;
 }
 
-BOOL func_97(int iParam0) // Position - 0x1D697
+BOOL func_97(int iParam0) // Position - 0x1D697 Hash - 0x937D8816 ^0x937D8816
 {
 	return Global_44042 == iParam0;
 }
 
-int func_98(int iParam0) // Position - 0x1D6A5
+int func_98(int iParam0) // Position - 0x1D6A5 Hash - 0xE4C61EBD ^0xE4C61EBD
 {
 	switch (iParam0)
 	{
@@ -21623,7 +21623,7 @@ int func_98(int iParam0) // Position - 0x1D6A5
 	return 0;
 }
 
-void func_99(ePedComponentType epctParam0, Hash hParam1) // Position - 0x1D779
+void func_99(ePedComponentType epctParam0, Hash hParam1) // Position - 0x1D779 Hash - 0xEDA496E8 ^0xFA4009F9
 {
 	int num;
 
@@ -21633,7 +21633,7 @@ void func_99(ePedComponentType epctParam0, Hash hParam1) // Position - 0x1D779
 	return;
 }
 
-void func_100(int iParam0, ePedComponentType epctParam1, int iParam2, Hash hParam3) // Position - 0x1D799
+void func_100(int iParam0, ePedComponentType epctParam1, int iParam2, Hash hParam3) // Position - 0x1D799 Hash - 0xE3509264 ^0xCA79B364
 {
 	int num;
 	int num2;
@@ -21752,7 +21752,7 @@ void func_100(int iParam0, ePedComponentType epctParam1, int iParam2, Hash hPara
 	return;
 }
 
-void func_101(ePedComponentType epctParam0, Hash hParam1) // Position - 0x1DA20
+void func_101(ePedComponentType epctParam0, Hash hParam1) // Position - 0x1DA20 Hash - 0x5C1D2F91 ^0x5C1D2F91
 {
 	BOOL flag;
 	int num;
@@ -21832,7 +21832,7 @@ void func_101(ePedComponentType epctParam0, Hash hParam1) // Position - 0x1DA20
 	return;
 }
 
-void func_102(ePedComponentType epctParam0, Hash hParam1) // Position - 0x1DB23
+void func_102(ePedComponentType epctParam0, Hash hParam1) // Position - 0x1DB23 Hash - 0x34BAB0FD ^0x34BAB0FD
 {
 	BOOL flag;
 	int num;
@@ -22031,7 +22031,7 @@ void func_102(ePedComponentType epctParam0, Hash hParam1) // Position - 0x1DB23
 	return;
 }
 
-void func_103(ePedComponentType epctParam0, Hash hParam1) // Position - 0x1DE02
+void func_103(ePedComponentType epctParam0, Hash hParam1) // Position - 0x1DE02 Hash - 0x859154FC ^0x859154FC
 {
 	BOOL flag;
 	int value;
@@ -25140,7 +25140,7 @@ void func_103(ePedComponentType epctParam0, Hash hParam1) // Position - 0x1DE02
 	return;
 }
 
-void func_104(ePedComponentType epctParam0, Hash hParam1) // Position - 0x20D94
+void func_104(ePedComponentType epctParam0, Hash hParam1) // Position - 0x20D94 Hash - 0x532BD76A ^0xAF049174
 {
 	BOOL flag;
 	int num;
@@ -25213,7 +25213,7 @@ void func_104(ePedComponentType epctParam0, Hash hParam1) // Position - 0x20D94
 	return;
 }
 
-void func_105(ePedComponentType epctParam0, Hash hParam1) // Position - 0x20E99
+void func_105(ePedComponentType epctParam0, Hash hParam1) // Position - 0x20E99 Hash - 0x31CAA5FE ^0x31CAA5FE
 {
 	BOOL flag;
 	int value;
@@ -25730,7 +25730,7 @@ void func_105(ePedComponentType epctParam0, Hash hParam1) // Position - 0x20E99
 	return;
 }
 
-void func_106(ePedComponentType epctParam0, Hash hParam1) // Position - 0x21675
+void func_106(ePedComponentType epctParam0, Hash hParam1) // Position - 0x21675 Hash - 0x8F60B7F6 ^0x8F60B7F6
 {
 	BOOL flag;
 	int value;
@@ -25931,7 +25931,7 @@ void func_106(ePedComponentType epctParam0, Hash hParam1) // Position - 0x21675
 	return;
 }
 
-void func_107(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2195A
+void func_107(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2195A Hash - 0x49FFFA4C ^0x108EA666
 {
 	BOOL flag;
 	int value;
@@ -27631,7 +27631,7 @@ void func_107(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2195A
 	return;
 }
 
-void func_108(ePedComponentType epctParam0, Hash hParam1) // Position - 0x22F81
+void func_108(ePedComponentType epctParam0, Hash hParam1) // Position - 0x22F81 Hash - 0xB448FE2B ^0xD5BAE134
 {
 	BOOL flag;
 	int value;
@@ -29357,7 +29357,7 @@ void func_108(ePedComponentType epctParam0, Hash hParam1) // Position - 0x22F81
 	return;
 }
 
-void func_109(ePedComponentType epctParam0, Hash hParam1) // Position - 0x245E2
+void func_109(ePedComponentType epctParam0, Hash hParam1) // Position - 0x245E2 Hash - 0xE0A1579F ^0xE0A1579F
 {
 	BOOL flag;
 	int num;
@@ -29470,7 +29470,7 @@ void func_109(ePedComponentType epctParam0, Hash hParam1) // Position - 0x245E2
 	return;
 }
 
-void func_110(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2473D
+void func_110(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2473D Hash - 0x1DB3E93C ^0x1DB3E93C
 {
 	BOOL flag;
 	int num;
@@ -29683,7 +29683,7 @@ void func_110(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2473D
 	return;
 }
 
-void func_111(ePedComponentType epctParam0, Hash hParam1) // Position - 0x249BD
+void func_111(ePedComponentType epctParam0, Hash hParam1) // Position - 0x249BD Hash - 0xE646E909 ^0xDA1C880C
 {
 	BOOL flag;
 	int value;
@@ -30736,7 +30736,7 @@ void func_111(ePedComponentType epctParam0, Hash hParam1) // Position - 0x249BD
 	return;
 }
 
-void func_112(ePedComponentType epctParam0, Hash hParam1) // Position - 0x25D5F
+void func_112(ePedComponentType epctParam0, Hash hParam1) // Position - 0x25D5F Hash - 0xE6D60F9B ^0xE6D60F9B
 {
 	BOOL flag;
 	int value;
@@ -32517,7 +32517,7 @@ void func_112(ePedComponentType epctParam0, Hash hParam1) // Position - 0x25D5F
 	return;
 }
 
-void func_113(ePedComponentType epctParam0, Hash hParam1) // Position - 0x274C4
+void func_113(ePedComponentType epctParam0, Hash hParam1) // Position - 0x274C4 Hash - 0xA91A09EB ^0xE2448087
 {
 	BOOL flag;
 	int value;
@@ -33180,7 +33180,7 @@ void func_113(ePedComponentType epctParam0, Hash hParam1) // Position - 0x274C4
 	return;
 }
 
-void func_114(int iParam0, ePedComponentType epctParam1, Hash hParam2) // Position - 0x28398
+void func_114(int iParam0, ePedComponentType epctParam1, Hash hParam2) // Position - 0x28398 Hash - 0x9AF0DF05 ^0x9AF0DF05
 {
 	switch (iParam0)
 	{
@@ -33248,7 +33248,7 @@ void func_114(int iParam0, ePedComponentType epctParam1, Hash hParam2) // Positi
 	return;
 }
 
-void func_115(ePedComponentType epctParam0) // Position - 0x284A4
+void func_115(ePedComponentType epctParam0) // Position - 0x284A4 Hash - 0xB745E49C ^0xB745E49C
 {
 	BOOL flag;
 	int num;
@@ -33404,7 +33404,7 @@ void func_115(ePedComponentType epctParam0) // Position - 0x284A4
 	return;
 }
 
-void func_116(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2866E
+void func_116(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2866E Hash - 0x24B9D800 ^0xDE92F578
 {
 	int num;
 
@@ -33414,7 +33414,7 @@ void func_116(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2866E
 	return;
 }
 
-void func_117(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2868E
+void func_117(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2868E Hash - 0x5C1D2F91 ^0x5C1D2F91
 {
 	BOOL flag;
 	int num;
@@ -33494,7 +33494,7 @@ void func_117(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2868E
 	return;
 }
 
-void func_118(ePedComponentType epctParam0, Hash hParam1) // Position - 0x28791
+void func_118(ePedComponentType epctParam0, Hash hParam1) // Position - 0x28791 Hash - 0x34BAB0FD ^0x34BAB0FD
 {
 	BOOL flag;
 	int num;
@@ -33681,7 +33681,7 @@ void func_118(ePedComponentType epctParam0, Hash hParam1) // Position - 0x28791
 	return;
 }
 
-void func_119(ePedComponentType epctParam0, Hash hParam1) // Position - 0x28A42
+void func_119(ePedComponentType epctParam0, Hash hParam1) // Position - 0x28A42 Hash - 0x859154FC ^0x859154FC
 {
 	BOOL flag;
 	int value;
@@ -36779,7 +36779,7 @@ void func_119(ePedComponentType epctParam0, Hash hParam1) // Position - 0x28A42
 	return;
 }
 
-void func_120(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2B801
+void func_120(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2B801 Hash - 0x532BD76A ^0xAF049174
 {
 	BOOL flag;
 	int num;
@@ -36859,7 +36859,7 @@ void func_120(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2B801
 	return;
 }
 
-void func_121(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2B922
+void func_121(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2B922 Hash - 0x31CAA5FE ^0x31CAA5FE
 {
 	BOOL flag;
 	int value;
@@ -37545,7 +37545,7 @@ void func_121(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2B922
 	return;
 }
 
-void func_122(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2C21B
+void func_122(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2C21B Hash - 0x8F60B7F6 ^0x8F60B7F6
 {
 	BOOL flag;
 	int value;
@@ -37742,7 +37742,7 @@ void func_122(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2C21B
 	return;
 }
 
-void func_123(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2C4D2
+void func_123(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2C4D2 Hash - 0x154FE8B3 ^0x154FE8B3
 {
 	BOOL flag;
 	int value;
@@ -39455,7 +39455,7 @@ void func_123(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2C4D2
 	return;
 }
 
-void func_124(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2DB0F
+void func_124(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2DB0F Hash - 0xB448FE2B ^0xBF13E827
 {
 	BOOL flag;
 	int value;
@@ -41176,7 +41176,7 @@ void func_124(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2DB0F
 	return;
 }
 
-void func_125(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2F142
+void func_125(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2F142 Hash - 0xE0A1579F ^0xE0A1579F
 {
 	BOOL flag;
 	int num;
@@ -41287,7 +41287,7 @@ void func_125(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2F142
 	return;
 }
 
-void func_126(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2F299
+void func_126(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2F299 Hash - 0x1DB3E93C ^0x1DB3E93C
 {
 	BOOL flag;
 	int num;
@@ -41548,7 +41548,7 @@ void func_126(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2F299
 	return;
 }
 
-void func_127(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2F5B5
+void func_127(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2F5B5 Hash - 0xE646E909 ^0x9AD655E
 {
 	BOOL flag;
 	int value;
@@ -43654,7 +43654,7 @@ void func_127(ePedComponentType epctParam0, Hash hParam1) // Position - 0x2F5B5
 	return;
 }
 
-void func_128(ePedComponentType epctParam0, Hash hParam1) // Position - 0x31AA6
+void func_128(ePedComponentType epctParam0, Hash hParam1) // Position - 0x31AA6 Hash - 0xE6D60F9B ^0xE6D60F9B
 {
 	BOOL flag;
 	int value;
@@ -45283,7 +45283,7 @@ void func_128(ePedComponentType epctParam0, Hash hParam1) // Position - 0x31AA6
 	return;
 }
 
-void func_129(ePedComponentType epctParam0, Hash hParam1) // Position - 0x33031
+void func_129(ePedComponentType epctParam0, Hash hParam1) // Position - 0x33031 Hash - 0xA91A09EB ^0xE2448087
 {
 	BOOL flag;
 	int value;
@@ -45940,7 +45940,7 @@ void func_129(ePedComponentType epctParam0, Hash hParam1) // Position - 0x33031
 	return;
 }
 
-void func_130() // Position - 0x33EEB
+void func_130() // Position - 0x33EEB Hash - 0xE5F61993 ^0xEFD41040
 {
 	Global_79172[0 /*14*/].f_1 = -1;
 	Global_79172[0 /*14*/].f_2 = -1;
@@ -45956,7 +45956,7 @@ void func_130() // Position - 0x33EEB
 	return;
 }
 
-BOOL func_131(Ped pedParam0) // Position - 0x33F64
+BOOL func_131(Ped pedParam0) // Position - 0x33F64 Hash - 0xCD74A84A ^0x317D5AD9
 {
 	ePedComponentType type;
 
@@ -45977,7 +45977,7 @@ BOOL func_131(Ped pedParam0) // Position - 0x33F64
 	return 0;
 }
 
-ePedComponentType func_132(ePedComponentType epctParam0) // Position - 0x33FE0
+ePedComponentType func_132(ePedComponentType epctParam0) // Position - 0x33FE0 Hash - 0xBA3335EE ^0xBA3335EE
 {
 	if (func_133(true))
 		return Global_1680309;
@@ -45988,7 +45988,7 @@ ePedComponentType func_132(ePedComponentType epctParam0) // Position - 0x33FE0
 	return Global_2685444.f_6363[epctParam0];
 }
 
-BOOL func_133(BOOL bParam0) // Position - 0x34018
+BOOL func_133(BOOL bParam0) // Position - 0x34018 Hash - 0x25DF5B1D ^0x52D364AA
 {
 	if (func_137(bParam0) || func_135() || func_134(*Global_4718592.f_185586))
 		return true;
@@ -45996,17 +45996,17 @@ BOOL func_133(BOOL bParam0) // Position - 0x34018
 	return false;
 }
 
-BOOL func_134(int iParam0) // Position - 0x3404C
+BOOL func_134(int iParam0) // Position - 0x3404C Hash - 0x22B3D50D ^0x22B3D50D
 {
 	return iParam0 == 87;
 }
 
-BOOL func_135() // Position - 0x34059
+BOOL func_135() // Position - 0x34059 Hash - 0x39484892 ^0x2D1B517
 {
 	return func_136(*Global_4718592.f_127178);
 }
 
-int func_136(ePedComponentType epctParam0) // Position - 0x3406F
+int func_136(ePedComponentType epctParam0) // Position - 0x3406F Hash - 0x9CB2DA77 ^0x9CB2DA77
 {
 	int i;
 
@@ -46022,7 +46022,7 @@ int func_136(ePedComponentType epctParam0) // Position - 0x3406F
 	return 0;
 }
 
-BOOL func_137(BOOL bParam0) // Position - 0x340A9
+BOOL func_137(BOOL bParam0) // Position - 0x340A9 Hash - 0x54BEFA8F ^0xA8D3B4E6
 {
 	if (bParam0)
 		return IS_BIT_SET(*Global_4718592.f_178389, 12) && func_138();
@@ -46030,7 +46030,7 @@ BOOL func_137(BOOL bParam0) // Position - 0x340A9
 	return IS_BIT_SET(*Global_4718592.f_178389, 12);
 }
 
-BOOL func_138() // Position - 0x340DF
+BOOL func_138() // Position - 0x340DF Hash - 0xFEA78839 ^0x68B70759
 {
 	if (*Global_4718592.f_127755 == 1 || *Global_4718592.f_127755 == 2)
 		return true;
@@ -46038,7 +46038,7 @@ BOOL func_138() // Position - 0x340DF
 	return false;
 }
 
-BOOL func_139(Ped pedParam0, BOOL bParam1) // Position - 0x3410D
+BOOL func_139(Ped pedParam0, BOOL bParam1) // Position - 0x3410D Hash - 0x84239F5A ^0x5C937669
 {
 	int pedDrawableVariation;
 	int pedTextureVariation;
@@ -46411,12 +46411,12 @@ BOOL func_139(Ped pedParam0, BOOL bParam1) // Position - 0x3410D
 	return 0;
 }
 
-BOOL func_140(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x34947
+BOOL func_140(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x34947 Hash - 0xB4D52F0E ^0xB4D52F0E
 {
 	return func_141(epctParam0, bParam1, 1);
 }
 
-BOOL func_141(ePedComponentType epctParam0, BOOL bParam1, int iParam2) // Position - 0x34958
+BOOL func_141(ePedComponentType epctParam0, BOOL bParam1, int iParam2) // Position - 0x34958 Hash - 0x55931638 ^0x4F47E369
 {
 	ePedComponentType type;
 
@@ -46435,7 +46435,7 @@ BOOL func_141(ePedComponentType epctParam0, BOOL bParam1, int iParam2) // Positi
 	return 0;
 }
 
-BOOL func_142(ePedComponentType epctParam0, int iParam1) // Position - 0x349B4
+BOOL func_142(ePedComponentType epctParam0, int iParam1) // Position - 0x349B4 Hash - 0xEA053375 ^0x162A414
 {
 	if (func_143(epctParam0))
 		if (func_143(Global_1887305[epctParam0 /*610*/].f_10))
@@ -46445,7 +46445,7 @@ BOOL func_142(ePedComponentType epctParam0, int iParam1) // Position - 0x349B4
 	return false;
 }
 
-BOOL func_143(ePedComponentType epctParam0) // Position - 0x34A03
+BOOL func_143(ePedComponentType epctParam0) // Position - 0x34A03 Hash - 0x6A46C9B4 ^0x6A46C9B4
 {
 	Player player;
 
@@ -46460,7 +46460,7 @@ BOOL func_143(ePedComponentType epctParam0) // Position - 0x34A03
 	return true;
 }
 
-eControlAction func_144(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, int iParam3) // Position - 0x34A25
+eControlAction func_144(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, int iParam3) // Position - 0x34A25 Hash - 0x4C455E56 ^0x3BFDE16A
 {
 	Hash componentHash;
 	int shopPedApparelForcedComponentCount;
@@ -46949,7 +46949,7 @@ eControlAction func_144(ePedComponentType epctParam0, int iParam1, ePedComponent
 	return -1;
 }
 
-void func_145(Ped pedParam0, var uParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5) // Position - 0x35245
+void func_145(Ped pedParam0, var uParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5) // Position - 0x35245 Hash - 0x71BC739 ^0xC454AD10
 {
 	eCharacter character;
 	ePedComponentType entityModel;
@@ -47096,7 +47096,7 @@ void func_145(Ped pedParam0, var uParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 	return;
 }
 
-void func_146(int iParam0, BOOL bParam1, int iParam2, BOOL bParam3) // Position - 0x356E3
+void func_146(int iParam0, BOOL bParam1, int iParam2, BOOL bParam3) // Position - 0x356E3 Hash - 0xC00D48A9 ^0x169717F7
 {
 	Hash statName;
 
@@ -47108,7 +47108,7 @@ void func_146(int iParam0, BOOL bParam1, int iParam2, BOOL bParam3) // Position 
 	return;
 }
 
-int func_147(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9, int iParam10, BOOL bParam11, BOOL bParam12, BOOL bParam13) // Position - 0x35706
+int func_147(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9, int iParam10, BOOL bParam11, BOOL bParam12, BOOL bParam13) // Position - 0x35706 Hash - 0x136C27B2 ^0xB138BC42
 {
 	int i;
 	int j;
@@ -48213,7 +48213,7 @@ int func_147(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iPara
 	return 1;
 }
 
-BOOL func_148(Ped pedParam0, var uParam1) // Position - 0x37751
+BOOL func_148(Ped pedParam0, var uParam1) // Position - 0x37751 Hash - 0xE6372349 ^0xD39D4039
 {
 	ePedComponentType type;
 	ePedComponentType type2;
@@ -48251,12 +48251,12 @@ BOOL func_148(Ped pedParam0, var uParam1) // Position - 0x37751
 	return false;
 }
 
-int func_149() // Position - 0x3785A
+int func_149() // Position - 0x3785A Hash - 0x47FF56D2 ^0x47FF56D2
 {
 	return Global_1575010;
 }
 
-BOOL func_150() // Position - 0x37866
+BOOL func_150() // Position - 0x37866 Hash - 0x65EF086C ^0x65EF086C
 {
 	if (func_152() && func_151(0))
 		return true;
@@ -48264,17 +48264,17 @@ BOOL func_150() // Position - 0x37866
 	return false;
 }
 
-BOOL func_151(int iParam0) // Position - 0x37884
+BOOL func_151(int iParam0) // Position - 0x37884 Hash - 0xD64AD64C ^0xD64AD64C
 {
 	return Global_1574538[iParam0];
 }
 
-BOOL func_152() // Position - 0x37894
+BOOL func_152() // Position - 0x37894 Hash - 0x129F0515 ^0x129F0515
 {
 	return func_151(func_56() + 1);
 }
 
-BOOL func_153(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x378A6
+BOOL func_153(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x378A6 Hash - 0x36A8B5D0 ^0xE51B198C
 {
 	Hash componentHash;
 
@@ -48316,7 +48316,7 @@ BOOL func_153(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedCo
 	return false;
 }
 
-BOOL func_154(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x37BBD
+BOOL func_154(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x37BBD Hash - 0xE30EAAA3 ^0x8C7DAD9E
 {
 	Hash componentHash;
 	int num;
@@ -48383,7 +48383,7 @@ BOOL func_154(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedCo
 	return false;
 }
 
-BOOL func_155(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x38209
+BOOL func_155(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x38209 Hash - 0xD789BD1F ^0xFD1B767A
 {
 	switch (epctParam0)
 	{
@@ -48401,7 +48401,7 @@ BOOL func_155(ePedComponentType epctParam0, ePedComponentType epctParam1) // Pos
 	return false;
 }
 
-BOOL func_156(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x38275
+BOOL func_156(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x38275 Hash - 0xAE13965E ^0x17C878A8
 {
 	switch (epctParam0)
 	{
@@ -48425,7 +48425,7 @@ BOOL func_156(ePedComponentType epctParam0, int iParam1, ePedComponentType epctP
 	return false;
 }
 
-void func_157(Player plParam0, ePedComponentType epctParam1) // Position - 0x382CB
+void func_157(Player plParam0, ePedComponentType epctParam1) // Position - 0x382CB Hash - 0x9EFBE71B ^0xEC61AB01
 {
 	Hash model;
 
@@ -48439,7 +48439,7 @@ void func_157(Player plParam0, ePedComponentType epctParam1) // Position - 0x382
 	return;
 }
 
-Hash func_158(ePedComponentType epctParam0) // Position - 0x382F6
+Hash func_158(ePedComponentType epctParam0) // Position - 0x382F6 Hash - 0xF46F9F09 ^0xDC9DB5FF
 {
 	if (epctParam0 > 66)
 		return joaat("reh_p_para_bag_reh_s_01a");
@@ -48459,12 +48459,12 @@ Hash func_158(ePedComponentType epctParam0) // Position - 0x382F6
 	return joaat("p_parachute_s");
 }
 
-int func_159(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x3837D
+int func_159(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x3837D Hash - 0x7D48C204 ^0x7D48C204
 {
 	return 0;
 }
 
-int func_160(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x38386
+int func_160(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x38386 Hash - 0x357A8FD ^0x357A8FD
 {
 	switch (epctParam1)
 	{
@@ -48676,7 +48676,7 @@ int func_160(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x38386
 	return 0;
 }
 
-int func_161(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x38729
+int func_161(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x38729 Hash - 0x4B2B44B7 ^0x9085C8D7
 {
 	int pedDrawableVariation;
 	int pedDrawableVariation2;
@@ -48710,7 +48710,7 @@ int func_161(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x38729
 	return Global_79369;
 }
 
-int func_162(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x38839
+int func_162(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x38839 Hash - 0x67D552A0 ^0x887E7094
 {
 	int pedDrawableVariation;
 	BOOL flag;
@@ -50123,7 +50123,7 @@ int func_162(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x38839
 	return func_166(pedParam0, epctParam1, 0);
 }
 
-int func_163(Hash hParam0, int iParam1) // Position - 0x3AFDB
+int func_163(Hash hParam0, int iParam1) // Position - 0x3AFDB Hash - 0x55D5BD09 ^0x13F91E21
 {
 	int num;
 
@@ -50169,7 +50169,7 @@ int func_163(Hash hParam0, int iParam1) // Position - 0x3AFDB
 	return num;
 }
 
-int func_164(Hash hParam0, int iParam1) // Position - 0x3B17B
+int func_164(Hash hParam0, int iParam1) // Position - 0x3B17B Hash - 0x55D5BD09 ^0xCEAE7E3F
 {
 	int num;
 
@@ -50207,7 +50207,7 @@ int func_164(Hash hParam0, int iParam1) // Position - 0x3B17B
 	return num;
 }
 
-BOOL func_165(Ped pedParam0) // Position - 0x3B2BF
+BOOL func_165(Ped pedParam0) // Position - 0x3B2BF Hash - 0x20699009 ^0x6410383D
 {
 	if (FILES::DOES_CURRENT_PED_COMPONENT_HAVE_RESTRICTION_TAG(pedParam0, 4, joaat("DUNGAREES")))
 		return true;
@@ -50215,7 +50215,7 @@ BOOL func_165(Ped pedParam0) // Position - 0x3B2BF
 	return false;
 }
 
-int func_166(Ped pedParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x3B2DB
+int func_166(Ped pedParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x3B2DB Hash - 0x4AC58D8D ^0x4AC58D8D
 {
 	switch (epctParam1)
 	{
@@ -50587,7 +50587,7 @@ int func_166(Ped pedParam0, ePedComponentType epctParam1, int iParam2) // Positi
 	return 0;
 }
 
-ePedComponentType func_167(Ped pedParam0, ePedComponentType epctParam1, int iParam2, ePedComponentType epctParam3) // Position - 0x3B99C
+ePedComponentType func_167(Ped pedParam0, ePedComponentType epctParam1, int iParam2, ePedComponentType epctParam3) // Position - 0x3B99C Hash - 0xEB8ED9AA ^0xDC2689EF
 {
 	Hash componentHash;
 	int shopPedApparelVariantComponentCount;
@@ -50733,7 +50733,7 @@ ePedComponentType func_167(Ped pedParam0, ePedComponentType epctParam1, int iPar
 	return -99;
 }
 
-BOOL func_168(Ped pedParam0) // Position - 0x3BDBB
+BOOL func_168(Ped pedParam0) // Position - 0x3BDBB Hash - 0xCF9439F9 ^0x976BE6CE
 {
 	if (FILES::DOES_CURRENT_PED_COMPONENT_HAVE_RESTRICTION_TAG(pedParam0, 8, joaat("X17_DRAW_6")))
 		return true;
@@ -50741,7 +50741,7 @@ BOOL func_168(Ped pedParam0) // Position - 0x3BDBB
 	return false;
 }
 
-BOOL func_169(Ped pedParam0) // Position - 0x3BDD8
+BOOL func_169(Ped pedParam0) // Position - 0x3BDD8 Hash - 0x5F8BF53A ^0x63B9CE82
 {
 	if (!PED::IS_PED_INJURED(pedParam0))
 		if (PED::GET_PED_DRAWABLE_VARIATION(pedParam0, PV_COMP_TASK) != 0 && !FILES::DOES_CURRENT_PED_COMPONENT_HAVE_RESTRICTION_TAG(pedParam0, 9, joaat("GOLF_GLOVE")))
@@ -50750,7 +50750,7 @@ BOOL func_169(Ped pedParam0) // Position - 0x3BDD8
 	return false;
 }
 
-void func_170(Ped pedParam0, int iParam1) // Position - 0x3BE0F
+void func_170(Ped pedParam0, int iParam1) // Position - 0x3BE0F Hash - 0x2FEB5A18 ^0xC1E75F4
 {
 	ePedComponentType headBlendData;
 	ePedComponentType shapeFirstID;
@@ -50794,7 +50794,7 @@ void func_170(Ped pedParam0, int iParam1) // Position - 0x3BE0F
 	return;
 }
 
-void func_171(Ped pedParam0, int iParam1, BOOL bParam2) // Position - 0x3BF52
+void func_171(Ped pedParam0, int iParam1, BOOL bParam2) // Position - 0x3BF52 Hash - 0xC5607A85 ^0xC5607A85
 {
 	int i;
 	int num;
@@ -50872,7 +50872,7 @@ void func_171(Ped pedParam0, int iParam1, BOOL bParam2) // Position - 0x3BF52
 	return;
 }
 
-void func_172(var uParam0, int iParam1, BOOL bParam2) // Position - 0x3C083
+void func_172(var uParam0, int iParam1, BOOL bParam2) // Position - 0x3C083 Hash - 0xEDEC7DFC ^0x58813FCC
 {
 	float value;
 
@@ -50889,7 +50889,7 @@ void func_172(var uParam0, int iParam1, BOOL bParam2) // Position - 0x3C083
 	return;
 }
 
-void func_173(ePedComponentType epctParam0, var uParam1, var uParam2) // Position - 0x3C0C2
+void func_173(ePedComponentType epctParam0, var uParam1, var uParam2) // Position - 0x3C0C2 Hash - 0xEEEA5331 ^0x7E42A9BF
 {
 	int num;
 
@@ -50899,7 +50899,7 @@ void func_173(ePedComponentType epctParam0, var uParam1, var uParam2) // Positio
 	return;
 }
 
-ePedComponentType func_174(int iParam0, int iParam1) // Position - 0x3C0E3
+ePedComponentType func_174(int iParam0, int iParam1) // Position - 0x3C0E3 Hash - 0x52AC6875 ^0x7C38A59B
 {
 	Hash hash;
 	int num;
@@ -50912,7 +50912,7 @@ ePedComponentType func_174(int iParam0, int iParam1) // Position - 0x3C0E3
 	return 0;
 }
 
-int func_175(int iParam0) // Position - 0x3C106
+int func_175(int iParam0) // Position - 0x3C106 Hash - 0x71B371FF ^0x3A182A89
 {
 	switch (iParam0)
 	{
@@ -50938,7 +50938,7 @@ int func_175(int iParam0) // Position - 0x3C106
 	return -1;
 }
 
-int func_176(int iParam0) // Position - 0x3C152
+int func_176(int iParam0) // Position - 0x3C152 Hash - 0x71B371FF ^0x3FED69D8
 {
 	switch (iParam0)
 	{
@@ -50964,7 +50964,7 @@ int func_176(int iParam0) // Position - 0x3C152
 	return -1;
 }
 
-int func_177(int iParam0, int iParam1) // Position - 0x3C19E
+int func_177(int iParam0, int iParam1) // Position - 0x3C19E Hash - 0xCECFC9D1 ^0x724CD8B3
 {
 	int outValue;
 	Hash packedIntStatKey;
@@ -51131,7 +51131,7 @@ int func_177(int iParam0, int iParam1) // Position - 0x3C19E
 	return outValue;
 }
 
-int _STAT_GET_PACKED_INT(int iParam0, int iParam1) // Position - 0x3C942
+int _STAT_GET_PACKED_INT(int iParam0, int iParam1) // Position - 0x3C942 Hash - 0x6099A833 ^0x79D555BB
 {
 	if (iParam1 == -1)
 		iParam1 = func_56();
@@ -51139,7 +51139,7 @@ int _STAT_GET_PACKED_INT(int iParam0, int iParam1) // Position - 0x3C942
 	return STATS::GET_PACKED_STAT_INT_CODE(iParam0, iParam1);
 }
 
-int func_179(int iParam0) // Position - 0x3C95E
+int func_179(int iParam0) // Position - 0x3C95E Hash - 0xE447B2C5 ^0xE447B2C5
 {
 	switch (iParam0)
 	{
@@ -51189,7 +51189,7 @@ int func_179(int iParam0) // Position - 0x3C95E
 	return -1;
 }
 
-int func_180(int iParam0) // Position - 0x3C9FD
+int func_180(int iParam0) // Position - 0x3C9FD Hash - 0x1B961576 ^0x47BC2DE1
 {
 	switch (iParam0)
 	{
@@ -51239,7 +51239,7 @@ int func_180(int iParam0) // Position - 0x3C9FD
 	return -1;
 }
 
-int func_181(int iParam0) // Position - 0x3CAA9
+int func_181(int iParam0) // Position - 0x3CAA9 Hash - 0xE47A2AFD ^0xE47A2AFD
 {
 	switch (iParam0)
 	{
@@ -51289,7 +51289,7 @@ int func_181(int iParam0) // Position - 0x3CAA9
 	return -1;
 }
 
-float func_182(int iParam0, int iParam1) // Position - 0x3CB40
+float func_182(int iParam0, int iParam1) // Position - 0x3CB40 Hash - 0x9B5D118A ^0xA4AF1B39
 {
 	Hash statHash;
 	float outValue;
@@ -51302,12 +51302,12 @@ float func_182(int iParam0, int iParam1) // Position - 0x3CB40
 	return 0f;
 }
 
-Hash func_183(int iParam0, int iParam1) // Position - 0x3CB63
+Hash func_183(int iParam0, int iParam1) // Position - 0x3CB63 Hash - 0x2DB666AE ^0xA0BA86C4
 {
 	return STATS::_GET_STAT_HASH_FOR_CHARACTER_STAT(1, iParam0, func_25(iParam1));
 }
 
-int func_184(int iParam0) // Position - 0x3CB78
+int func_184(int iParam0) // Position - 0x3CB78 Hash - 0xDFDF8CF7 ^0xDFDF8CF7
 {
 	switch (iParam0)
 	{
@@ -51378,7 +51378,7 @@ int func_184(int iParam0) // Position - 0x3CB78
 	return -1;
 }
 
-BOOL func_185() // Position - 0x3CC64
+BOOL func_185() // Position - 0x3CC64 Hash - 0x222EA1C0 ^0x97F5147B
 {
 	if (SCRIPT::IS_THREAD_ACTIVE(Global_2640096.f_62) && !(Global_2640096.f_61 == 0))
 		return true;
@@ -51386,7 +51386,7 @@ BOOL func_185() // Position - 0x3CC64
 	return false;
 }
 
-float func_186(int iParam0, int iParam1) // Position - 0x3CC8C
+float func_186(int iParam0, int iParam1) // Position - 0x3CC8C Hash - 0xF2F05532 ^0xFBCBE74A
 {
 	Hash statHash;
 	float outValue;
@@ -51399,7 +51399,7 @@ float func_186(int iParam0, int iParam1) // Position - 0x3CC8C
 	return 0f;
 }
 
-BOOL func_187(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2, ePedComponentType epctParam3, ePedComponentType epctParam4, int iParam5, Ped pedParam6, int iParam7, ePedComponentType epctParam8, ePedComponentType epctParam9, ePedComponentType epctParam10, ePedComponentType epctParam11) // Position - 0x3CCB0
+BOOL func_187(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2, ePedComponentType epctParam3, ePedComponentType epctParam4, int iParam5, Ped pedParam6, int iParam7, ePedComponentType epctParam8, ePedComponentType epctParam9, ePedComponentType epctParam10, ePedComponentType epctParam11) // Position - 0x3CCB0 Hash - 0x768C86B4 ^0xB1259F13
 {
 	ePedComponentType type;
 	int num;
@@ -52632,7 +52632,7 @@ BOOL func_187(ePedComponentType epctParam0, ePedComponentType epctParam1, int iP
 	return true;
 }
 
-BOOL func_188(Hash hParam0) // Position - 0x41E1A
+BOOL func_188(Hash hParam0) // Position - 0x41E1A Hash - 0xAD81D87E ^0xAD81D87E
 {
 	if (hParam0 != -1)
 		return false;
@@ -52677,7 +52677,7 @@ BOOL func_188(Hash hParam0) // Position - 0x41E1A
 	return false;
 }
 
-BOOL func_189(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x41EFB
+BOOL func_189(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x41EFB Hash - 0x48F4D2F ^0x5E48C726
 {
 	Hash componentHash;
 	Hash componentHash2;
@@ -52712,7 +52712,7 @@ BOOL func_189(ePedComponentType epctParam0, ePedComponentType epctParam1) // Pos
 	return false;
 }
 
-BOOL func_190(ePedComponentType epctParam0, ePedComponentType epctParam1, Hash hParam2) // Position - 0x42429
+BOOL func_190(ePedComponentType epctParam0, ePedComponentType epctParam1, Hash hParam2) // Position - 0x42429 Hash - 0x2216C53A ^0x2216C53A
 {
 	switch (epctParam0)
 	{
@@ -52742,7 +52742,7 @@ BOOL func_190(ePedComponentType epctParam0, ePedComponentType epctParam1, Hash h
 	return false;
 }
 
-void func_191(Ped pedParam0, ePedComponentType epctParam1, int iParam2, BOOL bParam3) // Position - 0x4252F
+void func_191(Ped pedParam0, ePedComponentType epctParam1, int iParam2, BOOL bParam3) // Position - 0x4252F Hash - 0x64334466 ^0x978B818
 {
 	ePedComponentType entityModel;
 	eControlAction action;
@@ -52763,7 +52763,7 @@ void func_191(Ped pedParam0, ePedComponentType epctParam1, int iParam2, BOOL bPa
 	return;
 }
 
-eControlAction func_192(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x4257D
+eControlAction func_192(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x4257D Hash - 0xA41FC449 ^0xEFF1C52E
 {
 	Hash componentHash;
 	int shopPedApparelForcedComponentCount;
@@ -53670,7 +53670,7 @@ eControlAction func_192(ePedComponentType epctParam0, ePedComponentType epctPara
 	return -1;
 }
 
-void func_193(Hash hParam0, Ped pedParam1) // Position - 0x43396
+void func_193(Hash hParam0, Ped pedParam1) // Position - 0x43396 Hash - 0x2EE89315 ^0xB2354C4C
 {
 	var unk;
 	int num;
@@ -53867,7 +53867,7 @@ void func_193(Hash hParam0, Ped pedParam1) // Position - 0x43396
 	return;
 }
 
-int func_194(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x43993
+int func_194(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x43993 Hash - 0xAB28C459 ^0xAB28C459
 {
 	eControlAction action;
 
@@ -53885,7 +53885,7 @@ int func_194(ePedComponentType epctParam0, ePedComponentType epctParam1) // Posi
 	return 0;
 }
 
-BOOL func_195(ePedComponentType epctParam0, ePedComponentType epctParam1, eControlAction ecaParam2) // Position - 0x439C5
+BOOL func_195(ePedComponentType epctParam0, ePedComponentType epctParam1, eControlAction ecaParam2) // Position - 0x439C5 Hash - 0x89F23392 ^0x4806612B
 {
 	int num;
 	Hash componentHash;
@@ -53987,7 +53987,7 @@ BOOL func_195(ePedComponentType epctParam0, ePedComponentType epctParam1, eContr
 	return false;
 }
 
-int func_196(Hash hParam0, int iParam1) // Position - 0x43D37
+int func_196(Hash hParam0, int iParam1) // Position - 0x43D37 Hash - 0x55D5BD09 ^0x978DEB0B
 {
 	int num;
 
@@ -54025,7 +54025,7 @@ int func_196(Hash hParam0, int iParam1) // Position - 0x43D37
 	return num;
 }
 
-BOOL func_197(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x43E7B
+BOOL func_197(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x43E7B Hash - 0xBF4CD140 ^0x9223FB59
 {
 	Hash componentHash;
 	int num;
@@ -54373,7 +54373,7 @@ BOOL func_197(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedCo
 	return true;
 }
 
-int func_198(Hash hParam0) // Position - 0x44D7C
+int func_198(Hash hParam0) // Position - 0x44D7C Hash - 0xD5A4D78F ^0xDA338286
 {
 	int num;
 
@@ -54418,7 +54418,7 @@ int func_198(Hash hParam0) // Position - 0x44D7C
 	return num;
 }
 
-ePedComponentType func_199(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x44EE9
+ePedComponentType func_199(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x44EE9 Hash - 0xA53D18C5 ^0xAFF84AE1
 {
 	ePedComponentType type;
 	Hash componentHash;
@@ -54633,7 +54633,7 @@ ePedComponentType func_199(ePedComponentType epctParam0, ePedComponentType epctP
 	return type;
 }
 
-ePedComponentType func_200(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x451E0
+ePedComponentType func_200(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x451E0 Hash - 0xB0883BDF ^0x3ED77294
 {
 	ePedComponentType type;
 
@@ -54883,7 +54883,7 @@ ePedComponentType func_200(ePedComponentType epctParam0, int iParam1, ePedCompon
 	return -99;
 }
 
-ePedComponentType func_201(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x455FA
+ePedComponentType func_201(Ped pedParam0, ePedComponentType epctParam1) // Position - 0x455FA Hash - 0x7596C5AB ^0x2B4D48D8
 {
 	ePedComponentType type;
 	ePedComponentType type2;
@@ -54921,7 +54921,7 @@ ePedComponentType func_201(Ped pedParam0, ePedComponentType epctParam1) // Posit
 	return -99;
 }
 
-BOOL func_202(ePedComponentType epctParam0, ePedComponentType epctParam1, Hash hParam2) // Position - 0x456CC
+BOOL func_202(ePedComponentType epctParam0, ePedComponentType epctParam1, Hash hParam2) // Position - 0x456CC Hash - 0x85995909 ^0x85995909
 {
 	switch (epctParam0)
 	{
@@ -54951,7 +54951,7 @@ BOOL func_202(ePedComponentType epctParam0, ePedComponentType epctParam1, Hash h
 	return false;
 }
 
-ePedComponentType func_203(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, ePedComponentType epctParam3) // Position - 0x45825
+ePedComponentType func_203(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, ePedComponentType epctParam3) // Position - 0x45825 Hash - 0x8B2C3111 ^0xBDE899C7
 {
 	ePedComponentType type;
 	BOOL flag;
@@ -55918,12 +55918,12 @@ ePedComponentType func_203(ePedComponentType epctParam0, ePedComponentType epctP
 	return type;
 }
 
-BOOL func_204() // Position - 0x47D6C
+BOOL func_204() // Position - 0x47D6C Hash - 0x11DC3931 ^0xCE2E5F3C
 {
 	return DLC::IS_DLC_PRESENT(42019760);
 }
 
-ePedComponentType func_205(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x47D7D
+ePedComponentType func_205(ePedComponentType epctParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x47D7D Hash - 0x540A9E9B ^0xD4D01127
 {
 	switch (epctParam0)
 	{
@@ -57743,7 +57743,7 @@ ePedComponentType func_205(ePedComponentType epctParam0, ePedComponentType epctP
 	return -1;
 }
 
-ePedComponentType func_206(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, ePedComponentType epctParam3) // Position - 0x49E32
+ePedComponentType func_206(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, ePedComponentType epctParam3) // Position - 0x49E32 Hash - 0xA8E662CE ^0xCD1134AC
 {
 	ePedComponentType type;
 	int num;
@@ -58147,7 +58147,7 @@ ePedComponentType func_206(ePedComponentType epctParam0, ePedComponentType epctP
 	return type;
 }
 
-void func_207(Ped pedParam0) // Position - 0x4B22F
+void func_207(Ped pedParam0) // Position - 0x4B22F Hash - 0x82AE30DE ^0xBA6EAB51
 {
 	Hash entityModel;
 	int pedDrawableVariation;
@@ -58426,7 +58426,7 @@ void func_207(Ped pedParam0) // Position - 0x4B22F
 	return;
 }
 
-BOOL func_208(Ped pedParam0, Hash hParam1) // Position - 0x4BA45
+BOOL func_208(Ped pedParam0, Hash hParam1) // Position - 0x4BA45 Hash - 0xF06E4CE6 ^0xEAC22F63
 {
 	if (hParam1 == -1)
 		hParam1 = FILES::GET_HASH_NAME_FOR_COMPONENT(pedParam0, 11, PED::GET_PED_DRAWABLE_VARIATION(pedParam0, PV_COMP_JBIB), PED::GET_PED_TEXTURE_VARIATION(pedParam0, PV_COMP_JBIB));
@@ -58441,7 +58441,7 @@ BOOL func_208(Ped pedParam0, Hash hParam1) // Position - 0x4BA45
 	return false;
 }
 
-BOOL func_209(Hash hParam0, int iParam1, Hash* phParam2, Hash hParam3) // Position - 0x4BAB3
+BOOL func_209(Hash hParam0, int iParam1, Hash* phParam2, Hash hParam3) // Position - 0x4BAB3 Hash - 0x100201C1 ^0x688081EE
 {
 	int shopPedApparelVariantComponentCount;
 	int i;
@@ -58463,7 +58463,7 @@ BOOL func_209(Hash hParam0, int iParam1, Hash* phParam2, Hash hParam3) // Positi
 	return false;
 }
 
-BOOL func_210(Hash hParam0, int iParam1, Hash hParam2) // Position - 0x4BB1E
+BOOL func_210(Hash hParam0, int iParam1, Hash hParam2) // Position - 0x4BB1E Hash - 0x925ED3E3 ^0x79F6FAD8
 {
 	int shopPedApparelForcedComponentCount;
 	int i;
@@ -58487,7 +58487,7 @@ BOOL func_210(Hash hParam0, int iParam1, Hash hParam2) // Position - 0x4BB1E
 	return false;
 }
 
-BOOL func_211(Hash hParam0, BOOL bParam1, BOOL bParam2, Hash* phParam3) // Position - 0x4BB76
+BOOL func_211(Hash hParam0, BOOL bParam1, BOOL bParam2, Hash* phParam3) // Position - 0x4BB76 Hash - 0xADF69D02 ^0x7362A860
 {
 	int shopPedApparelVariantComponentCount;
 	int i;
@@ -58508,7 +58508,7 @@ BOOL func_211(Hash hParam0, BOOL bParam1, BOOL bParam2, Hash* phParam3) // Posit
 	return false;
 }
 
-BOOL func_212(Ped pedParam0, var uParam1, Hash hParam2, Hash hParam3, Hash hParam4) // Position - 0x4BBFA
+BOOL func_212(Ped pedParam0, var uParam1, Hash hParam2, Hash hParam3, Hash hParam4) // Position - 0x4BBFA Hash - 0x858AAE80 ^0xBE6C506A
 {
 	ePedComponentType entityModel;
 
@@ -58801,7 +58801,7 @@ BOOL func_212(Ped pedParam0, var uParam1, Hash hParam2, Hash hParam3, Hash hPara
 	return true;
 }
 
-BOOL func_213(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x4C3D0
+BOOL func_213(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, Hash hParam3) // Position - 0x4C3D0 Hash - 0xC42704DB ^0xC42704DB
 {
 	switch (epctParam0)
 	{
@@ -58835,7 +58835,7 @@ BOOL func_213(ePedComponentType epctParam0, int iParam1, ePedComponentType epctP
 	return false;
 }
 
-ePedComponentType func_214(Ped pedParam0, ePedComponentType epctParam1, int iParam2, ePedComponentType epctParam3, int iParam4, int iParam5) // Position - 0x4C49E
+ePedComponentType func_214(Ped pedParam0, ePedComponentType epctParam1, int iParam2, ePedComponentType epctParam3, int iParam4, int iParam5) // Position - 0x4C49E Hash - 0x36612C14 ^0xF1CC8BD4
 {
 	ePedComponentType type;
 	int num;
@@ -60583,7 +60583,7 @@ ePedComponentType func_214(Ped pedParam0, ePedComponentType epctParam1, int iPar
 	return type;
 }
 
-int func_215(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, ePedComponentType epctParam3, var uParam4) // Position - 0x4E4C0
+int func_215(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, ePedComponentType epctParam3, var uParam4) // Position - 0x4E4C0 Hash - 0xCB6D2742 ^0x6FAC2E16
 {
 	ePedComponentType type;
 	Hash componentHash;
@@ -60721,7 +60721,7 @@ int func_215(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epct
 	return 0;
 }
 
-void func_216(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam3, int iParam4) // Position - 0x4E789
+void func_216(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam3, int iParam4) // Position - 0x4E789 Hash - 0x4147217F ^0xAFD58706
 {
 	ePedComponentType entityModel;
 	ePedComponentType type;
@@ -60771,7 +60771,7 @@ void func_216(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iPar
 	return;
 }
 
-void func_217(Ped pedParam0, eControlAction ecaParam1, BOOL bParam2) // Position - 0x4E8B9
+void func_217(Ped pedParam0, eControlAction ecaParam1, BOOL bParam2) // Position - 0x4E8B9 Hash - 0x49445BD1 ^0xD00DCE95
 {
 	int num;
 	var unk;
@@ -60796,7 +60796,7 @@ void func_217(Ped pedParam0, eControlAction ecaParam1, BOOL bParam2) // Position
 	return;
 }
 
-void func_218(eControlAction ecaParam0, BOOL bParam1, int iParam2) // Position - 0x4E918
+void func_218(eControlAction ecaParam0, BOOL bParam1, int iParam2) // Position - 0x4E918 Hash - 0xDB3BA43 ^0xDB3BA43
 {
 	if (bParam1)
 	{
@@ -60819,7 +60819,7 @@ void func_218(eControlAction ecaParam0, BOOL bParam1, int iParam2) // Position -
 	return;
 }
 
-void func_219(eControlAction ecaParam0, BOOL bParam1, int iParam2) // Position - 0x4E987
+void func_219(eControlAction ecaParam0, BOOL bParam1, int iParam2) // Position - 0x4E987 Hash - 0x7F3DF4D ^0xCED13C08
 {
 	int address;
 	int num;
@@ -60847,13 +60847,13 @@ void func_219(eControlAction ecaParam0, BOOL bParam1, int iParam2) // Position -
 	return;
 }
 
-BOOL func_220(BOOL bParam0) // Position - 0x4E9ED
+BOOL func_220(BOOL bParam0) // Position - 0x4E9ED Hash - 0x1CCCE169 ^0x1CCCE169
 {
 	bParam0;
 	return Global_1575055;
 }
 
-eControlAction func_221() // Position - 0x4E9FE
+eControlAction func_221() // Position - 0x4E9FE Hash - 0x8F93A965 ^0x8F93A965
 {
 	int num;
 
@@ -60880,7 +60880,7 @@ eControlAction func_221() // Position - 0x4E9FE
 	return -1;
 }
 
-void func_222(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, ePedComponentType epctParam3) // Position - 0x4EA6D
+void func_222(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, ePedComponentType epctParam3) // Position - 0x4EA6D Hash - 0x64D2154E ^0x9C1670D6
 {
 	ePedComponentType type;
 
@@ -60918,7 +60918,7 @@ void func_222(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epc
 	return;
 }
 
-void func_223(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, BOOL bParam3) // Position - 0x4EB07
+void func_223(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, BOOL bParam3) // Position - 0x4EB07 Hash - 0xDBE442E4 ^0xA871928
 {
 	int shopPedApparelVariantComponentCount;
 	int i;
@@ -61409,7 +61409,7 @@ void func_223(ePedComponentType epctParam0, int iParam1, ePedComponentType epctP
 	return;
 }
 
-ePedComponentType func_224(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x4FB26
+ePedComponentType func_224(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x4FB26 Hash - 0xC6789D5D ^0x847125D1
 {
 	ePedComponentType type;
 	Hash componentHash;
@@ -61616,7 +61616,7 @@ ePedComponentType func_224(ePedComponentType epctParam0, ePedComponentType epctP
 	return type;
 }
 
-void func_225(ePedComponentType epctParam0, int iParam1, BOOL bParam2, BOOL bParam3, int iParam4) // Position - 0x4FE1B
+void func_225(ePedComponentType epctParam0, int iParam1, BOOL bParam2, BOOL bParam3, int iParam4) // Position - 0x4FE1B Hash - 0x302FBF28 ^0x92BCD54A
 {
 	int num;
 	int offset;
@@ -61638,7 +61638,7 @@ void func_225(ePedComponentType epctParam0, int iParam1, BOOL bParam2, BOOL bPar
 	return;
 }
 
-BOOL func_226(int iParam0) // Position - 0x4FE63
+BOOL func_226(int iParam0) // Position - 0x4FE63 Hash - 0x972D67C7 ^0x6B327493
 {
 	if (!IS_BIT_SET(Global_79172[1 /*14*/].f_6, 0))
 		return false;
@@ -61655,7 +61655,7 @@ BOOL func_226(int iParam0) // Position - 0x4FE63
 	return true;
 }
 
-ePedComponentType func_227(ePedComponentType epctParam0) // Position - 0x4FEAB
+ePedComponentType func_227(ePedComponentType epctParam0) // Position - 0x4FEAB Hash - 0x1C0A101E ^0x1C0A101E
 {
 	if (Global_104083)
 		return func_228(epctParam0);
@@ -61780,7 +61780,7 @@ ePedComponentType func_227(ePedComponentType epctParam0) // Position - 0x4FEAB
 	return epctParam0;
 }
 
-int func_228(ePedComponentType epctParam0) // Position - 0x500E0
+int func_228(ePedComponentType epctParam0) // Position - 0x500E0 Hash - 0xBECEE4FF ^0x196FA165
 {
 	if (epctParam0 == PV_COMP_HEAD)
 		return PV_COMP_HEAD;
@@ -61862,7 +61862,7 @@ int func_228(ePedComponentType epctParam0) // Position - 0x500E0
 	return epctParam0;
 }
 
-ePedComponentType func_229(ePedComponentType epctParam0) // Position - 0x50657
+ePedComponentType func_229(ePedComponentType epctParam0) // Position - 0x50657 Hash - 0x2AD77675 ^0x2AD77675
 {
 	if (Global_104083)
 		return func_230(epctParam0);
@@ -61984,7 +61984,7 @@ ePedComponentType func_229(ePedComponentType epctParam0) // Position - 0x50657
 	return epctParam0;
 }
 
-int func_230(int iParam0) // Position - 0x5087D
+int func_230(int iParam0) // Position - 0x5087D Hash - 0xCBD8532D ^0xA65EEEAE
 {
 	if (iParam0 == PV_COMP_HEAD)
 		return 0;
@@ -62062,7 +62062,7 @@ int func_230(int iParam0) // Position - 0x5087D
 	return iParam0;
 }
 
-void func_231(int iParam0, ePedComponentType epctParam1, int iParam2, BOOL bParam3) // Position - 0x50D9E
+void func_231(int iParam0, ePedComponentType epctParam1, int iParam2, BOOL bParam3) // Position - 0x50D9E Hash - 0x99A9B13C ^0x970C9246
 {
 	Hash statName;
 
@@ -62077,7 +62077,7 @@ void func_231(int iParam0, ePedComponentType epctParam1, int iParam2, BOOL bPara
 	return;
 }
 
-BOOL func_232(Ped pedParam0) // Position - 0x50DCC
+BOOL func_232(Ped pedParam0) // Position - 0x50DCC Hash - 0x73B1D6E5 ^0x7BE0800D
 {
 	int pedDrawableVariation;
 	ePedComponentType type;
@@ -62164,17 +62164,17 @@ BOOL func_232(Ped pedParam0) // Position - 0x50DCC
 	return 0;
 }
 
-BOOL func_233(Player plParam0) // Position - 0x5116C
+BOOL func_233(Player plParam0) // Position - 0x5116C Hash - 0x45D1E788 ^0x45D1E788
 {
 	return func_234(plParam0, 10);
 }
 
-BOOL func_234(Player plParam0, int iParam1) // Position - 0x5117C
+BOOL func_234(Player plParam0, int iParam1) // Position - 0x5117C Hash - 0x7CD5054C ^0x870BEA81
 {
 	return IS_BIT_SET(Global_1887305[plParam0 /*610*/].f_10.f_4, iParam1);
 }
 
-BOOL func_235(Ped pedParam0, ePedComponentType epctParam1, var uParam2) // Position - 0x51194
+BOOL func_235(Ped pedParam0, ePedComponentType epctParam1, var uParam2) // Position - 0x51194 Hash - 0xA81FB6AC ^0x11DBFE4A
 {
 	int num;
 
@@ -62197,7 +62197,7 @@ BOOL func_235(Ped pedParam0, ePedComponentType epctParam1, var uParam2) // Posit
 	return false;
 }
 
-BOOL func_236(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x51235
+BOOL func_236(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x51235 Hash - 0x1B00EC8E ^0x386C7313
 {
 	ePedComponentType entityModel;
 	ePedComponentType type;
@@ -62287,7 +62287,7 @@ BOOL func_236(Ped pedParam0, ePedComponentType epctParam1, ePedComponentType epc
 	return false;
 }
 
-struct<14> func_237(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, int iParam3) // Position - 0x5148E
+struct<14> func_237(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, int iParam3) // Position - 0x5148E Hash - 0x7D5AC326 ^0xB460D68E
 {
 	func_130();
 
@@ -62301,7 +62301,7 @@ struct<14> func_237(ePedComponentType epctParam0, int iParam1, ePedComponentType
 	return Global_79172[0 /*14*/];
 }
 
-void func_238(int iParam0, ePedComponentType epctParam1) // Position - 0x514E0
+void func_238(int iParam0, ePedComponentType epctParam1) // Position - 0x514E0 Hash - 0x2A09B983 ^0x2A09B983
 {
 	switch (iParam0)
 	{
@@ -62369,7 +62369,7 @@ void func_238(int iParam0, ePedComponentType epctParam1) // Position - 0x514E0
 	return;
 }
 
-void func_239(ePedComponentType epctParam0) // Position - 0x515D0
+void func_239(ePedComponentType epctParam0) // Position - 0x515D0 Hash - 0x3D2B806B ^0xFC4CDACC
 {
 	BOOL flag;
 	int num;
@@ -63589,7 +63589,7 @@ void func_239(ePedComponentType epctParam0) // Position - 0x515D0
 	return;
 }
 
-void func_240(ePedComponentType epctParam0) // Position - 0x52847
+void func_240(ePedComponentType epctParam0) // Position - 0x52847 Hash - 0xE86AB6A5 ^0x8E1B9869
 {
 	BOOL flag;
 	int num;
@@ -63686,7 +63686,7 @@ void func_240(ePedComponentType epctParam0) // Position - 0x52847
 	return;
 }
 
-void func_241(ePedComponentType epctParam0) // Position - 0x5299E
+void func_241(ePedComponentType epctParam0) // Position - 0x5299E Hash - 0x7D56211F ^0x7EF4B5E5
 {
 	BOOL flag;
 	int num;
@@ -64027,7 +64027,7 @@ void func_241(ePedComponentType epctParam0) // Position - 0x5299E
 	return;
 }
 
-void func_242(ePedComponentType epctParam0) // Position - 0x52EAC
+void func_242(ePedComponentType epctParam0) // Position - 0x52EAC Hash - 0x2A6B1214 ^0xBF768241
 {
 	BOOL flag;
 	int num;
@@ -64064,7 +64064,7 @@ void func_242(ePedComponentType epctParam0) // Position - 0x52EAC
 	return;
 }
 
-void func_243(ePedComponentType epctParam0) // Position - 0x52F21
+void func_243(ePedComponentType epctParam0) // Position - 0x52F21 Hash - 0xC574A0D9 ^0x182C98DE
 {
 	BOOL flag;
 	int num;
@@ -64101,7 +64101,7 @@ void func_243(ePedComponentType epctParam0) // Position - 0x52F21
 	return;
 }
 
-void func_244(ePedComponentType epctParam0) // Position - 0x52F95
+void func_244(ePedComponentType epctParam0) // Position - 0x52F95 Hash - 0xC290E725 ^0xFF3D3BAD
 {
 	BOOL flag;
 	int num;
@@ -64168,7 +64168,7 @@ void func_244(ePedComponentType epctParam0) // Position - 0x52F95
 	return;
 }
 
-void func_245(ePedComponentType epctParam0) // Position - 0x5307C
+void func_245(ePedComponentType epctParam0) // Position - 0x5307C Hash - 0x7C005293 ^0xEE17D585
 {
 	BOOL flag;
 	int num;
@@ -64397,7 +64397,7 @@ void func_245(ePedComponentType epctParam0) // Position - 0x5307C
 	return;
 }
 
-void func_246(ePedComponentType epctParam0) // Position - 0x533DF
+void func_246(ePedComponentType epctParam0) // Position - 0x533DF Hash - 0xF13F6389 ^0xB68B8164
 {
 	BOOL flag;
 	int num;
@@ -64541,7 +64541,7 @@ void func_246(ePedComponentType epctParam0) // Position - 0x533DF
 	return;
 }
 
-void func_247(ePedComponentType epctParam0) // Position - 0x535F0
+void func_247(ePedComponentType epctParam0) // Position - 0x535F0 Hash - 0xDDFE7744 ^0x5CB1B438
 {
 	BOOL flag;
 	int num;
@@ -64694,7 +64694,7 @@ void func_247(ePedComponentType epctParam0) // Position - 0x535F0
 	return;
 }
 
-void func_248(ePedComponentType epctParam0) // Position - 0x53820
+void func_248(ePedComponentType epctParam0) // Position - 0x53820 Hash - 0xE02531F3 ^0xFB9CC476
 {
 	BOOL flag;
 	int num;
@@ -64773,7 +64773,7 @@ void func_248(ePedComponentType epctParam0) // Position - 0x53820
 	return;
 }
 
-void func_249(ePedComponentType epctParam0) // Position - 0x53930
+void func_249(ePedComponentType epctParam0) // Position - 0x53930 Hash - 0xEF2456FB ^0x826A032E
 {
 	BOOL flag;
 	int num;
@@ -65385,7 +65385,7 @@ void func_249(ePedComponentType epctParam0) // Position - 0x53930
 	return;
 }
 
-void func_250(ePedComponentType epctParam0) // Position - 0x542D0
+void func_250(ePedComponentType epctParam0) // Position - 0x542D0 Hash - 0xD968CB7E ^0x4124573
 {
 	BOOL flag;
 	int num;
@@ -66125,7 +66125,7 @@ void func_250(ePedComponentType epctParam0) // Position - 0x542D0
 	return;
 }
 
-void func_251(ePedComponentType epctParam0) // Position - 0x54E43
+void func_251(ePedComponentType epctParam0) // Position - 0x54E43 Hash - 0x2732DFB2 ^0x9C99461
 {
 	if (epctParam0 < 136)
 		func_253(epctParam0);
@@ -66138,7 +66138,7 @@ void func_251(ePedComponentType epctParam0) // Position - 0x54E43
 	return;
 }
 
-void func_252(ePedComponentType epctParam0) // Position - 0x54E78
+void func_252(ePedComponentType epctParam0) // Position - 0x54E78 Hash - 0x7B542CFB ^0x81E2FBC5
 {
 	BOOL flag;
 	int num;
@@ -66897,7 +66897,7 @@ void func_252(ePedComponentType epctParam0) // Position - 0x54E78
 	return;
 }
 
-void func_253(ePedComponentType epctParam0) // Position - 0x55A7C
+void func_253(ePedComponentType epctParam0) // Position - 0x55A7C Hash - 0x7B542CFB ^0x86204094
 {
 	BOOL flag;
 	int num;
@@ -67869,7 +67869,7 @@ void func_253(ePedComponentType epctParam0) // Position - 0x55A7C
 	return;
 }
 
-void func_254(ePedComponentType epctParam0) // Position - 0x5698A
+void func_254(ePedComponentType epctParam0) // Position - 0x5698A Hash - 0xC2F9B35A ^0x4B04BC7F
 {
 	BOOL flag;
 	int num;
@@ -67954,7 +67954,7 @@ void func_254(ePedComponentType epctParam0) // Position - 0x5698A
 	return;
 }
 
-void func_255(ePedComponentType epctParam0) // Position - 0x56AB7
+void func_255(ePedComponentType epctParam0) // Position - 0x56AB7 Hash - 0x6F21AA63 ^0xF84821BA
 {
 	BOOL flag;
 	int num;
@@ -68027,7 +68027,7 @@ void func_255(ePedComponentType epctParam0) // Position - 0x56AB7
 	return;
 }
 
-void func_256(int iParam0, ePedComponentType epctParam1) // Position - 0x56BB5
+void func_256(int iParam0, ePedComponentType epctParam1) // Position - 0x56BB5 Hash - 0x2A09B983 ^0x2A09B983
 {
 	switch (iParam0)
 	{
@@ -68095,7 +68095,7 @@ void func_256(int iParam0, ePedComponentType epctParam1) // Position - 0x56BB5
 	return;
 }
 
-void func_257(ePedComponentType epctParam0) // Position - 0x56CA5
+void func_257(ePedComponentType epctParam0) // Position - 0x56CA5 Hash - 0xF89A8F55 ^0x21B336DF
 {
 	BOOL flag;
 	int num;
@@ -69481,7 +69481,7 @@ void func_257(ePedComponentType epctParam0) // Position - 0x56CA5
 	return;
 }
 
-void func_258(ePedComponentType epctParam0) // Position - 0x58198
+void func_258(ePedComponentType epctParam0) // Position - 0x58198 Hash - 0xB52E315 ^0xD3B850A5
 {
 	BOOL flag;
 	int num;
@@ -69576,7 +69576,7 @@ void func_258(ePedComponentType epctParam0) // Position - 0x58198
 	return;
 }
 
-void func_259(ePedComponentType epctParam0) // Position - 0x582E9
+void func_259(ePedComponentType epctParam0) // Position - 0x582E9 Hash - 0x4B9467AD ^0xA814010C
 {
 	BOOL flag;
 	int num;
@@ -69913,7 +69913,7 @@ void func_259(ePedComponentType epctParam0) // Position - 0x582E9
 	return;
 }
 
-void func_260(ePedComponentType epctParam0) // Position - 0x587F4
+void func_260(ePedComponentType epctParam0) // Position - 0x587F4 Hash - 0x7A2850A5 ^0xD994FDFF
 {
 	BOOL flag;
 	int num;
@@ -70337,7 +70337,7 @@ void func_260(ePedComponentType epctParam0) // Position - 0x587F4
 	return;
 }
 
-void func_261(ePedComponentType epctParam0) // Position - 0x58E62
+void func_261(ePedComponentType epctParam0) // Position - 0x58E62 Hash - 0x8F4A4D12 ^0x85549B27
 {
 	BOOL flag;
 	int num;
@@ -70374,7 +70374,7 @@ void func_261(ePedComponentType epctParam0) // Position - 0x58E62
 	return;
 }
 
-void func_262(ePedComponentType epctParam0) // Position - 0x58ED6
+void func_262(ePedComponentType epctParam0) // Position - 0x58ED6 Hash - 0xCB73BC76 ^0xC6631C0D
 {
 	BOOL flag;
 	int num;
@@ -70435,7 +70435,7 @@ void func_262(ePedComponentType epctParam0) // Position - 0x58ED6
 	return;
 }
 
-void func_263(ePedComponentType epctParam0) // Position - 0x58FA6
+void func_263(ePedComponentType epctParam0) // Position - 0x58FA6 Hash - 0x27512C31 ^0x96433DAA
 {
 	BOOL flag;
 	int num;
@@ -70784,7 +70784,7 @@ void func_263(ePedComponentType epctParam0) // Position - 0x58FA6
 	return;
 }
 
-void func_264(ePedComponentType epctParam0) // Position - 0x594D6
+void func_264(ePedComponentType epctParam0) // Position - 0x594D6 Hash - 0xDD9ED658 ^0x4340E113
 {
 	BOOL flag;
 	int num;
@@ -70897,7 +70897,7 @@ void func_264(ePedComponentType epctParam0) // Position - 0x594D6
 	return;
 }
 
-void func_265(ePedComponentType epctParam0) // Position - 0x5966D
+void func_265(ePedComponentType epctParam0) // Position - 0x5966D Hash - 0xE27765D3 ^0xB0F96F8
 {
 	BOOL flag;
 	int num;
@@ -71413,7 +71413,7 @@ void func_265(ePedComponentType epctParam0) // Position - 0x5966D
 	return;
 }
 
-void func_266(ePedComponentType epctParam0) // Position - 0x59E6B
+void func_266(ePedComponentType epctParam0) // Position - 0x59E6B Hash - 0xA3AE1C2 ^0x43E1708E
 {
 	BOOL flag;
 	int num;
@@ -71492,7 +71492,7 @@ void func_266(ePedComponentType epctParam0) // Position - 0x59E6B
 	return;
 }
 
-void func_267(ePedComponentType epctParam0) // Position - 0x59F7B
+void func_267(ePedComponentType epctParam0) // Position - 0x59F7B Hash - 0xE2721790 ^0x3007A972
 {
 	BOOL flag;
 	int num;
@@ -72454,7 +72454,7 @@ void func_267(ePedComponentType epctParam0) // Position - 0x59F7B
 	return;
 }
 
-void func_268(ePedComponentType epctParam0) // Position - 0x5AEA6
+void func_268(ePedComponentType epctParam0) // Position - 0x5AEA6 Hash - 0xBC068BE9 ^0x81E57F31
 {
 	BOOL flag;
 	int num;
@@ -73279,7 +73279,7 @@ void func_268(ePedComponentType epctParam0) // Position - 0x5AEA6
 	return;
 }
 
-void func_269(ePedComponentType epctParam0) // Position - 0x5BB63
+void func_269(ePedComponentType epctParam0) // Position - 0x5BB63 Hash - 0x905863CF ^0x4D59FCB8
 {
 	if (epctParam0 < 107)
 		func_272(epctParam0);
@@ -73294,7 +73294,7 @@ void func_269(ePedComponentType epctParam0) // Position - 0x5BB63
 	return;
 }
 
-void func_270(ePedComponentType epctParam0) // Position - 0x5BBA9
+void func_270(ePedComponentType epctParam0) // Position - 0x5BBA9 Hash - 0x6B1EB2DB ^0xED23A1F1
 {
 	BOOL flag;
 	int num;
@@ -73976,7 +73976,7 @@ void func_270(ePedComponentType epctParam0) // Position - 0x5BBA9
 	return;
 }
 
-void func_271(ePedComponentType epctParam0) // Position - 0x5C64F
+void func_271(ePedComponentType epctParam0) // Position - 0x5C64F Hash - 0x6B1EB2DB ^0x29729A84
 {
 	BOOL flag;
 	int num;
@@ -74861,7 +74861,7 @@ void func_271(ePedComponentType epctParam0) // Position - 0x5C64F
 	return;
 }
 
-void func_272(ePedComponentType epctParam0) // Position - 0x5D486
+void func_272(ePedComponentType epctParam0) // Position - 0x5D486 Hash - 0x1CFE3275 ^0xDB4E3C03
 {
 	BOOL flag;
 	int num;
@@ -75672,7 +75672,7 @@ void func_272(ePedComponentType epctParam0) // Position - 0x5D486
 	return;
 }
 
-void func_273(ePedComponentType epctParam0) // Position - 0x5E130
+void func_273(ePedComponentType epctParam0) // Position - 0x5E130 Hash - 0x425D4D1C ^0x41DD7D88
 {
 	BOOL flag;
 	int num;
@@ -75845,7 +75845,7 @@ void func_273(ePedComponentType epctParam0) // Position - 0x5E130
 	return;
 }
 
-void func_274(ePedComponentType epctParam0) // Position - 0x5E3BD
+void func_274(ePedComponentType epctParam0) // Position - 0x5E3BD Hash - 0x501F1CEE ^0x100233AD
 {
 	BOOL flag;
 	int num;
@@ -75936,7 +75936,7 @@ void func_274(ePedComponentType epctParam0) // Position - 0x5E3BD
 	return;
 }
 
-void func_275(int iParam0, ePedComponentType epctParam1) // Position - 0x5E503
+void func_275(int iParam0, ePedComponentType epctParam1) // Position - 0x5E503 Hash - 0x2A09B983 ^0x2A09B983
 {
 	switch (iParam0)
 	{
@@ -76004,7 +76004,7 @@ void func_275(int iParam0, ePedComponentType epctParam1) // Position - 0x5E503
 	return;
 }
 
-void func_276(ePedComponentType epctParam0) // Position - 0x5E5F3
+void func_276(ePedComponentType epctParam0) // Position - 0x5E5F3 Hash - 0x65772392 ^0x8155CA74
 {
 	BOOL flag;
 	int num;
@@ -76905,7 +76905,7 @@ void func_276(ePedComponentType epctParam0) // Position - 0x5E5F3
 	return;
 }
 
-void func_277(ePedComponentType epctParam0) // Position - 0x5F3B3
+void func_277(ePedComponentType epctParam0) // Position - 0x5F3B3 Hash - 0x3B9C736A ^0x1F9087DA
 {
 	BOOL flag;
 	int num;
@@ -77012,7 +77012,7 @@ void func_277(ePedComponentType epctParam0) // Position - 0x5F3B3
 	return;
 }
 
-void func_278(ePedComponentType epctParam0) // Position - 0x5F52D
+void func_278(ePedComponentType epctParam0) // Position - 0x5F52D Hash - 0xBFA71661 ^0x619BF033
 {
 	BOOL flag;
 	int num;
@@ -77379,7 +77379,7 @@ void func_278(ePedComponentType epctParam0) // Position - 0x5F52D
 	return;
 }
 
-void func_279(ePedComponentType epctParam0) // Position - 0x5FAD3
+void func_279(ePedComponentType epctParam0) // Position - 0x5FAD3 Hash - 0xD847BAA9 ^0x9A4429DA
 {
 	BOOL flag;
 	int num;
@@ -77716,7 +77716,7 @@ void func_279(ePedComponentType epctParam0) // Position - 0x5FAD3
 	return;
 }
 
-void func_280(ePedComponentType epctParam0) // Position - 0x6002B
+void func_280(ePedComponentType epctParam0) // Position - 0x6002B Hash - 0x84875CF4 ^0xC4322433
 {
 	BOOL flag;
 	int num;
@@ -77753,7 +77753,7 @@ void func_280(ePedComponentType epctParam0) // Position - 0x6002B
 	return;
 }
 
-void func_281(ePedComponentType epctParam0) // Position - 0x6009F
+void func_281(ePedComponentType epctParam0) // Position - 0x6009F Hash - 0xCEB1029F ^0x80B6B3B8
 {
 	BOOL flag;
 	int num;
@@ -77814,7 +77814,7 @@ void func_281(ePedComponentType epctParam0) // Position - 0x6009F
 	return;
 }
 
-void func_282(ePedComponentType epctParam0) // Position - 0x60174
+void func_282(ePedComponentType epctParam0) // Position - 0x60174 Hash - 0x6BA8FE21 ^0x541E1BED
 {
 	BOOL flag;
 	int num;
@@ -78133,7 +78133,7 @@ void func_282(ePedComponentType epctParam0) // Position - 0x60174
 	return;
 }
 
-void func_283(ePedComponentType epctParam0) // Position - 0x60654
+void func_283(ePedComponentType epctParam0) // Position - 0x60654 Hash - 0x2912A97A ^0x4B2FEF0F
 {
 	BOOL flag;
 	int num;
@@ -78299,7 +78299,7 @@ void func_283(ePedComponentType epctParam0) // Position - 0x60654
 	return;
 }
 
-void func_284(ePedComponentType epctParam0) // Position - 0x608BD
+void func_284(ePedComponentType epctParam0) // Position - 0x608BD Hash - 0xC1E4B88B ^0xCF2F6822
 {
 	BOOL flag;
 	int num;
@@ -78495,7 +78495,7 @@ void func_284(ePedComponentType epctParam0) // Position - 0x608BD
 	return;
 }
 
-void func_285(ePedComponentType epctParam0) // Position - 0x60B95
+void func_285(ePedComponentType epctParam0) // Position - 0x60B95 Hash - 0x3AEA7A34 ^0x9F1C19EF
 {
 	BOOL flag;
 	int num;
@@ -78623,7 +78623,7 @@ void func_285(ePedComponentType epctParam0) // Position - 0x60B95
 	return;
 }
 
-void func_286(ePedComponentType epctParam0) // Position - 0x60D5E
+void func_286(ePedComponentType epctParam0) // Position - 0x60D5E Hash - 0x79FABDD8 ^0x6A334150
 {
 	BOOL flag;
 	int num;
@@ -79342,7 +79342,7 @@ void func_286(ePedComponentType epctParam0) // Position - 0x60D5E
 	return;
 }
 
-void func_287(ePedComponentType epctParam0) // Position - 0x61907
+void func_287(ePedComponentType epctParam0) // Position - 0x61907 Hash - 0x390D74CA ^0x99DD1D2E
 {
 	BOOL flag;
 	int num;
@@ -80141,7 +80141,7 @@ void func_287(ePedComponentType epctParam0) // Position - 0x61907
 	return;
 }
 
-void func_288(ePedComponentType epctParam0) // Position - 0x625AA
+void func_288(ePedComponentType epctParam0) // Position - 0x625AA Hash - 0xA5A40372 ^0xCEFC4EDB
 {
 	if (epctParam0 < 60)
 		func_290(epctParam0);
@@ -80154,7 +80154,7 @@ void func_288(ePedComponentType epctParam0) // Position - 0x625AA
 	return;
 }
 
-void func_289(ePedComponentType epctParam0) // Position - 0x625DF
+void func_289(ePedComponentType epctParam0) // Position - 0x625DF Hash - 0x8425A109 ^0x8CAE21BD
 {
 	BOOL flag;
 	int num;
@@ -81022,7 +81022,7 @@ void func_289(ePedComponentType epctParam0) // Position - 0x625DF
 	return;
 }
 
-void func_290(ePedComponentType epctParam0) // Position - 0x633EB
+void func_290(ePedComponentType epctParam0) // Position - 0x633EB Hash - 0x15550EE8 ^0x26029566
 {
 	BOOL flag;
 	int num;
@@ -81456,7 +81456,7 @@ void func_290(ePedComponentType epctParam0) // Position - 0x633EB
 	return;
 }
 
-void func_291(ePedComponentType epctParam0) // Position - 0x63AA9
+void func_291(ePedComponentType epctParam0) // Position - 0x63AA9 Hash - 0x668936BB ^0xCCF0D6B9
 {
 	BOOL flag;
 	int num;
@@ -81523,7 +81523,7 @@ void func_291(ePedComponentType epctParam0) // Position - 0x63AA9
 	return;
 }
 
-void func_292(ePedComponentType epctParam0) // Position - 0x63B95
+void func_292(ePedComponentType epctParam0) // Position - 0x63B95 Hash - 0x17A3D842 ^0x1A725115
 {
 	BOOL flag;
 	int num;
@@ -81596,7 +81596,7 @@ void func_292(ePedComponentType epctParam0) // Position - 0x63B95
 	return;
 }
 
-int func_293(ePedComponentType epctParam0) // Position - 0x63C93
+int func_293(ePedComponentType epctParam0) // Position - 0x63C93 Hash - 0x389E0506 ^0x389E0506
 {
 	switch (epctParam0)
 	{
@@ -81616,7 +81616,7 @@ int func_293(ePedComponentType epctParam0) // Position - 0x63C93
 	return 145;
 }
 
-int func_294(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13) // Position - 0x63CCE
+int func_294(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iParam3, int iParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13) // Position - 0x63CCE Hash - 0x2F89DA4B ^0xC114075C
 {
 	int i;
 	int j;
@@ -81913,7 +81913,7 @@ int func_294(Ped pedParam0, int iParam1, ePedComponentType epctParam2, int iPara
 	return 1;
 }
 
-void func_295(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x644DF
+void func_295(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x644DF Hash - 0x193E1C5C ^0xBF5A02F8
 {
 	ePedComponentType type;
 	int num;
@@ -81941,7 +81941,7 @@ void func_295(ePedComponentType epctParam0, int iParam1, ePedComponentType epctP
 	return;
 }
 
-BOOL func_296(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x64569
+BOOL func_296(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x64569 Hash - 0x2BE7FB4 ^0x1D60B8BA
 {
 	if (epctParam0 == joaat("Player_Zero"))
 		if (iParam1 == 4)
@@ -81968,13 +81968,13 @@ BOOL func_296(ePedComponentType epctParam0, int iParam1, ePedComponentType epctP
 	return false;
 }
 
-BOOL func_297(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x64647
+BOOL func_297(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x64647 Hash - 0xCA8B24F3 ^0x4C678A52
 {
 	Global_79172[1 /*14*/] = { func_237(epctParam0, iParam1, epctParam2, -1) };
 	return IS_BIT_SET(Global_79172[1 /*14*/].f_6, 2);
 }
 
-ePedComponentType func_298(Ped pedParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x6466F
+ePedComponentType func_298(Ped pedParam0, int iParam1, ePedComponentType epctParam2) // Position - 0x6466F Hash - 0x6AEB8E24 ^0x393FEB8F
 {
 	ePedComponentType i;
 	ePedComponentType j;
@@ -82018,7 +82018,7 @@ ePedComponentType func_298(Ped pedParam0, int iParam1, ePedComponentType epctPar
 	return -99;
 }
 
-int func_299(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, var uParam3) // Position - 0x64710
+int func_299(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, var uParam3) // Position - 0x64710 Hash - 0x66694B65 ^0x9B4A4885
 {
 	int num;
 
@@ -82118,7 +82118,7 @@ int func_299(ePedComponentType epctParam0, int iParam1, ePedComponentType epctPa
 	return 0;
 }
 
-ePedComponentType func_300(Ped pedParam0, ePedComponentType epctParam1, int iParam2, ePedComponentType epctParam3, int iParam4, int iParam5) // Position - 0x64A17
+ePedComponentType func_300(Ped pedParam0, ePedComponentType epctParam1, int iParam2, ePedComponentType epctParam3, int iParam4, int iParam5) // Position - 0x64A17 Hash - 0x13FAC17C ^0xAC271D21
 {
 	ePedComponentType type;
 	ePedComponentType type2;
@@ -82813,7 +82813,7 @@ ePedComponentType func_300(Ped pedParam0, ePedComponentType epctParam1, int iPar
 	return type;
 }
 
-BOOL func_301(int iParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, ePedComponentType epctParam3, var uParam4) // Position - 0x655CA
+BOOL func_301(int iParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, ePedComponentType epctParam3, var uParam4) // Position - 0x655CA Hash - 0x9B2DB9BF ^0x887A15B9
 {
 	int num;
 
@@ -82958,7 +82958,7 @@ BOOL func_301(int iParam0, ePedComponentType epctParam1, ePedComponentType epctP
 	return true;
 }
 
-ePedComponentType func_302(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, int iParam3) // Position - 0x658AE
+ePedComponentType func_302(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, int iParam3) // Position - 0x658AE Hash - 0x243669A7 ^0x243669A7
 {
 	int num;
 
@@ -83111,7 +83111,7 @@ ePedComponentType func_302(ePedComponentType epctParam0, ePedComponentType epctP
 	return -99;
 }
 
-ePedComponentType func_303(ePedComponentType epctParam0, int iParam1, int iParam2, int iParam3) // Position - 0x65B75
+ePedComponentType func_303(ePedComponentType epctParam0, int iParam1, int iParam2, int iParam3) // Position - 0x65B75 Hash - 0x836A6BCB ^0x1BDA295A
 {
 	ePedComponentType i;
 	ePedComponentType type;
@@ -83127,7 +83127,7 @@ ePedComponentType func_303(ePedComponentType epctParam0, int iParam1, int iParam
 	return -99;
 }
 
-BOOL func_304(Ped pedParam0, int iParam1, ePedComponentType epctParam2, ePedComponentType epctParam3) // Position - 0x65BAC
+BOOL func_304(Ped pedParam0, int iParam1, ePedComponentType epctParam2, ePedComponentType epctParam3) // Position - 0x65BAC Hash - 0x181F6657 ^0x181F6657
 {
 	ePedComponentType type;
 
@@ -83139,7 +83139,7 @@ BOOL func_304(Ped pedParam0, int iParam1, ePedComponentType epctParam2, ePedComp
 	return false;
 }
 
-BOOL func_305(ePedComponentType epctParam0, ePedComponentType epctParam1, var uParam2) // Position - 0x65BD5
+BOOL func_305(ePedComponentType epctParam0, ePedComponentType epctParam1, var uParam2) // Position - 0x65BD5 Hash - 0x9FD3CF97 ^0x79A65971
 {
 	*uParam2 = -99;
 
@@ -83173,7 +83173,7 @@ BOOL func_305(ePedComponentType epctParam0, ePedComponentType epctParam1, var uP
 	return false;
 }
 
-int func_306(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, var uParam3) // Position - 0x65E9F
+int func_306(ePedComponentType epctParam0, int iParam1, ePedComponentType epctParam2, var uParam3) // Position - 0x65E9F Hash - 0x6C977D30 ^0xDCB1D2AD
 {
 	int num;
 
@@ -83243,7 +83243,7 @@ int func_306(ePedComponentType epctParam0, int iParam1, ePedComponentType epctPa
 	return 0;
 }
 
-ePedComponentType func_307(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x66129
+ePedComponentType func_307(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x66129 Hash - 0x678DE6D2 ^0x678DE6D2
 {
 	switch (epctParam0)
 	{
@@ -83313,7 +83313,7 @@ ePedComponentType func_307(ePedComponentType epctParam0, ePedComponentType epctP
 	return -99;
 }
 
-void func_308(int iParam0) // Position - 0x66280
+void func_308(int iParam0) // Position - 0x66280 Hash - 0xE5A1F74D ^0x61D497DD
 {
 	if (IS_BIT_SET(Global_79172[1 /*14*/].f_6, 1) && !IS_BIT_SET(Global_79172[1 /*14*/].f_6, 6))
 		func_94(iParam0, Global_79172[1 /*14*/].f_5, Global_79172[1 /*14*/].f_2, 2, Global_79172[1 /*14*/].f_1, 1, 0);
@@ -83340,7 +83340,7 @@ void func_308(int iParam0) // Position - 0x66280
 	return;
 }
 
-BOOL func_309(Ped pedParam0, ePedComponentType epctParam1, var uParam2, int iParam3) // Position - 0x6632C
+BOOL func_309(Ped pedParam0, ePedComponentType epctParam1, var uParam2, int iParam3) // Position - 0x6632C Hash - 0x490228A8 ^0xCA034CC2
 {
 	int num;
 
@@ -83363,12 +83363,12 @@ BOOL func_309(Ped pedParam0, ePedComponentType epctParam1, var uParam2, int iPar
 	return false;
 }
 
-BOOL func_310(eCharacter echParam0) // Position - 0x663D7
+BOOL func_310(eCharacter echParam0) // Position - 0x663D7 Hash - 0x8907F004 ^0x8907F004
 {
 	return echParam0 < CHAR_MULTIPLAYER;
 }
 
-eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x663E3
+eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x663E3 Hash - 0xAC4E9801 ^0xB379A75F
 {
 	eCharacter i;
 	Hash entityModel;
@@ -83387,7 +83387,7 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x663E3
 	return _CHAR_NULL;
 }
 
-Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x66420
+Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x66420 Hash - 0xADCB9755 ^0xADCB9755
 {
 	if (func_310(character))
 		return func_313(character);
@@ -83397,12 +83397,12 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x66420
 	return 0;
 }
 
-Hash func_313(eCharacter echParam0) // Position - 0x66445
+Hash func_313(eCharacter echParam0) // Position - 0x66445 Hash - 0xE4CEEC2C ^0xE4CEEC2C
 {
 	return Global_2169[echParam0 /*29*/];
 }
 
-void func_314(BOOL bParam0) // Position - 0x66454
+void func_314(BOOL bParam0) // Position - 0x66454 Hash - 0x4D9AD01D ^0x8AD6DD31
 {
 	var unk;
 	Hash hashNameForComponent;
@@ -83466,7 +83466,7 @@ void func_314(BOOL bParam0) // Position - 0x66454
 	return;
 }
 
-void func_315(int iParam0, int iParam1) // Position - 0x665ED
+void func_315(int iParam0, int iParam1) // Position - 0x665ED Hash - 0x6752CC22 ^0xE049D2F4
 {
 	Hash eventData;
 
@@ -83482,7 +83482,7 @@ void func_315(int iParam0, int iParam1) // Position - 0x665ED
 	return;
 }
 
-int _GET_LOBBY_SCRIPT_EVENT_BITS(BOOL includeLocalPlayer, BOOL includeSpectators) // Position - 0x66634
+int _GET_LOBBY_SCRIPT_EVENT_BITS(BOOL includeLocalPlayer, BOOL includeSpectators) // Position - 0x66634 Hash - 0x28809950 ^0x99E2BCBE
 {
 	int address;
 	int i;
@@ -83503,7 +83503,7 @@ int _GET_LOBBY_SCRIPT_EVENT_BITS(BOOL includeLocalPlayer, BOOL includeSpectators
 	return address;
 }
 
-BOOL func_317(ePedComponentType epctParam0, int iParam1) // Position - 0x66699
+BOOL func_317(ePedComponentType epctParam0, int iParam1) // Position - 0x66699 Hash - 0x1A32E11A ^0x81C44B3D
 {
 	BOOL flag;
 
@@ -83522,7 +83522,7 @@ BOOL func_317(ePedComponentType epctParam0, int iParam1) // Position - 0x66699
 	return flag;
 }
 
-eCharacter func_318(int iParam0, BOOL bParam1) // Position - 0x666F2
+eCharacter func_318(int iParam0, BOOL bParam1) // Position - 0x666F2 Hash - 0x1DCD393E ^0x1DCD393E
 {
 	eCharacter character;
 	int num;
@@ -83546,7 +83546,7 @@ eCharacter func_318(int iParam0, BOOL bParam1) // Position - 0x666F2
 	return character;
 }
 
-BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x66733
+BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x66733 Hash - 0x3FF6E4CA ^0xE6B59972
 {
 	ePedComponentType type;
 
@@ -83573,7 +83573,7 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 	return false;
 }
 
-void func_320(int iParam0) // Position - 0x66793
+void func_320(int iParam0) // Position - 0x66793 Hash - 0x531BBA6C ^0x568525C5
 {
 	var unk;
 	Vehicle vehiclePedIsIn;
@@ -83647,7 +83647,7 @@ void func_320(int iParam0) // Position - 0x66793
 	return;
 }
 
-void func_321(var uParam0, int iParam1) // Position - 0x6693C
+void func_321(var uParam0, int iParam1) // Position - 0x6693C Hash - 0xD0C413DA ^0x6BCA2BE5
 {
 	if (!func_220(false))
 	{
@@ -83718,27 +83718,27 @@ void func_321(var uParam0, int iParam1) // Position - 0x6693C
 	return;
 }
 
-int func_322(int iParam0) // Position - 0x66CDB
+int func_322(int iParam0) // Position - 0x66CDB Hash - 0x98CB9D9C ^0xC6BDB42B
 {
 	return _STAT_GET_PACKED_INT(410, iParam0) + _STAT_GET_PACKED_INT(18095, iParam0) + _STAT_GET_PACKED_INT(42096, iParam0);
 }
 
-int func_323(int iParam0) // Position - 0x66D01
+int func_323(int iParam0) // Position - 0x66D01 Hash - 0xDCA10F42 ^0xEC465A99
 {
 	return _STAT_GET_PACKED_INT(407, iParam0) + _STAT_GET_PACKED_INT(18094, iParam0);
 }
 
-int func_324(int iParam0) // Position - 0x66D1C
+int func_324(int iParam0) // Position - 0x66D1C Hash - 0xDCA10F42 ^0xC9061AFA
 {
 	return _STAT_GET_PACKED_INT(402, iParam0) + _STAT_GET_PACKED_INT(18093, iParam0);
 }
 
-int func_325(int iParam0) // Position - 0x66D37
+int func_325(int iParam0) // Position - 0x66D37 Hash - 0xDCA10F42 ^0xAA848513
 {
 	return _STAT_GET_PACKED_INT(400, iParam0) + _STAT_GET_PACKED_INT(18092, iParam0);
 }
 
-BOOL func_326(Player plParam0, BOOL bParam1) // Position - 0x66D52
+BOOL func_326(Player plParam0, BOOL bParam1) // Position - 0x66D52 Hash - 0xB4CE8E51 ^0xDD439BF7
 {
 	if (!func_143(plParam0))
 		return false;
@@ -83750,7 +83750,7 @@ BOOL func_326(Player plParam0, BOOL bParam1) // Position - 0x66D52
 	return func_143(Global_1887305[plParam0 /*610*/].f_10);
 }
 
-BOOL func_327(ePedComponentType epctParam0) // Position - 0x66D8A
+BOOL func_327(ePedComponentType epctParam0) // Position - 0x66D8A Hash - 0xC62FC261 ^0xD6778B42
 {
 	if (func_143(epctParam0))
 		if (func_143(Global_1887305[epctParam0 /*610*/].f_10))
@@ -83759,7 +83759,7 @@ BOOL func_327(ePedComponentType epctParam0) // Position - 0x66D8A
 	return false;
 }
 
-BOOL func_328(Ped pedParam0) // Position - 0x66DBF
+BOOL func_328(Ped pedParam0) // Position - 0x66DBF Hash - 0xA27BCD9A ^0x43290D98
 {
 	if (ENTITY::GET_ENTITY_MODEL(pedParam0) == joaat("MP_F_Freemode_01") || ENTITY::GET_ENTITY_MODEL(pedParam0) == joaat("MP_F_Weed_01") || ENTITY::GET_ENTITY_MODEL(pedParam0) == joaat("MP_F_Forgery_01") || ENTITY::GET_ENTITY_MODEL(pedParam0) == joaat("MP_F_Cocaine_01") || ENTITY::GET_ENTITY_MODEL(pedParam0) == joaat("MP_F_Counterfeit_01") || ENTITY::GET_ENTITY_MODEL(pedParam0) == joaat("S_F_Y_SweatShop_01") || ENTITY::GET_ENTITY_MODEL(pedParam0) == joaat("A_F_Y_BevHills_04") || ENTITY::GET_ENTITY_MODEL(pedParam0) == joaat("A_F_Y_GenHot_01") || ENTITY::GET_ENTITY_MODEL(pedParam0) == joaat("A_F_Y_SCDressy_01") || ENTITY::GET_ENTITY_MODEL(pedParam0) == joaat("IG_TracyDiSanto"))
 		return true;
@@ -83767,7 +83767,7 @@ BOOL func_328(Ped pedParam0) // Position - 0x66DBF
 	return false;
 }
 
-void func_329(int iParam0) // Position - 0x66E7D
+void func_329(int iParam0) // Position - 0x66E7D Hash - 0x356B849D ^0x3A35D5BF
 {
 	if (iParam0 == func_1())
 		Global_2640096.f_19 = 1;
@@ -83775,7 +83775,7 @@ void func_329(int iParam0) // Position - 0x66E7D
 	return;
 }
 
-BOOL func_330() // Position - 0x66E98
+BOOL func_330() // Position - 0x66E98 Hash - 0xCD546126 ^0xCD546126
 {
 	if (func_331() == 1 || func_331() == 4)
 		return true;
@@ -83783,12 +83783,12 @@ BOOL func_330() // Position - 0x66E98
 	return false;
 }
 
-int func_331() // Position - 0x66EBA
+int func_331() // Position - 0x66EBA Hash - 0x4228A1C2 ^0x58D4D226
 {
 	return Global_1574633.f_18;
 }
 
-BOOL func_332() // Position - 0x66EC8
+BOOL func_332() // Position - 0x66EC8 Hash - 0xDBD936D3 ^0xDBD936D3
 {
 	if (func_331() == 0)
 		return 1;
@@ -83796,13 +83796,13 @@ BOOL func_332() // Position - 0x66EC8
 	return 0;
 }
 
-void _STOPWATCH_DESTROY(var uParam0) // Position - 0x66EDD
+void _STOPWATCH_DESTROY(var uParam0) // Position - 0x66EDD Hash - 0xBA5A1D5A ^0x33644ECA
 {
 	uParam0->f_1 = 0;
 	return;
 }
 
-BOOL func_334(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x66EEA
+BOOL func_334(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x66EEA Hash - 0xF7DC20B8 ^0x1190E53F
 {
 	if (_NETWORK_IS_PLAYER_VALID(epctParam0, false, true))
 		if (!bParam1)
@@ -83814,7 +83814,7 @@ BOOL func_334(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x66EEA
 	return false;
 }
 
-void func_335() // Position - 0x66F37
+void func_335() // Position - 0x66F37 Hash - 0x310EB69B ^0x57FF9B42
 {
 	func_345(1);
 	func_336(PLAYER::PLAYER_PED_ID(), 4, -1, -1);
@@ -83856,7 +83856,7 @@ void func_335() // Position - 0x66F37
 	return;
 }
 
-void func_336(Ped pedParam0, int iParam1, Player plParam2, int iParam3) // Position - 0x67098
+void func_336(Ped pedParam0, int iParam1, Player plParam2, int iParam3) // Position - 0x67098 Hash - 0x8B1AFCA6 ^0x72C7872
 {
 	BOOL flag;
 	ePedComponentType i;
@@ -83936,7 +83936,7 @@ void func_336(Ped pedParam0, int iParam1, Player plParam2, int iParam3) // Posit
 	return;
 }
 
-void func_337(int iParam0, int iParam1) // Position - 0x672B7
+void func_337(int iParam0, int iParam1) // Position - 0x672B7 Hash - 0xD34645F8 ^0x3FF94E08
 {
 	BOOL toggle;
 	BOOL flag;
@@ -84027,13 +84027,13 @@ void func_337(int iParam0, int iParam1) // Position - 0x672B7
 	return;
 }
 
-void func_338(BOOL bParam0) // Position - 0x674BC
+void func_338(BOOL bParam0) // Position - 0x674BC Hash - 0xD7404062 ^0x6920090A
 {
 	func_146(378, bParam0, -1, true);
 	return;
 }
 
-void func_339(BOOL bParam0) // Position - 0x674CF
+void func_339(BOOL bParam0) // Position - 0x674CF Hash - 0x5551F6C3 ^0x542CA8D
 {
 	if (Global_4540657 != bParam0)
 	{
@@ -84048,7 +84048,7 @@ void func_339(BOOL bParam0) // Position - 0x674CF
 	return;
 }
 
-BOOL func_340(Ped pedParam0, Any* panParam1, int iParam2, var uParam3) // Position - 0x67502
+BOOL func_340(Ped pedParam0, Any* panParam1, int iParam2, var uParam3) // Position - 0x67502 Hash - 0x78C01F04 ^0x6A9C61D1
 {
 	var outComponent;
 	var outProp;
@@ -84844,7 +84844,7 @@ BOOL func_340(Ped pedParam0, Any* panParam1, int iParam2, var uParam3) // Positi
 	return false;
 }
 
-BOOL func_341(Any* panParam0, Entity eParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12, var uParam13, var uParam14, var uParam15, var uParam16, var uParam17, var uParam18, var uParam19, var uParam20, var uParam21, var uParam22, var uParam23, var uParam24, var uParam25, var uParam26, var uParam27, var uParam28, var uParam29, var uParam30, var uParam31, var uParam32, var uParam33, var uParam34, var uParam35, var uParam36, var uParam37, var uParam38, var uParam39, var uParam40, var uParam41, var uParam42, var uParam43, var uParam44, var uParam45, var uParam46, var uParam47, var uParam48, var uParam49, var uParam50, var uParam51, var uParam52, var uParam53, var uParam54, var uParam55, var uParam56, var uParam57, var uParam58, var uParam59, var uParam60, var uParam61, var uParam62, var uParam63, var uParam64, BOOL bParam65, BOOL bParam66) // Position - 0x68849
+BOOL func_341(Any* panParam0, Entity eParam1, var uParam2, var uParam3, var uParam4, var uParam5, var uParam6, var uParam7, var uParam8, var uParam9, var uParam10, var uParam11, var uParam12, var uParam13, var uParam14, var uParam15, var uParam16, var uParam17, var uParam18, var uParam19, var uParam20, var uParam21, var uParam22, var uParam23, var uParam24, var uParam25, var uParam26, var uParam27, var uParam28, var uParam29, var uParam30, var uParam31, var uParam32, var uParam33, var uParam34, var uParam35, var uParam36, var uParam37, var uParam38, var uParam39, var uParam40, var uParam41, var uParam42, var uParam43, var uParam44, var uParam45, var uParam46, var uParam47, var uParam48, var uParam49, var uParam50, var uParam51, var uParam52, var uParam53, var uParam54, var uParam55, var uParam56, var uParam57, var uParam58, var uParam59, var uParam60, var uParam61, var uParam62, var uParam63, var uParam64, BOOL bParam65, BOOL bParam66) // Position - 0x68849 Hash - 0xB9D1D030 ^0x7591C5FA
 {
 	var unk;
 	int i;
@@ -89981,7 +89981,7 @@ BOOL func_341(Any* panParam0, Entity eParam1, var uParam2, var uParam3, var uPar
 	return false;
 }
 
-int func_342(var uParam0, int iParam1, BOOL bParam2, BOOL bParam3) // Position - 0x6F3AA
+int func_342(var uParam0, int iParam1, BOOL bParam2, BOOL bParam3) // Position - 0x6F3AA Hash - 0x547CC0CF ^0x547CC0CF
 {
 	int i;
 	int j;
@@ -90019,12 +90019,12 @@ int func_342(var uParam0, int iParam1, BOOL bParam2, BOOL bParam3) // Position -
 	return 0;
 }
 
-int func_343() // Position - 0x6F4F2
+int func_343() // Position - 0x6F4F2 Hash - 0x974E48B4 ^0x974E48B4
 {
 	return Global_2685444.f_6373;
 }
 
-ePedComponentType func_344(ePedComponentType epctParam0) // Position - 0x6F501
+ePedComponentType func_344(ePedComponentType epctParam0) // Position - 0x6F501 Hash - 0x11A0FA0A ^0x11A0FA0A
 {
 	if (epctParam0 <= PV_COMP_INVALID || epctParam0 >= PV_COMP_LOWR)
 		return PV_COMP_INVALID;
@@ -90032,7 +90032,7 @@ ePedComponentType func_344(ePedComponentType epctParam0) // Position - 0x6F501
 	return Global_2685444.f_6368[epctParam0];
 }
 
-void func_345(BOOL bParam0) // Position - 0x6F529
+void func_345(BOOL bParam0) // Position - 0x6F529 Hash - 0xA367DE99 ^0xC28A6EAD
 {
 	if (func_326(PLAYER::PLAYER_ID(), true) && bParam0)
 		bLocal_446 = true;
@@ -90040,7 +90040,7 @@ void func_345(BOOL bParam0) // Position - 0x6F529
 	return;
 }
 
-void func_346() // Position - 0x6F548
+void func_346() // Position - 0x6F548 Hash - 0xC39FCAC4 ^0x781A9704
 {
 	iLocal_420 = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("ent_amb_shower", Global_2698940.f_83, Global_2698940.f_86, 1f, false, false, false, true);
 	iLocal_421 = GRAPHICS::START_PARTICLE_FX_LOOPED_AT_COORD("ent_amb_shower_steam", Global_2698940.f_89, Global_2698940.f_92, 1f, false, false, false, true);
@@ -90054,7 +90054,7 @@ void func_346() // Position - 0x6F548
 	return;
 }
 
-int func_347(int iParam0) // Position - 0x6F5E9
+int func_347(int iParam0) // Position - 0x6F5E9 Hash - 0x84DC85FD ^0x84DC85FD
 {
 	switch (iParam0)
 	{
@@ -90196,7 +90196,7 @@ int func_347(int iParam0) // Position - 0x6F5E9
 	return 0;
 }
 
-void func_348() // Position - 0x6F8EE
+void func_348() // Position - 0x6F8EE Hash - 0xBCABA3B8 ^0xBCABA3B8
 {
 	Global_1685379 = func_352(func_353());
 	Global_1685380 = func_351(func_353());
@@ -90204,12 +90204,12 @@ void func_348() // Position - 0x6F8EE
 	return;
 }
 
-int func_349(int iParam0) // Position - 0x6F91A
+int func_349(int iParam0) // Position - 0x6F91A Hash - 0xE1B0542C ^0x127A471E
 {
 	return (SYSTEM::SHIFT_RIGHT(iParam0, 26) & 31 * IS_BIT_SET(iParam0, 31) ? -1 : 1) + 2011;
 }
 
-var func_350(BOOL bParam0, var uParam1, var uParam2) // Position - 0x6F93C
+var func_350(BOOL bParam0, var uParam1, var uParam2) // Position - 0x6F93C Hash - 0x3EE55A88 ^0x3EE55A88
 {
 	if (bParam0)
 		return uParam1;
@@ -90217,17 +90217,17 @@ var func_350(BOOL bParam0, var uParam1, var uParam2) // Position - 0x6F93C
 	return uParam2;
 }
 
-int func_351(int iParam0) // Position - 0x6F953
+int func_351(int iParam0) // Position - 0x6F953 Hash - 0x2D4DB85F ^0x2D4DB85F
 {
 	return iParam0 & 15;
 }
 
-int func_352(int iParam0) // Position - 0x6F960
+int func_352(int iParam0) // Position - 0x6F960 Hash - 0x826C592F ^0xDEC5AA46
 {
 	return SYSTEM::SHIFT_RIGHT(iParam0, 4) & 31;
 }
 
-int func_353() // Position - 0x6F972
+int func_353() // Position - 0x6F972 Hash - 0x9E44C35 ^0xB9993D58
 {
 	int unk;
 
@@ -90240,7 +90240,7 @@ int func_353() // Position - 0x6F972
 	return unk;
 }
 
-void func_354(var uParam0, int iParam1) // Position - 0x6F9B8
+void func_354(var uParam0, int iParam1) // Position - 0x6F9B8 Hash - 0x15B9927E ^0x4A4674
 {
 	if (iParam1 <= 0)
 		return;
@@ -90264,7 +90264,7 @@ void func_354(var uParam0, int iParam1) // Position - 0x6F9B8
 	return;
 }
 
-void func_355(var uParam0, int iParam1) // Position - 0x6FA3E
+void func_355(var uParam0, int iParam1) // Position - 0x6FA3E Hash - 0x4C70B2C3 ^0x4C70B2C3
 {
 	if (iParam1 < 0 || iParam1 > 11)
 		return;
@@ -90274,7 +90274,7 @@ void func_355(var uParam0, int iParam1) // Position - 0x6FA3E
 	return;
 }
 
-void func_356(var uParam0, int iParam1) // Position - 0x6FA71
+void func_356(var uParam0, int iParam1) // Position - 0x6FA71 Hash - 0x2220FC6 ^0x2220FC6
 {
 	int num;
 	int num2;
@@ -90290,7 +90290,7 @@ void func_356(var uParam0, int iParam1) // Position - 0x6FA71
 	return;
 }
 
-int func_357(int iParam0, int iParam1) // Position - 0x6FAC2
+int func_357(int iParam0, int iParam1) // Position - 0x6FAC2 Hash - 0xD3EBACB3 ^0xD3EBACB3
 {
 	if (iParam1 < 0)
 		iParam1 = 0;
@@ -90325,7 +90325,7 @@ int func_357(int iParam0, int iParam1) // Position - 0x6FAC2
 	return 30;
 }
 
-void func_358(var uParam0, int iParam1) // Position - 0x6FB64
+void func_358(var uParam0, int iParam1) // Position - 0x6FB64 Hash - 0x864304A8 ^0x1F5003E2
 {
 	if (iParam1 < 0 || iParam1 > 24)
 		return;
@@ -90335,7 +90335,7 @@ void func_358(var uParam0, int iParam1) // Position - 0x6FB64
 	return;
 }
 
-void func_359(var uParam0, int iParam1) // Position - 0x6FB9E
+void func_359(var uParam0, int iParam1) // Position - 0x6FB9E Hash - 0x76860AE7 ^0x32308FFF
 {
 	if (iParam1 < 0 || iParam1 >= 60)
 		return;
@@ -90345,7 +90345,7 @@ void func_359(var uParam0, int iParam1) // Position - 0x6FB9E
 	return;
 }
 
-void func_360(var uParam0, int iParam1) // Position - 0x6FBD9
+void func_360(var uParam0, int iParam1) // Position - 0x6FBD9 Hash - 0xDB8A72C0 ^0x4F6D426D
 {
 	if (iParam1 < 0 || iParam1 >= 60)
 		return;
@@ -90355,7 +90355,7 @@ void func_360(var uParam0, int iParam1) // Position - 0x6FBD9
 	return;
 }
 
-void func_361(int iParam0) // Position - 0x6FC15
+void func_361(int iParam0) // Position - 0x6FC15 Hash - 0x7E11E9C ^0x544BF257
 {
 	if (func_367())
 		return;
@@ -90371,7 +90371,7 @@ void func_361(int iParam0) // Position - 0x6FC15
 	return;
 }
 
-void func_362(int iParam0) // Position - 0x6FC48
+void func_362(int iParam0) // Position - 0x6FC48 Hash - 0x4066FEF5 ^0x9787FBDA
 {
 	if (func_367())
 		return;
@@ -90401,7 +90401,7 @@ void func_362(int iParam0) // Position - 0x6FC48
 	return;
 }
 
-BOOL func_363() // Position - 0x6FCD2
+BOOL func_363() // Position - 0x6FCD2 Hash - 0xD140D54A ^0xE638D98F
 {
 	if (Global_20930.f_1 == 1 || Global_20930.f_1 == 0)
 		return true;
@@ -90409,7 +90409,7 @@ BOOL func_363() // Position - 0x6FCD2
 	return false;
 }
 
-void func_364(BOOL bParam0, BOOL bParam1) // Position - 0x6FCF9
+void func_364(BOOL bParam0, BOOL bParam1) // Position - 0x6FCF9 Hash - 0xF40FC178 ^0xA6F60F17
 {
 	if (bParam0)
 	{
@@ -90438,12 +90438,12 @@ void func_364(BOOL bParam0, BOOL bParam1) // Position - 0x6FCF9
 	return;
 }
 
-BOOL func_365() // Position - 0x6FD6D
+BOOL func_365() // Position - 0x6FD6D Hash - 0x8DF3D75D ^0x8DF3D75D
 {
 	return IS_BIT_SET(Global_1956920, 5);
 }
 
-BOOL func_366(int iParam0) // Position - 0x6FD7B
+BOOL func_366(int iParam0) // Position - 0x6FD7B Hash - 0xE8921B44 ^0x4F063755
 {
 	if (iParam0 == 1)
 		if (Global_20930.f_1 > 3)
@@ -90463,12 +90463,12 @@ BOOL func_366(int iParam0) // Position - 0x6FD7B
 	return false;
 }
 
-BOOL func_367() // Position - 0x6FDD2
+BOOL func_367() // Position - 0x6FDD2 Hash - 0xC41437CB ^0xC41437CB
 {
 	return IS_BIT_SET(Global_1956920, 19);
 }
 
-void func_368() // Position - 0x6FDE1
+void func_368() // Position - 0x6FDE1 Hash - 0xEB7E806C ^0xD25DF590
 {
 	float playerLoudness;
 
@@ -90500,12 +90500,12 @@ void func_368() // Position - 0x6FDE1
 	return;
 }
 
-ePedComponentType func_369(int iParam0, Ped pedParam1, char* sParam2, Hash hParam3, Hash hParam4, int iParam5, int iParam6, int iParam7, char* sParam8, BOOL bParam9, int iParam10) // Position - 0x6FED3
+ePedComponentType func_369(int iParam0, Ped pedParam1, char* sParam2, Hash hParam3, Hash hParam4, int iParam5, int iParam6, int iParam7, char* sParam8, BOOL bParam9, int iParam10) // Position - 0x6FED3 Hash - 0xA1DB7FB1 ^0xA1DB7FB1
 {
 	return func_370(iParam0, pedParam1, sParam2, hParam3, hParam4, iParam5, iParam6, iParam7, sParam8, bParam9, iParam10);
 }
 
-ePedComponentType func_370(int iParam0, Ped pedParam1, char* sParam2, Hash hParam3, Hash hParam4, int iParam5, int iParam6, int iParam7, char* sParam8, BOOL bParam9, int iParam10) // Position - 0x6FEF5
+ePedComponentType func_370(int iParam0, Ped pedParam1, char* sParam2, Hash hParam3, Hash hParam4, int iParam5, int iParam6, int iParam7, char* sParam8, BOOL bParam9, int iParam10) // Position - 0x6FEF5 Hash - 0x20811D4E ^0x49554A6A
 {
 	ePedComponentType type;
 	Ped pedIndexFromEntityIndex;
@@ -90534,7 +90534,7 @@ ePedComponentType func_370(int iParam0, Ped pedParam1, char* sParam2, Hash hPara
 	return type;
 }
 
-void func_371(Ped pedParam0, ePedComponentType epctParam1, char* sParam2, int iParam3) // Position - 0x6FF88
+void func_371(Ped pedParam0, ePedComponentType epctParam1, char* sParam2, int iParam3) // Position - 0x6FF88 Hash - 0x86A742F9 ^0x37AAD5DE
 {
 	var unk;
 
@@ -90547,18 +90547,18 @@ void func_371(Ped pedParam0, ePedComponentType epctParam1, char* sParam2, int iP
 	return;
 }
 
-void func_372(int iParam0) // Position - 0x6FFBC
+void func_372(int iParam0) // Position - 0x6FFBC Hash - 0xE47D2A15 ^0xE47D2A15
 {
 	Global_2672855.f_1725 = iParam0;
 	return;
 }
 
-Ped func_373(Ped pedParam0) // Position - 0x6FFCD
+Ped func_373(Ped pedParam0) // Position - 0x6FFCD Hash - 0xC9D82232 ^0xC9D82232
 {
 	return pedParam0;
 }
 
-Vector3 func_374(Ped pedParam0, BOOL bParam1) // Position - 0x6FFD7
+Vector3 func_374(Ped pedParam0, BOOL bParam1) // Position - 0x6FFD7 Hash - 0x90E3AA73 ^0x37429D2F
 {
 	Vector3 offsetFromEntityInWorldCoords;
 	var gameplayCamRot;
@@ -90596,12 +90596,12 @@ Vector3 func_374(Ped pedParam0, BOOL bParam1) // Position - 0x6FFD7
 	return offsetFromEntityInWorldCoords;
 }
 
-Ped func_375(Ped pedParam0) // Position - 0x7009C
+Ped func_375(Ped pedParam0) // Position - 0x7009C Hash - 0xC9D82232 ^0xC9D82232
 {
 	return pedParam0;
 }
 
-void func_376(var uParam0, var uParam1, var uParam2, ePedComponentType epctParam3, int iParam4, char* sParam5, int iParam6) // Position - 0x700A6
+void func_376(var uParam0, var uParam1, var uParam2, ePedComponentType epctParam3, int iParam4, char* sParam5, int iParam6) // Position - 0x700A6 Hash - 0xCC9954D7 ^0x1655D319
 {
 	int i;
 	int num;
@@ -90637,7 +90637,7 @@ void func_376(var uParam0, var uParam1, var uParam2, ePedComponentType epctParam
 	return;
 }
 
-int func_377() // Position - 0x701BD
+int func_377() // Position - 0x701BD Hash - 0xB9D62514 ^0xB9D62514
 {
 	if (Global_2672855.f_1725)
 	{
@@ -90649,7 +90649,7 @@ int func_377() // Position - 0x701BD
 	return 0;
 }
 
-var func_378() // Position - 0x701E7
+var func_378() // Position - 0x701E7 Hash - 0x34894DCF ^0x34894DCF
 {
 	var unk;
 
@@ -90658,7 +90658,7 @@ var func_378() // Position - 0x701E7
 	return unk;
 }
 
-float func_379(Vector3 vParam0, var uParam1, var uParam2, float fParam3, float fParam4) // Position - 0x70202
+float func_379(Vector3 vParam0, var uParam1, var uParam2, float fParam3, float fParam4) // Position - 0x70202 Hash - 0x2723A5F6 ^0x3634FE59
 {
 	float distanceBetweenCoords;
 	float num;
@@ -90689,7 +90689,7 @@ float func_379(Vector3 vParam0, var uParam1, var uParam2, float fParam3, float f
 	return num;
 }
 
-ePedComponentType func_380(int iParam0, char* sParam1, Hash hParam2, Hash hParam3, int iParam4, int iParam5, int iParam6, BOOL bParam7) // Position - 0x7029B
+ePedComponentType func_380(int iParam0, char* sParam1, Hash hParam2, Hash hParam3, int iParam4, int iParam5, int iParam6, BOOL bParam7) // Position - 0x7029B Hash - 0x52DDE953 ^0x52DDE953
 {
 	ePedComponentType type;
 
@@ -90697,7 +90697,7 @@ ePedComponentType func_380(int iParam0, char* sParam1, Hash hParam2, Hash hParam
 	return type;
 }
 
-ePedComponentType func_381(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4, BOOL bParam5, int iParam6, BOOL bParam7, Hash hParam8, Hash hParam9, BOOL bParam10) // Position - 0x702BE
+ePedComponentType func_381(int iParam0, int iParam1, char* sParam2, int iParam3, int iParam4, BOOL bParam5, int iParam6, BOOL bParam7, Hash hParam8, Hash hParam9, BOOL bParam10) // Position - 0x702BE Hash - 0x9E017036 ^0x67B7CCB7
 {
 	var unk;
 	ePedComponentType value;
@@ -90783,7 +90783,7 @@ ePedComponentType func_381(int iParam0, int iParam1, char* sParam2, int iParam3,
 	return value;
 }
 
-void func_382(int iParam0) // Position - 0x7042C
+void func_382(int iParam0) // Position - 0x7042C Hash - 0xBE7C32AA ^0x7762DBF9
 {
 	if (func_412())
 	{
@@ -90794,7 +90794,7 @@ void func_382(int iParam0) // Position - 0x7042C
 	return;
 }
 
-void _MPPLY_STAT_SET_INT(Hash hParam0, int iParam1) // Position - 0x70457
+void _MPPLY_STAT_SET_INT(Hash hParam0, int iParam1) // Position - 0x70457 Hash - 0x269D56BD ^0xD3DD91B4
 {
 	Hash statName;
 
@@ -90806,7 +90806,7 @@ void _MPPLY_STAT_SET_INT(Hash hParam0, int iParam1) // Position - 0x70457
 	return;
 }
 
-int func_384(ePedComponentType epctParam0) // Position - 0x70473
+int func_384(ePedComponentType epctParam0) // Position - 0x70473 Hash - 0xCC711ADD ^0xB317E2D9
 {
 	if (epctParam0 > PV_COMP_INVALID)
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, false, true))
@@ -90820,7 +90820,7 @@ int func_384(ePedComponentType epctParam0) // Position - 0x70473
 	return 0;
 }
 
-int _MPPLY_STAT_GET_INT(Hash hParam0) // Position - 0x704C4
+int _MPPLY_STAT_GET_INT(Hash hParam0) // Position - 0x704C4 Hash - 0x4F1C0EC ^0xC7D84231
 {
 	Hash statHash;
 	int outValue;
@@ -90833,7 +90833,7 @@ int _MPPLY_STAT_GET_INT(Hash hParam0) // Position - 0x704C4
 	return 0;
 }
 
-void func_386(ePedComponentType epctParam0) // Position - 0x704E2
+void func_386(ePedComponentType epctParam0) // Position - 0x704E2 Hash - 0xA3A3FBCE ^0xD1757F3C
 {
 	var gamerHandle;
 	int num;
@@ -90862,7 +90862,7 @@ void func_386(ePedComponentType epctParam0) // Position - 0x704E2
 	return;
 }
 
-int func_387(int iParam0) // Position - 0x705AC
+int func_387(int iParam0) // Position - 0x705AC Hash - 0xD04113E3 ^0xC97BA645
 {
 	if (iParam0 == _MPPLY_STAT_GET_INT(joaat("MPPLY_CREW_0_ID")))
 		return 0;
@@ -90880,7 +90880,7 @@ int func_387(int iParam0) // Position - 0x705AC
 	return -1;
 }
 
-int func_388(Any* panParam0) // Position - 0x70622
+int func_388(Any* panParam0) // Position - 0x70622 Hash - 0x38A7EEA7 ^0x1E985B38
 {
 	if (NETWORK::NETWORK_CLAN_SERVICE_IS_VALID())
 		if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(panParam0))
@@ -90889,7 +90889,7 @@ int func_388(Any* panParam0) // Position - 0x70622
 	return Global_2696114;
 }
 
-struct<13> GET_GAMER_HANDLE_PLAYER(ePedComponentType epctParam0) // Position - 0x70645
+struct<13> GET_GAMER_HANDLE_PLAYER(ePedComponentType epctParam0) // Position - 0x70645 Hash - 0x3F3CEB62 ^0x60A9D262
 {
 	var gamerHandle;
 
@@ -90897,7 +90897,7 @@ struct<13> GET_GAMER_HANDLE_PLAYER(ePedComponentType epctParam0) // Position - 0
 	return gamerHandle;
 }
 
-void func_390(ePedComponentType epctParam0, Hash hParam1, int iParam2) // Position - 0x7065C
+void func_390(ePedComponentType epctParam0, Hash hParam1, int iParam2) // Position - 0x7065C Hash - 0x2622A835 ^0x600A20E
 {
 	if (func_412())
 	{
@@ -90954,7 +90954,7 @@ void func_390(ePedComponentType epctParam0, Hash hParam1, int iParam2) // Positi
 	return;
 }
 
-void func_391(BOOL bParam0, int iParam1, BOOL bParam2) // Position - 0x7076E
+void func_391(BOOL bParam0, int iParam1, BOOL bParam2) // Position - 0x7076E Hash - 0xA5060797 ^0xA5060797
 {
 	int num;
 
@@ -90968,7 +90968,7 @@ void func_391(BOOL bParam0, int iParam1, BOOL bParam2) // Position - 0x7076E
 	return;
 }
 
-int func_392() // Position - 0x7079B
+int func_392() // Position - 0x7079B Hash - 0x6BB290B9 ^0x6BB290B9
 {
 	int num;
 	int i;
@@ -90987,7 +90987,7 @@ int func_392() // Position - 0x7079B
 	return num;
 }
 
-BOOL func_393(int iParam0, BOOL bParam1) // Position - 0x707D0
+BOOL func_393(int iParam0, BOOL bParam1) // Position - 0x707D0 Hash - 0x53FB4C13 ^0x53FB4C13
 {
 	if (Global_1575071)
 		return false;
@@ -91003,13 +91003,13 @@ BOOL func_393(int iParam0, BOOL bParam1) // Position - 0x707D0
 	return true;
 }
 
-ePedComponentType func_394(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x70856
+ePedComponentType func_394(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x70856 Hash - 0xF691E39 ^0xF691E39
 {
 	bParam1;
 	return func_395(epctParam0, 0);
 }
 
-int func_395(ePedComponentType epctParam0, int iParam1) // Position - 0x7086A
+int func_395(ePedComponentType epctParam0, int iParam1) // Position - 0x7086A Hash - 0xDF9AED47 ^0xE2775504
 {
 	int i;
 	int value;
@@ -91063,7 +91063,7 @@ int func_395(ePedComponentType epctParam0, int iParam1) // Position - 0x7086A
 }
 
 // Unhandled jump detected. Output should be considered invalid
-ePedComponentType func_396(int iParam0) // Position - 0x70925
+ePedComponentType func_396(int iParam0) // Position - 0x70925 Hash - 0xC61E502D ^0xB6C40432
 {
 	int num;
 	int num2;
@@ -91383,7 +91383,7 @@ ePedComponentType func_396(int iParam0) // Position - 0x70925
 	return 1555800;
 }
 
-BOOL func_397(ePedComponentType epctParam0) // Position - 0x70E60
+BOOL func_397(ePedComponentType epctParam0) // Position - 0x70E60 Hash - 0x392A396A ^0x1DEEBA83
 {
 	if (!func_143(epctParam0))
 		return false;
@@ -91391,7 +91391,7 @@ BOOL func_397(ePedComponentType epctParam0) // Position - 0x70E60
 	return IS_BIT_SET(Global_2672855.f_1, epctParam0);
 }
 
-ePedComponentType func_398(ePedComponentType epctParam0) // Position - 0x70E7F
+ePedComponentType func_398(ePedComponentType epctParam0) // Position - 0x70E7F Hash - 0xA3072EF4 ^0x9ADDCC12
 {
 	if (Global_1574633.f_9 == 0)
 		if (epctParam0 > PV_COMP_INVALID)
@@ -91405,7 +91405,7 @@ ePedComponentType func_398(ePedComponentType epctParam0) // Position - 0x70E7F
 	return PV_COMP_HEAD;
 }
 
-void func_399(int iParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x70ED6
+void func_399(int iParam0, ePedComponentType epctParam1, int iParam2) // Position - 0x70ED6 Hash - 0x7143C29F ^0x7143C29F
 {
 	ePedComponentType type;
 
@@ -91415,7 +91415,7 @@ void func_399(int iParam0, ePedComponentType epctParam1, int iParam2) // Positio
 	return;
 }
 
-void func_400(var uParam0) // Position - 0x70EFE
+void func_400(var uParam0) // Position - 0x70EFE Hash - 0xC20225DE ^0xC8F4B07C
 {
 	int i;
 	int playerTeam;
@@ -91464,7 +91464,7 @@ void func_400(var uParam0) // Position - 0x70EFE
 	return;
 }
 
-float func_401(int iParam0, int iParam1) // Position - 0x70FEA
+float func_401(int iParam0, int iParam1) // Position - 0x70FEA Hash - 0xB7CFCEFD ^0xD9C1C49F
 {
 	float num;
 	float num2;
@@ -91476,7 +91476,7 @@ float func_401(int iParam0, int iParam1) // Position - 0x70FEA
 	return num3;
 }
 
-BOOL func_402(Player plParam0, ePedComponentType epctParam1) // Position - 0x7100B
+BOOL func_402(Player plParam0, ePedComponentType epctParam1) // Position - 0x7100B Hash - 0x4B2E9FD ^0xDE2AD648
 {
 	if (NETWORK::NETWORK_CLAN_SERVICE_IS_VALID())
 	{
@@ -91499,7 +91499,7 @@ BOOL func_402(Player plParam0, ePedComponentType epctParam1) // Position - 0x710
 	return false;
 }
 
-BOOL func_403(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0x71078
+BOOL func_403(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0x71078 Hash - 0xB71E36C3 ^0xB71E36C3
 {
 	int num;
 	int num2;
@@ -91643,7 +91643,7 @@ BOOL func_403(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 
 	return false;
 }
 
-BOOL func_404(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0x713C3
+BOOL func_404(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0x713C3 Hash - 0x4A3D8974 ^0x4A3D8974
 {
 	BOOL num;
 	ePedComponentType type;
@@ -91703,12 +91703,12 @@ BOOL func_404(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 
 	return num;
 }
 
-BOOL func_405(ePedComponentType epctParam0) // Position - 0x714EF
+BOOL func_405(ePedComponentType epctParam0) // Position - 0x714EF Hash - 0x5D66E846 ^0x96BDA51B
 {
 	return IS_BIT_SET(Global_1845281[epctParam0 /*883*/].f_36.f_18, 14);
 }
 
-void func_406(BOOL bParam0, var uParam1) // Position - 0x71507
+void func_406(BOOL bParam0, var uParam1) // Position - 0x71507 Hash - 0xC06DC6D3 ^0x322A8914
 {
 	ePedComponentType i;
 	int num;
@@ -91777,17 +91777,17 @@ void func_406(BOOL bParam0, var uParam1) // Position - 0x71507
 	return;
 }
 
-float func_407(Player plParam0, ePedComponentType epctParam1) // Position - 0x7161F
+float func_407(Player plParam0, ePedComponentType epctParam1) // Position - 0x7161F Hash - 0xE648ACD3 ^0x683AC7B8
 {
 	return SYSTEM::VDIST(_GET_PLAYER_COORDS(plParam0), _GET_PLAYER_COORDS(epctParam1));
 }
 
-Vector3 _GET_PLAYER_COORDS(ePedComponentType epctParam0) // Position - 0x7163B
+Vector3 _GET_PLAYER_COORDS(ePedComponentType epctParam0) // Position - 0x7163B Hash - 0x6712BF53 ^0x688D5BEC
 {
 	return ENTITY::GET_ENTITY_COORDS(PLAYER::GET_PLAYER_PED(epctParam0), false);
 }
 
-ePedComponentType func_409(var uParam0) // Position - 0x7164E
+ePedComponentType func_409(var uParam0) // Position - 0x7164E Hash - 0xACE6F701 ^0x85923A5E
 {
 	int num;
 
@@ -91799,7 +91799,7 @@ ePedComponentType func_409(var uParam0) // Position - 0x7164E
 	return *uParam0;
 }
 
-ePedComponentType func_410(int iParam0) // Position - 0x71685
+ePedComponentType func_410(int iParam0) // Position - 0x71685 Hash - 0xC21D4DE7 ^0x9C01EBD6
 {
 	if (iParam0 < PV_COMP_HEAD)
 		if (MISC::ABSI(iParam0) > func_398(PLAYER::PLAYER_ID()))
@@ -91812,7 +91812,7 @@ ePedComponentType func_410(int iParam0) // Position - 0x71685
 	return iParam0;
 }
 
-ePedComponentType func_411(int iParam0, BOOL bParam1, int iParam2) // Position - 0x716E9
+ePedComponentType func_411(int iParam0, BOOL bParam1, int iParam2) // Position - 0x716E9 Hash - 0xA1A7F1E4 ^0x8E7F9034
 {
 	iParam2 == 0;
 	bParam1;
@@ -91823,12 +91823,12 @@ ePedComponentType func_411(int iParam0, BOOL bParam1, int iParam2) // Position -
 	return func_396(iParam0);
 }
 
-BOOL func_412() // Position - 0x7170F
+BOOL func_412() // Position - 0x7170F Hash - 0xFD255207 ^0xFD255207
 {
 	return true;
 }
 
-BOOL func_413(char* sParam0) // Position - 0x71718
+BOOL func_413(char* sParam0) // Position - 0x71718 Hash - 0xC6457479 ^0x946B3F28
 {
 	if (MISC::IS_STRING_NULL(sParam0))
 		return true;
@@ -91838,7 +91838,7 @@ BOOL func_413(char* sParam0) // Position - 0x71718
 	return false;
 }
 
-int func_414() // Position - 0x71753
+int func_414() // Position - 0x71753 Hash - 0xC61B5E3D ^0xF4A99937
 {
 	int num;
 
@@ -91865,17 +91865,17 @@ int func_414() // Position - 0x71753
 	return num;
 }
 
-BOOL func_415(int iParam0) // Position - 0x71821
+BOOL func_415(int iParam0) // Position - 0x71821 Hash - 0x96081E74 ^0x96081E74
 {
 	return iParam0 == 89;
 }
 
-BOOL func_416(ePedComponentType epctParam0) // Position - 0x7182E
+BOOL func_416(ePedComponentType epctParam0) // Position - 0x7182E Hash - 0x616E2FF8 ^0x616E2FF8
 {
 	return func_417(func_418(epctParam0));
 }
 
-int func_417(ePedComponentType epctParam0) // Position - 0x71840
+int func_417(ePedComponentType epctParam0) // Position - 0x71840 Hash - 0x5000025C ^0x5000025C
 {
 	switch (epctParam0)
 	{
@@ -91889,7 +91889,7 @@ int func_417(ePedComponentType epctParam0) // Position - 0x71840
 	return 0;
 }
 
-ePedComponentType func_418(ePedComponentType epctParam0) // Position - 0x7185A
+ePedComponentType func_418(ePedComponentType epctParam0) // Position - 0x7185A Hash - 0x5EA8DF5A ^0xEE8D593B
 {
 	if (func_143(epctParam0))
 		if (func_419(epctParam0, false))
@@ -91898,7 +91898,7 @@ ePedComponentType func_418(ePedComponentType epctParam0) // Position - 0x7185A
 	return PV_COMP_INVALID;
 }
 
-BOOL func_419(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x71886
+BOOL func_419(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x71886 Hash - 0x3654624B ^0x97E7BA1
 {
 	if (func_143(epctParam0))
 		if (Global_1887305[epctParam0 /*610*/].f_10.f_33 != PV_COMP_INVALID || bParam1 && Global_1887305[epctParam0 /*610*/].f_10.f_32 != PV_COMP_INVALID)
@@ -91907,7 +91907,7 @@ BOOL func_419(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x71886
 	return false;
 }
 
-BOOL func_420() // Position - 0x718CA
+BOOL func_420() // Position - 0x718CA Hash - 0xDA2E4073 ^0xBA045E42
 {
 	if (NETWORK::NETWORK_IS_ACTIVITY_SESSION())
 		return func_422();
@@ -91915,7 +91915,7 @@ BOOL func_420() // Position - 0x718CA
 	return func_421(*Global_4718592.f_127178);
 }
 
-BOOL func_421(ePedComponentType epctParam0) // Position - 0x718EE
+BOOL func_421(ePedComponentType epctParam0) // Position - 0x718EE Hash - 0x4813BA45 ^0x4813BA45
 {
 	int i;
 
@@ -91931,22 +91931,22 @@ BOOL func_421(ePedComponentType epctParam0) // Position - 0x718EE
 	return 0;
 }
 
-BOOL func_422() // Position - 0x71928
+BOOL func_422() // Position - 0x71928 Hash - 0x4228A1C2 ^0xF0823820
 {
 	return Global_2684504.f_19;
 }
 
-BOOL func_423(Player plParam0) // Position - 0x71936
+BOOL func_423(Player plParam0) // Position - 0x71936 Hash - 0xA3F2BD37 ^0x597BFEBA
 {
 	return Global_2657971[plParam0 /*465*/].f_122 == 2;
 }
 
-BOOL func_424(Player plParam0) // Position - 0x7194B
+BOOL func_424(Player plParam0) // Position - 0x7194B Hash - 0x405E6C93 ^0xDC830F0E
 {
 	return Global_2657971[plParam0 /*465*/].f_122 == 7;
 }
 
-void func_425(ePedComponentType epctParam0, int iParam1, char* sParam2, ePedComponentType epctParam3, ePedComponentType epctParam4, int iParam5, int iParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15, int iParam16, int iParam17, int iParam18, int iParam19, int iParam20, int iParam21, int iParam22, int iParam23, int iParam24, int iParam25, int iParam26, int iParam27, int iParam28, int iParam29, int iParam30, int iParam31, int iParam32, int iParam33, int iParam34, int iParam35, int iParam36, int iParam37, int iParam38, int iParam39) // Position - 0x71960
+void func_425(ePedComponentType epctParam0, int iParam1, char* sParam2, ePedComponentType epctParam3, ePedComponentType epctParam4, int iParam5, float fParam6, int iParam7, int iParam8, int iParam9, int iParam10, int iParam11, int iParam12, int iParam13, int iParam14, int iParam15, int iParam16, int iParam17, int iParam18, int iParam19, int iParam20, int iParam21, int iParam22, int iParam23, int iParam24, int iParam25, int iParam26, int iParam27, int iParam28, int iParam29, int iParam30, int iParam31, int iParam32, int iParam33, int iParam34, int iParam35, int iParam36, int iParam37, int iParam38, int iParam39) // Position - 0x71960 Hash - 0x7E1A1749 ^0x7E1A1749
 {
 	int num;
 	int i;
@@ -91970,7 +91970,7 @@ void func_425(ePedComponentType epctParam0, int iParam1, char* sParam2, ePedComp
 		Global_1670224.f_1177.f_194[num] = epctParam3;
 		Global_1670224.f_1177.f_183[num] = epctParam4;
 		Global_1670224.f_1177.f_227[num] = iParam5;
-		Global_1670224.f_1177.f_238[num /*3*/] = iParam6;
+		Global_1670224.f_1177.f_238[num /*3*/] = fParam6;
 		Global_1670224.f_1177.f_238[num /*3*/].f_1 = iParam7;
 		Global_1670224.f_1177.f_269[num] = iParam8;
 		Global_1670224.f_1177.f_280[num] = iParam9;
@@ -92010,18 +92010,18 @@ void func_425(ePedComponentType epctParam0, int iParam1, char* sParam2, ePedComp
 	return;
 }
 
-void func_426(int iParam0, int iParam1) // Position - 0x71C27
+void func_426(int iParam0, int iParam1) // Position - 0x71C27 Hash - 0xB94ADBE4 ^0x5A6F4E87
 {
 	MISC::SET_BIT(&Global_1670224.f_7064[iParam0], iParam1);
 	return;
 }
 
-BOOL func_427(int iParam0, int iParam1) // Position - 0x71C40
+BOOL func_427(int iParam0, int iParam1) // Position - 0x71C40 Hash - 0x3E555E75 ^0x3E555E75
 {
 	return IS_BIT_SET(Global_1670224.f_7064[iParam0], iParam1);
 }
 
-void func_428(BOOL bParam0) // Position - 0x71C56
+void func_428(BOOL bParam0) // Position - 0x71C56 Hash - 0x77BBBED5 ^0x77BBBED5
 {
 	if (bParam0)
 		func_430();
@@ -92039,7 +92039,7 @@ void func_428(BOOL bParam0) // Position - 0x71C56
 	return;
 }
 
-void func_429(int iParam0, int iParam1) // Position - 0x71CA7
+void func_429(int iParam0, int iParam1) // Position - 0x71CA7 Hash - 0xD7EC669C ^0xC01D15BF
 {
 	MISC::SET_BIT(&(Global_1668667.f_1047), iParam0);
 
@@ -92054,19 +92054,19 @@ void func_429(int iParam0, int iParam1) // Position - 0x71CA7
 	return;
 }
 
-void func_430() // Position - 0x71CDD
+void func_430() // Position - 0x71CDD Hash - 0x6BEE258E ^0x6BEE258E
 {
 	Global_2738934.f_4651 = 0;
 	return;
 }
 
-void func_431() // Position - 0x71CED
+void func_431() // Position - 0x71CED Hash - 0x9A142650 ^0xE9E53C81
 {
 	Global_23692.f_6 = 1;
 	return;
 }
 
-void func_432() // Position - 0x71CFB
+void func_432() // Position - 0x71CFB Hash - 0xD9FFC3AB ^0x262ACE76
 {
 	if (MISC::IS_PC_VERSION())
 	{
@@ -92080,7 +92080,7 @@ void func_432() // Position - 0x71CFB
 	return;
 }
 
-void func_433(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5, BOOL bParam6) // Position - 0x71D1F
+void func_433(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4, BOOL bParam5, BOOL bParam6) // Position - 0x71D1F Hash - 0x787E640E ^0x67C15509
 {
 	if (bParam0)
 	{
@@ -92132,12 +92132,12 @@ void func_433(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bPara
 	return;
 }
 
-BOOL func_434() // Position - 0x71E6C
+BOOL func_434() // Position - 0x71E6C Hash - 0xAA7793E3 ^0x3F62CDC8
 {
 	return IS_BIT_SET(Global_1845281[PLAYER::PLAYER_ID() /*883*/].f_36.f_18, 14);
 }
 
-BOOL func_435(ePedComponentType epctParam0) // Position - 0x71E86
+BOOL func_435(ePedComponentType epctParam0) // Position - 0x71E86 Hash - 0x68897CDD ^0x7A533860
 {
 	if (func_317(epctParam0, 0))
 		return true;
@@ -92152,12 +92152,12 @@ BOOL func_435(ePedComponentType epctParam0) // Position - 0x71E86
 	return false;
 }
 
-BOOL func_436() // Position - 0x71EC5
+BOOL func_436() // Position - 0x71EC5 Hash - 0xA525B2F4 ^0xA525B2F4
 {
 	return IS_BIT_SET(Global_2621446, 3);
 }
 
-int func_437(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position - 0x71ED3
+int func_437(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position - 0x71ED3 Hash - 0x3167F4C7 ^0xCE6B9B6A
 {
 	int num;
 
@@ -92175,7 +92175,7 @@ int func_437(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position
 	return num;
 }
 
-void func_438(int iParam0) // Position - 0x71F06
+void func_438(int iParam0) // Position - 0x71F06 Hash - 0x1B2EEE72 ^0xEDBC1F9D
 {
 	if (iParam0 == 1)
 		MISC::SET_BIT(&Global_8800, 13);
@@ -92185,7 +92185,7 @@ void func_438(int iParam0) // Position - 0x71F06
 	return;
 }
 
-void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlags espcfParam2, BOOL bParam3) // Position - 0x71F29
+void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlags espcfParam2, BOOL bParam3) // Position - 0x71F29 Hash - 0xCD788E2C ^0x50180146
 {
 	eSetPlayerControlFlags flags;
 	BOOL flag;
@@ -92445,12 +92445,12 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 	return;
 }
 
-BOOL func_440(int iParam0) // Position - 0x723DC
+BOOL func_440(int iParam0) // Position - 0x723DC Hash - 0xFB453256 ^0xFB453256
 {
 	return iParam0 == 17;
 }
 
-void func_441() // Position - 0x723E9
+void func_441() // Position - 0x723E9 Hash - 0xBC63612E ^0xBC63612E
 {
 	var unk;
 
@@ -92463,7 +92463,7 @@ void func_441() // Position - 0x723E9
 	return;
 }
 
-void func_442() // Position - 0x72436
+void func_442() // Position - 0x72436 Hash - 0x5FEB45C4 ^0xAE96E258
 {
 	Global_2635563.f_702 = 0;
 	Global_2635563.f_3035 = 0;
@@ -92474,7 +92474,7 @@ void func_442() // Position - 0x72436
 	return;
 }
 
-BOOL func_443(Ped pedParam0) // Position - 0x72474
+BOOL func_443(Ped pedParam0) // Position - 0x72474 Hash - 0x93DB01D2 ^0x43DCC591
 {
 	int scriptTaskStatus;
 
@@ -92493,7 +92493,7 @@ BOOL func_443(Ped pedParam0) // Position - 0x72474
 	return false;
 }
 
-void func_444(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x724A5
+void func_444(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x724A5 Hash - 0x19FE7AFC ^0x4538006F
 {
 	int num;
 	eViewModeContext i;
@@ -92540,7 +92540,7 @@ void func_444(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x724A5
 	return;
 }
 
-void _MPPLY_STAT_SET_BOOL(Hash hParam0, BOOL bParam1) // Position - 0x72575
+void _MPPLY_STAT_SET_BOOL(Hash hParam0, BOOL bParam1) // Position - 0x72575 Hash - 0x269D56BD ^0xB104E3E4
 {
 	Hash statName;
 
@@ -92552,7 +92552,7 @@ void _MPPLY_STAT_SET_BOOL(Hash hParam0, BOOL bParam1) // Position - 0x72575
 	return;
 }
 
-void func_446() // Position - 0x72591
+void func_446() // Position - 0x72591 Hash - 0xEFF6029E ^0x224AB476
 {
 	eViewModeContext i;
 
@@ -92573,7 +92573,7 @@ void func_446() // Position - 0x72591
 	return;
 }
 
-BOOL func_447() // Position - 0x725E9
+BOOL func_447() // Position - 0x725E9 Hash - 0xEBB0E6F7 ^0x19BAFBE9
 {
 	if (IS_BIT_SET(Global_1845281[PLAYER::PLAYER_ID() /*883*/].f_879, 2) && !(Global_2685444.f_2847.f_216 == -1))
 		return true;
@@ -92581,7 +92581,7 @@ BOOL func_447() // Position - 0x725E9
 	return false;
 }
 
-int func_448() // Position - 0x7261A
+int func_448() // Position - 0x7261A Hash - 0xF9396AAC ^0xF9396AAC
 {
 	int num;
 
@@ -92589,7 +92589,7 @@ int func_448() // Position - 0x7261A
 	return num;
 }
 
-void func_449(Ped pedParam0, var uParam1, int iParam2, int iParam3) // Position - 0x72627
+void func_449(Ped pedParam0, var uParam1, int iParam2, int iParam3) // Position - 0x72627 Hash - 0x4CE94407 ^0xC863C983
 {
 	eCharacter character;
 	ePedComponentType i;
@@ -92638,7 +92638,7 @@ void func_449(Ped pedParam0, var uParam1, int iParam2, int iParam3) // Position 
 	return;
 }
 
-void func_450(Ped pedParam0, ePedComponentType epctParam1, var uParam2, var uParam3, int iParam4, eCharacter echParam5) // Position - 0x727C1
+void func_450(Ped pedParam0, ePedComponentType epctParam1, var uParam2, var uParam3, int iParam4, eCharacter echParam5) // Position - 0x727C1 Hash - 0x65821445 ^0x4849EA55
 {
 	eCharacter character;
 
@@ -92875,7 +92875,7 @@ void func_450(Ped pedParam0, ePedComponentType epctParam1, var uParam2, var uPar
 	return;
 }
 
-void func_451(Ped pedParam0, ePedComponentType epctParam1, var uParam2, var uParam3, var uParam4, int iParam5, eCharacter echParam6) // Position - 0x72D0A
+void func_451(Ped pedParam0, ePedComponentType epctParam1, var uParam2, var uParam3, var uParam4, int iParam5, eCharacter echParam6) // Position - 0x72D0A Hash - 0x10358CC6 ^0xCC2A186D
 {
 	eCharacter character;
 
@@ -93003,7 +93003,7 @@ void func_451(Ped pedParam0, ePedComponentType epctParam1, var uParam2, var uPar
 	return;
 }
 
-void func_452() // Position - 0x72F4B
+void func_452() // Position - 0x72F4B Hash - 0x3ECCB86 ^0x3ECCB86
 {
 	if (func_456())
 	{
@@ -93014,7 +93014,7 @@ void func_452() // Position - 0x72F4B
 	return;
 }
 
-void func_453() // Position - 0x72F66
+void func_453() // Position - 0x72F66 Hash - 0x4E2E9530 ^0x9EBC6D4A
 {
 	if (!_IS_FMMC_ACTIVE() && !func_454() && Global_2685443)
 		Global_4718592.f_127178 = 0;
@@ -93022,22 +93022,22 @@ void func_453() // Position - 0x72F66
 	return;
 }
 
-BOOL func_454() // Position - 0x72F94
+BOOL func_454() // Position - 0x72F94 Hash - 0x974E48B4 ^0x974E48B4
 {
 	return Global_2684504.f_693;
 }
 
-BOOL _IS_FMMC_ACTIVE() // Position - 0x72FA3
+BOOL _IS_FMMC_ACTIVE() // Position - 0x72FA3 Hash - 0x9A79549B ^0x4A0EF303
 {
 	return Global_1845281[PLAYER::PLAYER_ID() /*883*/].f_193 != 0;
 }
 
-BOOL func_456() // Position - 0x72FBA
+BOOL func_456() // Position - 0x72FBA Hash - 0xEDAE0057 ^0x5A1A7786
 {
 	return IS_BIT_SET(Global_2684504.f_2, 11);
 }
 
-BOOL func_457() // Position - 0x72FCB
+BOOL func_457() // Position - 0x72FCB Hash - 0xFA4C013E ^0xE6327E8A
 {
 	if (func_456() || func_458())
 		if (!NETWORK::NETWORK_IS_ACTIVITY_SESSION())
@@ -93046,12 +93046,12 @@ BOOL func_457() // Position - 0x72FCB
 	return false;
 }
 
-BOOL func_458() // Position - 0x72FF1
+BOOL func_458() // Position - 0x72FF1 Hash - 0x61FCCCBD ^0x9F763282
 {
 	return IS_BIT_SET(Global_2685444.f_1.f_2810, 4);
 }
 
-BOOL func_459(BOOL bParam0, BOOL bParam1, BOOL bParam2) // Position - 0x73004
+BOOL func_459(BOOL bParam0, BOOL bParam1, BOOL bParam2) // Position - 0x73004 Hash - 0xF0D380FF ^0x29DD7336
 {
 	Vehicle vehiclePedIsIn;
 
@@ -93098,30 +93098,30 @@ BOOL func_459(BOOL bParam0, BOOL bParam1, BOOL bParam2) // Position - 0x73004
 	return true;
 }
 
-BOOL func_460() // Position - 0x730E9
+BOOL func_460() // Position - 0x730E9 Hash - 0x47FF56D2 ^0x47FF56D2
 {
 	return Global_76498;
 }
 
-BOOL func_461(Player plParam0) // Position - 0x730F5
+BOOL func_461(Player plParam0) // Position - 0x730F5 Hash - 0xBA52AC63 ^0x583EC77A
 {
 	return IS_BIT_SET(Global_1668667.f_241.f_136[func_22(9) /*33*/][plParam0], func_17(9));
 }
 
-void func_462(const char* sParam0) // Position - 0x73118
+void func_462(const char* sParam0) // Position - 0x73118 Hash - 0x99A98712 ^0xE46BE9F0
 {
 	HUD::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
 	HUD::END_TEXT_COMMAND_DISPLAY_HELP(0, true, true, -1);
 	return;
 }
 
-BOOL _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(const char* message) // Position - 0x7312E
+BOOL _IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(const char* message) // Position - 0x7312E Hash - 0xCD6A3595 ^0xB0E86AA0
 {
 	HUD::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(message);
 	return HUD::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(0);
 }
 
-BOOL func_464(Vector3 vParam0, var uParam1, var uParam2, int iParam3, var uParam4, var uParam5) // Position - 0x73141
+BOOL func_464(Vector3 vParam0, var uParam1, var uParam2, int iParam3, var uParam4, var uParam5) // Position - 0x73141 Hash - 0xAC277417 ^0x4522E486
 {
 	if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 	{
@@ -93144,7 +93144,7 @@ BOOL func_464(Vector3 vParam0, var uParam1, var uParam2, int iParam3, var uParam
 	return false;
 }
 
-BOOL func_465(float fParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, int iParam6, BOOL bParam7) // Position - 0x731F4
+BOOL func_465(float fParam0, var uParam1, var uParam2, var uParam3, var uParam4, var uParam5, int iParam6, BOOL bParam7) // Position - 0x731F4 Hash - 0x1FB736D4 ^0x234AEAB7
 {
 	if (iParam6 < 0f)
 		iParam6 = 0f;
@@ -93161,7 +93161,7 @@ BOOL func_465(float fParam0, var uParam1, var uParam2, var uParam3, var uParam4,
 	return false;
 }
 
-BOOL func_466() // Position - 0x7326F
+BOOL func_466() // Position - 0x7326F Hash - 0x1CB029D8 ^0x1CB029D8
 {
 	if (Global_44042 == 15)
 		return false;
@@ -93169,7 +93169,7 @@ BOOL func_466() // Position - 0x7326F
 	return true;
 }
 
-BOOL func_467() // Position - 0x73284
+BOOL func_467() // Position - 0x73284 Hash - 0xF5E9376F ^0xD1FAE5F8
 {
 	int pedNearbyPeds;
 	int i;
@@ -93199,7 +93199,7 @@ BOOL func_467() // Position - 0x73284
 	return false;
 }
 
-BOOL func_468() // Position - 0x73348
+BOOL func_468() // Position - 0x73348 Hash - 0x231ADBAA ^0x231ADBAA
 {
 	int num;
 	int num2;
@@ -93215,7 +93215,7 @@ BOOL func_468() // Position - 0x73348
 	return false;
 }
 
-BOOL func_469(int iParam0) // Position - 0x73395
+BOOL func_469(int iParam0) // Position - 0x73395 Hash - 0x5554D359 ^0xD7E39DAF
 {
 	if (IS_BIT_SET(Global_1835488, iParam0) || Global_1835489 != -1 || func_480() || PLAYER::IS_PLAYER_FREE_AIMING(PLAYER::PLAYER_ID()) || PLAYER::IS_PLAYER_TARGETTING_ANYTHING(PLAYER::PLAYER_ID()) || func_479() || func_476(iParam0))
 		return false;
@@ -93232,7 +93232,7 @@ BOOL func_469(int iParam0) // Position - 0x73395
 	return true;
 }
 
-int func_470(ePedComponentType epctParam0) // Position - 0x73435
+int func_470(ePedComponentType epctParam0) // Position - 0x73435 Hash - 0xE3A3D5D5 ^0x92469F7
 {
 	if (func_418(epctParam0) == 328)
 		return func_471(epctParam0, 328);
@@ -93240,7 +93240,7 @@ int func_470(ePedComponentType epctParam0) // Position - 0x73435
 	return -1;
 }
 
-int func_471(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x73456
+int func_471(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x73456 Hash - 0xE22E8209 ^0xE22E8209
 {
 	if (func_418(epctParam0) == epctParam1)
 		return func_472(epctParam0);
@@ -93248,7 +93248,7 @@ int func_471(ePedComponentType epctParam0, ePedComponentType epctParam1) // Posi
 	return -1;
 }
 
-int func_472(ePedComponentType epctParam0) // Position - 0x73473
+int func_472(ePedComponentType epctParam0) // Position - 0x73473 Hash - 0x48014DA ^0xC49B9410
 {
 	if (func_419(epctParam0, false))
 		return Global_1887305[epctParam0 /*610*/].f_10.f_182;
@@ -93256,7 +93256,7 @@ int func_472(ePedComponentType epctParam0) // Position - 0x73473
 	return -1;
 }
 
-int func_473(ePedComponentType epctParam0) // Position - 0x73496
+int func_473(ePedComponentType epctParam0) // Position - 0x73496 Hash - 0xE3A3D5D5 ^0xDF52256C
 {
 	if (func_418(epctParam0) == 327)
 		return func_471(epctParam0, 327);
@@ -93264,7 +93264,7 @@ int func_473(ePedComponentType epctParam0) // Position - 0x73496
 	return -1;
 }
 
-int func_474(ePedComponentType epctParam0) // Position - 0x734B7
+int func_474(ePedComponentType epctParam0) // Position - 0x734B7 Hash - 0xAB4D17EF ^0xC7F69170
 {
 	if (func_418(epctParam0) == 299)
 		return func_472(epctParam0);
@@ -93272,7 +93272,7 @@ int func_474(ePedComponentType epctParam0) // Position - 0x734B7
 	return -1;
 }
 
-int func_475(ePedComponentType epctParam0) // Position - 0x734D5
+int func_475(ePedComponentType epctParam0) // Position - 0x734D5 Hash - 0xAB4D17EF ^0x66FACDAC
 {
 	if (func_418(epctParam0) == 271)
 		return func_472(epctParam0);
@@ -93280,7 +93280,7 @@ int func_475(ePedComponentType epctParam0) // Position - 0x734D5
 	return -1;
 }
 
-BOOL func_476(int iParam0) // Position - 0x734F3
+BOOL func_476(int iParam0) // Position - 0x734F3 Hash - 0xDB1730E4 ^0xDB1730E4
 {
 	if (func_477())
 		return true;
@@ -93288,7 +93288,7 @@ BOOL func_476(int iParam0) // Position - 0x734F3
 	return false;
 }
 
-BOOL func_477() // Position - 0x73507
+BOOL func_477() // Position - 0x73507 Hash - 0x98378B42 ^0x98378B42
 {
 	if (func_478() != -1)
 		return true;
@@ -93298,12 +93298,12 @@ BOOL func_477() // Position - 0x73507
 	return false;
 }
 
-int func_478() // Position - 0x73523
+int func_478() // Position - 0x73523 Hash - 0x47FF56D2 ^0x47FF56D2
 {
 	return Global_2696201;
 }
 
-BOOL func_479() // Position - 0x7352F
+BOOL func_479() // Position - 0x7352F Hash - 0x7FE517FE ^0x128A3BC8
 {
 	if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 		return Global_98991.f_44 == 1;
@@ -93311,7 +93311,7 @@ BOOL func_479() // Position - 0x7352F
 	return false;
 }
 
-BOOL func_480() // Position - 0x7354B
+BOOL func_480() // Position - 0x7354B Hash - 0xD7C0C727 ^0xD7C0C727
 {
 	if (Global_4521801.f_910 == true)
 		return true;
@@ -93319,7 +93319,7 @@ BOOL func_480() // Position - 0x7354B
 	return false;
 }
 
-void func_481() // Position - 0x73563
+void func_481() // Position - 0x73563 Hash - 0x394F38E6 ^0x8971393A
 {
 	!bLocal_395;
 	func_361(0);
@@ -93392,7 +93392,7 @@ void func_481() // Position - 0x73563
 	return;
 }
 
-void func_482() // Position - 0x737AE
+void func_482() // Position - 0x737AE Hash - 0x7D04CD6F ^0x6A22B89D
 {
 	var unk;
 
@@ -93407,12 +93407,12 @@ void func_482() // Position - 0x737AE
 	return;
 }
 
-BOOL func_483() // Position - 0x737F3
+BOOL func_483() // Position - 0x737F3 Hash - 0x47FF56D2 ^0x47FF56D2
 {
 	return Global_1575083;
 }
 
-BOOL func_484() // Position - 0x737FF
+BOOL func_484() // Position - 0x737FF Hash - 0x3F80A72E ^0x3F80A72E
 {
 	if (func_331() == 3 || func_331() == 2)
 		return true;
@@ -93420,7 +93420,7 @@ BOOL func_484() // Position - 0x737FF
 	return false;
 }
 
-void func_485() // Position - 0x73821
+void func_485() // Position - 0x73821 Hash - 0x488D4D5A ^0x12A09EFB
 {
 	if (!func_488() && !func_487() && !func_486())
 		MISC::SET_BIT(&(Global_2684504.f_2), 18);
@@ -93428,22 +93428,22 @@ void func_485() // Position - 0x73821
 	return;
 }
 
-BOOL func_486() // Position - 0x73851
+BOOL func_486() // Position - 0x73851 Hash - 0x8DF3D75D ^0x8DF3D75D
 {
 	return IS_BIT_SET(Global_2684504, 5);
 }
 
-BOOL func_487() // Position - 0x7385F
+BOOL func_487() // Position - 0x7385F Hash - 0x97999A47 ^0x97999A47
 {
 	return IS_BIT_SET(Global_2684504, 1);
 }
 
-BOOL func_488() // Position - 0x7386D
+BOOL func_488() // Position - 0x7386D Hash - 0x70FF297D ^0x70FF297D
 {
 	return IS_BIT_SET(Global_2684504, 2);
 }
 
-BOOL func_489(var uParam0, int iParam1, BOOL bParam2) // Position - 0x7387B
+BOOL func_489(var uParam0, int iParam1, BOOL bParam2) // Position - 0x7387B Hash - 0xE7AE0A5 ^0x8D771ED3
 {
 	if (iParam1 == -1)
 		return true;
@@ -93467,7 +93467,7 @@ BOOL func_489(var uParam0, int iParam1, BOOL bParam2) // Position - 0x7387B
 	return false;
 }
 
-BOOL func_490() // Position - 0x738E5
+BOOL func_490() // Position - 0x738E5 Hash - 0x5D4B60C6 ^0xBDBC1505
 {
 	STREAMING::REQUEST_PTFX_ASSET();
 
@@ -93477,7 +93477,7 @@ BOOL func_490() // Position - 0x738E5
 	return false;
 }
 
-int func_491() // Position - 0x738FD
+int func_491() // Position - 0x738FD Hash - 0x37A7862D ^0xEB3372F5
 {
 	if (Global_2698940.f_5)
 		return 1;
@@ -93492,7 +93492,7 @@ int func_491() // Position - 0x738FD
 	return 0;
 }
 
-int func_492() // Position - 0x73934
+int func_492() // Position - 0x73934 Hash - 0x7F8B86F ^0x347BCFA9
 {
 	STREAMING::REQUEST_ANIM_DICT(sLocal_423);
 
@@ -93504,7 +93504,7 @@ int func_492() // Position - 0x73934
 	return 1;
 }
 
-BOOL func_493() // Position - 0x73963
+BOOL func_493() // Position - 0x73963 Hash - 0x392E3458 ^0xD34B452E
 {
 	if (INTERIOR::GET_ROOM_KEY_FROM_ENTITY(PLAYER::PLAYER_PED_ID()) != hLocal_391 || ENTITY::IS_ENTITY_IN_ANGLED_AREA(PLAYER::PLAYER_PED_ID(), uLocal_378, uLocal_381, 1f, false, true, 0))
 	{
@@ -93523,7 +93523,7 @@ BOOL func_493() // Position - 0x73963
 	return true;
 }
 
-void func_494() // Position - 0x739E6
+void func_494() // Position - 0x739E6 Hash - 0xADDA215D ^0xA0389F96
 {
 	BOOL flag;
 
@@ -93572,7 +93572,7 @@ void func_494() // Position - 0x739E6
 	return;
 }
 
-BOOL func_495() // Position - 0x73B06
+BOOL func_495() // Position - 0x73B06 Hash - 0x44BBBB43 ^0xAD641CCC
 {
 	int i;
 
@@ -93592,7 +93592,7 @@ BOOL func_495() // Position - 0x73B06
 	return false;
 }
 
-void func_496(BOOL bParam0) // Position - 0x73B87
+void func_496(BOOL bParam0) // Position - 0x73B87 Hash - 0xA63744E2 ^0x82AD30BF
 {
 	if (iLocal_388 == 4)
 		if (bParam0)
@@ -93616,7 +93616,7 @@ void func_496(BOOL bParam0) // Position - 0x73B87
 	return;
 }
 
-void func_497() // Position - 0x73CCF
+void func_497() // Position - 0x73CCF Hash - 0x2A0C4967 ^0x66F05225
 {
 	BOOL flag;
 
@@ -93647,7 +93647,7 @@ void func_497() // Position - 0x73CCF
 	return;
 }
 
-void func_498(int iParam0, ePedComponentType epctParam1) // Position - 0x73D6D
+void func_498(int iParam0, ePedComponentType epctParam1) // Position - 0x73D6D Hash - 0xC65BF211 ^0xB46F7A0D
 {
 	if (func_499(&uLocal_372, &hLocal_357, epctParam1, iParam0))
 	{
@@ -93658,7 +93658,7 @@ void func_498(int iParam0, ePedComponentType epctParam1) // Position - 0x73D6D
 	return;
 }
 
-BOOL func_499(var uParam0, var uParam1, ePedComponentType epctParam2, int iParam3) // Position - 0x73DBD
+BOOL func_499(var uParam0, var uParam1, ePedComponentType epctParam2, int iParam3) // Position - 0x73DBD Hash - 0xD415891B ^0xE486CAC6
 {
 	var unk;
 	var unk7;
@@ -93703,7 +93703,7 @@ BOOL func_499(var uParam0, var uParam1, ePedComponentType epctParam2, int iParam
 	return false;
 }
 
-void func_500(ePedComponentType epctParam0, int iParam1, var uParam2, BOOL bParam3) // Position - 0x73EBF
+void func_500(ePedComponentType epctParam0, int iParam1, var uParam2, BOOL bParam3) // Position - 0x73EBF Hash - 0xA1F236AB ^0x4D5AF257
 {
 	var unk;
 	Vector3 vector;
@@ -94080,7 +94080,7 @@ void func_500(ePedComponentType epctParam0, int iParam1, var uParam2, BOOL bPara
 	return;
 }
 
-Vector3 func_501(float fParam0, var uParam1, var uParam2, float fParam3) // Position - 0x7489B
+Vector3 func_501(float fParam0, var uParam1, var uParam2, float fParam3) // Position - 0x7489B Hash - 0x8959C4D1 ^0x8922A2E2
 {
 	float num;
 	float num2;
@@ -94094,7 +94094,7 @@ Vector3 func_501(float fParam0, var uParam1, var uParam2, float fParam3) // Posi
 	return num;
 }
 
-struct<6> func_502(int iParam0, int iParam1) // Position - 0x748DF
+struct<6> func_502(int iParam0, int iParam1) // Position - 0x748DF Hash - 0x2496BBBB ^0x92F2F3E
 {
 	var unk;
 	BOOL flag;
@@ -94111,7 +94111,7 @@ struct<6> func_502(int iParam0, int iParam1) // Position - 0x748DF
 	return unk;
 }
 
-BOOL func_503(int iParam0, var uParam1) // Position - 0x74921
+BOOL func_503(int iParam0, var uParam1) // Position - 0x74921 Hash - 0xD503A23F ^0x7B7CC53C
 {
 	switch (iParam0)
 	{
@@ -94170,7 +94170,7 @@ BOOL func_503(int iParam0, var uParam1) // Position - 0x74921
 	return false;
 }
 
-struct<6> func_504(ePedComponentType epctParam0) // Position - 0x74A51
+struct<6> func_504(ePedComponentType epctParam0) // Position - 0x74A51 Hash - 0xC73C1158 ^0x2A6D4A6F
 {
 	var unk;
 
@@ -94396,7 +94396,7 @@ struct<6> func_504(ePedComponentType epctParam0) // Position - 0x74A51
 	return unk;
 }
 
-struct<6> func_505(int iParam0, int iParam1, float fParam2, float fParam3, float fParam4, float fParam5, float fParam6, float fParam7) // Position - 0x75147
+struct<6> func_505(int iParam0, int iParam1, float fParam2, float fParam3, float fParam4, float fParam5, float fParam6, float fParam7) // Position - 0x75147 Hash - 0xAA777845 ^0x15DD175B
 {
 	var unk;
 	var offsetFromCoordAndHeadingInWorldCoords;
@@ -94457,7 +94457,7 @@ struct<6> func_505(int iParam0, int iParam1, float fParam2, float fParam3, float
 	return offsetFromCoordAndHeadingInWorldCoords;
 }
 
-struct<6> func_506(int iParam0, BOOL bParam1) // Position - 0x7531D
+struct<6> func_506(int iParam0, BOOL bParam1) // Position - 0x7531D Hash - 0x293B24C9 ^0x49F602D8
 {
 	var unk;
 
@@ -94879,7 +94879,7 @@ struct<6> func_506(int iParam0, BOOL bParam1) // Position - 0x7531D
 	return unk;
 }
 
-ePedComponentType func_507(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x75ED3
+ePedComponentType func_507(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x75ED3 Hash - 0x5BEC46E0 ^0x71EBD178
 {
 	if (_NETWORK_IS_PLAYER_VALID(epctParam0, false, true))
 		if (!bParam1)
@@ -94890,7 +94890,7 @@ ePedComponentType func_507(ePedComponentType epctParam0, BOOL bParam1) // Positi
 	return PV_COMP_INVALID;
 }
 
-void func_508() // Position - 0x75F12
+void func_508() // Position - 0x75F12 Hash - 0x567B88A9 ^0x224D15DA
 {
 	if (!func_509())
 	{
@@ -94938,12 +94938,12 @@ void func_508() // Position - 0x75F12
 	return;
 }
 
-BOOL func_509() // Position - 0x76075
+BOOL func_509() // Position - 0x76075 Hash - 0x5976C0FC ^0xC3C6644E
 {
 	return func_510(PLAYER::PLAYER_ID());
 }
 
-BOOL func_510(Player plParam0) // Position - 0x76085
+BOOL func_510(Player plParam0) // Position - 0x76085 Hash - 0x2281DC14 ^0xFBEE7D11
 {
 	if (ENTITY::GET_ENTITY_MODEL(PLAYER::GET_PLAYER_PED(plParam0)) == joaat("MP_F_Freemode_01"))
 		return 1;
@@ -94951,7 +94951,7 @@ BOOL func_510(Player plParam0) // Position - 0x76085
 	return 0;
 }
 
-char* func_511(int iParam0) // Position - 0x760A4
+char* func_511(int iParam0) // Position - 0x760A4 Hash - 0x5226B8C6 ^0x5271F016
 {
 	switch (iParam0)
 	{
@@ -94968,7 +94968,7 @@ char* func_511(int iParam0) // Position - 0x760A4
 	return "";
 }
 
-int func_512(var uParam0, var uParam1, var uParam2, var uParam3, ePedComponentType epctParam4) // Position - 0x760EA
+int func_512(var uParam0, var uParam1, var uParam2, var uParam3, ePedComponentType epctParam4) // Position - 0x760EA Hash - 0xF751ED13 ^0x9DF8BDDE
 {
 	var unk;
 
@@ -94999,7 +94999,7 @@ int func_512(var uParam0, var uParam1, var uParam2, var uParam3, ePedComponentTy
 	return 0;
 }
 
-BOOL func_513(int iParam0) // Position - 0x76179
+BOOL func_513(int iParam0) // Position - 0x76179 Hash - 0xE48228D0 ^0xE48228D0
 {
 	switch (iParam0)
 	{
@@ -95010,7 +95010,7 @@ BOOL func_513(int iParam0) // Position - 0x76179
 	return false;
 }
 
-BOOL func_514(int iParam0) // Position - 0x76196
+BOOL func_514(int iParam0) // Position - 0x76196 Hash - 0xE48228D0 ^0xE48228D0
 {
 	switch (iParam0)
 	{
@@ -95051,12 +95051,12 @@ BOOL func_514(int iParam0) // Position - 0x76196
 	return false;
 }
 
-BOOL func_515(Player plParam0) // Position - 0x76267
+BOOL func_515(Player plParam0) // Position - 0x76267 Hash - 0xA3F2BD37 ^0x597BFEBA
 {
 	return Global_2657971[plParam0 /*465*/].f_122 == 2;
 }
 
-BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x7627C
+BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x7627C Hash - 0x52E21E9B ^0xD0F85E96
 {
 	if (Global_1575055 == false)
 		if (!NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
@@ -95088,7 +95088,7 @@ BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x7627C
 	return false;
 }
 
-Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x76300
+Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x76300 Hash - 0x90B5165C ^0xB8DD5DC8
 {
 	switch (func_21())
 	{
@@ -95102,7 +95102,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x76300
 	return 0;
 }
 
-Hash func_518() // Position - 0x76333
+Hash func_518() // Position - 0x76333 Hash - 0x61402777 ^0xB9FAC976
 {
 	switch (Global_2698864)
 	{
@@ -95116,12 +95116,12 @@ Hash func_518() // Position - 0x76333
 	return joaat("freemode");
 }
 
-BOOL func_519() // Position - 0x76357
+BOOL func_519() // Position - 0x76357 Hash - 0x974E48B4 ^0x974E48B4
 {
 	return Global_2684504.f_700;
 }
 
-BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x76366
+BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x76366 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
 	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
 		return true;
@@ -95129,17 +95129,17 @@ BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x76366
 	return false;
 }
 
-BOOL func_521() // Position - 0x7637D
+BOOL func_521() // Position - 0x7637D Hash - 0x47FF56D2 ^0x47FF56D2
 {
 	return Global_2696172;
 }
 
-BOOL func_522() // Position - 0x76389
+BOOL func_522() // Position - 0x76389 Hash - 0x974E48B4 ^0x974E48B4
 {
 	return Global_2684504.f_695;
 }
 
-void func_523() // Position - 0x76398
+void func_523() // Position - 0x76398 Hash - 0x5B2F76F5 ^0x7F47888A
 {
 	if (!func_509())
 	{
@@ -95193,7 +95193,7 @@ void func_523() // Position - 0x76398
 	return;
 }
 
-int func_524(int iParam0) // Position - 0x7653B
+int func_524(int iParam0) // Position - 0x7653B Hash - 0x85860E9C ^0x85860E9C
 {
 	switch (iParam0)
 	{
@@ -95302,7 +95302,7 @@ int func_524(int iParam0) // Position - 0x7653B
 	return -1;
 }
 
-BOOL func_525() // Position - 0x76778
+BOOL func_525() // Position - 0x76778 Hash - 0x286EE6DB ^0x286EE6DB
 {
 	if (func_526())
 		return false;
@@ -95310,12 +95310,12 @@ BOOL func_525() // Position - 0x76778
 	return true;
 }
 
-BOOL func_526() // Position - 0x7678C
+BOOL func_526() // Position - 0x7678C Hash - 0xF1739BD8 ^0xF1739BD8
 {
 	return Global_2621534 == 0;
 }
 
-BOOL func_527() // Position - 0x7679A
+BOOL func_527() // Position - 0x7679A Hash - 0x29CB2928 ^0xE369A18D
 {
 	if (MISC::IS_PC_VERSION())
 		if (MISC::GET_CITY_DENSITY() == 1f)
@@ -95324,7 +95324,7 @@ BOOL func_527() // Position - 0x7679A
 	return false;
 }
 
-BOOL func_528() // Position - 0x767B7
+BOOL func_528() // Position - 0x767B7 Hash - 0x98CCC132 ^0x97B0D6ED
 {
 	if (Global_98435 != -1)
 		return IS_BIT_SET(Global_92301[Global_98435 /*34*/].f_15, 20);
@@ -95332,7 +95332,7 @@ BOOL func_528() // Position - 0x767B7
 	return false;
 }
 
-BOOL func_529(int iParam0) // Position - 0x767DA
+BOOL func_529(int iParam0) // Position - 0x767DA Hash - 0x3BAB94E9 ^0x3BAB94E9
 {
 	if (Global_44042 == 15)
 		return false;
@@ -95343,12 +95343,12 @@ BOOL func_529(int iParam0) // Position - 0x767DA
 	return true;
 }
 
-BOOL _CAN_ENTER_FREEROAM_STATE(int iParam0) // Position - 0x767FC
+BOOL _CAN_ENTER_FREEROAM_STATE(int iParam0) // Position - 0x767FC Hash - 0xECB6C71B ^0xECB6C71B
 {
 	return func_531(iParam0, Global_44042);
 }
 
-BOOL func_531(int iParam0, int iParam1) // Position - 0x7680D
+BOOL func_531(int iParam0, int iParam1) // Position - 0x7680D Hash - 0x1FD727E0 ^0x1FD727E0
 {
 	if (iParam1 == 15)
 		return 1;
@@ -95472,7 +95472,7 @@ BOOL func_531(int iParam0, int iParam1) // Position - 0x7680D
 	return 0;
 }
 
-void func_532() // Position - 0x769EE
+void func_532() // Position - 0x769EE Hash - 0xF80757A8 ^0x50EC5A5B
 {
 	Global_2698940 = false;
 	Global_2698940.f_1 = 0;
@@ -95533,7 +95533,7 @@ void func_532() // Position - 0x769EE
 	return;
 }
 
-BOOL func_533(int iParam0) // Position - 0x76BF0
+BOOL func_533(int iParam0) // Position - 0x76BF0 Hash - 0xE48228D0 ^0xE48228D0
 {
 	switch (iParam0)
 	{
@@ -95547,7 +95547,7 @@ BOOL func_533(int iParam0) // Position - 0x76BF0
 	return false;
 }
 
-void func_534() // Position - 0x76C1F
+void func_534() // Position - 0x76C1F Hash - 0xB5CD54F6 ^0xC0E3F68B
 {
 	if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && !bLocal_398)
 	{
@@ -95561,7 +95561,7 @@ void func_534() // Position - 0x76C1F
 	return;
 }
 
-int _NETWORK_ENSURE_SCRIPT_IS_NETWORKED(int iParam0, int iParam1, BOOL bNoTerminate) // Position - 0x76C54
+int _NETWORK_ENSURE_SCRIPT_IS_NETWORKED(int iParam0, int iParam1, BOOL bNoTerminate) // Position - 0x76C54 Hash - 0x75751681 ^0x9140C9A0
 {
 	int i;
 
@@ -95625,13 +95625,13 @@ int _NETWORK_ENSURE_SCRIPT_IS_NETWORKED(int iParam0, int iParam1, BOOL bNoTermin
 	return 1;
 }
 
-void func_536() // Position - 0x76D6A
+void func_536() // Position - 0x76D6A Hash - 0xCE5FB49E ^0x214A59D5
 {
 	SCRIPT::TERMINATE_THIS_THREAD();
 	return;
 }
 
-BOOL func_537() // Position - 0x76D76
+BOOL func_537() // Position - 0x76D76 Hash - 0xB2626EAA ^0x4467C05F
 {
 	if (!NETWORK::NETWORK_IS_ACTIVITY_SESSION() && !func_220(false))
 		return false;
@@ -95642,7 +95642,7 @@ BOOL func_537() // Position - 0x76D76
 	return false;
 }
 
-void func_538(BOOL bParam0) // Position - 0x76DAD
+void func_538(BOOL bParam0) // Position - 0x76DAD Hash - 0x8A5B85CF ^0x30AD6797
 {
 	if (!bParam0)
 	{
@@ -95728,7 +95728,7 @@ void func_538(BOOL bParam0) // Position - 0x76DAD
 	return;
 }
 
-void func_539() // Position - 0x76FEA
+void func_539() // Position - 0x76FEA Hash - 0x1C1CFFDB ^0x87F160DE
 {
 	if (MISC::IS_PC_VERSION())
 	{
@@ -95742,14 +95742,14 @@ void func_539() // Position - 0x76FEA
 	return;
 }
 
-void func_540() // Position - 0x77008
+void func_540() // Position - 0x77008 Hash - 0x3BC7F6D1 ^0x2E99ED8E
 {
 	OBJECT::DOOR_SYSTEM_SET_DOOR_STATE(joaat("MP_MED_APT_BATH_DOOR"), 0, false, true);
 	Global_2698940.f_8 = 0;
 	return;
 }
 
-int func_541() // Position - 0x77023
+int func_541() // Position - 0x77023 Hash - 0xB285BB6 ^0xB285BB6
 {
 	ePedComponentType type;
 
@@ -95761,7 +95761,7 @@ int func_541() // Position - 0x77023
 	return func_542(type);
 }
 
-int func_542(ePedComponentType epctParam0) // Position - 0x77041
+int func_542(ePedComponentType epctParam0) // Position - 0x77041 Hash - 0xEE599357 ^0xEE599357
 {
 	switch (epctParam0)
 	{
@@ -96001,7 +96001,7 @@ int func_542(ePedComponentType epctParam0) // Position - 0x77041
 	return -1;
 }
 
-ePedComponentType func_543() // Position - 0x77541
+ePedComponentType func_543() // Position - 0x77541 Hash - 0xEAE183ED ^0x84867848
 {
 	return Global_2657971[PLAYER::PLAYER_ID() /*465*/].f_322.f_8;
 }

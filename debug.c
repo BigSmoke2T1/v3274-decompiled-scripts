@@ -66,7 +66,7 @@
 	var uLocal_64 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x17B4681A ^0x17B4681A
 {
 	iLocal_0 = 3;
 	iLocal_3 = 1;

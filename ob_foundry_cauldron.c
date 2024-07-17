@@ -7,7 +7,7 @@
 	Object obScriptParam_0 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x3EECFFB5 ^0xC27D5668
 {
 	Interior interiorFromEntity;
 
@@ -85,7 +85,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0x135
+void func_1() // Position - 0x135 Hash - 0x92213F41 ^0xE62A2EC4
 {
 	if (GRAPHICS::DOES_PARTICLE_FX_LOOPED_EXIST(iLocal_3))
 		GRAPHICS::STOP_PARTICLE_FX_LOOPED(iLocal_3, false);
@@ -98,13 +98,13 @@ void func_1() // Position - 0x135
 	return;
 }
 
-void func_2(char* sParam0) // Position - 0x167
+void func_2(char* sParam0) // Position - 0x167 Hash - 0x646928F0 ^0x646928F0
 {
 	func_3(sParam0);
 	return;
 }
 
-void func_3(char* sParam0) // Position - 0x175
+void func_3(char* sParam0) // Position - 0x175 Hash - 0xF54A2398 ^0xC5887C42
 {
 	MISC::ARE_STRINGS_EQUAL(sParam0, sParam0);
 	return;

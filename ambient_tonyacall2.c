@@ -227,7 +227,7 @@
 	var uLocal_225 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	iLocal_2 = 1;
 	iLocal_3 = 134;
@@ -309,7 +309,7 @@ void main() // Position - 0x0
 	return;
 }
 
-BOOL func_1() // Position - 0x1BA
+BOOL func_1() // Position - 0x1BA Hash - 0xDCB39E8D ^0xE8DB014A
 {
 	Vector3 entityCoords;
 	Vector3 entityCoords2;
@@ -424,7 +424,7 @@ BOOL func_1() // Position - 0x1BA
 	return false;
 }
 
-void func_2() // Position - 0x465
+void func_2() // Position - 0x465 Hash - 0x176C524F ^0xB1C7F2D5
 {
 	if (ENTITY::DOES_ENTITY_EXIST(pedLocal_36) && !ENTITY::IS_ENTITY_DEAD(pedLocal_36, false))
 	{
@@ -446,7 +446,7 @@ void func_2() // Position - 0x465
 	return;
 }
 
-BOOL _CONVERSATION_IS_DIALOGUE_IN_PROGRESS() // Position - 0x4DD
+BOOL _CONVERSATION_IS_DIALOGUE_IN_PROGRESS() // Position - 0x4DD Hash - 0x152DA0B2 ^0x220E93E9
 {
 	if (Global_22286 != 0 || AUDIO::IS_SCRIPTED_CONVERSATION_ONGOING())
 		return true;
@@ -454,7 +454,7 @@ BOOL _CONVERSATION_IS_DIALOGUE_IN_PROGRESS() // Position - 0x4DD
 	return false;
 }
 
-BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iParam3, int iParam4, int iParam5, int iParam6) // Position - 0x4FF
+BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iParam3, int iParam4, int iParam5, int iParam6) // Position - 0x4FF Hash - 0x384540C1 ^0x384540C1
 {
 	func_26(uParam0, 145, sParam1, iParam4, iParam5, iParam6);
 
@@ -472,7 +472,7 @@ BOOL _CONVERSATION_ADD_LINE(var uParam0, char* sParam1, char* sParam2, int iPara
 	return func_5(sParam2, iParam3, false);
 }
 
-BOOL func_5(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x54D
+BOOL func_5(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x54D Hash - 0x77297D51 ^0x40DC584A
 {
 	Global_22287 = 0;
 
@@ -652,7 +652,7 @@ BOOL func_5(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x54D
 	return 0;
 }
 
-void func_6() // Position - 0x81B
+void func_6() // Position - 0x81B Hash - 0xF42BEB19 ^0xA29557DA
 {
 	if (!func_7())
 		return;
@@ -667,7 +667,7 @@ void func_6() // Position - 0x81B
 	return;
 }
 
-BOOL func_7() // Position - 0x852
+BOOL func_7() // Position - 0x852 Hash - 0x7B74B45F ^0xCE052A5D
 {
 	if (!Global_262145.f_28397)
 		return false;
@@ -690,22 +690,22 @@ BOOL func_7() // Position - 0x852
 	return true;
 }
 
-BOOL func_8(Player plParam0) // Position - 0x8B5
+BOOL func_8(Player plParam0) // Position - 0x8B5 Hash - 0x6E46BC72 ^0x6E46BC72
 {
 	return func_9(plParam0, 20);
 }
 
-BOOL func_9(Player plParam0, int iParam1) // Position - 0x8C5
+BOOL func_9(Player plParam0, int iParam1) // Position - 0x8C5 Hash - 0x7CD5054C ^0x870BEA81
 {
 	return IS_BIT_SET(Global_1887305[plParam0 /*610*/].f_10.f_4, iParam1);
 }
 
-Player _INVALID_PLAYER_INDEX() // Position - 0x8DD
+Player _INVALID_PLAYER_INDEX() // Position - 0x8DD Hash - 0x478900E4 ^0x478900E4
 {
 	return -1;
 }
 
-void func_11() // Position - 0x8E6
+void func_11() // Position - 0x8E6 Hash - 0xA1A17E1E ^0xF988FD71
 {
 	int i;
 
@@ -719,7 +719,7 @@ void func_11() // Position - 0x8E6
 	return;
 }
 
-void func_12() // Position - 0x917
+void func_12() // Position - 0x917 Hash - 0xCD8A4D28 ^0xCD8A4D28
 {
 	Global_22339 = Global_22338;
 	Global_22333 = Global_22334;
@@ -743,7 +743,7 @@ void func_12() // Position - 0x917
 	return;
 }
 
-BOOL func_13() // Position - 0x9AC
+BOOL func_13() // Position - 0x9AC Hash - 0xD140D54A ^0xE638D98F
 {
 	if (Global_20930.f_1 == 1 || Global_20930.f_1 == 0)
 		return true;
@@ -751,7 +751,7 @@ BOOL func_13() // Position - 0x9AC
 	return false;
 }
 
-BOOL func_14() // Position - 0x9D3
+BOOL func_14() // Position - 0x9D3 Hash - 0x9A999369 ^0x4033F7BF
 {
 	int num;
 	int weaponHash;
@@ -780,7 +780,7 @@ BOOL func_14() // Position - 0x9D3
 	return true;
 }
 
-void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0xA6C
+void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0xA6C Hash - 0x98476CE1 ^0x250FEB7C
 {
 	if (func_22(14))
 	{
@@ -811,13 +811,13 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0xA6C
 	return;
 }
 
-eCharacter _GET_CURRENT_PLAYER_CHARACTER() // Position - 0xB0E
+eCharacter _GET_CURRENT_PLAYER_CHARACTER() // Position - 0xB0E Hash - 0x3C5423D7 ^0x3C5423D7
 {
 	func_17();
 	return Global_113969.f_2366.f_539.f_4321;
 }
 
-void func_17() // Position - 0xB27
+void func_17() // Position - 0xB27 Hash - 0xD1F2D853 ^0xF9F5FD4D
 {
 	eCharacter character;
 
@@ -850,12 +850,12 @@ void func_17() // Position - 0xB27
 	return;
 }
 
-BOOL func_18(eCharacter echParam0) // Position - 0xC24
+BOOL func_18(eCharacter echParam0) // Position - 0xC24 Hash - 0x8907F004 ^0x8907F004
 {
 	return echParam0 < CHAR_MULTIPLAYER;
 }
 
-eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xC30
+eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xC30 Hash - 0xAC4E9801 ^0xB379A75F
 {
 	eCharacter i;
 	Hash entityModel;
@@ -874,7 +874,7 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xC30
 	return _CHAR_NULL;
 }
 
-Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xC6D
+Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xC6D Hash - 0xADCB9755 ^0xADCB9755
 {
 	if (func_18(character))
 		return func_21(character);
@@ -884,17 +884,17 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xC6D
 	return 0;
 }
 
-Hash func_21(eCharacter echParam0) // Position - 0xC92
+Hash func_21(eCharacter echParam0) // Position - 0xC92 Hash - 0xE4CEEC2C ^0xE4CEEC2C
 {
 	return Global_2169[echParam0 /*29*/];
 }
 
-BOOL func_22(int iParam0) // Position - 0xCA1
+BOOL func_22(int iParam0) // Position - 0xCA1 Hash - 0x937D8816 ^0x937D8816
 {
 	return Global_44042 == iParam0;
 }
 
-void func_23() // Position - 0xCAF
+void func_23() // Position - 0xCAF Hash - 0x82D3DE48 ^0xEB08EC64
 {
 	int i;
 
@@ -911,7 +911,7 @@ void func_23() // Position - 0xCAF
 	return;
 }
 
-BOOL func_24(int iParam0, int iParam1) // Position - 0xD06
+BOOL func_24(int iParam0, int iParam1) // Position - 0xD06 Hash - 0xA14C4D3F ^0xA6034F77
 {
 	switch (iParam0)
 	{
@@ -924,7 +924,7 @@ BOOL func_24(int iParam0, int iParam1) // Position - 0xD06
 	return IS_BIT_SET(Global_1668667.f_1048, iParam0);
 }
 
-void func_25() // Position - 0xD3E
+void func_25() // Position - 0xD3E Hash - 0xE32CF1EF ^0xB9A7BEB2
 {
 	AUDIO::RESTART_SCRIPTED_CONVERSATION();
 	Global_23297 = 0;
@@ -947,7 +947,7 @@ void func_25() // Position - 0xD3E
 	return;
 }
 
-void func_26(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0xD95
+void func_26(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4, int iParam5) // Position - 0xD95 Hash - 0xC6B752B2 ^0xC6B752B2
 {
 	Global_21740 = { *uParam0 };
 	Global_8116 = iParam1;
@@ -979,7 +979,7 @@ void func_26(var uParam0, int iParam1, char* sParam2, int iParam3, int iParam4, 
 	return;
 }
 
-BOOL func_27() // Position - 0xDEB
+BOOL func_27() // Position - 0xDEB Hash - 0x41659D03 ^0x6B22B643
 {
 	if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false) && !ENTITY::IS_ENTITY_DEAD(pedLocal_36, false))
 	{
@@ -1002,7 +1002,7 @@ BOOL func_27() // Position - 0xDEB
 	return false;
 }
 
-BOOL func_28() // Position - 0xE6C
+BOOL func_28() // Position - 0xE6C Hash - 0x953CB015 ^0x8A89B0C2
 {
 	Vector3 entityCoords;
 	Ped outPed;
@@ -1044,7 +1044,7 @@ BOOL func_28() // Position - 0xE6C
 	return false;
 }
 
-BOOL _IS_NULL_VECTOR(float fParam0, var uParam1, var uParam2) // Position - 0xF43
+BOOL _IS_NULL_VECTOR(float fParam0, var uParam1, var uParam2) // Position - 0xF43 Hash - 0x16E871AD ^0x10C54C39
 {
 	if (fParam0 == 0f && fParam0.f_1 == 0f && fParam0.f_2 == 0f)
 		return true;
@@ -1052,7 +1052,7 @@ BOOL _IS_NULL_VECTOR(float fParam0, var uParam1, var uParam2) // Position - 0xF4
 	return false;
 }
 
-void func_30() // Position - 0xF6D
+void func_30() // Position - 0xF6D Hash - 0x8CBED012 ^0x238391EF
 {
 	Vector3 entityCoords;
 
@@ -1090,7 +1090,7 @@ void func_30() // Position - 0xF6D
 	return;
 }
 
-void _CONVERSATION_INITIALIZE_ACTOR(var uParam0, int iParam1, Ped pedParam2, char* sParam3, int iParam4, int iParam5) // Position - 0x1026
+void _CONVERSATION_INITIALIZE_ACTOR(var uParam0, int iParam1, Ped pedParam2, char* sParam3, int iParam4, int iParam5) // Position - 0x1026 Hash - 0x6C235EE0 ^0x9E57F206
 {
 	uParam0->[iParam1 /*10*/].f_7 == 1;
 	uParam0->[iParam1 /*10*/] = pedParam2;
@@ -1117,7 +1117,7 @@ void _CONVERSATION_INITIALIZE_ACTOR(var uParam0, int iParam1, Ped pedParam2, cha
 	return;
 }
 
-BOOL func_32(int iParam0, int iParam1) // Position - 0x10C1
+BOOL func_32(int iParam0, int iParam1) // Position - 0x10C1 Hash - 0xDEE74A4E ^0xDEE74A4E
 {
 	BOOL flag;
 
@@ -1131,7 +1131,7 @@ BOOL func_32(int iParam0, int iParam1) // Position - 0x10C1
 	return flag;
 }
 
-void func_33() // Position - 0x110B
+void func_33() // Position - 0x110B Hash - 0xF9A1BA70 ^0xDC4D3CC7
 {
 	STREAMING::REMOVE_ANIM_DICT("amb@world_human_stand_mobile@female@standing@call@enter");
 	STREAMING::REMOVE_ANIM_DICT("amb@world_human_stand_mobile@female@standing@call@base");

@@ -304,7 +304,7 @@
 	var uLocal_302 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	iLocal_2 = 1;
 	iLocal_3 = 134;
@@ -351,7 +351,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0xD6
+void func_1() // Position - 0xD6 Hash - 0xCF111B57 ^0xCF111B57
 {
 	Global_1927866 = 0;
 	func_41(false);
@@ -359,7 +359,7 @@ void func_1() // Position - 0xD6
 	return;
 }
 
-void func_2() // Position - 0xEC
+void func_2() // Position - 0xEC Hash - 0xA7F83996 ^0xA7F83996
 {
 	func_33();
 	func_32();
@@ -396,13 +396,13 @@ void func_2() // Position - 0xEC
 	return;
 }
 
-void _STOPWATCH_DESTROY(var uParam0) // Position - 0x179
+void _STOPWATCH_DESTROY(var uParam0) // Position - 0x179 Hash - 0xBA5A1D5A ^0x33644ECA
 {
 	uParam0->f_1 = 0;
 	return;
 }
 
-void func_4() // Position - 0x186
+void func_4() // Position - 0x186 Hash - 0x991298F ^0x6394AEC8
 {
 	Global_1956851 = 0;
 	Global_1956851.f_1 = 0;
@@ -410,7 +410,7 @@ void func_4() // Position - 0x186
 	return;
 }
 
-void func_5() // Position - 0x1A1
+void func_5() // Position - 0x1A1 Hash - 0x991298F ^0x6394AEC8
 {
 	Global_1956823 = 0;
 	Global_1956823.f_1 = 0;
@@ -418,7 +418,7 @@ void func_5() // Position - 0x1A1
 	return;
 }
 
-void func_6() // Position - 0x1BC
+void func_6() // Position - 0x1BC Hash - 0x39D8E09A ^0x9F0E3DF1
 {
 	var src;
 
@@ -508,7 +508,7 @@ void func_6() // Position - 0x1BC
 	return;
 }
 
-void func_7() // Position - 0x44E
+void func_7() // Position - 0x44E Hash - 0xF5F882B2 ^0xB8DFEF92
 {
 	var src;
 
@@ -556,7 +556,7 @@ void func_7() // Position - 0x44E
 	return;
 }
 
-void func_8() // Position - 0x54A
+void func_8() // Position - 0x54A Hash - 0x49EDF5A6 ^0x27B79143
 {
 	var src;
 
@@ -584,7 +584,7 @@ void func_8() // Position - 0x54A
 	return;
 }
 
-void func_9() // Position - 0x5CA
+void func_9() // Position - 0x5CA Hash - 0x3D5B532D ^0x3F1F8FCA
 {
 	var src;
 
@@ -614,7 +614,7 @@ void func_9() // Position - 0x5CA
 	return;
 }
 
-void func_10() // Position - 0x667
+void func_10() // Position - 0x667 Hash - 0x921ABF15 ^0xBA8ADA58
 {
 	var src;
 	var unk5111;
@@ -946,7 +946,7 @@ void func_10() // Position - 0x667
 	return;
 }
 
-void func_11() // Position - 0xEF6
+void func_11() // Position - 0xEF6 Hash - 0x9EC96D1C ^0x5E8E4406
 {
 	var src;
 
@@ -958,7 +958,7 @@ void func_11() // Position - 0xEF6
 	return;
 }
 
-void func_12() // Position - 0xF1D
+void func_12() // Position - 0xF1D Hash - 0x60FEB38B ^0xB961BDFF
 {
 	var src;
 
@@ -983,7 +983,7 @@ void func_12() // Position - 0xF1D
 	return;
 }
 
-void func_13() // Position - 0xFA0
+void func_13() // Position - 0xFA0 Hash - 0xDC18DC34 ^0xEDF835BE
 {
 	var src;
 
@@ -1001,7 +1001,7 @@ void func_13() // Position - 0xFA0
 	return;
 }
 
-void func_14() // Position - 0xFEF
+void func_14() // Position - 0xFEF Hash - 0x24AD56E5 ^0xC7EA4080
 {
 	var src;
 
@@ -1048,7 +1048,7 @@ void func_14() // Position - 0xFEF
 	return;
 }
 
-void func_15() // Position - 0x10D0
+void func_15() // Position - 0x10D0 Hash - 0x7B48B3C1 ^0x5B4B14A5
 {
 	var src;
 
@@ -1159,7 +1159,7 @@ void func_15() // Position - 0x10D0
 	return;
 }
 
-void func_16() // Position - 0x13D5
+void func_16() // Position - 0x13D5 Hash - 0x2FF523E6 ^0x28756266
 {
 	var src;
 
@@ -1389,7 +1389,7 @@ void func_16() // Position - 0x13D5
 	return;
 }
 
-void func_17() // Position - 0x192F
+void func_17() // Position - 0x192F Hash - 0xD86C2942 ^0x15513160
 {
 	var src;
 
@@ -1403,7 +1403,7 @@ void func_17() // Position - 0x192F
 	return;
 }
 
-void func_18() // Position - 0x1961
+void func_18() // Position - 0x1961 Hash - 0x853E2311 ^0x626FAEE3
 {
 	var src;
 
@@ -1433,7 +1433,7 @@ void func_18() // Position - 0x1961
 	return;
 }
 
-void func_19() // Position - 0x1A17
+void func_19() // Position - 0x1A17 Hash - 0xE4717479 ^0xF61BFE10
 {
 	var src;
 
@@ -1607,7 +1607,7 @@ void func_19() // Position - 0x1A17
 	return;
 }
 
-void func_20() // Position - 0x1E90
+void func_20() // Position - 0x1E90 Hash - 0xAD8608F2 ^0x2E6EF999
 {
 	var src;
 
@@ -1627,7 +1627,7 @@ void func_20() // Position - 0x1E90
 	return;
 }
 
-void func_21() // Position - 0x1EEE
+void func_21() // Position - 0x1EEE Hash - 0xD26F5060 ^0x91C41A2E
 {
 	var src;
 
@@ -1723,7 +1723,7 @@ void func_21() // Position - 0x1EEE
 	return;
 }
 
-void func_22() // Position - 0x212A
+void func_22() // Position - 0x212A Hash - 0x7090CACE ^0x5ED8C034
 {
 	if (Global_2672854)
 		MISC::COPY_SCRIPT_STRUCT(&Global_2672855, &Global_2676747, 3892);
@@ -1733,7 +1733,7 @@ void func_22() // Position - 0x212A
 	return;
 }
 
-void func_23() // Position - 0x215B
+void func_23() // Position - 0x215B Hash - 0xC9FD6EFC ^0x235231FB
 {
 	var src;
 
@@ -2113,7 +2113,7 @@ void func_23() // Position - 0x215B
 	return;
 }
 
-void func_24() // Position - 0x3020
+void func_24() // Position - 0x3020 Hash - 0x34597768 ^0x853C9648
 {
 	var src;
 
@@ -2173,7 +2173,7 @@ void func_24() // Position - 0x3020
 	return;
 }
 
-void func_25() // Position - 0x31BA
+void func_25() // Position - 0x31BA Hash - 0x990909E2 ^0x1761D66
 {
 	var unk;
 
@@ -2253,7 +2253,7 @@ void func_25() // Position - 0x31BA
 	return;
 }
 
-void func_26() // Position - 0x33BF
+void func_26() // Position - 0x33BF Hash - 0x881B1134 ^0x4D95BA93
 {
 	var src;
 
@@ -2271,7 +2271,7 @@ void func_26() // Position - 0x33BF
 	return;
 }
 
-void func_27() // Position - 0x3411
+void func_27() // Position - 0x3411 Hash - 0x1ADCD4D3 ^0xD116C23E
 {
 	var src;
 
@@ -2299,7 +2299,7 @@ void func_27() // Position - 0x3411
 	return;
 }
 
-void func_28() // Position - 0x34B7
+void func_28() // Position - 0x34B7 Hash - 0x5FAB8350 ^0xC1D8FF02
 {
 	var src;
 
@@ -2323,7 +2323,7 @@ void func_28() // Position - 0x34B7
 	return;
 }
 
-void func_29() // Position - 0x3533
+void func_29() // Position - 0x3533 Hash - 0x53CAB240 ^0x77BD1C91
 {
 	var src;
 
@@ -2414,7 +2414,7 @@ void func_29() // Position - 0x3533
 	return;
 }
 
-void func_30() // Position - 0x376F
+void func_30() // Position - 0x376F Hash - 0x3A0DAC41 ^0x24C92761
 {
 	var src;
 
@@ -2433,7 +2433,7 @@ void func_30() // Position - 0x376F
 	return;
 }
 
-void func_31() // Position - 0x37C6
+void func_31() // Position - 0x37C6 Hash - 0x3A0DAC41 ^0x3981F3B8
 {
 	var src;
 
@@ -2452,7 +2452,7 @@ void func_31() // Position - 0x37C6
 	return;
 }
 
-void func_32() // Position - 0x381D
+void func_32() // Position - 0x381D Hash - 0x7F399000 ^0x2F632009
 {
 	var src;
 
@@ -2467,7 +2467,7 @@ void func_32() // Position - 0x381D
 	return;
 }
 
-void func_33() // Position - 0x3857
+void func_33() // Position - 0x3857 Hash - 0x28EF0717 ^0x5D1B4F45
 {
 	int i;
 	int j;
@@ -2805,7 +2805,7 @@ void func_33() // Position - 0x3857
 	return;
 }
 
-void func_34() // Position - 0x42A5
+void func_34() // Position - 0x42A5 Hash - 0xAED03120 ^0xA7035D8A
 {
 	var unk;
 	var unk10;
@@ -2868,7 +2868,7 @@ void func_34() // Position - 0x42A5
 	return;
 }
 
-void func_35() // Position - 0x4439
+void func_35() // Position - 0x4439 Hash - 0xEBB71142 ^0xEE7317E3
 {
 	int i;
 	var unk;
@@ -2956,7 +2956,7 @@ void func_35() // Position - 0x4439
 	return;
 }
 
-void func_36() // Position - 0x4677
+void func_36() // Position - 0x4677 Hash - 0xF843B5DD ^0xF843B5DD
 {
 	int i;
 	var unk;
@@ -2969,7 +2969,7 @@ void func_36() // Position - 0x4677
 	return;
 }
 
-void func_37() // Position - 0x46A5
+void func_37() // Position - 0x46A5 Hash - 0x4BC21F3B ^0xCCC288B0
 {
 	int i;
 	var unk;
@@ -3018,7 +3018,7 @@ void func_37() // Position - 0x46A5
 	return;
 }
 
-void func_38() // Position - 0x47B3
+void func_38() // Position - 0x47B3 Hash - 0x6A56AEA8 ^0x583EFBFF
 {
 	var unk;
 	var unk1720;
@@ -3107,7 +3107,7 @@ void func_38() // Position - 0x47B3
 	return;
 }
 
-void func_39() // Position - 0x4A04
+void func_39() // Position - 0x4A04 Hash - 0x22E1A17 ^0x78527F4F
 {
 	var unk;
 	var unk13;
@@ -3154,14 +3154,14 @@ void func_39() // Position - 0x4A04
 	return;
 }
 
-void func_40(int iParam0) // Position - 0x4B37
+void func_40(int iParam0) // Position - 0x4B37 Hash - 0xF1A400DF ^0x80E0A848
 {
 	*iParam0 = 0;
 	iParam0->f_1 = 0;
 	return;
 }
 
-void func_41(BOOL bParam0) // Position - 0x4B48
+void func_41(BOOL bParam0) // Position - 0x4B48 Hash - 0xDFA9C7CD ^0x1DE6547
 {
 	int i;
 
@@ -3178,7 +3178,7 @@ void func_41(BOOL bParam0) // Position - 0x4B48
 	return;
 }
 
-void func_42() // Position - 0x4B86
+void func_42() // Position - 0x4B86 Hash - 0xF453CC60 ^0xF453CC60
 {
 	func_59();
 	func_58();
@@ -3200,7 +3200,7 @@ void func_42() // Position - 0x4B86
 	return;
 }
 
-void func_43() // Position - 0x4BD2
+void func_43() // Position - 0x4BD2 Hash - 0x9AB5155 ^0x94605ECD
 {
 	var src;
 
@@ -3215,7 +3215,7 @@ void func_43() // Position - 0x4BD2
 	return;
 }
 
-void func_44() // Position - 0x4C0F
+void func_44() // Position - 0x4C0F Hash - 0x10BB9F71 ^0x2363641F
 {
 	var src;
 
@@ -3234,7 +3234,7 @@ void func_44() // Position - 0x4C0F
 	return;
 }
 
-void func_45() // Position - 0x4C67
+void func_45() // Position - 0x4C67 Hash - 0x78F9F05C ^0x66071D4D
 {
 	var src;
 
@@ -3251,7 +3251,7 @@ void func_45() // Position - 0x4C67
 	return;
 }
 
-void func_46() // Position - 0x4CAE
+void func_46() // Position - 0x4CAE Hash - 0x76D0D52C ^0x34619331
 {
 	var src;
 
@@ -3699,7 +3699,7 @@ void func_46() // Position - 0x4CAE
 	return;
 }
 
-void func_47() // Position - 0x58AD
+void func_47() // Position - 0x58AD Hash - 0xAD8608F2 ^0x2E6EF999
 {
 	var src;
 
@@ -3719,7 +3719,7 @@ void func_47() // Position - 0x58AD
 	return;
 }
 
-void func_48() // Position - 0x590B
+void func_48() // Position - 0x590B Hash - 0x7B48B3C1 ^0x5B4B14A5
 {
 	var src;
 
@@ -3830,7 +3830,7 @@ void func_48() // Position - 0x590B
 	return;
 }
 
-void func_49() // Position - 0x5C10
+void func_49() // Position - 0x5C10 Hash - 0x2FF523E6 ^0x28756266
 {
 	var src;
 
@@ -4060,7 +4060,7 @@ void func_49() // Position - 0x5C10
 	return;
 }
 
-void func_50() // Position - 0x616A
+void func_50() // Position - 0x616A Hash - 0xD86C2942 ^0x15513160
 {
 	var src;
 
@@ -4074,7 +4074,7 @@ void func_50() // Position - 0x616A
 	return;
 }
 
-void func_51() // Position - 0x619C
+void func_51() // Position - 0x619C Hash - 0x853E2311 ^0x626FAEE3
 {
 	var src;
 
@@ -4104,7 +4104,7 @@ void func_51() // Position - 0x619C
 	return;
 }
 
-void func_52() // Position - 0x6252
+void func_52() // Position - 0x6252 Hash - 0xE4717479 ^0xF61BFE10
 {
 	var src;
 
@@ -4278,7 +4278,7 @@ void func_52() // Position - 0x6252
 	return;
 }
 
-void func_53() // Position - 0x66CB
+void func_53() // Position - 0x66CB Hash - 0xD0CA5485 ^0x2E5F1A37
 {
 	var src;
 
@@ -4675,7 +4675,7 @@ void func_53() // Position - 0x66CB
 	return;
 }
 
-void func_54() // Position - 0x7044
+void func_54() // Position - 0x7044 Hash - 0xEFFCF382 ^0x3B85276F
 {
 	var src;
 
@@ -5827,7 +5827,7 @@ void func_54() // Position - 0x7044
 	return;
 }
 
-void func_55() // Position - 0x8ED4
+void func_55() // Position - 0x8ED4 Hash - 0xD5251CA4 ^0x16015EC2
 {
 	var src;
 
@@ -5841,7 +5841,7 @@ void func_55() // Position - 0x8ED4
 	return;
 }
 
-void func_56() // Position - 0x8F06
+void func_56() // Position - 0x8F06 Hash - 0xA1842B77 ^0xBBB160B3
 {
 	var src;
 
@@ -5853,7 +5853,7 @@ void func_56() // Position - 0x8F06
 	return;
 }
 
-void func_57() // Position - 0x8F30
+void func_57() // Position - 0x8F30 Hash - 0xCEBF0ADB ^0xC06D8DDF
 {
 	var src;
 
@@ -5871,7 +5871,7 @@ void func_57() // Position - 0x8F30
 	return;
 }
 
-void func_58() // Position - 0x8F7B
+void func_58() // Position - 0x8F7B Hash - 0x3042055F ^0x53408030
 {
 	int i;
 	var src;
@@ -5906,7 +5906,7 @@ void func_58() // Position - 0x8F7B
 	return;
 }
 
-void func_59() // Position - 0x903B
+void func_59() // Position - 0x903B Hash - 0x587D978C ^0x300044A2
 {
 	var src;
 
@@ -6175,7 +6175,7 @@ void func_59() // Position - 0x903B
 	return;
 }
 
-void func_60(int iParam0) // Position - 0x96F0
+void func_60(int iParam0) // Position - 0x96F0 Hash - 0xD1CBF1A4 ^0xD1CBF1A4
 {
 	func_70(iParam0);
 	func_69(iParam0);
@@ -6190,7 +6190,7 @@ void func_60(int iParam0) // Position - 0x96F0
 	return;
 }
 
-void func_61(int iParam0) // Position - 0x9734
+void func_61(int iParam0) // Position - 0x9734 Hash - 0xF26CAE14 ^0x2AF20AFB
 {
 	var src;
 
@@ -6202,7 +6202,7 @@ void func_61(int iParam0) // Position - 0x9734
 	return;
 }
 
-void func_62(int iParam0) // Position - 0x9763
+void func_62(int iParam0) // Position - 0x9763 Hash - 0xDE6612D1 ^0x6E23331F
 {
 	var src;
 
@@ -6216,7 +6216,7 @@ void func_62(int iParam0) // Position - 0x9763
 	return;
 }
 
-void func_63(int iParam0) // Position - 0x979D
+void func_63(int iParam0) // Position - 0x979D Hash - 0x548A27B9 ^0x495CB09F
 {
 	var src;
 
@@ -6234,7 +6234,7 @@ void func_63(int iParam0) // Position - 0x979D
 	return;
 }
 
-void func_64(int iParam0) // Position - 0x97EE
+void func_64(int iParam0) // Position - 0x97EE Hash - 0x9DAC2364 ^0xB142473E
 {
 	var src;
 
@@ -6261,7 +6261,7 @@ void func_64(int iParam0) // Position - 0x97EE
 	return;
 }
 
-void func_65(int iParam0) // Position - 0x9880
+void func_65(int iParam0) // Position - 0x9880 Hash - 0x2A8DEE50 ^0xAD56CFED
 {
 	var src;
 
@@ -6277,7 +6277,7 @@ void func_65(int iParam0) // Position - 0x9880
 	return;
 }
 
-void func_66(int iParam0) // Position - 0x98C8
+void func_66(int iParam0) // Position - 0x98C8 Hash - 0x81EF74B7 ^0xF8673D2
 {
 	var src;
 
@@ -6326,7 +6326,7 @@ void func_66(int iParam0) // Position - 0x98C8
 	return;
 }
 
-void func_67(int iParam0) // Position - 0x9A10
+void func_67(int iParam0) // Position - 0x9A10 Hash - 0x50861F6D ^0x7F4617D7
 {
 	var src;
 
@@ -6338,9 +6338,9 @@ void func_67(int iParam0) // Position - 0x9A10
 	return;
 }
 
-void func_68(int iParam0) // Position - 0x9A42
+void func_68(int iParam0) // Position - 0x9A42 Hash - 0x2C5005C1 ^0x5BBA268F
 {
-	int src;
+	Any* src;
 
 	if (Global_2672854)
 		MISC::COPY_SCRIPT_STRUCT(&Global_1680242[iParam0], &src, 1);
@@ -6350,7 +6350,7 @@ void func_68(int iParam0) // Position - 0x9A42
 	return;
 }
 
-void func_69(int iParam0) // Position - 0x9A6D
+void func_69(int iParam0) // Position - 0x9A6D Hash - 0xAA66C6C3 ^0xBBE200E7
 {
 	var src;
 	var src2;
@@ -6438,7 +6438,7 @@ void func_69(int iParam0) // Position - 0x9A6D
 	return;
 }
 
-void func_70(int iParam0) // Position - 0x9CDF
+void func_70(int iParam0) // Position - 0x9CDF Hash - 0x2711C4C1 ^0x4B54EB7C
 {
 	var src;
 

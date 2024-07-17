@@ -46,7 +46,7 @@
 	float fLocal_44 = 0f;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	iLocal_2 = 1;
 	iLocal_3 = 134;
@@ -113,7 +113,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1(int iParam0) // Position - 0x13F
+void func_1(int iParam0) // Position - 0x13F Hash - 0x16DDA0D8 ^0x7EBCF24C
 {
 	if (Global_20909 == false)
 	{
@@ -350,7 +350,7 @@ void func_1(int iParam0) // Position - 0x13F
 	return;
 }
 
-void func_2() // Position - 0x43D
+void func_2() // Position - 0x43D Hash - 0x2B15AE26 ^0xD3E882CC
 {
 	if (CAM::DOES_CAM_EXIST(caLocal_17))
 		CAM::DESTROY_CAM(caLocal_17, false);
@@ -364,7 +364,7 @@ void func_2() // Position - 0x43D
 	return;
 }
 
-void func_3(BOOL bParam0) // Position - 0x47A
+void func_3(BOOL bParam0) // Position - 0x47A Hash - 0x5FE88D2A ^0xA22C291D
 {
 	if (bParam0)
 	{
@@ -387,7 +387,7 @@ void func_3(BOOL bParam0) // Position - 0x47A
 	return;
 }
 
-void func_4(int iParam0) // Position - 0x4DD
+void func_4(int iParam0) // Position - 0x4DD Hash - 0x4066FEF5 ^0x9787FBDA
 {
 	if (func_8())
 		return;
@@ -417,7 +417,7 @@ void func_4(int iParam0) // Position - 0x4DD
 	return;
 }
 
-BOOL func_5() // Position - 0x567
+BOOL func_5() // Position - 0x567 Hash - 0xD140D54A ^0xE638D98F
 {
 	if (Global_20930.f_1 == 1 || Global_20930.f_1 == 0)
 		return true;
@@ -425,7 +425,7 @@ BOOL func_5() // Position - 0x567
 	return false;
 }
 
-void func_6(BOOL bParam0, BOOL bParam1) // Position - 0x58E
+void func_6(BOOL bParam0, BOOL bParam1) // Position - 0x58E Hash - 0xF40FC178 ^0xA6F60F17
 {
 	if (bParam0)
 	{
@@ -454,17 +454,17 @@ void func_6(BOOL bParam0, BOOL bParam1) // Position - 0x58E
 	return;
 }
 
-BOOL func_7() // Position - 0x602
+BOOL func_7() // Position - 0x602 Hash - 0x8DF3D75D ^0x8DF3D75D
 {
 	return IS_BIT_SET(Global_1956920, 5);
 }
 
-BOOL func_8() // Position - 0x610
+BOOL func_8() // Position - 0x610 Hash - 0xC41437CB ^0xC41437CB
 {
 	return IS_BIT_SET(Global_1956920, 19);
 }
 
-BOOL func_9(int iParam0) // Position - 0x61F
+BOOL func_9(int iParam0) // Position - 0x61F Hash - 0xE8921B44 ^0x4F063755
 {
 	if (iParam0 == 1)
 		if (Global_20930.f_1 > 3)
@@ -484,7 +484,7 @@ BOOL func_9(int iParam0) // Position - 0x61F
 	return false;
 }
 
-void func_10() // Position - 0x676
+void func_10() // Position - 0x676 Hash - 0xF8FE2348 ^0xA77911B2
 {
 	if (Global_20930.f_1 == 9 || Global_20930.f_1 == 10)
 	{

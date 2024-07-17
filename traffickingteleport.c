@@ -44,7 +44,7 @@
 	var uLocal_42 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	Ped playerPed;
 
@@ -84,7 +84,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1(int iParam0, int iParam1) // Position - 0xB1
+void func_1(int iParam0, int iParam1) // Position - 0xB1 Hash - 0xEFDF2B54 ^0x1CE7BA3B
 {
 	if (iParam0 == 235 || iParam0 == 0)
 		return;

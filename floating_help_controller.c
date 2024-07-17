@@ -1,4 +1,4 @@
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0xCD24592F ^0xE692A8FF
 {
 	MISC::NETWORK_SET_SCRIPT_IS_SAFE_FOR_NETWORK_GAME();
 
@@ -11,7 +11,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0x1C
+void func_1() // Position - 0x1C Hash - 0xF933B2AA ^0x12BAFCE2
 {
 	int i;
 	int hudIndex;
@@ -66,7 +66,7 @@ void func_1() // Position - 0x1C
 	return;
 }
 
-void func_2(int iParam0) // Position - 0x204
+void func_2(int iParam0) // Position - 0x204 Hash - 0xFF642A5F ^0xC2119F9C
 {
 	Global_112618[iParam0 /*28*/].f_21 = 0;
 	TEXT_LABEL_ASSIGN_STRING(&Global_112618[iParam0 /*28*/], "", 16);
@@ -79,7 +79,7 @@ void func_2(int iParam0) // Position - 0x204
 	return;
 }
 
-BOOL func_3(int iParam0) // Position - 0x26C
+BOOL func_3(int iParam0) // Position - 0x26C Hash - 0x36A56CF ^0xBEF23AD2
 {
 	int num;
 
@@ -99,27 +99,27 @@ BOOL func_3(int iParam0) // Position - 0x26C
 	return false;
 }
 
-BOOL func_4(int iParam0, char* sParam1) // Position - 0x33F
+BOOL func_4(int iParam0, char* sParam1) // Position - 0x33F Hash - 0x871151AA ^0x66944043
 {
 	HUD::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam1);
 	return HUD::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(1 + iParam0);
 }
 
-BOOL func_5(int iParam0, char* sParam1, int iParam2) // Position - 0x355
+BOOL func_5(int iParam0, char* sParam1, int iParam2) // Position - 0x355 Hash - 0x3630DF7D ^0x486BE87F
 {
 	HUD::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam1);
 	HUD::ADD_TEXT_COMPONENT_INTEGER(iParam2);
 	return HUD::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(1 + iParam0);
 }
 
-BOOL func_6(int iParam0, char* sParam1, char* sParam2) // Position - 0x371
+BOOL func_6(int iParam0, char* sParam1, char* sParam2) // Position - 0x371 Hash - 0x3630DF7D ^0xBE0A9680
 {
 	HUD::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam1);
 	HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam2);
 	return HUD::END_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(1 + iParam0);
 }
 
-BOOL func_7(int iParam0, char* sParam1, char* sParam2, int iParam3) // Position - 0x38D
+BOOL func_7(int iParam0, char* sParam1, char* sParam2, int iParam3) // Position - 0x38D Hash - 0x65335BD6 ^0xC7184D16
 {
 	HUD::BEGIN_TEXT_COMMAND_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED(sParam1);
 	HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam2);

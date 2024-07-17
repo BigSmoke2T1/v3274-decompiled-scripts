@@ -32,7 +32,7 @@
 	int iLocal_30 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	iLocal_2 = 1;
 	iLocal_3 = 134;
@@ -124,7 +124,7 @@ void main() // Position - 0x0
 	return;
 }
 
-BOOL func_1(var uParam0, int iParam1) // Position - 0x18E
+BOOL func_1(var uParam0, int iParam1) // Position - 0x18E Hash - 0x531C3980 ^0xF5F1F9EF
 {
 	int gameTimer;
 
@@ -136,13 +136,13 @@ BOOL func_1(var uParam0, int iParam1) // Position - 0x18E
 	return false;
 }
 
-void func_2() // Position - 0x1AC
+void func_2() // Position - 0x1AC Hash - 0xCE5FB49E ^0x214A59D5
 {
 	SCRIPT::TERMINATE_THIS_THREAD();
 	return;
 }
 
-int func_3(int iParam0) // Position - 0x1B8
+int func_3(int iParam0) // Position - 0x1B8 Hash - 0xFCBFD2CC ^0x1DBFD43E
 {
 	int num;
 	int offset;
@@ -167,7 +167,7 @@ int func_3(int iParam0) // Position - 0x1B8
 	return 0;
 }
 
-int func_4(int iParam0) // Position - 0x20F
+int func_4(int iParam0) // Position - 0x20F Hash - 0xFCBFD2CC ^0x1DBFD43E
 {
 	int num;
 	int offset;

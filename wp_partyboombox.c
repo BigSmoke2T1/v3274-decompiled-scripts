@@ -25,7 +25,7 @@
 	var uScriptParam_22 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0xDBAF0530 ^0x7B00D9C1
 {
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("wp_partyboombox")) > 1)
 		SCRIPT::TERMINATE_THIS_THREAD();
@@ -70,7 +70,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0xB1
+void func_1() // Position - 0xB1 Hash - 0x11215EEB ^0x8CBA826C
 {
 	if (STREAMING::IS_IPL_ACTIVE("ID2_21_G_Night"))
 		STREAMING::REMOVE_IPL("ID2_21_G_Night");

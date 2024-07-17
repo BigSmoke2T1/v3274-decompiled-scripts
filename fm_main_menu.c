@@ -245,7 +245,7 @@
 	ePedComponentType epctLocal_243 = PV_COMP_HEAD;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	iLocal_2 = 1;
 	iLocal_3 = 134;
@@ -413,12 +413,12 @@ void main() // Position - 0x0
 	return;
 }
 
-BOOL func_1() // Position - 0x2FE
+BOOL func_1() // Position - 0x2FE Hash - 0x47FF56D2 ^0x47FF56D2
 {
 	return Global_1574533;
 }
 
-BOOL func_2(int* piParam0) // Position - 0x30A
+BOOL func_2(int* piParam0) // Position - 0x30A Hash - 0x66D538A5 ^0x54FDC117
 {
 	if (!IS_BIT_SET(*piParam0, 2))
 	{
@@ -443,7 +443,7 @@ BOOL func_2(int* piParam0) // Position - 0x30A
 	return false;
 }
 
-BOOL func_3() // Position - 0x36D
+BOOL func_3() // Position - 0x36D Hash - 0x79B0F011 ^0x5F51167
 {
 	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_creator")) > 0 || SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_deathmatch_creator")) > 0 || SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_race_creator")) > 0 || SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_capture_creator")) > 0 || SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_lts_creator")) > 0 || SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_survival_creator")) > 0 || SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("basic_creator")) > 0 || SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("freemode_creator")) > 0)
 		return true;
@@ -451,7 +451,7 @@ BOOL func_3() // Position - 0x36D
 	return false;
 }
 
-BOOL func_4() // Position - 0x3FF
+BOOL func_4() // Position - 0x3FF Hash - 0x80B16C01 ^0x80B16C01
 {
 	if (Global_4718592 == PV_COMP_HAIR || Global_4718592 == PV_COMP_ACCS)
 		return true;
@@ -459,7 +459,7 @@ BOOL func_4() // Position - 0x3FF
 	return false;
 }
 
-BOOL func_5(int* piParam0) // Position - 0x422
+BOOL func_5(int* piParam0) // Position - 0x422 Hash - 0x4877DABF ^0xD70A7F07
 {
 	if (!IS_BIT_SET(*piParam0, 2))
 	{
@@ -484,7 +484,7 @@ BOOL func_5(int* piParam0) // Position - 0x422
 	return false;
 }
 
-BOOL func_6(int* piParam0) // Position - 0x485
+BOOL func_6(int* piParam0) // Position - 0x485 Hash - 0xD5F1B43B ^0x83C7525F
 {
 	if (!IS_BIT_SET(*piParam0, 2))
 	{
@@ -509,7 +509,7 @@ BOOL func_6(int* piParam0) // Position - 0x485
 	return false;
 }
 
-BOOL func_7(int* piParam0) // Position - 0x4E8
+BOOL func_7(int* piParam0) // Position - 0x4E8 Hash - 0x92108B72 ^0x9567C588
 {
 	if (!IS_BIT_SET(*piParam0, 2))
 	{
@@ -534,7 +534,7 @@ BOOL func_7(int* piParam0) // Position - 0x4E8
 	return false;
 }
 
-BOOL func_8(int* piParam0) // Position - 0x54B
+BOOL func_8(int* piParam0) // Position - 0x54B Hash - 0xC2B2CDCD ^0xCCB696A0
 {
 	if (!IS_BIT_SET(*piParam0, 2))
 	{
@@ -559,7 +559,7 @@ BOOL func_8(int* piParam0) // Position - 0x54B
 	return false;
 }
 
-BOOL func_9(int* piParam0) // Position - 0x5AE
+BOOL func_9(int* piParam0) // Position - 0x5AE Hash - 0x9863F474 ^0x4DDC6E51
 {
 	if (!IS_BIT_SET(*piParam0, 2))
 	{
@@ -584,7 +584,7 @@ BOOL func_9(int* piParam0) // Position - 0x5AE
 	return false;
 }
 
-BOOL func_10(int* piParam0) // Position - 0x611
+BOOL func_10(int* piParam0) // Position - 0x611 Hash - 0x44BDE181 ^0x8773BD0A
 {
 	if (!IS_BIT_SET(*piParam0, 2))
 	{
@@ -609,12 +609,12 @@ BOOL func_10(int* piParam0) // Position - 0x611
 	return false;
 }
 
-BOOL func_11() // Position - 0x674
+BOOL func_11() // Position - 0x674 Hash - 0x6700D392 ^0x6700D392
 {
 	return Global_4718592 == PV_COMP_UPPR;
 }
 
-BOOL func_12(int* piParam0) // Position - 0x682
+BOOL func_12(int* piParam0) // Position - 0x682 Hash - 0x9000C064 ^0x23636557
 {
 	if (!IS_BIT_SET(*piParam0, 2))
 	{
@@ -639,7 +639,7 @@ BOOL func_12(int* piParam0) // Position - 0x682
 	return false;
 }
 
-BOOL func_13(BOOL bParam0) // Position - 0x6E5
+BOOL func_13(BOOL bParam0) // Position - 0x6E5 Hash - 0x5573A09F ^0x5573A09F
 {
 	if (!bParam0)
 		return Global_4718592 == PV_COMP_HEAD;
@@ -650,18 +650,18 @@ BOOL func_13(BOOL bParam0) // Position - 0x6E5
 	return false;
 }
 
-void func_14() // Position - 0x757
+void func_14() // Position - 0x757 Hash - 0x9A142650 ^0x4D0752C1
 {
 	Global_23692.f_5 = 1;
 	return;
 }
 
-BOOL func_15() // Position - 0x765
+BOOL func_15() // Position - 0x765 Hash - 0x960DBD3C ^0xA4DDFF0D
 {
 	return Global_23692.f_5 || Global_23692.f_6;
 }
 
-void func_16(var uParam0) // Position - 0x77D
+void func_16(var uParam0) // Position - 0x77D Hash - 0xE582C6EC ^0xD9D25FCF
 {
 	if (Global_4718592 == PV_COMP_HEAD)
 	{
@@ -681,12 +681,12 @@ void func_16(var uParam0) // Position - 0x77D
 	return;
 }
 
-BOOL func_17() // Position - 0x7FD
+BOOL func_17() // Position - 0x7FD Hash - 0x47FF56D2 ^0x47FF56D2
 {
 	return Global_1574530;
 }
 
-int func_18() // Position - 0x809
+int func_18() // Position - 0x809 Hash - 0x88E8BBA2 ^0x8D5FE867
 {
 	if (IS_BIT_SET(Global_1668667.f_102, 1))
 		return 1;
@@ -706,12 +706,12 @@ int func_18() // Position - 0x809
 	return 0;
 }
 
-void func_19(var uParam0) // Position - 0x855
+void func_19(var uParam0) // Position - 0x855 Hash - 0xB22D5C46 ^0xB22D5C46
 {
 	return;
 }
 
-void func_20() // Position - 0x85D
+void func_20() // Position - 0x85D Hash - 0xAE9D603C ^0xCC57CFBF
 {
 	func_21();
 	Global_4718592.f_125531 = 0;
@@ -721,7 +721,7 @@ void func_20() // Position - 0x85D
 	return;
 }
 
-void func_21() // Position - 0x882
+void func_21() // Position - 0x882 Hash - 0xC30A8265 ^0x139DE662
 {
 	Global_23692.f_5 = 0;
 	return;

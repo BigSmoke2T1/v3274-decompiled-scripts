@@ -17,7 +17,7 @@
 	int iLocal_15 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	int gameTimer;
 	BOOL flag;
@@ -86,7 +86,7 @@ void main() // Position - 0x0
 	return;
 }
 
-eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xD2
+eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xD2 Hash - 0xAC4E9801 ^0xB379A75F
 {
 	eCharacter i;
 	Hash entityModel;
@@ -105,7 +105,7 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xD2
 	return _CHAR_NULL;
 }
 
-Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x10F
+Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x10F Hash - 0xADCB9755 ^0xADCB9755
 {
 	if (func_4(character))
 		return func_3(character);
@@ -115,17 +115,17 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x10F
 	return 0;
 }
 
-Hash func_3(eCharacter echParam0) // Position - 0x134
+Hash func_3(eCharacter echParam0) // Position - 0x134 Hash - 0xE4CEEC2C ^0xE4CEEC2C
 {
 	return Global_2169[echParam0 /*29*/];
 }
 
-BOOL func_4(eCharacter echParam0) // Position - 0x143
+BOOL func_4(eCharacter echParam0) // Position - 0x143 Hash - 0x8907F004 ^0x8907F004
 {
 	return echParam0 < CHAR_MULTIPLAYER;
 }
 
-void func_5() // Position - 0x14F
+void func_5() // Position - 0x14F Hash - 0x96997D50 ^0xB102C97B
 {
 	AUDIO::STOP_STREAM();
 	SCRIPT::TERMINATE_THIS_THREAD();

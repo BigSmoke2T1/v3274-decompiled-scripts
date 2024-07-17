@@ -3,7 +3,7 @@
 	int iLocal_1 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x8B1E80F5 ^0xA570E6B2
 {
 	int num;
 
@@ -131,7 +131,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1(float fParam0, float fParam1, char* sParam2, int iParam3) // Position - 0x2F8
+void func_1(float fParam0, float fParam1, char* sParam2, int iParam3) // Position - 0x2F8 Hash - 0x3EDB9751 ^0x36A963FC
 {
 	HUD::BEGIN_TEXT_COMMAND_DISPLAY_TEXT(sParam2);
 	HUD::END_TEXT_COMMAND_DISPLAY_TEXT(fParam0, fParam1, iParam3);

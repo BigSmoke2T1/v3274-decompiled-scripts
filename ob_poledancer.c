@@ -12,7 +12,7 @@
 	Object obScriptParam_0 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x9F97CE54 ^0x460BFB83
 {
 	sLocal_6 = "Poledance_01";
 	hLocal_7 = joaat("A_F_Y_Beach_01");
@@ -79,7 +79,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0xDC
+void func_1() // Position - 0xDC Hash - 0x5C2EA6D2 ^0x2D969DDD
 {
 	if (!ENTITY::IS_ENTITY_DEAD(pedLocal_1, false))
 		if (!ENTITY::IS_ENTITY_ON_SCREEN(pedLocal_1))
@@ -91,7 +91,7 @@ void func_1() // Position - 0xDC
 	return;
 }
 
-BOOL func_2() // Position - 0x10D
+BOOL func_2() // Position - 0x10D Hash - 0xA552291D ^0x713C131A
 {
 	Vector3 vector;
 
@@ -118,7 +118,7 @@ BOOL func_2() // Position - 0x10D
 	return false;
 }
 
-void func_3() // Position - 0x181
+void func_3() // Position - 0x181 Hash - 0x24B7B0A9 ^0x9944F7F1
 {
 	if (!PED::IS_PED_INJURED(pedLocal_1))
 	{
@@ -143,7 +143,7 @@ void func_3() // Position - 0x181
 	return;
 }
 
-void func_4() // Position - 0x215
+void func_4() // Position - 0x215 Hash - 0x91FFF757 ^0x51FBDD6D
 {
 	if (ENTITY::IS_ENTITY_DEAD(pedLocal_1, false))
 	{
@@ -156,7 +156,7 @@ void func_4() // Position - 0x215
 	return;
 }
 
-BOOL func_5() // Position - 0x253
+BOOL func_5() // Position - 0x253 Hash - 0xB2EB25EC ^0x49821DD1
 {
 	STREAMING::REQUEST_MODEL(hLocal_7);
 	STREAMING::REQUEST_ANIM_DICT(sLocal_8);

@@ -20,7 +20,7 @@
 	Ped pedLocal_18 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	iLocal_2 = 1;
 	iLocal_3 = 134;
@@ -42,7 +42,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1() // Position - 0x4F
+void func_1() // Position - 0x4F Hash - 0xA6977AA7 ^0xE28B3708
 {
 	Vector3 entityCoords;
 	int taskSequenceId;
@@ -95,7 +95,7 @@ void func_1() // Position - 0x4F
 	return;
 }
 
-void func_2(Ped pedParam0) // Position - 0x13C
+void func_2(Ped pedParam0) // Position - 0x13C Hash - 0xECD121EF ^0x1CFFB18C
 {
 	int num;
 
@@ -152,13 +152,13 @@ void func_2(Ped pedParam0) // Position - 0x13C
 	return;
 }
 
-void func_3(Ped pedParam0, char* sParam1, char* sParam2, int iParam3, BOOL bParam4) // Position - 0x23A
+void func_3(Ped pedParam0, char* sParam1, char* sParam2, int iParam3, BOOL bParam4) // Position - 0x23A Hash - 0x92183E0E ^0xCC1D3ECB
 {
 	AUDIO::PLAY_PED_AMBIENT_SPEECH_WITH_VOICE_NATIVE(pedParam0, sParam1, sParam2, func_4(iParam3), bParam4);
 	return;
 }
 
-char* func_4(int iParam0) // Position - 0x254
+char* func_4(int iParam0) // Position - 0x254 Hash - 0xA6820DDA ^0x9844792A
 {
 	char* str;
 
@@ -283,7 +283,7 @@ char* func_4(int iParam0) // Position - 0x254
 	return str;
 }
 
-eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x443
+eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x443 Hash - 0xAC4E9801 ^0xB379A75F
 {
 	eCharacter i;
 	Hash entityModel;
@@ -302,7 +302,7 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x443
 	return _CHAR_NULL;
 }
 
-Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x480
+Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x480 Hash - 0xADCB9755 ^0xADCB9755
 {
 	if (func_8(character))
 		return func_7(character);
@@ -312,17 +312,17 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x480
 	return 0;
 }
 
-Hash func_7(eCharacter echParam0) // Position - 0x4A5
+Hash func_7(eCharacter echParam0) // Position - 0x4A5 Hash - 0xE4CEEC2C ^0xE4CEEC2C
 {
 	return Global_2169[echParam0 /*29*/];
 }
 
-BOOL func_8(eCharacter echParam0) // Position - 0x4B4
+BOOL func_8(eCharacter echParam0) // Position - 0x4B4 Hash - 0x8907F004 ^0x8907F004
 {
 	return echParam0 < CHAR_MULTIPLAYER;
 }
 
-BOOL func_9(var uParam0) // Position - 0x4C0
+BOOL func_9(var uParam0) // Position - 0x4C0 Hash - 0x5D6C301A ^0xD5FFE8CA
 {
 	Vehicle vehiclePedIsIn;
 
@@ -370,13 +370,13 @@ BOOL func_9(var uParam0) // Position - 0x4C0
 	return false;
 }
 
-eCharacter _GET_CURRENT_PLAYER_CHARACTER() // Position - 0x605
+eCharacter _GET_CURRENT_PLAYER_CHARACTER() // Position - 0x605 Hash - 0x3C5423D7 ^0x3C5423D7
 {
 	func_11();
 	return Global_113969.f_2366.f_539.f_4321;
 }
 
-void func_11() // Position - 0x61E
+void func_11() // Position - 0x61E Hash - 0xD1F2D853 ^0xF9F5FD4D
 {
 	eCharacter character;
 
@@ -409,7 +409,7 @@ void func_11() // Position - 0x61E
 	return;
 }
 
-BOOL func_12(int iParam0) // Position - 0x71B
+BOOL func_12(int iParam0) // Position - 0x71B Hash - 0x937D8816 ^0x937D8816
 {
 	return Global_44042 == iParam0;
 }

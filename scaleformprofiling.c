@@ -18,7 +18,7 @@
 	int iLocal_16 = 0;
 #endregion
 
-void main() // Position - 0x0
+void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 {
 	iLocal_2 = 1;
 	iLocal_3 = 134;
@@ -56,7 +56,7 @@ void main() // Position - 0x0
 	return;
 }
 
-void func_1(int iParam0) // Position - 0x93
+void func_1(int iParam0) // Position - 0x93 Hash - 0xD2185CF9 ^0xF2651B5F
 {
 	if (Global_20909 == false)
 	{
@@ -133,7 +133,7 @@ void func_1(int iParam0) // Position - 0x93
 	return;
 }
 
-void func_2() // Position - 0x215
+void func_2() // Position - 0x215 Hash - 0x1818D874 ^0x9190E20D
 {
 	func_3(false);
 	MISC::SET_GAME_PAUSED(false);
@@ -142,7 +142,7 @@ void func_2() // Position - 0x215
 	return;
 }
 
-void func_3(BOOL bParam0) // Position - 0x231
+void func_3(BOOL bParam0) // Position - 0x231 Hash - 0x5FE88D2A ^0xA22C291D
 {
 	if (bParam0)
 	{
@@ -165,7 +165,7 @@ void func_3(BOOL bParam0) // Position - 0x231
 	return;
 }
 
-void func_4(int iParam0) // Position - 0x294
+void func_4(int iParam0) // Position - 0x294 Hash - 0x4066FEF5 ^0x9787FBDA
 {
 	if (func_8())
 		return;
@@ -195,7 +195,7 @@ void func_4(int iParam0) // Position - 0x294
 	return;
 }
 
-BOOL func_5() // Position - 0x31E
+BOOL func_5() // Position - 0x31E Hash - 0xD140D54A ^0xE638D98F
 {
 	if (Global_20930.f_1 == 1 || Global_20930.f_1 == 0)
 		return true;
@@ -203,7 +203,7 @@ BOOL func_5() // Position - 0x31E
 	return false;
 }
 
-void func_6(BOOL bParam0, BOOL bParam1) // Position - 0x345
+void func_6(BOOL bParam0, BOOL bParam1) // Position - 0x345 Hash - 0xF40FC178 ^0xA6F60F17
 {
 	if (bParam0)
 	{
@@ -232,17 +232,17 @@ void func_6(BOOL bParam0, BOOL bParam1) // Position - 0x345
 	return;
 }
 
-BOOL func_7() // Position - 0x3B9
+BOOL func_7() // Position - 0x3B9 Hash - 0x8DF3D75D ^0x8DF3D75D
 {
 	return IS_BIT_SET(Global_1956920, 5);
 }
 
-BOOL func_8() // Position - 0x3C7
+BOOL func_8() // Position - 0x3C7 Hash - 0xC41437CB ^0xC41437CB
 {
 	return IS_BIT_SET(Global_1956920, 19);
 }
 
-BOOL func_9(int iParam0) // Position - 0x3D6
+BOOL func_9(int iParam0) // Position - 0x3D6 Hash - 0xE8921B44 ^0x4F063755
 {
 	if (iParam0 == 1)
 		if (Global_20930.f_1 > 3)
@@ -262,7 +262,7 @@ BOOL func_9(int iParam0) // Position - 0x3D6
 	return false;
 }
 
-void func_10() // Position - 0x42D
+void func_10() // Position - 0x42D Hash - 0xF8FE2348 ^0xA77911B2
 {
 	if (Global_20930.f_1 == 9 || Global_20930.f_1 == 10)
 	{
