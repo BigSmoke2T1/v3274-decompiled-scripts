@@ -78,7 +78,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				{
 					if (VEHICLE::IS_VEHICLE_MODEL(veLocal_26, joaat("handler")))
 					{
-						PAD::SET_INPUT_EXCLUSIVE(PLAYER_CONTROL, INPUT_CONTEXT);
+						PAD::SET_INPUT_EXCLUSIVE(0 /*PLAYER_CONTROL*/, 51 /*INPUT_CONTEXT*/);
 					
 						if (!VEHICLE::IS_ANY_ENTITY_ATTACHED_TO_HANDLER_FRAME(veLocal_26))
 						{
@@ -93,7 +93,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 									{
 										if (VEHICLE::IS_HANDLER_FRAME_LINED_UP_WITH_CONTAINER(veLocal_26, obLocal_27))
 										{
-											if (PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_CONTEXT))
+											if (PAD::IS_CONTROL_JUST_PRESSED(0 /*PLAYER_CONTROL*/, 51 /*INPUT_CONTEXT*/))
 											{
 												VEHICLE::ATTACH_CONTAINER_TO_HANDLER_FRAME_WHEN_LINED_UP(veLocal_26, obLocal_27);
 												iLocal_29 = 1;
@@ -113,7 +113,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 								iLocal_30 = 0;
 							}
 						
-							PAD::IS_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_CONTEXT);
+							PAD::IS_CONTROL_JUST_PRESSED(0 /*PLAYER_CONTROL*/, 51 /*INPUT_CONTEXT*/);
 						}
 					}
 				}

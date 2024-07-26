@@ -122,7 +122,7 @@ void func_3() // Position - 0x181 Hash - 0x24B7B0A9 ^0x9944F7F1
 {
 	if (!PED::IS_PED_INJURED(pedLocal_1))
 	{
-		if (TASK::GET_SCRIPT_TASK_STATUS(pedLocal_1, SCRIPT_TASK_PLAY_ANIM) == 7)
+		if (TASK::GET_SCRIPT_TASK_STATUS(pedLocal_1, joaat("SCRIPT_TASK_PLAY_ANIM") /*SCRIPT_TASK_PLAY_ANIM*/) == 7)
 		{
 			TASK::TASK_PLAY_ANIM(pedLocal_1, sLocal_8, sLocal_6, 1090519040, -1056964608, -1, 0, 0, false, false, false);
 		}
@@ -147,7 +147,7 @@ void func_4() // Position - 0x215 Hash - 0x91FFF757 ^0x51FBDD6D
 {
 	if (ENTITY::IS_ENTITY_DEAD(pedLocal_1, false))
 	{
-		pedLocal_1 = PED::CREATE_PED(PED_TYPE_CIVFEMALE, hLocal_7, fLocal_2, fLocal_2.f_1, fLocal_2.f_2, fLocal_5, true, true);
+		pedLocal_1 = PED::CREATE_PED(5 /*PED_TYPE_CIVFEMALE*/, hLocal_7, fLocal_2, fLocal_2.f_1, fLocal_2.f_2, fLocal_5, true, true);
 		PED::SET_PED_RANDOM_COMPONENT_VARIATION(pedLocal_1, 0);
 		PED::SET_PED_CAN_BE_TARGETTED(pedLocal_1, false);
 		PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(pedLocal_1, true);

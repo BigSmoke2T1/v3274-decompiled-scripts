@@ -525,7 +525,7 @@ BOOL func_1(Player plParam0, BOOL bParam1, BOOL bParam2) // Position - 0x47F Has
 			return true;
 
 	if (bParam2)
-		if (Global_2657971[plParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID)
+		if (Global_2657971[plParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/)
 			return true;
 
 	return false;
@@ -739,7 +739,7 @@ void func_6(var uParam0, BOOL bParam1) // Position - 0x6F3 Hash - 0x1852BCCF ^0x
 	
 		for (i = 0; i < 13; i = i + 1)
 		{
-			Global_794744.f_154901[i] = PV_COMP_HEAD;
+			Global_794744.f_154901[i] = 0 /*PV_COMP_HEAD*/;
 			Global_794744.f_154887[i] = 0;
 		}
 	
@@ -793,7 +793,7 @@ void func_6(var uParam0, BOOL bParam1) // Position - 0x6F3 Hash - 0x1852BCCF ^0x
 	Global_794744.f_4[uParam0->f_8 /*89*/].f_69 = DATAFILE::DATADICT_GET_INT(dict2, "min");
 	Global_794744.f_4[uParam0->f_8 /*89*/].f_71 = DATAFILE::DATADICT_GET_INT(dict2, "num");
 
-	if (Global_794744.f_4[uParam0->f_8 /*89*/].f_71 == PV_COMP_INVALID)
+	if (Global_794744.f_4[uParam0->f_8 /*89*/].f_71 == -1 /*PV_COMP_INVALID*/)
 		Global_794744.f_4[uParam0->f_8 /*89*/].f_71 = func_96();
 
 	TEXT_LABEL_ASSIGN_STRING(&(Global_794744.f_4[uParam0->f_8 /*89*/].f_22), NETWORK::UGC_GET_CONTENT_NAME(uParam0->f_6), 64);
@@ -819,7 +819,7 @@ void func_6(var uParam0, BOOL bParam1) // Position - 0x6F3 Hash - 0x1852BCCF ^0x
 	hashKey = MISC::GET_HASH_KEY(&Global_794744.f_4[uParam0->f_8 /*89*/]);
 	Global_794744.f_135107[uParam0->f_8 /*13*/].f_3 = hashKey;
 
-	if (Global_794744.f_4[uParam0->f_8 /*89*/].f_65 == PV_COMP_FEET && !bParam1)
+	if (Global_794744.f_4[uParam0->f_8 /*89*/].f_65 == 6 /*PV_COMP_FEET*/ && !bParam1)
 	{
 		if (Global_1001983.f_684 < 85)
 		{
@@ -898,7 +898,7 @@ void func_6(var uParam0, BOOL bParam1) // Position - 0x6F3 Hash - 0x1852BCCF ^0x
 		if (flag)
 			Global_794744.f_4[uParam0->f_8 /*89*/].f_69 = Global_794744.f_4[uParam0->f_8 /*89*/].f_71;
 	
-		if (*Global_794744.f_154886 < 5 && Global_794744.f_4[uParam0->f_8 /*89*/].f_65 == PV_COMP_HEAD && Global_794744.f_4[uParam0->f_8 /*89*/].f_68 == 1)
+		if (*Global_794744.f_154886 < 5 && Global_794744.f_4[uParam0->f_8 /*89*/].f_65 == 0 /*PV_COMP_HEAD*/ && Global_794744.f_4[uParam0->f_8 /*89*/].f_68 == 1)
 		{
 			Global_794744.f_135107[uParam0->f_8 /*13*/].f_10 = *Global_794744.f_154886;
 			TEXT_LABEL_ASSIGN_STRING(&Global_794744.f_154855[*Global_794744.f_154886 /*6*/], NETWORK::UGC_GET_ROOT_CONTENT_ID(uParam0->f_6), 24);
@@ -945,7 +945,7 @@ void func_6(var uParam0, BOOL bParam1) // Position - 0x6F3 Hash - 0x1852BCCF ^0x
 		}
 	}
 
-	if (Global_794744.f_4[uParam0->f_8 /*89*/].f_65 == PV_COMP_FEET)
+	if (Global_794744.f_4[uParam0->f_8 /*89*/].f_65 == 6 /*PV_COMP_FEET*/)
 		Global_1002668[0 /*50*/] = Global_1002668[0 /*50*/] + 1;
 
 	uParam0->f_8 = uParam0->f_8 + 1;
@@ -1045,7 +1045,7 @@ BOOL func_12(ePedComponentType epctParam0, int iParam1, int iParam2, var uParam3
 {
 	int num;
 
-	if (epctParam0 != PV_COMP_HEAD)
+	if (epctParam0 != 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	if (iParam1 != 2)
@@ -1443,8 +1443,8 @@ ePedComponentType func_18(Player plParam0) // Position - 0x1AB0 Hash - 0x7E91FE3
 
 	type = func_21(plParam0);
 
-	if (type < PV_COMP_HEAD)
-		return PV_COMP_HEAD;
+	if (type < 0 /*PV_COMP_HEAD*/)
+		return 0 /*PV_COMP_HEAD*/;
 
 	return func_19(type, 0);
 }
@@ -1513,7 +1513,7 @@ ePedComponentType func_20(int iParam0) // Position - 0x1B8C Hash - 0xC61E502D ^0
 		switch (iParam0)
 		{
 			case 1:
-				return PV_COMP_HEAD;
+				return 0 /*PV_COMP_HEAD*/;
 		
 			case 2:
 				return 800;
@@ -1834,7 +1834,7 @@ ePedComponentType func_21(Player plParam0) // Position - 0x20C7 Hash - 0xA3072EF
 	else
 		return func_24(640, -1);
 
-	return PV_COMP_HEAD;
+	return 0 /*PV_COMP_HEAD*/;
 }
 
 BOOL func_22(Player plParam0) // Position - 0x211E Hash - 0x392A396A ^0x1DEEBA83
@@ -1970,7 +1970,7 @@ void func_30(ePedComponentType epctParam0, int iParam1, ePedComponentType epctPa
 
 	if (func_104())
 	{
-		if (epctParam0 == PV_COMP_HEAD)
+		if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 			if (iParam1 != 6 && iParam1 != 5 && iParam1 != 4 && iParam1 != 9)
 				if (func_18(PLAYER::PLAYER_ID()) < epctParam2)
 					return;
@@ -1990,35 +1990,35 @@ Hash func_31(ePedComponentType epctParam0, int iParam1, BOOL bParam2) // Positio
 {
 	switch (epctParam0)
 	{
-		case PV_COMP_HAIR:
+		case 2 /*PV_COMP_HAIR*/:
 			if (bParam2)
 				return joaat("MPPLY_AVAILABLE_RACES_V");
 			else
 				return joaat("MPPLY_AVAILABLE_RACES");
 			break;
 	
-		case PV_COMP_BERD:
+		case 1 /*PV_COMP_BERD*/:
 			if (bParam2)
 				return joaat("MPPLY_AVAILABLE_DMS_V");
 			else
 				return joaat("MPPLY_AVAILABLE_DMS");
 			break;
 	
-		case PV_COMP_ACCS:
+		case 8 /*PV_COMP_ACCS*/:
 			if (bParam2)
 				return joaat("MPPLY_AVAILABLE_PARAS_V");
 			else
 				return joaat("MPPLY_AVAILABLE_PARAS");
 			break;
 	
-		case PV_COMP_UPPR:
+		case 3 /*PV_COMP_UPPR*/:
 			if (bParam2)
 				return joaat("MPPLY_AVAILABLE_SURVIVAL_V");
 			else
 				return joaat("MPPLY_AVAILABLE_SURVIVAL");
 			break;
 	
-		case PV_COMP_HEAD:
+		case 0 /*PV_COMP_HEAD*/:
 			switch (iParam1)
 			{
 				case 6:
@@ -2077,11 +2077,11 @@ void func_32(ePedComponentType epctParam0, int iParam1, BOOL bParam2, ePedCompon
 	if (!bParam2)
 		return;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		if (iParam1 != 6 && iParam1 != 5 && iParam1 != 4 && iParam1 != 9)
 			if (func_18(PLAYER::PLAYER_ID()) < epctParam3)
 				return;
-	else if (epctParam0 == PV_COMP_HAIR)
+	else if (epctParam0 == 2 /*PV_COMP_HAIR*/)
 		if (epctParam3 >= 9999)
 			return;
 
@@ -2098,35 +2098,35 @@ Hash func_33(ePedComponentType epctParam0, int iParam1, BOOL bParam2) // Positio
 {
 	switch (epctParam0)
 	{
-		case PV_COMP_HAIR:
+		case 2 /*PV_COMP_HAIR*/:
 			if (bParam2)
 				return joaat("MPPLY_UNIQUE_RACES_V");
 			else
 				return joaat("MPPLY_UNIQUE_RACES");
 			break;
 	
-		case PV_COMP_BERD:
+		case 1 /*PV_COMP_BERD*/:
 			if (bParam2)
 				return joaat("MPPLY_UNIQUE_DMS_V");
 			else
 				return joaat("MPPLY_UNIQUE_DMS");
 			break;
 	
-		case PV_COMP_ACCS:
+		case 8 /*PV_COMP_ACCS*/:
 			if (bParam2)
 				return joaat("MPPLY_UNIQUE_PARAS_V");
 			else
 				return joaat("MPPLY_UNIQUE_PARAS");
 			break;
 	
-		case PV_COMP_UPPR:
+		case 3 /*PV_COMP_UPPR*/:
 			if (bParam2)
 				return joaat("MPPLY_UNIQUE_SURVIVAL_V");
 			else
 				return joaat("MPPLY_UNIQUE_SURVIVAL");
 			break;
 	
-		case PV_COMP_HEAD:
+		case 0 /*PV_COMP_HEAD*/:
 			switch (iParam1)
 			{
 				case 6:
@@ -2177,7 +2177,7 @@ Hash func_33(ePedComponentType epctParam0, int iParam1, BOOL bParam2) // Positio
 
 BOOL func_34(ePedComponentType epctParam0, ePedComponentType epctParam1) // Position - 0x263E Hash - 0x2C57C416 ^0x2C57C416
 {
-	if (epctParam1 > PV_COMP_HEAD)
+	if (epctParam1 > 0 /*PV_COMP_HEAD*/)
 		return true;
 
 	if (func_55(epctParam0) || func_54(epctParam0) || func_53(epctParam0) || func_52(epctParam0, true) || func_51(epctParam0) || func_50(epctParam0) || func_49(epctParam0) || func_48(epctParam0) || func_47(epctParam0) || func_46(epctParam0) || func_45(epctParam0) || func_44(epctParam0) || func_43(epctParam0) || func_42(epctParam0) || func_41(epctParam0) || func_40(epctParam0) || func_39(epctParam0) || func_38(epctParam0) || func_37(epctParam0) || func_36(epctParam1) || func_35(epctParam1))
@@ -2203,7 +2203,7 @@ BOOL func_37(ePedComponentType epctParam0) // Position - 0x2769 Hash - 0xC99E75C
 	if (*Global_4718592.f_185586 == 30)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2222,7 +2222,7 @@ BOOL func_38(ePedComponentType epctParam0) // Position - 0x27B6 Hash - 0xA7E1F0C
 	if (*Global_4718592.f_185586 == 35)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2241,7 +2241,7 @@ BOOL func_39(ePedComponentType epctParam0) // Position - 0x2803 Hash - 0x6580B8C
 	if (*Global_4718592.f_185586 == 31)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2260,7 +2260,7 @@ BOOL func_40(ePedComponentType epctParam0) // Position - 0x2850 Hash - 0xA4CF4D6
 	if (*Global_4718592.f_185586 == 34)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2279,7 +2279,7 @@ BOOL func_41(ePedComponentType epctParam0) // Position - 0x289D Hash - 0xE4B74A5
 	if (*Global_4718592.f_185586 == 29)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 11; i = i + 1)
@@ -2298,7 +2298,7 @@ BOOL func_42(ePedComponentType epctParam0) // Position - 0x28EA Hash - 0xA42797C
 	if (*Global_4718592.f_185586 == 27)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2317,7 +2317,7 @@ BOOL func_43(ePedComponentType epctParam0) // Position - 0x2937 Hash - 0xE358C6E
 	if (*Global_4718592.f_185586 == 28)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2336,7 +2336,7 @@ BOOL func_44(ePedComponentType epctParam0) // Position - 0x2984 Hash - 0xB64D23C
 	if (*Global_4718592.f_185586 == 46)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2355,7 +2355,7 @@ BOOL func_45(ePedComponentType epctParam0) // Position - 0x29D1 Hash - 0x97752A0
 	if (*Global_4718592.f_185586 == 32)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2374,7 +2374,7 @@ BOOL func_46(ePedComponentType epctParam0) // Position - 0x2A1E Hash - 0x4A9CC01
 	if (*Global_4718592.f_185586 == 33)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2393,7 +2393,7 @@ BOOL func_47(ePedComponentType epctParam0) // Position - 0x2A6B Hash - 0x9C50B0A
 	if (*Global_4718592.f_185586 == 86)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2412,7 +2412,7 @@ BOOL func_48(ePedComponentType epctParam0) // Position - 0x2AB8 Hash - 0x14BFBF0
 	if (*Global_4718592.f_185586 == 84)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2431,7 +2431,7 @@ BOOL func_49(ePedComponentType epctParam0) // Position - 0x2B05 Hash - 0x9DC5D4E
 	if (*Global_4718592.f_185586 == 25)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2450,7 +2450,7 @@ BOOL func_50(ePedComponentType epctParam0) // Position - 0x2B52 Hash - 0x3362C7A
 	if (*Global_4718592.f_185586 == 85)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 9; i = i + 1)
@@ -2469,7 +2469,7 @@ BOOL func_51(ePedComponentType epctParam0) // Position - 0x2B9F Hash - 0x3A714DD
 	if (*Global_4718592.f_185586 == 21)
 		return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 6; i = i + 1)
@@ -2489,7 +2489,7 @@ BOOL func_52(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x2BEB Ha
 		if (*Global_4718592.f_185586 == 65)
 			return true;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i <= 6; i = i + 1)
@@ -2541,7 +2541,7 @@ void func_56(ePedComponentType epctParam0, int iParam1) // Position - 0x2DA3 Has
 	if (iParam1 >= 1500)
 		return;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return;
 
 	for (i = 0; i < 8; i = i + 1)
@@ -2874,7 +2874,7 @@ int func_79(ePedComponentType epctParam0) // Position - 0x3581 Hash - 0x687554E9
 {
 	int i;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return -1;
 
 	for (i = 0; i < 16; i = i + 1)
@@ -2891,11 +2891,11 @@ BOOL func_80(ePedComponentType epctParam0) // Position - 0x35BC Hash - 0x696BB52
 	int i;
 	int j;
 
-	if (epctParam0 != PV_COMP_HEAD)
+	if (epctParam0 != 0 /*PV_COMP_HEAD*/)
 	{
 		for (j = 0; j < 24; j = j + 1)
 		{
-			if (Global_262145.f_6951[j] == PV_COMP_HAIR)
+			if (Global_262145.f_6951[j] == 2 /*PV_COMP_HAIR*/)
 			{
 				for (i = 0; i < Global_262145.f_6131[j]; i = i + 1)
 				{
@@ -2927,7 +2927,7 @@ int func_82(ePedComponentType epctParam0) // Position - 0x3643 Hash - 0x232DFEA3
 {
 	int i;
 
-	if (epctParam0 != PV_COMP_HEAD)
+	if (epctParam0 != 0 /*PV_COMP_HEAD*/)
 	{
 		for (i = 0; i < Global_262145.f_6131[23]; i = i + 1)
 		{
@@ -2943,7 +2943,7 @@ BOOL func_83(ePedComponentType epctParam0) // Position - 0x3686 Hash - 0xB51BFE2
 {
 	int i;
 
-	if (epctParam0 != PV_COMP_HEAD)
+	if (epctParam0 != 0 /*PV_COMP_HEAD*/)
 	{
 		for (i = 0; i < Global_262145.f_6131[22]; i = i + 1)
 		{
@@ -2959,7 +2959,7 @@ BOOL func_84(ePedComponentType epctParam0) // Position - 0x36C9 Hash - 0x2C52731
 {
 	int i;
 
-	if (epctParam0 != PV_COMP_HEAD)
+	if (epctParam0 != 0 /*PV_COMP_HEAD*/)
 	{
 		for (i = 0; i < Global_262145.f_6131[19]; i = i + 1)
 		{
@@ -2975,7 +2975,7 @@ BOOL func_85(ePedComponentType epctParam0) // Position - 0x370C Hash - 0x642FF8D
 {
 	int i;
 
-	if (epctParam0 != PV_COMP_HEAD)
+	if (epctParam0 != 0 /*PV_COMP_HEAD*/)
 	{
 		for (i = 0; i < Global_262145.f_6131[18]; i = i + 1)
 		{
@@ -2992,7 +2992,7 @@ BOOL func_86(ePedComponentType epctParam0) // Position - 0x374F Hash - 0xD2E878B
 	int i;
 	int j;
 
-	if (epctParam0 != PV_COMP_HEAD)
+	if (epctParam0 != 0 /*PV_COMP_HEAD*/)
 	{
 		for (j = 0; j < 24; j = j + 1)
 		{
@@ -3015,7 +3015,7 @@ int func_87(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x37B5 Has
 	int i;
 	int j;
 
-	if (epctParam0 != PV_COMP_HEAD)
+	if (epctParam0 != 0 /*PV_COMP_HEAD*/)
 	{
 		for (j = 0; j < 24; j = j + 1)
 		{
@@ -3788,7 +3788,7 @@ BOOL func_129(var uParam0, const char* sParam1, int iParam2, int iParam3, BOOL b
 	
 		if (func_164(uParam0, sParam1, 0, true, false, bParam5, 0, 0, true, bParam9, bParam10, bParam11, false, bParam12, bParam13, false))
 		{
-			if (func_163(true) || Global_4718592 == 31 || Global_4718592 == PV_COMP_FEET || Global_4718592 == PV_COMP_LOWR)
+			if (func_163(true) || Global_4718592 == 31 || Global_4718592 == 6 /*PV_COMP_FEET*/ || Global_4718592 == 4 /*PV_COMP_LOWR*/)
 			{
 				if (func_162(*Global_4718592.f_127178))
 					Global_4718592.f_3565 = { func_161() };
@@ -3823,16 +3823,16 @@ BOOL func_129(var uParam0, const char* sParam1, int iParam2, int iParam3, BOOL b
 				if (func_82(*Global_4718592.f_127178) && func_81())
 					Global_4718592.f_3565 = { func_142(false) };
 			
-				if (Global_4718592.f_3527 < PV_COMP_BERD)
+				if (Global_4718592.f_3527 < 1 /*PV_COMP_BERD*/)
 					Global_4718592.f_3527 = 1;
 			
-				if (Global_4718592.f_3526 < PV_COMP_BERD)
+				if (Global_4718592.f_3526 < 1 /*PV_COMP_BERD*/)
 					Global_4718592.f_3526 = 1;
 			
 				if (!func_141())
 					func_140();
 			}
-			else if (Global_4718592 == PV_COMP_BERD)
+			else if (Global_4718592 == 1 /*PV_COMP_BERD*/)
 			{
 				Global_1680212.f_4 = 99;
 				Global_1680212.f_6 = Global_4718592.f_3550;
@@ -3926,7 +3926,7 @@ void func_132(ePedComponentType epctParam0) // Position - 0x4CE5 Hash - 0x50D12A
 		NETWORK::NETWORK_SESSION_SET_UNIQUE_CREW_LIMIT_TRANSITION(2);
 		NETWORK::NETWORK_SESSION_SET_UNIQUE_CREW_ONLY_CREWS_TRANSITION(true);
 	
-		if (epctParam0 == PV_COMP_HEAD)
+		if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 			epctParam0 = 32;
 	
 		NETWORK::NETWORK_SESSION_SET_CREW_LIMIT_MAX_MEMBERS_TRANSITION(epctParam0 / 2);
@@ -3974,7 +3974,7 @@ BOOL _IS_NULL_VECTOR(float fParam0, var uParam1, var uParam2) // Position - 0x4D
 
 BOOL func_139() // Position - 0x4D99 Hash - 0x80B16C01 ^0x80B16C01
 {
-	if (Global_4718592 == PV_COMP_HAIR || Global_4718592 == PV_COMP_ACCS)
+	if (Global_4718592 == 2 /*PV_COMP_HAIR*/ || Global_4718592 == 8 /*PV_COMP_ACCS*/)
 		return true;
 
 	return false;
@@ -3992,9 +3992,9 @@ BOOL func_141() // Position - 0x4DD2 Hash - 0x5A865B0E ^0x5A865B0E
 	ePedComponentType i;
 	ePedComponentType j;
 
-	for (i = PV_COMP_HEAD; i < Global_4718592.f_3527; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i < Global_4718592.f_3527; i = i + 1)
 	{
-		for (j = PV_COMP_HEAD; j < Global_4718592.f_3527; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j < Global_4718592.f_3527; j = j + 1)
 		{
 			if (Global_4718592.f_3534[i] != Global_4718592.f_3534[j])
 				return false;
@@ -4201,9 +4201,9 @@ BOOL func_162(ePedComponentType epctParam0) // Position - 0x5166 Hash - 0x4813BA
 BOOL func_163(BOOL bParam0) // Position - 0x51A0 Hash - 0x5573A09F ^0x5573A09F
 {
 	if (!bParam0)
-		return Global_4718592 == PV_COMP_HEAD;
+		return Global_4718592 == 0 /*PV_COMP_HEAD*/;
 
-	if (Global_4718592 == PV_COMP_HEAD || Global_4718592 == PV_COMP_LOWR || Global_4718592 == PV_COMP_FEET || Global_4718592 == PV_COMP_UPPR || Global_4718592 == 31 || Global_4718592.f_2 == PV_COMP_FEET || Global_4718592.f_2 == PV_COMP_HAND)
+	if (Global_4718592 == 0 /*PV_COMP_HEAD*/ || Global_4718592 == 4 /*PV_COMP_LOWR*/ || Global_4718592 == 6 /*PV_COMP_FEET*/ || Global_4718592 == 3 /*PV_COMP_UPPR*/ || Global_4718592 == 31 || Global_4718592.f_2 == 6 /*PV_COMP_FEET*/ || Global_4718592.f_2 == 5 /*PV_COMP_HAND*/)
 		return true;
 
 	return false;
@@ -5169,7 +5169,7 @@ BOOL func_168(ePedComponentType epctParam0) // Position - 0x66DB Hash - 0xA23990
 {
 	int i;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i < 6; i = i + 1)
@@ -5193,7 +5193,7 @@ BOOL func_170(ePedComponentType epctParam0) // Position - 0x672E Hash - 0x24830C
 {
 	int i;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i < 7; i = i + 1)
@@ -5217,7 +5217,7 @@ BOOL func_172(ePedComponentType epctParam0) // Position - 0x6781 Hash - 0xA23990
 {
 	int i;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i < 6; i = i + 1)
@@ -5241,7 +5241,7 @@ BOOL func_174(ePedComponentType epctParam0) // Position - 0x67D4 Hash - 0x474547
 {
 	int i;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	for (i = 0; i < 6; i = i + 1)
@@ -5301,7 +5301,7 @@ BOOL func_179(Hash hParam0) // Position - 0x68A9 Hash - 0x9CB2DA77 ^0x9CB2DA77
 {
 	int i;
 
-	if (hParam0 == PV_COMP_HEAD)
+	if (hParam0 == 0 /*PV_COMP_HEAD*/)
 		return 0;
 
 	for (i = 0; i < 8; i = i + 1)
@@ -6173,7 +6173,7 @@ BOOL func_201(var uParam0, int iParam1, BOOL bParam2, BOOL bParam3) // Position 
 		}
 	}
 
-	if (Global_4718592 == PV_COMP_HEAD && Global_4718592.f_2 == PV_COMP_FEET)
+	if (Global_4718592 == 0 /*PV_COMP_HEAD*/ && Global_4718592.f_2 == 6 /*PV_COMP_FEET*/)
 		if (uParam0->f_20 == -1 && uParam0->f_21 == -1 && !func_122())
 			if (!NETWORK::UGC_IS_LANGUAGE_SUPPORTED(NETWORK::UGC_GET_CONTENT_LANGUAGE(0)))
 				Global_4718592.f_127738 = 1;
@@ -6196,22 +6196,22 @@ void func_202() // Position - 0x7ED2 Hash - 0x7EE8606A ^0x4ACEB15E
 
 BOOL func_203() // Position - 0x7EE7 Hash - 0x6B2A9B1A ^0x62F46E8A
 {
-	if (Global_4718592 != PV_COMP_HAIR && Global_4718592 != PV_COMP_HEAD && Global_4718592 != PV_COMP_BERD && Global_4718592 != PV_COMP_UPPR)
+	if (Global_4718592 != 2 /*PV_COMP_HAIR*/ && Global_4718592 != 0 /*PV_COMP_HEAD*/ && Global_4718592 != 1 /*PV_COMP_BERD*/ && Global_4718592 != 3 /*PV_COMP_UPPR*/)
 		return true;
 
-	if (Global_4718592 == PV_COMP_HEAD)
+	if (Global_4718592 == 0 /*PV_COMP_HEAD*/)
 	{
 		if (*Global_4718592.f_185586 != 0)
 			return true;
 	
-		if (Global_4718592.f_2 == PV_COMP_LOWR)
+		if (Global_4718592.f_2 == 4 /*PV_COMP_LOWR*/)
 			return true;
 	
-		if (Global_4718592.f_2 != PV_COMP_HAND && Global_4718592.f_2 != PV_COMP_FEET && !IS_BIT_SET(Global_4718592.f_4, 20) && !IS_BIT_SET(Global_4718592.f_4, 21) && !IS_BIT_SET(Global_4718592.f_4, 22) && !IS_BIT_SET(Global_4718592.f_4, 23))
+		if (Global_4718592.f_2 != 5 /*PV_COMP_HAND*/ && Global_4718592.f_2 != 6 /*PV_COMP_FEET*/ && !IS_BIT_SET(Global_4718592.f_4, 20) && !IS_BIT_SET(Global_4718592.f_4, 21) && !IS_BIT_SET(Global_4718592.f_4, 22) && !IS_BIT_SET(Global_4718592.f_4, 23))
 			return true;
 	}
 
-	if (Global_4718592 == PV_COMP_HAIR)
+	if (Global_4718592 == 2 /*PV_COMP_HAIR*/)
 		if (*Global_4718592.f_117195 == 8 || *Global_4718592.f_117195 == 9)
 			return true;
 
@@ -6506,7 +6506,7 @@ BOOL func_219(int iParam0, BOOL bParam1, const char* sParam2, int iParam3) // Po
 	if (!Global_1979296)
 		return func_220(&unk, &unk14, iParam0, bParam1);
 
-	if (!unk_0x62E29CDA11F9C230(2, &unk))
+	if (!_NETWORK_HAS_PLAYER_PASSED_CHECK_TYPE(2, &unk))
 		return false;
 
 	return true;
@@ -6705,12 +6705,12 @@ BOOL func_225(var uParam0, int iParam1, BOOL bParam2) // Position - 0x8AE7 Hash 
 			func_363(dict, false);
 			func_350(dict, false);
 		
-			if (Global_4718592 == PV_COMP_BERD)
+			if (Global_4718592 == 1 /*PV_COMP_BERD*/)
 			{
 				func_457(dict);
 				func_349(dict, false);
 			}
-			else if (Global_4718592 == PV_COMP_HEAD || *Global_4718592.f_117195 == 8 || *Global_4718592.f_117195 == 9 || Global_4718592 == PV_COMP_FEET || func_348())
+			else if (Global_4718592 == 0 /*PV_COMP_HEAD*/ || *Global_4718592.f_117195 == 8 || *Global_4718592.f_117195 == 9 || Global_4718592 == 6 /*PV_COMP_FEET*/ || func_348())
 			{
 				func_345(dict, false);
 				func_298(dict, 0);
@@ -6743,10 +6743,10 @@ BOOL func_225(var uParam0, int iParam1, BOOL bParam2) // Position - 0x8AE7 Hash 
 			
 				if (num != -1)
 				{
-					if (Global_262145.f_4608[num] != PV_COMP_INVALID && Global_262145.f_6951[num] != 251)
+					if (Global_262145.f_4608[num] != -1 /*PV_COMP_INVALID*/ && Global_262145.f_6951[num] != 251)
 						Global_4718592.f_3523 = Global_262145.f_4608[num];
 				
-					if (Global_262145.f_4557[num] != PV_COMP_INVALID && Global_262145.f_6951[num] != 251)
+					if (Global_262145.f_4557[num] != -1 /*PV_COMP_INVALID*/ && Global_262145.f_6951[num] != 251)
 						Global_4718592.f_3522 = Global_262145.f_4557[num];
 				}
 			}
@@ -7301,8 +7301,8 @@ void func_259() // Position - 0xA1DF Hash - 0xE2182D8 ^0x1486D98B
 		return;
 
 	Global_4718592.f_3523 = 1;
-	Global_4718592.f_3529[0] = PV_COMP_BERD;
-	Global_4718592.f_178821[0] = PV_COMP_HEAD;
+	Global_4718592.f_3529[0] = 1 /*PV_COMP_BERD*/;
+	Global_4718592.f_178821[0] = 0 /*PV_COMP_HEAD*/;
 	return;
 }
 
@@ -7431,8 +7431,8 @@ void func_266() // Position - 0xA626 Hash - 0xF372EA66 ^0x6DE2613A
 		return;
 
 	Global_4718592.f_3523 = 1;
-	Global_4718592.f_3529[0] = PV_COMP_BERD;
-	Global_4718592.f_178821[0] = PV_COMP_HEAD;
+	Global_4718592.f_3529[0] = 1 /*PV_COMP_BERD*/;
+	Global_4718592.f_178821[0] = 0 /*PV_COMP_HEAD*/;
 
 	if (*Global_4718592.f_127178 == func_269(2))
 	{
@@ -7460,7 +7460,7 @@ void func_266() // Position - 0xA626 Hash - 0xF372EA66 ^0x6DE2613A
 		Global_4980736.f_119419[*Global_4980736.f_119413 - 1 /*1180*/].f_28 = joaat("WEAPON_UNARMED");
 		Global_4980736.f_119419[*Global_4980736.f_119413 - 1 /*1180*/].f_60 = 173;
 		MISC::SET_BIT(&(Global_4980736.f_119419[*Global_4980736.f_119413 - 1 /*1180*/].f_573), 19);
-		Global_4980736.f_119419[*Global_4980736.f_119413 - 1 /*1180*/].f_30[0] = PV_COMP_HAIR;
+		Global_4980736.f_119419[*Global_4980736.f_119413 - 1 /*1180*/].f_30[0] = 2 /*PV_COMP_HAIR*/;
 		MISC::SET_BIT(&Global_4718592.f_107989[0 /*4*/][func_268(*Global_4980736.f_119413 - 1)], func_267(*Global_4980736.f_119413 - 1));
 		Global_4980736.f_119419[*Global_4980736.f_119413 - 1 /*1180*/].f_507 = 2;
 		Global_4980736.f_119419[*Global_4980736.f_119413 - 1 /*1180*/].f_1012[0] = 89;
@@ -7656,7 +7656,7 @@ void func_282(ePedComponentType epctParam0) // Position - 0xAF8D Hash - 0xC6A6C4
 	int i;
 	var unk;
 
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return;
 
 	for (i = 0; i < 8; i = i + 1)
@@ -9381,7 +9381,7 @@ void func_293(var uParam0, BOOL bParam1) // Position - 0xD42C Hash - 0xE49D518C 
 		TEXT_LABEL_ASSIGN_STRING(&key, "lcid", 16);
 		TEXT_LABEL_APPEND_INT(&key, j, 16);
 		array16 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &key);
-		type2 = PV_COMP_HEAD;
+		type2 = 0 /*PV_COMP_HEAD*/;
 	
 		for (i = 0; i <= Global_4980736.f_215413[j] - 1; i = i + 1)
 		{
@@ -9444,7 +9444,7 @@ void func_293(var uParam0, BOOL bParam1) // Position - 0xD42C Hash - 0xE49D518C 
 			}
 			else
 			{
-				Global_4980736.f_219560[j /*4141*/][type2 /*69*/].f_63[0] = PV_COMP_HEAD;
+				Global_4980736.f_219560[j /*4141*/][type2 /*69*/].f_63[0] = 0 /*PV_COMP_HEAD*/;
 			}
 		
 			if (array15 != 0 && DATAFILE::DATAARRAY_GET_TYPE(array15, i) == 2)
@@ -9936,16 +9936,16 @@ void func_308(var uParam0, var uParam1, ePedComponentType epctParam2, ePedCompon
 	func_313(epctParam2, num, num2);
 	TEXT_LABEL_ASSIGN_STRING(&unk, "", 16);
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_BERD; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 1 /*PV_COMP_BERD*/; i = i + 1)
 	{
-		if (i > PV_COMP_HEAD)
+		if (i > 0 /*PV_COMP_HEAD*/)
 			func_312(&unk, "blpShZ", i, -1);
 		else
 			TEXT_LABEL_ASSIGN_STRING(&unk, "blpShZ", 16);
 	
 		func_297(&unk, &epctParam2->f_44[i], uParam1, &uParam0->f_25[i], epctParam3, 0, -2340845);
 	
-		if (i > PV_COMP_HEAD)
+		if (i > 0 /*PV_COMP_HEAD*/)
 			func_312(&unk, "blpHiZ", i, -1);
 		else
 			TEXT_LABEL_ASSIGN_STRING(&unk, "blpHiZ", 16);
@@ -10424,7 +10424,7 @@ void func_318(var uParam0, var uParam1, var uParam2, ePedComponentType epctParam
 		func_297(&unk, &(uParam0->f_8[i /*27*/].f_17), uParam2, &uParam1->f_176[i], epctParam3, 0, -2340845);
 		TEXT_LABEL_ASSIGN_STRING(&unk, "gtcst", 16);
 		TEXT_LABEL_APPEND_INT(&unk, i, 16);
-		uParam0->f_8[i /*27*/].f_19 = func_307(&unk, uParam2, &uParam1->f_202[i], epctParam3, PV_COMP_HEAD, PV_COMP_HEAD);
+		uParam0->f_8[i /*27*/].f_19 = func_307(&unk, uParam2, &uParam1->f_202[i], epctParam3, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 		TEXT_LABEL_ASSIGN_STRING(&unk, "gtcss", 16);
 		TEXT_LABEL_APPEND_INT(&unk, i, 16);
 		func_297(&unk, &(uParam0->f_8[i /*27*/].f_25), uParam2, &uParam1->f_276[i], epctParam3, 0, -2340845);
@@ -11019,7 +11019,7 @@ BOOL func_329(ePedComponentType epctParam0, ePedComponentType epctParam1, int iP
 
 BOOL func_330(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, int iParam3) // Position - 0x10CD3 Hash - 0x73AE029D ^0x6D6C4D63
 {
-	if (epctParam0 != PV_COMP_INVALID)
+	if (epctParam0 != -1 /*PV_COMP_INVALID*/)
 		if (IS_BIT_SET(Global_4980736.f_119419[epctParam0 /*1180*/].f_553, 14))
 			return true;
 
@@ -11073,7 +11073,7 @@ BOOL func_330(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedCo
 
 BOOL func_331(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2, int iParam3) // Position - 0x10DC5 Hash - 0xB45D2D36 ^0xC2A2C5A4
 {
-	if (epctParam0 != PV_COMP_INVALID)
+	if (epctParam0 != -1 /*PV_COMP_INVALID*/)
 		if (IS_BIT_SET(Global_4980736.f_119419[epctParam0 /*1180*/].f_553, 13))
 			return true;
 
@@ -12034,7 +12034,7 @@ void func_345(int iParam0, BOOL bParam1) // Position - 0x117E3 Hash - 0x9F503BD0
 	array7 = DATAFILE::DATADICT_GET_ARRAY(dict, "rsp");
 	unk2 = 4;
 
-	if (Global_4718592 == PV_COMP_BERD)
+	if (Global_4718592 == 1 /*PV_COMP_BERD*/)
 		unk2[0] = DATAFILE::DATADICT_GET_ARRAY(dict, "team");
 
 	array8 = DATAFILE::DATADICT_GET_ARRAY(dict, "wep");
@@ -12331,17 +12331,17 @@ void func_345(int iParam0, BOOL bParam1) // Position - 0x117E3 Hash - 0x9F503BD0
 		array221 = DATAFILE::DATADICT_GET_ARRAY(dict, "pcdat");
 		array222 = DATAFILE::DATADICT_GET_ARRAY(dict, "pcdl2s");
 	
-		for (j = PV_COMP_HEAD; j <= PV_COMP_FEET; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 6 /*PV_COMP_FEET*/; j = j + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&key, "prstp", 8);
 		
-			if (j > PV_COMP_HEAD)
+			if (j > 0 /*PV_COMP_HEAD*/)
 				TEXT_LABEL_APPEND_INT(&key, j, 8);
 		
 			unk246[j] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
 			TEXT_LABEL_ASSIGN_STRING(&key, "prsth", 8);
 		
-			if (j > PV_COMP_HEAD)
+			if (j > 0 /*PV_COMP_HEAD*/)
 				TEXT_LABEL_APPEND_INT(&key, j, 8);
 		
 			unk254[j] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
@@ -12398,7 +12398,7 @@ void func_345(int iParam0, BOOL bParam1) // Position - 0x117E3 Hash - 0x9F503BD0
 			_int = DATAFILE::DATAARRAY_GET_INT(array6, i);
 			Global_4980736.f_119419[type /*1180*/].f_29 = _int;
 		
-			if (Global_4718592 == PV_COMP_BERD)
+			if (Global_4718592 == 1 /*PV_COMP_BERD*/)
 				Global_4980736.f_119419[type /*1180*/].f_30[0] = DATAFILE::DATAARRAY_GET_INT(unk2[0], i);
 		
 			Global_4980736.f_119419[type /*1180*/].f_93 = DATAFILE::DATAARRAY_GET_INT(array15, i);
@@ -12504,7 +12504,7 @@ void func_345(int iParam0, BOOL bParam1) // Position - 0x117E3 Hash - 0x9F503BD0
 			else
 				Global_4980736.f_119419[type /*1180*/].f_20 = 0;
 		
-			for (j = PV_COMP_HEAD; j <= PV_COMP_UPPR; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= 3 /*PV_COMP_UPPR*/; j = j + 1)
 			{
 				TEXT_LABEL_ASSIGN_STRING(&key, "Pror_", 8);
 				TEXT_LABEL_APPEND_INT(&key, j, 8);
@@ -12759,7 +12759,7 @@ void func_345(int iParam0, BOOL bParam1) // Position - 0x117E3 Hash - 0x9F503BD0
 			{
 				TEXT_LABEL_ASSIGN_STRING(&key, "sbhir", 8);
 			
-				if (i < PV_COMP_DECL)
+				if (i < 10 /*PV_COMP_DECL*/)
 					TEXT_LABEL_APPEND_INT(&key, 0, 8);
 			
 				TEXT_LABEL_APPEND_INT(&key, i, 8);
@@ -12914,7 +12914,7 @@ void func_345(int iParam0, BOOL bParam1) // Position - 0x117E3 Hash - 0x9F503BD0
 			
 				TEXT_LABEL_ASSIGN_STRING(&unk274, "", 16);
 			
-				for (j = PV_COMP_HEAD; j <= 16; j = j + 1)
+				for (j = 0 /*PV_COMP_HEAD*/; j <= 16; j = j + 1)
 				{
 					func_312(&unk274, "pbvr", j, -1);
 					func_297(&unk274, &Global_4980736.f_119419[type /*1180*/].f_994[j], &dict, &unk154[j], i, -2, -2340845);
@@ -13075,7 +13075,7 @@ void func_345(int iParam0, BOOL bParam1) // Position - 0x117E3 Hash - 0x9F503BD0
 				else
 					Global_4980736.f_119419[type /*1180*/].f_108 = 0;
 			
-				for (j = PV_COMP_HEAD; j <= 19; j = j + 1)
+				for (j = 0 /*PV_COMP_HEAD*/; j <= 19; j = j + 1)
 				{
 					TEXT_LABEL_ASSIGN_STRING(&key, "1pwb", 8);
 					TEXT_LABEL_APPEND_INT(&key, j, 8);
@@ -13323,7 +13323,7 @@ void func_345(int iParam0, BOOL bParam1) // Position - 0x117E3 Hash - 0x9F503BD0
 					Global_4980736.f_119419[type /*1180*/].f_101 = -1;
 				}
 			
-				if (Global_4718592.f_2 != PV_COMP_FEET && DATAFILE::DATAARRAY_GET_TYPE(array206, i) == 2)
+				if (Global_4718592.f_2 != 6 /*PV_COMP_FEET*/ && DATAFILE::DATAARRAY_GET_TYPE(array206, i) == 2)
 					Global_4980736.f_119419[type /*1180*/].f_703 = DATAFILE::DATAARRAY_GET_INT(array206, i);
 				else
 					Global_4980736.f_119419[type /*1180*/].f_703 = -1;
@@ -13368,7 +13368,7 @@ void func_345(int iParam0, BOOL bParam1) // Position - 0x117E3 Hash - 0x9F503BD0
 				else
 					Global_4980736.f_119419[type /*1180*/].f_688.f_5 = -1;
 			
-				if (Global_4718592.f_2 != PV_COMP_FEET && DATAFILE::DATAARRAY_GET_TYPE(array207, i) == 2)
+				if (Global_4718592.f_2 != 6 /*PV_COMP_FEET*/ && DATAFILE::DATAARRAY_GET_TYPE(array207, i) == 2)
 					Global_4980736.f_119419[type /*1180*/].f_704 = DATAFILE::DATAARRAY_GET_INT(array207, i);
 				else
 					Global_4980736.f_119419[type /*1180*/].f_704 = 0;
@@ -13383,7 +13383,7 @@ void func_345(int iParam0, BOOL bParam1) // Position - 0x117E3 Hash - 0x9F503BD0
 				else
 					Global_4980736.f_119419[type /*1180*/].f_706 = -1;
 			
-				for (j = PV_COMP_HEAD; j <= PV_COMP_FEET; j = j + 1)
+				for (j = 0 /*PV_COMP_HEAD*/; j <= 6 /*PV_COMP_FEET*/; j = j + 1)
 				{
 					if (unk246[j] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk246[j], i) == 5)
 						Global_4980736.f_119419[type /*1180*/].f_723[j /*3*/] = { DATAFILE::DATAARRAY_GET_VECTOR(unk246[j], i) };
@@ -13404,7 +13404,7 @@ void func_345(int iParam0, BOOL bParam1) // Position - 0x117E3 Hash - 0x9F503BD0
 						Global_4980736.f_119419[type /*1180*/].f_35[k] = DATAFILE::DATAARRAY_GET_INT(unk68[k], i);
 						Global_4980736.f_119419[type /*1180*/].f_40[k] = DATAFILE::DATAARRAY_GET_INT(unk73[k], i);
 					
-						if (Global_4980736.f_119419[type /*1180*/].f_40[k] == PV_COMP_INVALID)
+						if (Global_4980736.f_119419[type /*1180*/].f_40[k] == -1 /*PV_COMP_INVALID*/)
 							Global_4980736.f_119419[type /*1180*/].f_40[k] = 99999;
 					
 						if (unk78[k] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk78[k], i) == 2)
@@ -13462,7 +13462,7 @@ void func_345(int iParam0, BOOL bParam1) // Position - 0x117E3 Hash - 0x9F503BD0
 						if (unk139[k] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk139[k], i) == 2)
 							Global_4980736.f_119419[type /*1180*/].f_639[k] = DATAFILE::DATAARRAY_GET_INT(unk139[k], i);
 						else
-							Global_4980736.f_119419[type /*1180*/].f_639[k] = PV_COMP_HEAD;
+							Global_4980736.f_119419[type /*1180*/].f_639[k] = 0 /*PV_COMP_HEAD*/;
 					
 						if (unk144[k] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk144[k], i) == 2)
 							Global_4980736.f_119419[type /*1180*/].f_646[k] = DATAFILE::DATAARRAY_GET_INT(unk144[k], i);
@@ -13518,7 +13518,7 @@ BOOL func_346(Hash hParam0) // Position - 0x17349 Hash - 0x1DB3839 ^0xF188445
 
 BOOL func_347() // Position - 0x178E7 Hash - 0x272DF244 ^0x272DF244
 {
-	if (Global_4718592 == PV_COMP_FEET)
+	if (Global_4718592 == 6 /*PV_COMP_FEET*/)
 		return true;
 
 	return false;
@@ -13526,7 +13526,7 @@ BOOL func_347() // Position - 0x178E7 Hash - 0x272DF244 ^0x272DF244
 
 BOOL func_348() // Position - 0x178FC Hash - 0x6700D392 ^0x6700D392
 {
-	return Global_4718592 == PV_COMP_UPPR;
+	return Global_4718592 == 3 /*PV_COMP_UPPR*/;
 }
 
 void func_349(int iParam0, BOOL bParam1) // Position - 0x1790A Hash - 0x53BF6B3E ^0x1533A1AA
@@ -13750,7 +13750,7 @@ void func_350(int iParam0, BOOL bParam1) // Position - 0x17A73 Hash - 0x60A8247B
 	if (*Global_4980736.f_80135 > 32)
 		Global_4980736.f_80135 = 32;
 
-	type = PV_COMP_HEAD;
+	type = 0 /*PV_COMP_HEAD*/;
 
 	for (i = 0; i <= *Global_4980736.f_80135 - 1; i = i + 1)
 	{
@@ -13780,7 +13780,7 @@ void func_350(int iParam0, BOOL bParam1) // Position - 0x17A73 Hash - 0x60A8247B
 		Global_4980736.f_80137[type /*242*/].f_12 = DATAFILE::DATAARRAY_GET_INT(array6, i);
 		Global_4980736.f_80137[type /*242*/].f_14 = DATAFILE::DATAARRAY_GET_INT(array7, i);
 	
-		if (Global_4980736.f_80137[type /*242*/].f_14 == PV_COMP_INVALID)
+		if (Global_4980736.f_80137[type /*242*/].f_14 == -1 /*PV_COMP_INVALID*/)
 			Global_4980736.f_80137[type /*242*/].f_14 = 0;
 	
 		if (array9 != 0 && DATAFILE::DATAARRAY_GET_TYPE(array9, i) == 2)
@@ -13961,7 +13961,7 @@ void func_350(int iParam0, BOOL bParam1) // Position - 0x17A73 Hash - 0x60A8247B
 		}
 		else
 		{
-			Global_4980736.f_80137[type /*242*/].f_131[0] = PV_COMP_HEAD;
+			Global_4980736.f_80137[type /*242*/].f_131[0] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		if (array43 != 0 && DATAFILE::DATAARRAY_GET_TYPE(array43, i) == 2)
@@ -14018,9 +14018,9 @@ void func_350(int iParam0, BOOL bParam1) // Position - 0x17A73 Hash - 0x60A8247B
 
 	if (!bParam1)
 	{
-		if (func_352() || Global_4718592 == PV_COMP_BERD && !func_351())
+		if (func_352() || Global_4718592 == 1 /*PV_COMP_BERD*/ && !func_351())
 		{
-			for (i = PV_COMP_HEAD; i <= Global_4980736.f_6999 - 1; i = i + 1)
+			for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4980736.f_6999 - 1; i = i + 1)
 			{
 				Global_4980736.f_80137[type3 /*242*/] = { Global_4980736.f_7002[i /*609*/] };
 				Global_4980736.f_80137[type3 /*242*/].f_3 = { Global_4980736.f_7002[i /*609*/].f_4 };
@@ -14054,7 +14054,7 @@ BOOL func_351() // Position - 0x18DC2 Hash - 0x89320B9B ^0xA38290B7
 
 BOOL func_352() // Position - 0x18E09 Hash - 0xA471E6FA ^0x18CFB346
 {
-	if (Global_4718592 == PV_COMP_HEAD && Global_4718592.f_2 == PV_COMP_HAND)
+	if (Global_4718592 == 0 /*PV_COMP_HEAD*/ && Global_4718592.f_2 == 5 /*PV_COMP_HAND*/)
 		return true;
 
 	return false;
@@ -14418,7 +14418,7 @@ int func_361(int iParam0, int iParam1, int iParam2) // Position - 0x1A5CA Hash -
 
 int func_362() // Position - 0x1A5EF Hash - 0x52DEEBEB ^0x52DEEBEB
 {
-	if (Global_4718592 == PV_COMP_HAIR || Global_4718592 == PV_COMP_ACCS)
+	if (Global_4718592 == 2 /*PV_COMP_HAIR*/ || Global_4718592 == 8 /*PV_COMP_ACCS*/)
 		return 200;
 
 	return 200;
@@ -14638,11 +14638,11 @@ void func_363(int iParam0, BOOL bParam1) // Position - 0x1A614 Hash - 0xED14EAC5
 					if (STREAMING::IS_MODEL_VALID(Global_4718592.f_186762[j]))
 						Global_4718592.f_186788 = *Global_4718592.f_186788 + 1;
 					else
-						Global_4718592.f_186762[j] = PV_COMP_HEAD;
+						Global_4718592.f_186762[j] = 0 /*PV_COMP_HEAD*/;
 				}
 				else
 				{
-					Global_4718592.f_186762[j] = PV_COMP_HEAD;
+					Global_4718592.f_186762[j] = 0 /*PV_COMP_HEAD*/;
 				}
 			}
 		}
@@ -14698,7 +14698,7 @@ void func_363(int iParam0, BOOL bParam1) // Position - 0x1A614 Hash - 0xED14EAC5
 		func_297("prpscr2_", &(Global_4980736.f_47368[type /*163*/].f_36), &dict, &unk19, i, -1, -2340845);
 		func_297("prpscr3_", &(Global_4980736.f_47368[type /*163*/].f_37), &dict, &unk20, i, -1, -2340845);
 	
-		if (Global_4980736.f_47368[type /*163*/].f_10 == PV_COMP_INVALID)
+		if (Global_4980736.f_47368[type /*163*/].f_10 == -1 /*PV_COMP_INVALID*/)
 			Global_4980736.f_47368[type /*163*/].f_10 = 0;
 	
 		if (array23 != 0 && DATAFILE::DATAARRAY_GET_TYPE(array23, i) == 2)
@@ -14990,7 +14990,7 @@ void func_363(int iParam0, BOOL bParam1) // Position - 0x1A614 Hash - 0xED14EAC5
 			if (unk73[j] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk73[j], i) == 2)
 				Global_4980736.f_47368[type /*163*/].f_29[j] = DATAFILE::DATAARRAY_GET_INT(unk73[j], i);
 			else
-				Global_4980736.f_47368[type /*163*/].f_29[j] = PV_COMP_INVALID;
+				Global_4980736.f_47368[type /*163*/].f_29[j] = -1 /*PV_COMP_INVALID*/;
 		}
 	
 		Global_4980736.f_47368[type /*163*/].f_68 = DATAFILE::DATAARRAY_GET_INT(array68, i);
@@ -15030,7 +15030,7 @@ void func_363(int iParam0, BOOL bParam1) // Position - 0x1A614 Hash - 0xED14EAC5
 		}
 		else
 		{
-			Global_4980736.f_47368[type /*163*/].f_101[0] = PV_COMP_HEAD;
+			Global_4980736.f_47368[type /*163*/].f_101[0] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		if (array66 != 0 && DATAFILE::DATAARRAY_GET_TYPE(array66, i) == 2)
@@ -15121,7 +15121,7 @@ BOOL func_367(ePedComponentType epctParam0) // Position - 0x1C064 Hash - 0x60BBC
 
 BOOL func_368() // Position - 0x1C0A6 Hash - 0x893CA78F ^0x893CA78F
 {
-	return Global_4718592 == PV_COMP_HAIR;
+	return Global_4718592 == 2 /*PV_COMP_HAIR*/;
 }
 
 BOOL func_369(ePedComponentType epctParam0) // Position - 0x1C0B4 Hash - 0xAD766E45 ^0x17C3A8D9
@@ -15829,7 +15829,7 @@ void func_370(int iParam0, BOOL bParam1) // Position - 0x1C0CB Hash - 0xCDE526FD
 		
 			Global_4980736.f_98448[type /*600*/].f_32 = DATAFILE::DATAARRAY_GET_INT(array53, i);
 		
-			if (Global_4980736.f_98448[type /*600*/].f_32 < PV_COMP_BERD)
+			if (Global_4980736.f_98448[type /*600*/].f_32 < 1 /*PV_COMP_BERD*/)
 				Global_4980736.f_98448[type /*600*/].f_32 = 100;
 		
 			func_297("drbs", &(Global_4980736.f_98448[type /*600*/].f_108), &dict, &unk21, i, 0, 0);
@@ -15954,7 +15954,7 @@ void func_370(int iParam0, BOOL bParam1) // Position - 0x1C0CB Hash - 0xCDE526FD
 				}
 				else
 				{
-					Global_4980736.f_98448[type /*600*/].f_52[0] = PV_COMP_HEAD;
+					Global_4980736.f_98448[type /*600*/].f_52[0] = 0 /*PV_COMP_HEAD*/;
 				}
 			
 				if (array54 != 0 && DATAFILE::DATAARRAY_GET_TYPE(array54, i) == 3 && DATAFILE::DATAARRAY_GET_FLOAT(array54, i) > 0f || DATAFILE::DATAARRAY_GET_FLOAT(array54, i) <= -1000000f)
@@ -16246,7 +16246,7 @@ void func_370(int iParam0, BOOL bParam1) // Position - 0x1C0CB Hash - 0xCDE526FD
 				else
 					Global_4980736.f_98448[type /*600*/].f_476 = -1;
 			
-				if (Global_4980736.f_98448[type /*600*/].f_476 > PV_COMP_INVALID)
+				if (Global_4980736.f_98448[type /*600*/].f_476 > -1 /*PV_COMP_INVALID*/)
 				{
 					type2 = Global_4980736.f_98448[type /*600*/].f_476;
 					func_372(type2, dict, unk114);
@@ -16292,12 +16292,12 @@ void func_370(int iParam0, BOOL bParam1) // Position - 0x1C0CB Hash - 0xCDE526FD
 				else
 					Global_4980736.f_98448[type /*600*/].f_51 = 0;
 			
-				if (Global_4718592.f_2 != PV_COMP_FEET && DATAFILE::DATAARRAY_GET_TYPE(array102, i) == 2)
+				if (Global_4718592.f_2 != 6 /*PV_COMP_FEET*/ && DATAFILE::DATAARRAY_GET_TYPE(array102, i) == 2)
 					Global_4980736.f_98448[type /*600*/].f_278 = DATAFILE::DATAARRAY_GET_INT(array102, i);
 				else
 					Global_4980736.f_98448[type /*600*/].f_278 = -1;
 			
-				if (Global_4718592.f_2 != PV_COMP_FEET && DATAFILE::DATAARRAY_GET_TYPE(array103, i) == 2)
+				if (Global_4718592.f_2 != 6 /*PV_COMP_FEET*/ && DATAFILE::DATAARRAY_GET_TYPE(array103, i) == 2)
 					Global_4980736.f_98448[type /*600*/].f_279 = DATAFILE::DATAARRAY_GET_INT(array103, i);
 				else
 					Global_4980736.f_98448[type /*600*/].f_279 = -1;
@@ -16525,7 +16525,7 @@ void func_370(int iParam0, BOOL bParam1) // Position - 0x1C0CB Hash - 0xCDE526FD
 						Global_4980736.f_98448[type /*600*/].f_13[k] = DATAFILE::DATAARRAY_GET_INT(unk167[k], i);
 						Global_4980736.f_98448[type /*600*/].f_18[k] = DATAFILE::DATAARRAY_GET_INT(unk172[k], i);
 					
-						if (Global_4980736.f_98448[type /*600*/].f_18[k] == PV_COMP_INVALID)
+						if (Global_4980736.f_98448[type /*600*/].f_18[k] == -1 /*PV_COMP_INVALID*/)
 							Global_4980736.f_98448[type /*600*/].f_18[k] = 99999;
 					
 						if (unk177[k] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk177[k], i) == 2)
@@ -16565,7 +16565,7 @@ void func_370(int iParam0, BOOL bParam1) // Position - 0x1C0CB Hash - 0xCDE526FD
 						if (unk223[k] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk223[k], i) == 2)
 							Global_4980736.f_98448[type /*600*/].f_197[k] = DATAFILE::DATAARRAY_GET_INT(unk223[k], i);
 						else
-							Global_4980736.f_98448[type /*600*/].f_197[k] = PV_COMP_HEAD;
+							Global_4980736.f_98448[type /*600*/].f_197[k] = 0 /*PV_COMP_HEAD*/;
 					
 						TEXT_LABEL_ASSIGN_STRING(&unk465, "vmcsr", 16);
 						TEXT_LABEL_APPEND_INT(&unk465, k, 16);
@@ -16664,7 +16664,7 @@ void func_370(int iParam0, BOOL bParam1) // Position - 0x1C0CB Hash - 0xCDE526FD
 			}
 			else if (func_368())
 			{
-				func_372(PV_COMP_HEAD, dict, unk114);
+				func_372(0 /*PV_COMP_HEAD*/, dict, unk114);
 			}
 		
 			func_371(type);
@@ -16817,7 +16817,7 @@ BOOL func_377(ePedComponentType epctParam0, int iParam1) // Position - 0x21990 H
 {
 	ePedComponentType i;
 
-	for (i = PV_COMP_HEAD; i <= func_380(iParam1); i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= func_380(iParam1); i = i + 1)
 	{
 		if (epctParam0 == func_378(iParam1, i))
 			return true;
@@ -20620,7 +20620,7 @@ ePedComponentType func_380(int iParam0) // Position - 0x2550A Hash - 0x23897E67 
 {
 	int i;
 
-	if (Global_1962436[iParam0] != PV_COMP_INVALID)
+	if (Global_1962436[iParam0] != -1 /*PV_COMP_INVALID*/)
 		return Global_1962436[iParam0];
 
 	for (i = 0; i <= 86; i = i + 1)
@@ -20629,8 +20629,8 @@ ePedComponentType func_380(int iParam0) // Position - 0x2550A Hash - 0x23897E67 
 			Global_1962436[iParam0] = i + 1;
 	}
 
-	if (Global_1962436[iParam0] == PV_COMP_INVALID)
-		Global_1962436[iParam0] = PV_COMP_HEAD;
+	if (Global_1962436[iParam0] == -1 /*PV_COMP_INVALID*/)
+		Global_1962436[iParam0] = 0 /*PV_COMP_HEAD*/;
 
 	return Global_1962436[iParam0];
 }
@@ -20709,7 +20709,7 @@ void func_381(int iParam0, BOOL bParam1) // Position - 0x25571 Hash - 0xEDB7473B
 	dict = DATAFILE::DATADICT_GET_DICT(iParam0, "weap");
 	Global_4980736.f_88124 = DATAFILE::DATADICT_GET_INT(dict, "no");
 
-	if (Global_4718592 == PV_COMP_HEAD)
+	if (Global_4718592 == 0 /*PV_COMP_HEAD*/)
 		if (*Global_4980736.f_88124 > 60)
 			Global_4980736.f_88124 = 60;
 	else if (*Global_4980736.f_88124 > 60)
@@ -20777,7 +20777,7 @@ void func_381(int iParam0, BOOL bParam1) // Position - 0x25571 Hash - 0xEDB7473B
 	if (!bParam1)
 		Global_4980736.f_98443 = DATAFILE::DATADICT_GET_BOOL(dict, "randtyp");
 
-	type = PV_COMP_HEAD;
+	type = 0 /*PV_COMP_HEAD*/;
 
 	for (i = 0; i <= *Global_4980736.f_88124 - 1; i = i + 1)
 	{
@@ -20930,7 +20930,7 @@ void func_381(int iParam0, BOOL bParam1) // Position - 0x25571 Hash - 0xEDB7473B
 				Global_4980736.f_88133[type /*169*/].f_28 = DATAFILE::DATAARRAY_GET_INT(array18, i);
 				Global_4980736.f_88133[type /*169*/].f_29 = DATAFILE::DATAARRAY_GET_INT(array19, i);
 			
-				if (Global_4980736.f_88133[type /*169*/].f_29 == PV_COMP_INVALID)
+				if (Global_4980736.f_88133[type /*169*/].f_29 == -1 /*PV_COMP_INVALID*/)
 					Global_4980736.f_88133[type /*169*/].f_29 = 0;
 			
 				func_297("iwrcc", &(Global_4980736.f_88133[type /*169*/].f_70), &dict, &unk28, i, -1, -1);
@@ -21571,7 +21571,7 @@ void func_385(int iParam0) // Position - 0x26F62 Hash - 0xDA441134 ^0xABE886D5
 			if (unk24[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk24[i], j) == 2)
 				Global_4718592.f_183051[i /*248*/].f_182[j] = DATAFILE::DATAARRAY_GET_INT(unk24[i], j);
 			else
-				Global_4718592.f_183051[i /*248*/].f_182[j] = PV_COMP_HEAD;
+				Global_4718592.f_183051[i /*248*/].f_182[j] = 0 /*PV_COMP_HEAD*/;
 		
 			if (STREAMING::IS_MODEL_VALID(Global_4718592.f_183051[i /*248*/].f_182[j]) && !Global_262145.f_19038 && !func_357())
 				if (func_356(Global_4718592.f_183051[i /*248*/].f_182[j]) || !func_386(Global_4718592.f_183051[i /*248*/].f_182[j]))
@@ -21633,7 +21633,7 @@ BOOL func_387(ePedComponentType epctParam0, int iParam1) // Position - 0x27276 H
 	
 		type = func_388(iParam1, num);
 	
-		if (type != PV_COMP_HEAD)
+		if (type != 0 /*PV_COMP_HEAD*/)
 			if (type == epctParam0)
 				return true;
 			else
@@ -27361,7 +27361,7 @@ ePedComponentType func_388(int iParam0, int iParam1) // Position - 0x272FA Hash 
 			break;
 	}
 
-	return PV_COMP_HEAD;
+	return 0 /*PV_COMP_HEAD*/;
 }
 
 Hash func_389() // Position - 0x2D745 Hash - 0xB632338B ^0x275E44F2
@@ -28514,7 +28514,7 @@ void func_393(int iParam0, BOOL bParam1) // Position - 0x2D885 Hash - 0x534924C1
 						Global_4980736.f_7002[type /*609*/].f_16[j] = DATAFILE::DATAARRAY_GET_INT(unk93[j], i);
 						Global_4980736.f_7002[type /*609*/].f_21[j] = DATAFILE::DATAARRAY_GET_INT(unk98[j], i);
 					
-						if (Global_4980736.f_7002[type /*609*/].f_21[j] == PV_COMP_INVALID)
+						if (Global_4980736.f_7002[type /*609*/].f_21[j] == -1 /*PV_COMP_INVALID*/)
 							Global_4980736.f_7002[type /*609*/].f_21[j] = 99999;
 					
 						if (unk103[j] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk103[j], i) == 2)
@@ -28586,7 +28586,7 @@ void func_394(var uParam0, var uParam1, ePedComponentType epctParam2, ePedCompon
 	int i;
 
 	func_297("opi_ibs", &(epctParam2->f_2), uParam0, uParam1, epctParam3, 0, -2340845);
-	epctParam2->f_3 = func_307("opi_stl", uParam0, &(uParam1->f_1), epctParam3, PV_COMP_HEAD, PV_COMP_HEAD);
+	epctParam2->f_3 = func_307("opi_stl", uParam0, &(uParam1->f_1), epctParam3, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 	func_295("opi_mvs", &(epctParam2->f_4), uParam0, &(uParam1->f_2), epctParam3, 1f, -904994889);
 	func_297("opi_itm", epctParam2, uParam0, &(uParam1->f_3), epctParam3, 0, -2340845);
 	func_297("opi_irl", &(epctParam2->f_1), uParam0, &(uParam1->f_4), epctParam3, 0, -2340845);
@@ -28912,7 +28912,7 @@ void func_400(int iParam0, int iParam1) // Position - 0x31695 Hash - 0xED14EAC5 
 	if (*Global_4718592.f_210288 > 64)
 		Global_4718592.f_210288 = 64;
 
-	type = PV_COMP_HEAD;
+	type = 0 /*PV_COMP_HEAD*/;
 
 	for (i = 0; i <= *Global_4718592.f_210288 - 1; i = i + 1)
 	{
@@ -28926,7 +28926,7 @@ void func_400(int iParam0, int iParam1) // Position - 0x31695 Hash - 0xED14EAC5 
 			if (unk4[j] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk4[j], i) == 2)
 				Global_4718592.f_210289[type /*190*/].f_12[j] = DATAFILE::DATAARRAY_GET_INT(unk4[j], i);
 			else
-				Global_4718592.f_210289[type /*190*/].f_12[j] = PV_COMP_INVALID;
+				Global_4718592.f_210289[type /*190*/].f_12[j] = -1 /*PV_COMP_INVALID*/;
 		
 			if (unk9[j] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk9[j], i) == 2)
 				Global_4718592.f_210289[type /*190*/].f_17[j] = DATAFILE::DATAARRAY_GET_INT(unk9[j], i);
@@ -29090,7 +29090,7 @@ void func_400(int iParam0, int iParam1) // Position - 0x31695 Hash - 0xED14EAC5 
 	
 		func_297("agIDzo", &(Global_4718592.f_210289[type /*190*/].f_113), &dict, &unk88, i, 0, 0);
 	
-		if (IS_BIT_SET(Global_4718592.f_210289[type /*190*/].f_22, 20) && Global_4718592.f_210289[type /*190*/].f_10 == PV_COMP_HEAD)
+		if (IS_BIT_SET(Global_4718592.f_210289[type /*190*/].f_22, 20) && Global_4718592.f_210289[type /*190*/].f_10 == 0 /*PV_COMP_HEAD*/)
 			func_401(&Global_4718592.f_210289[type /*190*/]);
 	
 		func_295("znSAror", &(Global_4718592.f_210289[type /*190*/].f_114), &dict, &unk51, i, 0f, 0f);
@@ -29596,7 +29596,7 @@ void func_404(int iParam0, BOOL bParam1) // Position - 0x32670 Hash - 0x91B44CA5
 				{
 					_int = DATAFILE::DATAARRAY_GET_INT(array34, i);
 				
-					if (_int >= 0 && _int < 32 && Global_4718592.f_127758[type /*227*/].f_57 == PV_COMP_HEAD)
+					if (_int >= 0 && _int < 32 && Global_4718592.f_127758[type /*227*/].f_57 == 0 /*PV_COMP_HEAD*/)
 						MISC::SET_BIT(&(Global_4718592.f_127758[type /*227*/].f_57), _int);
 				}
 			
@@ -29660,7 +29660,7 @@ void func_404(int iParam0, BOOL bParam1) // Position - 0x32670 Hash - 0x91B44CA5
 					if (unk40[j] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk40[j], i) == 2)
 						Global_4718592.f_127758[type /*227*/].f_101[j] = DATAFILE::DATAARRAY_GET_INT(unk40[j], i);
 					else
-						Global_4718592.f_127758[type /*227*/].f_101[j] = PV_COMP_HEAD;
+						Global_4718592.f_127758[type /*227*/].f_101[j] = 0 /*PV_COMP_HEAD*/;
 				}
 			
 				if (array41 != 0)
@@ -29687,16 +29687,16 @@ void func_404(int iParam0, BOOL bParam1) // Position - 0x32670 Hash - 0x91B44CA5
 				func_297("dttrdff", &(Global_4718592.f_127758[type /*227*/].f_30), &dict, &unk65, i, -1, -2340845);
 				TEXT_LABEL_ASSIGN_STRING(&unk143, "", 16);
 			
-				for (l = PV_COMP_HEAD; l <= PV_COMP_BERD; l = l + 1)
+				for (l = 0 /*PV_COMP_HEAD*/; l <= 1 /*PV_COMP_BERD*/; l = l + 1)
 				{
-					if (l > PV_COMP_HEAD)
+					if (l > 0 /*PV_COMP_HEAD*/)
 						func_312(&unk143, "DtTrgBzBS", l, -1);
 					else
 						TEXT_LABEL_ASSIGN_STRING(&unk143, "DtTrgBzBS", 16);
 				
 					func_297(&unk143, &Global_4718592.f_127758[type /*227*/].f_71[l], &dict, &unk62[l], i, 0, -2340845);
 				
-					if (l > PV_COMP_HEAD)
+					if (l > 0 /*PV_COMP_HEAD*/)
 						func_312(&unk143, "DtBlkBzBS", l, -1);
 					else
 						TEXT_LABEL_ASSIGN_STRING(&unk143, "DtBlkBzBS", 16);
@@ -29873,7 +29873,7 @@ void func_404(int iParam0, BOOL bParam1) // Position - 0x32670 Hash - 0x91B44CA5
 	}
 	else
 	{
-		for (i = PV_COMP_HEAD; i <= *Global_4718592.f_155330 - 1; i = i + 1)
+		for (i = 0 /*PV_COMP_HEAD*/; i <= *Global_4718592.f_155330 - 1; i = i + 1)
 		{
 			Global_4718592.f_127758[i /*227*/] = 0;
 			TEXT_LABEL_ASSIGN_STRING(&(Global_4718592.f_127758[i /*227*/].f_2), "", 16);
@@ -30515,7 +30515,7 @@ void func_410(var uParam0) // Position - 0x35467 Hash - 0x69AA6529 ^0x4899928B
 
 	dict = DATAFILE::DATADICT_GET_DICT(*uParam0, "WpnDm");
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_HEAD; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 0 /*PV_COMP_HEAD*/; i = i + 1)
 	{
 		func_295("VWDM_", &Global_4718592.f_196283[i], &dict, &unk, i, 1f, -904994889);
 	}
@@ -30567,23 +30567,23 @@ void func_411(var uParam0) // Position - 0x354AF Hash - 0x19672F5C ^0xD4F305D3
 	unk.f_65.f_101.f_1.f_7.f_7.f_7.f_7.f_7.f_7.f_7.f_7.f_7.f_7.f_7.f_7.f_7.f_7 = 6;
 	func_290("DMobs", &(Global_4718592.f_199654.f_7527), &dict, 0, -2340845);
 
-	for (i = PV_COMP_HEAD; i <= Global_4718592.f_3527 - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4718592.f_3527 - 1; i = i + 1)
 	{
 		func_297("DMwb", &Global_4718592.f_199654.f_7539[i], &dict, &(unk307.f_2), i, 0, -2340845);
 	
-		if (Global_4718592.f_199654.f_7539[i] == PV_COMP_HEAD)
+		if (Global_4718592.f_199654.f_7539[i] == 0 /*PV_COMP_HEAD*/)
 		{
-			type = PV_COMP_INVALID;
+			type = -1 /*PV_COMP_INVALID*/;
 			func_290("DMwbt", &type, &dict, -1, -2340845);
 		
-			if (type > PV_COMP_INVALID && type < PV_COMP_LOWR && type == i)
-				Global_4718592.f_199654.f_7539[i] = PV_COMP_BERD;
+			if (type > -1 /*PV_COMP_INVALID*/ && type < 4 /*PV_COMP_LOWR*/ && type == i)
+				Global_4718592.f_199654.f_7539[i] = 1 /*PV_COMP_BERD*/;
 		}
 	}
 
 	func_290("DMFlvs", &(Global_4718592.f_199654.f_7528), &dict, 1, -2340845);
 
-	for (i = PV_COMP_HEAD; i <= Global_4718592.f_3527 - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4718592.f_3527 - 1; i = i + 1)
 	{
 		func_297("DMTlvs", &Global_4718592.f_199654.f_7529[i], &dict, &unk307, i, 1, -2340845);
 		func_297("DMTscr", &Global_4718592.f_199654.f_7534[i], &dict, &(unk307.f_1), i, 0, -2340845);
@@ -30591,7 +30591,7 @@ void func_411(var uParam0) // Position - 0x354AF Hash - 0x19672F5C ^0xD4F305D3
 
 	func_290("cgsCNT", &(Global_4718592.f_199654.f_7526), &dict, 1, -2340845);
 
-	for (i = PV_COMP_HEAD; i <= Global_4718592.f_199654.f_7526 - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4718592.f_199654.f_7526 - 1; i = i + 1)
 	{
 		func_413(&unk, &dict, &dict2, &Global_4718592.f_199654[i /*301*/], i);
 	}
@@ -30623,20 +30623,20 @@ void func_413(var uParam0, var uParam1, var uParam2, ePedComponentType epctParam
 	var unk;
 
 	func_297("cgsMBS", epctParam3, uParam1, uParam0, epctParam4, 0, -2340845);
-	epctParam3->f_1 = func_307("cgsWT", uParam1, &(uParam0->f_1), epctParam4, PV_COMP_HEAD, PV_COMP_HEAD);
-	epctParam3->f_1.f_2 = func_307("cgsPT", uParam1, &(uParam0->f_2), epctParam4, PV_COMP_HEAD, PV_COMP_HEAD);
+	epctParam3->f_1 = func_307("cgsWT", uParam1, &(uParam0->f_1), epctParam4, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
+	epctParam3->f_1.f_2 = func_307("cgsPT", uParam1, &(uParam0->f_2), epctParam4, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 	func_297("cgsTBS", &(epctParam3->f_1.f_1), uParam1, &(uParam0->f_3), epctParam4, 0, -2340845);
-	epctParam3->f_1.f_3 = func_307("cgsCT", uParam1, &(uParam0->f_4), epctParam4, PV_COMP_HEAD, PV_COMP_HEAD);
-	epctParam3->f_1.f_14 = func_307("cgsAT", uParam1, &(uParam0->f_5), epctParam4, PV_COMP_HEAD, PV_COMP_HEAD);
-	epctParam3->f_1.f_4 = func_307("cgsSC", uParam1, &(uParam0->f_6), epctParam4, PV_COMP_BERD, PV_COMP_BERD);
+	epctParam3->f_1.f_3 = func_307("cgsCT", uParam1, &(uParam0->f_4), epctParam4, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
+	epctParam3->f_1.f_14 = func_307("cgsAT", uParam1, &(uParam0->f_5), epctParam4, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
+	epctParam3->f_1.f_4 = func_307("cgsSC", uParam1, &(uParam0->f_6), epctParam4, 1 /*PV_COMP_BERD*/, 1 /*PV_COMP_BERD*/);
 	func_297("cgsST", &(epctParam3->f_1.f_5), uParam1, &(uParam0->f_7), epctParam4, 0, -2340845);
 	func_297("cgsSP", &(epctParam3->f_1.f_6), uParam1, &(uParam0->f_8), epctParam4, 0, -2340845);
 	func_297("cgsTCL", &(epctParam3->f_1.f_7), uParam1, &(uParam0->f_9), epctParam4, 0, -2340845);
 	func_297("cgsTCP", &(epctParam3->f_1.f_8), uParam1, &(uParam0->f_10), epctParam4, 0, -2340845);
-	epctParam3->f_1.f_9 = func_307("cgsLC", uParam1, &(uParam0->f_11), epctParam4, PV_COMP_BERD, PV_COMP_BERD);
+	epctParam3->f_1.f_9 = func_307("cgsLC", uParam1, &(uParam0->f_11), epctParam4, 1 /*PV_COMP_BERD*/, 1 /*PV_COMP_BERD*/);
 	func_297("cgsLT", &(epctParam3->f_1.f_10), uParam1, &(uParam0->f_12), epctParam4, 0, -2340845);
 	func_297("cgsLP", &(epctParam3->f_1.f_11), uParam1, &(uParam0->f_13), epctParam4, 0, -2340845);
-	epctParam3->f_1.f_12 = func_307("cgsKC", uParam1, &(uParam0->f_14), epctParam4, PV_COMP_BERD, PV_COMP_BERD);
+	epctParam3->f_1.f_12 = func_307("cgsKC", uParam1, &(uParam0->f_14), epctParam4, 1 /*PV_COMP_BERD*/, 1 /*PV_COMP_BERD*/);
 	func_297("cgsKT", &(epctParam3->f_1.f_13), uParam1, &(uParam0->f_15), epctParam4, 0, -2340845);
 	func_297("cgscSK", &(epctParam3->f_16), uParam1, &(uParam0->f_16), epctParam4, 1, -2340845);
 	func_297("cgscSH", &(epctParam3->f_16.f_1), uParam1, &(uParam0->f_17), epctParam4, 0, -2340845);
@@ -30646,15 +30646,15 @@ void func_413(var uParam0, var uParam1, var uParam2, ePedComponentType epctParam
 	func_297("cgscPL", &(epctParam3->f_16.f_5), uParam1, &(uParam0->f_21), epctParam4, 0, -2340845);
 	func_297("cgscFK", &(epctParam3->f_16.f_36), uParam1, &(uParam0->f_22), epctParam4, 0, -2340845);
 
-	for (i = PV_COMP_HEAD; i <= Global_4718592.f_3527 - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4718592.f_3527 - 1; i = i + 1)
 	{
 		func_312(&unk, "cgscSST_", i, -1);
 		func_297(&unk, &epctParam3->f_16.f_6[i], uParam1, &uParam0->f_23[i], epctParam4, 0, -2340845);
 	}
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_ACCS; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 8 /*PV_COMP_ACCS*/; i = i + 1)
 	{
-		if (i != PV_COMP_HAND)
+		if (i != 5 /*PV_COMP_HAND*/)
 		{
 			func_312(&unk, "cgscSSWG_", i, -1);
 			func_297(&unk, &epctParam3->f_16.f_11[i], uParam1, &uParam0->f_28[i], epctParam4, 0, -2340845);
@@ -30669,37 +30669,37 @@ void func_413(var uParam0, var uParam1, var uParam2, ePedComponentType epctParam
 	func_297("cgscSS", &(epctParam3->f_16.f_34), uParam1, &(uParam0->f_51), epctParam4, -1, -2340845);
 	func_297("cgscSB", &(epctParam3->f_16.f_35), uParam1, &(uParam0->f_52), epctParam4, -1, -2340845);
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_TASK; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 9 /*PV_COMP_TASK*/; i = i + 1)
 	{
 		func_312(&unk, "cgsWDM_", i, -1);
 		func_297(&unk, &epctParam3->f_277[i], uParam1, &uParam0->f_53[i], epctParam4, 100, -2340845);
 	}
 
-	epctParam3->f_288 = func_307("cgswIA", uParam1, &(uParam0->f_64), epctParam4, PV_COMP_INVALID, PV_COMP_INVALID);
+	epctParam3->f_288 = func_307("cgswIA", uParam1, &(uParam0->f_64), epctParam4, -1 /*PV_COMP_INVALID*/, -1 /*PV_COMP_INVALID*/);
 	func_415(uParam2, epctParam3, epctParam4);
 	func_297("cgsHS", &(epctParam3->f_289), uParam1, &(uParam0->f_279), epctParam4, 100, -2340845);
 	func_297("cgsSH", &(epctParam3->f_290), uParam1, &(uParam0->f_280), epctParam4, 100, -2340845);
-	epctParam3->f_291 = func_307("cgsHMR", uParam1, &(uParam0->f_281), epctParam4, PV_COMP_BERD, PV_COMP_BERD);
-	epctParam3->f_292 = func_307("cgsHRS", uParam1, &(uParam0->f_282), epctParam4, PV_COMP_HAIR, PV_COMP_HAIR);
-	epctParam3->f_299 = func_307("cgsHDS", uParam1, &(uParam0->f_284), epctParam4, PV_COMP_HAIR, PV_COMP_HAIR);
+	epctParam3->f_291 = func_307("cgsHMR", uParam1, &(uParam0->f_281), epctParam4, 1 /*PV_COMP_BERD*/, 1 /*PV_COMP_BERD*/);
+	epctParam3->f_292 = func_307("cgsHRS", uParam1, &(uParam0->f_282), epctParam4, 2 /*PV_COMP_HAIR*/, 2 /*PV_COMP_HAIR*/);
+	epctParam3->f_299 = func_307("cgsHDS", uParam1, &(uParam0->f_284), epctParam4, 2 /*PV_COMP_HAIR*/, 2 /*PV_COMP_HAIR*/);
 	func_297("cgsHDP", &(epctParam3->f_299.f_1), uParam1, &(uParam0->f_285), epctParam4, 25, -2340845);
-	epctParam3->f_293 = func_307("cgsER", uParam1, &(uParam0->f_283), epctParam4, PV_COMP_HEAD, PV_COMP_HEAD);
-	epctParam3->f_53 = func_307("cgsBS", uParam1, &(uParam0->f_286), epctParam4, PV_COMP_HEAD, PV_COMP_HEAD);
-	epctParam3->f_53.f_1 = func_307("cgsBT", uParam1, &(uParam0->f_287), epctParam4, PV_COMP_HEAD, PV_COMP_HEAD);
+	epctParam3->f_293 = func_307("cgsER", uParam1, &(uParam0->f_283), epctParam4, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
+	epctParam3->f_53 = func_307("cgsBS", uParam1, &(uParam0->f_286), epctParam4, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
+	epctParam3->f_53.f_1 = func_307("cgsBT", uParam1, &(uParam0->f_287), epctParam4, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 	func_297("cgsBCT", &(epctParam3->f_53.f_2), uParam1, &(uParam0->f_288), epctParam4, 9, -2340845);
-	epctParam3->f_56 = func_307("cgsMR", uParam1, &(uParam0->f_289), epctParam4, PV_COMP_HEAD, PV_COMP_HEAD);
-	epctParam3->f_56.f_1 = func_307("cgsMS", uParam1, &(uParam0->f_290), epctParam4, PV_COMP_BERD, PV_COMP_BERD);
+	epctParam3->f_56 = func_307("cgsMR", uParam1, &(uParam0->f_289), epctParam4, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
+	epctParam3->f_56.f_1 = func_307("cgsMS", uParam1, &(uParam0->f_290), epctParam4, 1 /*PV_COMP_BERD*/, 1 /*PV_COMP_BERD*/);
 	func_297("cgsONGH", &(epctParam3->f_58.f_1), uParam1, &(uParam0->f_291), epctParam4, 0, -2340845);
 	func_297("cgsONGR", &(epctParam3->f_58.f_2), uParam1, &(uParam0->f_292), epctParam4, 0, -2340845);
-	epctParam3->f_58.f_4 = func_307("cgsONAT", uParam1, &(uParam0->f_293), epctParam4, PV_COMP_HEAD, PV_COMP_HEAD);
+	epctParam3->f_58.f_4 = func_307("cgsONAT", uParam1, &(uParam0->f_293), epctParam4, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 	func_297("cgsONGA", &(epctParam3->f_58.f_3), uParam1, &(uParam0->f_294), epctParam4, 0, -2340845);
 	func_297("cgsONAQ", &(epctParam3->f_58.f_5), uParam1, &(uParam0->f_295), epctParam4, 1, -2340845);
 	func_297("cgsONHGH", &(epctParam3->f_64.f_1), uParam1, &(uParam0->f_296), epctParam4, 0, -2340845);
 	func_297("cgsONHGR", &(epctParam3->f_64.f_2), uParam1, &(uParam0->f_297), epctParam4, 0, -2340845);
-	epctParam3->f_64.f_4 = func_307("cgsONHAT", uParam1, &(uParam0->f_298), epctParam4, PV_COMP_HEAD, PV_COMP_HEAD);
+	epctParam3->f_64.f_4 = func_307("cgsONHAT", uParam1, &(uParam0->f_298), epctParam4, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 	func_297("cgsONHGA", &(epctParam3->f_64.f_3), uParam1, &(uParam0->f_299), epctParam4, 0, -2340845);
 	func_297("cgsONHAQ", &(epctParam3->f_64.f_5), uParam1, &(uParam0->f_300), epctParam4, 1, -2340845);
-	epctParam3->f_294 = func_307("cgsspv", uParam1, &(uParam0->f_301), epctParam4, PV_COMP_HEAD, PV_COMP_HEAD);
+	epctParam3->f_294 = func_307("cgsspv", uParam1, &(uParam0->f_301), epctParam4, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 	func_297("cgsBOI", &(epctParam3->f_295), uParam1, &(uParam0->f_302), epctParam4, -1, -2340845);
 	func_297("cgsNM", &(epctParam3->f_296), uParam1, &(uParam0->f_303), epctParam4, -1, -2340845);
 	func_297("cgsRTM", &(epctParam3->f_297), uParam1, &(uParam0->f_304), epctParam4, 1, -2340845);
@@ -30764,19 +30764,19 @@ void func_416(var uParam0, var uParam1, ePedComponentType epctParam2) // Positio
 	func_297("wiBS", &(uParam1->f_197), uParam0, &(unk.f_1), epctParam2, 0, -2340845);
 	func_297("wiAO", &(uParam1->f_203), uParam0, &(unk.f_3), epctParam2, -1, -2340845);
 	func_297("wiRW", &(uParam1->f_198), uParam0, &(unk.f_2), epctParam2, 0, -2340845);
-	uParam1->f_204 = func_307("wiA", uParam0, &(unk.f_4), epctParam2, PV_COMP_HEAD, PV_COMP_HEAD);
+	uParam1->f_204 = func_307("wiA", uParam0, &(unk.f_4), epctParam2, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 	num = 15;
 
 	if (func_418())
 		num = 5;
 
-	for (j = PV_COMP_HEAD; j <= num - 1; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= num - 1; j = j + 1)
 	{
 		num2 = 0;
 		func_312(&unk214, "wiWp", j, -1);
-		uParam1->[j /*13*/] = func_307(&unk214, uParam0, &unk.f_5[j], epctParam2, PV_COMP_HEAD, PV_COMP_HEAD);
+		uParam1->[j /*13*/] = func_307(&unk214, uParam0, &unk.f_5[j], epctParam2, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 		func_312(&unk214, "wiAmTyp", j, -1);
-		uParam1->[j /*13*/].f_1 = func_307(&unk214, uParam0, &unk.f_21[j], epctParam2, PV_COMP_INVALID, PV_COMP_INVALID);
+		uParam1->[j /*13*/].f_1 = func_307(&unk214, uParam0, &unk.f_21[j], epctParam2, -1 /*PV_COMP_INVALID*/, -1 /*PV_COMP_INVALID*/);
 		func_312(&unk214, "wiAmQuan", j, -1);
 		func_297(&unk214, &(uParam1->[j /*13*/].f_2), uParam0, &unk.f_37[j], epctParam2, -1, -2340845);
 	
@@ -30845,7 +30845,7 @@ void func_417(var uParam0, ePedComponentType epctParam1) // Position - 0x3621D H
 
 BOOL func_418() // Position - 0x362F1 Hash - 0xEBB05467 ^0xEBB05467
 {
-	return Global_4718592 == PV_COMP_BERD;
+	return Global_4718592 == 1 /*PV_COMP_BERD*/;
 }
 
 void func_419() // Position - 0x362FF Hash - 0x45CC0F40 ^0xDEED1C98
@@ -30890,7 +30890,7 @@ BOOL func_422(ePedComponentType epctParam0) // Position - 0x363C2 Hash - 0xFA722
 	int i;
 	int j;
 
-	if (epctParam0 != PV_COMP_HEAD)
+	if (epctParam0 != 0 /*PV_COMP_HEAD*/)
 	{
 		for (j = 0; j < 24; j = j + 1)
 		{
@@ -30942,7 +30942,7 @@ void func_424(var uParam0) // Position - 0x3649C Hash - 0x4663770 ^0x52B376BD
 	unk5.f_8 = 2;
 	unk5.f_11 = 2;
 
-	for (i = PV_COMP_HEAD; i <= *Global_4980736.f_241564 - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= *Global_4980736.f_241564 - 1; i = i + 1)
 	{
 		func_297("Unt_T", &(Global_4980736.f_240903[i /*20*/].f_15), &dict, &(unk5.f_2), i, 0, -2340845);
 		func_297("Unt_Var", &(Global_4980736.f_240903[i /*20*/].f_16), &dict, &(unk5.f_3), i, -1, -2340845);
@@ -30954,11 +30954,11 @@ void func_424(var uParam0) // Position - 0x3649C Hash - 0x4663770 ^0x52B376BD
 		func_295("Unt_fl1", &(Global_4980736.f_240903[i /*20*/].f_17), &dict, &(unk5.f_17), i, 0f, -904994889);
 		func_297("Unt_BS", &(Global_4980736.f_240903[i /*20*/].f_19), &dict, &(unk5.f_18), i, 0, -2340845);
 	
-		for (j = PV_COMP_HEAD; j <= PV_COMP_BERD; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 1 /*PV_COMP_BERD*/; j = j + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&unk, "Unt_VM", 16);
 		
-			if (j > PV_COMP_HEAD)
+			if (j > 0 /*PV_COMP_HEAD*/)
 				func_312(&unk, "Unt_VM", j, -1);
 		
 			func_297(&unk, &type, &dict, &unk5.f_5[j], i, joaat("police3"), -2340845);
@@ -31109,12 +31109,12 @@ void func_425(int iParam0) // Position - 0x36771 Hash - 0x8398BD04 ^0xAC793B98
 			Global_4718592.f_109671[i] = joaat("avenger3");
 	}
 
-	if (Global_4718592.f_109671[3] != PV_COMP_HEAD)
+	if (Global_4718592.f_109671[3] != 0 /*PV_COMP_HEAD*/)
 	{
-		if (Global_4718592.f_109671[1] == PV_COMP_HEAD)
+		if (Global_4718592.f_109671[1] == 0 /*PV_COMP_HEAD*/)
 			Global_4718592.f_109671[1] = joaat("speeder");
 	
-		if (Global_4718592.f_109671[2] == PV_COMP_HEAD)
+		if (Global_4718592.f_109671[2] == 0 /*PV_COMP_HEAD*/)
 			Global_4718592.f_109671[2] = joaat("luxor2");
 	}
 
@@ -31351,7 +31351,7 @@ void func_431(var uParam0, var uParam1) // Position - 0x3736C Hash - 0x515BF736 
 			func_296("cpado", &(Global_4718592.f_110663[i /*64*/].f_34), uParam0, &(uParam1->f_10), type, 0f, 0f, 0f, 0f, 0f, 0f);
 			func_296("cpados", &(Global_4718592.f_110663[i /*64*/].f_37), uParam0, &(uParam1->f_11), type, 0f, 0f, 0f, 0f, 0f, 0f);
 		
-			for (j = PV_COMP_HEAD; j <= PV_COMP_HAIR; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= 2 /*PV_COMP_HAIR*/; j = j + 1)
 			{
 				func_312(&unk, "vspn", j, -1);
 				func_296(&unk, &Global_4718592.f_110663[i /*64*/].f_6[j /*3*/], uParam0, &uParam1->f_34[j], i, 0f, 0f, 0f, 0f, 0f, 0f);
@@ -31392,21 +31392,21 @@ void func_432() // Position - 0x37A31 Hash - 0xF89AD556 ^0x5F870500
 	Global_4718592.f_186721[0] = 50;
 	Global_4718592.f_186721[1] = 30;
 	Global_4718592.f_186721[2] = 20;
-	Global_4718592.f_186717[0] = PV_COMP_UPPR;
-	Global_4718592.f_186717[1] = PV_COMP_HAIR;
-	Global_4718592.f_186717[2] = PV_COMP_BERD;
-	Global_4718592.f_186732[0 /*4*/][0] = PV_COMP_TEEF;
-	Global_4718592.f_186732[0 /*4*/][1] = PV_COMP_ACCS;
-	Global_4718592.f_186732[0 /*4*/][2] = PV_COMP_TASK;
-	Global_4718592.f_186732[1 /*4*/][0] = PV_COMP_HAND;
-	Global_4718592.f_186732[1 /*4*/][1] = PV_COMP_FEET;
-	Global_4718592.f_186732[1 /*4*/][2] = PV_COMP_TEEF;
-	Global_4718592.f_186732[2 /*4*/][0] = PV_COMP_UPPR;
-	Global_4718592.f_186732[2 /*4*/][1] = PV_COMP_LOWR;
-	Global_4718592.f_186732[2 /*4*/][2] = PV_COMP_HAND;
-	Global_4718592.f_186732[3 /*4*/][0] = PV_COMP_BERD;
-	Global_4718592.f_186732[3 /*4*/][1] = PV_COMP_HAIR;
-	Global_4718592.f_186732[3 /*4*/][2] = PV_COMP_UPPR;
+	Global_4718592.f_186717[0] = 3 /*PV_COMP_UPPR*/;
+	Global_4718592.f_186717[1] = 2 /*PV_COMP_HAIR*/;
+	Global_4718592.f_186717[2] = 1 /*PV_COMP_BERD*/;
+	Global_4718592.f_186732[0 /*4*/][0] = 7 /*PV_COMP_TEEF*/;
+	Global_4718592.f_186732[0 /*4*/][1] = 8 /*PV_COMP_ACCS*/;
+	Global_4718592.f_186732[0 /*4*/][2] = 9 /*PV_COMP_TASK*/;
+	Global_4718592.f_186732[1 /*4*/][0] = 5 /*PV_COMP_HAND*/;
+	Global_4718592.f_186732[1 /*4*/][1] = 6 /*PV_COMP_FEET*/;
+	Global_4718592.f_186732[1 /*4*/][2] = 7 /*PV_COMP_TEEF*/;
+	Global_4718592.f_186732[2 /*4*/][0] = 3 /*PV_COMP_UPPR*/;
+	Global_4718592.f_186732[2 /*4*/][1] = 4 /*PV_COMP_LOWR*/;
+	Global_4718592.f_186732[2 /*4*/][2] = 5 /*PV_COMP_HAND*/;
+	Global_4718592.f_186732[3 /*4*/][0] = 1 /*PV_COMP_BERD*/;
+	Global_4718592.f_186732[3 /*4*/][1] = 2 /*PV_COMP_HAIR*/;
+	Global_4718592.f_186732[3 /*4*/][2] = 3 /*PV_COMP_UPPR*/;
 	return;
 }
 
@@ -31496,7 +31496,7 @@ void func_434(int iParam0, int iParam1) // Position - 0x37D89 Hash - 0xC64ECB6A 
 	if (*Global_4980736.f_240708 > func_435())
 		Global_4980736.f_240708 = func_435();
 
-	type = PV_COMP_HEAD;
+	type = 0 /*PV_COMP_HEAD*/;
 
 	for (i = 0; i <= *Global_4980736.f_240708 - 1; i = i + 1)
 	{
@@ -31610,7 +31610,7 @@ void func_436(int iParam0, int iParam1) // Position - 0x37F36 Hash - 0x91B44CA5 
 	if (*Global_4980736.f_240006 > 30)
 		Global_4980736.f_240006 = 30;
 
-	type = PV_COMP_HEAD;
+	type = 0 /*PV_COMP_HEAD*/;
 
 	for (i = 0; i <= *Global_4980736.f_240006 - 1; i = i + 1)
 	{
@@ -31678,7 +31678,7 @@ void func_436(int iParam0, int iParam1) // Position - 0x37F36 Hash - 0x91B44CA5 
 		{
 			Global_4980736.f_236495[type /*117*/].f_12 = DATAFILE::DATAARRAY_GET_INT(array18, i);
 		
-			if (Global_4980736.f_236495[type /*117*/].f_12 == PV_COMP_INVALID)
+			if (Global_4980736.f_236495[type /*117*/].f_12 == -1 /*PV_COMP_INVALID*/)
 				Global_4980736.f_236495[type /*117*/].f_12 = 0;
 		}
 		else
@@ -31690,7 +31690,7 @@ void func_436(int iParam0, int iParam1) // Position - 0x37F36 Hash - 0x91B44CA5 
 		{
 			Global_4980736.f_236495[type /*117*/].f_13 = DATAFILE::DATAARRAY_GET_INT(array19, i);
 		
-			if (Global_4980736.f_236495[type /*117*/].f_13 == PV_COMP_INVALID)
+			if (Global_4980736.f_236495[type /*117*/].f_13 == -1 /*PV_COMP_INVALID*/)
 				Global_4980736.f_236495[type /*117*/].f_13 = 0;
 		}
 		else
@@ -31798,7 +31798,7 @@ void func_437(int iParam0, int iParam1) // Position - 0x38636 Hash - 0x9E199BF5 
 	unk72 = 5;
 	unk78 = 5;
 	unk84 = 5;
-	type = PV_COMP_HEAD;
+	type = 0 /*PV_COMP_HEAD*/;
 
 	for (i = 0; i <= 4; i = i + 1)
 	{
@@ -31874,25 +31874,25 @@ void func_437(int iParam0, int iParam1) // Position - 0x38636 Hash - 0x9E199BF5 
 	
 		TEXT_LABEL_ASSIGN_STRING(&key, "pstr", 8);
 	
-		if (i > PV_COMP_HEAD)
+		if (i > 0 /*PV_COMP_HEAD*/)
 			TEXT_LABEL_APPEND_INT(&key, i, 8);
 	
 		unk6[type] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
 		TEXT_LABEL_ASSIGN_STRING(&key, "pend", 8);
 	
-		if (i > PV_COMP_HEAD)
+		if (i > 0 /*PV_COMP_HEAD*/)
 			TEXT_LABEL_APPEND_INT(&key, i, 8);
 	
 		unk12[type] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
 		TEXT_LABEL_ASSIGN_STRING(&key, "strh", 8);
 	
-		if (i > PV_COMP_HEAD)
+		if (i > 0 /*PV_COMP_HEAD*/)
 			TEXT_LABEL_APPEND_INT(&key, i, 8);
 	
 		unk24[type] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
 		TEXT_LABEL_ASSIGN_STRING(&key, "endh", 8);
 	
-		if (i > PV_COMP_HEAD)
+		if (i > 0 /*PV_COMP_HEAD*/)
 			TEXT_LABEL_APPEND_INT(&key, i, 8);
 	
 		unk30[type] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
@@ -31914,12 +31914,12 @@ void func_437(int iParam0, int iParam1) // Position - 0x38636 Hash - 0x9E199BF5 
 	
 		if (unk66[type] != 0 || unk72[type] != 0)
 		{
-			for (k = PV_COMP_HEAD; k <= PV_COMP_UPPR; k = k + 1)
+			for (k = 0 /*PV_COMP_HEAD*/; k <= 3 /*PV_COMP_UPPR*/; k = k + 1)
 			{
 				func_443(&Global_4718592.f_174795[type /*596*/].f_520[k /*4*/], &unk66[type], k);
 			}
 		
-			for (k = PV_COMP_HEAD; k <= PV_COMP_HEAD; k = k + 1)
+			for (k = 0 /*PV_COMP_HEAD*/; k <= 0 /*PV_COMP_HEAD*/; k = k + 1)
 			{
 				func_441(&Global_4718592.f_174795[type /*596*/].f_537[k /*5*/], &unk72[type], k);
 			}
@@ -31933,13 +31933,13 @@ void func_437(int iParam0, int iParam1) // Position - 0x38636 Hash - 0x9E199BF5 
 		TEXT_LABEL_APPEND_INT(&key, i, 8);
 		unk78[type] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
 	
-		for (k = PV_COMP_HEAD; k <= PV_COMP_UPPR; k = k + 1)
+		for (k = 0 /*PV_COMP_HEAD*/; k <= 3 /*PV_COMP_UPPR*/; k = k + 1)
 		{
 			dict2 = DATAFILE::DATAARRAY_GET_DICT(unk78[type], k);
 			func_439(dict2, &Global_4718592.f_174795[type /*596*/].f_95[k /*13*/]);
 		}
 	
-		for (j = PV_COMP_HEAD; j <= PV_COMP_UPPR; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 3 /*PV_COMP_UPPR*/; j = j + 1)
 		{
 			if (unk6[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk6[i], j) == 5)
 				Global_4718592.f_174795[type /*596*/].f_26[j /*3*/] = { DATAFILE::DATAARRAY_GET_VECTOR(unk6[i], j) };
@@ -31962,7 +31962,7 @@ void func_437(int iParam0, int iParam1) // Position - 0x38636 Hash - 0x9E199BF5 
 				Global_4718592.f_174795[type /*596*/].f_71[j] = 0f;
 		}
 	
-		for (j = PV_COMP_HEAD; j <= 29; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 29; j = j + 1)
 		{
 			if (unk42[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk42[i], j) == 2)
 				Global_4718592.f_174795[type /*596*/].f_148[j /*11*/].f_1 = DATAFILE::DATAARRAY_GET_INT(unk42[i], j);
@@ -31984,7 +31984,7 @@ void func_437(int iParam0, int iParam1) // Position - 0x38636 Hash - 0x9E199BF5 
 			func_297(&unk92, &(Global_4718592.f_174795[type /*596*/].f_148[j /*11*/].f_10), &dict, &unk60[i], j, 0, 0);
 		}
 	
-		for (k = PV_COMP_HEAD; k <= PV_COMP_LOWR; k = k + 1)
+		for (k = 0 /*PV_COMP_HEAD*/; k <= 4 /*PV_COMP_LOWR*/; k = k + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_174795[type /*596*/].f_479[k /*8*/], func_395("csehmnt", &dict, &unk84[type], k, "", ""), 32);
 		}
@@ -31994,9 +31994,9 @@ void func_437(int iParam0, int iParam1) // Position - 0x38636 Hash - 0x9E199BF5 
 		num = 0;
 		func_297("mcaer", &num, &dict, &unk91, i, 0, -2340845);
 		Global_4718592.f_174795[type /*596*/].f_52 = num;
-		l = PV_COMP_HEAD;
+		l = 0 /*PV_COMP_HEAD*/;
 	
-		for (l = PV_COMP_HEAD; l <= PV_COMP_UPPR; l = l + 1)
+		for (l = 0 /*PV_COMP_HEAD*/; l <= 3 /*PV_COMP_UPPR*/; l = l + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&unk96, "mcaep", 16);
 			TEXT_LABEL_APPEND_INT(&unk96, i, 16);
@@ -32027,9 +32027,9 @@ void func_438(Any* panParam0, var uParam1, ePedComponentType epctParam2) // Posi
 	num2 = 0;
 	num3 = 0;
 	num4 = 0;
-	i = PV_COMP_HEAD;
+	i = 0 /*PV_COMP_HEAD*/;
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_TEEF; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 7 /*PV_COMP_TEEF*/; i = i + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&unk, "mcUTewet", 16);
 		TEXT_LABEL_APPEND_INT(&unk, epctParam2, 16);
@@ -32091,7 +32091,7 @@ void func_440(char* sParam0, var uParam1, ePedComponentType epctParam2) // Posit
 
 	TEXT_LABEL_ASSIGN_STRING(&key, "pvpls", 8);
 
-	if (epctParam2 > PV_COMP_HEAD)
+	if (epctParam2 > 0 /*PV_COMP_HEAD*/)
 		TEXT_LABEL_APPEND_INT(&key, epctParam2, 8);
 
 	array2 = DATAFILE::DATADICT_GET_ARRAY(*uParam1, &key);
@@ -32108,13 +32108,13 @@ void func_440(char* sParam0, var uParam1, ePedComponentType epctParam2) // Posit
 
 	TEXT_LABEL_ASSIGN_STRING(&key, "pvpds", 8);
 
-	if (epctParam2 > PV_COMP_HEAD)
+	if (epctParam2 > 0 /*PV_COMP_HEAD*/)
 		TEXT_LABEL_APPEND_INT(&key, epctParam2, 8);
 
 	array3 = DATAFILE::DATADICT_GET_ARRAY(*uParam1, &key);
 	TEXT_LABEL_ASSIGN_STRING(&key, "pvpdi", 8);
 
-	if (epctParam2 > PV_COMP_HEAD)
+	if (epctParam2 > 0 /*PV_COMP_HEAD*/)
 		TEXT_LABEL_APPEND_INT(&key, epctParam2, 8);
 
 	array4 = DATAFILE::DATADICT_GET_ARRAY(*uParam1, &key);
@@ -32387,7 +32387,7 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 	array25 = DATAFILE::DATADICT_GET_ARRAY(dict, "ssfh");
 	unk592 = 10;
 	unk603 = 10;
-	type = PV_COMP_HEAD;
+	type = 0 /*PV_COMP_HEAD*/;
 
 	for (i = 0; i <= 9; i = i + 1)
 	{
@@ -32414,7 +32414,7 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 			Global_4718592.f_155564[type /*1923*/].f_6 = 0;
 	
 		func_297("bits4", &(Global_4718592.f_155564[type /*1923*/].f_7), &dict, &unk6, i, 0, 0);
-		Global_4718592.f_155564[type /*1923*/].f_1859 = func_307("cselet", &dict, &unk7, i, PV_COMP_HEAD, PV_COMP_HEAD);
+		Global_4718592.f_155564[type /*1923*/].f_1859 = func_307("cselet", &dict, &unk7, i, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 	
 		if (Global_4718592.f_155564[type /*1923*/].f_5 == Global_4718592.f_155564[type /*1923*/].f_4)
 		{
@@ -32549,9 +32549,9 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 		num = 0;
 		func_297("scaer", &num, &dict, &unk568, i, 0, -2340845);
 		Global_4718592.f_155564[type /*1923*/].f_34 = num;
-		m = PV_COMP_HEAD;
+		m = 0 /*PV_COMP_HEAD*/;
 	
-		for (m = PV_COMP_HEAD; m <= PV_COMP_UPPR; m = m + 1)
+		for (m = 0 /*PV_COMP_HEAD*/; m <= 3 /*PV_COMP_UPPR*/; m = m + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&unk614, "scaep", 16);
 			TEXT_LABEL_APPEND_INT(&unk614, i, 16);
@@ -32654,25 +32654,25 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 		unk140[type] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
 		TEXT_LABEL_ASSIGN_STRING(&key, "pstr", 8);
 	
-		if (i > PV_COMP_HEAD)
+		if (i > 0 /*PV_COMP_HEAD*/)
 			TEXT_LABEL_APPEND_INT(&key, i, 8);
 	
 		unk206[type] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
 		TEXT_LABEL_ASSIGN_STRING(&key, "pend", 8);
 	
-		if (i > PV_COMP_HEAD)
+		if (i > 0 /*PV_COMP_HEAD*/)
 			TEXT_LABEL_APPEND_INT(&key, i, 8);
 	
 		unk217[type] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
 		TEXT_LABEL_ASSIGN_STRING(&key, "strh", 8);
 	
-		if (i > PV_COMP_HEAD)
+		if (i > 0 /*PV_COMP_HEAD*/)
 			TEXT_LABEL_APPEND_INT(&key, i, 8);
 	
 		unk195[type] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
 		TEXT_LABEL_ASSIGN_STRING(&key, "endh", 8);
 	
-		if (i > PV_COMP_HEAD)
+		if (i > 0 /*PV_COMP_HEAD*/)
 			TEXT_LABEL_APPEND_INT(&key, i, 8);
 	
 		unk239[type] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
@@ -32699,7 +32699,7 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 		unk580[type] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
 		func_446(dict, &Global_4718592.f_155564[type /*1923*/], i);
 	
-		for (j = PV_COMP_HEAD; j <= PV_COMP_UPPR; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 3 /*PV_COMP_UPPR*/; j = j + 1)
 		{
 			if (unk206[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk206[i], j) == 5)
 				Global_4718592.f_155564[type /*1923*/].f_8[j /*3*/] = { DATAFILE::DATAARRAY_GET_VECTOR(unk206[i], j) };
@@ -32727,12 +32727,12 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 				Global_4718592.f_155564[type /*1923*/].f_63[j] = -1;
 		}
 	
-		for (j = PV_COMP_HEAD; j <= 19; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 19; j = j + 1)
 		{
 			if (unk8[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk8[i], j) == 2)
 				Global_4718592.f_155564[type /*1923*/].f_113[j] = DATAFILE::DATAARRAY_GET_INT(unk8[i], j);
 			else
-				Global_4718592.f_155564[type /*1923*/].f_113[j] = PV_COMP_HEAD;
+				Global_4718592.f_155564[type /*1923*/].f_113[j] = 0 /*PV_COMP_HEAD*/;
 		
 			if (unk19[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk19[i], j) == 3)
 				Global_4718592.f_155564[type /*1923*/].f_68[j] = DATAFILE::DATAARRAY_GET_FLOAT(unk19[i], j);
@@ -32747,15 +32747,15 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 			if (unk41[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk41[i], j) == 2)
 				Global_4718592.f_155564[type /*1923*/].f_134[j] = DATAFILE::DATAARRAY_GET_INT(unk41[i], j);
 			else
-				Global_4718592.f_155564[type /*1923*/].f_134[j] = PV_COMP_HEAD;
+				Global_4718592.f_155564[type /*1923*/].f_134[j] = 0 /*PV_COMP_HEAD*/;
 		
 			if (func_230(10))
 				if (unk52[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk52[i], j) == 2)
 					Global_4718592.f_155564[type /*1923*/].f_155[j] = DATAFILE::DATAARRAY_GET_INT(unk52[i], j);
 				else
-					Global_4718592.f_155564[type /*1923*/].f_155[j] = PV_COMP_HEAD;
+					Global_4718592.f_155564[type /*1923*/].f_155[j] = 0 /*PV_COMP_HEAD*/;
 			else
-				Global_4718592.f_155564[type /*1923*/].f_155[j] = PV_COMP_BERD;
+				Global_4718592.f_155564[type /*1923*/].f_155[j] = 1 /*PV_COMP_BERD*/;
 		
 			if (unk63[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk63[i], j) == 5)
 				Global_4718592.f_155564[type /*1923*/].f_176[j /*3*/] = { DATAFILE::DATAARRAY_GET_VECTOR(unk63[i], j) };
@@ -32790,7 +32790,7 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 			if (unk151[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk151[i], j) == 2)
 				Global_4718592.f_155564[type /*1923*/].f_462[j] = DATAFILE::DATAARRAY_GET_INT(unk151[i], j);
 			else
-				Global_4718592.f_155564[type /*1923*/].f_462[j] = PV_COMP_HEAD;
+				Global_4718592.f_155564[type /*1923*/].f_462[j] = 0 /*PV_COMP_HEAD*/;
 		
 			if (unk184[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk184[i], j) == 2)
 				Global_4718592.f_155564[type /*1923*/].f_546[j] = DATAFILE::DATAARRAY_GET_INT(unk184[i], j);
@@ -32800,7 +32800,7 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 			if (unk162[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk162[i], j) == 2)
 				Global_4718592.f_155564[type /*1923*/].f_504[j] = DATAFILE::DATAARRAY_GET_INT(unk162[i], j);
 			else
-				Global_4718592.f_155564[type /*1923*/].f_504[j] = PV_COMP_HEAD;
+				Global_4718592.f_155564[type /*1923*/].f_504[j] = 0 /*PV_COMP_HEAD*/;
 		
 			if (unk173[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk173[i], j) == 3)
 				Global_4718592.f_155564[type /*1923*/].f_525[j] = DATAFILE::DATAARRAY_GET_FLOAT(unk173[i], j);
@@ -32818,7 +32818,7 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 			}
 			else if (func_462())
 			{
-				Global_4718592.f_155564[type /*1923*/].f_697[j] = PV_COMP_HEAD;
+				Global_4718592.f_155564[type /*1923*/].f_697[j] = 0 /*PV_COMP_HEAD*/;
 			}
 			else
 			{
@@ -32905,7 +32905,7 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 			func_297(&key, &Global_4718592.f_155564[type /*1923*/].f_483[j], &dict, &unk470[i], j, -1, -2340845);
 			TEXT_LABEL_ASSIGN_STRING(&key, "drnc", 8);
 			TEXT_LABEL_APPEND_INT(&key, i, 8);
-			Global_4718592.f_155564[type /*1923*/].f_588[j] = func_307(&key, &dict, &unk459[i], j, PV_COMP_HEAD, PV_COMP_HEAD);
+			Global_4718592.f_155564[type /*1923*/].f_588[j] = func_307(&key, &dict, &unk459[i], j, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 			TEXT_LABEL_ASSIGN_STRING(&key, "hcslp", 8);
 			TEXT_LABEL_APPEND_INT(&key, i, 8);
 			func_297(&key, &Global_4718592.f_155564[type /*1923*/].f_1860[j], &dict, &unk481[i], j, -1, -2340845);
@@ -32917,7 +32917,7 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 			func_297(&key, &Global_4718592.f_155564[type /*1923*/].f_1902[j], &dict, &unk502[i], j, -1, -2340845);
 		}
 	
-		for (j = PV_COMP_HEAD; j <= 29; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 29; j = j + 1)
 		{
 			if (unk129[i] != 0 && DATAFILE::DATAARRAY_GET_TYPE(unk129[i], j) == 2)
 				Global_4718592.f_155564[type /*1923*/].f_1094[j /*11*/].f_1 = DATAFILE::DATAARRAY_GET_INT(unk129[i], j);
@@ -32959,7 +32959,7 @@ void func_444(int iParam0, int iParam1) // Position - 0x3951C Hash - 0xE01B9003 
 
 ePedComponentType func_445(ePedComponentType epctParam0, int iParam1) // Position - 0x3B763 Hash - 0x2D7E0ABD ^0x2D7E0ABD
 {
-	if (epctParam0 < PV_COMP_HEAD)
+	if (epctParam0 < 0 /*PV_COMP_HEAD*/)
 		return -1;
 
 	return epctParam0 + (iParam1 * 1000);
@@ -32978,9 +32978,9 @@ void func_446(Any* panParam0, char* sParam1, ePedComponentType epctParam2) // Po
 	num2 = 0;
 	num3 = 0;
 	num4 = 0;
-	i = PV_COMP_HEAD;
+	i = 0 /*PV_COMP_HEAD*/;
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_TEEF; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 7 /*PV_COMP_TEEF*/; i = i + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&unk, "cUTewet", 16);
 		TEXT_LABEL_APPEND_INT(&unk, epctParam2, 16);
@@ -33026,7 +33026,7 @@ void func_447(Any* panParam0) // Position - 0x3B850 Hash - 0x8D36CC91 ^0x25F1D4B
 		if (array != 0 && DATAFILE::DATAARRAY_GET_TYPE(array, i) == 2)
 			Global_4718592.f_121507[i] = DATAFILE::DATAARRAY_GET_INT(array, i);
 		else
-			Global_4718592.f_121507[i] = PV_COMP_INVALID;
+			Global_4718592.f_121507[i] = -1 /*PV_COMP_INVALID*/;
 	
 		if (array2 != 0 && DATAFILE::DATAARRAY_GET_TYPE(array2, i) == 2)
 			Global_4718592.f_121476[i] = DATAFILE::DATAARRAY_GET_INT(array2, i);
@@ -33089,21 +33089,21 @@ void func_447(Any* panParam0) // Position - 0x3B850 Hash - 0x8D36CC91 ^0x25F1D4B
 		type = Global_4718592.f_121507[i];
 		num = Global_4718592.f_121476[i];
 	
-		if (type != PV_COMP_INVALID && num != -1)
+		if (type != -1 /*PV_COMP_INVALID*/ && num != -1)
 		{
 			for (l = 0; l <= 29; l = l + 1)
 			{
 				if (l != i && Global_4718592.f_121507[l] == type && Global_4718592.f_121476[l] == num)
 				{
 					Global_4718592.f_121476[l] = -1;
-					Global_4718592.f_121507[l] = PV_COMP_INVALID;
+					Global_4718592.f_121507[l] = -1 /*PV_COMP_INVALID*/;
 				
 					for (j = 0; j <= 12; j = j + 1)
 					{
 						for (k = 0; k <= 3; k = k + 1)
 						{
 							Global_4718592.f_121538[l /*66*/][j /*5*/][k] = -1;
-							Global_4718592.f_123519[l /*66*/][j /*5*/][k] = PV_COMP_INVALID;
+							Global_4718592.f_123519[l /*66*/][j /*5*/][k] = -1 /*PV_COMP_INVALID*/;
 						}
 					}
 				}
@@ -33170,7 +33170,7 @@ void func_448(int iParam0) // Position - 0x3BB6F Hash - 0x77AAB62E ^0x9E09E74A
 			TEXT_LABEL_APPEND_INT(&key, j, 8);
 			unk43[j] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
 		
-			for (i = PV_COMP_HEAD; i <= Global_4718592.f_110657[j] - 1; i = i + 1)
+			for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4718592.f_110657[j] - 1; i = i + 1)
 			{
 				if (i < 17)
 				{
@@ -33266,7 +33266,7 @@ void func_450(var uParam0) // Position - 0x3C003 Hash - 0x1D7D6612 ^0x974BE3C3
 	if (dict == 0)
 		return;
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_BERD; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 1 /*PV_COMP_BERD*/; i = i + 1)
 	{
 		func_451(&dict, i);
 	}
@@ -33284,8 +33284,8 @@ void func_451(var uParam0, ePedComponentType epctParam1) // Position - 0x3C06F H
 		return;
 
 	func_297("mprq_p", &(Global_4718592.f_207302.f_2[epctParam1 /*3*/].f_1), uParam0, &unk, epctParam1, -1, -2340845);
-	Global_4718592.f_207302.f_2[epctParam1 /*3*/].f_2 = func_307("mprq_c", uParam0, &(unk.f_1), epctParam1, PV_COMP_HEAD, PV_COMP_HEAD);
-	Global_4718592.f_207302.f_2[epctParam1 /*3*/] = func_307("mprq_w", uParam0, &(unk.f_2), epctParam1, PV_COMP_HEAD, PV_COMP_HEAD);
+	Global_4718592.f_207302.f_2[epctParam1 /*3*/].f_2 = func_307("mprq_c", uParam0, &(unk.f_1), epctParam1, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
+	Global_4718592.f_207302.f_2[epctParam1 /*3*/] = func_307("mprq_w", uParam0, &(unk.f_2), epctParam1, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 	return;
 }
 
@@ -33299,7 +33299,7 @@ void func_452(var uParam0) // Position - 0x3C0EA Hash - 0xCF21F449 ^0x4650ED73
 	unk.f_5 = 2;
 	unk.f_8.f_2 = 4;
 
-	for (i = PV_COMP_HEAD; i <= Global_4718592.f_3527 - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4718592.f_3527 - 1; i = i + 1)
 	{
 		j = 0;
 		func_297("stinv", &Global_4718592.f_196003[i /*20*/], uParam0, &unk, i, -1, -2340845);
@@ -33330,7 +33330,7 @@ void func_453(var uParam0) // Position - 0x3C24F Hash - 0xC0753EA2 ^0x1176159
 
 	dict = DATAFILE::DATADICT_GET_DICT(*uParam0, "invty");
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_LOWR; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 4 /*PV_COMP_LOWR*/; i = i + 1)
 	{
 		func_416(&dict, &Global_4718592.f_194967[i /*207*/], i);
 	}
@@ -33364,7 +33364,7 @@ void func_454(var uParam0, BOOL bParam1) // Position - 0x3C28B Hash - 0x2F12269E
 
 	if (!bParam1)
 	{
-		for (j = PV_COMP_HEAD; j < PV_COMP_HAIR; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j < 2 /*PV_COMP_HAIR*/; j = j + 1)
 		{
 			func_297("intCnt_Typ", &Global_4980736.f_45585[j /*2*/], &dict, &unk, j, 0, -2340845);
 			func_297("intCnt_Str", &(Global_4980736.f_45585[j /*2*/].f_1), &dict, &unk2, j, -1, -2340845);
@@ -33425,12 +33425,12 @@ void func_454(var uParam0, BOOL bParam1) // Position - 0x3C28B Hash - 0x2F12269E
 			TEXT_LABEL_APPEND_STRING(&unk273, "_", 24);
 			func_297(&unk273, &Global_4980736.f_27101[type /*303*/].f_69[k], &dict, &unk3.f_77[k], i, -1, -2340845);
 		
-			if (Global_4980736.f_27101[type /*303*/].f_69[k] != PV_COMP_HEAD)
+			if (Global_4980736.f_27101[type /*303*/].f_69[k] != 0 /*PV_COMP_HEAD*/)
 				flag = true;
 		}
 	
 		func_297("int_prq_rqc_", &(Global_4980736.f_27101[type /*303*/].f_68), &dict, &(unk3.f_83), i, 0, -2340845);
-		Global_4980736.f_27101[type /*303*/].f_68 > PV_COMP_HEAD && !flag;
+		Global_4980736.f_27101[type /*303*/].f_68 > 0 /*PV_COMP_HEAD*/ && !flag;
 		func_294("int_prq_b", &(Global_4980736.f_27101[type /*303*/].f_75), 4, &dict, &(unk3.f_84), i, 0, -2340845);
 		func_297("int_objt_st", &(Global_4980736.f_27101[type /*303*/].f_105), &dict, &(unk3.f_89), i, -1, -2340845);
 		func_297("int_objt_wft", &(Global_4980736.f_27101[type /*303*/].f_106), &dict, &(unk3.f_90), i, -1, -2340845);
@@ -33571,7 +33571,7 @@ void func_455(var uParam0) // Position - 0x3D386 Hash - 0xBD114A81 ^0xF3B39505
 	unk9.f_127.f_50 = 4;
 	unk9.f_127.f_55 = 4;
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_HAIR; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 2 /*PV_COMP_HAIR*/; i = i + 1)
 	{
 		func_297("trn_cfg", &Global_4980736.f_118536[i /*219*/], &dict, &unk9, i, 0, -2340845);
 		func_296("trn_pos", &(Global_4980736.f_118536[i /*219*/].f_1), &dict, &(unk9.f_1), i, 0f, 0f, 0f, 0f, 0f, 0f);
@@ -33820,7 +33820,7 @@ void func_456(int iParam0, int iParam1) // Position - 0x3DA26 Hash - 0xFD69CE6E 
 			TEXT_LABEL_ASSIGN_STRING(&key, "jtof", 8);
 			TEXT_LABEL_APPEND_INT(&key, j, 8);
 			unk93[j] = DATAFILE::DATADICT_GET_ARRAY(dict, &key);
-			type = PV_COMP_HEAD;
+			type = 0 /*PV_COMP_HEAD*/;
 		
 			for (i = 0; i <= Global_4980736[0] - 1; i = i + 1)
 			{
@@ -33830,7 +33830,7 @@ void func_456(int iParam0, int iParam1) // Position - 0x3DA26 Hash - 0xFD69CE6E 
 				Global_4980736.f_5[type /*333*/].f_119[j] = DATAFILE::DATAARRAY_GET_INT(unk12[j], i);
 				Global_4980736.f_5[type /*333*/].f_124[j] = DATAFILE::DATAARRAY_GET_INT(unk17[j], i);
 			
-				if (Global_4980736.f_5[type /*333*/].f_124[j] == PV_COMP_INVALID)
+				if (Global_4980736.f_5[type /*333*/].f_124[j] == -1 /*PV_COMP_INVALID*/)
 					Global_4980736.f_5[type /*333*/].f_124[j] = 99999;
 			
 				Global_4980736.f_5[type /*333*/].f_129[j] = DATAFILE::DATAARRAY_GET_INT(unk22[j], i);
@@ -33936,9 +33936,9 @@ void func_456(int iParam0, int iParam1) // Position - 0x3DA26 Hash - 0xFD69CE6E 
 	unk227 = 12;
 	unk227.f_13 = 12;
 	unk227.f_31.f_2 = 4;
-	type2 = PV_COMP_HEAD;
+	type2 = 0 /*PV_COMP_HEAD*/;
 
-	for (i = PV_COMP_HEAD; i <= Global_4980736[0] - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4980736[0] - 1; i = i + 1)
 	{
 		type2 = i;
 		func_308(&unk167, &dict, &(Global_4980736.f_5[type2 /*333*/].f_20), i, 6);
@@ -34221,7 +34221,7 @@ void func_456(int iParam0, int iParam1) // Position - 0x3DA26 Hash - 0xFD69CE6E 
 		func_297("lcitcs", &(Global_4980736.f_5[type2 /*333*/].f_326.f_2), &dict, &unk158, i, -1, -2340845);
 		func_297("lcitpot", &(Global_4980736.f_5[type2 /*333*/].f_326.f_3), &dict, &unk159, i, -1, -2340845);
 		func_297("lcitwot", &(Global_4980736.f_5[type2 /*333*/].f_326.f_4), &dict, &unk160, i, -1, -2340845);
-		Global_4980736.f_5[type2 /*333*/].f_332 = func_307("lcrscp", &dict, &unk163, i, PV_COMP_HEAD, PV_COMP_HEAD);
+		Global_4980736.f_5[type2 /*333*/].f_332 = func_307("lcrscp", &dict, &unk163, i, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 		func_297("lcpmco", &(Global_4980736.f_5[type2 /*333*/].f_322), &dict, &unk162, i, -1, -1);
 		func_297("lsvi", &(Global_4980736.f_5[type2 /*333*/].f_118), &dict, &unk161, i, -1, -2340845);
 		func_294("alvgot", &(Global_4980736.f_5[type2 /*333*/].f_323), 1, &dict, &unk165, i, 0, -2340845);
@@ -34290,7 +34290,7 @@ void func_458(var uParam0, int iParam1) // Position - 0x3F2D9 Hash - 0xD62729F6 
 	unk5 = 1;
 	func_290("no", &(Global_4980736.f_45590), &dict, 0, -2340845);
 	unk9 = 2;
-	type = PV_COMP_HEAD;
+	type = 0 /*PV_COMP_HEAD*/;
 
 	for (i = 0; i <= *Global_4980736.f_45590 - 1; i = i + 1)
 	{
@@ -34581,9 +34581,9 @@ void func_464(var uParam0) // Position - 0x3FCF7 Hash - 0x18634ABF ^0xC2427FC7
 	unk.f_215.f_1.f_5.f_5.f_5.f_5.f_5.f_5.f_5.f_5.f_5.f_5.f_5 = 4;
 	unk.f_276 = 12;
 	unk.f_289 = 12;
-	i = PV_COMP_HEAD;
+	i = 0 /*PV_COMP_HEAD*/;
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_TASK; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 9 /*PV_COMP_TASK*/; i = i + 1)
 	{
 		func_318(&Global_4718592.f_196296[i /*333*/], &unk, uParam0, i, false);
 	}
@@ -34613,9 +34613,9 @@ void func_465(var uParam0) // Position - 0x3FE26 Hash - 0xEBFBE308 ^0xEBFBE308
 	int num14;
 	int num15;
 
-	for (i = PV_COMP_HEAD; i <= Global_4718592.f_3527 - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4718592.f_3527 - 1; i = i + 1)
 	{
-		if (i < PV_COMP_LOWR)
+		if (i < 4 /*PV_COMP_LOWR*/)
 		{
 			num = 0;
 			num2 = 0;
@@ -34631,7 +34631,7 @@ void func_465(var uParam0) // Position - 0x3FE26 Hash - 0xEBFBE308 ^0xEBFBE308
 			num12 = 0;
 			num13 = 0;
 		
-			for (j = PV_COMP_HEAD; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
 			{
 				func_312(&unk, "ORS_BS", i, -1);
 				func_297(&unk, &Global_4718592.f_3592[i /*25891*/].f_21146[j /*35*/], uParam0, &num, j, 0, -2340845);
@@ -34776,11 +34776,11 @@ void func_466(var uParam0) // Position - 0x401CE Hash - 0x68C5BE8D ^0x68C5BE8D
 	num42 = 0;
 	num43 = 0;
 
-	for (i = PV_COMP_HEAD; i <= Global_4718592.f_3527 - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4718592.f_3527 - 1; i = i + 1)
 	{
-		if (i < PV_COMP_LOWR)
+		if (i < 4 /*PV_COMP_LOWR*/)
 		{
-			for (j = PV_COMP_HEAD; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
 			{
 				TEXT_LABEL_ASSIGN_STRING(&unk, "contCChr", 16);
 				TEXT_LABEL_APPEND_INT(&unk, i, 16);
@@ -35044,12 +35044,12 @@ void func_467(var uParam0) // Position - 0x40CB0 Hash - 0x3AD7AAA8 ^0x3AD7AAA8
 			TEXT_LABEL_APPEND_INT(&key, i, 16);
 			array17 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &key);
 		
-			for (j = PV_COMP_HEAD; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
 			{
 				if (!func_468(&array2, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_6711[j] = DATAFILE::DATAARRAY_GET_INT(array2, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_6711[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_6711[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array3, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_7031[j] = DATAFILE::DATAARRAY_GET_INT(array3, j);
@@ -35074,17 +35074,17 @@ void func_467(var uParam0) // Position - 0x40CB0 Hash - 0x3AD7AAA8 ^0x3AD7AAA8
 				if (!func_468(&array7, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_6905[j] = DATAFILE::DATAARRAY_GET_INT(array7, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_6905[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_6905[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array8, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_7049[j] = DATAFILE::DATAARRAY_GET_INT(array8, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_7049[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_7049[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array9, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_7085[j] = DATAFILE::DATAARRAY_GET_INT(array9, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_7085[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_7085[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_6995[j] = DATAFILE::DATAARRAY_GET_INT(array, j);
@@ -35099,7 +35099,7 @@ void func_467(var uParam0) // Position - 0x40CB0 Hash - 0x3AD7AAA8 ^0x3AD7AAA8
 				if (!func_468(&array11, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_6959[j] = DATAFILE::DATAARRAY_GET_INT(array11, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_6959[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_6959[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array12, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_6977[j] = DATAFILE::DATAARRAY_GET_INT(array12, j);
@@ -35276,7 +35276,7 @@ void func_469(var uParam0) // Position - 0x414AD Hash - 0xDCBBCE5D ^0xDCBBCE5D
 				unk523[j] = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &key);
 			}
 		
-			for (k = PV_COMP_HEAD; k <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; k = k + 1)
+			for (k = 0 /*PV_COMP_HEAD*/; k <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; k = k + 1)
 			{
 				for (j = 0; j <= 31; j = j + 1)
 				{
@@ -35422,17 +35422,17 @@ void func_470(var uParam0) // Position - 0x41C10 Hash - 0xBD0C97B9 ^0xBD0C97B9
 			TEXT_LABEL_APPEND_INT(&key, i, 16);
 			array9 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &key);
 		
-			for (j = PV_COMP_HEAD; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
 			{
 				if (!func_468(&array, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_7652[j] = DATAFILE::DATAARRAY_GET_INT(array, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_7652[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_7652[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array2, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_7724[j] = DATAFILE::DATAARRAY_GET_INT(array2, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_7724[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_7724[j] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array3, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_7688[j] = DATAFILE::DATAARRAY_GET_INT(array3, j);
@@ -35447,7 +35447,7 @@ void func_470(var uParam0) // Position - 0x41C10 Hash - 0xBD0C97B9 ^0xBD0C97B9
 				if (!func_468(&array7, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_7760[j] = DATAFILE::DATAARRAY_GET_INT(array7, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_7760[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_7760[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array4, 2, j))
 				{
@@ -35463,7 +35463,7 @@ void func_470(var uParam0) // Position - 0x41C10 Hash - 0xBD0C97B9 ^0xBD0C97B9
 				if (!func_468(&array5, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_7670[j] = DATAFILE::DATAARRAY_GET_INT(array5, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_7670[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_7670[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array8, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_8336[j] = DATAFILE::DATAARRAY_GET_INT(array8, j);
@@ -35577,7 +35577,7 @@ void func_471(var uParam0) // Position - 0x42005 Hash - 0xBD0C97B9 ^0xBD0C97B9
 			TEXT_LABEL_APPEND_INT(&key, i, 16);
 			array17 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &key);
 		
-			for (j = PV_COMP_HEAD; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
 			{
 				if (!func_468(&array, 2, j) && !func_468(&array2, 2, j))
 				{
@@ -35750,9 +35750,9 @@ void func_472(var uParam0) // Position - 0x4268F Hash - 0xC9154BB8 ^0xC9154BB8
 	unk29 = 1;
 	unk31 = 7;
 
-	for (i = PV_COMP_HEAD; i <= Global_4718592.f_3527 - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4718592.f_3527 - 1; i = i + 1)
 	{
-		if (i < PV_COMP_LOWR)
+		if (i < 4 /*PV_COMP_LOWR*/)
 		{
 			array = 0;
 			array2 = 0;
@@ -35920,7 +35920,7 @@ void func_472(var uParam0) // Position - 0x4268F Hash - 0xC9154BB8 ^0xC9154BB8
 				unk25[m] = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &key);
 			}
 		
-			for (j = PV_COMP_HEAD; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
 			{
 				if (!func_468(&array, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_8354[j] = DATAFILE::DATAARRAY_GET_INT(array, j);
@@ -35990,7 +35990,7 @@ void func_472(var uParam0) // Position - 0x4268F Hash - 0xC9154BB8 ^0xC9154BB8
 				if (!func_468(&array14, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_8588[j] = DATAFILE::DATAARRAY_GET_INT(array14, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_8588[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_8588[j] = 0 /*PV_COMP_HEAD*/;
 			
 				TEXT_LABEL_ASSIGN_STRING(&key, "irbs15", 16);
 				TEXT_LABEL_APPEND_INT(&key, i, 16);
@@ -36134,7 +36134,7 @@ void func_472(var uParam0) // Position - 0x4268F Hash - 0xC9154BB8 ^0xC9154BB8
 				if (!func_468(&array16, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_18331[j] = DATAFILE::DATAARRAY_GET_INT(array16, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_18331[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_18331[j] = -1 /*PV_COMP_INVALID*/;
 			
 				TEXT_LABEL_ASSIGN_STRING(&key, "altvr", 16);
 				TEXT_LABEL_APPEND_INT(&key, i, 16);
@@ -36252,9 +36252,9 @@ void func_473(var uParam0) // Position - 0x438AC Hash - 0xBD0C97B9 ^0xBD0C97B9
 	int num21;
 	int _int;
 
-	for (i = PV_COMP_HEAD; i <= Global_4718592.f_3527 - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4718592.f_3527 - 1; i = i + 1)
 	{
-		if (i < PV_COMP_LOWR)
+		if (i < 4 /*PV_COMP_LOWR*/)
 		{
 			array = 0;
 			array2 = 0;
@@ -36522,7 +36522,7 @@ void func_473(var uParam0) // Position - 0x438AC Hash - 0xBD0C97B9 ^0xBD0C97B9
 			TEXT_LABEL_APPEND_INT(&key, i, 16);
 			array61 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &key);
 		
-			for (j = PV_COMP_HEAD; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
 			{
 				if (!func_468(&array, 5, j))
 					Global_4718592.f_3592[i /*25891*/].f_4985[j /*3*/] = { DATAFILE::DATAARRAY_GET_VECTOR(array, j) };
@@ -36544,10 +36544,10 @@ void func_473(var uParam0) // Position - 0x438AC Hash - 0xBD0C97B9 ^0xBD0C97B9
 				else
 					Global_4718592.f_3592[i /*25891*/].f_18493[j] = 0;
 			
-				if (!func_468(&array5, 2, j) && Global_4718592.f_2 != PV_COMP_FEET)
+				if (!func_468(&array5, 2, j) && Global_4718592.f_2 != 6 /*PV_COMP_FEET*/)
 					Global_4718592.f_3592[i /*25891*/].f_18511[j] = DATAFILE::DATAARRAY_GET_INT(array5, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_18511[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_18511[j] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array6, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_18529[j] = DATAFILE::DATAARRAY_GET_INT(array6, j);
@@ -36562,7 +36562,7 @@ void func_473(var uParam0) // Position - 0x438AC Hash - 0xBD0C97B9 ^0xBD0C97B9
 				if (!func_468(&array8, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_18583[j] = DATAFILE::DATAARRAY_GET_INT(array8, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_18583[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_18583[j] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array9, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_18763[j] = DATAFILE::DATAARRAY_GET_INT(array9, j);
@@ -36582,12 +36582,12 @@ void func_473(var uParam0) // Position - 0x438AC Hash - 0xBD0C97B9 ^0xBD0C97B9
 				if (!func_468(&array12, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_18817[j] = DATAFILE::DATAARRAY_GET_INT(array12, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_18817[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_18817[j] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array13, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_18547[j] = DATAFILE::DATAARRAY_GET_INT(array13, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_18547[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_18547[j] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array14, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_18601[j] = DATAFILE::DATAARRAY_GET_INT(array14, j);
@@ -36642,12 +36642,12 @@ void func_473(var uParam0) // Position - 0x438AC Hash - 0xBD0C97B9 ^0xBD0C97B9
 				if (!func_468(&array27, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_14450[j] = DATAFILE::DATAARRAY_GET_INT(array27, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_14450[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_14450[j] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array28, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_19909[j] = DATAFILE::DATAARRAY_GET_INT(array28, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_19909[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_19909[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array22, 2, j))
 				{
@@ -36679,12 +36679,12 @@ void func_473(var uParam0) // Position - 0x438AC Hash - 0xBD0C97B9 ^0xBD0C97B9
 				if (!func_468(&array29, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_5938[j] = DATAFILE::DATAARRAY_GET_INT(array29, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_5938[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_5938[j] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array30, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_5956[j] = DATAFILE::DATAARRAY_GET_INT(array30, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_5956[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_5956[j] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array31, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_6028[j] = DATAFILE::DATAARRAY_GET_INT(array31, j);
@@ -36876,7 +36876,7 @@ void func_473(var uParam0) // Position - 0x438AC Hash - 0xBD0C97B9 ^0xBD0C97B9
 				func_297(&key, &Global_4718592.f_3592[i /*25891*/].f_6416[j], uParam0, &num11, j, -1, -2340845);
 			
 				if (Global_4718592.f_3592[i /*25891*/].f_6416[j] >= 30)
-					Global_4718592.f_3592[i /*25891*/].f_6416[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_6416[j] = -1 /*PV_COMP_INVALID*/;
 			
 				TEXT_LABEL_ASSIGN_STRING(&key, "cfdist", 16);
 				TEXT_LABEL_APPEND_INT(&key, i, 16);
@@ -36911,7 +36911,7 @@ void func_473(var uParam0) // Position - 0x438AC Hash - 0xBD0C97B9 ^0xBD0C97B9
 
 BOOL func_474() // Position - 0x453F1 Hash - 0x3DC0CE5C ^0xB9511DF1
 {
-	return Global_4718592 == PV_COMP_HEAD && Global_4718592.f_2 == PV_COMP_FEET;
+	return Global_4718592 == 0 /*PV_COMP_HEAD*/ && Global_4718592.f_2 == 6 /*PV_COMP_FEET*/;
 }
 
 void func_475(var uParam0) // Position - 0x4540C Hash - 0x91F3FCEC ^0xD9E16D7F
@@ -37183,7 +37183,7 @@ void func_475(var uParam0) // Position - 0x4540C Hash - 0x91F3FCEC ^0xD9E16D7F
 				unk75[k] = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &key);
 			}
 		
-			for (j = PV_COMP_HEAD; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
 			{
 				TEXT_LABEL_ASSIGN_STRING(&key, "oCH_CTL", 16);
 			
@@ -37283,7 +37283,7 @@ void func_475(var uParam0) // Position - 0x4540C Hash - 0x91F3FCEC ^0xD9E16D7F
 				if (!func_468(&array5, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_2178[j] = DATAFILE::DATAARRAY_GET_INT(array5, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_2178[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_2178[j] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array6, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_1692[j] = DATAFILE::DATAARRAY_GET_INT(array6, j);
@@ -37303,7 +37303,7 @@ void func_475(var uParam0) // Position - 0x4540C Hash - 0x91F3FCEC ^0xD9E16D7F
 				if (!func_468(&array9, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_18859[j] = DATAFILE::DATAARRAY_GET_INT(array9, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_18859[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_18859[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array10, 3, j))
 					Global_4718592.f_3592[i /*25891*/].f_19111[j] = DATAFILE::DATAARRAY_GET_FLOAT(array10, j);
@@ -37323,12 +37323,12 @@ void func_475(var uParam0) // Position - 0x4540C Hash - 0x91F3FCEC ^0xD9E16D7F
 				if (!func_468(&array13, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_2160[j] = DATAFILE::DATAARRAY_GET_INT(array13, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_2160[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_2160[j] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array14, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_1782[j] = DATAFILE::DATAARRAY_GET_INT(array14, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_1782[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_1782[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array15, 3, j))
 					Global_4718592.f_3592[i /*25891*/].f_1800[j] = DATAFILE::DATAARRAY_GET_FLOAT(array15, j);
@@ -37338,7 +37338,7 @@ void func_475(var uParam0) // Position - 0x4540C Hash - 0x91F3FCEC ^0xD9E16D7F
 				if (!func_468(&array16, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_1836[j] = DATAFILE::DATAARRAY_GET_INT(array16, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_1836[j] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_1836[j] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array17, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_1854[j] = DATAFILE::DATAARRAY_GET_INT(array17, j);
@@ -37421,12 +37421,12 @@ void func_475(var uParam0) // Position - 0x4540C Hash - 0x91F3FCEC ^0xD9E16D7F
 				if (!func_468(&array32, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_6212[j] = DATAFILE::DATAARRAY_GET_INT(array32, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_6212[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_6212[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array33, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_6230[j] = DATAFILE::DATAARRAY_GET_INT(array33, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_6230[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_6230[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array34, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_14242[j] = DATAFILE::DATAARRAY_GET_INT(array34, j);
@@ -37829,7 +37829,7 @@ void func_477(var uParam0) // Position - 0x46AA9 Hash - 0xBD0C97B9 ^0xBD0C97B9
 			TEXT_LABEL_APPEND_INT(&key, i, 16);
 			array34 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &key);
 		
-			for (j = PV_COMP_HEAD; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
 			{
 				if (!func_468(&array3, 5, j))
 					Global_4718592.f_3592[i /*25891*/].f_4372[j /*36*/].f_16 = { DATAFILE::DATAARRAY_GET_VECTOR(array3, j) };
@@ -38210,17 +38210,17 @@ void func_478(var uParam0) // Position - 0x47F0E Hash - 0xBD0C97B9 ^0xBD0C97B9
 				if (array != 0 && DATAFILE::DATAARRAY_GET_TYPE(array, k) == 2)
 					Global_4718592.f_3592[i /*25891*/].f_66[k] = DATAFILE::DATAARRAY_GET_INT(array, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_66[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_66[k] = 0 /*PV_COMP_HEAD*/;
 			
 				if (array2 != 0 && DATAFILE::DATAARRAY_GET_TYPE(array2, k) == 2)
 					Global_4718592.f_3592[i /*25891*/].f_357[k] = DATAFILE::DATAARRAY_GET_INT(array2, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_357[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_357[k] = 0 /*PV_COMP_HEAD*/;
 			
 				if (array3 != 0 && DATAFILE::DATAARRAY_GET_TYPE(array3, k) == 2)
 					Global_4718592.f_3592[i /*25891*/].f_649[k] = DATAFILE::DATAARRAY_GET_INT(array3, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_649[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_649[k] = 0 /*PV_COMP_HEAD*/;
 			
 				if (array7 != 0 && DATAFILE::DATAARRAY_GET_TYPE(array7, k) == 3)
 					Global_4718592.f_3592[i /*25891*/].f_214[k] = DATAFILE::DATAARRAY_GET_FLOAT(array7, k);
@@ -38300,7 +38300,7 @@ void func_478(var uParam0) // Position - 0x47F0E Hash - 0xBD0C97B9 ^0xBD0C97B9
 			TEXT_LABEL_APPEND_INT(&key, i, 16);
 			array21 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, &key);
 		
-			for (j = PV_COMP_HEAD; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; j = j + 1)
 			{
 				if (!func_468(&array12, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_19368[j] = DATAFILE::DATAARRAY_GET_INT(array12, j);
@@ -38310,7 +38310,7 @@ void func_478(var uParam0) // Position - 0x47F0E Hash - 0xBD0C97B9 ^0xBD0C97B9
 				if (!func_468(&array13, 2, j))
 					Global_4718592.f_3592[i /*25891*/].f_19386[j] = DATAFILE::DATAARRAY_GET_INT(array13, j);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_19386[j] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_19386[j] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_230(7))
 					if (!func_468(&array14, 2, j))
@@ -38469,7 +38469,7 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 	int array63;
 	int num2;
 	int array64;
-	ePedComponentType m;
+	int m;
 
 	l = 0;
 	unk4 = 4;
@@ -38489,9 +38489,9 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 	unk66 = 4;
 	unk71 = 4;
 
-	for (i = PV_COMP_HEAD; i <= Global_4718592.f_3527 - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4718592.f_3527 - 1; i = i + 1)
 	{
-		if (i < PV_COMP_LOWR)
+		if (i < 4 /*PV_COMP_LOWR*/)
 		{
 			for (j = 0; j <= 3; j = j + 1)
 			{
@@ -38813,22 +38813,22 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 				unk14[j] = 0;
 			}
 		
-			for (k = PV_COMP_HEAD; k <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; k = k + 1)
+			for (k = 0 /*PV_COMP_HEAD*/; k <= Global_4718592.f_3592[i /*25891*/].f_60 - 1; k = k + 1)
 			{
 				if (!func_468(&array, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_1074[k] = DATAFILE::DATAARRAY_GET_INT(array, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_1074[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_1074[k] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array2, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_1092[k] = DATAFILE::DATAARRAY_GET_INT(array2, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_1092[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_1092[k] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array3, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_6194[k] = DATAFILE::DATAARRAY_GET_INT(array3, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_6194[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_6194[k] = 0 /*PV_COMP_HEAD*/;
 			
 				TEXT_LABEL_ASSIGN_STRING(&key, "tak", 16);
 				TEXT_LABEL_APPEND_INT(&key, i, 16);
@@ -38837,7 +38837,7 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 				if (!func_468(&array6, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_6284[k] = DATAFILE::DATAARRAY_GET_INT(array6, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_6284[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_6284[k] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array4, 4, k))
 					TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_3592[i /*25891*/].f_14469[k /*16*/], DATAFILE::DATAARRAY_GET_STRING(array4, k), 64);
@@ -38865,12 +38865,12 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 				if (!func_468(&array13, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_6320[k] = DATAFILE::DATAARRAY_GET_INT(array13, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_6320[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_6320[k] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array12, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_6302[k] = DATAFILE::DATAARRAY_GET_INT(array12, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_6302[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_6302[k] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array14, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_6342[k] = DATAFILE::DATAARRAY_GET_INT(array14, k);
@@ -38895,7 +38895,7 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 				if (!func_468(&array18, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_6452[k] = DATAFILE::DATAARRAY_GET_INT(array18, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_6452[k] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_6452[k] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array10, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_2196[k] = DATAFILE::DATAARRAY_GET_INT(array10, k);
@@ -38920,19 +38920,19 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 				if (!func_468(&array19, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_2232[k] = DATAFILE::DATAARRAY_GET_INT(array19, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_2232[k] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_2232[k] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array20, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_2250[k] = DATAFILE::DATAARRAY_GET_INT(array20, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_2250[k] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_2250[k] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array22, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_6434[k] = DATAFILE::DATAARRAY_GET_INT(array22, k);
 				else if (array64 != 0)
 					Global_4718592.f_3592[i /*25891*/].f_6434[k] = DATAFILE::DATAARRAY_GET_INT(array64, i);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_6434[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_6434[k] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array21, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_2322[k] = DATAFILE::DATAARRAY_GET_INT(array21, k);
@@ -38945,7 +38945,7 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 				if (!func_468(&array54, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_1128[k] = DATAFILE::DATAARRAY_GET_INT(array54, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_1128[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_1128[k] = 0 /*PV_COMP_HEAD*/;
 			
 				for (l = 0; l <= 3; l = l + 1)
 				{
@@ -38976,7 +38976,7 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 				if (!func_468(&array53, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_1110[k] = DATAFILE::DATAARRAY_GET_INT(array53, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_1110[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_1110[k] = 0 /*PV_COMP_HEAD*/;
 			
 				if (!func_468(&array23, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_2304[k] = DATAFILE::DATAARRAY_GET_INT(array23, k);
@@ -39040,7 +39040,7 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 				if (!func_468(&array46, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_6470[k] = DATAFILE::DATAARRAY_GET_INT(array46, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_6470[k] = PV_COMP_HEAD;
+					Global_4718592.f_3592[i /*25891*/].f_6470[k] = 0 /*PV_COMP_HEAD*/;
 			
 				for (j = 0; j <= 3; j = j + 1)
 				{
@@ -39067,7 +39067,7 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 					TEXT_LABEL_APPEND_INT(&key, i, 16);
 					TEXT_LABEL_APPEND_STRING(&key, "-", 16);
 					TEXT_LABEL_APPEND_INT(&key, j, 16);
-					Global_4718592.f_3592[i /*25891*/].f_17781[k /*17*/][j /*4*/] = func_307(&key, uParam0, &unk19[j], k, PV_COMP_HEAD, PV_COMP_HEAD);
+					Global_4718592.f_3592[i /*25891*/].f_17781[k /*17*/][j /*4*/] = func_307(&key, uParam0, &unk19[j], k, 0 /*PV_COMP_HEAD*/, 0 /*PV_COMP_HEAD*/);
 					TEXT_LABEL_ASSIGN_STRING(&key, "otpoc", 16);
 					TEXT_LABEL_APPEND_INT(&key, i, 16);
 					TEXT_LABEL_APPEND_STRING(&key, "-", 16);
@@ -39082,7 +39082,7 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 					TEXT_LABEL_APPEND_INT(&key, i, 16);
 					TEXT_LABEL_APPEND_STRING(&key, "-", 16);
 					TEXT_LABEL_APPEND_INT(&key, j, 16);
-					Global_4718592.f_3592[i /*25891*/].f_17781[k /*17*/][j /*4*/].f_3 = func_307(&key, uParam0, &unk34[j], k, PV_COMP_INVALID, PV_COMP_INVALID);
+					Global_4718592.f_3592[i /*25891*/].f_17781[k /*17*/][j /*4*/].f_3 = func_307(&key, uParam0, &unk34[j], k, -1 /*PV_COMP_INVALID*/, -1 /*PV_COMP_INVALID*/);
 				}
 			
 				if (!func_468(&array44, 3, k))
@@ -39103,7 +39103,7 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 				func_312(&key, "plpr", i, -1);
 				func_297(&key, &Global_4718592.f_3592[i /*25891*/].f_40[k], uParam0, &num, k, -1, -1);
 			
-				if (Global_4718592.f_3592[i /*25891*/].f_40[k] == PV_COMP_INVALID)
+				if (Global_4718592.f_3592[i /*25891*/].f_40[k] == -1 /*PV_COMP_INVALID*/)
 				{
 					func_312(&key, "plvrl", i, -1);
 					func_297(&key, &Global_4718592.f_3592[i /*25891*/].f_40[k], uParam0, &num, k, -1, -1);
@@ -39175,7 +39175,7 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 				if (!func_468(&array56, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_9042[k] = DATAFILE::DATAARRAY_GET_INT(array56, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_9042[k] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_9042[k] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array57, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_19530[k] = DATAFILE::DATAARRAY_GET_INT(array57, k);
@@ -39185,7 +39185,7 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 				if (!func_468(&array35, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_7420[k] = DATAFILE::DATAARRAY_GET_INT(array35, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_7420[k] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_7420[k] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array36, 3, k))
 					Global_4718592.f_3592[i /*25891*/].f_7456[k] = DATAFILE::DATAARRAY_GET_FLOAT(array36, k);
@@ -39226,7 +39226,7 @@ void func_479(var uParam0) // Position - 0x488C3 Hash - 0x7CD01899 ^0x7CD01899
 				if (!func_468(&array42, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_18709[k] = DATAFILE::DATAARRAY_GET_INT(array42, k);
 				else
-					Global_4718592.f_3592[i /*25891*/].f_18709[k] = PV_COMP_INVALID;
+					Global_4718592.f_3592[i /*25891*/].f_18709[k] = -1 /*PV_COMP_INVALID*/;
 			
 				if (!func_468(&array43, 2, k))
 					Global_4718592.f_3592[i /*25891*/].f_18727[k] = DATAFILE::DATAARRAY_GET_INT(array43, k);
@@ -39496,7 +39496,7 @@ void func_482(var uParam0) // Position - 0x4A7E1 Hash - 0x1AA8B786 ^0xA04003A6
 	array70 = DATAFILE::DATADICT_GET_ARRAY(*uParam0, "tvmCMO2");
 	unk = 10;
 
-	for (i = PV_COMP_HEAD; i <= DATAFILE::DATAARRAY_GET_COUNT(array46) - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= DATAFILE::DATAARRAY_GET_COUNT(array46) - 1; i = i + 1)
 	{
 		unk[i] = DATAFILE::DATAARRAY_GET_DICT(array46, i);
 		Global_4718592.f_108016[i /*43*/] = DATAFILE::DATADICT_GET_INT(unk[i], "team");
@@ -39521,9 +39521,9 @@ void func_482(var uParam0) // Position - 0x4A7E1 Hash - 0x1AA8B786 ^0xA04003A6
 		Global_4718592.f_108016[i /*43*/].f_4 = DATAFILE::DATADICT_GET_INT(unk[i], "ptsreq");
 	}
 
-	for (i = PV_COMP_HEAD; i <= Global_4718592.f_3527 - 1; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= Global_4718592.f_3527 - 1; i = i + 1)
 	{
-		if (i < PV_COMP_LOWR)
+		if (i < 4 /*PV_COMP_LOWR*/)
 		{
 			if (array11 != 0)
 			{
@@ -39532,7 +39532,7 @@ void func_482(var uParam0) // Position - 0x4A7E1 Hash - 0x1AA8B786 ^0xA04003A6
 			}
 			else
 			{
-				Global_4718592.f_120486[i] = PV_COMP_HEAD;
+				Global_4718592.f_120486[i] = 0 /*PV_COMP_HEAD*/;
 			}
 		
 			if (array12 != 0)
@@ -39558,41 +39558,41 @@ void func_482(var uParam0) // Position - 0x4A7E1 Hash - 0x1AA8B786 ^0xA04003A6
 			if (array16 != 0)
 				Global_4718592.f_120529[i] = DATAFILE::DATAARRAY_GET_INT(array16, i);
 			else
-				Global_4718592.f_120529[i] = PV_COMP_HEAD;
+				Global_4718592.f_120529[i] = 0 /*PV_COMP_HEAD*/;
 		
 			if (array != 0)
 				Global_4718592.f_3529[i] = DATAFILE::DATAARRAY_GET_INT(array, i);
 		
-			if (Global_4718592.f_3529[i] < PV_COMP_BERD)
-				Global_4718592.f_3529[i] = PV_COMP_BERD;
+			if (Global_4718592.f_3529[i] < 1 /*PV_COMP_BERD*/)
+				Global_4718592.f_3529[i] = 1 /*PV_COMP_BERD*/;
 		
 			if (array2 != 0)
 				if (func_72(*Global_4718592.f_185586) && Global_262145.f_20912 && !Global_1919038)
-					Global_4718592.f_109657[i] = PV_COMP_LOWR;
+					Global_4718592.f_109657[i] = 4 /*PV_COMP_LOWR*/;
 				else
 					Global_4718592.f_109657[i] = DATAFILE::DATAARRAY_GET_INT(array2, i);
 			else
-				Global_4718592.f_109657[i] = PV_COMP_INVALID;
+				Global_4718592.f_109657[i] = -1 /*PV_COMP_INVALID*/;
 		
 			if (array3 != 0)
 				if (func_72(*Global_4718592.f_185586) && Global_262145.f_20912 && !Global_1919038)
-					Global_4718592.f_109662[i] = PV_COMP_BERD;
+					Global_4718592.f_109662[i] = 1 /*PV_COMP_BERD*/;
 				else
 					Global_4718592.f_109662[i] = DATAFILE::DATAARRAY_GET_INT(array3, i);
 			else
-				Global_4718592.f_109662[i] = PV_COMP_INVALID;
+				Global_4718592.f_109662[i] = -1 /*PV_COMP_INVALID*/;
 		
 			if (flag)
 			{
-				Global_4718592.f_3534[i] = PV_COMP_HEAD;
+				Global_4718592.f_3534[i] = 0 /*PV_COMP_HEAD*/;
 			}
 			else
 			{
 				if (array4 != 0)
 					Global_4718592.f_3534[i] = DATAFILE::DATAARRAY_GET_INT(array4, i);
 			
-				if (Global_4718592.f_3534[i] < PV_COMP_HEAD)
-					Global_4718592.f_3534[i] = PV_COMP_HEAD;
+				if (Global_4718592.f_3534[i] < 0 /*PV_COMP_HEAD*/)
+					Global_4718592.f_3534[i] = 0 /*PV_COMP_HEAD*/;
 			}
 		
 			if (array5 != 0)
@@ -39673,7 +39673,7 @@ void func_482(var uParam0) // Position - 0x4A7E1 Hash - 0x1AA8B786 ^0xA04003A6
 			if (flag2 && array34 != 0)
 				Global_4718592.f_107205[i] = DATAFILE::DATAARRAY_GET_INT(array34, i);
 			else
-				Global_4718592.f_107205[i] = PV_COMP_UPPR;
+				Global_4718592.f_107205[i] = 3 /*PV_COMP_UPPR*/;
 		
 			if (array35 != 0 && DATAFILE::DATAARRAY_GET_TYPE(array35, i) == 2)
 				Global_4718592.f_107210[i] = DATAFILE::DATAARRAY_GET_INT(array35, i);
@@ -40361,9 +40361,9 @@ void func_484(int iParam0) // Position - 0x4CC40 Hash - 0xC0CDD823 ^0xD09B55C4
 	Global_4718592.f_117197 = DATAFILE::DATADICT_GET_INT(dict, "traf");
 
 	if (!IS_BIT_SET(*Global_4718592.f_207730, 1))
-		if (Global_4718592 == PV_COMP_HAIR)
+		if (Global_4718592 == 2 /*PV_COMP_HAIR*/)
 			func_486();
-		else if (Global_4718592 == PV_COMP_BERD)
+		else if (Global_4718592 == 1 /*PV_COMP_BERD*/)
 			func_485();
 
 	return;
@@ -40566,7 +40566,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 
 	if (bParam2)
 	{
-		for (j = PV_COMP_HEAD; j <= PV_COMP_HAND; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 5 /*PV_COMP_HAND*/; j = j + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&key, "nrcid", 16);
 			TEXT_LABEL_APPEND_INT(&key, j, 16);
@@ -40582,7 +40582,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		Global_4718592.f_2 = DATAFILE::DATADICT_GET_INT(dict, "subtype");
 		Global_4718592.f_155341 = DATAFILE::DATADICT_GET_INT(dict, "testcomplete");
 	
-		if (Global_4718592.f_2 == PV_COMP_FEET || Global_4718592.f_2 == PV_COMP_HAND || Global_4718592.f_2 == PV_COMP_LOWR || Global_4718592.f_2 == PV_COMP_TASK)
+		if (Global_4718592.f_2 == 6 /*PV_COMP_FEET*/ || Global_4718592.f_2 == 5 /*PV_COMP_HAND*/ || Global_4718592.f_2 == 4 /*PV_COMP_LOWR*/ || Global_4718592.f_2 == 9 /*PV_COMP_TASK*/)
 		{
 			if (DATAFILE::DATADICT_GET_TYPE(dict, "teamBal") == 2)
 				Global_4718592.f_155344 = DATAFILE::DATADICT_GET_INT(dict, "numRounds");
@@ -40592,7 +40592,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 			if (*Global_4718592.f_155344 < 1)
 				Global_4718592.f_155344 = 1;
 		
-			if (Global_4718592.f_2 == PV_COMP_FEET && *Global_4718592.f_155344 > 8)
+			if (Global_4718592.f_2 == 6 /*PV_COMP_FEET*/ && *Global_4718592.f_155344 > 8)
 				Global_4718592.f_155344 = 1;
 		}
 	}
@@ -40612,7 +40612,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		else
 			Global_4718592.f_155347 = 5;
 	
-		for (j = PV_COMP_HEAD; j <= 28; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 28; j = j + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&unk5, "plcotb", 16);
 			TEXT_LABEL_APPEND_INT(&unk5, j, 16);
@@ -40805,7 +40805,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, &key4) == 2)
 			Global_4718592.f_186678[l] = DATAFILE::DATADICT_GET_INT(dict, &key4);
 		else
-			Global_4718592.f_186678[l] = PV_COMP_INVALID;
+			Global_4718592.f_186678[l] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	if (IS_BIT_SET(Global_4718592.f_22, 13))
@@ -40983,7 +40983,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	func_315(&unk362, &dict, &(Global_4718592.f_127644), 0, 6);
 	func_290("ctspw", &(Global_4718592.f_127711), &dict, 0, -2340845);
 
-	for (k = PV_COMP_HEAD; k <= 19; k = k + 1)
+	for (k = 0 /*PV_COMP_HEAD*/; k <= 19; k = k + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&unk401, "ctsspw", 16);
 		TEXT_LABEL_APPEND_INT(&unk401, k, 16);
@@ -41086,7 +41086,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 
 	func_290("csmeir", &(Global_4718592.f_177776.f_90), &dict, 5000, 5000);
 
-	for (j = PV_COMP_HEAD; j <= PV_COMP_LOWR; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 4 /*PV_COMP_LOWR*/; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_177776.f_479[j /*8*/], func_395("csehent", &dict, &unk406, j, "", ""), 32);
 	}
@@ -41130,7 +41130,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	if (IS_BIT_SET(Global_4718592.f_41, 19))
 		Global_4718592.f_3522 = func_539() + 1;
 
-	if (Global_4718592.f_3522 == PV_COMP_INVALID || Global_4718592.f_3522 > func_96())
+	if (Global_4718592.f_3522 == -1 /*PV_COMP_INVALID*/ || Global_4718592.f_3522 > func_96())
 		Global_4718592.f_3522 = func_96();
 
 	Global_4718592.f_3524 = DATAFILE::DATADICT_GET_INT(dict, "time");
@@ -41138,13 +41138,13 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	TEXT_LABEL_ASSIGN_STRING(&key7, "apart", 16);
 	Global_4718592.f_178372 = { DATAFILE::DATADICT_GET_VECTOR(dict, &key7) };
 
-	for (j = PV_COMP_HEAD; j <= PV_COMP_LOWR; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 4 /*PV_COMP_LOWR*/; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&unk410, "intDes_DWP", 16);
 		TEXT_LABEL_APPEND_INT(&unk410, j, 16);
 		func_297(&unk410, &Global_4718592.f_190586[j /*10*/], &dict, &unk414, j, -1, -2340845);
 	
-		if (!IS_BIT_SET(Global_4718592.f_40, 2) && Global_4718592.f_190586[j /*10*/] > PV_COMP_HEAD)
+		if (!IS_BIT_SET(Global_4718592.f_40, 2) && Global_4718592.f_190586[j /*10*/] > 0 /*PV_COMP_HEAD*/)
 			Global_4718592.f_190586[j /*10*/] = Global_4718592.f_190586[j /*10*/] * 2;
 	
 		TEXT_LABEL_ASSIGN_STRING(&unk410, "intDes_TL", 16);
@@ -41166,7 +41166,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 
 	func_290("entCont_Num", &(Global_4980736.f_241584), &dict, 0, -2340845);
 
-	for (j = PV_COMP_HEAD; j <= *Global_4980736.f_241584 - 1; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= *Global_4980736.f_241584 - 1; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&unk420, "entCont_Typ", 16);
 		TEXT_LABEL_APPEND_INT(&unk420, j, 16);
@@ -41191,7 +41191,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	func_290("intMW", &(Global_4718592.f_178404), &dict, -1, -2340845);
 	func_290("intMWL", &(Global_4718592.f_178405), &dict, -1, -2340845);
 
-	for (j = PV_COMP_HEAD; j <= PV_COMP_FEET; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 6 /*PV_COMP_FEET*/; j = j + 1)
 	{
 		func_312(&key5, "intsdl", j, -1);
 		func_296(&key5, &Global_4718592.f_222598[j /*3*/], &dict, &unk427, j, func_538(), func_538());
@@ -41199,7 +41199,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 
 	func_290("intCCBS", &(Global_4718592.f_178408), &dict, 0, -2340845);
 
-	for (j = PV_COMP_HEAD; j <= PV_COMP_HAND; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 5 /*PV_COMP_HAND*/; j = j + 1)
 	{
 		func_312(&key5, "intCCRP", j, -1);
 		func_297(&key5, &Global_4718592.f_178408.f_1[j], &dict, &unk428, j, 0, -2340845);
@@ -41211,7 +41211,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	func_290("intTBT", &(Global_4718592.f_178406), &dict, 0, -2340845);
 	func_535(&dict);
 
-	for (j = PV_COMP_HEAD; j <= PV_COMP_UPPR; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 3 /*PV_COMP_UPPR*/; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&key5, "mthti", 16);
 		TEXT_LABEL_APPEND_INT(&key5, j, 16);
@@ -41287,7 +41287,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_117940[s] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_117940[s] = PV_COMP_HEAD;
+			Global_4718592.f_117940[s] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	i = -1;
@@ -41340,7 +41340,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 					if (DATAFILE::DATADICT_GET_TYPE(dict, &key5) == 2)
 						Global_4718592.f_117349[i /*145*/][t /*4*/][u] = DATAFILE::DATADICT_GET_INT(dict, &key5);
 					else
-						Global_4718592.f_117349[i /*145*/][t /*4*/][u] = PV_COMP_HEAD;
+						Global_4718592.f_117349[i /*145*/][t /*4*/][u] = 0 /*PV_COMP_HEAD*/;
 			}
 		}
 	
@@ -41354,7 +41354,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_117930[i] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_117930[i] = PV_COMP_HEAD;
+			Global_4718592.f_117930[i] = 0 /*PV_COMP_HEAD*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "t", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i, 8);
@@ -41363,7 +41363,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_117935[i] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_117935[i] = PV_COMP_HEAD;
+			Global_4718592.f_117935[i] = 0 /*PV_COMP_HEAD*/;
 	
 		for (u = 0; u <= 3; u = u + 1)
 		{
@@ -41383,7 +41383,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 					if (DATAFILE::DATADICT_GET_TYPE(dict, &key5) == 2)
 						Global_4718592.f_117977[i /*581*/][u /*145*/][t /*4*/][v] = DATAFILE::DATADICT_GET_INT(dict, &key5);
 					else
-						Global_4718592.f_117977[i /*581*/][u /*145*/][t /*4*/][v] = PV_COMP_HEAD;
+						Global_4718592.f_117977[i /*581*/][u /*145*/][t /*4*/][v] = 0 /*PV_COMP_HEAD*/;
 				}
 			}
 		
@@ -41395,7 +41395,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 			if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 				Global_4718592.f_120302[i /*5*/][u] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 			else
-				Global_4718592.f_120302[i /*5*/][u] = PV_COMP_HEAD;
+				Global_4718592.f_120302[i /*5*/][u] = 0 /*PV_COMP_HEAD*/;
 		
 			TEXT_LABEL_ASSIGN_STRING(&key6, "t", 8);
 			TEXT_LABEL_APPEND_INT(&key6, i, 8);
@@ -41405,12 +41405,12 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 			if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 				Global_4718592.f_120323[i /*5*/][u] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 			else
-				Global_4718592.f_120323[i /*5*/][u] = PV_COMP_HEAD;
+				Global_4718592.f_120323[i /*5*/][u] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		for (w = 0; w < 36; w = w + 1)
 		{
-			Global_1962436[w] = PV_COMP_INVALID;
+			Global_1962436[w] = -1 /*PV_COMP_INVALID*/;
 		
 			for (x = func_380(w); x <= 31; x = x + 1)
 			{
@@ -41420,8 +41420,8 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 				
 					if (Global_4718592.f_117930[i] == w && Global_4718592.f_117935[i] == x)
 					{
-						Global_4718592.f_117930[i] = PV_COMP_HEAD;
-						Global_4718592.f_117935[i] = PV_COMP_HEAD;
+						Global_4718592.f_117930[i] = 0 /*PV_COMP_HEAD*/;
+						Global_4718592.f_117935[i] = 0 /*PV_COMP_HEAD*/;
 					}
 				}
 			
@@ -41433,8 +41433,8 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 					
 						if (Global_4718592.f_120302[i /*5*/][y] == w && Global_4718592.f_120323[i /*5*/][y] == x)
 						{
-							Global_4718592.f_120302[i /*5*/][y] = PV_COMP_HEAD;
-							Global_4718592.f_120323[i /*5*/][y] = PV_COMP_HEAD;
+							Global_4718592.f_120302[i /*5*/][y] = 0 /*PV_COMP_HEAD*/;
+							Global_4718592.f_120323[i /*5*/][y] = 0 /*PV_COMP_HEAD*/;
 						}
 					}
 				}
@@ -41455,7 +41455,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_155559[i] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_155559[i] = PV_COMP_INVALID;
+			Global_4718592.f_155559[i] = -1 /*PV_COMP_INVALID*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "tmrfs", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i, 8);
@@ -41495,7 +41495,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_178861[i] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_178861[i] = PV_COMP_INVALID;
+			Global_4718592.f_178861[i] = -1 /*PV_COMP_INVALID*/;
 	
 		func_297("pmssgo", &Global_4718592.f_178866[i], &dict, &unk433, i, -1, -1);
 	
@@ -41597,7 +41597,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		else
 			Global_4718592.f_186688 = 1000;
 	
-		for (j = PV_COMP_HEAD; j <= PV_COMP_UPPR; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 3 /*PV_COMP_UPPR*/; j = j + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&key6, "kspt", 8);
 			TEXT_LABEL_APPEND_INT(&key6, j, 8);
@@ -41768,9 +41768,9 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		else
 			Global_4718592.f_186756[i] = 0f;
 	
-		j = PV_COMP_HEAD;
+		j = 0 /*PV_COMP_HEAD*/;
 	
-		for (j = PV_COMP_HEAD; j < PV_COMP_HAND; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j < 5 /*PV_COMP_HAND*/; j = j + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&key6, "dmpm", 8);
 			TEXT_LABEL_APPEND_INT(&key6, i, 8);
@@ -41851,7 +41851,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	else
 		TEXT_LABEL_ASSIGN_STRING(&(Global_4718592.f_127487), "", 24);
 
-	for (j = PV_COMP_HEAD; j < PV_COMP_FEET; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j < 6 /*PV_COMP_FEET*/; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&key6, "avss", 8);
 		TEXT_LABEL_APPEND_INT(&key6, j, 8);
@@ -41866,32 +41866,32 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, "vsclout") == 2)
 		Global_4718592.f_155493[0] = DATAFILE::DATADICT_GET_INT(dict, "vsclout");
 	else
-		Global_4718592.f_155493[0] = PV_COMP_INVALID;
+		Global_4718592.f_155493[0] = -1 /*PV_COMP_INVALID*/;
 
 	if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, "vsthout") == 2)
 		Global_4718592.f_155493[1] = DATAFILE::DATADICT_GET_INT(dict, "vsthout");
 	else
-		Global_4718592.f_155493[1] = PV_COMP_INVALID;
+		Global_4718592.f_155493[1] = -1 /*PV_COMP_INVALID*/;
 
 	if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, "vshwout") == 2)
 		Global_4718592.f_155493[3] = DATAFILE::DATADICT_GET_INT(dict, "vshwout");
 	else
-		Global_4718592.f_155493[3] = PV_COMP_INVALID;
+		Global_4718592.f_155493[3] = -1 /*PV_COMP_INVALID*/;
 
 	if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, "vsenout") == 2)
 		Global_4718592.f_155493[2] = DATAFILE::DATADICT_GET_INT(dict, "vsenout");
 	else
-		Global_4718592.f_155493[2] = PV_COMP_INVALID;
+		Global_4718592.f_155493[2] = -1 /*PV_COMP_INVALID*/;
 
 	if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, "vstgout") == 2)
 		Global_4718592.f_155493[4] = DATAFILE::DATADICT_GET_INT(dict, "vstgout");
 	else
-		Global_4718592.f_155493[4] = PV_COMP_INVALID;
+		Global_4718592.f_155493[4] = -1 /*PV_COMP_INVALID*/;
 
 	if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, "vsbsout") == 2)
 		Global_4718592.f_155493[5] = DATAFILE::DATADICT_GET_INT(dict, "vsbsout");
 	else
-		Global_4718592.f_155493[5] = PV_COMP_INVALID;
+		Global_4718592.f_155493[5] = -1 /*PV_COMP_INVALID*/;
 
 	if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, "alfutvs") == 2)
 		Global_4718592.f_155500 = DATAFILE::DATADICT_GET_INT(dict, "alfutvs");
@@ -41955,7 +41955,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	{
 		if (lengthOfLiteralStringInBytes <= 63)
 		{
-			for (j = PV_COMP_HEAD; j <= DATAFILE::DATAARRAY_GET_COUNT(array) - 1; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= DATAFILE::DATAARRAY_GET_COUNT(array) - 1; j = j + 1)
 			{
 				TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_127207[j /*16*/], DATAFILE::DATAARRAY_GET_STRING(array, j), 64);
 			}
@@ -41964,7 +41964,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		{
 			string = DATAFILE::DATAARRAY_GET_STRING(array, 0);
 		
-			for (j = PV_COMP_HEAD; j <= PV_COMP_TEEF; j = j + 1)
+			for (j = 0 /*PV_COMP_HEAD*/; j <= 7 /*PV_COMP_TEEF*/; j = j + 1)
 			{
 				if (lengthOfLiteralStringInBytes > 63 * j)
 				{
@@ -42006,9 +42006,9 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	else
 		Global_4718592.f_3526 = Global_4718592.f_3527;
 
-	if (Global_4718592 == PV_COMP_HEAD)
+	if (Global_4718592 == 0 /*PV_COMP_HEAD*/)
 	{
-		if (Global_2684504.f_669.f_13 != PV_COMP_HEAD && Global_4718592.f_3527 != Global_2684504.f_669.f_13)
+		if (Global_2684504.f_669.f_13 != 0 /*PV_COMP_HEAD*/ && Global_4718592.f_3527 != Global_2684504.f_669.f_13)
 		{
 			if (!Global_262145.f_4397 && func_64(*Global_4718592.f_185586))
 			{
@@ -42032,7 +42032,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 			num = SYSTEM::TO_FLOAT(value) / SYSTEM::TO_FLOAT(Global_4718592.f_3522);
 			flag = false;
 		
-			if (Global_4718592.f_3527 == PV_COMP_UPPR)
+			if (Global_4718592.f_3527 == 3 /*PV_COMP_UPPR*/)
 			{
 				if (num <= 0.66f)
 				{
@@ -42040,7 +42040,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 					flag = true;
 				}
 			}
-			else if (Global_4718592.f_3527 == PV_COMP_LOWR)
+			else if (Global_4718592.f_3527 == 4 /*PV_COMP_LOWR*/)
 			{
 				if (num <= 0.5f)
 				{
@@ -42065,10 +42065,10 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	func_508(&dict);
 	func_507(dict);
 
-	if (Global_4718592 == PV_COMP_BERD)
-		if (Global_4718592.f_3527 > PV_COMP_LOWR)
+	if (Global_4718592 == 1 /*PV_COMP_BERD*/)
+		if (Global_4718592.f_3527 > 4 /*PV_COMP_LOWR*/)
 			Global_4718592.f_3527 = 4;
-	else if (Global_4718592.f_3527 > PV_COMP_LOWR)
+	else if (Global_4718592.f_3527 > 4 /*PV_COMP_LOWR*/)
 		Global_4718592.f_3527 = 4;
 
 	Global_4980736.f_215418 = DATAFILE::DATADICT_GET_INT(dict, "atmdm");
@@ -42118,7 +42118,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_127562[i20] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_127562[i20] = PV_COMP_INVALID;
+			Global_4718592.f_127562[i20] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	for (i20 = 0; i20 <= 19; i20 = i20 + 1)
@@ -42137,7 +42137,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_222511[i20] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_222511[i20] = PV_COMP_HEAD;
+			Global_4718592.f_222511[i20] = 0 /*PV_COMP_HEAD*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "rzobj", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i20, 8);
@@ -42145,7 +42145,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_222532[i20] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_222532[i20] = PV_COMP_INVALID;
+			Global_4718592.f_222532[i20] = -1 /*PV_COMP_INVALID*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "rzacc", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i20, 8);
@@ -42177,17 +42177,17 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	dict2 = DATAFILE::DATADICT_GET_DICT(iParam0, "ene");
 	_int2 = DATAFILE::DATADICT_GET_INT(dict2, "no");
 
-	for (j = PV_COMP_HEAD; j < PV_COMP_FEET; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j < 6 /*PV_COMP_FEET*/; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&key6, "hpped", 8);
 	
-		if (j > PV_COMP_HEAD)
+		if (j > 0 /*PV_COMP_HEAD*/)
 			TEXT_LABEL_APPEND_INT(&key6, j + 1, 8);
 	
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2 && _int2 > DATAFILE::DATADICT_GET_INT(dict, &key6))
 			Global_4718592.f_120606[j] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_120606[j] = PV_COMP_INVALID;
+			Global_4718592.f_120606[j] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	func_506(dict, false, false);
@@ -42420,7 +42420,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	else
 		Global_4718592.f_181503 = 0;
 
-	for (j = PV_COMP_HEAD; j <= 35; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 35; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&key6, "dtspk", 8);
 		TEXT_LABEL_APPEND_INT(&key6, j, 8);
@@ -42435,7 +42435,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		func_290(&key6, &Global_4718592.f_155288[j], &dict, -1, -1);
 	}
 
-	for (j = PV_COMP_HEAD; j <= PV_COMP_LOWR; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 4 /*PV_COMP_LOWR*/; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&key6, "cspnm", 8);
 		TEXT_LABEL_APPEND_INT(&key6, j, 8);
@@ -42462,7 +42462,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 			TEXT_LABEL_ASSIGN_STRING(&Global_4980736.f_215162[j /*16*/], "", 64);
 	}
 
-	for (j = PV_COMP_HEAD; j <= 19; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 19; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&key5, "otxsgo", 16);
 		TEXT_LABEL_APPEND_INT(&key5, j, 16);
@@ -42475,7 +42475,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 
 	for (i21 = 0; i21 <= 3; i21 = i21 + 1)
 	{
-		for (k = PV_COMP_HEAD; k <= PV_COMP_MAX; k = k + 1)
+		for (k = 0 /*PV_COMP_HEAD*/; k <= 12 /*PV_COMP_MAX*/; k = k + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&key6, "ofit", 8);
 			TEXT_LABEL_APPEND_INT(&key6, k + 1, 8);
@@ -42516,9 +42516,9 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		TEXT_LABEL_ASSIGN_STRING(&key5, "gear", 16);
 		TEXT_LABEL_APPEND_INT(&key5, i21, 16);
 	
-		for (k = PV_COMP_HEAD; k <= PV_COMP_HAIR; k = k + 1)
+		for (k = 0 /*PV_COMP_HEAD*/; k <= 2 /*PV_COMP_HAIR*/; k = k + 1)
 		{
-			if (k > PV_COMP_HEAD)
+			if (k > 0 /*PV_COMP_HEAD*/)
 			{
 				TEXT_LABEL_APPEND_STRING(&key5, "h", 16);
 				TEXT_LABEL_APPEND_INT(&key5, k, 16);
@@ -42536,7 +42536,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_155519[i21] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_155519[i21] = PV_COMP_INVALID;
+			Global_4718592.f_155519[i21] = -1 /*PV_COMP_INVALID*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "apwfr", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i21, 8);
@@ -42544,7 +42544,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_178376[i21] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_178376[i21] = PV_COMP_INVALID;
+			Global_4718592.f_178376[i21] = -1 /*PV_COMP_INVALID*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "apwlr", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i21, 8);
@@ -42552,7 +42552,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_178381[i21] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_178381[i21] = PV_COMP_INVALID;
+			Global_4718592.f_178381[i21] = -1 /*PV_COMP_INVALID*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "tcmin", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i21, 8);
@@ -42560,9 +42560,9 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2 && !func_352())
 			Global_4718592.f_178821[i21] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_178821[i21] = PV_COMP_HEAD;
+			Global_4718592.f_178821[i21] = 0 /*PV_COMP_HEAD*/;
 	
-		for (k = PV_COMP_HEAD; k <= PV_COMP_UPPR; k = k + 1)
+		for (k = 0 /*PV_COMP_HEAD*/; k <= 3 /*PV_COMP_UPPR*/; k = k + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&key6, "trcmn", 8);
 			TEXT_LABEL_APPEND_INT(&key6, k, 8);
@@ -42580,7 +42580,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_178848[i21] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_178848[i21] = PV_COMP_HEAD;
+			Global_4718592.f_178848[i21] = 0 /*PV_COMP_HEAD*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "vifcit", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i21, 8);
@@ -42588,7 +42588,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_186689[i21] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_186689[i21] = PV_COMP_INVALID;
+			Global_4718592.f_186689[i21] = -1 /*PV_COMP_INVALID*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "tvpm", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i21, 8);
@@ -42596,7 +42596,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_120560[i21] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_120560[i21] = PV_COMP_INVALID;
+			Global_4718592.f_120560[i21] = -1 /*PV_COMP_INVALID*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "tvnc", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i21, 8);
@@ -42636,7 +42636,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_120554[i21] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_120554[i21] = BLIP_HIGHER;
+			Global_4718592.f_120554[i21] = 0 /*BLIP_HIGHER*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "pmpos", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i21, 8);
@@ -42668,7 +42668,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_155459[i21] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_155459[i21] = PV_COMP_INVALID;
+			Global_4718592.f_155459[i21] = -1 /*PV_COMP_INVALID*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "dfstyl", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i21, 8);
@@ -42684,7 +42684,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4718592.f_121471[i21] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4718592.f_121471[i21] = PV_COMP_INVALID;
+			Global_4718592.f_121471[i21] = -1 /*PV_COMP_INVALID*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key6, "tswpal", 8);
 		TEXT_LABEL_APPEND_INT(&key6, i21, 8);
@@ -42692,7 +42692,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 			Global_4980736.f_88128[i21] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 		else
-			Global_4980736.f_88128[i21] = PV_COMP_INVALID;
+			Global_4980736.f_88128[i21] = -1 /*PV_COMP_INVALID*/;
 	
 		for (i22 = 0; i22 <= 6; i22 = i22 + 1)
 		{
@@ -42771,7 +42771,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 			if (DATAFILE::DATADICT_GET_TYPE(dict, &key6) == 2)
 				Global_4718592.f_182928[i21 /*8*/][i22] = DATAFILE::DATADICT_GET_INT(dict, &key6);
 			else
-				Global_4718592.f_182928[i21 /*8*/][i22] = PV_COMP_HEAD;
+				Global_4718592.f_182928[i21 /*8*/][i22] = 0 /*PV_COMP_HEAD*/;
 		
 			TEXT_LABEL_ASSIGN_STRING(&key6, "trsct", 8);
 			TEXT_LABEL_APPEND_INT(&key6, i21, 8);
@@ -42788,7 +42788,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 			if (DATAFILE::DATADICT_GET_TYPE(dict, &key5) == 2)
 				Global_4718592.f_185590[i21 /*5*/][i24] = DATAFILE::DATADICT_GET_INT(dict, &key5);
 			else
-				Global_4718592.f_185590[i21 /*5*/][i24] = PV_COMP_HEAD;
+				Global_4718592.f_185590[i21 /*5*/][i24] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		for (i25 = 0; i25 <= 10; i25 = i25 + 1)
@@ -42872,7 +42872,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 			Global_4718592.f_181550[i21] = 0f;
 	}
 
-	for (j = PV_COMP_HEAD; j <= 17; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 17; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&key6, "pnid", 8);
 		TEXT_LABEL_APPEND_INT(&key6, j, 8);
@@ -42974,7 +42974,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	else
 		Global_4718592.f_120344 = 0.075f;
 
-	for (j = PV_COMP_HEAD; j <= PV_COMP_TASK; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 9 /*PV_COMP_TASK*/; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&key5, "fsclv", 16);
 		TEXT_LABEL_APPEND_INT(&key5, j, 16);
@@ -43411,7 +43411,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 			Global_4718592.f_186993[i21] = 0f;
 	}
 
-	for (j = PV_COMP_HEAD; j <= PV_COMP_HAIR; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 2 /*PV_COMP_HAIR*/; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&key5, "cgsd", 16);
 		TEXT_LABEL_APPEND_INT(&key5, j, 16);
@@ -43419,11 +43419,11 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	
 		if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, &key5) == 3)
 			Global_4718592.f_194897[j] = DATAFILE::DATADICT_GET_FLOAT(dict, &key5);
-		else if (j == PV_COMP_HEAD)
+		else if (j == 0 /*PV_COMP_HEAD*/)
 			Global_4718592.f_194897[j] = 1.25f;
-		else if (j == PV_COMP_BERD)
+		else if (j == 1 /*PV_COMP_BERD*/)
 			Global_4718592.f_194897[j] = 1f;
-		else if (j == PV_COMP_HAIR)
+		else if (j == 2 /*PV_COMP_HAIR*/)
 			Global_4718592.f_194897[j] = 1.15f;
 	}
 
@@ -43450,7 +43450,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	func_316("rdza", &(Global_4718592.f_194907), &dict, 0f, -904994889);
 	func_290("nbtas", &(Global_4718592.f_207327), &dict, 0, -2340845);
 
-	for (j = PV_COMP_HEAD; j <= PV_COMP_FEET; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 6 /*PV_COMP_FEET*/; j = j + 1)
 	{
 		func_312(&key5, "nbtasc", j, -1);
 		func_297(&key5, &Global_4718592.f_207328[j], &dict, &unk472, j, 0, -2340845);
@@ -43470,7 +43470,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	else
 		Global_4718592.f_194891.f_1 = 35;
 
-	for (j = PV_COMP_HEAD; j <= 31; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 31; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&key5, "awtt", 16);
 		TEXT_LABEL_APPEND_INT(&key5, j, 16);
@@ -43478,7 +43478,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, &key5) == 2)
 			Global_4718592.f_186919[j] = DATAFILE::DATADICT_GET_INT(dict, &key5);
 		else
-			Global_4718592.f_186919[j] = PV_COMP_FEET;
+			Global_4718592.f_186919[j] = 6 /*PV_COMP_FEET*/;
 	}
 
 	if (dict != 0 && DATAFILE::DATADICT_GET_TYPE(dict, "awtrc") == 2)
@@ -43500,9 +43500,9 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 
 	unk473 = 2;
 
-	for (j = PV_COMP_HEAD; j <= PV_COMP_BERD; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 1 /*PV_COMP_BERD*/; j = j + 1)
 	{
-		for (k = PV_COMP_HEAD; k <= PV_COMP_JBIB; k = k + 1)
+		for (k = 0 /*PV_COMP_HEAD*/; k <= 11 /*PV_COMP_JBIB*/; k = k + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&key5, "gtppi", 16);
 			TEXT_LABEL_APPEND_INT(&key5, j, 16);
@@ -43512,7 +43512,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		}
 	}
 
-	for (j = PV_COMP_HEAD; j <= PV_COMP_TEEF; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 7 /*PV_COMP_TEEF*/; j = j + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&unk476, "saspid", 16);
 		TEXT_LABEL_APPEND_INT(&unk476, j, 16);
@@ -43593,9 +43593,9 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	func_290("agIDzz", &(Global_4718592.f_43), &dict, 0, 0);
 	unk480 = 5;
 
-	for (j = PV_COMP_HEAD; j <= PV_COMP_LOWR; j = j + 1)
+	for (j = 0 /*PV_COMP_HEAD*/; j <= 4 /*PV_COMP_LOWR*/; j = j + 1)
 	{
-		for (i27 = PV_COMP_HEAD; i27 <= PV_COMP_UPPR; i27 = i27 + 1)
+		for (i27 = 0 /*PV_COMP_HEAD*/; i27 <= 3 /*PV_COMP_UPPR*/; i27 = i27 + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&key5, "agprq_a", 16);
 			TEXT_LABEL_APPEND_INT(&key5, j, 16);
@@ -43632,7 +43632,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 	func_316("gcgc23", &(Global_4718592.f_196281), &dict, 150f, -904994889);
 	func_290("setft", &(Global_4718592.f_196285), &dict, 0, -2340845);
 
-	for (i28 = PV_COMP_HEAD; i28 <= PV_COMP_UPPR; i28 = i28 + 1)
+	for (i28 = 0 /*PV_COMP_HEAD*/; i28 <= 3 /*PV_COMP_UPPR*/; i28 = i28 + 1)
 	{
 		func_312(&key5, "asoAS", i28, -1);
 		func_290(&key5, &Global_4718592.f_127608[i28], &dict, -1, -1);
@@ -43646,7 +43646,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 
 	for (i21 = 0; i21 <= 3; i21 = i21 + 1)
 	{
-		for (j = PV_COMP_HEAD; j <= PV_COMP_UPPR; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 3 /*PV_COMP_UPPR*/; j = j + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&key5, "gCachedVeh", 16);
 			TEXT_LABEL_APPEND_INT(&key5, i21, 16);
@@ -43661,7 +43661,7 @@ void func_487(int iParam0, int iParam1, BOOL bParam2) // Position - 0x4CF24 Hash
 		}
 	}
 
-	for (i29 = PV_COMP_HEAD; i29 <= 19; i29 = i29 + 1)
+	for (i29 = 0 /*PV_COMP_HEAD*/; i29 <= 19; i29 = i29 + 1)
 	{
 		func_297("tcCBS", &Global_4718592.f_207539.f_7[i29 /*9*/], &dict, &unk488, i29, 0, 0);
 		func_297("tcTM", &(Global_4718592.f_207539.f_7[i29 /*9*/].f_1), &dict, &unk489, i29, -1, -1);
@@ -43760,11 +43760,11 @@ void func_488(var uParam0) // Position - 0x55995 Hash - 0x1BCB33D1 ^0x13AF20FA
 
 	unk = 24;
 
-	for (i = PV_COMP_HEAD; i <= 23; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 23; i = i + 1)
 	{
 		func_312(&unk26, "prqgrp", i, -1);
 	
-		for (j = PV_COMP_HEAD; j <= PV_COMP_UPPR; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 3 /*PV_COMP_UPPR*/; j = j + 1)
 		{
 			func_297(&unk26, &Global_4718592.f_210167[i /*5*/][j], uParam0, &unk[i], j, 0, -2340845);
 		}
@@ -43785,17 +43785,17 @@ void func_489(var uParam0) // Position - 0x559FC Hash - 0x81C4C45D ^0xD2E8E0F4
 	func_290("qmrCV", &unk, uParam0, 0, -2340845);
 	func_290("qmrNN", &(Global_4718592.f_209362), uParam0, 0, -2340845);
 
-	for (i = PV_COMP_HEAD; i <= 99; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 99; i = i + 1)
 	{
 		func_491(i, uParam0, &unk2);
 	}
 
-	for (i = PV_COMP_HEAD; i <= 99; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 99; i = i + 1)
 	{
 		func_490(i, uParam0, &unk3);
 	}
 
-	for (i = PV_COMP_HEAD; i <= 99; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 99; i = i + 1)
 	{
 		func_297("mPRQocQMR", &Global_4718592.f_209965[i], uParam0, &unk8, i, -1, -2340845);
 		func_297("mPRQoclQMR", &Global_4718592.f_210066[i], uParam0, &unk9, i, -1, -2340845);
@@ -43834,7 +43834,7 @@ void func_493(var uParam0, var uParam1, var uParam2) // Position - 0x55BBC Hash 
 	int j;
 	var unk;
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_HAND; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 5 /*PV_COMP_HAND*/; i = i + 1)
 	{
 		func_297("mcOr_bs", &uParam2->[i /*15*/], uParam1, uParam0, i, 0, -2340845);
 		func_297("mcOr_ei", &(uParam2->[i /*15*/].f_1), uParam1, &(uParam0->f_1), i, -1, -2340845);
@@ -43863,7 +43863,7 @@ void func_494(var uParam0, var uParam1, var uParam2) // Position - 0x55CE1 Hash 
 	int j;
 	var unk;
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_TASK; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 9 /*PV_COMP_TASK*/; i = i + 1)
 	{
 		func_297("vrcc_bs", &uParam2->[i /*12*/], uParam1, uParam0, i, 0, -2340845);
 		func_297("vrcc_vi", &(uParam2->[i /*12*/].f_2), uParam1, &(uParam0->f_1), i, -1, -2340845);
@@ -43890,7 +43890,7 @@ void func_495(var uParam0, var uParam1, var uParam2) // Position - 0x55E11 Hash 
 {
 	ePedComponentType i;
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_JBIB; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 11 /*PV_COMP_JBIB*/; i = i + 1)
 	{
 		func_297("pdsys_tm", &uParam2->[i /*3*/], uParam1, uParam0, i, -1, -1);
 		func_297("pdsys_bs", &(uParam2->[i /*3*/].f_1), uParam1, &(uParam0->f_1), i, 0, 0);
@@ -43909,13 +43909,13 @@ void func_496(var uParam0, var uParam1, var uParam2) // Position - 0x55E76 Hash 
 	int num;
 	ePedComponentType type;
 
-	type = PV_COMP_HEAD;
+	type = 0 /*PV_COMP_HEAD*/;
 
 	for (i = 0; i <= 3; i = i + 1)
 	{
 		type = i;
 	
-		for (j = PV_COMP_HEAD; j <= PV_COMP_JBIB; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 11 /*PV_COMP_JBIB*/; j = j + 1)
 		{
 			func_312(&unk, "gmp_cn_in", j, -1);
 			func_297(&unk, &uParam2->[type /*366*/].f_117[j /*14*/], uParam1, &uParam0->f_42[j /*14*/], i, 0, -2340845);
@@ -43936,7 +43936,7 @@ void func_496(var uParam0, var uParam1, var uParam2) // Position - 0x55E76 Hash 
 			}
 			else
 			{
-				for (k = PV_COMP_HEAD; k <= PV_COMP_UPPR; k = k + 1)
+				for (k = 0 /*PV_COMP_HEAD*/; k <= 3 /*PV_COMP_UPPR*/; k = k + 1)
 				{
 					func_312(&unk, "gmp_cn_prs", j, -1);
 					TEXT_LABEL_APPEND_STRING(&unk, "_", 16);
@@ -43957,9 +43957,9 @@ void func_496(var uParam0, var uParam1, var uParam2) // Position - 0x55E76 Hash 
 			func_297(&unk, &(uParam2->[type /*366*/].f_117[j /*14*/].f_13), uParam1, &(uParam0->f_42[j /*14*/].f_13), i, -1, -2340845);
 		}
 	
-		for (j = PV_COMP_HEAD; j <= PV_COMP_JBIB; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 11 /*PV_COMP_JBIB*/; j = j + 1)
 		{
-			for (k = PV_COMP_HEAD; k <= PV_COMP_UPPR; k = k + 1)
+			for (k = 0 /*PV_COMP_HEAD*/; k <= 3 /*PV_COMP_UPPR*/; k = k + 1)
 			{
 				func_312(&unk, "gmpcrpr", j, -1);
 				TEXT_LABEL_APPEND_STRING(&unk, "_", 16);
@@ -43975,7 +43975,7 @@ void func_496(var uParam0, var uParam1, var uParam2) // Position - 0x55E76 Hash 
 		func_297("gmp_cn_hc", &(uParam2->[type /*366*/].f_1), uParam1, &(uParam0->f_1), i, 9, -2340845);
 		func_297("gmp_cn_sg", &uParam2->[type /*366*/], uParam1, &(uParam0->f_2), i, 0, -2340845);
 	
-		for (j = PV_COMP_HEAD; j <= PV_COMP_JBIB; j = j + 1)
+		for (j = 0 /*PV_COMP_HEAD*/; j <= 11 /*PV_COMP_JBIB*/; j = j + 1)
 		{
 			func_312(&unk, "gmp_co_oo", j, -1);
 			TEXT_LABEL_ASSIGN_STRING(&uParam2->[type /*366*/].f_6[j /*4*/], func_395(&unk, uParam1, &uParam0->f_3[j], i, "", ""), 16);
@@ -43985,7 +43985,7 @@ void func_496(var uParam0, var uParam1, var uParam2) // Position - 0x55E76 Hash 
 			func_297(&unk, &uParam2->[type /*366*/].f_104[j], uParam1, &uParam0->f_29[j], i, 0, -2340845);
 		}
 	
-		for (k = PV_COMP_HEAD; k <= PV_COMP_UPPR; k = k + 1)
+		for (k = 0 /*PV_COMP_HEAD*/; k <= 3 /*PV_COMP_UPPR*/; k = k + 1)
 		{
 			func_312(&unk, "gtrirpr", k, -1);
 			func_297(&unk, &uParam2->[type /*366*/].f_359.f_1[k], uParam1, &uParam0->f_284.f_1[k], i, 0, -2340845);
@@ -44004,7 +44004,7 @@ void func_497(var uParam0, var uParam1, var uParam2) // Position - 0x5630D Hash 
 	ePedComponentType i;
 	int j;
 
-	for (i = PV_COMP_HEAD; i <= PV_COMP_HAND; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i <= 5 /*PV_COMP_HAND*/; i = i + 1)
 	{
 		func_297("mcpd_tm", &uParam2->[i /*21*/], uParam1, uParam0, i, 0, -2340845);
 		func_297("mcpd_bs", &(uParam2->[i /*21*/].f_1), uParam1, &(uParam0->f_1), i, 0, 0);
@@ -44462,7 +44462,7 @@ void func_507(int iParam0) // Position - 0x57477 Hash - 0x18E57C56 ^0x8057A0D9
 		if (iParam0 != 0 && DATAFILE::DATADICT_GET_TYPE(iParam0, &key) == 2)
 			Global_4718592.f_194527.f_2[i] = DATAFILE::DATADICT_GET_INT(iParam0, &key);
 		else
-			Global_4718592.f_194527.f_2[i] = PV_COMP_HEAD;
+			Global_4718592.f_194527.f_2[i] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	for (i = 0; i <= 5; i = i + 1)
@@ -44473,7 +44473,7 @@ void func_507(int iParam0) // Position - 0x57477 Hash - 0x18E57C56 ^0x8057A0D9
 		if (iParam0 != 0 && DATAFILE::DATADICT_GET_TYPE(iParam0, &key) == 2)
 			Global_4718592.f_194527.f_6[i] = DATAFILE::DATADICT_GET_INT(iParam0, &key);
 		else
-			Global_4718592.f_194527.f_6[i] = PV_COMP_INVALID;
+			Global_4718592.f_194527.f_6[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	for (i = 0; i <= 15; i = i + 1)
@@ -44484,7 +44484,7 @@ void func_507(int iParam0) // Position - 0x57477 Hash - 0x18E57C56 ^0x8057A0D9
 		if (iParam0 != 0 && DATAFILE::DATADICT_GET_TYPE(iParam0, &key) == 2)
 			Global_4718592.f_194527.f_13[i] = DATAFILE::DATADICT_GET_INT(iParam0, &key);
 		else
-			Global_4718592.f_194527.f_13[i] = PV_COMP_HEAD;
+			Global_4718592.f_194527.f_13[i] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	for (i = 0; i <= 6; i = i + 1)
@@ -44498,7 +44498,7 @@ void func_507(int iParam0) // Position - 0x57477 Hash - 0x18E57C56 ^0x8057A0D9
 			if (iParam0 != 0 && DATAFILE::DATADICT_GET_TYPE(iParam0, &key) == 2)
 				Global_4718592.f_194527.f_30[i /*6*/][j] = DATAFILE::DATADICT_GET_INT(iParam0, &key);
 			else
-				Global_4718592.f_194527.f_30[i /*6*/][j] = PV_COMP_INVALID;
+				Global_4718592.f_194527.f_30[i /*6*/][j] = -1 /*PV_COMP_INVALID*/;
 		}
 	}
 
@@ -44521,7 +44521,7 @@ void func_507(int iParam0) // Position - 0x57477 Hash - 0x18E57C56 ^0x8057A0D9
 		if (iParam0 != 0 && DATAFILE::DATADICT_GET_TYPE(iParam0, &key) == 2)
 			Global_4718592.f_194527.f_78[i] = DATAFILE::DATADICT_GET_INT(iParam0, &key);
 		else
-			Global_4718592.f_194527.f_78[i] = PV_COMP_INVALID;
+			Global_4718592.f_194527.f_78[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	for (i = 0; i <= 3; i = i + 1)
@@ -44532,7 +44532,7 @@ void func_507(int iParam0) // Position - 0x57477 Hash - 0x18E57C56 ^0x8057A0D9
 		if (iParam0 != 0 && DATAFILE::DATADICT_GET_TYPE(iParam0, &key) == 2)
 			Global_4718592.f_194527.f_83[i] = DATAFILE::DATADICT_GET_INT(iParam0, &key);
 		else
-			Global_4718592.f_194527.f_83[i] = PV_COMP_INVALID;
+			Global_4718592.f_194527.f_83[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	for (i = 0; i <= 3; i = i + 1)
@@ -44543,7 +44543,7 @@ void func_507(int iParam0) // Position - 0x57477 Hash - 0x18E57C56 ^0x8057A0D9
 		if (iParam0 != 0 && DATAFILE::DATADICT_GET_TYPE(iParam0, &key) == 2)
 			Global_4718592.f_194527.f_88[i] = DATAFILE::DATADICT_GET_INT(iParam0, &key);
 		else
-			Global_4718592.f_194527.f_88[i] = PV_COMP_INVALID;
+			Global_4718592.f_194527.f_88[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	for (i = 0; i <= 3; i = i + 1)
@@ -44569,7 +44569,7 @@ void func_507(int iParam0) // Position - 0x57477 Hash - 0x18E57C56 ^0x8057A0D9
 		if (iParam0 != 0 && DATAFILE::DATADICT_GET_TYPE(iParam0, &key) == 2)
 			Global_4718592.f_194527.f_118[i /*3*/] = DATAFILE::DATADICT_GET_INT(iParam0, &key);
 		else
-			Global_4718592.f_194527.f_118[i /*3*/] = PV_COMP_HEAD;
+			Global_4718592.f_194527.f_118[i /*3*/] = 0 /*PV_COMP_HEAD*/;
 	
 		TEXT_LABEL_ASSIGN_STRING(&key, "MCV_OMT", 16);
 		TEXT_LABEL_APPEND_INT(&key, i, 16);
@@ -44684,7 +44684,7 @@ ePedComponentType func_509(ePedComponentType epctParam0) // Position - 0x57C34 H
 	BOOL flag;
 	Player player2;
 
-	for (i = PV_COMP_HEAD; i < 32; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i < 32; i = i + 1)
 	{
 		player2 = PLAYER::INT_TO_PLAYERINDEX(i);
 	
@@ -44694,7 +44694,7 @@ ePedComponentType func_509(ePedComponentType epctParam0) // Position - 0x57C34 H
 		
 			if (!func_510(player2) && Global_1845281[player /*883*/].f_206 != 8 && !IS_BIT_SET(Global_1845281[player /*883*/].f_36.f_18, 14))
 			{
-				if (Global_1845281[player /*883*/].f_97.f_28 != PV_COMP_INVALID)
+				if (Global_1845281[player /*883*/].f_97.f_28 != -1 /*PV_COMP_INVALID*/)
 				{
 					MISC::SET_BIT(&address, Global_1845281[player /*883*/].f_97.f_28);
 				
@@ -44705,7 +44705,7 @@ ePedComponentType func_509(ePedComponentType epctParam0) // Position - 0x57C34 H
 		}
 	}
 
-	for (i = PV_COMP_HEAD; i < epctParam0; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i < epctParam0; i = i + 1)
 	{
 		if (!IS_BIT_SET(address, i))
 			if (flag)
@@ -44797,11 +44797,11 @@ struct<16> func_520() // Position - 0x57E68 Hash - 0xB0E08631 ^0xC36122C6
 
 	TEXT_LABEL_ASSIGN_STRING(&unk, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("FMMC_CH_DN" /*The Diamond Casino Heist*/), 64);
 
-	if (Global_1964815 == PV_COMP_BERD)
+	if (Global_1964815 == 1 /*PV_COMP_BERD*/)
 		TEXT_LABEL_ASSIGN_STRING(&unk, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("FMMC_CH_SS" /*The Diamond Casino Heist – Silent & Sneaky*/), 64);
-	else if (Global_1964815 == PV_COMP_HAIR)
+	else if (Global_1964815 == 2 /*PV_COMP_HAIR*/)
 		TEXT_LABEL_ASSIGN_STRING(&unk, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("FMMC_CH_BC" /*The Diamond Casino Heist – The Big Con*/), 64);
-	else if (Global_1964815 == PV_COMP_UPPR)
+	else if (Global_1964815 == 3 /*PV_COMP_UPPR*/)
 		TEXT_LABEL_ASSIGN_STRING(&unk, HUD::GET_FILENAME_FOR_AUDIO_CONVERSATION("FMMC_CH_AG" /*The Diamond Casino Heist – Aggressive*/), 64);
 
 	return unk;
@@ -44916,22 +44916,22 @@ ePedComponentType func_531(ePedComponentType epctParam0) // Position - 0x5806A H
 {
 	switch (epctParam0)
 	{
-		case PV_COMP_HEAD:
+		case 0 /*PV_COMP_HEAD*/:
 			return 13;
 	
-		case PV_COMP_BERD:
+		case 1 /*PV_COMP_BERD*/:
 			return 13;
 	
-		case PV_COMP_UPPR:
+		case 3 /*PV_COMP_UPPR*/:
 			return 6;
 	
-		case PV_COMP_HAIR:
+		case 2 /*PV_COMP_HAIR*/:
 			return 2;
 	
-		case PV_COMP_LOWR:
+		case 4 /*PV_COMP_LOWR*/:
 			return 12;
 	
-		case PV_COMP_HAND:
+		case 5 /*PV_COMP_HAND*/:
 			return 53;
 	
 		default:
@@ -45056,16 +45056,16 @@ Vector3 func_538() // Position - 0x584E3 Hash - 0xA9B5EBA8 ^0xA9B5EBA8
 
 int func_539() // Position - 0x584EE Hash - 0x6AE8228F ^0x6B31D0A3
 {
-	if (Global_4718592 == PV_COMP_BERD)
+	if (Global_4718592 == 1 /*PV_COMP_BERD*/)
 		return 29;
 
-	if (Global_4718592 == PV_COMP_HAIR)
+	if (Global_4718592 == 2 /*PV_COMP_HAIR*/)
 		return func_540();
 
-	if (Global_4718592.f_2 == PV_COMP_FEET || Global_4718592.f_2 == PV_COMP_HAND)
+	if (Global_4718592.f_2 == 6 /*PV_COMP_FEET*/ || Global_4718592.f_2 == 5 /*PV_COMP_HAND*/)
 		return 30;
 
-	if (Global_4718592 == PV_COMP_HEAD)
+	if (Global_4718592 == 0 /*PV_COMP_HEAD*/)
 		return 31;
 
 	return 16;
@@ -45321,11 +45321,11 @@ void func_545(var uParam0) // Position - 0x58804 Hash - 0x153421FA ^0xEC8E8075
 	
 		func_290(&key, &(Global_4718592.f_190439[i /*24*/].f_23), uParam0, -2, -2);
 	
-		if (Global_4718592.f_190439[i /*24*/] == PV_COMP_HEAD)
+		if (Global_4718592.f_190439[i /*24*/] == 0 /*PV_COMP_HEAD*/)
 		{
 			if (IS_BIT_SET(*Global_4718592.f_190336, 5))
 			{
-				Global_4718592.f_190439[i /*24*/] = PV_COMP_HAIR;
+				Global_4718592.f_190439[i /*24*/] = 2 /*PV_COMP_HAIR*/;
 				Global_4718592.f_190439[i /*24*/].f_13 = 0f;
 				Global_4718592.f_190439[i /*24*/].f_14 = 0f;
 			}
@@ -45934,7 +45934,7 @@ void func_561(var uParam0, BOOL bParam1) // Position - 0x59CFF Hash - 0xCA5DE786
 			if (*uParam0 != 0 && DATAFILE::DATADICT_GET_TYPE(*uParam0, &key) == 2)
 				Global_4718592.f_190637[num /*120*/].f_24[k] = DATAFILE::DATADICT_GET_INT(*uParam0, &key);
 			else
-				Global_4718592.f_190637[num /*120*/].f_24[k] = PV_COMP_INVALID;
+				Global_4718592.f_190637[num /*120*/].f_24[k] = -1 /*PV_COMP_INVALID*/;
 		
 			TEXT_LABEL_ASSIGN_STRING(&key, "w", 16);
 			TEXT_LABEL_APPEND_INT(&key, i, 16);
@@ -45944,7 +45944,7 @@ void func_561(var uParam0, BOOL bParam1) // Position - 0x59CFF Hash - 0xCA5DE786
 			if (*uParam0 != 0 && DATAFILE::DATADICT_GET_TYPE(*uParam0, &key) == 2)
 				Global_4718592.f_190637[num /*120*/].f_29[k] = DATAFILE::DATADICT_GET_INT(*uParam0, &key);
 			else
-				Global_4718592.f_190637[num /*120*/].f_29[k] = PV_COMP_INVALID;
+				Global_4718592.f_190637[num /*120*/].f_29[k] = -1 /*PV_COMP_INVALID*/;
 		}
 	
 		TEXT_LABEL_ASSIGN_STRING(&key, "w", 16);
@@ -46269,8 +46269,8 @@ void func_562(var uParam0) // Position - 0x5A8D4 Hash - 0xB7175CB2 ^0x1A80C316
 			}
 			else
 			{
-				Global_4718592.f_190637[type /*120*/].f_24[j] = PV_COMP_INVALID;
-				Global_4718592.f_190637[type + 1 /*120*/].f_24[j] = PV_COMP_INVALID;
+				Global_4718592.f_190637[type /*120*/].f_24[j] = -1 /*PV_COMP_INVALID*/;
+				Global_4718592.f_190637[type + 1 /*120*/].f_24[j] = -1 /*PV_COMP_INVALID*/;
 			}
 		
 			TEXT_LABEL_ASSIGN_STRING(&key, "w", 16);
@@ -46285,8 +46285,8 @@ void func_562(var uParam0) // Position - 0x5A8D4 Hash - 0xB7175CB2 ^0x1A80C316
 			}
 			else
 			{
-				Global_4718592.f_190637[type /*120*/].f_29[j] = PV_COMP_INVALID;
-				Global_4718592.f_190637[type + 1 /*120*/].f_29[j] = PV_COMP_INVALID;
+				Global_4718592.f_190637[type /*120*/].f_29[j] = -1 /*PV_COMP_INVALID*/;
+				Global_4718592.f_190637[type + 1 /*120*/].f_29[j] = -1 /*PV_COMP_INVALID*/;
 			}
 		}
 	
@@ -46501,7 +46501,7 @@ void func_563(int iParam0) // Position - 0x5B64B Hash - 0x32FF4418 ^0xD857E58F
 		MISC::SET_BIT(&(Global_4718592.f_190637[iParam0 /*120*/].f_35), 2);
 
 	if (IS_BIT_SET(Global_4718592.f_190637[iParam0 /*120*/].f_34, 4))
-		Global_4718592.f_190637[iParam0 /*120*/] = PV_COMP_INVALID;
+		Global_4718592.f_190637[iParam0 /*120*/] = -1 /*PV_COMP_INVALID*/;
 
 	return;
 }
@@ -46523,7 +46523,7 @@ void func_564(var uParam0) // Position - 0x5B978 Hash - 0x569374AA ^0x7DF8D21D
 		if (DATAFILE::DATADICT_GET_TYPE(*uParam0, &key) == 2)
 			Global_4718592.f_193638[i /*42*/] = DATAFILE::DATADICT_GET_INT(*uParam0, &key);
 		else
-			Global_4718592.f_193638[i /*42*/] = PV_COMP_INVALID;
+			Global_4718592.f_193638[i /*42*/] = -1 /*PV_COMP_INVALID*/;
 	
 		func_565(&key, "lft", i);
 		TEXT_LABEL_APPEND_STRING(&key, "aa0", 8);
@@ -46947,7 +46947,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (i = 0; i <= 49; i = i + 1)
 		{
-			Global_4718592.f_194915.f_1[i] = PV_COMP_HEAD;
+			Global_4718592.f_194915.f_1[i] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		m = 0;
@@ -47088,7 +47088,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 		for (l = 0; l <= 5; l = l + 1)
 		{
 			func_694();
-			Global_4718592.f_190439[l /*24*/] = PV_COMP_HEAD;
+			Global_4718592.f_190439[l /*24*/] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_190439[l /*24*/].f_15 = 15000;
 			Global_4718592.f_190439[l /*24*/].f_1 = 0;
 			Global_4718592.f_190439[l /*24*/].f_2 = { 0f, 0f, 0f };
@@ -47168,7 +47168,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 				Global_4718592.f_117236[i /*4*/][n] = 0;
 			}
 		
-			Global_4718592.f_117207[i] = PV_COMP_HEAD;
+			Global_4718592.f_117207[i] = 0 /*PV_COMP_HEAD*/;
 		}
 	}
 
@@ -47183,7 +47183,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_186352[i /*65*/][o /*16*/], "", 64);
 		}
 	
-		Global_4718592.f_186678[i] = PV_COMP_INVALID;
+		Global_4718592.f_186678[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	for (i = 0; i <= 2; i = i + 1)
@@ -47195,7 +47195,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	{
 		Global_4718592.f_155474[i /*3*/][0] = 0;
 		Global_4718592.f_155474[i /*3*/][1] = 0;
-		Global_4718592.f_155493[i] = PV_COMP_INVALID;
+		Global_4718592.f_155493[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	Global_4718592.f_155500 = 0;
@@ -47218,7 +47218,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	for (i = 0; i <= 35; i = i + 1)
 	{
 		TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_154999[i /*8*/], "", 32);
-		Global_4718592.f_155288[i] = PV_COMP_INVALID;
+		Global_4718592.f_155288[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	Global_4718592.f_181503 = 0;
@@ -47254,19 +47254,19 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (i = 0; i <= 3; i = i + 1)
 	{
-		Global_4718592.f_117930[i] = PV_COMP_HEAD;
-		Global_4718592.f_117935[i] = PV_COMP_HEAD;
-		Global_4718592.f_3534[i] = PV_COMP_HEAD;
-		Global_4718592.f_178821[i] = PV_COMP_HEAD;
+		Global_4718592.f_117930[i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_117935[i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_3534[i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_178821[i] = 0 /*PV_COMP_HEAD*/;
 	
 		for (j = 0; j <= 3; j = j + 1)
 		{
 			Global_4718592.f_178826[i /*5*/][j] = 0;
-			Global_4718592.f_120302[i /*5*/][j] = PV_COMP_HEAD;
-			Global_4718592.f_120323[i /*5*/][j] = PV_COMP_HEAD;
+			Global_4718592.f_120302[i /*5*/][j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_120323[i /*5*/][j] = 0 /*PV_COMP_HEAD*/;
 		}
 	
-		Global_4718592.f_3529[i] = PV_COMP_BERD;
+		Global_4718592.f_3529[i] = 1 /*PV_COMP_BERD*/;
 		Global_4718592.f_125500[i /*3*/] = { 0f, 0f, 0f };
 		Global_4718592.f_125513[i /*3*/] = { 0f, 0f, 0f };
 		Global_4718592.f_125526[i] = 0f;
@@ -47275,21 +47275,21 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 		Global_4718592.f_181532[i /*3*/] = { 0f, 0f, 0f };
 		Global_4718592.f_181545[i] = 45f;
 		Global_4718592.f_181550[i] = 0f;
-		Global_4718592.f_121471[i] = PV_COMP_INVALID;
-		Global_4980736.f_88128[i] = PV_COMP_INVALID;
+		Global_4718592.f_121471[i] = -1 /*PV_COMP_INVALID*/;
+		Global_4980736.f_88128[i] = -1 /*PV_COMP_INVALID*/;
 		TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_182793[i /*16*/], "", 64);
 		TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_182858[i /*16*/], "", 64);
 		Global_4718592.f_182923[i] = 0;
 		TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_182595[i /*16*/], "", 64);
-		Global_4718592.f_155559[i] = PV_COMP_INVALID;
+		Global_4718592.f_155559[i] = -1 /*PV_COMP_INVALID*/;
 	
 		for (j = 0; j <= 1; j = j + 1)
 		{
 			TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_182660[i /*33*/][j /*16*/], "", 64);
 		}
 	
-		Global_4718592.f_109657[i] = PV_COMP_INVALID;
-		Global_4718592.f_109662[i] = PV_COMP_INVALID;
+		Global_4718592.f_109657[i] = -1 /*PV_COMP_INVALID*/;
+		Global_4718592.f_109662[i] = -1 /*PV_COMP_INVALID*/;
 		TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_185547[i /*4*/], "", 16);
 		TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_185564[i /*4*/], "", 16);
 		Global_4718592.f_185581[i] = 0;
@@ -47298,8 +47298,8 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (j = 0; j < 5; j = j + 1)
 		{
-			Global_4718592.f_207240[i /*6*/][j] = PV_COMP_HEAD;
-			Global_4718592.f_207265[i /*6*/][j] = PV_COMP_HEAD;
+			Global_4718592.f_207240[i /*6*/][j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_207265[i /*6*/][j] = 0 /*PV_COMP_HEAD*/;
 		}
 	}
 
@@ -47333,7 +47333,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	for (i = 0; i <= 3; i = i + 1)
 	{
 		Global_4718592.f_185844[i] = 0;
-		Global_4718592.f_185849[i] = PV_COMP_HEAD;
+		Global_4718592.f_185849[i] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	Global_4718592.f_185792 = 5;
@@ -47389,10 +47389,10 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	{
 		Global_4718592.f_120358[i /*3*/] = { 0f, 0f, 0f };
 		Global_4718592.f_120389[i /*3*/] = { 0f, 0f, 0f };
-		Global_4718592.f_120347[i] = PV_COMP_HEAD;
+		Global_4718592.f_120347[i] = 0 /*PV_COMP_HEAD*/;
 		Global_4718592.f_120420[i /*3*/] = { 0f, 0f, 0f };
-		Global_4718592.f_120451[i] = PV_COMP_INVALID;
-		Global_4718592.f_120462[i] = PV_COMP_INVALID;
+		Global_4718592.f_120451[i] = -1 /*PV_COMP_INVALID*/;
+		Global_4718592.f_120462[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	Global_4718592.f_183015 = 0;
@@ -47454,8 +47454,8 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	for (i = 0; i <= 19; i = i + 1)
 	{
 		Global_4718592.f_222450[i /*3*/] = { 0f, 0f, 0f };
-		Global_4718592.f_222511[i] = PV_COMP_HEAD;
-		Global_4718592.f_222532[i] = PV_COMP_INVALID;
+		Global_4718592.f_222511[i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_222532[i] = -1 /*PV_COMP_INVALID*/;
 		Global_4718592.f_222553[i] = 100f;
 		Global_4718592.f_222575[i] = -1;
 	}
@@ -47489,13 +47489,13 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	for (i = 0; i <= 3; i = i + 1)
 	{
 		Global_4718592.f_127733[i] = -1;
-		Global_4718592.f_178861[i] = PV_COMP_INVALID;
-		Global_4718592.f_178866[i] = PV_COMP_INVALID;
+		Global_4718592.f_178861[i] = -1 /*PV_COMP_INVALID*/;
+		Global_4718592.f_178866[i] = -1 /*PV_COMP_INVALID*/;
 		p = 0;
 	
 		for (p = 0; p <= 4; p = p + 1)
 		{
-			Global_4718592.f_178871[i /*6*/][p] = PV_COMP_INVALID;
+			Global_4718592.f_178871[i /*6*/][p] = -1 /*PV_COMP_INVALID*/;
 		}
 	}
 
@@ -47513,7 +47513,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (i = 0; i <= 28; i = i + 1)
 	{
-		Global_4718592.f_155348[i] = PV_COMP_HAND;
+		Global_4718592.f_155348[i] = 5 /*PV_COMP_HAND*/;
 	}
 
 	if (bParam3)
@@ -47528,7 +47528,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (i = 0; i <= 3; i = i + 1)
 	{
-		Global_4718592.f_120486[i] = PV_COMP_HEAD;
+		Global_4718592.f_120486[i] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	for (i = 0; i <= 3; i = i + 1)
@@ -47555,7 +47555,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (j = 0; j <= 19; j = j + 1)
 	{
-		Global_4718592.f_127712[j] = PV_COMP_HEAD;
+		Global_4718592.f_127712[j] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	Global_4718592.f_127595 = 100;
@@ -47700,11 +47700,11 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 		Global_4718592.f_107157[i] = 0;
 		Global_4718592.f_107162[i] = 0;
 		Global_4718592.f_107167[i] = -1;
-		Global_4718592.f_107178[i] = PV_COMP_HEAD;
-		Global_4718592.f_107215[i] = PV_COMP_BERD;
-		Global_4718592.f_107220[i] = PV_COMP_INVALID;
+		Global_4718592.f_107178[i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_107215[i] = 1 /*PV_COMP_BERD*/;
+		Global_4718592.f_107220[i] = -1 /*PV_COMP_INVALID*/;
 		TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_107183[i /*4*/], "", 16);
-		Global_4718592.f_107205[i] = PV_COMP_UPPR;
+		Global_4718592.f_107205[i] = 3 /*PV_COMP_UPPR*/;
 		Global_4718592.f_107210[i] = -1;
 		Global_4718592.f_107225[i] = -1;
 		Global_4718592.f_107230[i] = -1;
@@ -47712,14 +47712,14 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 		Global_4718592.f_107240[i] = -1;
 		Global_4718592.f_107255[i] = 0;
 		Global_4718592.f_107260[i] = -1;
-		Global_4718592.f_107173[i] = PV_COMP_HEAD;
+		Global_4718592.f_107173[i] = 0 /*PV_COMP_HEAD*/;
 		Global_4718592.f_107200[i] = 0;
 		Global_4718592.f_155331[i] = 0;
 		Global_4718592.f_155336[i] = 0;
 		Global_4718592.f_120519[i] = 100;
 		Global_4718592.f_120524[i] = 1f;
-		Global_4718592.f_120529[i] = PV_COMP_HEAD;
-		Global_4718592.f_120554[i] = BLIP_HIGHER;
+		Global_4718592.f_120529[i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_120554[i] = 0 /*BLIP_HIGHER*/;
 		Global_4718592.f_3592[i /*25891*/].f_14237 = 0;
 		Global_4718592.f_3592[i /*25891*/].f_14238 = 0;
 		Global_4718592.f_3592[i /*25891*/].f_14239 = 0;
@@ -47736,7 +47736,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			Global_4718592.f_155502[i /*4*/][j] = 0;
 		}
 	
-		Global_4718592.f_155519[i] = PV_COMP_INVALID;
+		Global_4718592.f_155519[i] = -1 /*PV_COMP_INVALID*/;
 	
 		for (j = 0; j <= 6; j = j + 1)
 		{
@@ -47747,8 +47747,8 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 				Global_4718592.f_126139[i /*92*/][j /*13*/][k /*3*/] = { 0f, 0f, 0f };
 			}
 		
-			Global_4718592.f_182928[i /*8*/][j] = PV_COMP_HEAD;
-			Global_4718592.f_182961[i /*8*/][j] = PV_COMP_HEAD;
+			Global_4718592.f_182928[i /*8*/][j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_182961[i /*8*/][j] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		for (j = 0; j <= 35; j = j + 1)
@@ -47758,7 +47758,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (j = 0; j <= 3; j = j + 1)
 		{
-			Global_4718592.f_185590[i /*5*/][j] = PV_COMP_HEAD;
+			Global_4718592.f_185590[i /*5*/][j] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		for (j = 0; j <= 35; j = j + 1)
@@ -47780,9 +47780,9 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (j = 0; j <= 133; j = j + 1)
 		{
-			Global_4718592.f_3592[i /*25891*/].f_66[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_357[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_649[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_66[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_357[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_649[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_214[j] = 1f;
 			Global_4718592.f_3592[i /*25891*/].f_505[j] = 1f;
 			Global_4718592.f_3592[i /*25891*/].f_797[j] = 1f;
@@ -47829,14 +47829,14 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			Global_4718592.f_3592[i /*25891*/].f_8534[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_8552[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_8570[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_8588[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8606[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8624[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8642[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8660[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_8588[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8606[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8624[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8642[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8660[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_1674[j] = 0f;
-			Global_4718592.f_3592[i /*25891*/].f_5938[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_5956[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_5938[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_5956[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_5974[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_5992[j] = -1;
 			Global_4718592.f_3592[i /*25891*/].f_6010[j] = 0;
@@ -47851,37 +47851,37 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			Global_4718592.f_3592[i /*25891*/].f_6028[j] = -1;
 			Global_4718592.f_3592[i /*25891*/].f_19075[j] = 10;
 			Global_4718592.f_3592[i /*25891*/].f_19093[j] = 10;
-			Global_4718592.f_3592[i /*25891*/].f_14450[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_19909[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_25624[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_14450[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_19909[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_25624[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_7297[j] = -1f;
 			Global_4718592.f_3592[i /*25891*/].f_7616[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_8318[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_8318[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_18781[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_18799[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_18841[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_25747[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_25765[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_25801[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8678[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_25747[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_25765[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_25801[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8678[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_20269[j] = 0f;
-			Global_4718592.f_3592[i /*25891*/].f_20287[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_21092[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_21110[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_20287[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_21092[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_21110[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_21128[j] = 3000;
-			Global_4718592.f_3592[i /*25891*/].f_21022[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_21022[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_21040[j /*3*/] = { func_143() };
-			Global_4718592.f_3592[i /*25891*/].f_7157[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_7157[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_9060[j] = -1;
 			Global_4718592.f_3592[i /*25891*/].f_8732[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_9024[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_9042[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_25642[j /*5*/] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_9024[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_9042[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_25642[j /*5*/] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_25642[j /*5*/].f_1 = -1;
 			Global_4718592.f_3592[i /*25891*/].f_25642[j /*5*/].f_2 = -1;
 			Global_4718592.f_3592[i /*25891*/].f_25642[j /*5*/].f_3 = 0;
 			Global_4718592.f_3592[i /*25891*/].f_25642[j /*5*/].f_4 = -1;
-			Global_4718592.f_3592[i /*25891*/].f_25728[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_25728[j] = 0 /*PV_COMP_HEAD*/;
 		
 			for (k = 0; k <= 31; k = k + 1)
 			{
@@ -47892,14 +47892,14 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			{
 				Global_4718592.f_3592[i /*25891*/].f_9640[j /*81*/][k] = -1;
 				Global_4718592.f_3592[i /*25891*/].f_21742[j /*81*/][k] = -2;
-				Global_4718592.f_3592[i /*25891*/].f_23120[j /*81*/][k] = PV_COMP_INVALID;
+				Global_4718592.f_3592[i /*25891*/].f_23120[j /*81*/][k] = -1 /*PV_COMP_INVALID*/;
 			}
 		
 			for (k = 0; k <= 31; k = k + 1)
 			{
 				Global_4718592.f_3592[i /*25891*/].f_11018[j /*33*/][k] = -1;
 				Global_4718592.f_3592[i /*25891*/].f_24498[j /*33*/][k] = -2;
-				Global_4718592.f_3592[i /*25891*/].f_25060[j /*33*/][k] = PV_COMP_INVALID;
+				Global_4718592.f_3592[i /*25891*/].f_25060[j /*33*/][k] = -1 /*PV_COMP_INVALID*/;
 			}
 		
 			for (k = 0; k <= 19; k = k + 1)
@@ -47920,7 +47920,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			for (k = 0; k <= 6; k = k + 1)
 			{
 				Global_4718592.f_3592[i /*25891*/].f_8750[j /*8*/][k] = 0;
-				Global_4718592.f_3592[i /*25891*/].f_8887[j /*8*/][k] = PV_COMP_INVALID;
+				Global_4718592.f_3592[i /*25891*/].f_8887[j /*8*/][k] = -1 /*PV_COMP_INVALID*/;
 			}
 		
 			TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_3592[i /*25891*/].f_19636[j /*16*/], "", 64);
@@ -47930,7 +47930,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			Global_4718592.f_3592[i /*25891*/].f_19548[j /*4*/] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_19548[j /*4*/].f_3 = 0f;
 			Global_4718592.f_3592[i /*25891*/].f_19548[j /*4*/].f_2 = 0;
-			Global_4718592.f_3592[i /*25891*/].f_20305[j /*39*/] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_20305[j /*39*/] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_20305[j /*39*/].f_1 = 0;
 			Global_4718592.f_3592[i /*25891*/].f_20305[j /*39*/].f_2 = 0;
 			Global_4718592.f_3592[i /*25891*/].f_20305[j /*39*/].f_3 = 0;
@@ -47941,19 +47941,19 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			Global_4718592.f_3592[i /*25891*/].f_20305[j /*39*/].f_38 = 0;
 			func_405(&Global_4718592.f_3592[i /*25891*/].f_20987[j /*2*/], 0);
 			Global_4718592.f_3592[i /*25891*/].f_14082[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_40[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_40[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_108448[j /*5*/][i] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_14242[j] = 60000;
 			Global_4718592.f_3592[i /*25891*/].f_14260[j] = 60000;
 			Global_4718592.f_3592[i /*25891*/].f_19368[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_19386[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_19386[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_19404[j] = 0f;
-			Global_4718592.f_3592[i /*25891*/].f_19422[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_19422[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_19440[j] = 0f;
-			Global_4718592.f_3592[i /*25891*/].f_19458[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_19476[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_19494[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_19512[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_19458[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_19476[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_19494[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_19512[j] = 0 /*PV_COMP_HEAD*/;
 		
 			for (k = 0; k <= 3; k = k + 1)
 			{
@@ -47961,7 +47961,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 				Global_4718592.f_3592[i /*25891*/].f_14278[j /*5*/][k] = 0;
 			}
 		
-			Global_4718592.f_107265[j /*5*/][i] = PV_COMP_INVALID;
+			Global_4718592.f_107265[j /*5*/][i] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_107351[j /*5*/][i] = 0;
 			Global_4718592.f_107437[j /*5*/][i] = 0;
 			Global_4718592.f_107523[j /*5*/][i] = 0;
@@ -47971,25 +47971,25 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			Global_4718592.f_107867[j /*5*/][i] = 35;
 			TEXT_LABEL_ASSIGN_STRING(&Global_1917733.f_152[i /*273*/][j /*16*/], "", 64);
 			Global_1917733.f_6[i /*18*/][j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_1074[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_1092[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_6194[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_6212[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_6230[j] = PV_COMP_BERD;
-			Global_4718592.f_3592[i /*25891*/].f_6302[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_6320[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_1074[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_1092[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_6194[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_6212[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_6230[j] = 1 /*PV_COMP_BERD*/;
+			Global_4718592.f_3592[i /*25891*/].f_6302[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_6320[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_6398[j] = 10000;
-			Global_4718592.f_3592[i /*25891*/].f_6416[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_6416[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_6342[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_6360[j] = -2;
 			Global_4718592.f_3592[i /*25891*/].f_6378[j] = 1;
-			Global_4718592.f_3592[i /*25891*/].f_6452[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_6452[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_6248[j] = 1;
-			Global_4718592.f_3592[i /*25891*/].f_6470[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_6470[j] = 0 /*PV_COMP_HEAD*/;
 		
 			for (q = 0; q <= 3; q = q + 1)
 			{
-				Global_4718592.f_3592[i /*25891*/].f_6488[j /*13*/][q /*3*/] = PV_COMP_HEAD;
+				Global_4718592.f_3592[i /*25891*/].f_6488[j /*13*/][q /*3*/] = 0 /*PV_COMP_HEAD*/;
 				Global_4718592.f_3592[i /*25891*/].f_6488[j /*13*/][q /*3*/].f_1 = 0;
 				Global_4718592.f_3592[i /*25891*/].f_6488[j /*13*/][q /*3*/].f_2 = 1;
 			}
@@ -47998,24 +47998,24 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 		
 			for (r = 0; r <= 3; r = r + 1)
 			{
-				Global_4718592.f_3592[i /*25891*/].f_17781[j /*17*/][r /*4*/] = PV_COMP_HEAD;
+				Global_4718592.f_3592[i /*25891*/].f_17781[j /*17*/][r /*4*/] = 0 /*PV_COMP_HEAD*/;
 				Global_4718592.f_3592[i /*25891*/].f_17781[j /*17*/][r /*4*/].f_1 = -1;
 				Global_4718592.f_3592[i /*25891*/].f_17781[j /*17*/][r /*4*/].f_2 = -1;
 				Global_4718592.f_3592[i /*25891*/].f_17781[j /*17*/][r /*4*/].f_3 = -1;
 			}
 		
-			Global_4718592.f_3592[i /*25891*/].f_6711[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_6711[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_7031[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_7067[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_6765[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_6729[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_6747[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7121[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_7139[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_6905[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7049[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7085[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_6959[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_6747[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7121[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_7139[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_6905[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7049[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7085[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_6959[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_6977[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_6923[j] = 100;
 			Global_4718592.f_3592[i /*25891*/].f_6783[j /*3*/] = { 0f, 0f, 0f };
@@ -48023,103 +48023,103 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			Global_4718592.f_3592[i /*25891*/].f_6887[j] = 0f;
 			Global_4718592.f_3592[i /*25891*/].f_6941[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_6995[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_7013[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_7013[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_7103[j] = -1f;
-			Global_4718592.f_3592[i /*25891*/].f_17745[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_17763[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_2232[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_2250[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_17745[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_17763[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_2232[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_2250[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_2268[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_2286[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_2322[j] = -1;
-			Global_4718592.f_3592[i /*25891*/].f_1110[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_1128[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_1110[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_1128[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_2304[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_2340[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_2358[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_2358[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_18421[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_18331[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_18331[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_18439[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_18457[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_18475[j] = -1;
 			Global_4718592.f_3592[i /*25891*/].f_18493[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_18511[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_18511[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_18529[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_18565[j] = -1;
-			Global_4718592.f_3592[i /*25891*/].f_18583[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_18583[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_18763[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_18547[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_18547[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_18601[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_18619[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_18637[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_18655[j] = -1;
-			Global_4718592.f_3592[i /*25891*/].f_18745[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_18745[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_18673[j] = -1;
 			Global_4718592.f_3592[i /*25891*/].f_946[j] = 5;
 			Global_4718592.f_3592[i /*25891*/].f_964[j] = 20;
 			Global_4718592.f_3592[i /*25891*/].f_1890[j] = -1;
 			Global_4718592.f_3592[i /*25891*/].f_25783[j] = SYSTEM::CEIL(10f);
-			Global_4718592.f_3592[i /*25891*/].f_25855[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_25837[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_25873[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_982[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_1000[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_25855[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_25837[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_25873[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_982[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_1000[j] = 0 /*PV_COMP_HEAD*/;
 			s = 0;
 		
 			for (s = 0; s <= 3; s = s + 1)
 			{
-				Global_4718592.f_3592[i /*25891*/].f_1232[j /*5*/][s] = PV_COMP_HEAD;
-				Global_4718592.f_3592[i /*25891*/].f_1146[j /*5*/][s] = PV_COMP_HEAD;
-				Global_4718592.f_3592[i /*25891*/].f_1318[j /*5*/][s] = PV_COMP_HEAD;
+				Global_4718592.f_3592[i /*25891*/].f_1232[j /*5*/][s] = 0 /*PV_COMP_HEAD*/;
+				Global_4718592.f_3592[i /*25891*/].f_1146[j /*5*/][s] = 0 /*PV_COMP_HEAD*/;
+				Global_4718592.f_3592[i /*25891*/].f_1318[j /*5*/][s] = 0 /*PV_COMP_HEAD*/;
 			}
 		
-			Global_4718592.f_3592[i /*25891*/].f_1404[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_25819[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_7634[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_7652[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7670[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_1404[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_25819[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_7634[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_7652[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7670[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_7688[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_7706[j] = -1;
-			Global_4718592.f_3592[i /*25891*/].f_7724[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_7724[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_7742[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_7760[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7778[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7796[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7814[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7832[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7850[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7868[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7886[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7904[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7922[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7940[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7976[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7994[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8012[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_8030[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8048[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8066[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8084[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8102[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8120[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8138[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8156[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8174[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8192[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_7958[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8210[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8228[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8246[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8264[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_8282[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8300[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_8318[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_8714[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_20969[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_7760[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7778[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7796[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7814[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7832[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7850[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7868[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7886[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7904[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7922[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7940[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7976[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7994[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8012[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_8030[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8048[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8066[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8084[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8102[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8120[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8138[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8156[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8174[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8192[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_7958[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8210[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8228[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8246[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8264[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_8282[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8300[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_8318[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_8714[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_20969[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_2196[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_2214[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_6266[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_6284[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_6266[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_6284[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_1018[j] = -1;
 			Global_4718592.f_3592[i /*25891*/].f_1036[j] = -1;
 			Global_4718592.f_3592[i /*25891*/].f_1056[j] = 0;
@@ -48139,7 +48139,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			TEXT_LABEL_ASSIGN_STRING(&Global_4718592.f_3592[i /*25891*/].f_17472[j /*16*/], "", 64);
 			Global_4718592.f_3592[i /*25891*/].f_7333[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_7438[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_7420[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_7420[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_7175[j /*3*/] = { 0f, 0f, 0f };
 			Global_4718592.f_3592[i /*25891*/].f_7227[j /*3*/] = { 0f, 0f, 0f };
 			func_405(&Global_4718592.f_3592[i /*25891*/].f_7510[j /*5*/], 0);
@@ -48202,16 +48202,16 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			MISC::COPY_SCRIPT_STRUCT(&Global_4718592.f_3592[i /*25891*/].f_19129[j /*14*/], &src2, 14);
 			MISC::COPY_SCRIPT_STRUCT(&(Global_4718592.f_3592[i /*25891*/].f_21146[j /*35*/].f_1), &src4, 13);
 			MISC::COPY_SCRIPT_STRUCT(&Global_4718592.f_3592[i /*25891*/].f_21146[j /*35*/], &src3, 35);
-			Global_4718592.f_3592[i /*25891*/].f_1548[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_1566[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_1584[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_1548[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_1566[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_1584[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_1602[j] = 0f;
 			Global_4718592.f_3592[i /*25891*/].f_1620[j] = 0f;
 			Global_4718592.f_3592[i /*25891*/].f_1638[j] = 0f;
 			Global_4718592.f_3592[i /*25891*/].f_7279[j] = 3f;
 			Global_4718592.f_3592[i /*25891*/].f_7315[j] = 0.001f;
 			func_405(&Global_4718592.f_3592[i /*25891*/].f_7351[j /*4*/], 0);
-			Global_4718592.f_3592[i /*25891*/].f_6434[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_6434[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_7456[j] = 10.5f;
 			Global_4718592.f_3592[i /*25891*/].f_7474[j] = 1f;
 			Global_4718592.f_3592[i /*25891*/].f_7492[j] = 1f;
@@ -48220,39 +48220,39 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			Global_4718592.f_3592[i /*25891*/].f_1440[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_1458[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_1476[j] = 12;
-			Global_4718592.f_3592[i /*25891*/].f_1494[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_1494[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_1512[j] = 0f;
-			Global_4718592.f_3592[i /*25891*/].f_1530[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_1530[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_1692[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_1710[j] = -1;
 			Global_4718592.f_3592[i /*25891*/].f_1728[j] = 100;
-			Global_4718592.f_3592[i /*25891*/].f_18859[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_18859[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_19111[j] = 0f;
 			Global_4718592.f_3592[i /*25891*/].f_1746[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_1764[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_1782[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_1782[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_1800[j] = 0f;
 			Global_4718592.f_3592[i /*25891*/].f_1818[j] = 0f;
-			Global_4718592.f_3592[i /*25891*/].f_1836[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_1836[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_1854[j] = -1;
-			Global_4718592.f_3592[i /*25891*/].f_18817[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_18817[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_1872[j] = -2;
 			Global_4718592.f_3592[i /*25891*/].f_1908[j] = -1;
-			Global_4718592.f_3592[i /*25891*/].f_1926[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_1944[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_1962[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_1980[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_1998[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_2016[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_2178[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_2160[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_2034[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_1926[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_1944[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_1962[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_1980[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_1998[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_2016[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_2178[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_2160[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_2034[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_2052[j] = 0f;
-			Global_4718592.f_3592[i /*25891*/].f_2070[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_2088[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_2106[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_2124[j] = PV_COMP_HEAD;
-			Global_4718592.f_3592[i /*25891*/].f_2142[j] = PV_COMP_HEAD;
+			Global_4718592.f_3592[i /*25891*/].f_2070[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_2088[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_2106[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_2124[j] = 0 /*PV_COMP_HEAD*/;
+			Global_4718592.f_3592[i /*25891*/].f_2142[j] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_3592[i /*25891*/].f_5055[j /*9*/] = 1000;
 			Global_4718592.f_3592[i /*25891*/].f_5055[j /*9*/].f_1 = 1.15f;
 			Global_4718592.f_3592[i /*25891*/].f_5055[j /*9*/].f_2 = 25;
@@ -48317,12 +48317,12 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			Global_4718592.f_3592[i /*25891*/].f_18295[j] = -1;
 			Global_4718592.f_3592[i /*25891*/].f_18313[j] = 0;
 			Global_4718592.f_3592[i /*25891*/].f_7598[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_18349[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_18367[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_18403[j] = PV_COMP_INVALID;
-			Global_4718592.f_3592[i /*25891*/].f_18385[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_18349[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_18367[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_18403[j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_3592[i /*25891*/].f_18385[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_18691[j] = 0;
-			Global_4718592.f_3592[i /*25891*/].f_18709[j] = PV_COMP_INVALID;
+			Global_4718592.f_3592[i /*25891*/].f_18709[j] = -1 /*PV_COMP_INVALID*/;
 			Global_4718592.f_3592[i /*25891*/].f_18727[j] = 0;
 			func_663(&Global_4718592.f_3592[i /*25891*/].f_5466[j /*3*/]);
 			func_662(&Global_4718592.f_3592[i /*25891*/].f_14100[j /*8*/]);
@@ -48380,14 +48380,14 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (i = 0; i <= 19; i = i + 1)
 	{
-		Global_4718592.f_120616[i] = PV_COMP_HEAD;
-		Global_4718592.f_120637[i] = PV_COMP_HEAD;
-		Global_4718592.f_120658[i] = PV_COMP_HEAD;
+		Global_4718592.f_120616[i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_120637[i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_120658[i] = 0 /*PV_COMP_HEAD*/;
 		Global_4718592.f_120679[i] = 0;
 	
 		for (l = 0; l <= 19; l = l + 1)
 		{
-			Global_4718592.f_120700[i /*21*/][l] = PV_COMP_HEAD;
+			Global_4718592.f_120700[i /*21*/][l] = 0 /*PV_COMP_HEAD*/;
 		}
 	}
 
@@ -48462,7 +48462,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (i = 0; i <= 24; i = i + 1)
 	{
-		Global_4718592.f_109671[i] = PV_COMP_HEAD;
+		Global_4718592.f_109671[i] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	Global_4718592.f_117200 = 0;
@@ -48530,7 +48530,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (l = 0; l <= 2; l = l + 1)
 		{
-			Global_4980736.f_80137[i /*242*/].f_131[l] = PV_COMP_HEAD;
+			Global_4980736.f_80137[i /*242*/].f_131[l] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		Global_4980736.f_80137[i /*242*/].f_142 = 0;
@@ -48538,7 +48538,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (l = 0; l <= 19; l = l + 1)
 		{
-			Global_4980736.f_80137[i /*242*/].f_144[l] = PV_COMP_HEAD;
+			Global_4980736.f_80137[i /*242*/].f_144[l] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		func_646(&(Global_4980736.f_80137[i /*242*/].f_174));
@@ -48546,7 +48546,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (l = 0; l <= 19; l = l + 1)
 		{
-			Global_4980736.f_80137[i /*242*/].f_177[l] = PV_COMP_INVALID;
+			Global_4980736.f_80137[i /*242*/].f_177[l] = -1 /*PV_COMP_INVALID*/;
 		}
 	}
 
@@ -48597,7 +48597,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (i = 0; i <= 31; i = i + 1)
 		{
-			Global_4718592.f_120486[i] = PV_COMP_HEAD;
+			Global_4718592.f_120486[i] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		for (i = 0; i <= 3; i = i + 1)
@@ -48611,8 +48611,8 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (i = 0; i <= 3; i = i + 1)
 	{
-		Global_4718592.f_110657[i] = PV_COMP_HEAD;
-		Global_4718592.f_155459[i] = PV_COMP_INVALID;
+		Global_4718592.f_110657[i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_155459[i] = -1 /*PV_COMP_INVALID*/;
 		Global_4718592.f_155541[i] = -1;
 		Global_4718592.f_155464[i] = -1 - 1;
 		Global_4718592.f_155469[i] = -2 - 1;
@@ -48621,17 +48621,17 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 		{
 			Global_4718592.f_109721[j /*55*/][i] = 0;
 			Global_4718592.f_109721[j /*55*/].f_5[i] = 99999;
-			Global_4718592.f_109721[j /*55*/].f_10[i] = PV_COMP_HEAD;
+			Global_4718592.f_109721[j /*55*/].f_10[i] = 0 /*PV_COMP_HEAD*/;
 			Global_4718592.f_109721[j /*55*/].f_15[i] = 0;
 			func_405(&Global_4718592.f_109721[j /*55*/].f_20[i /*5*/], 0);
 			Global_4718592.f_109721[j /*55*/].f_41[i] = 0;
-			Global_4718592.f_109721[j /*55*/].f_46[i] = PV_COMP_HEAD;
+			Global_4718592.f_109721[j /*55*/].f_46[i] = 0 /*PV_COMP_HEAD*/;
 		}
 	
-		Global_4718592.f_178848[i] = PV_COMP_HEAD;
+		Global_4718592.f_178848[i] = 0 /*PV_COMP_HEAD*/;
 		Global_4718592.f_178853[i] = 1f;
-		Global_4718592.f_186689[i] = PV_COMP_INVALID;
-		Global_4718592.f_120560[i] = PV_COMP_INVALID;
+		Global_4718592.f_186689[i] = -1 /*PV_COMP_INVALID*/;
+		Global_4718592.f_120560[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	if (bParam0)
@@ -48710,7 +48710,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (l = 0; l <= 2; l = l + 1)
 		{
-			Global_4980736.f_7002[i /*609*/].f_386[l] = PV_COMP_HEAD;
+			Global_4980736.f_7002[i /*609*/].f_386[l] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		Global_4980736.f_7002[i /*609*/].f_172 = -1;
@@ -48763,7 +48763,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (l = 0; l <= 19; l = l + 1)
 		{
-			Global_4980736.f_7002[i /*609*/].f_89[l] = PV_COMP_HEAD;
+			Global_4980736.f_7002[i /*609*/].f_89[l] = 0 /*PV_COMP_HEAD*/;
 			Global_4980736.f_7002[i /*609*/].f_111[l] = 0;
 		}
 	
@@ -48793,7 +48793,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (l = 0; l <= 3; l = l + 1)
 		{
-			Global_4980736.f_7002[i /*609*/].f_545[l] = PV_COMP_HEAD;
+			Global_4980736.f_7002[i /*609*/].f_545[l] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		Global_4980736.f_7002[i /*609*/].f_350 = 5f;
@@ -48920,7 +48920,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (l = 0; l <= 19; l = l + 1)
 		{
-			Global_4980736.f_88133[i /*169*/].f_49[l] = PV_COMP_HEAD;
+			Global_4980736.f_88133[i /*169*/].f_49[l] = 0 /*PV_COMP_HEAD*/;
 		}
 	
 		Global_4980736.f_88133[i /*169*/].f_105 = -1;
@@ -48947,7 +48947,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	
 		for (l = 0; l <= 2; l = l + 1)
 		{
-			Global_4980736.f_88133[i /*169*/].f_71[l] = PV_COMP_HEAD;
+			Global_4980736.f_88133[i /*169*/].f_71[l] = 0 /*PV_COMP_HEAD*/;
 		}
 	}
 
@@ -48968,7 +48968,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (i = 0; i < 6; i = i + 1)
 	{
-		Global_4718592.f_120606[i] = PV_COMP_INVALID;
+		Global_4718592.f_120606[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	Global_4718592.f_127745 = -1;
@@ -49037,7 +49037,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (i = 0; i <= 3; i = i + 1)
 	{
-		Global_4980736.f_215413[i] = PV_COMP_HEAD;
+		Global_4980736.f_215413[i] = 0 /*PV_COMP_HEAD*/;
 	
 		for (j = 0; j <= 59; j = j + 1)
 		{
@@ -49072,7 +49072,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 		
 			for (l = 0; l <= 2; l = l + 1)
 			{
-				Global_4980736.f_219560[i /*4141*/][j /*69*/].f_63[l] = PV_COMP_HEAD;
+				Global_4980736.f_219560[i /*4141*/][j /*69*/].f_63[l] = 0 /*PV_COMP_HEAD*/;
 			}
 		
 			func_405(&(Global_4980736.f_219560[i /*4141*/][j /*69*/].f_67), 0);
@@ -49118,7 +49118,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (j = 0; j <= 3; j = j + 1)
 	{
-		Global_4980736[j] = PV_COMP_HEAD;
+		Global_4980736[j] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	for (i = 0; i <= 19; i = i + 1)
@@ -49134,8 +49134,8 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (i = 0; i <= 3; i = i + 1)
 	{
-		Global_4718592.f_178376[i] = PV_COMP_INVALID;
-		Global_4718592.f_178381[i] = PV_COMP_INVALID;
+		Global_4718592.f_178376[i] = -1 /*PV_COMP_INVALID*/;
+		Global_4718592.f_178381[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	Global_4718592.f_120566 = 0;
@@ -49166,7 +49166,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (i = 0; i <= 3; i = i + 1)
 	{
-		Global_4718592.f_178398[i] = PV_COMP_INVALID;
+		Global_4718592.f_178398[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	Global_4718592.f_178452 = -1;
@@ -49177,14 +49177,14 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	Global_4718592.f_178456 = 1;
 	Global_4718592.f_178456.f_1 = 0;
 	Global_4718592.f_178456.f_2 = 4;
-	Global_4718592.f_178456.f_29[0] = PV_COMP_HEAD;
-	Global_4718592.f_178456.f_29[1] = PV_COMP_HEAD;
-	Global_4718592.f_178456.f_29[2] = PV_COMP_HEAD;
-	Global_4718592.f_178456.f_29[3] = PV_COMP_HEAD;
-	Global_4718592.f_178456.f_34[0] = PV_COMP_HEAD;
-	Global_4718592.f_178456.f_34[1] = PV_COMP_HEAD;
-	Global_4718592.f_178456.f_34[2] = PV_COMP_HEAD;
-	Global_4718592.f_178456.f_34[3] = PV_COMP_HEAD;
+	Global_4718592.f_178456.f_29[0] = 0 /*PV_COMP_HEAD*/;
+	Global_4718592.f_178456.f_29[1] = 0 /*PV_COMP_HEAD*/;
+	Global_4718592.f_178456.f_29[2] = 0 /*PV_COMP_HEAD*/;
+	Global_4718592.f_178456.f_29[3] = 0 /*PV_COMP_HEAD*/;
+	Global_4718592.f_178456.f_34[0] = 0 /*PV_COMP_HEAD*/;
+	Global_4718592.f_178456.f_34[1] = 0 /*PV_COMP_HEAD*/;
+	Global_4718592.f_178456.f_34[2] = 0 /*PV_COMP_HEAD*/;
+	Global_4718592.f_178456.f_34[3] = 0 /*PV_COMP_HEAD*/;
 	Global_4718592.f_178456.f_3 = 0;
 
 	for (i = 0; i <= 3; i = i + 1)
@@ -49193,7 +49193,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 		Global_4718592.f_178456.f_9[i] = 0;
 		Global_4718592.f_178456.f_14[i] = 0;
 		Global_4718592.f_178456.f_19[i] = 0;
-		Global_4718592.f_178456.f_24[i] = PV_COMP_HEAD;
+		Global_4718592.f_178456.f_24[i] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	Global_4718592.f_178495 = 5;
@@ -49201,8 +49201,8 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	for (i = 0; i <= 3; i = i + 1)
 	{
 		Global_4718592.f_127600[i] = 0;
-		Global_4718592.f_107245[i] = PV_COMP_HEAD;
-		Global_4718592.f_107250[i] = PV_COMP_HEAD;
+		Global_4718592.f_107245[i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_107250[i] = 0 /*PV_COMP_HEAD*/;
 		Global_4718592.f_186751[i] = 0f;
 	}
 
@@ -49211,7 +49211,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (v = 0; v <= 29; v = v + 1)
 	{
-		Global_4718592.f_121507[v] = PV_COMP_INVALID;
+		Global_4718592.f_121507[v] = -1 /*PV_COMP_INVALID*/;
 		Global_4718592.f_121476[v] = -1;
 	
 		for (w = 0; w <= 12; w = w + 1)
@@ -49219,7 +49219,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 			for (x = 0; x <= 3; x = x + 1)
 			{
 				Global_4718592.f_121538[v /*66*/][w /*5*/][x] = -1;
-				Global_4718592.f_123519[v /*66*/][w /*5*/][x] = PV_COMP_INVALID;
+				Global_4718592.f_123519[v /*66*/][w /*5*/][x] = -1 /*PV_COMP_INVALID*/;
 			}
 		}
 	}
@@ -49250,7 +49250,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (i = 0; i <= 31; i = i + 1)
 	{
-		Global_4718592.f_186919[i] = PV_COMP_FEET;
+		Global_4718592.f_186919[i] = 6 /*PV_COMP_FEET*/;
 	}
 
 	Global_4718592.f_186952 = 0;
@@ -49282,7 +49282,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 	for (i = 0; i <= 11; i = i + 1)
 	{
-		Global_4718592.f_186903[i] = PV_COMP_HEAD;
+		Global_4718592.f_186903[i] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	Global_4718592.f_186901 = 12;
@@ -49350,7 +49350,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	for (i = 0; i <= 19; i = i + 1)
 	{
 		Global_4718592.f_127541[i] = 0;
-		Global_4718592.f_127562[i] = PV_COMP_INVALID;
+		Global_4718592.f_127562[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	Global_4718592.f_194908 = 0;
@@ -49403,8 +49403,8 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	{
 		for (i = 0; i <= 3; i = i + 1)
 		{
-			Global_4718592.f_207198[x /*5*/][i] = PV_COMP_INVALID;
-			Global_4718592.f_207219[x /*5*/][i] = PV_COMP_HEAD;
+			Global_4718592.f_207198[x /*5*/][i] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_207219[x /*5*/][i] = 0 /*PV_COMP_HEAD*/;
 		}
 	}
 
@@ -49450,7 +49450,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	{
 		for (j = 0; j <= 3; j = j + 1)
 		{
-			Global_4718592.f_210167[i /*5*/][j] = PV_COMP_HEAD;
+			Global_4718592.f_210167[i /*5*/][j] = 0 /*PV_COMP_HEAD*/;
 		}
 	}
 
@@ -49459,7 +49459,7 @@ void func_573(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 
 void func_574(int iParam0) // Position - 0x6428D Hash - 0xE8D70F51 ^0x4711540A
 {
-	Global_4718592.f_209363[iParam0 /*5*/] = PV_COMP_HEAD;
+	Global_4718592.f_209363[iParam0 /*5*/] = 0 /*PV_COMP_HEAD*/;
 	Global_4718592.f_209363[iParam0 /*5*/].f_1 = 0;
 	Global_4718592.f_209363[iParam0 /*5*/].f_2 = -1;
 	Global_4718592.f_209363[iParam0 /*5*/].f_3 = -1;
@@ -49469,7 +49469,7 @@ void func_574(int iParam0) // Position - 0x6428D Hash - 0xE8D70F51 ^0x4711540A
 
 void func_575(int iParam0) // Position - 0x642E3 Hash - 0x12AE24A8 ^0x93C2D564
 {
-	Global_4718592.f_209864[iParam0] = PV_COMP_INVALID;
+	Global_4718592.f_209864[iParam0] = -1 /*PV_COMP_INVALID*/;
 	return;
 }
 
@@ -49753,7 +49753,7 @@ void func_591(var uParam0) // Position - 0x64758 Hash - 0x3EB2073B ^0x64CE0A38
 
 	for (i = 0; i <= 3; i = i + 1)
 	{
-		Global_4718592.f_194464.f_9[i] = PV_COMP_INVALID;
+		Global_4718592.f_194464.f_9[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	return;
@@ -49825,16 +49825,16 @@ void func_593(int iParam0) // Position - 0x649EF Hash - 0xDE38283B ^0x47830837
 		Global_4718592.f_187011.f_448[iParam0 /*4*/][i] = func_289(10, iParam0, i);
 		Global_4718592.f_187011.f_533[iParam0 /*4*/][i] = func_289(12, iParam0, i);
 		Global_4718592.f_187011.f_193[iParam0 /*4*/][i] = func_288(7, iParam0, i);
-		Global_4718592.f_187011.f_618[iParam0 /*4*/][i] = PV_COMP_HEAD;
+		Global_4718592.f_187011.f_618[iParam0 /*4*/][i] = 0 /*PV_COMP_HEAD*/;
 		Global_4718592.f_187011.f_788[iParam0 /*4*/][i] = func_289(24, iParam0, i);
 		Global_4718592.f_187011.f_873[iParam0 /*4*/][i] = func_289(25, iParam0, i);
 		Global_4718592.f_187011.f_958[iParam0 /*4*/][i] = func_289(26, iParam0, i);
 		Global_4718592.f_187011.f_1043[iParam0 /*4*/][i] = func_288(27, iParam0, i);
 		Global_4718592.f_187011.f_1128[iParam0 /*4*/][i] = func_289(29, iParam0, i);
-		Global_4718592.f_187011.f_1213[iParam0 /*4*/][i] = PV_COMP_HEAD;
-		Global_4718592.f_187011.f_3057[iParam0 /*4*/][i] = PV_COMP_HEAD;
-		Global_4718592.f_187011.f_3142[iParam0 /*4*/][i] = PV_COMP_HEAD;
-		Global_4718592.f_187011.f_703[iParam0 /*4*/][i] = PV_COMP_HEAD;
+		Global_4718592.f_187011.f_1213[iParam0 /*4*/][i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_187011.f_3057[iParam0 /*4*/][i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_187011.f_3142[iParam0 /*4*/][i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_187011.f_703[iParam0 /*4*/][i] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	Global_4718592.f_187011.f_1298[iParam0] = func_289(3, iParam0, i);
@@ -50213,9 +50213,9 @@ void func_595() // Position - 0x6558A Hash - 0x5AB24F12 ^0xDA57EA4B
 	{
 		for (j = 0; j <= 1; j = j + 1)
 		{
-			Global_4718592.f_178438.f_9[i /*3*/][j] = PV_COMP_INVALID;
-			Global_4718592.f_178438.f_5[i /*3*/][j] = PV_COMP_INVALID;
-			Global_4718592.f_178438.f_1[i /*3*/][j] = PV_COMP_INVALID;
+			Global_4718592.f_178438.f_9[i /*3*/][j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_178438.f_5[i /*3*/][j] = -1 /*PV_COMP_INVALID*/;
+			Global_4718592.f_178438.f_1[i /*3*/][j] = -1 /*PV_COMP_INVALID*/;
 		}
 	}
 
@@ -51711,7 +51711,7 @@ void func_642() // Position - 0x674E5 Hash - 0xF22BBC75 ^0xF22BBC75
 	for (j = 0; j < 2; j = j + 1)
 	{
 		Global_4980736.f_45585[j /*2*/].f_1 = -1;
-		Global_4980736.f_45585[j /*2*/] = PV_COMP_HEAD;
+		Global_4980736.f_45585[j /*2*/] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	func_643(&(Global_4980736.f_45282));
@@ -52025,7 +52025,7 @@ void func_656() // Position - 0x67A96 Hash - 0x5B440B6D ^0x9EFC1555
 
 void func_657(int iParam0) // Position - 0x67AC2 Hash - 0xDA02548D ^0xC3770CE
 {
-	Global_4718592.f_186762[iParam0] = PV_COMP_HEAD;
+	Global_4718592.f_186762[iParam0] = 0 /*PV_COMP_HEAD*/;
 	return;
 }
 
@@ -52258,7 +52258,7 @@ void func_665(ePedComponentType epctParam0) // Position - 0x6813A Hash - 0xBD27B
 
 void func_666(int iParam0) // Position - 0x681B2 Hash - 0xE36A2F43 ^0x82083DFE
 {
-	Global_4718592.f_196003[iParam0 /*20*/] = PV_COMP_INVALID;
+	Global_4718592.f_196003[iParam0 /*20*/] = -1 /*PV_COMP_INVALID*/;
 	Global_4718592.f_196003[iParam0 /*20*/].f_1 = -1;
 	Global_4718592.f_196003[iParam0 /*20*/].f_2 = -1;
 	Global_4718592.f_196003[iParam0 /*20*/].f_3 = 0;
@@ -52274,7 +52274,7 @@ void func_667(int iParam0) // Position - 0x68221 Hash - 0xDBDBA71E ^0x1EE05D8
 
 	for (i = 0; i <= 1; i = i + 1)
 	{
-		Global_4718592.f_196003[iParam0 /*20*/].f_4[i] = PV_COMP_INVALID;
+		Global_4718592.f_196003[iParam0 /*20*/].f_4[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	return;
@@ -52289,7 +52289,7 @@ void func_668() // Position - 0x6824F Hash - 0xE0F88457 ^0x82F736AA
 
 	for (i = 0; i <= 11; i = i + 1)
 	{
-		Global_4718592.f_196180.f_2[i] = PV_COMP_HEAD;
+		Global_4718592.f_196180.f_2[i] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	return;
@@ -52761,7 +52761,7 @@ void func_691() // Position - 0x68C23 Hash - 0x753E8F8A ^0xE58C4431
 
 	for (i = 0; i <= 35; i = i + 1)
 	{
-		Global_4718592.f_117940[i] = PV_COMP_HEAD;
+		Global_4718592.f_117940[i] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	return;
@@ -52859,7 +52859,7 @@ void func_697(int iParam0) // Position - 0x68EB6 Hash - 0xAA3A9A13 ^0xFFCA3F5D
 {
 	int i;
 
-	Global_4718592.f_193638[iParam0 /*42*/] = PV_COMP_INVALID;
+	Global_4718592.f_193638[iParam0 /*42*/] = -1 /*PV_COMP_INVALID*/;
 	Global_4718592.f_193638[iParam0 /*42*/].f_1[0 /*3*/] = { 0f, 0f, 0f };
 	Global_4718592.f_193638[iParam0 /*42*/].f_1[1 /*3*/] = { 0f, 0f, 0f };
 	Global_4718592.f_193638[iParam0 /*42*/].f_8 = 0f;
@@ -52922,7 +52922,7 @@ void func_700(int iParam0) // Position - 0x69112 Hash - 0x6360065D ^0xAACBE84C
 	int j;
 	int k;
 
-	Global_4718592.f_190637[iParam0 /*120*/] = PV_COMP_INVALID;
+	Global_4718592.f_190637[iParam0 /*120*/] = -1 /*PV_COMP_INVALID*/;
 	Global_4718592.f_190637[iParam0 /*120*/].f_1 = { 0f, 0f, 0f };
 	Global_4718592.f_190637[iParam0 /*120*/].f_4 = 0f;
 
@@ -52947,8 +52947,8 @@ void func_700(int iParam0) // Position - 0x69112 Hash - 0x6360065D ^0xAACBE84C
 
 	for (k = 0; k <= 3; k = k + 1)
 	{
-		Global_4718592.f_190637[iParam0 /*120*/].f_24[k] = PV_COMP_INVALID;
-		Global_4718592.f_190637[iParam0 /*120*/].f_29[k] = PV_COMP_INVALID;
+		Global_4718592.f_190637[iParam0 /*120*/].f_24[k] = -1 /*PV_COMP_INVALID*/;
+		Global_4718592.f_190637[iParam0 /*120*/].f_29[k] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	Global_4718592.f_190637[iParam0 /*120*/].f_50 = -1;
@@ -52957,7 +52957,7 @@ void func_700(int iParam0) // Position - 0x69112 Hash - 0x6360065D ^0xAACBE84C
 
 	for (i = 0; i <= 1; i = i + 1)
 	{
-		Global_4718592.f_190637[iParam0 /*120*/].f_54[i] = PV_COMP_INVALID;
+		Global_4718592.f_190637[iParam0 /*120*/].f_54[i] = -1 /*PV_COMP_INVALID*/;
 	}
 
 	Global_4718592.f_190637[iParam0 /*120*/].f_58 = 10;
@@ -52970,7 +52970,7 @@ void func_700(int iParam0) // Position - 0x69112 Hash - 0x6360065D ^0xAACBE84C
 
 	for (i = 0; i <= 2; i = i + 1)
 	{
-		Global_4718592.f_190637[iParam0 /*120*/].f_109[i] = PV_COMP_HEAD;
+		Global_4718592.f_190637[iParam0 /*120*/].f_109[i] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	Global_4718592.f_190637[iParam0 /*120*/].f_64 = 0;
@@ -52979,8 +52979,8 @@ void func_700(int iParam0) // Position - 0x69112 Hash - 0x6360065D ^0xAACBE84C
 
 	for (i = 0; i <= 19; i = i + 1)
 	{
-		Global_4718592.f_190637[iParam0 /*120*/].f_65[i] = PV_COMP_HEAD;
-		Global_4718592.f_190637[iParam0 /*120*/].f_87[i] = PV_COMP_HEAD;
+		Global_4718592.f_190637[iParam0 /*120*/].f_65[i] = 0 /*PV_COMP_HEAD*/;
+		Global_4718592.f_190637[iParam0 /*120*/].f_87[i] = 0 /*PV_COMP_HEAD*/;
 	}
 
 	func_405(&(Global_4718592.f_190637[iParam0 /*120*/].f_114), 0);
@@ -53256,7 +53256,7 @@ void func_720(int iParam0) // Position - 0x69764 Hash - 0xDC1A3314 ^0x33D5D704
 		func_706(&Global_4718592.f_604[iParam0 /*34*/].f_1[i /*4*/]);
 	}
 
-	Global_4718592.f_604[iParam0 /*34*/] = PV_COMP_HEAD;
+	Global_4718592.f_604[iParam0 /*34*/] = 0 /*PV_COMP_HEAD*/;
 	return;
 }
 

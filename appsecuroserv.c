@@ -1205,7 +1205,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 	{
 		if (IS_BIT_SET(Global_1845281[PLAYER::PLAYER_ID() /*883*/].f_268.f_33, 14) || func_683(PLAYER::PLAYER_PED_ID(), uLocal_758, true) > 5f)
 			func_676(false);
-		else if (func_675() || PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE))
+		else if (func_675() || PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/))
 			func_676(false);
 		else if (PLAYER::IS_SYSTEM_UI_BEING_DISPLAYED())
 			func_676(true);
@@ -1278,7 +1278,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 			}
 		
 			func_635();
-			HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_MP_MESSAGE);
+			HUD::HIDE_HUD_COMPONENT_THIS_FRAME(5 /*HUD_MP_MESSAGE*/);
 		}
 	
 		SYSTEM::WAIT(0);
@@ -12546,7 +12546,7 @@ BOOL func_241(var uParam0, int iParam1, int iParam2, Hash hParam3, Hash hParam4,
 				MISC::CLEAR_BIT(&iLocal_561, 7);
 				iLocal_735 = 0;
 				HUD::USE_FAKE_MP_CASH(false);
-				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_CASH_CHANGE);
+				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(13 /*HUD_CASH_CHANGE*/);
 				*uParam0 = 0;
 				return false;
 		}
@@ -12692,11 +12692,11 @@ int func_247(Player plParam0) // Position - 0xAF6C Hash - 0x8B0BD82A ^0xC12B7C0B
 	return address;
 }
 
-int func_248(Hash hParam0, Hash hParam1, int iParam2) // Position - 0xAF87 Hash - 0x8985F13B ^0x6A888C3D
+int func_248(int iParam0, int iParam1, int iParam2) // Position - 0xAF87 Hash - 0x8985F13B ^0x6A888C3D
 {
-	if (hParam0 == -433440095 || hParam0 == joaat("CATEGORY_SERVICE_WITH_THRESHOLD"))
+	if (iParam0 == -433440095 || iParam0 == joaat("CATEGORY_SERVICE_WITH_THRESHOLD"))
 	{
-		switch (hParam1)
+		switch (iParam1)
 		{
 			case joaat("SERVICE_SPEND_MATCH_ENTRY_FEE"):
 				if (iParam2 >= 10000)
@@ -12875,7 +12875,7 @@ int func_248(Hash hParam0, Hash hParam1, int iParam2) // Position - 0xAF87 Hash 
 				return 2;
 		}
 	
-		switch (hParam1)
+		switch (iParam1)
 		{
 			case joaat("SERVICE_EARN_CASINO_HEIST_AWARD_SMASH_N_GRAB"):
 			case joaat("SERVICE_EARN_CASINO_HEIST_AWARD_IN_PLAIN_SIGHT"):
@@ -12989,7 +12989,7 @@ int func_248(Hash hParam0, Hash hParam1, int iParam2) // Position - 0xAF87 Hash 
 	
 		return 0;
 	}
-	else if (hParam0 == joaat("CATEGORY_SERVICE_WITH_LIMIT") || hParam0 == joaat("CATEGORY_PRICE_MODIFIER") || hParam0 == joaat("CATEGORY_PRICE_OVERRIDE"))
+	else if (iParam0 == joaat("CATEGORY_SERVICE_WITH_LIMIT") || iParam0 == joaat("CATEGORY_PRICE_MODIFIER") || iParam0 == joaat("CATEGORY_PRICE_OVERRIDE"))
 	{
 		return 0;
 	}
@@ -22205,7 +22205,7 @@ BOOL func_298(var uParam0, int iParam1, int iParam2, Hash hParam3, Hash hParam4,
 				MISC::CLEAR_BIT(&iLocal_561, 7);
 				iLocal_735 = 0;
 				HUD::USE_FAKE_MP_CASH(false);
-				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_CASH_CHANGE);
+				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(13 /*HUD_CASH_CHANGE*/);
 				*uParam0 = 2;
 				return false;
 		
@@ -22214,7 +22214,7 @@ BOOL func_298(var uParam0, int iParam1, int iParam2, Hash hParam3, Hash hParam4,
 				MISC::CLEAR_BIT(&iLocal_561, 7);
 				iLocal_735 = 0;
 				HUD::USE_FAKE_MP_CASH(false);
-				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_CASH_CHANGE);
+				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(13 /*HUD_CASH_CHANGE*/);
 				*uParam0 = 0;
 				return false;
 		}
@@ -22976,7 +22976,7 @@ BOOL func_329(var uParam0, int iParam1, int iParam2, Hash hParam3, Hash hParam4,
 				*uParam7 = 0;
 				*uParam8 = 0;
 				HUD::USE_FAKE_MP_CASH(false);
-				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_CASH_CHANGE);
+				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(13 /*HUD_CASH_CHANGE*/);
 				*uParam0 = 2;
 				return false;
 		
@@ -22985,7 +22985,7 @@ BOOL func_329(var uParam0, int iParam1, int iParam2, Hash hParam3, Hash hParam4,
 				*uParam7 = 0;
 				*uParam8 = 0;
 				HUD::USE_FAKE_MP_CASH(false);
-				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_CASH_CHANGE);
+				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(13 /*HUD_CASH_CHANGE*/);
 				*uParam0 = 0;
 				return false;
 		}
@@ -25291,32 +25291,32 @@ BOOL func_409(var uParam0, var uParam1, Hash hParam2) // Position - 0x19FE5 Hash
 	HUD::HIDE_HELP_TEXT_THIS_FRAME();
 	func_477();
 	func_408();
-	PAD::SET_INPUT_EXCLUSIVE(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL);
-	PAD::SET_INPUT_EXCLUSIVE(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT);
-	PAD::SET_INPUT_EXCLUSIVE(FRONTEND_CONTROL, INPUT_FRONTEND_LEFT);
-	PAD::SET_INPUT_EXCLUSIVE(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT);
-	PAD::SET_INPUT_EXCLUSIVE(FRONTEND_CONTROL, INPUT_CELLPHONE_LEFT);
-	PAD::SET_INPUT_EXCLUSIVE(FRONTEND_CONTROL, INPUT_CELLPHONE_RIGHT);
-	PAD::SET_INPUT_EXCLUSIVE(FRONTEND_CONTROL, INPUT_CELLPHONE_SCROLL_FORWARD);
-	PAD::SET_INPUT_EXCLUSIVE(FRONTEND_CONTROL, INPUT_CELLPHONE_SCROLL_BACKWARD);
+	PAD::SET_INPUT_EXCLUSIVE(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/);
+	PAD::SET_INPUT_EXCLUSIVE(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/);
+	PAD::SET_INPUT_EXCLUSIVE(2 /*FRONTEND_CONTROL*/, 189 /*INPUT_FRONTEND_LEFT*/);
+	PAD::SET_INPUT_EXCLUSIVE(2 /*FRONTEND_CONTROL*/, 190 /*INPUT_FRONTEND_RIGHT*/);
+	PAD::SET_INPUT_EXCLUSIVE(2 /*FRONTEND_CONTROL*/, 174 /*INPUT_CELLPHONE_LEFT*/);
+	PAD::SET_INPUT_EXCLUSIVE(2 /*FRONTEND_CONTROL*/, 175 /*INPUT_CELLPHONE_RIGHT*/);
+	PAD::SET_INPUT_EXCLUSIVE(2 /*FRONTEND_CONTROL*/, 180 /*INPUT_CELLPHONE_SCROLL_FORWARD*/);
+	PAD::SET_INPUT_EXCLUSIVE(2 /*FRONTEND_CONTROL*/, 181 /*INPUT_CELLPHONE_SCROLL_BACKWARD*/);
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
-		PAD::SET_INPUT_EXCLUSIVE(PLAYER_CONTROL, INPUT_ATTACK);
-		PAD::SET_INPUT_EXCLUSIVE(PLAYER_CONTROL, INPUT_ATTACKLEFT);
-		PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT, true);
-		PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_CURSOR_CANCEL, true);
-		PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_DOWN, true);
-		PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_UP, true);
-		PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_LOOK_UD, true);
-		PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_LOOK_LR, true);
-		PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_ATTACK, true);
-		PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_ATTACKLEFT, true);
+		PAD::SET_INPUT_EXCLUSIVE(0 /*PLAYER_CONTROL*/, 24 /*INPUT_ATTACK*/);
+		PAD::SET_INPUT_EXCLUSIVE(0 /*PLAYER_CONTROL*/, 257 /*INPUT_ATTACKLEFT*/);
+		PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/, true);
+		PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 238 /*INPUT_CURSOR_CANCEL*/, true);
+		PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 242 /*INPUT_CURSOR_SCROLL_DOWN*/, true);
+		PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 241 /*INPUT_CURSOR_SCROLL_UP*/, true);
+		PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 2 /*INPUT_LOOK_UD*/, true);
+		PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 1 /*INPUT_LOOK_LR*/, true);
+		PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 24 /*INPUT_ATTACK*/, true);
+		PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 257 /*INPUT_ATTACKLEFT*/, true);
 	
 		if (!HUD::IS_PAUSE_MENU_ACTIVE() && !HUD::IS_WARNING_MESSAGE_ACTIVE())
 		{
-			PAD::SET_INPUT_EXCLUSIVE(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL);
-			PAD::SET_INPUT_EXCLUSIVE(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT);
+			PAD::SET_INPUT_EXCLUSIVE(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/);
+			PAD::SET_INPUT_EXCLUSIVE(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/);
 		}
 	
 		func_474(false, false, false, true);
@@ -25351,7 +25351,7 @@ BOOL func_409(var uParam0, var uParam1, Hash hParam2) // Position - 0x19FE5 Hash
 				
 					if (hash <= 0 || func_355(hash, hParam2))
 					{
-						if (func_420() || func_419() && Global_4541816 == uParam0->f_41 || HUD::IS_WARNING_MESSAGE_ACTIVE() && PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT))
+						if (func_420() || func_419() && Global_4541816 == uParam0->f_41 || HUD::IS_WARNING_MESSAGE_ACTIVE() && PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/))
 						{
 							AUDIO::PLAY_SOUND_FRONTEND(-1, "Popup_Confirm_Success", "GTAO_Exec_SecuroServ_Computer_Sounds", true);
 							num4 = num - num3;
@@ -25382,14 +25382,14 @@ BOOL func_409(var uParam0, var uParam1, Hash hParam2) // Position - 0x19FE5 Hash
 						}
 					}
 				}
-				else if (!PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_CELLPHONE_SELECT) && !PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CELLPHONE_SELECT))
+				else if (!PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 176 /*INPUT_CELLPHONE_SELECT*/) && !PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 176 /*INPUT_CELLPHONE_SELECT*/))
 				{
 					MISC::CLEAR_BIT(&(uParam0->f_50), 0);
 				}
 			
 				if (!IS_BIT_SET(uParam0->f_50, 1))
 				{
-					if (func_415() || func_414() && Global_4541816 > -1 || HUD::IS_WARNING_MESSAGE_ACTIVE() && PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL))
+					if (func_415() || func_414() && Global_4541816 > -1 || HUD::IS_WARNING_MESSAGE_ACTIVE() && PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/))
 					{
 						AUDIO::PLAY_SOUND_FRONTEND(-1, "CANCEL", "HUD_FREEMODE_SOUNDSET", true);
 					
@@ -25408,7 +25408,7 @@ BOOL func_409(var uParam0, var uParam1, Hash hParam2) // Position - 0x19FE5 Hash
 						MISC::SET_BIT(&(uParam0->f_50), 1);
 					}
 				}
-				else if (!PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL))
+				else if (!PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/))
 				{
 					MISC::CLEAR_BIT(&(uParam0->f_50), 1);
 				}
@@ -25417,7 +25417,7 @@ BOOL func_409(var uParam0, var uParam1, Hash hParam2) // Position - 0x19FE5 Hash
 				{
 					if (!IS_BIT_SET(uParam0->f_50, 4))
 					{
-						if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CELLPHONE_UP) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CELLPHONE_UP) || func_413(false, false, 0))
+						if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 172 /*INPUT_CELLPHONE_UP*/) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 172 /*INPUT_CELLPHONE_UP*/) || func_413(false, false, 0))
 						{
 							AUDIO::PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FREEMODE_SOUNDSET", true);
 							uParam0->f_41 = uParam0->f_41 - 1;
@@ -25426,14 +25426,14 @@ BOOL func_409(var uParam0, var uParam1, Hash hParam2) // Position - 0x19FE5 Hash
 							_STOPWATCH_DESTROY(&(uParam0->f_48));
 						}
 					}
-					else if (func_412(uParam0, INPUT_CELLPHONE_UP))
+					else if (func_412(uParam0, 172 /*INPUT_CELLPHONE_UP*/))
 					{
 						MISC::CLEAR_BIT(&(uParam0->f_50), 4);
 					}
 				
 					if (!IS_BIT_SET(uParam0->f_50, 5))
 					{
-						if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CELLPHONE_DOWN) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CELLPHONE_DOWN) || func_411(false, false, 0))
+						if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 173 /*INPUT_CELLPHONE_DOWN*/) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 173 /*INPUT_CELLPHONE_DOWN*/) || func_411(false, false, 0))
 						{
 							AUDIO::PLAY_SOUND_FRONTEND(-1, "NAV_UP_DOWN", "HUD_FREEMODE_SOUNDSET", true);
 							uParam0->f_41 = uParam0->f_41 + 1;
@@ -25442,7 +25442,7 @@ BOOL func_409(var uParam0, var uParam1, Hash hParam2) // Position - 0x19FE5 Hash
 							_STOPWATCH_DESTROY(&(uParam0->f_48));
 						}
 					}
-					else if (func_412(uParam0, INPUT_CELLPHONE_DOWN))
+					else if (func_412(uParam0, 173 /*INPUT_CELLPHONE_DOWN*/))
 					{
 						MISC::CLEAR_BIT(&(uParam0->f_50), 5);
 					}
@@ -25524,14 +25524,14 @@ void func_410(var uParam0, BOOL bParam1, int iParam2) // Position - 0x1A4D7 Hash
 
 BOOL func_411(BOOL bParam0, BOOL bParam1, int iParam2) // Position - 0x1A627 Hash - 0xC4785420 ^0x536D4331
 {
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
 		if (Global_4541816 == -3)
-			if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT) && bParam0 || PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT))
+			if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/) && bParam0 || PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/))
 				return true;
 	
 		if (iParam2 == 0)
-			if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_DOWN) || PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_DOWN) && bParam1)
+			if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 242 /*INPUT_CURSOR_SCROLL_DOWN*/) || PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 242 /*INPUT_CURSOR_SCROLL_DOWN*/) && bParam1)
 				return true;
 	}
 
@@ -25540,7 +25540,7 @@ BOOL func_411(BOOL bParam0, BOOL bParam1, int iParam2) // Position - 0x1A627 Has
 
 BOOL func_412(var uParam0, eControlAction ecaParam1) // Position - 0x1A68C Hash - 0xC1C73FA5 ^0x32451B35
 {
-	if (!PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, ecaParam1) && !PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, ecaParam1) || _STOPWATCH_HAS_TIME_PASSED(&(uParam0->f_48), 250, true))
+	if (!PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, ecaParam1) && !PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, ecaParam1) || _STOPWATCH_HAS_TIME_PASSED(&(uParam0->f_48), 250, true))
 		return true;
 
 	return false;
@@ -25548,14 +25548,14 @@ BOOL func_412(var uParam0, eControlAction ecaParam1) // Position - 0x1A68C Hash 
 
 BOOL func_413(BOOL bParam0, BOOL bParam1, int iParam2) // Position - 0x1A6C2 Hash - 0x2FFC2B26 ^0x26F7725D
 {
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
 		if (Global_4541816 == -2)
-			if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT) && bParam0 || PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT))
+			if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/) && bParam0 || PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/))
 				return true;
 	
 		if (iParam2 == 0)
-			if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_UP) || PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_UP) && bParam1)
+			if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 241 /*INPUT_CURSOR_SCROLL_UP*/) || PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 241 /*INPUT_CURSOR_SCROLL_UP*/) && bParam1)
 				return true;
 	}
 
@@ -25564,8 +25564,8 @@ BOOL func_413(BOOL bParam0, BOOL bParam1, int iParam2) // Position - 0x1A6C2 Has
 
 BOOL func_414() // Position - 0x1A727 Hash - 0x336E5377 ^0x8B86523F
 {
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-		if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_CANCEL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
+		if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 238 /*INPUT_CURSOR_CANCEL*/))
 			return true;
 
 	return false;
@@ -25573,10 +25573,10 @@ BOOL func_414() // Position - 0x1A727 Hash - 0x336E5377 ^0x8B86523F
 
 BOOL func_415() // Position - 0x1A746 Hash - 0x8366F02E ^0xD60095F3
 {
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-		if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CELLPHONE_CANCEL) && !PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT) && !PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_CANCEL) && !NETWORK::NETWORK_TEXT_CHAT_IS_TYPING())
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
+		if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 177 /*INPUT_CELLPHONE_CANCEL*/) && !PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/) && !PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 238 /*INPUT_CURSOR_CANCEL*/) && !NETWORK::NETWORK_TEXT_CHAT_IS_TYPING())
 			return true;
-	else if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CELLPHONE_CANCEL))
+	else if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 177 /*INPUT_CELLPHONE_CANCEL*/))
 		return true;
 
 	return false;
@@ -25591,7 +25591,7 @@ void func_416(BOOL bParam0, int iParam1) // Position - 0x1A79A Hash - 0x8F233D4 
 
 	if (Global_23831.f_9116)
 	{
-		HUD::RESET_HUD_COMPONENT_VALUES(HUD_SUBTITLE_TEXT);
+		HUD::RESET_HUD_COMPONENT_VALUES(15 /*HUD_SUBTITLE_TEXT*/);
 		Global_23831.f_9116 = 0;
 	}
 
@@ -25629,15 +25629,15 @@ void func_416(BOOL bParam0, int iParam1) // Position - 0x1A79A Hash - 0x8F233D4 
 	return;
 }
 
-void func_417(int iParam0) // Position - 0x1A860 Hash - 0x294B53C7 ^0x1978B7FB
+void func_417(int* piParam0) // Position - 0x1A860 Hash - 0x294B53C7 ^0x1978B7FB
 {
-	if (iParam0->f_9 != 0)
+	if (piParam0->f_9 != 0)
 	{
-		if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
-			GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(iParam0);
+		if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
+			GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(piParam0);
 	
-		*iParam0 = 0;
-		iParam0->f_9 = 0;
+		*piParam0 = 0;
+		piParam0->f_9 = 0;
 	}
 
 	return;
@@ -25687,9 +25687,9 @@ BOOL func_418(var uParam0, BOOL bParam1, int iParam2) // Position - 0x1A88C Hash
 
 BOOL func_419() // Position - 0x1A929 Hash - 0xA8A381FE ^0xF1246643
 {
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 		if (Global_4541816 > -1)
-			if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT))
+			if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/))
 				return true;
 
 	return false;
@@ -25697,10 +25697,10 @@ BOOL func_419() // Position - 0x1A929 Hash - 0xA8A381FE ^0xF1246643
 
 BOOL func_420() // Position - 0x1A950 Hash - 0x133D97AD ^0x719DF45B
 {
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-		if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CELLPHONE_SELECT) && !PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT) && !PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_CANCEL) && !NETWORK::NETWORK_TEXT_CHAT_IS_TYPING())
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
+		if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 176 /*INPUT_CELLPHONE_SELECT*/) && !PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/) && !PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 238 /*INPUT_CURSOR_CANCEL*/) && !NETWORK::NETWORK_TEXT_CHAT_IS_TYPING())
 			return true;
-	else if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CELLPHONE_SELECT))
+	else if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 176 /*INPUT_CELLPHONE_SELECT*/))
 		return true;
 
 	return false;
@@ -25971,7 +25971,7 @@ void func_422(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 			}
 			else
 			{
-				HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
+				HUD::GET_HUD_COLOUR(140 /*HUD_COLOUR_INGAME_BG*/, &r, &g, &b, &a);
 			}
 		
 			while (num2 < Global_23831.f_5828 && numberOfLinesForString <= Global_23831.f_5821)
@@ -26029,7 +26029,7 @@ void func_422(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				}
 				else
 				{
-					HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, &r, &g, &b, &a);
+					HUD::GET_HUD_COLOUR(1 /*HUD_COLOUR_WHITE*/, &r, &g, &b, &a);
 				}
 			
 				GRAPHICS::DRAW_SPRITE("CommonMenu", "shop_arrows_upANDdown", Global_23828 + (iParam5 * 0.5f), num28 + 0f + (0.034722f * 0.5f), (textureResolution / 1280f) * num31, (textureResolution.f_1 / 720f) * num31, 0f, r, g, b, a, false, 0);
@@ -26093,7 +26093,7 @@ void func_422(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				}
 			
 				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num28 + 0.00277776f);
-				HUD::GET_HUD_COLOUR(HUD_COLOUR_BLACK, &r, &g, &b, &a);
+				HUD::GET_HUD_COLOUR(2 /*HUD_COLOUR_BLACK*/, &r, &g, &b, &a);
 				func_439(Global_23828, num28 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
 			
 				if (Global_23831.f_9106)
@@ -26105,7 +26105,7 @@ void func_422(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				}
 				else
 				{
-					HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
+					HUD::GET_HUD_COLOUR(140 /*HUD_COLOUR_INGAME_BG*/, &r, &g, &b, &a);
 				}
 			
 				GRAPHICS::DRAW_SPRITE("CommonMenu", "Gradient_Bgd", Global_23828 + (iParam5 * 0.5f), (num28 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a, false, 0);
@@ -26182,7 +26182,7 @@ void func_422(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					HUD::SET_TEXT_SCALE(0f, size);
 					HUD::BEGIN_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(&(Global_23831.f_5247));
 					numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num28 + 0.00277776f);
-					HUD::GET_HUD_COLOUR(HUD_COLOUR_BLACK, &r, &g, &b, &a);
+					HUD::GET_HUD_COLOUR(2 /*HUD_COLOUR_BLACK*/, &r, &g, &b, &a);
 					func_439(Global_23828, num28 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
 				
 					if (Global_23831.f_9106)
@@ -26194,7 +26194,7 @@ void func_422(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					}
 					else
 					{
-						HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
+						HUD::GET_HUD_COLOUR(140 /*HUD_COLOUR_INGAME_BG*/, &r, &g, &b, &a);
 					}
 				
 					GRAPHICS::DRAW_SPRITE("CommonMenu", "Gradient_Bgd", Global_23828 + (iParam5 * 0.5f), (num28 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(size, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a + 25, false, 0);
@@ -26270,7 +26270,7 @@ void func_422(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				}
 			
 				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num28 + 0.00277776f);
-				HUD::GET_HUD_COLOUR(HUD_COLOUR_BLACK, &r, &g, &b, &a);
+				HUD::GET_HUD_COLOUR(2 /*HUD_COLOUR_BLACK*/, &r, &g, &b, &a);
 				func_439(Global_23828, num28 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
 			
 				if (Global_23831.f_9106)
@@ -26282,7 +26282,7 @@ void func_422(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				}
 				else
 				{
-					HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
+					HUD::GET_HUD_COLOUR(140 /*HUD_COLOUR_INGAME_BG*/, &r, &g, &b, &a);
 				}
 			
 				GRAPHICS::DRAW_SPRITE("CommonMenu", "Gradient_Bgd", Global_23828 + (iParam5 * 0.5f), (num28 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(size2, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(size2, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a + 25, false, 0);
@@ -26354,7 +26354,7 @@ void func_422(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				}
 			
 				numberOfLinesForString = HUD::END_TEXT_COMMAND_GET_NUMBER_OF_LINES_FOR_STRING(x, num28 + 0.00277776f);
-				HUD::GET_HUD_COLOUR(HUD_COLOUR_BLACK, &r, &g, &b, &a);
+				HUD::GET_HUD_COLOUR(2 /*HUD_COLOUR_BLACK*/, &r, &g, &b, &a);
 				func_439(Global_23828, num28 - 0.00277776f, iParam5, 0.00277776f, r, g, b, a);
 			
 				if (Global_23831.f_9106)
@@ -26366,7 +26366,7 @@ void func_422(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 				}
 				else
 				{
-					HUD::GET_HUD_COLOUR(HUD_COLOUR_INGAME_BG, &r, &g, &b, &a);
+					HUD::GET_HUD_COLOUR(140 /*HUD_COLOUR_INGAME_BG*/, &r, &g, &b, &a);
 				}
 			
 				GRAPHICS::DRAW_SPRITE("CommonMenu", "Gradient_Bgd", Global_23828 + (iParam5 * 0.5f), (num28 + (((HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1)) * 0.5f)) - 0.00138888f, iParam5, (HUD::GET_RENDERED_CHARACTER_HEIGHT(0.35f, 0) * (float)numberOfLinesForString) + (0.00138888f * 13f) + (0.00138888f * 5f * (float)numberOfLinesForString - 1), 0f, r, g, b, a, false, 0);
@@ -26509,7 +26509,7 @@ void func_422(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 					if (Global_23831.f_9108)
 						HUD::GET_HUD_COLOUR(Global_23831.f_9107, &r2, &g2, &b2, &a2);
 					else
-						HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, &r2, &g2, &b2, &a2);
+						HUD::GET_HUD_COLOUR(1 /*HUD_COLOUR_WHITE*/, &r2, &g2, &b2, &a2);
 				
 					GRAPHICS::DRAW_SPRITE("CommonMenu", "Gradient_Nav", Global_23828 + (iParam5 * 0.5f), num30 + num34 + (0.00277776f * (float)num5) + (height2 * 0.5f), iParam5, height2, 0f, r2, g2, b2, a2, false, 0);
 					Global_23831.f_6480 = y;
@@ -27284,12 +27284,12 @@ void func_422(BOOL bParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 	Global_23831.f_9081 = 0;
 
 	if (bParam2)
-		HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_HELP_TEXT);
+		HUD::HIDE_HUD_COMPONENT_THIS_FRAME(10 /*HUD_HELP_TEXT*/);
 
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_VEHICLE_NAME);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_AREA_NAME);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_STREET_NAME);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_VEHICLE_CLASS);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(6 /*HUD_VEHICLE_NAME*/);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(7 /*HUD_AREA_NAME*/);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(9 /*HUD_STREET_NAME*/);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(8 /*HUD_VEHICLE_CLASS*/);
 
 	if (bParam0)
 		func_423(1);
@@ -27376,7 +27376,7 @@ void func_428(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, int iParam
 			if (r < 20 && g < 20 && b < 20)
 			{
 				if (bParam0 == false)
-					HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, &r, &g, &b, &a);
+					HUD::GET_HUD_COLOUR(1 /*HUD_COLOUR_WHITE*/, &r, &g, &b, &a);
 			}
 			else if (r > 230 && g > 230 && b > 230)
 			{
@@ -27394,12 +27394,12 @@ void func_428(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, int iParam
 		{
 			if (bParam0)
 			{
-				HUD::GET_HUD_COLOUR(HUD_COLOUR_YELLOWDARK, &r, &g, &b, &a);
+				HUD::GET_HUD_COLOUR(14 /*HUD_COLOUR_YELLOWDARK*/, &r, &g, &b, &a);
 				HUD::SET_TEXT_COLOUR(r, g, b, 255);
 			}
 			else
 			{
-				HUD::GET_HUD_COLOUR(HUD_COLOUR_YELLOW, &r, &g, &b, &a);
+				HUD::GET_HUD_COLOUR(12 /*HUD_COLOUR_YELLOW*/, &r, &g, &b, &a);
 				HUD::SET_TEXT_COLOUR(r, g, b, 255);
 			}
 		}
@@ -27420,7 +27420,7 @@ void func_428(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, int iParam
 		}
 		else
 		{
-			HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, &r, &g, &b, &a);
+			HUD::GET_HUD_COLOUR(1 /*HUD_COLOUR_WHITE*/, &r, &g, &b, &a);
 			HUD::SET_TEXT_COLOUR(r, g, b, a);
 		}
 	}
@@ -27660,14 +27660,14 @@ void func_430(var uParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4,
 
 	if (Global_23831.f_5326 != 0)
 	{
-		if (PAD::HAVE_CONTROLS_CHANGED(FRONTEND_CONTROL))
+		if (PAD::HAVE_CONTROLS_CHANGED(2 /*FRONTEND_CONTROL*/))
 		{
 			for (i = 0; i < Global_23831.f_5326; i = i + 1)
 			{
 				if (Global_23831.f_5625[i] != 365)
-					TEXT_LABEL_ASSIGN_STRING(&Global_23831.f_5328[i /*16*/], PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, Global_23831.f_5625[i], true), 64);
+					TEXT_LABEL_ASSIGN_STRING(&Global_23831.f_5328[i /*16*/], PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, Global_23831.f_5625[i], true), 64);
 				else if (Global_23831.f_5640[i] != 32)
-					TEXT_LABEL_ASSIGN_STRING(&Global_23831.f_5328[i /*16*/], PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, Global_23831.f_5640[i], true), 64);
+					TEXT_LABEL_ASSIGN_STRING(&Global_23831.f_5328[i /*16*/], PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, Global_23831.f_5640[i], true), 64);
 			}
 		
 			Global_23831.f_5327 = 0;
@@ -27833,13 +27833,13 @@ void func_430(var uParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4,
 		{
 			if (!Global_23831.f_9116)
 			{
-				HUD::SET_HUD_COMPONENT_POSITION(HUD_SUBTITLE_TEXT, 0f, -0.0375f);
+				HUD::SET_HUD_COMPONENT_POSITION(15 /*HUD_SUBTITLE_TEXT*/, 0f, -0.0375f);
 				Global_23831.f_9116 = 1;
 			}
 		}
 		else if (Global_23831.f_9116)
 		{
-			HUD::RESET_HUD_COMPONENT_VALUES(HUD_SUBTITLE_TEXT);
+			HUD::RESET_HUD_COMPONENT_VALUES(15 /*HUD_SUBTITLE_TEXT*/);
 			Global_23831.f_9116 = 0;
 		}
 	
@@ -27903,7 +27903,7 @@ BOOL func_433() // Position - 0x1E655 Hash - 0x3CA1BB47 ^0x894044A3
 
 void func_434(int iParam0, BOOL bParam1, int* piParam2, int* piParam3, int* piParam4, int* piParam5) // Position - 0x1E66F Hash - 0x16389FD1 ^0x58250497
 {
-	HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, piParam2, piParam3, piParam4, piParam5);
+	HUD::GET_HUD_COLOUR(1 /*HUD_COLOUR_WHITE*/, piParam2, piParam3, piParam4, piParam5);
 	*piParam5 = 255;
 
 	switch (iParam0)
@@ -27957,7 +27957,7 @@ void func_434(int iParam0, BOOL bParam1, int* piParam2, int* piParam3, int* piPa
 			break;
 	
 		case 58:
-			HUD::GET_HUD_COLOUR(HUD_COLOUR_PINK, piParam2, piParam3, piParam4, piParam5);
+			HUD::GET_HUD_COLOUR(24 /*HUD_COLOUR_PINK*/, piParam2, piParam3, piParam4, piParam5);
 			*piParam5 = 255;
 			break;
 	}
@@ -27972,7 +27972,7 @@ void func_435(float fParam0) // Position - 0x1E790 Hash - 0x4A65499D ^0x9B8EE2A2
 	int b;
 	int a;
 
-	HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, &r, &g, &b, &a);
+	HUD::GET_HUD_COLOUR(1 /*HUD_COLOUR_WHITE*/, &r, &g, &b, &a);
 	HUD::SET_TEXT_FONT(0);
 	HUD::SET_TEXT_SCALE(0f, 0.35f);
 	HUD::SET_TEXT_LEADING(2);
@@ -28015,7 +28015,7 @@ void func_438() // Position - 0x1E854 Hash - 0x16EFE904 ^0xB607D3A2
 	int b;
 	int a;
 
-	HUD::GET_HUD_COLOUR(HUD_COLOUR_WHITE, &r, &g, &b, &a);
+	HUD::GET_HUD_COLOUR(1 /*HUD_COLOUR_WHITE*/, &r, &g, &b, &a);
 
 	if (Global_23831.f_9091)
 	{
@@ -28593,7 +28593,7 @@ BOOL func_452(BOOL bParam0, BOOL bParam1) // Position - 0x1F42F Hash - 0x64BEBD7
 	if (Global_2672855.f_1728.f_701 != 0)
 		return true;
 
-	if (!CAM::IS_SCREEN_FADED_IN() || func_421(8, -1) && func_453() != TRANSITION_STATE_WAITING_FOR_EXTERNAL_TERMINATION_CALL || HUD::GET_PAUSE_MENU_STATE() != 0 && !bParam1 || STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() && !bParam0 || NETWORK::IS_COMMERCE_STORE_OPEN() || Global_79650 || Global_23831.f_9115 || HUD::IS_WARNING_MESSAGE_ACTIVE() || Global_101585.f_1482)
+	if (!CAM::IS_SCREEN_FADED_IN() || func_421(8, -1) && func_453() != 65 /*TRANSITION_STATE_WAITING_FOR_EXTERNAL_TERMINATION_CALL*/ || HUD::GET_PAUSE_MENU_STATE() != 0 && !bParam1 || STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() && !bParam0 || NETWORK::IS_COMMERCE_STORE_OPEN() || Global_79650 || Global_23831.f_9115 || HUD::IS_WARNING_MESSAGE_ACTIVE() || Global_101585.f_1482)
 		return false;
 
 	return true;
@@ -28779,9 +28779,9 @@ void func_458(var uParam0, Hash hParam1) // Position - 0x1F84C Hash - 0x778E2415
 	func_460(-1);
 
 	if (func_393(uParam0->f_41) <= 0 || func_355(func_393(uParam0->f_41), hParam1))
-		func_459(INPUT_CELLPHONE_SELECT, "BB_SELECT" /*Select*/, -1);
+		func_459(176 /*INPUT_CELLPHONE_SELECT*/, "BB_SELECT" /*Select*/, -1);
 
-	func_459(INPUT_CELLPHONE_CANCEL, "BB_BACK" /*Back*/, -1);
+	func_459(177 /*INPUT_CELLPHONE_CANCEL*/, "BB_BACK" /*Back*/, -1);
 	return;
 }
 
@@ -28789,7 +28789,7 @@ void func_459(eControlAction ecaParam0, char* sParam1, int iParam2) // Position 
 {
 	const char* controlInstructionalButtonsString;
 
-	controlInstructionalButtonsString = PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, ecaParam0, true);
+	controlInstructionalButtonsString = PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, ecaParam0, true);
 
 	if (Global_23831.f_5326 >= 14)
 	{
@@ -29489,47 +29489,47 @@ BOOL func_472(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x20976 Ha
 	return flag && flag2;
 }
 
-BOOL func_473(int iParam0) // Position - 0x20A84 Hash - 0x55978EE6 ^0xF39227AE
+BOOL func_473(int* piParam0) // Position - 0x20A84 Hash - 0x55978EE6 ^0xF39227AE
 {
-	switch (iParam0->f_9)
+	switch (piParam0->f_9)
 	{
 		case 0:
-			if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
+			if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
 			{
-				*iParam0 = GRAPHICS::REQUEST_SCALEFORM_MOVIE(&(iParam0->f_1));
-				iParam0->f_9 = 1;
+				*piParam0 = GRAPHICS::REQUEST_SCALEFORM_MOVIE(&(piParam0->f_1));
+				piParam0->f_9 = 1;
 			
-				if (iParam0->f_7)
+				if (piParam0->f_7)
 				{
-					if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
+					if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
 					{
-						iParam0->f_8 = MISC::GET_GAME_TIMER();
-						iParam0->f_9 = 2;
+						piParam0->f_8 = MISC::GET_GAME_TIMER();
+						piParam0->f_9 = 2;
 					}
 				}
 			}
 			else
 			{
-				iParam0->f_8 = MISC::GET_GAME_TIMER();
-				iParam0->f_9 = 2;
+				piParam0->f_8 = MISC::GET_GAME_TIMER();
+				piParam0->f_9 = 2;
 			}
 			break;
 	
 		case 1:
-			if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
+			if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
 			{
-				iParam0->f_8 = MISC::GET_GAME_TIMER();
-				iParam0->f_9 = 2;
+				piParam0->f_8 = MISC::GET_GAME_TIMER();
+				piParam0->f_9 = 2;
 			}
 			break;
 	
 		case 2:
-			if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
-				iParam0->f_9 = 0;
+			if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
+				piParam0->f_9 = 0;
 			break;
 	}
 
-	return iParam0->f_9 == 2;
+	return piParam0->f_9 == 2;
 }
 
 void func_474(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position - 0x20B26 Hash - 0x6E7ED0C2 ^0x4BE3E0E
@@ -29552,7 +29552,7 @@ void func_474(BOOL bParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Positio
 	num3 = 0.034722f / 2f;
 	num10 = -1;
 
-	if (!PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (!PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
 		Global_4541816 = -1;
 		return;
@@ -29699,8 +29699,8 @@ void func_476() // Position - 0x20E5B Hash - 0xFDAF4DEA ^0xCA07F087
 {
 	Global_4541812 = Global_4541810;
 	Global_4541813 = Global_4541811;
-	Global_4541810 = PAD::GET_DISABLED_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_CURSOR_X);
-	Global_4541811 = PAD::GET_DISABLED_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_CURSOR_Y);
+	Global_4541810 = PAD::GET_DISABLED_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 239 /*INPUT_CURSOR_X*/);
+	Global_4541811 = PAD::GET_DISABLED_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 240 /*INPUT_CURSOR_Y*/);
 	Global_4541814 = Global_4541810 - Global_4541812;
 	Global_4541815 = Global_4541811 - Global_4541813;
 	return;
@@ -30259,7 +30259,7 @@ void func_490(var uParam0, int iParam1, int iParam2, float fParam3, float fParam
 		{
 			if (!func_508(PLAYER::PLAYER_ID()))
 			{
-				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, SPC_CLEAR_TASKS, false);
+				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, 4 /*SPC_CLEAR_TASKS*/, false);
 				WEAPON::SET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), joaat("WEAPON_UNARMED"), true);
 				ENTITY::SET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), -209.434f, 305.016f, 95.9464f, true, false, false, true);
 				ENTITY::SET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID(), 12.5f);
@@ -30320,13 +30320,13 @@ void func_491(BOOL bParam0, BOOL bParam1) // Position - 0x21C72 Hash - 0xEDB3AB4
 			if (func_493(PLAYER::PLAYER_ID()))
 				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, 32768, false);
 			else if (func_492())
-				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, SPC_CLEAR_TASKS | 32768, false);
+				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, 32772 /*SPC_CLEAR_TASKS | 32768*/, false);
 			else if (!bParam1)
-				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, SPC_CLEAR_TASKS | 319488, false);
+				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, 319492 /*SPC_CLEAR_TASKS | 319488*/, false);
 		}
 		else
 		{
-			_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, SPC_CLEAR_TASKS | 57344, false);
+			_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, 57348 /*SPC_CLEAR_TASKS | 57344*/, false);
 		}
 	}
 
@@ -33248,7 +33248,7 @@ void func_607() // Position - 0x25B0E Hash - 0x4295288F ^0xA6E94E54
 
 BOOL func_608() // Position - 0x25B76 Hash - 0xB730E267 ^0x6A6F591C
 {
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT) || PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/) || PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/))
 		return true;
 
 	return false;
@@ -33276,7 +33276,7 @@ void func_609() // Position - 0x25B9A Hash - 0x7A2D7339 ^0x70A15947
 
 BOOL func_610() // Position - 0x25BF9 Hash - 0xA9D14F8A ^0xA466B7B4
 {
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL) || PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_CANCEL))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/) || PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 238 /*INPUT_CURSOR_CANCEL*/))
 		return 1;
 
 	return 0;
@@ -33288,7 +33288,7 @@ void func_611() // Position - 0x25C1D Hash - 0xD6FBA174 ^0x5B3F700B
 	{
 		if (Global_76667)
 		{
-			if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT) || PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT) && !HUD::IS_WARNING_MESSAGE_ACTIVE())
+			if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/) || PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/) && !HUD::IS_WARNING_MESSAGE_ACTIVE())
 			{
 				Global_76667 = false;
 				Global_76669 = false;
@@ -33303,7 +33303,7 @@ void func_611() // Position - 0x25C1D Hash - 0xD6FBA174 ^0x5B3F700B
 					SYSTEM::WAIT(0);
 				}
 			}
-			else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL) || PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_CANCEL) && !HUD::IS_WARNING_MESSAGE_ACTIVE())
+			else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/) || PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 238 /*INPUT_CURSOR_CANCEL*/) && !HUD::IS_WARNING_MESSAGE_ACTIVE())
 			{
 				AUDIO::PLAY_SOUND_FRONTEND(-1, "BACK", "HUD_FRONTEND_DEFAULT_SOUNDSET", true);
 				Global_76667 = false;
@@ -33317,9 +33317,9 @@ void func_611() // Position - 0x25C1D Hash - 0xD6FBA174 ^0x5B3F700B
 		return;
 	}
 
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_LB, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 205 /*INPUT_FRONTEND_LB*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_LB))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 205 /*INPUT_FRONTEND_LB*/))
 	{
 		if (iLocal_738 == 5)
 			if (func_304(PLAYER::PLAYER_ID()))
@@ -33331,9 +33331,9 @@ void func_611() // Position - 0x25C1D Hash - 0xD6FBA174 ^0x5B3F700B
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(205), -1082130432, -1082130432, -1082130432, -1082130432);
 	}
 
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_RB, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 206 /*INPUT_FRONTEND_RB*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_RB))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 206 /*INPUT_FRONTEND_RB*/))
 	{
 		if (iLocal_738 == 5)
 			if (func_304(PLAYER::PLAYER_ID()))
@@ -33345,26 +33345,26 @@ void func_611() // Position - 0x25C1D Hash - 0xD6FBA174 ^0x5B3F700B
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(206), -1082130432, -1082130432, -1082130432, -1082130432);
 	}
 
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_LT, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 207 /*INPUT_FRONTEND_LT*/, true);
 
-	if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_LT))
+	if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 207 /*INPUT_FRONTEND_LT*/))
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(207), -1082130432, -1082130432, -1082130432, -1082130432);
 
-	if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_LT))
+	if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 207 /*INPUT_FRONTEND_LT*/))
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_RELEASE_EVENT", SYSTEM::TO_FLOAT(207), -1082130432, -1082130432, -1082130432, -1082130432);
 
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_RT, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 208 /*INPUT_FRONTEND_RT*/, true);
 
-	if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_RT))
+	if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 208 /*INPUT_FRONTEND_RT*/))
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(208), -1082130432, -1082130432, -1082130432, -1082130432);
 
-	if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_RT))
+	if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 208 /*INPUT_FRONTEND_RT*/))
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_RELEASE_EVENT", SYSTEM::TO_FLOAT(208), -1082130432, -1082130432, -1082130432, -1082130432);
 
 	func_615();
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/))
 	{
 		if (IS_BIT_SET(iLocal_561, 12))
 		{
@@ -33375,9 +33375,9 @@ void func_611() // Position - 0x25C1D Hash - 0xD6FBA174 ^0x5B3F700B
 		}
 	}
 
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/))
 	{
 		if (IS_BIT_SET(iLocal_561, 12))
 		{
@@ -33396,7 +33396,7 @@ void func_611() // Position - 0x25C1D Hash - 0xD6FBA174 ^0x5B3F700B
 		}
 	}
 
-	if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL))
+	if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/))
 	{
 		if (IS_BIT_SET(iLocal_562, 3))
 			MISC::CLEAR_BIT(&iLocal_562, 3);
@@ -33409,29 +33409,29 @@ void func_611() // Position - 0x25C1D Hash - 0xD6FBA174 ^0x5B3F700B
 			MISC::CLEAR_BIT(&iLocal_562, 2);
 	}
 
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_X, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 203 /*INPUT_FRONTEND_X*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_X))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 203 /*INPUT_FRONTEND_X*/))
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(203), -1082130432, -1082130432, -1082130432, -1082130432);
 
 	if (!IS_BIT_SET(iLocal_561, 13))
 	{
-		PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT, true);
+		PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/, true);
 	
-		if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT))
+		if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/))
 			GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_RELEASE_EVENT", SYSTEM::TO_FLOAT(201), -1082130432, -1082130432, -1082130432, -1082130432);
 	}
 
-	if (PAD::IS_USING_CURSOR(FRONTEND_CONTROL))
+	if (PAD::IS_USING_CURSOR(2 /*FRONTEND_CONTROL*/))
 	{
 		func_613();
 	
 		if (!IS_BIT_SET(iLocal_561, 13))
-			if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT))
+			if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/))
 				GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_RELEASE_EVENT", SYSTEM::TO_FLOAT(237), -1082130432, -1082130432, -1082130432, -1082130432);
 	
 		if (!IS_BIT_SET(iLocal_561, 13))
-			if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_CURSOR_CANCEL))
+			if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 238 /*INPUT_CURSOR_CANCEL*/))
 				GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_RELEASE_EVENT", SYSTEM::TO_FLOAT(238), -1082130432, -1082130432, -1082130432, -1082130432);
 	
 		if (iLocal_738 == 6)
@@ -33440,14 +33440,14 @@ void func_611() // Position - 0x25C1D Hash - 0xD6FBA174 ^0x5B3F700B
 		}
 		else
 		{
-			PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_UP, true);
+			PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 241 /*INPUT_CURSOR_SCROLL_UP*/, true);
 		
-			if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_UP))
+			if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 241 /*INPUT_CURSOR_SCROLL_UP*/))
 				GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(241), -1082130432, -1082130432, -1082130432, -1082130432);
 		
-			PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_DOWN, true);
+			PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 242 /*INPUT_CURSOR_SCROLL_DOWN*/, true);
 		
-			if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_DOWN))
+			if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 242 /*INPUT_CURSOR_SCROLL_DOWN*/))
 				GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(242), -1082130432, -1082130432, -1082130432, -1082130432);
 		}
 	}
@@ -33456,7 +33456,7 @@ void func_611() // Position - 0x25C1D Hash - 0xD6FBA174 ^0x5B3F700B
 		func_612(true, true);
 	}
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_Y) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_Y) && !PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 204 /*INPUT_FRONTEND_Y*/) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 204 /*INPUT_FRONTEND_Y*/) && !PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 		func_676(false);
 
 	return;
@@ -33472,10 +33472,10 @@ void func_612(BOOL bParam0, BOOL bParam1) // Position - 0x26181 Hash - 0x4148ECF
 
 	if (bParam0)
 	{
-		PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_AXIS_X, true);
-		PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_AXIS_Y, true);
-		controlValue = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_FRONTEND_AXIS_X);
-		controlValue2 = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_FRONTEND_AXIS_Y);
+		PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 195 /*INPUT_FRONTEND_AXIS_X*/, true);
+		PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 196 /*INPUT_FRONTEND_AXIS_Y*/, true);
+		controlValue = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 195 /*INPUT_FRONTEND_AXIS_X*/);
+		controlValue2 = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 196 /*INPUT_FRONTEND_AXIS_Y*/);
 	
 		if (controlValue != 127 || iLocal_744 != 127 || controlValue2 != 127 || iLocal_745 != 127)
 		{
@@ -33492,17 +33492,17 @@ void func_612(BOOL bParam0, BOOL bParam1) // Position - 0x26181 Hash - 0x4148ECF
 
 	if (bParam1)
 	{
-		PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT_AXIS_X, true);
-		PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT_AXIS_Y, true);
-		controlValue3 = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT_AXIS_X);
-		controlValue4 = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT_AXIS_Y);
+		PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 197 /*INPUT_FRONTEND_RIGHT_AXIS_X*/, true);
+		PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 198 /*INPUT_FRONTEND_RIGHT_AXIS_Y*/, true);
+		controlValue3 = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 197 /*INPUT_FRONTEND_RIGHT_AXIS_X*/);
+		controlValue4 = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 198 /*INPUT_FRONTEND_RIGHT_AXIS_Y*/);
 	
 		if (controlValue3 != 127 || iLocal_746 != 127 || controlValue4 != 127 || iLocal_747 != 127)
 		{
-			value = PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_DOWN) || PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_DOWN);
+			value = PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 242 /*INPUT_CURSOR_SCROLL_DOWN*/) || PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 242 /*INPUT_CURSOR_SCROLL_DOWN*/);
 		
 			if (!value)
-				value = PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_UP) || PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_UP);
+				value = PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 241 /*INPUT_CURSOR_SCROLL_UP*/) || PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 241 /*INPUT_CURSOR_SCROLL_UP*/);
 		
 			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_555, "SET_ANALOG_STICK_INPUT");
 			iLocal_746 = controlValue3;
@@ -33520,8 +33520,8 @@ void func_612(BOOL bParam0, BOOL bParam1) // Position - 0x26181 Hash - 0x4148ECF
 
 void func_613() // Position - 0x262C4 Hash - 0x2DAB2A6E ^0x2D0C36D4
 {
-	fLocal_754 = PAD::GET_DISABLED_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_CURSOR_X);
-	fLocal_755 = PAD::GET_DISABLED_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_CURSOR_Y);
+	fLocal_754 = PAD::GET_DISABLED_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 239 /*INPUT_CURSOR_X*/);
+	fLocal_755 = PAD::GET_DISABLED_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 240 /*INPUT_CURSOR_Y*/);
 
 	if (fLocal_754 != fLocal_756 || fLocal_755 != fLocal_757)
 	{
@@ -33533,14 +33533,14 @@ void func_613() // Position - 0x262C4 Hash - 0x2DAB2A6E ^0x2D0C36D4
 		fLocal_757 = fLocal_755;
 	}
 
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/))
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(237), -1082130432, -1082130432, -1082130432, -1082130432);
 
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_CURSOR_CANCEL, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 238 /*INPUT_CURSOR_CANCEL*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_CANCEL))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 238 /*INPUT_CURSOR_CANCEL*/))
 	{
 		if (iLocal_738 != 4 && iLocal_738 != 6 || !IS_BIT_SET(iLocal_561, 5))
 			GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(202), -1082130432, -1082130432, -1082130432, -1082130432);
@@ -33549,7 +33549,7 @@ void func_613() // Position - 0x262C4 Hash - 0x2DAB2A6E ^0x2D0C36D4
 			func_676(false);
 	}
 
-	if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_CURSOR_CANCEL))
+	if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 238 /*INPUT_CURSOR_CANCEL*/))
 		if (IS_BIT_SET(iLocal_562, 3))
 			MISC::CLEAR_BIT(&iLocal_562, 3);
 		else if (IS_BIT_SET(iLocal_561, 5))
@@ -33567,24 +33567,24 @@ BOOL func_614() // Position - 0x26403 Hash - 0x437DC70C ^0x437DC70C
 
 void func_615() // Position - 0x26411 Hash - 0xE7E69D41 ^0x7DF58BCB
 {
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_UP, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 188 /*INPUT_FRONTEND_UP*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_UP))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 188 /*INPUT_FRONTEND_UP*/))
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(188), -1082130432, -1082130432, -1082130432, -1082130432);
 
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_DOWN, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 187 /*INPUT_FRONTEND_DOWN*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_DOWN))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 187 /*INPUT_FRONTEND_DOWN*/))
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(187), -1082130432, -1082130432, -1082130432, -1082130432);
 
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_LEFT, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 189 /*INPUT_FRONTEND_LEFT*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_LEFT))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 189 /*INPUT_FRONTEND_LEFT*/))
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(189), -1082130432, -1082130432, -1082130432, -1082130432);
 
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 190 /*INPUT_FRONTEND_RIGHT*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 190 /*INPUT_FRONTEND_RIGHT*/))
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(190), -1082130432, -1082130432, -1082130432, -1082130432);
 
 	return;
@@ -33614,10 +33614,10 @@ void func_617() // Position - 0x26544 Hash - 0x6DF16276 ^0x4D99CA9E
 
 	if (iLocal_560 == 0 || iLocal_560 == 1)
 	{
-		PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT, true);
-		PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT, true);
+		PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/, true);
+		PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/, true);
 	
-		if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT) || PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT))
+		if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/) || PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/))
 		{
 			GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(iLocal_555, "GET_CURRENT_SELECTION");
 			iLocal_556 = GRAPHICS::END_SCALEFORM_MOVIE_METHOD_RETURN_VALUE();
@@ -33625,7 +33625,7 @@ void func_617() // Position - 0x26544 Hash - 0x6DF16276 ^0x4D99CA9E
 		}
 	}
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT) || PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_ACCEPT))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/) || PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 237 /*INPUT_CURSOR_ACCEPT*/))
 		AUDIO::PLAY_SOUND_FRONTEND(-1, "Mouse_Click", "GTAO_Exec_SecuroServ_Warehouse_PC_Sounds", true);
 
 	if (iLocal_560 == 0 && GRAPHICS::IS_SCALEFORM_MOVIE_METHOD_RETURN_VALUE_READY(iLocal_556))
@@ -33723,29 +33723,29 @@ int func_618(int iParam0) // Position - 0x26746 Hash - 0x9904FED0 ^0x2449DFC8
 
 void func_619() // Position - 0x267E2 Hash - 0xEAA572E7 ^0x63EE733A
 {
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/))
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(201), -1082130432, -1082130432, -1082130432, -1082130432);
 
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/, true);
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/))
 	{
 		GRAPHICS::CALL_SCALEFORM_MOVIE_METHOD_WITH_NUMBER(iLocal_555, "SET_INPUT_EVENT", SYSTEM::TO_FLOAT(202), -1082130432, -1082130432, -1082130432, -1082130432);
 		func_676(false);
 	}
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_Y) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_Y) && !PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 204 /*INPUT_FRONTEND_Y*/) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 204 /*INPUT_FRONTEND_Y*/) && !PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 		func_676(false);
 
 	func_615();
 
-	if (PAD::IS_USING_CURSOR(FRONTEND_CONTROL))
+	if (PAD::IS_USING_CURSOR(2 /*FRONTEND_CONTROL*/))
 	{
 		func_613();
 	
-		if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_CANCEL))
+		if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 238 /*INPUT_CURSOR_CANCEL*/))
 			func_676(false);
 	}
 	else
@@ -34533,26 +34533,26 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0x2782C Hash - 0x98476CE1 
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[0 /*29*/])
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[1 /*29*/])
-				Global_20930 = CHAR_FRANKLIN;
+				Global_20930 = 1 /*CHAR_FRANKLIN*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[2 /*29*/])
-				Global_20930 = CHAR_TREVOR;
+				Global_20930 = 2 /*CHAR_TREVOR*/;
 			else
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 	}
 	else
 	{
 		Global_20930 = _GET_CURRENT_PLAYER_CHARACTER();
 	
-		if (Global_20930 == _CHAR_NULL)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 == 145 /*_CHAR_NULL*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
 		if (Global_79389)
-			Global_20930 = CHAR_MULTIPLAYER;
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
-		if (Global_20930 > CHAR_MULTIPLAYER)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 > 3 /*CHAR_MULTIPLAYER*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	}
 
 	return;
@@ -34586,7 +34586,7 @@ void func_648() // Position - 0x278E7 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -34599,7 +34599,7 @@ void func_648() // Position - 0x278E7 Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_649(eCharacter echParam0) // Position - 0x279E4 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x279F0 Hash - 0xAC4E9801 ^0xB379A75F
@@ -34611,14 +34611,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x279F0 H
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x27A2D Hash - 0xADCB9755 ^0xADCB9755
@@ -34626,7 +34626,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x27A2D Hash - 0xA
 	if (func_649(character))
 		return func_652(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -35083,21 +35083,21 @@ void func_662() // Position - 0x2825B Hash - 0xD233B159 ^0xD233B159
 void func_663() // Position - 0x282B7 Hash - 0x595E48F4 ^0xC546CBDE
 {
 	HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-	HUD::HIDE_SCRIPTED_HUD_COMPONENT_THIS_FRAME(HUD_WEAPON_WHEEL);
+	HUD::HIDE_SCRIPTED_HUD_COMPONENT_THIS_FRAME(19 /*HUD_WEAPON_WHEEL*/);
 	CAM::SET_GAMEPLAY_CAM_RELATIVE_PITCH(0f, 1065353216);
 	CAM::SET_GAMEPLAY_CAM_RELATIVE_HEADING(0f);
 	func_667();
 
 	if (IS_BIT_SET(iLocal_561, 21))
 	{
-		HUD::SHOW_HUD_COMPONENT_THIS_FRAME(HUD_MP_CASH);
-		HUD::SHOW_HUD_COMPONENT_THIS_FRAME(HUD_MP_MESSAGE);
-		HUD::SHOW_HUD_COMPONENT_THIS_FRAME(HUD_CASH_CHANGE);
-		HUD::SHOW_HUD_COMPONENT_THIS_FRAME(HUD_CASH);
+		HUD::SHOW_HUD_COMPONENT_THIS_FRAME(4 /*HUD_MP_CASH*/);
+		HUD::SHOW_HUD_COMPONENT_THIS_FRAME(5 /*HUD_MP_MESSAGE*/);
+		HUD::SHOW_HUD_COMPONENT_THIS_FRAME(13 /*HUD_CASH_CHANGE*/);
+		HUD::SHOW_HUD_COMPONENT_THIS_FRAME(3 /*HUD_CASH*/);
 	}
 
 	HUD::THEFEED_HIDE_THIS_FRAME();
-	PAD::ENABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE, true);
+	PAD::ENABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/, true);
 	GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(1);
 	func_439(0f, 0f, 1f, 1f, 0, 0, 0, 255);
 	GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(1);
@@ -35146,8 +35146,8 @@ void func_667() // Position - 0x283B2 Hash - 0x7214E5A ^0xE14DE817
 
 	if (!PLAYER::IS_SYSTEM_UI_BEING_DISPLAYED() && !HUD::IS_PAUSE_MENU_ACTIVE())
 	{
-		PAD::DISABLE_ALL_CONTROL_ACTIONS(PLAYER_CONTROL);
-		PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE_ALTERNATE, true);
+		PAD::DISABLE_ALL_CONTROL_ACTIONS(0 /*PLAYER_CONTROL*/);
+		PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 200 /*INPUT_FRONTEND_PAUSE_ALTERNATE*/, true);
 	}
 
 	return;
@@ -35171,11 +35171,11 @@ void func_669() // Position - 0x28403 Hash - 0x6D9CBAEB ^0x88B5F11
 	int instructionalKey;
 	char* entryLine2;
 
-	PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE, true);
-	PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_LEFT, true);
-	PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT, true);
-	PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_DOWN, true);
-	PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_UP, true);
+	PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/, true);
+	PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 189 /*INPUT_FRONTEND_LEFT*/, true);
+	PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 190 /*INPUT_FRONTEND_RIGHT*/, true);
+	PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 187 /*INPUT_FRONTEND_DOWN*/, true);
+	PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 188 /*INPUT_FRONTEND_UP*/, true);
 	instructionalKey = 18;
 	entryLine2 = 0;
 	entryHeader = "BRSCRWTEX" /*Alert*/;
@@ -35681,7 +35681,7 @@ BOOL func_700(Player plParam0) // Position - 0x28DEA Hash - 0xD5FE95C3 ^0xB96E33
 		if (plParam0 == PLAYER::PLAYER_ID())
 			return true;
 		else if (NETWORK::NETWORK_HAVE_USER_CONTENT_PRIVILEGES(0))
-			if (NETWORK::NETWORK_CAN_VIEW_GAMER_USER_CONTENT(&gamerHandle) && unk_0x9F633448E4C73207(&gamerHandle))
+			if (NETWORK::NETWORK_CAN_VIEW_GAMER_USER_CONTENT(&gamerHandle) && _NETWORK_CAN_TEXT_FROM_GAMER_BE_VIEWED(&gamerHandle))
 				return true;
 
 	return false;
@@ -35698,7 +35698,7 @@ BOOL func_701(Player plParam0) // Position - 0x28E35 Hash - 0x81D8AE75 ^0x402648
 		if (func_702(&gamerHandle))
 			return true;
 	
-		if (!unk_0x9F633448E4C73207(&gamerHandle))
+		if (!_NETWORK_CAN_TEXT_FROM_GAMER_BE_VIEWED(&gamerHandle))
 			return true;
 	
 		if (MISC::IS_ORBIS_VERSION() && !MISC::IS_PROSPERO_VERSION() || MISC::IS_PC_VERSION())
@@ -37687,18 +37687,18 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 	else
 	{
 		flag = true;
-		flag2 = espcfParam2 & SPC_AMBIENT_SCRIPT != 0;
-		flag3 = espcfParam2 & SPC_CLEAR_TASKS != 0;
-		flag4 = espcfParam2 & SPC_REMOVE_FIRES != 0;
-		flag5 = espcfParam2 & SPC_REMOVE_EXPLOSIONS != 0;
-		flag6 = espcfParam2 & SPC_REMOVE_PROJECTILES != 0;
-		flag7 = espcfParam2 & SPC_DEACTIVATE_GADGETS != 0;
-		flag8 = espcfParam2 & SPC_REENABLE_CONTROL_ON_DEATH != 0;
-		flag9 = espcfParam2 & SPC_LEAVE_CAMERA_CONTROL_ON != 0;
-		flag10 = espcfParam2 & SPC_ALLOW_PLAYER_DAMAGE != 0;
-		flag11 = espcfParam2 & SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER != 0;
-		flag12 = espcfParam2 & SPC_PREVENT_EVERYBODY_BACKOFF != 0;
-		flag13 = espcfParam2 & SPC_ALLOW_PAD_SHAKE != 0;
+		flag2 = espcfParam2 & 2 /*SPC_AMBIENT_SCRIPT*/ != 0;
+		flag3 = espcfParam2 & 4 /*SPC_CLEAR_TASKS*/ != 0;
+		flag4 = espcfParam2 & 8 /*SPC_REMOVE_FIRES*/ != 0;
+		flag5 = espcfParam2 & 16 /*SPC_REMOVE_EXPLOSIONS*/ != 0;
+		flag6 = espcfParam2 & 32 /*SPC_REMOVE_PROJECTILES*/ != 0;
+		flag7 = espcfParam2 & 64 /*SPC_DEACTIVATE_GADGETS*/ != 0;
+		flag8 = espcfParam2 & 128 /*SPC_REENABLE_CONTROL_ON_DEATH*/ != 0;
+		flag9 = espcfParam2 & 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/ != 0;
+		flag10 = espcfParam2 & 512 /*SPC_ALLOW_PLAYER_DAMAGE*/ != 0;
+		flag11 = espcfParam2 & 1024 /*SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER*/ != 0;
+		flag12 = espcfParam2 & 2048 /*SPC_PREVENT_EVERYBODY_BACKOFF*/ != 0;
+		flag13 = espcfParam2 & 4096 /*SPC_ALLOW_PAD_SHAKE*/ != 0;
 		flag14 = espcfParam2 & 8192 != 0;
 		flag15 = espcfParam2 & 16384 != 0;
 		toggle = espcfParam2 & 32768 != 0;
@@ -37855,40 +37855,40 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 			flags2 = 0;
 		
 			if (flag2)
-				flags2 = flags2 | SPC_AMBIENT_SCRIPT;
+				flags2 = flags2 | 2 /*SPC_AMBIENT_SCRIPT*/;
 		
 			if (flag3)
-				flags2 = flags2 | SPC_CLEAR_TASKS;
+				flags2 = flags2 | 4 /*SPC_CLEAR_TASKS*/;
 		
 			if (flag4)
-				flags2 = flags2 | SPC_REMOVE_FIRES;
+				flags2 = flags2 | 8 /*SPC_REMOVE_FIRES*/;
 		
 			if (flag5)
-				flags2 = flags2 | SPC_REMOVE_EXPLOSIONS;
+				flags2 = flags2 | 16 /*SPC_REMOVE_EXPLOSIONS*/;
 		
 			if (flag6)
-				flags2 = flags2 | SPC_REMOVE_PROJECTILES;
+				flags2 = flags2 | 32 /*SPC_REMOVE_PROJECTILES*/;
 		
 			if (flag7)
-				flags2 = flags2 | SPC_DEACTIVATE_GADGETS;
+				flags2 = flags2 | 64 /*SPC_DEACTIVATE_GADGETS*/;
 		
 			if (flag8)
-				flags2 = flags2 | SPC_REENABLE_CONTROL_ON_DEATH;
+				flags2 = flags2 | 128 /*SPC_REENABLE_CONTROL_ON_DEATH*/;
 		
 			if (flag9)
-				flags2 = flags2 | SPC_LEAVE_CAMERA_CONTROL_ON;
+				flags2 = flags2 | 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/;
 		
 			if (flag10)
-				flags2 = flags2 | SPC_ALLOW_PLAYER_DAMAGE;
+				flags2 = flags2 | 512 /*SPC_ALLOW_PLAYER_DAMAGE*/;
 		
 			if (flag11)
-				flags2 = flags2 | SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER;
+				flags2 = flags2 | 1024 /*SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER*/;
 		
 			if (flag12)
-				flags2 = flags2 | SPC_PREVENT_EVERYBODY_BACKOFF;
+				flags2 = flags2 | 2048 /*SPC_PREVENT_EVERYBODY_BACKOFF*/;
 		
 			if (flag13)
-				flags2 = flags2 | SPC_ALLOW_PAD_SHAKE;
+				flags2 = flags2 | 4096 /*SPC_ALLOW_PAD_SHAKE*/;
 		
 			PLAYER::SET_PLAYER_CONTROL(plParam0, bParam1, flags2);
 		}
@@ -37936,7 +37936,7 @@ BOOL func_784(Ped pedParam0) // Position - 0x2B7E9 Hash - 0x93DB01D2 ^0x43DCC591
 	}
 	else
 	{
-		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(pedParam0, SCRIPT_TASK_ENTER_VEHICLE);
+		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(pedParam0, joaat("SCRIPT_TASK_ENTER_VEHICLE") /*SCRIPT_TASK_ENTER_VEHICLE*/);
 	
 		if (scriptTaskStatus == 0)
 			return true;
@@ -37970,7 +37970,7 @@ void func_785(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x2B81A Ha
 			{
 				if (IS_BIT_SET(Global_2621446.f_67, 2))
 				{
-					for (i = ON_FOOT; i < 8; i = i + 1)
+					for (i = 0 /*ON_FOOT*/; i < 8; i = i + 1)
 					{
 						CAM::SET_CAM_VIEW_MODE_FOR_CONTEXT(i, Global_2621446.f_58[i]);
 					}
@@ -38012,7 +38012,7 @@ void func_787() // Position - 0x2B906 Hash - 0xEFF6029E ^0x224AB476
 	{
 		if (!IS_BIT_SET(Global_2621446.f_67, 2))
 		{
-			for (i = ON_FOOT; i < 8; i = i + 1)
+			for (i = 0 /*ON_FOOT*/; i < 8; i = i + 1)
 			{
 				Global_2621446.f_58[i] = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(i);
 			}

@@ -160,7 +160,7 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 
 	type = player;
 
-	if (type != PV_COMP_INVALID)
+	if (type != -1 /*PV_COMP_INVALID*/)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -376,9 +376,9 @@ int func_16(ePedComponentType epctParam0) // Position - 0x52B Hash - 0xCA5872DF 
 			{
 				switch (blipSprite)
 				{
-					case BLIP_PLAYERSTATE_CUSTODY:
-					case BLIP_PLAYERSTATE_ARRESTED:
-					case BLIP_PLAYERSTATE_KEYHOLDER:
+					case 253 /*BLIP_PLAYERSTATE_CUSTODY*/:
+					case 252 /*BLIP_PLAYERSTATE_ARRESTED*/:
+					case 255 /*BLIP_PLAYERSTATE_KEYHOLDER*/:
 						return func_73(7);
 				
 					case 257:
@@ -388,46 +388,46 @@ int func_16(ePedComponentType epctParam0) // Position - 0x52B Hash - 0xCA5872DF 
 					case 261:
 						return func_73(11);
 				
-					case BLIP_PLAYERSTATE_DRIVING:
+					case 254 /*BLIP_PLAYERSTATE_DRIVING*/:
 						if (PLAYER::GET_PLAYER_TEAM(epctParam0) == PLAYER::GET_PLAYER_TEAM(Global_2672855))
 							return func_73(6);
 						else
 							return func_73(5);
 						break;
 				
-					case BLIP_ON_MISSION:
+					case 271 /*BLIP_ON_MISSION*/:
 						if (PLAYER::GET_PLAYER_TEAM(epctParam0) == PLAYER::GET_PLAYER_TEAM(Global_2672855))
 							return func_73(6);
 						else
 							return func_73(5);
 						break;
 				
-					case BLIP_PASSIVE:
-					case BLIP_USINGMENU:
+					case 163 /*BLIP_PASSIVE*/:
+					case 164 /*BLIP_USINGMENU*/:
 						if (func_72(Global_2672855, epctParam0, -2, 0))
 							return func_73(6);
 						else
 							return func_73(5);
 						break;
 				
-					case BLIP_BOUNTY_HIT:
-					case BLIP_BOUNTY_HIT_INSIDE:
+					case 303 /*BLIP_BOUNTY_HIT*/:
+					case 418 /*BLIP_BOUNTY_HIT_INSIDE*/:
 						return func_73(10);
 				
-					case BLIP_INCAPACITATED:
+					case 364 /*BLIP_INCAPACITATED*/:
 						if (func_21(Global_2672855, epctParam0, true))
 							return func_73(10);
 						else
 							return func_73(5);
 						break;
 				
-					case BLIP_CONTRABAND:
-					case BLIP_PACKAGE:
-					case BLIP_SPORTS_CAR:
-					case BLIP_SUPPLIES:
+					case 478 /*BLIP_CONTRABAND*/:
+					case 501 /*BLIP_PACKAGE*/:
+					case 523 /*BLIP_SPORTS_CAR*/:
+					case 556 /*BLIP_SUPPLIES*/:
 						return func_73(10);
 				
-					case BLIP_LEVEL_INSIDE:
+					case 417 /*BLIP_LEVEL_INSIDE*/:
 						if (func_20(epctParam0) || func_19(epctParam0) || func_17(epctParam0))
 							if (func_21(Global_2672855, epctParam0, true))
 								return 3;
@@ -439,8 +439,8 @@ int func_16(ePedComponentType epctParam0) // Position - 0x52B Hash - 0xCA5872DF 
 							return func_73(5);
 						break;
 				
-					case BLIP_PLAYERSTATE_PARTNER:
-					case BLIP_GANG_HIGHLIGHT:
+					case 256 /*BLIP_PLAYERSTATE_PARTNER*/:
+					case 268 /*BLIP_GANG_HIGHLIGHT*/:
 					default:
 						if (func_21(Global_2672855, epctParam0, true))
 							return func_73(6);
@@ -759,20 +759,20 @@ ePedComponentType func_24(ePedComponentType epctParam0, int iParam1, BOOL bParam
 	Ped ped;
 
 	if (!func_11(epctParam0))
-		return PV_COMP_BERD;
+		return 1 /*PV_COMP_BERD*/;
 
 	if (func_70(epctParam0) && !bParam4)
 		if (bParam2)
-			return PV_COMP_HEAD;
+			return 0 /*PV_COMP_HEAD*/;
 		else
-			return PV_COMP_BERD;
+			return 1 /*PV_COMP_BERD*/;
 
 	if (iParam1 == -2)
 	{
 		playerTeam = PLAYER::GET_PLAYER_TEAM(epctParam0);
 	
 		if (playerTeam > -1 && playerTeam < 4)
-			if (Global_4718592.f_121471[playerTeam] != PV_COMP_INVALID)
+			if (Global_4718592.f_121471[playerTeam] != -1 /*PV_COMP_INVALID*/)
 				iParam1 = playerTeam;
 	}
 
@@ -785,14 +785,14 @@ ePedComponentType func_24(ePedComponentType epctParam0, int iParam1, BOOL bParam
 				if (NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(ped) != -1)
 					if (_NETWORK_IS_PLAYER_VALID(NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(ped), false, true))
 						if (iParam1 > -1 && NETWORK::NETWORK_IS_ACTIVITY_SESSION() && iParam1 < 4)
-							if (Global_4718592.f_121471[iParam1] != PV_COMP_INVALID)
+							if (Global_4718592.f_121471[iParam1] != -1 /*PV_COMP_INVALID*/)
 								return func_65(iParam1, epctParam0, false);
 							else
 								return func_41(epctParam0, NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(ped), iParam1, bParam2, bParam3);
 						else
 							return func_41(epctParam0, NETWORK::NETWORK_GET_PLAYER_INDEX_FROM_PED(ped), iParam1, bParam2, bParam3);
 			else if (iParam1 > -1 && NETWORK::NETWORK_IS_ACTIVITY_SESSION() && iParam1 < 4)
-				if (Global_4718592.f_121471[iParam1] != PV_COMP_INVALID)
+				if (Global_4718592.f_121471[iParam1] != -1 /*PV_COMP_INVALID*/)
 					return func_65(iParam1, epctParam0, false);
 				else
 					return func_25(false, -1, false);
@@ -801,7 +801,7 @@ ePedComponentType func_24(ePedComponentType epctParam0, int iParam1, BOOL bParam
 	}
 
 	if (iParam1 > -1 && NETWORK::NETWORK_IS_ACTIVITY_SESSION() && iParam1 < 4)
-		if (Global_4718592.f_121471[iParam1] != PV_COMP_INVALID)
+		if (Global_4718592.f_121471[iParam1] != -1 /*PV_COMP_INVALID*/)
 			return func_65(iParam1, epctParam0, false);
 		else
 			return func_41(epctParam0, PLAYER::PLAYER_ID(), iParam1, bParam2, bParam3);
@@ -1308,7 +1308,7 @@ ePedComponentType func_41(ePedComponentType epctParam0, ePedComponentType epctPa
 
 	type = epctParam0;
 
-	if (type > PV_COMP_INVALID)
+	if (type > -1 /*PV_COMP_INVALID*/)
 		if (Global_1845281[type /*883*/] == 148)
 			flag = true;
 
@@ -1331,7 +1331,7 @@ ePedComponentType func_41(ePedComponentType epctParam0, ePedComponentType epctPa
 			else
 				return func_26(epctParam1, true, playerTeam, bParam4);
 		}
-		else if (Global_1836681 || Global_1836671 || Global_1845281[epctParam0 /*883*/] == PV_COMP_HEAD)
+		else if (Global_1836681 || Global_1836671 || Global_1845281[epctParam0 /*883*/] == 0 /*PV_COMP_HEAD*/)
 		{
 			if (epctParam0 == epctParam1 || Global_1836681 == true && Global_1836691 == false)
 				return func_23(true);
@@ -1349,9 +1349,9 @@ ePedComponentType func_41(ePedComponentType epctParam0, ePedComponentType epctPa
 		return func_43(num2);
 
 	if (bParam3)
-		return PV_COMP_HEAD;
+		return 0 /*PV_COMP_HEAD*/;
 
-	return PV_COMP_BERD;
+	return 1 /*PV_COMP_BERD*/;
 }
 
 ePedComponentType func_42(BOOL bParam0) // Position - 0x1A68 Hash - 0x7105E6CE ^0x7105E6CE
@@ -1626,18 +1626,18 @@ ePedComponentType func_65(int iParam0, ePedComponentType epctParam1, BOOL bParam
 
 	if (iParam0 > -1 && epctParam1 != _INVALID_PLAYER_INDEX())
 	{
-		if (Global_4718592.f_121471[iParam0] != PV_COMP_INVALID && Global_4718592.f_121471[iParam0] <= PV_COMP_LOWR)
-			if (Global_4718592.f_121471[iParam0] == PV_COMP_HEAD)
+		if (Global_4718592.f_121471[iParam0] != -1 /*PV_COMP_INVALID*/ && Global_4718592.f_121471[iParam0] <= 4 /*PV_COMP_LOWR*/)
+			if (Global_4718592.f_121471[iParam0] == 0 /*PV_COMP_HEAD*/)
 				type = 15;
-			else if (Global_4718592.f_121471[iParam0] == PV_COMP_BERD)
+			else if (Global_4718592.f_121471[iParam0] == 1 /*PV_COMP_BERD*/)
 				type = 18;
-			else if (Global_4718592.f_121471[iParam0] == PV_COMP_HAIR)
+			else if (Global_4718592.f_121471[iParam0] == 2 /*PV_COMP_HAIR*/)
 				type = 24;
-			else if (Global_4718592.f_121471[iParam0] == PV_COMP_LOWR)
+			else if (Global_4718592.f_121471[iParam0] == 4 /*PV_COMP_LOWR*/)
 				if (IS_BIT_SET(Global_4718592.f_15, 29))
 					type = 21;
 				else
-					type = PV_COMP_FEET;
+					type = 6 /*PV_COMP_FEET*/;
 			else
 				type = Global_4718592.f_121471[iParam0];
 		else
@@ -1647,14 +1647,14 @@ ePedComponentType func_65(int iParam0, ePedComponentType epctParam1, BOOL bParam
 			type = func_66(iParam0);
 	
 		if (IS_BIT_SET(Global_4718592.f_24, 29))
-			type = PV_COMP_HEAD;
+			type = 0 /*PV_COMP_HEAD*/;
 	
 		if (IS_BIT_SET(Global_4718592.f_15, 26) && !func_30(iParam0, PLAYER::GET_PLAYER_TEAM(epctParam1), 0, -1))
 			type = func_42(true);
 	}
 	else
 	{
-		type = PV_COMP_BERD;
+		type = 1 /*PV_COMP_BERD*/;
 	}
 
 	return type;
@@ -2259,7 +2259,7 @@ BOOL func_94() // Position - 0x28FF Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x290E Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

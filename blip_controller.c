@@ -268,9 +268,9 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 						{
 							switch (echLocal_62)
 							{
-								case CHAR_FRANKLIN:
-								case CHAR_MICHAEL:
-								case CHAR_TREVOR:
+								case 1 /*CHAR_FRANKLIN*/:
+								case 0 /*CHAR_MICHAEL*/:
+								case 2 /*CHAR_TREVOR*/:
 									break;
 							
 								default:
@@ -316,9 +316,9 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 							{
 								switch (echLocal_62)
 								{
-									case CHAR_FRANKLIN:
-									case CHAR_MICHAEL:
-									case CHAR_TREVOR:
+									case 1 /*CHAR_FRANKLIN*/:
+									case 0 /*CHAR_MICHAEL*/:
+									case 2 /*CHAR_TREVOR*/:
 										if (IS_BIT_SET(Global_33328[j /*23*/].f_11, 28))
 										{
 											Global_33328[j /*23*/].f_19 = HUD::ADD_BLIP_FOR_RADIUS(Global_33328[j /*23*/][0 /*3*/], Global_33328[j /*23*/].f_10);
@@ -358,9 +358,9 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 							{
 								switch (echLocal_62)
 								{
-									case CHAR_FRANKLIN:
-									case CHAR_MICHAEL:
-									case CHAR_TREVOR:
+									case 1 /*CHAR_FRANKLIN*/:
+									case 0 /*CHAR_MICHAEL*/:
+									case 2 /*CHAR_TREVOR*/:
 										HUD::SET_BLIP_COORDS(Global_33328[j /*23*/].f_19, Global_33328[j /*23*/][echLocal_62 /*3*/]);
 										break;
 								
@@ -480,7 +480,7 @@ void func_2() // Position - 0x72F Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -493,7 +493,7 @@ void func_2() // Position - 0x72F Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_3(eCharacter echParam0) // Position - 0x82C Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x838 Hash - 0xAC4E9801 ^0xB379A75F
@@ -505,14 +505,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x838 Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x875 Hash - 0xADCB9755 ^0xADCB9755
@@ -520,7 +520,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x875 Hash - 0xADC
 	if (func_3(character))
 		return func_6(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -532,7 +532,7 @@ Hash func_6(eCharacter echParam0) // Position - 0x89A Hash - 0xE4CEEC2C ^0xE4CEE
 
 void func_7() // Position - 0x8A9 Hash - 0xFC9E09FE ^0xC84FC3B9
 {
-	if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN)
+	if (_GET_CURRENT_PLAYER_CHARACTER() == 1 /*CHAR_FRANKLIN*/)
 	{
 		if (func_10(63))
 		{
@@ -867,15 +867,15 @@ void func_20(Blip blParam0, int iParam1) // Position - 0xEA4 Hash - 0xA9216813 ^
 	{
 		switch (character)
 		{
-			case CHAR_MICHAEL:
+			case 0 /*CHAR_MICHAEL*/:
 				HUD::SET_BLIP_COLOUR(blParam0, 42);
 				break;
 		
-			case CHAR_FRANKLIN:
+			case 1 /*CHAR_FRANKLIN*/:
 				HUD::SET_BLIP_COLOUR(blParam0, 43);
 				break;
 		
-			case CHAR_TREVOR:
+			case 2 /*CHAR_TREVOR*/:
 				HUD::SET_BLIP_COLOUR(blParam0, 44);
 				break;
 		}
@@ -957,13 +957,13 @@ void func_20(Blip blParam0, int iParam1) // Position - 0xEA4 Hash - 0xA9216813 ^
 					}
 					else
 					{
-						if (Global_33328[iParam1 /*23*/].f_17 == CHAR_MICHAEL)
+						if (Global_33328[iParam1 /*23*/].f_17 == 0 /*CHAR_MICHAEL*/)
 							HUD::SET_BLIP_COLOUR(blParam0, 42);
 					
-						if (Global_33328[iParam1 /*23*/].f_17 == CHAR_FRANKLIN)
+						if (Global_33328[iParam1 /*23*/].f_17 == 1 /*CHAR_FRANKLIN*/)
 							HUD::SET_BLIP_COLOUR(blParam0, 43);
 					
-						if (Global_33328[iParam1 /*23*/].f_17 == CHAR_TREVOR)
+						if (Global_33328[iParam1 /*23*/].f_17 == 2 /*CHAR_TREVOR*/)
 							HUD::SET_BLIP_COLOUR(blParam0, 44);
 					
 						if (Global_33328[iParam1 /*23*/].f_16 == 8)
@@ -1017,9 +1017,9 @@ void func_20(Blip blParam0, int iParam1) // Position - 0xEA4 Hash - 0xA9216813 ^
 	{
 		switch (character)
 		{
-			case CHAR_FRANKLIN:
-			case CHAR_MICHAEL:
-			case CHAR_TREVOR:
+			case 1 /*CHAR_FRANKLIN*/:
+			case 0 /*CHAR_MICHAEL*/:
+			case 2 /*CHAR_TREVOR*/:
 				HUD::SET_BLIP_COORDS(Global_33328[iParam1 /*23*/].f_19, Global_33328[iParam1 /*23*/][character /*3*/]);
 				break;
 		}

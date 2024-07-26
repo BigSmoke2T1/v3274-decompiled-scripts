@@ -235,7 +235,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 	{
 		SYSTEM::WAIT(0);
 	
-		if (func_33(CHAR_MICHAEL))
+		if (func_33(0 /*CHAR_MICHAEL*/))
 		{
 			func_36();
 		}
@@ -672,26 +672,26 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0x831 Hash - 0x98476CE1 ^0
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[0 /*29*/])
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[1 /*29*/])
-				Global_20930 = CHAR_FRANKLIN;
+				Global_20930 = 1 /*CHAR_FRANKLIN*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[2 /*29*/])
-				Global_20930 = CHAR_TREVOR;
+				Global_20930 = 2 /*CHAR_TREVOR*/;
 			else
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 	}
 	else
 	{
 		Global_20930 = _GET_CURRENT_PLAYER_CHARACTER();
 	
-		if (Global_20930 == _CHAR_NULL)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 == 145 /*_CHAR_NULL*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
 		if (Global_79389)
-			Global_20930 = CHAR_MULTIPLAYER;
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
-		if (Global_20930 > CHAR_MULTIPLAYER)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 > 3 /*CHAR_MULTIPLAYER*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	}
 
 	return;
@@ -725,7 +725,7 @@ void func_17() // Position - 0x8EC Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -738,7 +738,7 @@ void func_17() // Position - 0x8EC Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_18(eCharacter echParam0) // Position - 0x9E9 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x9F5 Hash - 0xAC4E9801 ^0xB379A75F
@@ -750,14 +750,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x9F5 Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xA32 Hash - 0xADCB9755 ^0xADCB9755
@@ -765,7 +765,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xA32 Hash - 0xADC
 	if (func_18(character))
 		return func_21(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -915,7 +915,7 @@ void func_30() // Position - 0xC51 Hash - 0xFB7C4AFA ^0x9BD9D4A7
 	{
 		if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(sizeAndPeds[i]))
 		{
-			if (ENTITY::GET_ENTITY_MODEL(sizeAndPeds[i]) == func_32(CHAR_JIMMY_BOSTON))
+			if (ENTITY::GET_ENTITY_MODEL(sizeAndPeds[i]) == func_32(55 /*CHAR_JIMMY_BOSTON*/))
 			{
 				pedLocal_203 = sizeAndPeds[i];
 			
@@ -929,7 +929,7 @@ void func_30() // Position - 0xC51 Hash - 0xFB7C4AFA ^0x9BD9D4A7
 				_CONVERSATION_INITIALIZE_ACTOR(&uLocal_36, 5, pedLocal_203, "JIMMYBOSTON", 1, 1);
 			}
 		
-			if (ENTITY::GET_ENTITY_MODEL(sizeAndPeds[i]) == func_32(CHAR_MARNIE))
+			if (ENTITY::GET_ENTITY_MODEL(sizeAndPeds[i]) == func_32(60 /*CHAR_MARNIE*/))
 			{
 				pedLocal_202 = sizeAndPeds[i];
 			
@@ -981,7 +981,7 @@ Hash func_32(eCharacter echParam0) // Position - 0xDEF Hash - 0xBF0B24A5 ^0xBF0B
 	if (!func_18(echParam0))
 		return func_21(echParam0);
 	else
-		echParam0 != _CHAR_NULL;
+		echParam0 != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -990,7 +990,7 @@ BOOL func_33(eCharacter echParam0) // Position - 0xE15 Hash - 0x5B46CC9D ^0x5B46
 {
 	if (!(_GET_CURRENT_PLAYER_CHARACTER() == echParam0) || func_35() || func_34() || Global_79386 != -1)
 	{
-		!(_GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN);
+		!(_GET_CURRENT_PLAYER_CHARACTER() == 1 /*CHAR_FRANKLIN*/);
 		func_35();
 		func_34();
 		Global_79386 != -1;

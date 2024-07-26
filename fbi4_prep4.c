@@ -1021,15 +1021,15 @@ void func_10() // Position - 0xF62 Hash - 0xB76E2046 ^0x5C822D78
 		{
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					TEXT_LABEL_ASSIGN_STRING(&Global_79622, "CMN_MARRE" /*~s~Michael was arrested.*/, 16);
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					TEXT_LABEL_ASSIGN_STRING(&Global_79622, "CMN_FARRE" /*~s~Franklin was arrested.*/, 16);
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					TEXT_LABEL_ASSIGN_STRING(&Global_79622, "CMN_TARRE" /*~s~Trevor was arrested.*/, 16);
 					break;
 			}
@@ -1045,15 +1045,15 @@ void func_10() // Position - 0xF62 Hash - 0xB76E2046 ^0x5C822D78
 		{
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					TEXT_LABEL_ASSIGN_STRING(&Global_79622, "CMN_MDIED" /*~s~Michael died.*/, 16);
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					TEXT_LABEL_ASSIGN_STRING(&Global_79622, "CMN_FDIED" /*~s~Franklin died.*/, 16);
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					TEXT_LABEL_ASSIGN_STRING(&Global_79622, "CMN_TDIED" /*~s~Trevor died.*/, 16);
 					break;
 			}
@@ -1096,7 +1096,7 @@ void func_12() // Position - 0x1062 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -1114,7 +1114,7 @@ BOOL func_13(int iParam0) // Position - 0x115F Hash - 0x937D8816 ^0x937D8816
 
 BOOL func_14(eCharacter echParam0) // Position - 0x116D Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x1179 Hash - 0xAC4E9801 ^0xB379A75F
@@ -1126,14 +1126,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x1179 Ha
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x11B6 Hash - 0xADCB9755 ^0xADCB9755
@@ -1141,7 +1141,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x11B6 Hash - 0xAD
 	if (func_14(character))
 		return func_17(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -1699,7 +1699,7 @@ BOOL func_44(var uParam0, char* sParam1, var uParam2) // Position - 0x1AFF Hash 
 			{
 				if (func_82(74) || func_82(75) && func_81())
 				{
-					if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
+					if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
 					{
 						func_80(true);
 						func_79(46, 1);
@@ -1717,7 +1717,7 @@ BOOL func_44(var uParam0, char* sParam1, var uParam2) // Position - 0x1AFF Hash 
 						}
 					}
 				}
-				else if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
+				else if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
 				{
 					func_80(false);
 					*uParam0 = 4;
@@ -1851,7 +1851,7 @@ void func_51() // Position - 0x1D85 Hash - 0x8CBDD44A ^0x2FA767A5
 	eCharacter i;
 	Ped ped;
 
-	for (i = CHAR_MICHAEL; i < CHAR_MULTIPLAYER; i = i + 1)
+	for (i = 0 /*CHAR_MICHAEL*/; i < 3 /*CHAR_MULTIPLAYER*/; i = i + 1)
 	{
 		ped = func_58(i);
 	
@@ -1887,10 +1887,10 @@ int func_52(int iParam0, int iParam1, eCharacter echParam2, eCharacter echParam3
 	if (echParam3 == echParam2)
 		return 0;
 
-	if (echParam2 != _CHAR_VIRTUAL_MP && echParam2 != CHAR_MICHAEL && echParam2 != CHAR_FRANKLIN && echParam2 != CHAR_TREVOR)
+	if (echParam2 != 144 /*_CHAR_VIRTUAL_MP*/ && echParam2 != 0 /*CHAR_MICHAEL*/ && echParam2 != 1 /*CHAR_FRANKLIN*/ && echParam2 != 2 /*CHAR_TREVOR*/)
 		return 0;
 
-	if (Global_113969.f_7691.f_136 < CHAR_MIKE_TREV_CONF)
+	if (Global_113969.f_7691.f_136 < 9 /*CHAR_MIKE_TREV_CONF*/)
 	{
 		num = iParam0;
 	
@@ -1937,14 +1937,14 @@ void func_53(eCharacter echParam0) // Position - 0x1F2D Hash - 0xDBA91FA2 ^0x620
 	if (!func_14(echParam0))
 		return;
 
-	for (i = CHAR_MICHAEL; i < Global_113969.f_7691.f_136; i = i + 1)
+	for (i = 0 /*CHAR_MICHAEL*/; i < Global_113969.f_7691.f_136; i = i + 1)
 	{
 		if (IS_BIT_SET(Global_113969.f_7691[i /*15*/].f_2, echParam0))
 			if (Global_113969.f_7691[i /*15*/].f_3 > num)
 				num = Global_113969.f_7691[i /*15*/].f_3;
 	}
 
-	for (j = CHAR_MICHAEL; j < Global_113969.f_7691.f_764; j = j + 1)
+	for (j = 0 /*CHAR_MICHAEL*/; j < Global_113969.f_7691.f_764; j = j + 1)
 	{
 		if (IS_BIT_SET(Global_113969.f_7691.f_651[j /*14*/].f_2, echParam0))
 			if (Global_113969.f_7691.f_651[j /*14*/].f_3 == 5)
@@ -1990,13 +1990,13 @@ int func_55() // Position - 0x2055 Hash - 0xCC051B48 ^0xE41C4C70
 		case 33:
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					return -1847734803;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					return -714760066;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					return -1198055521;
 			}
 			break;
@@ -2004,13 +2004,13 @@ int func_55() // Position - 0x2055 Hash - 0xCC051B48 ^0xE41C4C70
 		case 34:
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					return 1374342572;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					return 530956160;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					return 240475766;
 			}
 			break;
@@ -2018,13 +2018,13 @@ int func_55() // Position - 0x2055 Hash - 0xCC051B48 ^0xE41C4C70
 		case 36:
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					return 580731697;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					return 728176806;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					return 910240872;
 			}
 			break;
@@ -2032,13 +2032,13 @@ int func_55() // Position - 0x2055 Hash - 0xCC051B48 ^0xE41C4C70
 		case 37:
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					return 74540475;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					return -1200353264;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					return 801340541;
 			}
 			break;
@@ -2059,7 +2059,7 @@ BOOL func_57(Ped pedParam0, int iParam1) // Position - 0x2187 Hash - 0xE4F8E1F1 
 
 Ped func_58(eCharacter echParam0) // Position - 0x21E0 Hash - 0x44474C2F ^0xB8583860
 {
-	if (echParam0 > CHAR_MULTIPLAYER)
+	if (echParam0 > 3 /*CHAR_MULTIPLAYER*/)
 		return 0;
 
 	if (echParam0 == _GET_CURRENT_PLAYER_CHARACTER())
@@ -2070,13 +2070,13 @@ Ped func_58(eCharacter echParam0) // Position - 0x21E0 Hash - 0x44474C2F ^0xB858
 
 int func_59(eCharacter echParam0) // Position - 0x2211 Hash - 0x379BF8EA ^0x379BF8EA
 {
-	if (echParam0 == CHAR_MICHAEL)
+	if (echParam0 == 0 /*CHAR_MICHAEL*/)
 		return 0;
-	else if (echParam0 == CHAR_TREVOR)
+	else if (echParam0 == 2 /*CHAR_TREVOR*/)
 		return 2;
-	else if (echParam0 == CHAR_FRANKLIN)
+	else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
 		return 1;
-	else if (echParam0 == _CHAR_NULL)
+	else if (echParam0 == 145 /*_CHAR_NULL*/)
 		return 3;
 
 	return 4;
@@ -2090,11 +2090,11 @@ struct<4> func_60(BOOL bParam0) // Position - 0x224C Hash - 0x44227DCC ^0x44227D
 	{
 		switch (_GET_CURRENT_PLAYER_CHARACTER())
 		{
-			case CHAR_FRANKLIN:
+			case 1 /*CHAR_FRANKLIN*/:
 				TEXT_LABEL_ASSIGN_STRING(&unk, "FBI4_ISAGO", 16);
 				break;
 		
-			case CHAR_TREVOR:
+			case 2 /*CHAR_TREVOR*/:
 				TEXT_LABEL_ASSIGN_STRING(&unk, "FBI4_ISAGO", 16);
 				break;
 		}
@@ -2103,11 +2103,11 @@ struct<4> func_60(BOOL bParam0) // Position - 0x224C Hash - 0x44227DCC ^0x44227D
 	{
 		switch (_GET_CURRENT_PLAYER_CHARACTER())
 		{
-			case CHAR_FRANKLIN:
+			case 1 /*CHAR_FRANKLIN*/:
 				TEXT_LABEL_ASSIGN_STRING(&unk, "FBI4_THATSIT", 16);
 				break;
 		
-			case CHAR_TREVOR:
+			case 2 /*CHAR_TREVOR*/:
 				TEXT_LABEL_ASSIGN_STRING(&unk, "FBI4_THATSIT", 16);
 				break;
 		}
@@ -2447,26 +2447,26 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0x2812 Hash - 0x98476CE1 ^
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[0 /*29*/])
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[1 /*29*/])
-				Global_20930 = CHAR_FRANKLIN;
+				Global_20930 = 1 /*CHAR_FRANKLIN*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[2 /*29*/])
-				Global_20930 = CHAR_TREVOR;
+				Global_20930 = 2 /*CHAR_TREVOR*/;
 			else
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 	}
 	else
 	{
 		Global_20930 = _GET_CURRENT_PLAYER_CHARACTER();
 	
-		if (Global_20930 == _CHAR_NULL)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 == 145 /*_CHAR_NULL*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
 		if (Global_79389)
-			Global_20930 = CHAR_MULTIPLAYER;
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
-		if (Global_20930 > CHAR_MULTIPLAYER)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 > 3 /*CHAR_MULTIPLAYER*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	}
 
 	return;
@@ -2566,15 +2566,15 @@ char* func_76() // Position - 0x29F0 Hash - 0x4A4B860C ^0x4A4B860C
 		case 33:
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					str = "FBIP1_MENDC";
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					str = "FBIP1_FENDC";
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					str = "FBIP1_TENDC";
 					break;
 			}
@@ -2583,15 +2583,15 @@ char* func_76() // Position - 0x29F0 Hash - 0x4A4B860C ^0x4A4B860C
 		case 34:
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					str = "FBIP2_MENDC";
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					str = "FBIP2_FENDC";
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					str = "FBIP2_TENDC";
 					break;
 			}
@@ -2600,15 +2600,15 @@ char* func_76() // Position - 0x29F0 Hash - 0x4A4B860C ^0x4A4B860C
 		case 36:
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					str = "FBIP4_MENDC";
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					str = "FBIP4_FENDC";
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					str = "FBIP4_TENDC";
 					break;
 			}
@@ -2617,15 +2617,15 @@ char* func_76() // Position - 0x29F0 Hash - 0x4A4B860C ^0x4A4B860C
 		case 37:
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					str = "FBIP5_MENDC";
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					str = "FBIP5_FENDC";
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					str = "FBIP5_TENDC";
 					break;
 			}
@@ -2641,15 +2641,15 @@ eCharacter func_77() // Position - 0x2AF8 Hash - 0x7345D3E ^0x7345D3E
 
 	switch (_GET_CURRENT_PLAYER_CHARACTER())
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			num = 5;
 			break;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			num = 9;
 			break;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			num = 8;
 			break;
 	}
@@ -2699,11 +2699,11 @@ void func_79(int iParam0, BOOL bParam1) // Position - 0x2BCC Hash - 0xD6D1968B ^
 void func_80(BOOL bParam0) // Position - 0x2C11 Hash - 0x1FCFDFBE ^0xC61B76
 {
 	if (bParam0)
-		func_52(1527885205, 0, _GET_CURRENT_PLAYER_CHARACTER(), CHAR_STEVE, 3, 6000, 6000, -1, 0, -1, 0);
+		func_52(1527885205, 0, _GET_CURRENT_PLAYER_CHARACTER(), 23 /*CHAR_STEVE*/, 3, 6000, 6000, -1, 0, -1, 0);
 	else if (!func_82(3))
-		func_52(-224691627, 0, _GET_CURRENT_PLAYER_CHARACTER(), CHAR_STEVE, 3, 6000, 6000, -1, 50, -1, 0);
+		func_52(-224691627, 0, _GET_CURRENT_PLAYER_CHARACTER(), 23 /*CHAR_STEVE*/, 3, 6000, 6000, -1, 50, -1, 0);
 	else
-		func_52(-224691627, 0, _GET_CURRENT_PLAYER_CHARACTER(), CHAR_STEVE, 3, 6000, 6000, -1, 0, -1, 0);
+		func_52(-224691627, 0, _GET_CURRENT_PLAYER_CHARACTER(), 23 /*CHAR_STEVE*/, 3, 6000, 6000, -1, 0, -1, 0);
 
 	return;
 }
@@ -3199,17 +3199,17 @@ void func_102(var uParam0) // Position - 0x34A0 Hash - 0xC7ABBF13 ^0xFD0DEF69
 
 	switch (_GET_CURRENT_PLAYER_CHARACTER())
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			num = 0;
 			str = "MICHAEL";
 			break;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			num = 1;
 			str = "FRANKLIN";
 			break;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			num = 2;
 			str = "TREVOR";
 			break;
@@ -3381,7 +3381,7 @@ void func_110() // Position - 0x371C Hash - 0x7CF67B39 ^0x1C5BF2FA
 			
 				if (_IS_MISSION_REPLAY_IN_PROGRESS())
 				{
-					func_116(&unk, -1327.1753f, -1290.8113f, 3.8472f, 291.8355f, 0, 0, 0, 0, 0, joaat("asterope"), 0, _CHAR_NULL, 1);
+					func_116(&unk, -1327.1753f, -1290.8113f, 3.8472f, 291.8355f, 0, 0, 0, 0, 0, joaat("asterope"), 0, 145 /*_CHAR_NULL*/, 1);
 					func_113(0, -1, 1);
 					gameTimer = MISC::GET_GAME_TIMER();
 				
@@ -3606,7 +3606,7 @@ BOOL func_117(var uParam0, eCharacter echParam1, Vector3 vParam2, var uParam3, v
 			return true;
 		}
 	
-		if (echParam1 == CHAR_MICHAEL && !Global_113969.f_2366.f_539.f_4316 && Global_113969.f_9088.f_99.f_58[131])
+		if (echParam1 == 0 /*CHAR_MICHAEL*/ && !Global_113969.f_2366.f_539.f_4316 && Global_113969.f_9088.f_99.f_58[131])
 			Global_113969.f_2366.f_539.f_2407[0 /*295*/][echParam1 /*98*/] = 0;
 	
 		if (Global_113969.f_2366.f_539.f_2407[0 /*295*/][echParam1 /*98*/] == model)
@@ -3672,7 +3672,7 @@ BOOL func_117(var uParam0, eCharacter echParam1, Vector3 vParam2, var uParam3, v
 				func_193(uParam0, &(Global_113969.f_2366.f_539.f_2407[0 /*295*/][echParam1 /*98*/].f_31), &(Global_113969.f_2366.f_539.f_2407[0 /*295*/][echParam1 /*98*/].f_81));
 				VEHICLE::SET_VEHICLE_ENVEFF_SCALE(*uParam0, model.f_96);
 			
-				if (echParam1 == CHAR_TREVOR)
+				if (echParam1 == 2 /*CHAR_TREVOR*/)
 					if (ENTITY::GET_ENTITY_MODEL(*uParam0) == joaat("bodhi2"))
 						func_191(uParam0);
 			
@@ -3746,7 +3746,7 @@ BOOL func_117(var uParam0, eCharacter echParam1, Vector3 vParam2, var uParam3, v
 				func_193(uParam0, &(Global_113969.f_2366.f_539.f_2407[1 /*295*/][echParam1 /*98*/].f_31), &(Global_113969.f_2366.f_539.f_2407[1 /*295*/][echParam1 /*98*/].f_81));
 				VEHICLE::SET_VEHICLE_ENVEFF_SCALE(*uParam0, model.f_96);
 			
-				if (echParam1 == CHAR_TREVOR)
+				if (echParam1 == 2 /*CHAR_TREVOR*/)
 					if (ENTITY::GET_ENTITY_MODEL(*uParam0) == joaat("bodhi2"))
 						func_191(uParam0);
 			
@@ -3822,7 +3822,7 @@ BOOL func_117(var uParam0, eCharacter echParam1, Vector3 vParam2, var uParam3, v
 				func_193(uParam0, &(model.f_31), &(model.f_81));
 				VEHICLE::SET_VEHICLE_ENVEFF_SCALE(*uParam0, model.f_96);
 			
-				if (echParam1 == CHAR_FRANKLIN)
+				if (echParam1 == 1 /*CHAR_FRANKLIN*/)
 				{
 					if (ENTITY::GET_ENTITY_MODEL(*uParam0) == joaat("bagger") && !Global_113969.f_9088.f_99.f_58[118])
 					{
@@ -3830,12 +3830,12 @@ BOOL func_117(var uParam0, eCharacter echParam1, Vector3 vParam2, var uParam3, v
 						flag = false;
 					}
 				}
-				else if (echParam1 == CHAR_TREVOR)
+				else if (echParam1 == 2 /*CHAR_TREVOR*/)
 				{
 					if (ENTITY::GET_ENTITY_MODEL(*uParam0) == joaat("bodhi2"))
 						func_191(uParam0);
 				}
-				else if (echParam1 == CHAR_MICHAEL && !Global_113969.f_2366.f_539.f_4316 && Global_113969.f_9088.f_99.f_58[131] && ENTITY::GET_ENTITY_MODEL(*uParam0) == joaat("tailgater"))
+				else if (echParam1 == 0 /*CHAR_MICHAEL*/ && !Global_113969.f_2366.f_539.f_4316 && Global_113969.f_9088.f_99.f_58[131] && ENTITY::GET_ENTITY_MODEL(*uParam0) == joaat("tailgater"))
 				{
 					VEHICLE::SET_VEHICLE_MOD(*uParam0, 6, 1, false);
 					VEHICLE::SET_VEHICLE_MOD(*uParam0, 14, 7, false);
@@ -6578,13 +6578,13 @@ BOOL func_153(Vehicle veParam0) // Position - 0x83D8 Hash - 0xEDA47CC8 ^0x5F29FF
 		if (func_159() || func_158(PLAYER::PLAYER_ID()))
 			return false;
 	
-		if (func_157(PLAYER::PLAYER_ID(), true, false) && Global_1845281[PLAYER::PLAYER_ID() /*883*/].f_268.f_35 > PV_COMP_HEAD || IS_BIT_SET(Global_1845281[PLAYER::PLAYER_ID() /*883*/].f_268.f_33, 14) || IS_BIT_SET(Global_1845281[PLAYER::PLAYER_ID() /*883*/].f_268.f_33, 11))
+		if (func_157(PLAYER::PLAYER_ID(), true, false) && Global_1845281[PLAYER::PLAYER_ID() /*883*/].f_268.f_35 > 0 /*PV_COMP_HEAD*/ || IS_BIT_SET(Global_1845281[PLAYER::PLAYER_ID() /*883*/].f_268.f_33, 14) || IS_BIT_SET(Global_1845281[PLAYER::PLAYER_ID() /*883*/].f_268.f_33, 11))
 			return false;
 	
-		if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Player_Vehicle", INT))
+		if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Player_Vehicle", 3 /*INT*/))
 			if (DECORATOR::DECOR_EXIST_ON(veParam0, "Player_Vehicle"))
 				if (DECORATOR::DECOR_GET_INT(veParam0, "Player_Vehicle") == NETWORK::NETWORK_HASH_FROM_PLAYER_HANDLE(PLAYER::PLAYER_ID()))
-					if (func_155() != PV_COMP_INVALID && func_155() < 517)
+					if (func_155() != -1 /*PV_COMP_INVALID*/ && func_155() < 517)
 						if (!func_154(veParam0) || ENTITY::GET_ENTITY_MODEL(veParam0) != Global_1586521[func_155() /*142*/].f_66)
 							return true;
 					else
@@ -6796,7 +6796,7 @@ void func_166(Vehicle veParam0, eCharacter echParam1) // Position - 0x8AFC Hash 
 	if (!func_171(veParam0))
 		return;
 
-	if (echParam1 != CHAR_MICHAEL && echParam1 != CHAR_FRANKLIN && echParam1 != CHAR_TREVOR)
+	if (echParam1 != 0 /*CHAR_MICHAEL*/ && echParam1 != 1 /*CHAR_FRANKLIN*/ && echParam1 != 2 /*CHAR_TREVOR*/)
 	{
 		pedInVehicleSeat = VEHICLE::GET_PED_IN_VEHICLE_SEAT(veParam0, -1, false);
 	
@@ -6805,13 +6805,13 @@ void func_166(Vehicle veParam0, eCharacter echParam1) // Position - 0x8AFC Hash 
 	
 		if (ENTITY::DOES_ENTITY_EXIST(pedInVehicleSeat) && !PED::IS_PED_INJURED(pedInVehicleSeat))
 			if (ENTITY::GET_ENTITY_MODEL(pedInVehicleSeat) == joaat("Player_Zero"))
-				echParam1 = CHAR_MICHAEL;
+				echParam1 = 0 /*CHAR_MICHAEL*/;
 			else if (ENTITY::GET_ENTITY_MODEL(pedInVehicleSeat) == joaat("Player_One"))
-				echParam1 = CHAR_FRANKLIN;
+				echParam1 = 1 /*CHAR_FRANKLIN*/;
 			else if (ENTITY::GET_ENTITY_MODEL(pedInVehicleSeat) == joaat("Player_Two"))
-				echParam1 = CHAR_TREVOR;
+				echParam1 = 2 /*CHAR_TREVOR*/;
 	
-		if (echParam1 != CHAR_MICHAEL && echParam1 != CHAR_FRANKLIN && echParam1 != CHAR_TREVOR)
+		if (echParam1 != 0 /*CHAR_MICHAEL*/ && echParam1 != 1 /*CHAR_FRANKLIN*/ && echParam1 != 2 /*CHAR_TREVOR*/)
 			echParam1 = Global_113969.f_2366.f_539.f_4321;
 	}
 
@@ -7053,14 +7053,14 @@ void func_170(var uParam0) // Position - 0x9079 Hash - 0xB95AF921 ^0x4DC7C61C
 
 BOOL func_171(Vehicle veParam0) // Position - 0x9129 Hash - 0x835CB3EF ^0xB88368F0
 {
-	if (!ENTITY::DOES_ENTITY_EXIST(veParam0) || !VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false) || func_188(veParam0, 0, false) || func_188(veParam0, 1, false) || func_188(veParam0, 2, false) || func_187(veParam0) != _CHAR_NULL || func_186(veParam0) || func_185(veParam0) || func_124(veParam0) || func_184(veParam0) || !func_172(ENTITY::GET_ENTITY_MODEL(veParam0)))
+	if (!ENTITY::DOES_ENTITY_EXIST(veParam0) || !VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false) || func_188(veParam0, 0, false) || func_188(veParam0, 1, false) || func_188(veParam0, 2, false) || func_187(veParam0) != 145 /*_CHAR_NULL*/ || func_186(veParam0) || func_185(veParam0) || func_124(veParam0) || func_184(veParam0) || !func_172(ENTITY::GET_ENTITY_MODEL(veParam0)))
 	{
 		func_185(veParam0);
 		func_185(veParam0);
 		func_188(veParam0, 0, false);
 		func_188(veParam0, 1, false);
 		func_188(veParam0, 2, false);
-		func_187(veParam0) != _CHAR_NULL;
+		func_187(veParam0) != 145 /*_CHAR_NULL*/;
 		return false;
 	}
 
@@ -7069,7 +7069,7 @@ BOOL func_171(Vehicle veParam0) // Position - 0x9129 Hash - 0x835CB3EF ^0xB88368
 
 BOOL func_172(ePedComponentType epctParam0) // Position - 0x9206 Hash - 0x66FE4A4A ^0x10D5195D
 {
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return false;
 
 	if (!func_173(epctParam0, false, -1))
@@ -7510,10 +7510,10 @@ eCharacter func_187(Vehicle veParam0) // Position - 0x9B40 Hash - 0x593067C2 ^0x
 	int i;
 
 	if (!ENTITY::DOES_ENTITY_EXIST(veParam0))
-		return _CHAR_NULL;
+		return 145 /*_CHAR_NULL*/;
 
 	if (!VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false))
-		return _CHAR_NULL;
+		return 145 /*_CHAR_NULL*/;
 
 	for (i = 0; i < 9; i = i + 1)
 	{
@@ -7522,7 +7522,7 @@ eCharacter func_187(Vehicle veParam0) // Position - 0x9B40 Hash - 0x593067C2 ^0x
 				return Global_98854[i];
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 BOOL func_188(Vehicle veParam0, int iParam1, BOOL bParam2) // Position - 0x9BA3 Hash - 0xBCC62924 ^0x77695844
@@ -7886,7 +7886,7 @@ void func_201(eCharacter echParam0, var uParam1, int iParam2) // Position - 0xA2
 
 	switch (echParam0)
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			num = joaat("tailgater");
 		
 			if (Global_113969.f_9088.f_99.f_58[128] && !Global_113969.f_9088.f_99.f_58[131])
@@ -7916,7 +7916,7 @@ void func_201(eCharacter echParam0, var uParam1, int iParam2) // Position - 0xA2
 			}
 			break;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			num = joaat("bodhi2");
 		
 			switch (num)
@@ -7936,7 +7936,7 @@ void func_201(eCharacter echParam0, var uParam1, int iParam2) // Position - 0xA2
 			}
 			break;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			if (iParam2 == 1)
 				num = joaat("buffalo2");
 			else if (iParam2 == 2)
@@ -8003,7 +8003,7 @@ void func_202(eCharacter echParam0, int iParam1) // Position - 0xA4C7 Hash - 0xB
 					{
 						ENTITY::SET_ENTITY_AS_MISSION_ENTITY(Global_98844[i], false, true);
 						VEHICLE::DELETE_VEHICLE(&Global_98844[i]);
-						Global_98854[i] = _CHAR_NULL;
+						Global_98854[i] = 145 /*_CHAR_NULL*/;
 					}
 				}
 			}
@@ -8027,7 +8027,7 @@ Hash func_203(eCharacter echParam0, int iParam1) // Position - 0xA565 Hash - 0x3
 	}
 	else
 	{
-		echParam0 != _CHAR_NULL;
+		echParam0 != 145 /*_CHAR_NULL*/;
 	}
 
 	return 0;
@@ -8216,7 +8216,7 @@ BOOL func_212(var uParam0, int iParam1) // Position - 0xA968 Hash - 0x93EFD4FF ^
 		case 0:
 			*uParam0 = { -831.8538f, 172.1154f, 69.9058f };
 			uParam0->f_3 = 157.5705f;
-			uParam0->f_4 = func_203(CHAR_MICHAEL, 1);
+			uParam0->f_4 = func_203(0 /*CHAR_MICHAEL*/, 1);
 			uParam0->f_12 = 0;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -8226,7 +8226,7 @@ BOOL func_212(var uParam0, int iParam1) // Position - 0xA968 Hash - 0x93EFD4FF ^
 		case 1:
 			*uParam0 = { 1970.9434f, 3801.6838f, 31.1396f };
 			uParam0->f_3 = 301.3964f;
-			uParam0->f_4 = func_203(CHAR_MICHAEL, 1);
+			uParam0->f_4 = func_203(0 /*CHAR_MICHAEL*/, 1);
 			uParam0->f_12 = 0;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -8236,7 +8236,7 @@ BOOL func_212(var uParam0, int iParam1) // Position - 0xA968 Hash - 0x93EFD4FF ^
 		case 2:
 			*uParam0 = { -22.6297f, -1439.1368f, 29.6549f };
 			uParam0->f_3 = 180.0808f;
-			uParam0->f_4 = func_203(CHAR_FRANKLIN, 1);
+			uParam0->f_4 = func_203(1 /*CHAR_FRANKLIN*/, 1);
 			uParam0->f_12 = 1;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -8246,7 +8246,7 @@ BOOL func_212(var uParam0, int iParam1) // Position - 0xA968 Hash - 0x93EFD4FF ^
 		case 3:
 			*uParam0 = { -22.5229f, -1434.6986f, 29.6552f };
 			uParam0->f_3 = 141.6114f;
-			uParam0->f_4 = func_203(CHAR_FRANKLIN, 2);
+			uParam0->f_4 = func_203(1 /*CHAR_FRANKLIN*/, 2);
 			uParam0->f_12 = 1;
 			MISC::SET_BIT(&(uParam0->f_9), 19);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -8256,7 +8256,7 @@ BOOL func_212(var uParam0, int iParam1) // Position - 0xA968 Hash - 0x93EFD4FF ^
 		case 4:
 			*uParam0 = { 10.9281f, 545.669f, 174.7951f };
 			uParam0->f_3 = 61.392f;
-			uParam0->f_4 = func_203(CHAR_FRANKLIN, 1);
+			uParam0->f_4 = func_203(1 /*CHAR_FRANKLIN*/, 1);
 			uParam0->f_12 = 1;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -8266,7 +8266,7 @@ BOOL func_212(var uParam0, int iParam1) // Position - 0xA968 Hash - 0x93EFD4FF ^
 		case 5:
 			*uParam0 = { 6.1093f, 544.9742f, 174.2835f };
 			uParam0->f_3 = 92.1548f;
-			uParam0->f_4 = func_203(CHAR_FRANKLIN, 2);
+			uParam0->f_4 = func_203(1 /*CHAR_FRANKLIN*/, 2);
 			uParam0->f_12 = 1;
 			MISC::SET_BIT(&(uParam0->f_9), 19);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -8276,7 +8276,7 @@ BOOL func_212(var uParam0, int iParam1) // Position - 0xA968 Hash - 0x93EFD4FF ^
 		case 6:
 			*uParam0 = { 1981.4163f, 3808.1313f, 31.1384f };
 			uParam0->f_3 = 117.2557f;
-			uParam0->f_4 = func_203(CHAR_TREVOR, 1);
+			uParam0->f_4 = func_203(2 /*CHAR_TREVOR*/, 1);
 			uParam0->f_12 = 2;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -8286,7 +8286,7 @@ BOOL func_212(var uParam0, int iParam1) // Position - 0xA968 Hash - 0x93EFD4FF ^
 		case 7:
 			*uParam0 = { -1158.4875f, -1529.3673f, 3.8995f };
 			uParam0->f_3 = 35.7505f;
-			uParam0->f_4 = func_203(CHAR_TREVOR, 1);
+			uParam0->f_4 = func_203(2 /*CHAR_TREVOR*/, 1);
 			uParam0->f_12 = 2;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -8296,7 +8296,7 @@ BOOL func_212(var uParam0, int iParam1) // Position - 0xA968 Hash - 0x93EFD4FF ^
 		case 8:
 			*uParam0 = { 148.2868f, -1270.5695f, 28.2252f };
 			uParam0->f_3 = 208.4685f;
-			uParam0->f_4 = func_203(CHAR_TREVOR, 1);
+			uParam0->f_4 = func_203(2 /*CHAR_TREVOR*/, 1);
 			uParam0->f_12 = 2;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -9576,7 +9576,7 @@ BOOL func_228(Vehicle veParam0) // Position - 0xCF9F Hash - 0xB4BAF94A ^0xB9ADD2
 	{
 		if (VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false))
 		{
-			if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MPBitset", INT))
+			if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MPBitset", 3 /*INT*/))
 			{
 				if (DECORATOR::DECOR_EXIST_ON(veParam0, "MPBitset"))
 					_int = DECORATOR::DECOR_GET_INT(veParam0, "MPBitset");
@@ -9642,7 +9642,7 @@ BOOL func_231(Vehicle veParam0) // Position - 0xD05A Hash - 0x57A74E37 ^0x477287
 
 int func_232(Vehicle veParam0) // Position - 0xD0E1 Hash - 0x2BB30050 ^0xB6BFA9E2
 {
-	if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("FMDeliverableID", INT))
+	if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("FMDeliverableID", 3 /*INT*/))
 		if (DECORATOR::DECOR_EXIST_ON(veParam0, "FMDeliverableID"))
 			return DECORATOR::DECOR_GET_INT(veParam0, "FMDeliverableID");
 
@@ -9953,15 +9953,15 @@ BOOL func_251(BOOL bParam0, int iParam1) // Position - 0xD625 Hash - 0xEEB5C51C 
 	{
 		switch (_GET_CURRENT_PLAYER_CHARACTER())
 		{
-			case CHAR_MICHAEL:
+			case 0 /*CHAR_MICHAEL*/:
 				num = 0;
 				break;
 		
-			case CHAR_FRANKLIN:
+			case 1 /*CHAR_FRANKLIN*/:
 				num = 1;
 				break;
 		
-			case CHAR_TREVOR:
+			case 2 /*CHAR_TREVOR*/:
 				num = 2;
 				break;
 		}
@@ -10051,7 +10051,7 @@ void func_258() // Position - 0xD75C Hash - 0x8ACFB11D ^0x3057E988
 	{
 		switch (_GET_CURRENT_PLAYER_CHARACTER())
 		{
-			case CHAR_MICHAEL:
+			case 0 /*CHAR_MICHAEL*/:
 				if (Global_113969.f_2366.f_539.f_2395[0] == -99)
 					func_259(uLocal_206[0], uLocal_206[1], uLocal_206[2]);
 				else if (Global_113969.f_2366.f_539.f_2395[1] == -99)
@@ -10060,7 +10060,7 @@ void func_258() // Position - 0xD75C Hash - 0x8ACFB11D ^0x3057E988
 					func_259(uLocal_206[2], uLocal_206[1], uLocal_206[0]);
 				break;
 		
-			case CHAR_FRANKLIN:
+			case 1 /*CHAR_FRANKLIN*/:
 				if (Global_113969.f_2366.f_539.f_2395[1] == -99)
 					func_259(uLocal_206[1], uLocal_206[0], uLocal_206[2]);
 				else if (Global_113969.f_2366.f_539.f_2395[0] == -99)
@@ -10069,7 +10069,7 @@ void func_258() // Position - 0xD75C Hash - 0x8ACFB11D ^0x3057E988
 					func_259(uLocal_206[2], uLocal_206[1], uLocal_206[0]);
 				break;
 		
-			case CHAR_TREVOR:
+			case 2 /*CHAR_TREVOR*/:
 				if (Global_113969.f_2366.f_539.f_2395[2] == -99)
 					func_259(uLocal_206[2], uLocal_206[1], uLocal_206[0]);
 				else if (Global_113969.f_2366.f_539.f_2395[0] == -99)
@@ -10130,15 +10130,15 @@ void func_263() // Position - 0xD9BF Hash - 0x55F8BA4D ^0xA9A2F5D7
 
 	switch (_GET_CURRENT_PLAYER_CHARACTER())
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			num = 0;
 			break;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			num = 1;
 			break;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			num = 2;
 			break;
 	}
@@ -10170,15 +10170,15 @@ void func_264(eCharacter echParam0, int iParam1, int iParam2, BOOL bParam3, BOOL
 		{
 			switch (echParam0)
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					statHash = joaat("SP0_MONEY_MADE_FROM_RANDOM_PEDS");
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					statHash = joaat("SP1_MONEY_MADE_FROM_RANDOM_PEDS");
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					statHash = joaat("SP2_MONEY_MADE_FROM_RANDOM_PEDS");
 					break;
 			
@@ -10190,15 +10190,15 @@ void func_264(eCharacter echParam0, int iParam1, int iParam2, BOOL bParam3, BOOL
 		{
 			switch (echParam0)
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					statHash = joaat("SP0_MONEY_MADE_FROM_MISSIONS");
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					statHash = joaat("SP1_MONEY_MADE_FROM_MISSIONS");
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					statHash = joaat("SP2_MONEY_MADE_FROM_MISSIONS");
 					break;
 			
@@ -35364,11 +35364,11 @@ void func_386() // Position - 0x26AFA Hash - 0xFEC7C9F6 ^0xFEC7C9F6
 
 void func_387(BOOL bParam0) // Position - 0x26B07 Hash - 0x6C25982A ^0xDABA5998
 {
-	MISC::ENABLE_DISPATCH_SERVICE(DT_PoliceAutomobile, bParam0);
-	MISC::ENABLE_DISPATCH_SERVICE(DT_PoliceHelicopter, bParam0);
-	MISC::ENABLE_DISPATCH_SERVICE(DT_FireDepartment, bParam0);
-	MISC::ENABLE_DISPATCH_SERVICE(DT_SwatAutomobile, bParam0);
-	MISC::ENABLE_DISPATCH_SERVICE(DT_AmbulanceDepartment, bParam0);
+	MISC::ENABLE_DISPATCH_SERVICE(1 /*DT_PoliceAutomobile*/, bParam0);
+	MISC::ENABLE_DISPATCH_SERVICE(2 /*DT_PoliceHelicopter*/, bParam0);
+	MISC::ENABLE_DISPATCH_SERVICE(3 /*DT_FireDepartment*/, bParam0);
+	MISC::ENABLE_DISPATCH_SERVICE(4 /*DT_SwatAutomobile*/, bParam0);
+	MISC::ENABLE_DISPATCH_SERVICE(5 /*DT_AmbulanceDepartment*/, bParam0);
 
 	if (bParam0)
 	{
@@ -35389,7 +35389,7 @@ void func_388() // Position - 0x26B4E Hash - 0x56F5D62B ^0xDB143A21
 	int num;
 
 	if (SCRIPT::HAS_SCRIPT_LOADED("buddyDeathResponse"))
-		SYSTEM::START_NEW_SCRIPT("buddyDeathResponse", DEFAULT);
+		SYSTEM::START_NEW_SCRIPT("buddyDeathResponse", 1424 /*DEFAULT*/);
 
 	if (Global_113969.f_9088 || _IS_MISSION_REPEAT_ACTIVE(false))
 	{

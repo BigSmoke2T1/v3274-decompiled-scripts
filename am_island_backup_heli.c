@@ -730,7 +730,7 @@ BOOL func_27() // Position - 0x8F8 Hash - 0xDA450502 ^0x3B2B79EF
 					Global_2672855.f_3847 = vehicle;
 					ENTITY::SET_ENTITY_HEALTH(vehicle, Global_262145.f_11112, 0, 0);
 				
-					if (func_34(&iLocal_78.f_1.f_3[0 /*2*/], iLocal_78.f_1, PED_TYPE_CIVMALE, model, -1, true, true, true))
+					if (func_34(&iLocal_78.f_1.f_3[0 /*2*/], iLocal_78.f_1, 4 /*PED_TYPE_CIVMALE*/, model, -1, true, true, true))
 					{
 						p_ped = NETWORK::NET_TO_PED(iLocal_78.f_1.f_3[0 /*2*/]);
 						func_29(iLocal_78.f_1.f_3[0 /*2*/]);
@@ -738,15 +738,15 @@ BOOL func_27() // Position - 0x8F8 Hash - 0xDA450502 ^0x3B2B79EF
 						NETWORK::NETWORK_SET_ATTRIBUTE_DAMAGE_TO_PLAYER(p_ped, PLAYER::PLAYER_ID());
 						func_35(p_ped, 4);
 						Global_2672855.f_3847.f_1[0] = p_ped;
-						PED::SET_PED_COMPONENT_VARIATION(p_ped, PV_COMP_HEAD, 1, 1, 0);
-						PED::SET_PED_COMPONENT_VARIATION(p_ped, PV_COMP_HAIR, 1, 1, 0);
-						PED::SET_PED_COMPONENT_VARIATION(p_ped, PV_COMP_UPPR, 0, 0, 0);
-						PED::SET_PED_COMPONENT_VARIATION(p_ped, PV_COMP_LOWR, 0, 0, 0);
-						PED::SET_PED_COMPONENT_VARIATION(p_ped, PV_COMP_ACCS, 0, 1, 0);
+						PED::SET_PED_COMPONENT_VARIATION(p_ped, 0 /*PV_COMP_HEAD*/, 1, 1, 0);
+						PED::SET_PED_COMPONENT_VARIATION(p_ped, 2 /*PV_COMP_HAIR*/, 1, 1, 0);
+						PED::SET_PED_COMPONENT_VARIATION(p_ped, 3 /*PV_COMP_UPPR*/, 0, 0, 0);
+						PED::SET_PED_COMPONENT_VARIATION(p_ped, 4 /*PV_COMP_LOWR*/, 0, 0, 0);
+						PED::SET_PED_COMPONENT_VARIATION(p_ped, 8 /*PV_COMP_ACCS*/, 0, 1, 0);
 						PED::SET_PED_PROP_INDEX(p_ped, 1, 0, 0, false, 1);
 						PED::SET_PED_PROP_INDEX(p_ped, 0, 0, 0, false, 1);
 					
-						if (func_34(&iLocal_78.f_1.f_3[1 /*2*/], iLocal_78.f_1, PED_TYPE_CIVMALE, iLocal_78.f_1.f_3[1 /*2*/].f_1, 1, true, true, true))
+						if (func_34(&iLocal_78.f_1.f_3[1 /*2*/], iLocal_78.f_1, 4 /*PED_TYPE_CIVMALE*/, iLocal_78.f_1.f_3[1 /*2*/].f_1, 1, true, true, true))
 						{
 							func_29(iLocal_78.f_1.f_3[1 /*2*/]);
 							func_28(NETWORK::NET_TO_PED(iLocal_78.f_1.f_3[1 /*2*/]), 1, true, true);
@@ -770,9 +770,9 @@ BOOL func_27() // Position - 0x8F8 Hash - 0xDA450502 ^0x3B2B79EF
 void func_28(Ped pedParam0, int iParam1, BOOL bParam2, BOOL bParam3) // Position - 0xB1A Hash - 0xBA631014 ^0x661B3374
 {
 	WEAPON::GIVE_DELAYED_WEAPON_TO_PED(pedParam0, joaat("WEAPON_ASSAULTRIFLE"), 300, true);
-	PED::SET_PED_COMBAT_ATTRIBUTES(pedParam0, BF_AlwaysFight, true);
-	PED::SET_PED_COMBAT_ATTRIBUTES(pedParam0, BF_CanLeaveVehicle, false);
-	PED::SET_PED_COMBAT_MOVEMENT(pedParam0, CM_WillAdvance);
+	PED::SET_PED_COMBAT_ATTRIBUTES(pedParam0, 5 /*BF_AlwaysFight*/, true);
+	PED::SET_PED_COMBAT_ATTRIBUTES(pedParam0, 3 /*BF_CanLeaveVehicle*/, false);
+	PED::SET_PED_COMBAT_MOVEMENT(pedParam0, 2 /*CM_WillAdvance*/);
 	PED::SET_PED_COMBAT_ABILITY(pedParam0, 2);
 	PED::SET_PED_COMBAT_RANGE(pedParam0, 2);
 	PED::SET_PED_TARGET_LOSS_RESPONSE(pedParam0, 1);
@@ -1436,7 +1436,7 @@ void func_65() // Position - 0x183D Hash - 0x809DF1F7 ^0x5963CAC3
 	if (!HUD::DOES_BLIP_EXIST(blLocal_60) && ENTITY::DOES_ENTITY_EXIST(vehicle))
 	{
 		blLocal_60 = HUD::ADD_BLIP_FOR_ENTITY(vehicle);
-		HUD::SET_BLIP_SPRITE(blLocal_60, BLIP_PLAYER_HELI);
+		HUD::SET_BLIP_SPRITE(blLocal_60, 422 /*BLIP_PLAYER_HELI*/);
 		HUD::SHOW_HEIGHT_ON_BLIP(blLocal_60, false);
 		HUD::SET_BLIP_NAME_FROM_TEXT_FILE(blLocal_60, "MPCT_MERRY3" /*Backup Helicopter*/);
 		func_66(&blLocal_60, 1);
@@ -2170,7 +2170,7 @@ BOOL func_92() // Position - 0x252E Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x253D Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

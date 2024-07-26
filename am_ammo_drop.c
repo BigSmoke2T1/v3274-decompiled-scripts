@@ -1693,7 +1693,7 @@ void func_39() // Position - 0x181C Hash - 0x8380825A ^0x6393162F
 		case 1:
 			if (NETWORK::NETWORK_DOES_NETWORK_ID_EXIST(iLocal_59.f_4))
 			{
-				func_41(iLocal_59.f_4, HUD_COLOUR_GREEN);
+				func_41(iLocal_59.f_4, 18 /*HUD_COLOUR_GREEN*/);
 			
 				if (iLocal_59.f_15 == 3)
 					if (!NETWORK::NETWORK_DOES_NETWORK_ID_EXIST(iLocal_59.f_5))
@@ -1764,13 +1764,13 @@ void func_42() // Position - 0x19A8 Hash - 0x843442F8 ^0x76A54D2B
 	
 		if (iLocal_59.f_18)
 		{
-			HUD::SET_BLIP_SPRITE(blLocal_180, BLIP_RAMPAGE);
+			HUD::SET_BLIP_SPRITE(blLocal_180, 84 /*BLIP_RAMPAGE*/);
 			HUD::SET_BLIP_SCALE(blLocal_180, 1.2f);
 			HUD::SET_BLIP_NAME_FROM_TEXT_FILE(blLocal_180, "AMD_BLIPBALL" /*Ballistic Armor and Minigun*/);
 		}
 		else
 		{
-			HUD::SET_BLIP_SPRITE(blLocal_180, BLIP_GANG_ATTACK_PACKAGE);
+			HUD::SET_BLIP_SPRITE(blLocal_180, 351 /*BLIP_GANG_ATTACK_PACKAGE*/);
 			HUD::SET_BLIP_NAME_FROM_TEXT_FILE(blLocal_180, "AMD_BLIPN" /*Ammo Crate*/);
 			HUD::SET_BLIP_SCALE(blLocal_180, 0.7f);
 		}
@@ -2270,26 +2270,26 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0x23F1 Hash - 0x98476CE1 ^
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[0 /*29*/])
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[1 /*29*/])
-				Global_20930 = CHAR_FRANKLIN;
+				Global_20930 = 1 /*CHAR_FRANKLIN*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[2 /*29*/])
-				Global_20930 = CHAR_TREVOR;
+				Global_20930 = 2 /*CHAR_TREVOR*/;
 			else
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 	}
 	else
 	{
 		Global_20930 = _GET_CURRENT_PLAYER_CHARACTER();
 	
-		if (Global_20930 == _CHAR_NULL)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 == 145 /*_CHAR_NULL*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
 		if (Global_79389)
-			Global_20930 = CHAR_MULTIPLAYER;
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
-		if (Global_20930 > CHAR_MULTIPLAYER)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 > 3 /*CHAR_MULTIPLAYER*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	}
 
 	return;
@@ -2323,7 +2323,7 @@ void func_58() // Position - 0x24AC Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -2336,7 +2336,7 @@ void func_58() // Position - 0x24AC Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_59(eCharacter echParam0) // Position - 0x25A9 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x25B5 Hash - 0xAC4E9801 ^0xB379A75F
@@ -2348,14 +2348,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x25B5 Ha
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x25F2 Hash - 0xADCB9755 ^0xADCB9755
@@ -2363,7 +2363,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x25F2 Hash - 0xAD
 	if (func_59(character))
 		return func_62(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -2702,7 +2702,7 @@ int func_81() // Position - 0x2B37 Hash - 0xBF70B75D ^0xD47B787A
 	{
 		if (func_36(iLocal_59.f_2))
 		{
-			if (func_82(&(iLocal_59.f_3), iLocal_59.f_2, PED_TYPE_CRIMINAL, joaat("S_M_M_Pilot_02"), -1, true, true, true))
+			if (func_82(&(iLocal_59.f_3), iLocal_59.f_2, 22 /*PED_TYPE_CRIMINAL*/, joaat("S_M_M_Pilot_02"), -1, true, true, true))
 			{
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(NETWORK::NET_TO_PED(iLocal_59.f_3), true);
 				PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(iLocal_59.f_3), Global_1837309);
@@ -3902,7 +3902,7 @@ BOOL func_137() // Position - 0x45A5 Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x45B4 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

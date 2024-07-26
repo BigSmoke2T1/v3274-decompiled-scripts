@@ -105,7 +105,7 @@ void func_1() // Position - 0xA4 Hash - 0xF39FC792 ^0xDDF5B2B3
 		case 1:
 			if (SCRIPT::HAS_SCRIPT_LOADED("taxiService"))
 			{
-				SYSTEM::START_NEW_SCRIPT("taxiService", SPECIAL_ABILITY);
+				SYSTEM::START_NEW_SCRIPT("taxiService", 1828 /*SPECIAL_ABILITY*/);
 				SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("taxiService");
 				iLocal_46 = 2;
 			}

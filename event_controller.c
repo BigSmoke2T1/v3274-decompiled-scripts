@@ -125,48 +125,48 @@ void func_1() // Position - 0xA5 Hash - 0x58A2CED9 ^0xA628FA49
 
 	if (PLAYER::IS_PLAYER_ONLINE())
 	{
-		for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(SCRIPT_EVENT_QUEUE_NETWORK); i = i + 1)
+		for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/); i = i + 1)
 		{
-			eventAtIndex2 = SCRIPT::GET_EVENT_AT_INDEX(SCRIPT_EVENT_QUEUE_NETWORK, i);
+			eventAtIndex2 = SCRIPT::GET_EVENT_AT_INDEX(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, i);
 		
 			switch (eventAtIndex2)
 			{
-				case EVENT_VOICE_SESSION_STARTED:
+				case 193 /*EVENT_VOICE_SESSION_STARTED*/:
 					func_146();
 					break;
 			
-				case EVENT_VOICE_SESSION_ENDED:
+				case 194 /*EVENT_VOICE_SESSION_ENDED*/:
 					func_145();
 					break;
 			
-				case EVENT_VOICE_CONNECTION_REQUESTED:
+				case 195 /*EVENT_VOICE_CONNECTION_REQUESTED*/:
 					func_139(i);
 					break;
 			
-				case EVENT_VOICE_CONNECTION_RESPONSE:
+				case 196 /*EVENT_VOICE_CONNECTION_RESPONSE*/:
 					func_138(i);
 					break;
 			
-				case EVENT_VOICE_CONNECTION_TERMINATED:
+				case 197 /*EVENT_VOICE_CONNECTION_TERMINATED*/:
 					func_127(i);
 					break;
 			
-				case EVENT_NETWORK_PRESENCE_INVITE:
+				case 215 /*EVENT_NETWORK_PRESENCE_INVITE*/:
 					func_3(i);
 					break;
 			}
 		}
 	}
 
-	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(SCRIPT_EVENT_QUEUE_AI); i = i + 1)
+	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(0 /*SCRIPT_EVENT_QUEUE_AI*/); i = i + 1)
 	{
-		eventAtIndex = SCRIPT::GET_EVENT_AT_INDEX(SCRIPT_EVENT_QUEUE_AI, i);
+		eventAtIndex = SCRIPT::GET_EVENT_AT_INDEX(0 /*SCRIPT_EVENT_QUEUE_AI*/, i);
 		bLocal_63 = true;
 	
 		switch (eventAtIndex)
 		{
-			case EVENT_ENTITY_DAMAGED:
-				SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_AI, i, &eventData, 1);
+			case 141 /*EVENT_ENTITY_DAMAGED*/:
+				SCRIPT::GET_EVENT_DATA(0 /*SCRIPT_EVENT_QUEUE_AI*/, i, &eventData, 1);
 			
 				if (ENTITY::DOES_ENTITY_EXIST(eventData))
 				{
@@ -189,8 +189,8 @@ void func_1() // Position - 0xA5 Hash - 0x58A2CED9 ^0xA628FA49
 				}
 				break;
 		
-			case EVENT_ENTITY_DESTROYED:
-				SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_AI, i, &eventData, 1);
+			case 142 /*EVENT_ENTITY_DESTROYED*/:
+				SCRIPT::GET_EVENT_DATA(0 /*SCRIPT_EVENT_QUEUE_AI*/, i, &eventData, 1);
 			
 				if (ENTITY::DOES_ENTITY_EXIST(eventData))
 				{
@@ -232,7 +232,7 @@ void func_3(int iParam0) // Position - 0x25B Hash - 0xE017D4D8 ^0x43AD8777
 	struct<39> eventData;
 	int presenceInviteIndexById;
 
-	if (SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_NETWORK, iParam0, &eventData, 39))
+	if (SCRIPT::GET_EVENT_DATA(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0, &eventData, 39))
 	{
 		presenceInviteIndexById = NETWORK::NETWORK_GET_PRESENCE_INVITE_INDEX_BY_ID(eventData.f_38);
 	
@@ -2389,18 +2389,18 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 	else
 	{
 		flag = true;
-		flag2 = espcfParam2 & SPC_AMBIENT_SCRIPT != 0;
-		flag3 = espcfParam2 & SPC_CLEAR_TASKS != 0;
-		flag4 = espcfParam2 & SPC_REMOVE_FIRES != 0;
-		flag5 = espcfParam2 & SPC_REMOVE_EXPLOSIONS != 0;
-		flag6 = espcfParam2 & SPC_REMOVE_PROJECTILES != 0;
-		flag7 = espcfParam2 & SPC_DEACTIVATE_GADGETS != 0;
-		flag8 = espcfParam2 & SPC_REENABLE_CONTROL_ON_DEATH != 0;
-		flag9 = espcfParam2 & SPC_LEAVE_CAMERA_CONTROL_ON != 0;
-		flag10 = espcfParam2 & SPC_ALLOW_PLAYER_DAMAGE != 0;
-		flag11 = espcfParam2 & SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER != 0;
-		flag12 = espcfParam2 & SPC_PREVENT_EVERYBODY_BACKOFF != 0;
-		flag13 = espcfParam2 & SPC_ALLOW_PAD_SHAKE != 0;
+		flag2 = espcfParam2 & 2 /*SPC_AMBIENT_SCRIPT*/ != 0;
+		flag3 = espcfParam2 & 4 /*SPC_CLEAR_TASKS*/ != 0;
+		flag4 = espcfParam2 & 8 /*SPC_REMOVE_FIRES*/ != 0;
+		flag5 = espcfParam2 & 16 /*SPC_REMOVE_EXPLOSIONS*/ != 0;
+		flag6 = espcfParam2 & 32 /*SPC_REMOVE_PROJECTILES*/ != 0;
+		flag7 = espcfParam2 & 64 /*SPC_DEACTIVATE_GADGETS*/ != 0;
+		flag8 = espcfParam2 & 128 /*SPC_REENABLE_CONTROL_ON_DEATH*/ != 0;
+		flag9 = espcfParam2 & 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/ != 0;
+		flag10 = espcfParam2 & 512 /*SPC_ALLOW_PLAYER_DAMAGE*/ != 0;
+		flag11 = espcfParam2 & 1024 /*SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER*/ != 0;
+		flag12 = espcfParam2 & 2048 /*SPC_PREVENT_EVERYBODY_BACKOFF*/ != 0;
+		flag13 = espcfParam2 & 4096 /*SPC_ALLOW_PAD_SHAKE*/ != 0;
 		flag14 = espcfParam2 & 8192 != 0;
 		flag15 = espcfParam2 & 16384 != 0;
 		toggle = espcfParam2 & 32768 != 0;
@@ -2557,40 +2557,40 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 			flags2 = 0;
 		
 			if (flag2)
-				flags2 = flags2 | SPC_AMBIENT_SCRIPT;
+				flags2 = flags2 | 2 /*SPC_AMBIENT_SCRIPT*/;
 		
 			if (flag3)
-				flags2 = flags2 | SPC_CLEAR_TASKS;
+				flags2 = flags2 | 4 /*SPC_CLEAR_TASKS*/;
 		
 			if (flag4)
-				flags2 = flags2 | SPC_REMOVE_FIRES;
+				flags2 = flags2 | 8 /*SPC_REMOVE_FIRES*/;
 		
 			if (flag5)
-				flags2 = flags2 | SPC_REMOVE_EXPLOSIONS;
+				flags2 = flags2 | 16 /*SPC_REMOVE_EXPLOSIONS*/;
 		
 			if (flag6)
-				flags2 = flags2 | SPC_REMOVE_PROJECTILES;
+				flags2 = flags2 | 32 /*SPC_REMOVE_PROJECTILES*/;
 		
 			if (flag7)
-				flags2 = flags2 | SPC_DEACTIVATE_GADGETS;
+				flags2 = flags2 | 64 /*SPC_DEACTIVATE_GADGETS*/;
 		
 			if (flag8)
-				flags2 = flags2 | SPC_REENABLE_CONTROL_ON_DEATH;
+				flags2 = flags2 | 128 /*SPC_REENABLE_CONTROL_ON_DEATH*/;
 		
 			if (flag9)
-				flags2 = flags2 | SPC_LEAVE_CAMERA_CONTROL_ON;
+				flags2 = flags2 | 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/;
 		
 			if (flag10)
-				flags2 = flags2 | SPC_ALLOW_PLAYER_DAMAGE;
+				flags2 = flags2 | 512 /*SPC_ALLOW_PLAYER_DAMAGE*/;
 		
 			if (flag11)
-				flags2 = flags2 | SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER;
+				flags2 = flags2 | 1024 /*SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER*/;
 		
 			if (flag12)
-				flags2 = flags2 | SPC_PREVENT_EVERYBODY_BACKOFF;
+				flags2 = flags2 | 2048 /*SPC_PREVENT_EVERYBODY_BACKOFF*/;
 		
 			if (flag13)
-				flags2 = flags2 | SPC_ALLOW_PAD_SHAKE;
+				flags2 = flags2 | 4096 /*SPC_ALLOW_PAD_SHAKE*/;
 		
 			PLAYER::SET_PLAYER_CONTROL(plParam0, bParam1, flags2);
 		}
@@ -2638,7 +2638,7 @@ BOOL func_80(Ped pedParam0) // Position - 0x2B40 Hash - 0x93DB01D2 ^0x43DCC591
 	}
 	else
 	{
-		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(pedParam0, SCRIPT_TASK_ENTER_VEHICLE);
+		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(pedParam0, joaat("SCRIPT_TASK_ENTER_VEHICLE") /*SCRIPT_TASK_ENTER_VEHICLE*/);
 	
 		if (scriptTaskStatus == 0)
 			return true;
@@ -2672,7 +2672,7 @@ void func_81(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x2B71 Hash
 			{
 				if (IS_BIT_SET(Global_2621446.f_67, 2))
 				{
-					for (i = ON_FOOT; i < 8; i = i + 1)
+					for (i = 0 /*ON_FOOT*/; i < 8; i = i + 1)
 					{
 						CAM::SET_CAM_VIEW_MODE_FOR_CONTEXT(i, Global_2621446.f_58[i]);
 					}
@@ -2714,7 +2714,7 @@ void func_83() // Position - 0x2C5D Hash - 0xEFF6029E ^0x224AB476
 	{
 		if (!IS_BIT_SET(Global_2621446.f_67, 2))
 		{
-			for (i = ON_FOOT; i < 8; i = i + 1)
+			for (i = 0 /*ON_FOOT*/; i < 8; i = i + 1)
 			{
 				Global_2621446.f_58[i] = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(i);
 			}
@@ -3594,7 +3594,7 @@ void func_127(int iParam0) // Position - 0x3971 Hash - 0x83280A46 ^0xA6988AAA
 	else
 		AUDIO::PLAY_SOUND_FRONTEND(-1, "Hang_Up", &Global_20919, true);
 
-	if (SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_NETWORK, iParam0, &eventData, 21))
+	if (SCRIPT::GET_EVENT_DATA(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0, &eventData, 21))
 		func_129();
 
 	Global_2746025.f_1 = 0;
@@ -3789,7 +3789,7 @@ void func_138(int iParam0) // Position - 0x3CD9 Hash - 0x88A740AE ^0x353B8B4A
 {
 	struct<15> eventData;
 
-	if (SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_NETWORK, iParam0, &eventData, 15))
+	if (SCRIPT::GET_EVENT_DATA(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0, &eventData, 15))
 	{
 		Global_2746025.f_33 = eventData.f_1;
 		Global_2746025.f_34 = eventData;
@@ -3802,7 +3802,7 @@ void func_139(int iParam0) // Position - 0x3D04 Hash - 0x478B0A62 ^0xA08C840D
 {
 	struct<21> eventData;
 
-	if (SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_NETWORK, iParam0, &eventData, 21))
+	if (SCRIPT::GET_EVENT_DATA(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0, &eventData, 21))
 	{
 		if (Global_2746025.f_3 == 0)
 		{

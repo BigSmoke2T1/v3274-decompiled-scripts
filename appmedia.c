@@ -254,7 +254,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 						break;
 				
 					case 8:
-						if (func_15(FRONTEND_CONTROL, Global_20898, 0) && bLocal_208 == false && bLocal_209 == false)
+						if (func_15(2 /*FRONTEND_CONTROL*/, Global_20898, 0) && bLocal_208 == false && bLocal_209 == false)
 						{
 							func_14();
 							Global_20908 = true;
@@ -628,7 +628,7 @@ BOOL func_15(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // P
 	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
 	{
 		if (MISC::IS_PC_VERSION())
-			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				return false;
 	
 		if (HUD::IS_PAUSE_MENU_ACTIVE() || HUD::IS_WARNING_MESSAGE_ACTIVE())
@@ -646,25 +646,25 @@ void func_16() // Position - 0x82D Hash - 0xFAB00CB9 ^0x45104B19
 		if (SYSTEM::TIMERA() > 50)
 			bLocal_201 = false;
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
-		if (func_15(FRONTEND_CONTROL, INPUT_CELLPHONE_SCROLL_BACKWARD, 0))
+		if (func_15(2 /*FRONTEND_CONTROL*/, 181 /*INPUT_CELLPHONE_SCROLL_BACKWARD*/, 0))
 			func_20();
 	
-		if (func_15(FRONTEND_CONTROL, INPUT_CELLPHONE_SCROLL_FORWARD, 0))
+		if (func_15(2 /*FRONTEND_CONTROL*/, 180 /*INPUT_CELLPHONE_SCROLL_FORWARD*/, 0))
 			func_17();
 	}
 
 	if (bLocal_201 == false)
 	{
-		if (func_15(FRONTEND_CONTROL, Global_20906, 0))
+		if (func_15(2 /*FRONTEND_CONTROL*/, Global_20906, 0))
 		{
 			func_20();
 			bLocal_201 = true;
 			SYSTEM::SETTIMERA(0);
 		}
 	
-		if (func_15(FRONTEND_CONTROL, Global_20907, 0))
+		if (func_15(2 /*FRONTEND_CONTROL*/, Global_20907, 0))
 		{
 			func_17();
 			bLocal_201 = true;
@@ -707,7 +707,7 @@ BOOL func_19() // Position - 0x900 Hash - 0xE8350107 ^0x112591EA
 	camActiveViewModeContext = CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT();
 	camViewModeForContext = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(camActiveViewModeContext);
 
-	if (camViewModeForContext == FIRST_PERSON)
+	if (camViewModeForContext == 4 /*FIRST_PERSON*/)
 		flag = 1;
 
 	if (Global_4543362 || flag)
@@ -741,7 +741,7 @@ void func_22() // Position - 0x9A5 Hash - 0x584F5948 ^0x8A834772
 
 	if (Global_20908 == false)
 	{
-		if (func_15(FRONTEND_CONTROL, Global_20899, 0))
+		if (func_15(2 /*FRONTEND_CONTROL*/, Global_20899, 0))
 		{
 			MISC::CLEAR_BIT(&Global_8801, 15);
 			func_24();

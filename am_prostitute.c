@@ -372,7 +372,7 @@ void func_2() // Position - 0x232 Hash - 0xE5328CE8 ^0xCF1AF794
 			if (SCRIPT::HAS_SCRIPT_LOADED("pb_prostitute") && SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("pb_prostitute")) <= 0 && !NETWORK::NETWORK_IS_SCRIPT_ACTIVE("pb_prostitute", PLAYER::NETWORK_PLAYER_ID_TO_INT(), true, 0))
 			{
 				args = func_13(num);
-				iLocal_55 = SYSTEM::START_NEW_SCRIPT_WITH_ARGS("pb_prostitute", &args, 1, FRIEND);
+				iLocal_55 = SYSTEM::START_NEW_SCRIPT_WITH_ARGS("pb_prostitute", &args, 1, 2050 /*FRIEND*/);
 				SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("pb_prostitute");
 				iLocal_50 = 0;
 			}
@@ -1176,7 +1176,7 @@ BOOL func_41() // Position - 0x11AC Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x11BB Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

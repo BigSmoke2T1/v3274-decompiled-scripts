@@ -92,7 +92,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				if (func_4())
 					func_3();
 			}
-			else if (func_2(FRONTEND_CONTROL, Global_20898, 0))
+			else if (func_2(2 /*FRONTEND_CONTROL*/, Global_20898, 0))
 			{
 				Global_20908 = true;
 				Global_23352 = 0;
@@ -126,7 +126,7 @@ BOOL func_2(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Po
 	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
 	{
 		if (MISC::IS_PC_VERSION())
-			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				return false;
 	
 		if (HUD::IS_PAUSE_MENU_ACTIVE() || HUD::IS_WARNING_MESSAGE_ACTIVE())
@@ -244,7 +244,7 @@ void func_10(int iParam0, int iParam1, int iParam2, int iParam3) // Position - 0
 
 void func_11() // Position - 0x4FC Hash - 0x5060BE7 ^0x5060BE7
 {
-	if (func_2(FRONTEND_CONTROL, Global_20899, 0))
+	if (func_2(2 /*FRONTEND_CONTROL*/, Global_20899, 0))
 	{
 		iLocal_23 = uLocal_16[iLocal_22];
 		Global_23352 = 1;
@@ -307,13 +307,13 @@ void func_14() // Position - 0x63F Hash - 0x7D1B240B ^0xD73C37D7
 		if (SYSTEM::TIMERA() > 50)
 			bLocal_29 = false;
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
-		if (func_2(FRONTEND_CONTROL, INPUT_CELLPHONE_SCROLL_BACKWARD, 0))
+		if (func_2(2 /*FRONTEND_CONTROL*/, 181 /*INPUT_CELLPHONE_SCROLL_BACKWARD*/, 0))
 			if (iLocal_22 > 0)
 				iLocal_22 = iLocal_22 - 1;
 	
-		if (func_2(FRONTEND_CONTROL, INPUT_CELLPHONE_SCROLL_FORWARD, 0))
+		if (func_2(2 /*FRONTEND_CONTROL*/, 180 /*INPUT_CELLPHONE_SCROLL_FORWARD*/, 0))
 		{
 			iLocal_22 = iLocal_22 + 1;
 		
@@ -324,7 +324,7 @@ void func_14() // Position - 0x63F Hash - 0x7D1B240B ^0xD73C37D7
 
 	if (bLocal_29 == false)
 	{
-		if (func_2(FRONTEND_CONTROL, Global_20906, 0))
+		if (func_2(2 /*FRONTEND_CONTROL*/, Global_20906, 0))
 		{
 			if (iLocal_22 > 0)
 				iLocal_22 = iLocal_22 - 1;
@@ -333,7 +333,7 @@ void func_14() // Position - 0x63F Hash - 0x7D1B240B ^0xD73C37D7
 			SYSTEM::SETTIMERA(0);
 		}
 	
-		if (func_2(FRONTEND_CONTROL, Global_20907, 0))
+		if (func_2(2 /*FRONTEND_CONTROL*/, Global_20907, 0))
 		{
 			iLocal_22 = iLocal_22 + 1;
 		

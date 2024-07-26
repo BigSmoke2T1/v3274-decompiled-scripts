@@ -1335,14 +1335,14 @@ void func_42() // Position - 0x107D Hash - 0x1BF3327C ^0x23852A47
 	eEventType eventAtIndex;
 	struct<3> eventData;
 
-	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(SCRIPT_EVENT_QUEUE_NETWORK); i = i + 1)
+	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/); i = i + 1)
 	{
-		eventAtIndex = SCRIPT::GET_EVENT_AT_INDEX(SCRIPT_EVENT_QUEUE_NETWORK, i);
+		eventAtIndex = SCRIPT::GET_EVENT_AT_INDEX(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, i);
 	
 		switch (eventAtIndex)
 		{
-			case EVENT_NETWORK_SCRIPT_EVENT:
-				SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_NETWORK, i, &eventData, 3);
+			case 174 /*EVENT_NETWORK_SCRIPT_EVENT*/:
+				SCRIPT::GET_EVENT_DATA(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, i, &eventData, 3);
 			
 				switch (eventData)
 				{
@@ -1364,7 +1364,7 @@ void func_43(int iParam0) // Position - 0x10E2 Hash - 0x20F8BAE1 ^0x1A3AC25D
 {
 	struct<7> eventData;
 
-	if (SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_NETWORK, iParam0, &eventData, 7))
+	if (SCRIPT::GET_EVENT_DATA(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0, &eventData, 7))
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_A_PARTICIPANT(eventData.f_1))
 		{
@@ -1451,18 +1451,18 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 	else
 	{
 		flag = true;
-		flag2 = espcfParam2 & SPC_AMBIENT_SCRIPT != 0;
-		flag3 = espcfParam2 & SPC_CLEAR_TASKS != 0;
-		flag4 = espcfParam2 & SPC_REMOVE_FIRES != 0;
-		flag5 = espcfParam2 & SPC_REMOVE_EXPLOSIONS != 0;
-		flag6 = espcfParam2 & SPC_REMOVE_PROJECTILES != 0;
-		flag7 = espcfParam2 & SPC_DEACTIVATE_GADGETS != 0;
-		flag8 = espcfParam2 & SPC_REENABLE_CONTROL_ON_DEATH != 0;
-		flag9 = espcfParam2 & SPC_LEAVE_CAMERA_CONTROL_ON != 0;
-		flag10 = espcfParam2 & SPC_ALLOW_PLAYER_DAMAGE != 0;
-		flag11 = espcfParam2 & SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER != 0;
-		flag12 = espcfParam2 & SPC_PREVENT_EVERYBODY_BACKOFF != 0;
-		flag13 = espcfParam2 & SPC_ALLOW_PAD_SHAKE != 0;
+		flag2 = espcfParam2 & 2 /*SPC_AMBIENT_SCRIPT*/ != 0;
+		flag3 = espcfParam2 & 4 /*SPC_CLEAR_TASKS*/ != 0;
+		flag4 = espcfParam2 & 8 /*SPC_REMOVE_FIRES*/ != 0;
+		flag5 = espcfParam2 & 16 /*SPC_REMOVE_EXPLOSIONS*/ != 0;
+		flag6 = espcfParam2 & 32 /*SPC_REMOVE_PROJECTILES*/ != 0;
+		flag7 = espcfParam2 & 64 /*SPC_DEACTIVATE_GADGETS*/ != 0;
+		flag8 = espcfParam2 & 128 /*SPC_REENABLE_CONTROL_ON_DEATH*/ != 0;
+		flag9 = espcfParam2 & 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/ != 0;
+		flag10 = espcfParam2 & 512 /*SPC_ALLOW_PLAYER_DAMAGE*/ != 0;
+		flag11 = espcfParam2 & 1024 /*SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER*/ != 0;
+		flag12 = espcfParam2 & 2048 /*SPC_PREVENT_EVERYBODY_BACKOFF*/ != 0;
+		flag13 = espcfParam2 & 4096 /*SPC_ALLOW_PAD_SHAKE*/ != 0;
 		flag14 = espcfParam2 & 8192 != 0;
 		flag15 = espcfParam2 & 16384 != 0;
 		toggle = espcfParam2 & 32768 != 0;
@@ -1619,40 +1619,40 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 			flags2 = 0;
 		
 			if (flag2)
-				flags2 = flags2 | SPC_AMBIENT_SCRIPT;
+				flags2 = flags2 | 2 /*SPC_AMBIENT_SCRIPT*/;
 		
 			if (flag3)
-				flags2 = flags2 | SPC_CLEAR_TASKS;
+				flags2 = flags2 | 4 /*SPC_CLEAR_TASKS*/;
 		
 			if (flag4)
-				flags2 = flags2 | SPC_REMOVE_FIRES;
+				flags2 = flags2 | 8 /*SPC_REMOVE_FIRES*/;
 		
 			if (flag5)
-				flags2 = flags2 | SPC_REMOVE_EXPLOSIONS;
+				flags2 = flags2 | 16 /*SPC_REMOVE_EXPLOSIONS*/;
 		
 			if (flag6)
-				flags2 = flags2 | SPC_REMOVE_PROJECTILES;
+				flags2 = flags2 | 32 /*SPC_REMOVE_PROJECTILES*/;
 		
 			if (flag7)
-				flags2 = flags2 | SPC_DEACTIVATE_GADGETS;
+				flags2 = flags2 | 64 /*SPC_DEACTIVATE_GADGETS*/;
 		
 			if (flag8)
-				flags2 = flags2 | SPC_REENABLE_CONTROL_ON_DEATH;
+				flags2 = flags2 | 128 /*SPC_REENABLE_CONTROL_ON_DEATH*/;
 		
 			if (flag9)
-				flags2 = flags2 | SPC_LEAVE_CAMERA_CONTROL_ON;
+				flags2 = flags2 | 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/;
 		
 			if (flag10)
-				flags2 = flags2 | SPC_ALLOW_PLAYER_DAMAGE;
+				flags2 = flags2 | 512 /*SPC_ALLOW_PLAYER_DAMAGE*/;
 		
 			if (flag11)
-				flags2 = flags2 | SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER;
+				flags2 = flags2 | 1024 /*SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER*/;
 		
 			if (flag12)
-				flags2 = flags2 | SPC_PREVENT_EVERYBODY_BACKOFF;
+				flags2 = flags2 | 2048 /*SPC_PREVENT_EVERYBODY_BACKOFF*/;
 		
 			if (flag13)
-				flags2 = flags2 | SPC_ALLOW_PAD_SHAKE;
+				flags2 = flags2 | 4096 /*SPC_ALLOW_PAD_SHAKE*/;
 		
 			PLAYER::SET_PLAYER_CONTROL(plParam0, bParam1, flags2);
 		}
@@ -1700,7 +1700,7 @@ BOOL func_49(Ped pedParam0) // Position - 0x16DC Hash - 0x93DB01D2 ^0x43DCC591
 	}
 	else
 	{
-		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(pedParam0, SCRIPT_TASK_ENTER_VEHICLE);
+		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(pedParam0, joaat("SCRIPT_TASK_ENTER_VEHICLE") /*SCRIPT_TASK_ENTER_VEHICLE*/);
 	
 		if (scriptTaskStatus == 0)
 			return true;
@@ -1734,7 +1734,7 @@ void func_50(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x170D Hash
 			{
 				if (IS_BIT_SET(Global_2621446.f_67, 2))
 				{
-					for (i = ON_FOOT; i < 8; i = i + 1)
+					for (i = 0 /*ON_FOOT*/; i < 8; i = i + 1)
 					{
 						CAM::SET_CAM_VIEW_MODE_FOR_CONTEXT(i, Global_2621446.f_58[i]);
 					}
@@ -1776,7 +1776,7 @@ void func_52() // Position - 0x17F9 Hash - 0xEFF6029E ^0x224AB476
 	{
 		if (!IS_BIT_SET(Global_2621446.f_67, 2))
 		{
-			for (i = ON_FOOT; i < 8; i = i + 1)
+			for (i = 0 /*ON_FOOT*/; i < 8; i = i + 1)
 			{
 				Global_2621446.f_58[i] = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(i);
 			}
@@ -3501,7 +3501,7 @@ BOOL func_114() // Position - 0x3518 Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x3527 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

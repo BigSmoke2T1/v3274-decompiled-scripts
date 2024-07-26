@@ -292,7 +292,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 	Global_1574606 = false;
 	epctLocal_242 = Global_4718592;
 
-	if (Global_4718592 == PV_COMP_HEAD)
+	if (Global_4718592 == 0 /*PV_COMP_HEAD*/)
 		Global_4718592.f_2 = epctLocal_243;
 
 	Global_1919916 = 0;
@@ -342,24 +342,24 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 		
 			case 4:
 				if (func_13(true))
-					if (Global_4718592.f_2 == PV_COMP_HAND)
+					if (Global_4718592.f_2 == 5 /*PV_COMP_HAND*/)
 						if (func_12(&uLocal_241))
 							iLocal_240 = 2;
 					else if (func_11())
 						if (func_10(&uLocal_241))
 							iLocal_240 = 2;
-					else if (Global_4718592.f_2 == PV_COMP_JBIB)
+					else if (Global_4718592.f_2 == 11 /*PV_COMP_JBIB*/)
 						if (func_9(&uLocal_241))
 							iLocal_240 = 2;
-					else if (Global_4718592.f_2 == PV_COMP_MAX)
+					else if (Global_4718592.f_2 == 12 /*PV_COMP_MAX*/)
 						if (func_8(&uLocal_241))
 							iLocal_240 = 2;
-					else if (Global_4718592.f_2 != PV_COMP_FEET && Global_4718592 != PV_COMP_LOWR)
+					else if (Global_4718592.f_2 != 6 /*PV_COMP_FEET*/ && Global_4718592 != 4 /*PV_COMP_LOWR*/)
 						if (func_7(&uLocal_241))
 							iLocal_240 = 2;
 					else if (func_6(&uLocal_241))
 						iLocal_240 = 2;
-				else if (Global_4718592 == PV_COMP_BERD)
+				else if (Global_4718592 == 1 /*PV_COMP_BERD*/)
 					if (func_5(&uLocal_241))
 						iLocal_240 = 2;
 				else if (func_4())
@@ -374,7 +374,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				break;
 		
 			case 3:
-				if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_SELECT))
+				if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 217 /*INPUT_FRONTEND_SELECT*/))
 					iLocal_240 = 1;
 				break;
 		
@@ -453,7 +453,7 @@ BOOL func_3() // Position - 0x36D Hash - 0x79B0F011 ^0x5F51167
 
 BOOL func_4() // Position - 0x3FF Hash - 0x80B16C01 ^0x80B16C01
 {
-	if (Global_4718592 == PV_COMP_HAIR || Global_4718592 == PV_COMP_ACCS)
+	if (Global_4718592 == 2 /*PV_COMP_HAIR*/ || Global_4718592 == 8 /*PV_COMP_ACCS*/)
 		return true;
 
 	return false;
@@ -611,7 +611,7 @@ BOOL func_10(int* piParam0) // Position - 0x611 Hash - 0x44BDE181 ^0x8773BD0A
 
 BOOL func_11() // Position - 0x674 Hash - 0x6700D392 ^0x6700D392
 {
-	return Global_4718592 == PV_COMP_UPPR;
+	return Global_4718592 == 3 /*PV_COMP_UPPR*/;
 }
 
 BOOL func_12(int* piParam0) // Position - 0x682 Hash - 0x9000C064 ^0x23636557
@@ -642,9 +642,9 @@ BOOL func_12(int* piParam0) // Position - 0x682 Hash - 0x9000C064 ^0x23636557
 BOOL func_13(BOOL bParam0) // Position - 0x6E5 Hash - 0x5573A09F ^0x5573A09F
 {
 	if (!bParam0)
-		return Global_4718592 == PV_COMP_HEAD;
+		return Global_4718592 == 0 /*PV_COMP_HEAD*/;
 
-	if (Global_4718592 == PV_COMP_HEAD || Global_4718592 == PV_COMP_LOWR || Global_4718592 == PV_COMP_FEET || Global_4718592 == PV_COMP_UPPR || Global_4718592 == 31 || Global_4718592.f_2 == PV_COMP_FEET || Global_4718592.f_2 == PV_COMP_HAND)
+	if (Global_4718592 == 0 /*PV_COMP_HEAD*/ || Global_4718592 == 4 /*PV_COMP_LOWR*/ || Global_4718592 == 6 /*PV_COMP_FEET*/ || Global_4718592 == 3 /*PV_COMP_UPPR*/ || Global_4718592 == 31 || Global_4718592.f_2 == 6 /*PV_COMP_FEET*/ || Global_4718592.f_2 == 5 /*PV_COMP_HAND*/)
 		return true;
 
 	return false;
@@ -663,16 +663,16 @@ BOOL func_15() // Position - 0x765 Hash - 0x960DBD3C ^0xA4DDFF0D
 
 void func_16(var uParam0) // Position - 0x77D Hash - 0xE582C6EC ^0xD9D25FCF
 {
-	if (Global_4718592 == PV_COMP_HEAD)
+	if (Global_4718592 == 0 /*PV_COMP_HEAD*/)
 	{
 		Global_4718592.f_3522 = uParam0->f_8[0 /*18*/][5];
 		Global_4718592.f_3523 = uParam0->f_8[0 /*18*/][5];
 		Global_4718592.f_3527 = uParam0->f_8[0 /*18*/][7] + 1;
 	}
-	else if (Global_4718592 == PV_COMP_BERD)
+	else if (Global_4718592 == 1 /*PV_COMP_BERD*/)
 	{
 	}
-	else if (Global_4718592 == PV_COMP_HAIR)
+	else if (Global_4718592 == 2 /*PV_COMP_HAIR*/)
 	{
 		Global_4718592.f_3522 = uParam0->f_8[2 /*18*/][4];
 		Global_4718592.f_117194 = uParam0->f_8[2 /*18*/][7];

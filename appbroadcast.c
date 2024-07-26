@@ -520,7 +520,7 @@ BOOL func_31(var uParam0) // Position - 0x6AB Hash - 0xD23D6E28 ^0xAA9B9510
 	if (!CAM::IS_SCREEN_FADED_IN())
 		return false;
 
-	if (!PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, Global_20899))
+	if (!PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, Global_20899))
 		return false;
 
 	func_32();
@@ -560,7 +560,7 @@ BOOL func_34() // Position - 0x728 Hash - 0xE8350107 ^0x112591EA
 	camActiveViewModeContext = CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT();
 	camViewModeForContext = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(camActiveViewModeContext);
 
-	if (camViewModeForContext == FIRST_PERSON)
+	if (camViewModeForContext == 4 /*FIRST_PERSON*/)
 		num = 1;
 
 	if (Global_4543362 || num)

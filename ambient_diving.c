@@ -1521,7 +1521,7 @@ void func_37(var uParam0, var uParam1, int iParam2) // Position - 0x1864 Hash - 
 	if (*uParam0 == 1 || *uParam0 == 0)
 		func_44(*uParam0, iParam2, true);
 
-	PAD::SET_CONTROL_SHAKE(PLAYER_CONTROL, 200, 250);
+	PAD::SET_CONTROL_SHAKE(0 /*PLAYER_CONTROL*/, 200, 250);
 	STATS::STAT_INCREMENT(uParam0->f_6, 1f);
 
 	if (bLocal_39)

@@ -116,7 +116,7 @@ void func_1(int iParam0) // Position - 0x14A Hash - 0x707D471A ^0x7CCFD28A
 	eStackSize stackSize;
 	BOOL flag;
 
-	stackSize = DEFAULT;
+	stackSize = 1424 /*DEFAULT*/;
 	flag = true;
 
 	switch (iParam0)
@@ -127,7 +127,7 @@ void func_1(int iParam0) // Position - 0x14A Hash - 0x707D471A ^0x7CCFD28A
 			break;
 	
 		case 1:
-			stackSize = MULTIPLAYER_MISSION;
+			stackSize = 5050 /*MULTIPLAYER_MISSION*/;
 			scriptName = "golf_ai_foursome";
 			scriptHash = joaat("golf_ai_foursome");
 			flag = false;
@@ -139,14 +139,14 @@ void func_1(int iParam0) // Position - 0x14A Hash - 0x707D471A ^0x7CCFD28A
 			break;
 	
 		case 2:
-			stackSize = MULTIPLAYER_MISSION;
+			stackSize = 5050 /*MULTIPLAYER_MISSION*/;
 			scriptName = "golf_ai_foursome_putting";
 			scriptHash = joaat("golf_ai_foursome_putting");
 			flag = false;
 			break;
 	
 		case 4:
-			stackSize = FRIEND;
+			stackSize = 2050 /*FRIEND*/;
 			scriptName = "stripclub";
 			scriptHash = joaat("stripclub");
 			flag = false;

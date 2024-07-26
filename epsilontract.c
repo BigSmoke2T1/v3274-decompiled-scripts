@@ -266,7 +266,7 @@ void func_1() // Position - 0xCE Hash - 0x5A344F2A ^0xEA446C8E
 				
 					func_39(&(uLocal_47[iLocal_39 /*11*/].f_1));
 					uLocal_47[iLocal_39 /*11*/].f_10 = 0;
-					PAD::SET_CONTROL_SHAKE(PLAYER_CONTROL, 200, 250);
+					PAD::SET_CONTROL_SHAKE(0 /*PLAYER_CONTROL*/, 200, 250);
 					num = 805 + iLocal_39;
 					_STAT_SET_PACKED_BOOL(num, true, -1);
 					STATS::STAT_INCREMENT(joaat("NUM_HIDDEN_PACKAGES_2"), 1f);
@@ -787,13 +787,13 @@ void func_14(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			
 				case 1:
 					if (num3 == 249)
-						func_15(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+						func_15(1 /*CHAR_FRANKLIN*/, num2, num3, "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					else
-						func_15(CHAR_FRANKLIN, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+						func_15(1 /*CHAR_FRANKLIN*/, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			
 				case 2:
-					func_15(CHAR_TREVOR, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					func_15(2 /*CHAR_TREVOR*/, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			}
 		}
@@ -873,7 +873,7 @@ void func_15(eCharacter echParam0, int iParam1, int iParam2, const char* sParam3
 	
 		switch (Global_20930)
 		{
-			case CHAR_MICHAEL:
+			case 0 /*CHAR_MICHAEL*/:
 				TEXT_LABEL_ASSIGN_STRING(&Global_20919, "Phone_SoundSet_Michael", 24);
 				Global_45261 = Global_45261 + 1;
 			
@@ -881,7 +881,7 @@ void func_15(eCharacter echParam0, int iParam1, int iParam2, const char* sParam3
 					Global_45261 = 16;
 				break;
 		
-			case CHAR_TREVOR:
+			case 2 /*CHAR_TREVOR*/:
 				TEXT_LABEL_ASSIGN_STRING(&Global_20919, "Phone_SoundSet_Trevor", 24);
 				Global_45263 = Global_45263 + 1;
 			
@@ -889,7 +889,7 @@ void func_15(eCharacter echParam0, int iParam1, int iParam2, const char* sParam3
 					Global_45263 = 16;
 				break;
 		
-			case CHAR_FRANKLIN:
+			case 1 /*CHAR_FRANKLIN*/:
 				TEXT_LABEL_ASSIGN_STRING(&Global_20919, "Phone_SoundSet_Franklin", 24);
 				Global_45262 = Global_45262 + 1;
 			
@@ -1319,7 +1319,7 @@ void func_20() // Position - 0x15A9 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -1332,7 +1332,7 @@ void func_20() // Position - 0x15A9 Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_21(eCharacter echParam0) // Position - 0x16A6 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x16B2 Hash - 0xAC4E9801 ^0xB379A75F
@@ -1344,14 +1344,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x16B2 Ha
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x16EF Hash - 0xADCB9755 ^0xADCB9755
@@ -1359,7 +1359,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x16EF Hash - 0xAD
 	if (func_21(character))
 		return func_24(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -1658,7 +1658,7 @@ void func_32(var uParam0, var uParam1) // Position - 0x1BC5 Hash - 0x20256A54 ^0
 void func_33(Vector3 vParam0, var uParam1, var uParam2) // Position - 0x1C05 Hash - 0xF4A18654 ^0x2951AD08
 {
 	if (func_34(PLAYER::PLAYER_PED_ID(), vParam0, 7f, true))
-		TASK::TASK_LOOK_AT_COORD(PLAYER::PLAYER_PED_ID(), vParam0, 100, SLF_WHILE_NOT_IN_FOV, 1);
+		TASK::TASK_LOOK_AT_COORD(PLAYER::PLAYER_PED_ID(), vParam0, 100, 2048 /*SLF_WHILE_NOT_IN_FOV*/, 1);
 
 	return;
 }

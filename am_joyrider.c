@@ -442,7 +442,7 @@ int func_9() // Position - 0x3C4 Hash - 0x655EBE00 ^0xDEBB4AEF
 	{
 		if (func_4(iLocal_60.f_2))
 		{
-			if (func_11(&(iLocal_60.f_3), iLocal_60.f_2, PED_TYPE_CRIMINAL, iLocal_60.f_5, -1, true, true, true))
+			if (func_11(&(iLocal_60.f_3), iLocal_60.f_2, 22 /*PED_TYPE_CRIMINAL*/, iLocal_60.f_5, -1, true, true, true))
 			{
 				PED::SET_PED_RANDOM_COMPONENT_VARIATION(NETWORK::NET_TO_PED(iLocal_60.f_3), 0);
 			
@@ -477,31 +477,31 @@ int func_9() // Position - 0x3C4 Hash - 0x655EBE00 ^0xDEBB4AEF
 				randomIntInRange = MISC::GET_RANDOM_INT_IN_RANGE(0, 4);
 			
 				if (randomIntInRange == 0)
-					PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_60.f_3), BF_AlwaysFight, true);
+					PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_60.f_3), 5 /*BF_AlwaysFight*/, true);
 				else if (randomIntInRange == 1)
-					PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_60.f_3), BF_AlwaysFlee, true);
+					PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_60.f_3), 17 /*BF_AlwaysFlee*/, true);
 				else if (randomIntInRange == 2)
-					PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_60.f_3), BF_Aggressive, true);
+					PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_60.f_3), 13 /*BF_Aggressive*/, true);
 			
 				if (_GET_RANDOM_BOOL())
-					PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_60.f_3), BF_CanTauntInVehicle, true);
+					PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_60.f_3), 20 /*BF_CanTauntInVehicle*/, true);
 			
 				if (_GET_RANDOM_BOOL())
-					PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_60.f_3), BF_CanDoDrivebys, true);
+					PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_60.f_3), 2 /*BF_CanDoDrivebys*/, true);
 			
 				randomIntInRange = MISC::GET_RANDOM_INT_IN_RANGE(0, 4);
 			
 				if (randomIntInRange == 0)
-					PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(iLocal_60.f_3), CM_WillAdvance);
+					PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(iLocal_60.f_3), 2 /*CM_WillAdvance*/);
 				else if (randomIntInRange == 1)
-					PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(iLocal_60.f_3), CM_Defensive);
+					PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(iLocal_60.f_3), 1 /*CM_Defensive*/);
 				else if (randomIntInRange == 2)
-					PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(iLocal_60.f_3), CM_WillRetreat);
+					PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(iLocal_60.f_3), 3 /*CM_WillRetreat*/);
 			
 				PED::SET_PED_ALLOW_MINOR_REACTIONS_AS_MISSION_PED(NETWORK::NET_TO_PED(iLocal_60.f_3), true);
 				PED::SET_PED_GET_OUT_UPSIDE_DOWN_VEHICLE(NETWORK::NET_TO_PED(iLocal_60.f_3), true);
 				PED::SET_PED_CONFIG_FLAG(NETWORK::NET_TO_PED(iLocal_60.f_3), 29, true);
-				PED::SET_PED_CAN_BE_KNOCKED_OFF_VEHICLE(NETWORK::NET_TO_PED(iLocal_60.f_3), KNOCKOFFVEHICLE_HARD);
+				PED::SET_PED_CAN_BE_KNOCKED_OFF_VEHICLE(NETWORK::NET_TO_PED(iLocal_60.f_3), 3 /*KNOCKOFFVEHICLE_HARD*/);
 				ENTITY::SET_ENTITY_HEALTH(NETWORK::NET_TO_PED(iLocal_60.f_3), SYSTEM::ROUND(200f * Global_262145.f_156), 0, 0);
 				AUDIO::SET_VEHICLE_RADIO_LOUD(NETWORK::NET_TO_VEH(iLocal_60.f_2), true);
 				VEHICLE::SET_DISABLE_PRETEND_OCCUPANTS(NETWORK::NET_TO_VEH(iLocal_60.f_2), true);
@@ -1420,7 +1420,7 @@ BOOL func_53() // Position - 0x1968 Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x1977 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

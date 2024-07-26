@@ -428,7 +428,7 @@ int func_11(var uParam0, ePedComponentType epctParam1, int iParam2) // Position 
 
 	type = func_141(iParam2);
 
-	if (epctParam1 != PV_COMP_INVALID)
+	if (epctParam1 != -1 /*PV_COMP_INVALID*/)
 		type = epctParam1;
 
 	if (type < func_140(iParam2))
@@ -760,7 +760,7 @@ void func_13(var uParam0, int iParam1, int iParam2, float fParam3, float fParam4
 		{
 			if (!func_44(PLAYER::PLAYER_ID()))
 			{
-				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, SPC_CLEAR_TASKS, false);
+				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, 4 /*SPC_CLEAR_TASKS*/, false);
 				WEAPON::SET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), joaat("WEAPON_UNARMED"), true);
 				ENTITY::SET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), -209.434f, 305.016f, 95.9464f, true, false, false, true);
 				ENTITY::SET_ENTITY_HEADING(PLAYER::PLAYER_PED_ID(), 12.5f);
@@ -821,13 +821,13 @@ void func_14(BOOL bParam0, BOOL bParam1) // Position - 0xD83 Hash - 0xEDB3AB45 ^
 			if (func_16(PLAYER::PLAYER_ID()))
 				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, 32768, false);
 			else if (func_15())
-				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, SPC_CLEAR_TASKS | 32768, false);
+				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, 32772 /*SPC_CLEAR_TASKS | 32768*/, false);
 			else if (!bParam1)
-				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, SPC_CLEAR_TASKS | 319488, false);
+				_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, 319492 /*SPC_CLEAR_TASKS | 319488*/, false);
 		}
 		else
 		{
-			_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, SPC_CLEAR_TASKS | 57344, false);
+			_SET_PLAYER_CONTROL_EX(PLAYER::PLAYER_ID(), false, 57348 /*SPC_CLEAR_TASKS | 57344*/, false);
 		}
 	}
 
@@ -910,7 +910,7 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 
 	type = player;
 
-	if (type != PV_COMP_INVALID)
+	if (type != -1 /*PV_COMP_INVALID*/)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -1035,18 +1035,18 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 	else
 	{
 		flag = true;
-		flag2 = espcfParam2 & SPC_AMBIENT_SCRIPT != 0;
-		flag3 = espcfParam2 & SPC_CLEAR_TASKS != 0;
-		flag4 = espcfParam2 & SPC_REMOVE_FIRES != 0;
-		flag5 = espcfParam2 & SPC_REMOVE_EXPLOSIONS != 0;
-		flag6 = espcfParam2 & SPC_REMOVE_PROJECTILES != 0;
-		flag7 = espcfParam2 & SPC_DEACTIVATE_GADGETS != 0;
-		flag8 = espcfParam2 & SPC_REENABLE_CONTROL_ON_DEATH != 0;
-		flag9 = espcfParam2 & SPC_LEAVE_CAMERA_CONTROL_ON != 0;
-		flag10 = espcfParam2 & SPC_ALLOW_PLAYER_DAMAGE != 0;
-		flag11 = espcfParam2 & SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER != 0;
-		flag12 = espcfParam2 & SPC_PREVENT_EVERYBODY_BACKOFF != 0;
-		flag13 = espcfParam2 & SPC_ALLOW_PAD_SHAKE != 0;
+		flag2 = espcfParam2 & 2 /*SPC_AMBIENT_SCRIPT*/ != 0;
+		flag3 = espcfParam2 & 4 /*SPC_CLEAR_TASKS*/ != 0;
+		flag4 = espcfParam2 & 8 /*SPC_REMOVE_FIRES*/ != 0;
+		flag5 = espcfParam2 & 16 /*SPC_REMOVE_EXPLOSIONS*/ != 0;
+		flag6 = espcfParam2 & 32 /*SPC_REMOVE_PROJECTILES*/ != 0;
+		flag7 = espcfParam2 & 64 /*SPC_DEACTIVATE_GADGETS*/ != 0;
+		flag8 = espcfParam2 & 128 /*SPC_REENABLE_CONTROL_ON_DEATH*/ != 0;
+		flag9 = espcfParam2 & 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/ != 0;
+		flag10 = espcfParam2 & 512 /*SPC_ALLOW_PLAYER_DAMAGE*/ != 0;
+		flag11 = espcfParam2 & 1024 /*SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER*/ != 0;
+		flag12 = espcfParam2 & 2048 /*SPC_PREVENT_EVERYBODY_BACKOFF*/ != 0;
+		flag13 = espcfParam2 & 4096 /*SPC_ALLOW_PAD_SHAKE*/ != 0;
 		flag14 = espcfParam2 & 8192 != 0;
 		flag15 = espcfParam2 & 16384 != 0;
 		toggle = espcfParam2 & 32768 != 0;
@@ -1203,40 +1203,40 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 			flags2 = 0;
 		
 			if (flag2)
-				flags2 = flags2 | SPC_AMBIENT_SCRIPT;
+				flags2 = flags2 | 2 /*SPC_AMBIENT_SCRIPT*/;
 		
 			if (flag3)
-				flags2 = flags2 | SPC_CLEAR_TASKS;
+				flags2 = flags2 | 4 /*SPC_CLEAR_TASKS*/;
 		
 			if (flag4)
-				flags2 = flags2 | SPC_REMOVE_FIRES;
+				flags2 = flags2 | 8 /*SPC_REMOVE_FIRES*/;
 		
 			if (flag5)
-				flags2 = flags2 | SPC_REMOVE_EXPLOSIONS;
+				flags2 = flags2 | 16 /*SPC_REMOVE_EXPLOSIONS*/;
 		
 			if (flag6)
-				flags2 = flags2 | SPC_REMOVE_PROJECTILES;
+				flags2 = flags2 | 32 /*SPC_REMOVE_PROJECTILES*/;
 		
 			if (flag7)
-				flags2 = flags2 | SPC_DEACTIVATE_GADGETS;
+				flags2 = flags2 | 64 /*SPC_DEACTIVATE_GADGETS*/;
 		
 			if (flag8)
-				flags2 = flags2 | SPC_REENABLE_CONTROL_ON_DEATH;
+				flags2 = flags2 | 128 /*SPC_REENABLE_CONTROL_ON_DEATH*/;
 		
 			if (flag9)
-				flags2 = flags2 | SPC_LEAVE_CAMERA_CONTROL_ON;
+				flags2 = flags2 | 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/;
 		
 			if (flag10)
-				flags2 = flags2 | SPC_ALLOW_PLAYER_DAMAGE;
+				flags2 = flags2 | 512 /*SPC_ALLOW_PLAYER_DAMAGE*/;
 		
 			if (flag11)
-				flags2 = flags2 | SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER;
+				flags2 = flags2 | 1024 /*SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER*/;
 		
 			if (flag12)
-				flags2 = flags2 | SPC_PREVENT_EVERYBODY_BACKOFF;
+				flags2 = flags2 | 2048 /*SPC_PREVENT_EVERYBODY_BACKOFF*/;
 		
 			if (flag13)
-				flags2 = flags2 | SPC_ALLOW_PAD_SHAKE;
+				flags2 = flags2 | 4096 /*SPC_ALLOW_PAD_SHAKE*/;
 		
 			PLAYER::SET_PLAYER_CONTROL(plParam0, bParam1, flags2);
 		}
@@ -1284,7 +1284,7 @@ BOOL func_35(Ped pedParam0) // Position - 0x164B Hash - 0x93DB01D2 ^0x43DCC591
 	}
 	else
 	{
-		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(pedParam0, SCRIPT_TASK_ENTER_VEHICLE);
+		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(pedParam0, joaat("SCRIPT_TASK_ENTER_VEHICLE") /*SCRIPT_TASK_ENTER_VEHICLE*/);
 	
 		if (scriptTaskStatus == 0)
 			return true;
@@ -1318,7 +1318,7 @@ void func_36(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x167C Hash
 			{
 				if (IS_BIT_SET(Global_2621446.f_67, 2))
 				{
-					for (i = ON_FOOT; i < 8; i = i + 1)
+					for (i = 0 /*ON_FOOT*/; i < 8; i = i + 1)
 					{
 						CAM::SET_CAM_VIEW_MODE_FOR_CONTEXT(i, Global_2621446.f_58[i]);
 					}
@@ -1360,7 +1360,7 @@ void func_38() // Position - 0x1768 Hash - 0xEFF6029E ^0x224AB476
 	{
 		if (!IS_BIT_SET(Global_2621446.f_67, 2))
 		{
-			for (i = ON_FOOT; i < 8; i = i + 1)
+			for (i = 0 /*ON_FOOT*/; i < 8; i = i + 1)
 			{
 				Global_2621446.f_58[i] = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(i);
 			}
@@ -1423,13 +1423,13 @@ int func_45(var uParam0, int iParam1, ePedComponentType epctParam2) // Position 
 {
 	switch (epctParam2)
 	{
-		case PV_COMP_BERD:
-		case PV_COMP_HAIR:
-		case PV_COMP_UPPR:
-		case PV_COMP_LOWR:
-		case PV_COMP_HAND:
-		case PV_COMP_FEET:
-		case PV_COMP_TEEF:
+		case 1 /*PV_COMP_BERD*/:
+		case 2 /*PV_COMP_HAIR*/:
+		case 3 /*PV_COMP_UPPR*/:
+		case 4 /*PV_COMP_LOWR*/:
+		case 5 /*PV_COMP_HAND*/:
+		case 6 /*PV_COMP_FEET*/:
+		case 7 /*PV_COMP_TEEF*/:
 		case 34:
 		case 35:
 		case 36:
@@ -2823,13 +2823,13 @@ int func_51(var uParam0, int iParam1, ePedComponentType epctParam2) // Position 
 {
 	switch (epctParam2)
 	{
-		case PV_COMP_BERD:
-		case PV_COMP_HAIR:
-		case PV_COMP_UPPR:
-		case PV_COMP_LOWR:
-		case PV_COMP_HAND:
-		case PV_COMP_FEET:
-		case PV_COMP_TEEF:
+		case 1 /*PV_COMP_BERD*/:
+		case 2 /*PV_COMP_HAIR*/:
+		case 3 /*PV_COMP_UPPR*/:
+		case 4 /*PV_COMP_LOWR*/:
+		case 5 /*PV_COMP_HAND*/:
+		case 6 /*PV_COMP_FEET*/:
+		case 7 /*PV_COMP_TEEF*/:
 		case 34:
 		case 35:
 		case 36:
@@ -3218,7 +3218,7 @@ BOOL func_79(ePedComponentType epctParam0) // Position - 0x4358 Hash - 0x928E822
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID && Global_2657971[epctParam0 /*465*/].f_322.f_11 != _INVALID_PLAYER_INDEX())
+			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/ && Global_2657971[epctParam0 /*465*/].f_322.f_11 != _INVALID_PLAYER_INDEX())
 				return func_80(Global_2657971[epctParam0 /*465*/].f_322.f_8) == 25;
 
 	return false;
@@ -3228,19 +3228,19 @@ int func_80(ePedComponentType epctParam0) // Position - 0x43B8 Hash - 0xEE599357
 {
 	switch (epctParam0)
 	{
-		case PV_COMP_HEAD:
-		case PV_COMP_BERD:
-		case PV_COMP_HAIR:
-		case PV_COMP_UPPR:
-		case PV_COMP_LOWR:
-		case PV_COMP_HAND:
-		case PV_COMP_FEET:
-		case PV_COMP_TEEF:
-		case PV_COMP_ACCS:
-		case PV_COMP_TASK:
-		case PV_COMP_DECL:
-		case PV_COMP_JBIB:
-		case PV_COMP_MAX:
+		case 0 /*PV_COMP_HEAD*/:
+		case 1 /*PV_COMP_BERD*/:
+		case 2 /*PV_COMP_HAIR*/:
+		case 3 /*PV_COMP_UPPR*/:
+		case 4 /*PV_COMP_LOWR*/:
+		case 5 /*PV_COMP_HAND*/:
+		case 6 /*PV_COMP_FEET*/:
+		case 7 /*PV_COMP_TEEF*/:
+		case 8 /*PV_COMP_ACCS*/:
+		case 9 /*PV_COMP_TASK*/:
+		case 10 /*PV_COMP_DECL*/:
+		case 11 /*PV_COMP_JBIB*/:
+		case 12 /*PV_COMP_MAX*/:
 		case 13:
 		case 14:
 		case 15:
@@ -3473,7 +3473,7 @@ BOOL func_82(ePedComponentType epctParam0) // Position - 0x48C8 Hash - 0xCDF15F8
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID)
+			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/)
 				return func_80(Global_2657971[epctParam0 /*465*/].f_322.f_8) == 6;
 
 	return false;
@@ -3483,7 +3483,7 @@ BOOL func_83(ePedComponentType epctParam0) // Position - 0x490E Hash - 0x928E822
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID && Global_2657971[epctParam0 /*465*/].f_322.f_11 != _INVALID_PLAYER_INDEX())
+			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/ && Global_2657971[epctParam0 /*465*/].f_322.f_11 != _INVALID_PLAYER_INDEX())
 				return func_80(Global_2657971[epctParam0 /*465*/].f_322.f_8) == 5;
 
 	return false;
@@ -3502,7 +3502,7 @@ BOOL func_84(ePedComponentType epctParam0, BOOL bParam1, BOOL bParam2) // Positi
 			return true;
 
 	if (bParam2)
-		if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID)
+		if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/)
 			return true;
 
 	return false;
@@ -4073,7 +4073,7 @@ BOOL func_112() // Position - 0x53A5 Hash - 0x532A64A3 ^0x9B1C02D1
 
 void func_113(ePedComponentType epctParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3) // Position - 0x53BC Hash - 0xE2B31F3E ^0xE2B31F3E
 {
-	if (epctParam0 == PV_COMP_HEAD)
+	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
 		return;
 
 	if (bParam1 && bParam2)
@@ -4363,7 +4363,7 @@ ePedComponentType func_141(int iParam0) // Position - 0x5795 Hash - 0x1252FB49 ^
 		
 	}
 
-	return PV_COMP_INVALID;
+	return -1 /*PV_COMP_INVALID*/;
 }
 
 ePedComponentType func_142(int iParam0, int iParam1) // Position - 0x57FD Hash - 0x744E461C ^0x36023077
@@ -4572,14 +4572,14 @@ void func_151() // Position - 0x5A40 Hash - 0xB42D9574 ^0xB42D9574
 						func_176(&unk);
 					}
 				}
-				else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT) && !func_171())
+				else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 51 /*INPUT_CONTEXT*/) && !func_171())
 				{
 					func_167();
 					MISC::SET_BIT(&(Global_1960755.f_1247), 1);
 					AUDIO::PLAY_SOUND_FROM_COORD(-1, "Use", func_166(), func_165(), false, 0, false);
 					func_164();
 				}
-				else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT_SECONDARY) && !IS_BIT_SET(Global_1836224, 1))
+				else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 52 /*INPUT_CONTEXT_SECONDARY*/) && !IS_BIT_SET(Global_1836224, 1))
 				{
 					if (func_153())
 						func_164();
@@ -4670,12 +4670,12 @@ int func_156(BOOL bParam0) // Position - 0x5BDE Hash - 0x82F8F87D ^0x3D4758B5
 
 	type = func_142(num, -1);
 
-	if (type == PV_COMP_HEAD)
+	if (type == 0 /*PV_COMP_HEAD*/)
 		return 1;
 
 	if (NETWORK::GET_CLOUD_TIME_AS_INT() >= type)
 	{
-		func_157(num, PV_COMP_HEAD, -1, true);
+		func_157(num, 0 /*PV_COMP_HEAD*/, -1, true);
 		return 1;
 	}
 
@@ -5046,7 +5046,7 @@ BOOL func_186(ePedComponentType epctParam0) // Position - 0x6348 Hash - 0x6E46BC
 BOOL func_187(ePedComponentType epctParam0, BOOL bParam1) // Position - 0x6358 Hash - 0x3654624B ^0x97E7BA1
 {
 	if (func_108(epctParam0))
-		if (Global_1887305[epctParam0 /*610*/].f_10.f_33 != -1 || bParam1 && Global_1887305[epctParam0 /*610*/].f_10.f_32 != PV_COMP_INVALID)
+		if (Global_1887305[epctParam0 /*610*/].f_10.f_33 != -1 /*PV_COMP_INVALID*/ || bParam1 && Global_1887305[epctParam0 /*610*/].f_10.f_32 != -1 /*PV_COMP_INVALID*/)
 			return true;
 
 	return false;
@@ -5158,7 +5158,7 @@ BOOL func_195() // Position - 0x6512 Hash - 0x407B8BBB ^0x9F8B5FDB
 {
 	BOOL flag;
 
-	flag = PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE) || PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE) || PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE);
+	flag = PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/) || PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/) || PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/);
 
 	if (flag)
 	{
@@ -5473,7 +5473,7 @@ BOOL func_214(ePedComponentType epctParam0) // Position - 0x6A58 Hash - 0x3B8D03
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID)
+			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/)
 				return func_80(Global_2657971[epctParam0 /*465*/].f_322.f_8) == 9;
 
 	return false;
@@ -5534,7 +5534,7 @@ void func_216(var uParam0) // Position - 0x6B2C Hash - 0xE1BBE1E8 ^0x2DFD003E
 
 	if (flag)
 	{
-		for (i = PV_COMP_HEAD; i <= PV_COMP_UPPR; i = i + 1)
+		for (i = 0 /*PV_COMP_HEAD*/; i <= 3 /*PV_COMP_UPPR*/; i = i + 1)
 		{
 			if (uParam0->f_812.f_45[i] == -1)
 			{
@@ -5571,7 +5571,7 @@ void func_216(var uParam0) // Position - 0x6B2C Hash - 0xE1BBE1E8 ^0x2DFD003E
 
 	if (flag)
 	{
-		for (i = PV_COMP_BERD; i <= PV_COMP_UPPR; i = i + 1)
+		for (i = 1 /*PV_COMP_BERD*/; i <= 3 /*PV_COMP_UPPR*/; i = i + 1)
 		{
 			if (uParam0->f_812.f_45[i] == -1)
 			{
@@ -5587,7 +5587,7 @@ void func_216(var uParam0) // Position - 0x6B2C Hash - 0xE1BBE1E8 ^0x2DFD003E
 
 	if (flag)
 	{
-		for (i = PV_COMP_HEAD; i <= PV_COMP_UPPR; i = i + 1)
+		for (i = 0 /*PV_COMP_HEAD*/; i <= 3 /*PV_COMP_UPPR*/; i = i + 1)
 		{
 			if (uParam0->f_812.f_45[i] == -1)
 			{
@@ -5605,7 +5605,7 @@ void func_216(var uParam0) // Position - 0x6B2C Hash - 0xE1BBE1E8 ^0x2DFD003E
 		unk = 4;
 		func_221(uParam0, &unk);
 	
-		for (i = PV_COMP_HEAD; i <= PV_COMP_UPPR; i = i + 1)
+		for (i = 0 /*PV_COMP_HEAD*/; i <= 3 /*PV_COMP_UPPR*/; i = i + 1)
 		{
 			if (i >= Global_4718592.f_3526)
 			{
@@ -5751,13 +5751,13 @@ void _DISPLAY_HELP_TEXT(char* text, int iParam1) // Position - 0x6F25 Hash - 0xC
 void func_224() // Position - 0x6F3C Hash - 0xC607424D ^0xC8F85E2E
 {
 	HUD::THEFEED_HIDE_THIS_FRAME();
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_GAME_STREAM);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(18 /*HUD_GAME_STREAM*/);
 	HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
 	func_225(0);
-	PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_FRONTEND_PAUSE, true);
+	PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/, true);
 	CAM::INVALIDATE_IDLE_CAM();
 	NETWORK::SET_PLAYER_INVISIBLE_LOCALLY(PLAYER::PLAYER_ID(), false);
-	HUD::HIDE_SCRIPTED_HUD_COMPONENT_THIS_FRAME(HUD_WEAPON_WHEEL);
+	HUD::HIDE_SCRIPTED_HUD_COMPONENT_THIS_FRAME(19 /*HUD_WEAPON_WHEEL*/);
 	func_54(11, -1);
 	return;
 }
@@ -5925,16 +5925,16 @@ void func_233(var uParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 	eControlAction action2;
 
 	unk = 4;
-	PAD::ALLOW_ALTERNATIVE_SCRIPT_CONTROLS_LAYOUT(FRONTEND_CONTROL);
+	PAD::ALLOW_ALTERNATIVE_SCRIPT_CONTROLS_LAYOUT(2 /*FRONTEND_CONTROL*/);
 	func_236(&unk[0], &unk[1], &unk[2], &unk[3], false, false);
 
 	if (PAD::IS_LOOK_INVERTED())
 		unk[3] = unk[3] * -1;
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
-		controlUnboundNormal = PAD::GET_CONTROL_UNBOUND_NORMAL(FRONTEND_CONTROL, INPUT_CURSOR_X);
-		controlUnboundNormal2 = PAD::GET_CONTROL_UNBOUND_NORMAL(FRONTEND_CONTROL, INPUT_CURSOR_Y);
+		controlUnboundNormal = PAD::GET_CONTROL_UNBOUND_NORMAL(2 /*FRONTEND_CONTROL*/, 239 /*INPUT_CURSOR_X*/);
+		controlUnboundNormal2 = PAD::GET_CONTROL_UNBOUND_NORMAL(2 /*FRONTEND_CONTROL*/, 240 /*INPUT_CURSOR_Y*/);
 		num = controlUnboundNormal - uParam0->f_29;
 		num2 = controlUnboundNormal2 - uParam0->f_30;
 		uParam0->f_29 = controlUnboundNormal;
@@ -5947,8 +5947,8 @@ void func_233(var uParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		}
 		else
 		{
-			unk[2] = SYSTEM::ROUND(PAD::GET_CONTROL_UNBOUND_NORMAL(FRONTEND_CONTROL, INPUT_SCALED_LOOK_LR) * iParam5 * 127f);
-			unk[3] = SYSTEM::ROUND(PAD::GET_CONTROL_UNBOUND_NORMAL(FRONTEND_CONTROL, INPUT_SCALED_LOOK_UD) * iParam5 * 127f);
+			unk[2] = SYSTEM::ROUND(PAD::GET_CONTROL_UNBOUND_NORMAL(2 /*FRONTEND_CONTROL*/, 290 /*INPUT_SCALED_LOOK_LR*/) * iParam5 * 127f);
+			unk[3] = SYSTEM::ROUND(PAD::GET_CONTROL_UNBOUND_NORMAL(2 /*FRONTEND_CONTROL*/, 291 /*INPUT_SCALED_LOOK_UD*/) * iParam5 * 127f);
 		}
 	
 		unk[2] = func_235(unk[2] + uParam0->f_24, -127, 127);
@@ -5962,7 +5962,7 @@ void func_233(var uParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 			uParam0->f_24 = 0;
 			uParam0->f_25 = 0;
 		
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 			{
 				unk[2] = 0;
 				unk[3] = 0;
@@ -5994,7 +5994,7 @@ void func_233(var uParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 	num3 = 30f * SYSTEM::TIMESTEP();
 	num4 = { uParam0->f_8 + uParam0->f_11 };
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL) && bParam2 && !uParam0->f_28)
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/) && bParam2 && !uParam0->f_28)
 	{
 		uParam0->f_14 = num4;
 		uParam0->f_14.f_1 = num4.f_1;
@@ -6014,7 +6014,7 @@ void func_233(var uParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		uParam0->f_14.f_2 = func_234(uParam0->f_14.f_2, SYSTEM::TO_FLOAT(-uParam0->f_20), SYSTEM::TO_FLOAT(uParam0->f_20));
 	}
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL) && bParam1)
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(0 /*PLAYER_CONTROL*/) && bParam1)
 		if (uParam0->f_28)
 			uParam0->f_17 = uParam0->f_7;
 	else
@@ -6022,24 +6022,24 @@ void func_233(var uParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 
 	if (bParam1)
 	{
-		if (PAD::IS_USING_KEYBOARD_AND_MOUSE(PLAYER_CONTROL))
+		if (PAD::IS_USING_KEYBOARD_AND_MOUSE(0 /*PLAYER_CONTROL*/))
 		{
-			action = INPUT_SNIPER_ZOOM_IN_ONLY;
-			action2 = INPUT_SNIPER_ZOOM_OUT_ONLY;
+			action = 40 /*INPUT_SNIPER_ZOOM_IN_ONLY*/;
+			action2 = 41 /*INPUT_SNIPER_ZOOM_OUT_ONLY*/;
 		
 			if (bParam6)
 			{
-				action = INPUT_CURSOR_SCROLL_UP;
-				action2 = INPUT_CURSOR_SCROLL_DOWN;
+				action = 241 /*INPUT_CURSOR_SCROLL_UP*/;
+				action2 = 242 /*INPUT_CURSOR_SCROLL_DOWN*/;
 			}
 		
-			if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(PLAYER_CONTROL, action))
+			if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(0 /*PLAYER_CONTROL*/, action))
 			{
 				uParam0->f_17 = uParam0->f_17 - 5f;
 				uParam0->f_27 = MISC::GET_GAME_TIMER() + 4000;
 				uParam0->f_28 = 0;
 			}
-			else if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(PLAYER_CONTROL, action2))
+			else if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(0 /*PLAYER_CONTROL*/, action2))
 			{
 				uParam0->f_17 = uParam0->f_17 + 5f;
 				uParam0->f_27 = MISC::GET_GAME_TIMER() + 4000;
@@ -6053,8 +6053,8 @@ void func_233(var uParam0, BOOL bParam1, BOOL bParam2, BOOL bParam3, BOOL bParam
 		}
 		else if (bParam8)
 		{
-			unk[1] = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_FRONTEND_LT);
-			unk[3] = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_FRONTEND_RT);
+			unk[1] = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 207 /*INPUT_FRONTEND_LT*/);
+			unk[3] = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 208 /*INPUT_FRONTEND_RT*/);
 		
 			if (bParam3)
 			{
@@ -6111,27 +6111,27 @@ int func_235(int iParam0, int iParam1, int iParam2) // Position - 0x7808 Hash - 
 
 void func_236(var uParam0, var uParam1, var uParam2, var uParam3, BOOL bParam4, BOOL bParam5) // Position - 0x782D Hash - 0x61DDCD0A ^0x4AAD6D
 {
-	*uParam0 = SYSTEM::FLOOR(PAD::GET_CONTROL_UNBOUND_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_X) * 127f);
-	*uParam1 = SYSTEM::FLOOR(PAD::GET_CONTROL_UNBOUND_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_Y) * 127f);
-	*uParam2 = SYSTEM::FLOOR(PAD::GET_CONTROL_UNBOUND_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_X) * 127f);
-	*uParam3 = SYSTEM::FLOOR(PAD::GET_CONTROL_UNBOUND_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_Y) * 127f);
+	*uParam0 = SYSTEM::FLOOR(PAD::GET_CONTROL_UNBOUND_NORMAL(2 /*FRONTEND_CONTROL*/, 218 /*INPUT_SCRIPT_LEFT_AXIS_X*/) * 127f);
+	*uParam1 = SYSTEM::FLOOR(PAD::GET_CONTROL_UNBOUND_NORMAL(2 /*FRONTEND_CONTROL*/, 219 /*INPUT_SCRIPT_LEFT_AXIS_Y*/) * 127f);
+	*uParam2 = SYSTEM::FLOOR(PAD::GET_CONTROL_UNBOUND_NORMAL(2 /*FRONTEND_CONTROL*/, 220 /*INPUT_SCRIPT_RIGHT_AXIS_X*/) * 127f);
+	*uParam3 = SYSTEM::FLOOR(PAD::GET_CONTROL_UNBOUND_NORMAL(2 /*FRONTEND_CONTROL*/, 221 /*INPUT_SCRIPT_RIGHT_AXIS_Y*/) * 127f);
 
 	if (bParam4)
 	{
-		if (!PAD::IS_CONTROL_ENABLED(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_X))
-			*uParam0 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_UNBOUND_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_X) * 127f);
+		if (!PAD::IS_CONTROL_ENABLED(2 /*FRONTEND_CONTROL*/, 218 /*INPUT_SCRIPT_LEFT_AXIS_X*/))
+			*uParam0 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_UNBOUND_NORMAL(2 /*FRONTEND_CONTROL*/, 218 /*INPUT_SCRIPT_LEFT_AXIS_X*/) * 127f);
 	
-		if (!PAD::IS_CONTROL_ENABLED(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_Y))
-			*uParam1 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_UNBOUND_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_Y) * 127f);
+		if (!PAD::IS_CONTROL_ENABLED(2 /*FRONTEND_CONTROL*/, 219 /*INPUT_SCRIPT_LEFT_AXIS_Y*/))
+			*uParam1 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_UNBOUND_NORMAL(2 /*FRONTEND_CONTROL*/, 219 /*INPUT_SCRIPT_LEFT_AXIS_Y*/) * 127f);
 	
-		if (!PAD::IS_CONTROL_ENABLED(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_X))
-			*uParam2 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_UNBOUND_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_X) * 127f);
+		if (!PAD::IS_CONTROL_ENABLED(2 /*FRONTEND_CONTROL*/, 220 /*INPUT_SCRIPT_RIGHT_AXIS_X*/))
+			*uParam2 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_UNBOUND_NORMAL(2 /*FRONTEND_CONTROL*/, 220 /*INPUT_SCRIPT_RIGHT_AXIS_X*/) * 127f);
 	
-		if (!PAD::IS_CONTROL_ENABLED(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_Y))
-			*uParam3 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_UNBOUND_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_Y) * 127f);
+		if (!PAD::IS_CONTROL_ENABLED(2 /*FRONTEND_CONTROL*/, 221 /*INPUT_SCRIPT_RIGHT_AXIS_Y*/))
+			*uParam3 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_UNBOUND_NORMAL(2 /*FRONTEND_CONTROL*/, 221 /*INPUT_SCRIPT_RIGHT_AXIS_Y*/) * 127f);
 	}
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
 		if (bParam5)
 		{
@@ -9764,29 +9764,29 @@ int func_308(int* piParam0) // Position - 0xBDE3 Hash - 0xAEC4E7FC ^0xEACCA6A4
 	if (HUD::IS_PAUSE_MENU_ACTIVE())
 		return -1;
 
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_UP) || func_309(piParam0, 0, 0))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 188 /*INPUT_FRONTEND_UP*/) || func_309(piParam0, 0, 0))
 		return 0;
-	else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_DOWN) || func_309(piParam0, 0, 1))
+	else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 187 /*INPUT_FRONTEND_DOWN*/) || func_309(piParam0, 0, 1))
 		return 1;
-	else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_LEFT) || func_309(piParam0, 0, 2))
+	else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 189 /*INPUT_FRONTEND_LEFT*/) || func_309(piParam0, 0, 2))
 		return 2;
-	else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT) || func_309(piParam0, 0, 3))
+	else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 190 /*INPUT_FRONTEND_RIGHT*/) || func_309(piParam0, 0, 3))
 		return 3;
-	else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_LB))
+	else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 205 /*INPUT_FRONTEND_LB*/))
 		return 9;
-	else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_RB))
+	else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 206 /*INPUT_FRONTEND_RB*/))
 		return 10;
-	else if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_X))
+	else if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 203 /*INPUT_FRONTEND_X*/))
 		return 4;
-	else if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_Y))
+	else if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 204 /*INPUT_FRONTEND_Y*/))
 		return 5;
-	else if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_Y))
+	else if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 204 /*INPUT_FRONTEND_Y*/))
 		return 6;
-	else if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL))
+	else if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/))
 		return 8;
-	else if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT))
+	else if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/))
 		return 7;
-	else if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_SELECT))
+	else if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 217 /*INPUT_FRONTEND_SELECT*/))
 		return 11;
 
 	return -1;
@@ -9803,8 +9803,8 @@ BOOL func_309(int* piParam0, int iParam1, int iParam2) // Position - 0xBF07 Hash
 	switch (iParam1)
 	{
 		case 0:
-			num2 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_X) * 127f);
-			num3 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_Y) * 127f);
+			num2 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 218 /*INPUT_SCRIPT_LEFT_AXIS_X*/) * 127f);
+			num3 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 219 /*INPUT_SCRIPT_LEFT_AXIS_Y*/) * 127f);
 		
 			switch (iParam2)
 			{
@@ -9871,8 +9871,8 @@ BOOL func_309(int* piParam0, int iParam1, int iParam2) // Position - 0xBF07 Hash
 			break;
 	
 		case 1:
-			num2 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_X) * 127f);
-			num3 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_Y) * 127f);
+			num2 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 220 /*INPUT_SCRIPT_RIGHT_AXIS_X*/) * 127f);
+			num3 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 221 /*INPUT_SCRIPT_RIGHT_AXIS_Y*/) * 127f);
 		
 			switch (iParam2)
 			{
@@ -9949,7 +9949,7 @@ void func_310(var uParam0) // Position - 0xC120 Hash - 0xCCFE1207 ^0xF91DC8BA
 	if (uParam0->f_812.f_423 == -1)
 		return;
 
-	if (func_311(uParam0->f_812.f_423, &flag, -1, -1, PV_COMP_INVALID))
+	if (func_311(uParam0->f_812.f_423, &flag, -1, -1, -1 /*PV_COMP_INVALID*/))
 	{
 		if (flag)
 		{
@@ -10047,17 +10047,17 @@ BOOL func_311(int iParam0, var uParam1, int iParam2, int iParam3, ePedComponentT
 
 	HUD::SET_WARNING_MESSAGE_WITH_HEADER(&entryHeader, &entryLine1, instructionalKey, &entryLine2, flag, num, &showBackground, &unk46, true, 0);
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 		HUD::SET_MOUSE_CURSOR_STYLE(1);
 
-	if (PAD::IS_DISABLED_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL) || PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL))
+	if (PAD::IS_DISABLED_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/) || PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/))
 	{
 		AUDIO::PLAY_SOUND_FROM_COORD(-1, "Back", func_166(), func_165(), false, 0, false);
 		*uParam1 = 0;
 		return true;
 	}
 
-	if (PAD::IS_DISABLED_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT) || PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT))
+	if (PAD::IS_DISABLED_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/) || PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/))
 	{
 		if (iParam0 != 0)
 			AUDIO::PLAY_SOUND_FROM_COORD(-1, "Select" /*Filter List*/, func_166(), func_165(), false, 0, false);
@@ -10419,13 +10419,13 @@ ePedComponentType func_325() // Position - 0xC8AE Hash - 0xB7597AC3 ^0xC13AC84D
 		case 0:
 			switch (type)
 			{
-				case PV_COMP_HEAD:
+				case 0 /*PV_COMP_HEAD*/:
 					return Global_262145.f_22996;
 			
-				case PV_COMP_BERD:
+				case 1 /*PV_COMP_BERD*/:
 					return Global_262145.f_22997;
 			
-				case PV_COMP_HAIR:
+				case 2 /*PV_COMP_HAIR*/:
 					return Global_262145.f_22998;
 			
 				default:
@@ -10437,19 +10437,19 @@ ePedComponentType func_325() // Position - 0xC8AE Hash - 0xB7597AC3 ^0xC13AC84D
 		case 1:
 			switch (type)
 			{
-				case PV_COMP_HEAD:
+				case 0 /*PV_COMP_HEAD*/:
 					return Global_262145.f_22999;
 			
-				case PV_COMP_BERD:
+				case 1 /*PV_COMP_BERD*/:
 					return Global_262145.f_23000;
 			
-				case PV_COMP_HAIR:
+				case 2 /*PV_COMP_HAIR*/:
 					return Global_262145.f_23001;
 			
-				case PV_COMP_UPPR:
+				case 3 /*PV_COMP_UPPR*/:
 					return Global_262145.f_23002;
 			
-				case PV_COMP_LOWR:
+				case 4 /*PV_COMP_LOWR*/:
 					return Global_262145.f_23003;
 			
 				default:
@@ -10461,22 +10461,22 @@ ePedComponentType func_325() // Position - 0xC8AE Hash - 0xB7597AC3 ^0xC13AC84D
 		case 2:
 			switch (type)
 			{
-				case PV_COMP_HEAD:
+				case 0 /*PV_COMP_HEAD*/:
 					return Global_262145.f_23004;
 			
-				case PV_COMP_BERD:
+				case 1 /*PV_COMP_BERD*/:
 					return Global_262145.f_23005;
 			
-				case PV_COMP_HAIR:
+				case 2 /*PV_COMP_HAIR*/:
 					return Global_262145.f_23006;
 			
-				case PV_COMP_UPPR:
+				case 3 /*PV_COMP_UPPR*/:
 					return Global_262145.f_23007;
 			
-				case PV_COMP_LOWR:
+				case 4 /*PV_COMP_LOWR*/:
 					return Global_262145.f_23008;
 			
-				case PV_COMP_HAND:
+				case 5 /*PV_COMP_HAND*/:
 					return Global_262145.f_23009;
 			
 				default:
@@ -10653,15 +10653,15 @@ void func_329(var uParam0) // Position - 0xCC0D Hash - 0xC892EEF6 ^0x41F1011E
 						if (MISC::IS_PS3_VERSION() || IS_PLAYSTATION_PLATFORM() || MISC::IS_PC_VERSION())
 							func_332(2, 217, "HEIST_IB_PSN" /*View Profile*/, uParam0, true, 365);
 						else if (MISC::IS_XBOX360_VERSION() || IS_XBOX_PLATFORM())
-							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_FRONTEND_SELECT, true), "HEIST_IB_XBL" /*View gamer card*/, uParam0, 0);
+							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, 217 /*INPUT_FRONTEND_SELECT*/, true), "HEIST_IB_XBL" /*View gamer card*/, uParam0, 0);
 						else
-							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_FRONTEND_SELECT, true), "HEIST_IB_PSNXBL", uParam0, 0);
+							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, 217 /*INPUT_FRONTEND_SELECT*/, true), "HEIST_IB_PSNXBL", uParam0, 0);
 				
 					func_332(2, 204, "HP_OVERVIEW" /*Overview*/, uParam0, true, 365);
 					func_332(2, 206, "HP_SURVEIL" /*Surveillance*/, uParam0, true, 365);
 					func_332(2, 205, "HP_MAP" /*Map*/, uParam0, true, 365);
 				
-					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 						func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 					else
 						func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -10677,7 +10677,7 @@ void func_329(var uParam0) // Position - 0xCC0D Hash - 0xC892EEF6 ^0x41F1011E
 					func_332(2, 201, "HEIST_IB_SAVE" /*Confirm*/, uParam0, true, 365);
 					func_332(2, 202, "HEIST_IB_UNSAVE" /*Cancel*/, uParam0, true, 365);
 				
-					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 						func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 					else
 						func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -10709,9 +10709,9 @@ void func_329(var uParam0) // Position - 0xCC0D Hash - 0xC892EEF6 ^0x41F1011E
 						if (MISC::IS_PS3_VERSION() || IS_PLAYSTATION_PLATFORM() || MISC::IS_PC_VERSION())
 							func_332(2, 217, "HEIST_IB_PSN" /*View Profile*/, uParam0, true, 365);
 						else if (MISC::IS_XBOX360_VERSION() || IS_XBOX_PLATFORM())
-							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_FRONTEND_SELECT, true), "HEIST_IB_XBL" /*View gamer card*/, uParam0, 0);
+							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, 217 /*INPUT_FRONTEND_SELECT*/, true), "HEIST_IB_XBL" /*View gamer card*/, uParam0, 0);
 						else
-							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_FRONTEND_SELECT, true), "HEIST_IB_PSNXBL", uParam0, 0);
+							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, 217 /*INPUT_FRONTEND_SELECT*/, true), "HEIST_IB_PSNXBL", uParam0, 0);
 				
 					switch (uParam0->f_725.f_32)
 					{
@@ -10728,7 +10728,7 @@ void func_329(var uParam0) // Position - 0xCC0D Hash - 0xC892EEF6 ^0x41F1011E
 							break;
 					}
 				
-					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 						func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 					else
 						func_332(2, 208, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
@@ -10744,7 +10744,7 @@ void func_329(var uParam0) // Position - 0xCC0D Hash - 0xC892EEF6 ^0x41F1011E
 					func_332(2, 201, "HEIST_IB_SAVE" /*Confirm*/, uParam0, true, 365);
 					func_332(2, 202, "HEIST_IB_UNSAVE" /*Cancel*/, uParam0, true, 365);
 				
-					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 						func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 					else
 						func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -10776,15 +10776,15 @@ void func_329(var uParam0) // Position - 0xCC0D Hash - 0xC892EEF6 ^0x41F1011E
 						if (MISC::IS_PS3_VERSION() || IS_PLAYSTATION_PLATFORM() || MISC::IS_PC_VERSION())
 							func_332(2, 217, "HEIST_IB_PSN" /*View Profile*/, uParam0, true, 365);
 						else if (MISC::IS_XBOX360_VERSION() || IS_XBOX_PLATFORM())
-							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_FRONTEND_SELECT, true), "HEIST_IB_XBL" /*View gamer card*/, uParam0, 0);
+							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, 217 /*INPUT_FRONTEND_SELECT*/, true), "HEIST_IB_XBL" /*View gamer card*/, uParam0, 0);
 						else
-							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_FRONTEND_SELECT, true), "HEIST_IB_PSNXBL", uParam0, 0);
+							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, 217 /*INPUT_FRONTEND_SELECT*/, true), "HEIST_IB_PSNXBL", uParam0, 0);
 				
 					func_332(2, 204, "HP_OVERVIEW" /*Overview*/, uParam0, true, 365);
 					func_332(2, 206, "HP_MEMBERS" /*Members*/, uParam0, true, 365);
 					func_332(2, 205, "HP_SURVEIL" /*Surveillance*/, uParam0, true, 365);
 				
-					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 						func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 					else
 						func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -10800,7 +10800,7 @@ void func_329(var uParam0) // Position - 0xCC0D Hash - 0xC892EEF6 ^0x41F1011E
 					func_332(2, 201, "HEIST_IB_SAVE" /*Confirm*/, uParam0, true, 365);
 					func_332(2, 202, "HEIST_IB_UNSAVE" /*Cancel*/, uParam0, true, 365);
 				
-					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 						func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 					else
 						func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -10832,15 +10832,15 @@ void func_329(var uParam0) // Position - 0xCC0D Hash - 0xC892EEF6 ^0x41F1011E
 						if (MISC::IS_PS3_VERSION() || IS_PLAYSTATION_PLATFORM() || MISC::IS_PC_VERSION())
 							func_332(2, 217, "HEIST_IB_PSN" /*View Profile*/, uParam0, true, 365);
 						else if (MISC::IS_XBOX360_VERSION() || IS_XBOX_PLATFORM())
-							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_FRONTEND_SELECT, true), "HEIST_IB_XBL" /*View gamer card*/, uParam0, 0);
+							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, 217 /*INPUT_FRONTEND_SELECT*/, true), "HEIST_IB_XBL" /*View gamer card*/, uParam0, 0);
 						else
-							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, INPUT_FRONTEND_SELECT, true), "HEIST_IB_PSNXBL", uParam0, 0);
+							func_331(PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, 217 /*INPUT_FRONTEND_SELECT*/, true), "HEIST_IB_PSNXBL", uParam0, 0);
 				
 					func_332(2, 204, "HP_OVERVIEW" /*Overview*/, uParam0, true, 365);
 					func_332(2, 206, "HP_MAP" /*Map*/, uParam0, true, 365);
 					func_332(2, 205, "HP_MEMBERS" /*Members*/, uParam0, true, 365);
 				
-					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 						func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 					else
 						func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -10856,7 +10856,7 @@ void func_329(var uParam0) // Position - 0xCC0D Hash - 0xC892EEF6 ^0x41F1011E
 					func_332(2, 201, "HEIST_IB_SAVE" /*Confirm*/, uParam0, true, 365);
 					func_332(2, 202, "HEIST_IB_UNSAVE" /*Cancel*/, uParam0, true, 365);
 				
-					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+					if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 						func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 					else
 						func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -11006,7 +11006,7 @@ void func_337(var uParam0, var uParam1, var uParam2, int iParam3) // Position - 
 	eControlType control2;
 	int controlGroup;
 
-	if (iParam3 == 1 || PAD::HAVE_CONTROLS_CHANGED(FRONTEND_CONTROL))
+	if (iParam3 == 1 || PAD::HAVE_CONTROLS_CHANGED(2 /*FRONTEND_CONTROL*/))
 	{
 		*uParam2 = 0;
 	
@@ -11188,10 +11188,10 @@ void func_337(var uParam0, var uParam1, var uParam2, int iParam3) // Position - 
 
 void func_338() // Position - 0xDC00 Hash - 0xBA92F148 ^0xFCB5C23
 {
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_AREA_NAME);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_VEHICLE_NAME);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_VEHICLE_CLASS);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_STREET_NAME);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(7 /*HUD_AREA_NAME*/);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(6 /*HUD_VEHICLE_NAME*/);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(8 /*HUD_VEHICLE_CLASS*/);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(9 /*HUD_STREET_NAME*/);
 	return;
 }
 
@@ -11847,8 +11847,8 @@ int _STOPWATCH_GET_TIME_PASSED(var pStopwatch, BOOL useLocalTimer, BOOL useAccur
 
 void func_357() // Position - 0xED11 Hash - 0x99373D83 ^0xC771813E
 {
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-		PAD::SET_INPUT_EXCLUSIVE(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL);
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
+		PAD::SET_INPUT_EXCLUSIVE(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/);
 
 	return;
 }
@@ -12133,7 +12133,7 @@ BOOL func_370(ePedComponentType epctParam0) // Position - 0xF2D1 Hash - 0xD5FE95
 		if (epctParam0 == PLAYER::PLAYER_ID())
 			return true;
 		else if (NETWORK::NETWORK_HAVE_USER_CONTENT_PRIVILEGES(0))
-			if (NETWORK::NETWORK_CAN_VIEW_GAMER_USER_CONTENT(&gamerHandle) && unk_0x9F633448E4C73207(&gamerHandle))
+			if (NETWORK::NETWORK_CAN_VIEW_GAMER_USER_CONTENT(&gamerHandle) && _NETWORK_CAN_TEXT_FROM_GAMER_BE_VIEWED(&gamerHandle))
 				return true;
 
 	return false;
@@ -12150,7 +12150,7 @@ BOOL func_371(ePedComponentType epctParam0) // Position - 0xF31C Hash - 0x81D8AE
 		if (func_372(&gamerHandle))
 			return true;
 	
-		if (!unk_0x9F633448E4C73207(&gamerHandle))
+		if (!_NETWORK_CAN_TEXT_FROM_GAMER_BE_VIEWED(&gamerHandle))
 			return true;
 	
 		if (MISC::IS_ORBIS_VERSION() && !MISC::IS_PROSPERO_VERSION() || MISC::IS_PC_VERSION())
@@ -12741,7 +12741,7 @@ BOOL func_406(ePedComponentType epctParam0, ePedComponentType epctParam1, BOOL b
 	}
 
 	if (bParam3)
-		if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID && Global_2657971[epctParam0 /*465*/].f_322.f_9 > -1 && Global_2657971[epctParam0 /*465*/].f_322.f_8 == Global_2657971[epctParam1 /*465*/].f_322.f_8 && Global_2657971[epctParam0 /*465*/].f_322.f_9 == Global_2657971[epctParam1 /*465*/].f_322.f_9 && Global_2648938.f_904.f_168[epctParam0] == Global_2648938.f_904.f_168[epctParam1])
+		if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/ && Global_2657971[epctParam0 /*465*/].f_322.f_9 > -1 && Global_2657971[epctParam0 /*465*/].f_322.f_8 == Global_2657971[epctParam1 /*465*/].f_322.f_8 && Global_2657971[epctParam0 /*465*/].f_322.f_9 == Global_2657971[epctParam1 /*465*/].f_322.f_9 && Global_2648938.f_904.f_168[epctParam0] == Global_2648938.f_904.f_168[epctParam1])
 			return true;
 
 	return false;
@@ -12872,9 +12872,9 @@ BOOL func_419(ePedComponentType epctParam0, int iParam1) // Position - 0x100EA H
 	return false;
 }
 
-int func_420(int iParam0) // Position - 0x10114 Hash - 0x900FBCD ^0x900FBCD
+int func_420(ePedComponentType epctParam0) // Position - 0x10114 Hash - 0x900FBCD ^0x900FBCD
 {
-	switch (iParam0)
+	switch (epctParam0)
 	{
 		case 153:
 		case 154:
@@ -13326,7 +13326,7 @@ void func_429() // Position - 0x107C9 Hash - 0x332FC632 ^0x2426DBFD
 						func_176(&unk);
 					}
 				}
-				else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT))
+				else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 51 /*INPUT_CONTEXT*/))
 				{
 					func_167();
 					func_427(&Global_1957929, 1);
@@ -13335,7 +13335,7 @@ void func_429() // Position - 0x107C9 Hash - 0x332FC632 ^0x2426DBFD
 					Global_1957929.f_812.f_2003 = 0;
 					func_431();
 				}
-				else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT_SECONDARY) && !IS_BIT_SET(Global_1836224, 1))
+				else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 52 /*INPUT_CONTEXT_SECONDARY*/) && !IS_BIT_SET(Global_1836224, 1))
 				{
 					if (func_153())
 						func_431();
@@ -13641,7 +13641,7 @@ void func_445(var uParam0) // Position - 0x10CBE Hash - 0x63C2857 ^0x950AD953
 		case 1:
 		case 2:
 		case 3:
-			if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_X) || PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_X))
+			if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 203 /*INPUT_FRONTEND_X*/) || PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 203 /*INPUT_FRONTEND_X*/))
 				return;
 		
 			func_634(uParam0, num);
@@ -13844,7 +13844,7 @@ BOOL func_449(ePedComponentType epctParam0, int iParam1, BOOL bParam2) // Positi
 
 	type2 = epctParam0;
 
-	if (type2 != PV_COMP_INVALID)
+	if (type2 != -1 /*PV_COMP_INVALID*/)
 	{
 		if (func_426(iParam1))
 		{
@@ -13930,7 +13930,7 @@ int func_451(ePedComponentType epctParam0, int iParam1) // Position - 0x11456 Ha
 
 	type = epctParam0;
 
-	if (type != PV_COMP_INVALID)
+	if (type != -1 /*PV_COMP_INVALID*/)
 	{
 		if (func_448(epctParam0, iParam1, false))
 		{
@@ -13985,20 +13985,20 @@ BOOL func_455(ePedComponentType epctParam0, int iParam1) // Position - 0x11519 H
 {
 	int num;
 	ePedComponentType type;
-	int num2;
 	ePedComponentType type2;
+	ePedComponentType type3;
 
-	type2 = epctParam0;
+	type3 = epctParam0;
 
-	if (type2 != PV_COMP_INVALID)
+	if (type3 != -1 /*PV_COMP_INVALID*/)
 	{
 		if (func_458(iParam1))
 		{
 			num = func_450(iParam1);
-			type = Global_1882632[type2 /*146*/].f_43.f_24;
-			num2 = Global_1882632[type2 /*146*/].f_43.f_25;
+			type = Global_1882632[type3 /*146*/].f_43.f_24;
+			type2 = Global_1882632[type3 /*146*/].f_43.f_25;
 		
-			if (IS_BIT_SET(type, num) && IS_BIT_SET(num2, num))
+			if (IS_BIT_SET(type, num) && IS_BIT_SET(type2, num))
 				return true;
 		}
 	}
@@ -14014,7 +14014,7 @@ BOOL func_456(ePedComponentType epctParam0, int iParam1) // Position - 0x1156F H
 
 	type2 = epctParam0;
 
-	if (type2 != PV_COMP_INVALID)
+	if (type2 != -1 /*PV_COMP_INVALID*/)
 	{
 		if (func_458(iParam1))
 		{
@@ -14869,7 +14869,7 @@ int func_485() // Position - 0x12328 Hash - 0x829CCA53 ^0xD171D26F
 
 BOOL func_486() // Position - 0x1233F Hash - 0x94241B31 ^0xAE8D439C
 {
-	return Global_1916617.f_11.f_144 != PV_COMP_INVALID;
+	return Global_1916617.f_11.f_144 != -1 /*PV_COMP_INVALID*/;
 }
 
 BOOL func_487() // Position - 0x12351 Hash - 0x94241B31 ^0xF12DA2B4
@@ -14942,7 +14942,7 @@ BOOL func_493(ePedComponentType epctParam0) // Position - 0x124C4 Hash - 0x29632
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID)
+			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/)
 				return func_80(Global_2657971[epctParam0 /*465*/].f_322.f_8) == 23;
 
 	return false;
@@ -14996,7 +14996,7 @@ BOOL func_496(ePedComponentType epctParam0) // Position - 0x1259C Hash - 0x295F4
 
 	type = epctParam0;
 
-	if (type != PV_COMP_INVALID)
+	if (type != -1 /*PV_COMP_INVALID*/)
 		return IS_BIT_SET(Global_1887305[type /*610*/].f_1, 0);
 
 	return false;
@@ -15506,7 +15506,7 @@ BOOL func_503(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4
 			num2 = func_507(iParam0) - func_506(iParam0, true);
 		}
 	
-		if (!bParam4 && Global_1845281[PLAYER::PLAYER_ID() /*883*/] != PV_COMP_UPPR)
+		if (!bParam4 && Global_1845281[PLAYER::PLAYER_ID() /*883*/] != 3 /*PV_COMP_UPPR*/)
 			num2 = num2 - func_504(iParam0);
 	
 		if (num < num2)
@@ -23720,7 +23720,7 @@ void func_649(ePedComponentType epctParam0) // Position - 0x19FC8 Hash - 0x33704
 	{
 		if (Global_2359296[func_462() /*5570*/].f_681.f_4244[i /*3*/] == epctParam0)
 		{
-			if (Global_1574744.f_1[i] == PV_COMP_INVALID)
+			if (Global_1574744.f_1[i] == -1 /*PV_COMP_INVALID*/)
 			{
 				Global_1574744.f_1[i] = epctParam0;
 				Global_1574744 = true;
@@ -23988,7 +23988,7 @@ void _NETSHOPPING_PROCESS_TRANSACTION(Hash hParam0, ePedComponentType epctParam1
 		case joaat("SERVICE_SPEND_ARENA_SPECTATOR_BOX"):
 		case joaat("SERVICE_SPEND_MAKE_IT_RAIN"):
 		case 571787049:
-			if (epctParam1 > PV_COMP_HEAD || Global_262145.f_27935)
+			if (epctParam1 > 0 /*PV_COMP_HEAD*/ || Global_262145.f_27935)
 				func_657(uParam2, joaat("NET_SHOP_TTYPE_SERVICE"), joaat("NET_SHOP_ACTION_SPEND"), joaat("CATEGORY_SERVICE_WITH_THRESHOLD"), hParam0, epctParam1, num, 7);
 			break;
 	
@@ -24140,7 +24140,7 @@ void _NETSHOPPING_PROCESS_TRANSACTION(Hash hParam0, ePedComponentType epctParam1
 		case joaat("SERVICE_SPEND_NIGHTCLUB_TOILET_ATTENDANT"):
 		case joaat("SERVICE_SPEND_JUGALLO_BOSS_VEHICLE_REQUEST"):
 		case joaat("SERVICE_SPEND_SALVAGE_YARD_CLAIM_VEH"):
-			if (epctParam1 > PV_COMP_HEAD || Global_262145.f_27935)
+			if (epctParam1 > 0 /*PV_COMP_HEAD*/ || Global_262145.f_27935)
 				func_657(uParam2, joaat("NET_SHOP_TTYPE_SERVICE"), joaat("NET_SHOP_ACTION_SPEND"), joaat("CATEGORY_SERVICE_WITH_THRESHOLD"), hParam0, epctParam1, num, 7);
 			break;
 	
@@ -24646,7 +24646,7 @@ void func_671(var uParam0) // Position - 0x1B32C Hash - 0x41DF155B ^0xAB77228F
 	if (uParam0->f_2817.f_1)
 		return;
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
 		if (uParam0->f_794.f_6 == 0)
 		{
@@ -24689,7 +24689,7 @@ void func_671(var uParam0) // Position - 0x1B32C Hash - 0x41DF155B ^0xAB77228F
 			func_332(2, 206, "HP_SURVEIL" /*Surveillance*/, uParam0, true, 365);
 			func_332(2, 205, "HP_MAP" /*Map*/, uParam0, true, 365);
 		
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 			else
 				func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -24722,7 +24722,7 @@ void func_671(var uParam0) // Position - 0x1B32C Hash - 0x41DF155B ^0xAB77228F
 					break;
 			}
 		
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 			else
 				func_332(2, 208, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
@@ -24744,7 +24744,7 @@ void func_671(var uParam0) // Position - 0x1B32C Hash - 0x41DF155B ^0xAB77228F
 			func_332(2, 206, "HP_MISSION" /*Missions*/, uParam0, true, 365);
 			func_332(2, 205, "HP_SURVEIL" /*Surveillance*/, uParam0, true, 365);
 		
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 			else
 				func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -24766,7 +24766,7 @@ void func_671(var uParam0) // Position - 0x1B32C Hash - 0x41DF155B ^0xAB77228F
 			func_332(2, 206, "HP_MAP" /*Map*/, uParam0, true, 365);
 			func_332(2, 205, "HP_MISSION" /*Missions*/, uParam0, true, 365);
 		
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 			else
 				func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -25650,7 +25650,7 @@ ePedComponentType func_717(ePedComponentType epctParam0) // Position - 0x1CAD0 H
 	if (epctParam0 == _INVALID_PLAYER_INDEX())
 		return epctParam0;
 
-	if (func_718(epctParam0) != PV_COMP_INVALID)
+	if (func_718(epctParam0) != -1 /*PV_COMP_INVALID*/)
 	{
 		num = func_80(func_718(epctParam0));
 	
@@ -25680,7 +25680,7 @@ ePedComponentType func_718(ePedComponentType epctParam0) // Position - 0x1CB5F H
 		else if (Global_1575083 || Global_2635563.f_2980 && epctParam0 == PLAYER::PLAYER_ID() && _NETWORK_IS_PLAYER_VALID(epctParam0, true, false))
 			return Global_2657971[epctParam0 /*465*/].f_322.f_8;
 
-	return PV_COMP_INVALID;
+	return -1 /*PV_COMP_INVALID*/;
 }
 
 void func_719() // Position - 0x1CBCE Hash - 0xBDA90B1 ^0xBDA90B1
@@ -25726,7 +25726,7 @@ void func_720() // Position - 0x1CC07 Hash - 0x4D92E407 ^0x29ACB470
 							func_176(&unk);
 						}
 					}
-					else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT))
+					else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 51 /*INPUT_CONTEXT*/))
 					{
 						func_167();
 						func_724(&Global_1956957, 1);
@@ -25735,7 +25735,7 @@ void func_720() // Position - 0x1CC07 Hash - 0x4D92E407 ^0x29ACB470
 						Global_1956957.f_812.f_150 = 0;
 						func_723();
 					}
-					else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT_SECONDARY) && !IS_BIT_SET(Global_1836224, 1))
+					else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 52 /*INPUT_CONTEXT_SECONDARY*/) && !IS_BIT_SET(Global_1836224, 1))
 					{
 						if (func_153())
 							func_723();
@@ -25757,7 +25757,7 @@ void func_720() // Position - 0x1CC07 Hash - 0x4D92E407 ^0x29ACB470
 							func_176(&unk17);
 						}
 					}
-					else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT))
+					else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 51 /*INPUT_CONTEXT*/))
 					{
 						func_167();
 						func_724(&Global_1956957, 1);
@@ -26299,7 +26299,7 @@ void func_747(int iParam0) // Position - 0x1D5AE Hash - 0xEFD3AF40 ^0xF4D412DD
 
 void func_748() // Position - 0x1D745 Hash - 0x80ADBE2B ^0x8F9D32C8
 {
-	func_157(6520, PV_COMP_HEAD, -1, true);
+	func_157(6520, 0 /*PV_COMP_HEAD*/, -1, true);
 	return;
 }
 
@@ -26414,7 +26414,7 @@ void func_750() // Position - 0x1D924 Hash - 0x94576D19 ^0x6DBC6770
 	if (flag)
 		STATS::SET_FREEMODE_PROLOGUE_DONE(profileSetting2, characterSlot);
 
-	func_157(11820, PV_COMP_HEAD, -1, true);
+	func_157(11820, 0 /*PV_COMP_HEAD*/, -1, true);
 	return;
 }
 
@@ -26965,7 +26965,7 @@ void func_763(var uParam0) // Position - 0x1E42F Hash - 0x8D4D378F ^0xB54F645E
 			func_332(2, 206, "HP_SURVEIL" /*Surveillance*/, uParam0, true, 365);
 			func_332(2, 205, "HP_MAP" /*Map*/, uParam0, true, 365);
 		
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 			else
 				func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -26997,7 +26997,7 @@ void func_763(var uParam0) // Position - 0x1E42F Hash - 0x8D4D378F ^0xB54F645E
 					break;
 			}
 		
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 			else
 				func_332(2, 208, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
@@ -27017,7 +27017,7 @@ void func_763(var uParam0) // Position - 0x1E42F Hash - 0x8D4D378F ^0xB54F645E
 			func_332(2, 206, "HP_HEIST" /*Heists*/, uParam0, true, 365);
 			func_332(2, 205, "HP_SURVEIL" /*Surveillance*/, uParam0, true, 365);
 		
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 			else
 				func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -27037,7 +27037,7 @@ void func_763(var uParam0) // Position - 0x1E42F Hash - 0x8D4D378F ^0xB54F645E
 			func_332(2, 206, "HP_MAP" /*Map*/, uParam0, true, 365);
 			func_332(2, 205, "HP_HEIST" /*Heists*/, uParam0, true, 365);
 		
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				func_332(2, 39, "HEIST_IB_ZOOM" /*Zoom*/, uParam0, true, 365);
 			else
 				func_330(2, 15, "HEIST_IB_ZOOM" /*Zoom*/, uParam0);
@@ -28502,15 +28502,15 @@ void func_804() // Position - 0x20465 Hash - 0xC868D7D0 ^0x98DE67DD
 	
 		switch (Global_2680685[2])
 		{
-			case PV_COMP_HEAD:
+			case 0 /*PV_COMP_HEAD*/:
 				num = 1f;
 				break;
 		
-			case PV_COMP_BERD:
+			case 1 /*PV_COMP_BERD*/:
 				num = Global_262145.f_9244;
 				break;
 		
-			case PV_COMP_HAIR:
+			case 2 /*PV_COMP_HAIR*/:
 				num = Global_262145.f_9245;
 				break;
 		}
@@ -28722,7 +28722,7 @@ ePedComponentType func_805(int iParam0, BOOL bParam1) // Position - 0x2069D Hash
 			break;
 	
 		case 20:
-			value = PV_COMP_HEAD;
+			value = 0 /*PV_COMP_HEAD*/;
 			break;
 	
 		case 21:
@@ -29050,9 +29050,9 @@ BOOL func_819(ePedComponentType epctParam0) // Position - 0x20FA3 Hash - 0xA439E
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			return Global_2657971[epctParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID;
+			return Global_2657971[epctParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/;
 		else if (Global_1575083 && epctParam0 == PLAYER::PLAYER_ID() && _NETWORK_IS_PLAYER_VALID(epctParam0, true, false))
-			return Global_2657971[epctParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID;
+			return Global_2657971[epctParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/;
 
 	return false;
 }
@@ -29099,7 +29099,7 @@ BOOL func_823() // Position - 0x210FB Hash - 0x9D7C1D3C ^0x99C69B59
 	{
 		type = func_826(PLAYER::PLAYER_ID());
 	
-		if (type != PV_COMP_INVALID)
+		if (type != -1 /*PV_COMP_INVALID*/)
 			if (IS_BIT_SET(Global_1882632[type /*146*/].f_43.f_27, 5))
 				return true;
 	}

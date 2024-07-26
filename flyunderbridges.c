@@ -523,13 +523,13 @@ void func_3(eCharacter echParam0, int iParam1, int iParam2) // Position - 0x654 
 
 	switch (echParam0)
 	{
-		case CHAR_MICHAEL:
-		case CHAR_FRANKLIN:
-		case CHAR_TREVOR:
+		case 0 /*CHAR_MICHAEL*/:
+		case 1 /*CHAR_FRANKLIN*/:
+		case 2 /*CHAR_TREVOR*/:
 			Global_113969.f_2366.f_539.f_2247[iParam1 /*4*/][echParam0] = Global_113969.f_2366.f_539.f_2247[iParam1 /*4*/][echParam0] + iParam2;
 			break;
 	
-		case CHAR_MULTIPLAYER:
+		case 3 /*CHAR_MULTIPLAYER*/:
 			num2 = 14835;
 		
 			switch (iParam1)
@@ -674,7 +674,7 @@ void func_10() // Position - 0x80D Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -687,7 +687,7 @@ void func_10() // Position - 0x80D Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_11(eCharacter echParam0) // Position - 0x90A Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x916 Hash - 0xAC4E9801 ^0xB379A75F
@@ -699,14 +699,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x916 Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x953 Hash - 0xADCB9755 ^0xADCB9755
@@ -714,7 +714,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x953 Hash - 0xADC
 	if (func_11(character))
 		return func_14(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }

@@ -409,7 +409,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 						case 1:
 							func_252();
 						
-							if (func_251(FRONTEND_CONTROL, Global_20900, 0))
+							if (func_251(2 /*FRONTEND_CONTROL*/, Global_20900, 0))
 								if (func_250())
 									func_331();
 							break;
@@ -472,7 +472,7 @@ void func_2() // Position - 0x3BB Hash - 0xC3E7BB03 ^0xAC247B48
 		return;
 	}
 
-	if (func_251(FRONTEND_CONTROL, Global_20900, 0))
+	if (func_251(2 /*FRONTEND_CONTROL*/, Global_20900, 0))
 	{
 		bLocal_216 = false;
 		func_230();
@@ -498,9 +498,9 @@ void func_2() // Position - 0x3BB Hash - 0xC3E7BB03 ^0xAC247B48
 	func_187();
 
 	if (iLocal_287 == 0)
-		if (func_251(FRONTEND_CONTROL, Global_20899, 0))
+		if (func_251(2 /*FRONTEND_CONTROL*/, Global_20899, 0))
 			iLocal_287 = 1;
-	else if (func_186(FRONTEND_CONTROL, Global_20899) && !bLocal_216)
+	else if (func_186(2 /*FRONTEND_CONTROL*/, Global_20899) && !bLocal_216)
 		func_3();
 
 	return;
@@ -1302,18 +1302,18 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 	else
 	{
 		flag = true;
-		flag2 = espcfParam2 & SPC_AMBIENT_SCRIPT != 0;
-		flag3 = espcfParam2 & SPC_CLEAR_TASKS != 0;
-		flag4 = espcfParam2 & SPC_REMOVE_FIRES != 0;
-		flag5 = espcfParam2 & SPC_REMOVE_EXPLOSIONS != 0;
-		flag6 = espcfParam2 & SPC_REMOVE_PROJECTILES != 0;
-		flag7 = espcfParam2 & SPC_DEACTIVATE_GADGETS != 0;
-		flag8 = espcfParam2 & SPC_REENABLE_CONTROL_ON_DEATH != 0;
-		flag9 = espcfParam2 & SPC_LEAVE_CAMERA_CONTROL_ON != 0;
-		flag10 = espcfParam2 & SPC_ALLOW_PLAYER_DAMAGE != 0;
-		flag11 = espcfParam2 & SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER != 0;
-		flag12 = espcfParam2 & SPC_PREVENT_EVERYBODY_BACKOFF != 0;
-		flag13 = espcfParam2 & SPC_ALLOW_PAD_SHAKE != 0;
+		flag2 = espcfParam2 & 2 /*SPC_AMBIENT_SCRIPT*/ != 0;
+		flag3 = espcfParam2 & 4 /*SPC_CLEAR_TASKS*/ != 0;
+		flag4 = espcfParam2 & 8 /*SPC_REMOVE_FIRES*/ != 0;
+		flag5 = espcfParam2 & 16 /*SPC_REMOVE_EXPLOSIONS*/ != 0;
+		flag6 = espcfParam2 & 32 /*SPC_REMOVE_PROJECTILES*/ != 0;
+		flag7 = espcfParam2 & 64 /*SPC_DEACTIVATE_GADGETS*/ != 0;
+		flag8 = espcfParam2 & 128 /*SPC_REENABLE_CONTROL_ON_DEATH*/ != 0;
+		flag9 = espcfParam2 & 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/ != 0;
+		flag10 = espcfParam2 & 512 /*SPC_ALLOW_PLAYER_DAMAGE*/ != 0;
+		flag11 = espcfParam2 & 1024 /*SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER*/ != 0;
+		flag12 = espcfParam2 & 2048 /*SPC_PREVENT_EVERYBODY_BACKOFF*/ != 0;
+		flag13 = espcfParam2 & 4096 /*SPC_ALLOW_PAD_SHAKE*/ != 0;
 		flag14 = espcfParam2 & 8192 != 0;
 		flag15 = espcfParam2 & 16384 != 0;
 		toggle = espcfParam2 & 32768 != 0;
@@ -1470,40 +1470,40 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 			flags2 = 0;
 		
 			if (flag2)
-				flags2 = flags2 | SPC_AMBIENT_SCRIPT;
+				flags2 = flags2 | 2 /*SPC_AMBIENT_SCRIPT*/;
 		
 			if (flag3)
-				flags2 = flags2 | SPC_CLEAR_TASKS;
+				flags2 = flags2 | 4 /*SPC_CLEAR_TASKS*/;
 		
 			if (flag4)
-				flags2 = flags2 | SPC_REMOVE_FIRES;
+				flags2 = flags2 | 8 /*SPC_REMOVE_FIRES*/;
 		
 			if (flag5)
-				flags2 = flags2 | SPC_REMOVE_EXPLOSIONS;
+				flags2 = flags2 | 16 /*SPC_REMOVE_EXPLOSIONS*/;
 		
 			if (flag6)
-				flags2 = flags2 | SPC_REMOVE_PROJECTILES;
+				flags2 = flags2 | 32 /*SPC_REMOVE_PROJECTILES*/;
 		
 			if (flag7)
-				flags2 = flags2 | SPC_DEACTIVATE_GADGETS;
+				flags2 = flags2 | 64 /*SPC_DEACTIVATE_GADGETS*/;
 		
 			if (flag8)
-				flags2 = flags2 | SPC_REENABLE_CONTROL_ON_DEATH;
+				flags2 = flags2 | 128 /*SPC_REENABLE_CONTROL_ON_DEATH*/;
 		
 			if (flag9)
-				flags2 = flags2 | SPC_LEAVE_CAMERA_CONTROL_ON;
+				flags2 = flags2 | 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/;
 		
 			if (flag10)
-				flags2 = flags2 | SPC_ALLOW_PLAYER_DAMAGE;
+				flags2 = flags2 | 512 /*SPC_ALLOW_PLAYER_DAMAGE*/;
 		
 			if (flag11)
-				flags2 = flags2 | SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER;
+				flags2 = flags2 | 1024 /*SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER*/;
 		
 			if (flag12)
-				flags2 = flags2 | SPC_PREVENT_EVERYBODY_BACKOFF;
+				flags2 = flags2 | 2048 /*SPC_PREVENT_EVERYBODY_BACKOFF*/;
 		
 			if (flag13)
-				flags2 = flags2 | SPC_ALLOW_PAD_SHAKE;
+				flags2 = flags2 | 4096 /*SPC_ALLOW_PAD_SHAKE*/;
 		
 			PLAYER::SET_PLAYER_CONTROL(plParam0, bParam1, flags2);
 		}
@@ -1551,7 +1551,7 @@ BOOL func_13(Ped pedParam0) // Position - 0x17C7 Hash - 0x93DB01D2 ^0x43DCC591
 	}
 	else
 	{
-		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(pedParam0, SCRIPT_TASK_ENTER_VEHICLE);
+		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(pedParam0, joaat("SCRIPT_TASK_ENTER_VEHICLE") /*SCRIPT_TASK_ENTER_VEHICLE*/);
 	
 		if (scriptTaskStatus == 0)
 			return true;
@@ -1585,7 +1585,7 @@ void func_14(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0x17F8 Hash
 			{
 				if (IS_BIT_SET(Global_2621446.f_67, 2))
 				{
-					for (i = ON_FOOT; i < 8; i = i + 1)
+					for (i = 0 /*ON_FOOT*/; i < 8; i = i + 1)
 					{
 						CAM::SET_CAM_VIEW_MODE_FOR_CONTEXT(i, Global_2621446.f_58[i]);
 					}
@@ -1627,7 +1627,7 @@ void func_16() // Position - 0x18E4 Hash - 0xEFF6029E ^0x224AB476
 	{
 		if (!IS_BIT_SET(Global_2621446.f_67, 2))
 		{
-			for (i = ON_FOOT; i < 8; i = i + 1)
+			for (i = 0 /*ON_FOOT*/; i < 8; i = i + 1)
 			{
 				Global_2621446.f_58[i] = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(i);
 			}
@@ -5222,7 +5222,7 @@ BOOL func_135() // Position - 0x66CD Hash - 0xE8350107 ^0x112591EA
 	camActiveViewModeContext = CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT();
 	camViewModeForContext = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(camActiveViewModeContext);
 
-	if (camViewModeForContext == FIRST_PERSON)
+	if (camViewModeForContext == 4 /*FIRST_PERSON*/)
 		flag = 1;
 
 	if (Global_4543362 || flag)
@@ -5937,7 +5937,7 @@ BOOL func_186(eControlType ectParam0, eControlAction ecaParam1) // Position - 0x
 	if (PAD::IS_CONTROL_JUST_RELEASED(ectParam0, ecaParam1))
 	{
 		if (MISC::IS_PC_VERSION())
-			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				return false;
 	
 		if (HUD::IS_PAUSE_MENU_ACTIVE() || HUD::IS_WARNING_MESSAGE_ACTIVE())
@@ -6822,7 +6822,7 @@ void func_239() // Position - 0x82A6 Hash - 0x7315752 ^0x77AE15DB
 		return;
 	}
 
-	if (func_251(FRONTEND_CONTROL, Global_20900, 0))
+	if (func_251(2 /*FRONTEND_CONTROL*/, Global_20900, 0))
 	{
 		Global_20930.f_1 = 8;
 		func_273();
@@ -6835,7 +6835,7 @@ void func_239() // Position - 0x82A6 Hash - 0x7315752 ^0x77AE15DB
 
 	if (iLocal_215 == 0 && iLocal_289 > 0 && !bLocal_216)
 	{
-		if (func_251(FRONTEND_CONTROL, Global_20899, 0))
+		if (func_251(2 /*FRONTEND_CONTROL*/, Global_20899, 0))
 		{
 			Global_20908 = true;
 			func_133();
@@ -6859,7 +6859,7 @@ void func_239() // Position - 0x82A6 Hash - 0x7315752 ^0x77AE15DB
 			bLocal_216 = false;
 		}
 	}
-	else if (func_251(FRONTEND_CONTROL, Global_20899, 0) && !bLocal_216)
+	else if (func_251(2 /*FRONTEND_CONTROL*/, Global_20899, 0) && !bLocal_216)
 	{
 		Global_20908 = true;
 		func_202();
@@ -6888,9 +6888,9 @@ void func_241() // Position - 0x8485 Hash - 0xE23A5019 ^0xD5181571
 		if (SYSTEM::TIMERA() > 150)
 			bLocal_217 = false;
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
-		if (func_251(FRONTEND_CONTROL, INPUT_CELLPHONE_SCROLL_BACKWARD, 0))
+		if (func_251(2 /*FRONTEND_CONTROL*/, 181 /*INPUT_CELLPHONE_SCROLL_BACKWARD*/, 0))
 		{
 			if (iLocal_213 > 0)
 				iLocal_213 = iLocal_213 - 1;
@@ -6898,7 +6898,7 @@ void func_241() // Position - 0x8485 Hash - 0xE23A5019 ^0xD5181571
 			func_244();
 		}
 	
-		if (func_251(FRONTEND_CONTROL, INPUT_CELLPHONE_SCROLL_FORWARD, 0))
+		if (func_251(2 /*FRONTEND_CONTROL*/, 180 /*INPUT_CELLPHONE_SCROLL_FORWARD*/, 0))
 		{
 			iLocal_213 = iLocal_213 + 1;
 		
@@ -6914,7 +6914,7 @@ void func_241() // Position - 0x8485 Hash - 0xE23A5019 ^0xD5181571
 
 	if (bLocal_217 == false)
 	{
-		if (func_251(FRONTEND_CONTROL, Global_20906, 0))
+		if (func_251(2 /*FRONTEND_CONTROL*/, Global_20906, 0))
 		{
 			if (iLocal_213 > 0)
 				iLocal_213 = iLocal_213 - 1;
@@ -6924,7 +6924,7 @@ void func_241() // Position - 0x8485 Hash - 0xE23A5019 ^0xD5181571
 			SYSTEM::SETTIMERA(0);
 		}
 	
-		if (func_251(FRONTEND_CONTROL, Global_20907, 0))
+		if (func_251(2 /*FRONTEND_CONTROL*/, Global_20907, 0))
 		{
 			iLocal_213 = iLocal_213 + 1;
 		
@@ -6989,7 +6989,7 @@ void func_246() // Position - 0x860A Hash - 0xBD2387FC ^0xC190F1E
 
 	if (iLocal_215 == 0 && iLocal_289 > 0)
 	{
-		if (func_251(FRONTEND_CONTROL, Global_20899, 0))
+		if (func_251(2 /*FRONTEND_CONTROL*/, Global_20899, 0))
 		{
 			Global_20908 = true;
 			func_133();
@@ -7036,10 +7036,10 @@ void func_246() // Position - 0x860A Hash - 0xBD2387FC ^0xC190F1E
 			}
 		}
 	
-		if (func_251(FRONTEND_CONTROL, Global_20900, 0))
+		if (func_251(2 /*FRONTEND_CONTROL*/, Global_20900, 0))
 			func_247();
 	}
-	else if (func_251(FRONTEND_CONTROL, Global_20899, 0))
+	else if (func_251(2 /*FRONTEND_CONTROL*/, Global_20899, 0))
 	{
 		Global_20908 = true;
 		func_202();
@@ -7105,7 +7105,7 @@ BOOL func_251(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // 
 	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
 	{
 		if (MISC::IS_PC_VERSION())
-			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				return false;
 	
 		if (HUD::IS_PAUSE_MENU_ACTIVE() || HUD::IS_WARNING_MESSAGE_ACTIVE())
@@ -7123,7 +7123,7 @@ void func_252() // Position - 0x882D Hash - 0xBD2387FC ^0xC190F1E
 
 	if (iLocal_215 == 0 && iLocal_289 > 0)
 	{
-		if (func_251(FRONTEND_CONTROL, Global_20899, 0))
+		if (func_251(2 /*FRONTEND_CONTROL*/, Global_20899, 0))
 		{
 			Global_20908 = true;
 			func_133();
@@ -7183,7 +7183,7 @@ void func_252() // Position - 0x882D Hash - 0xBD2387FC ^0xC190F1E
 			}
 		}
 	}
-	else if (func_251(FRONTEND_CONTROL, Global_20899, 0))
+	else if (func_251(2 /*FRONTEND_CONTROL*/, Global_20899, 0))
 	{
 		Global_20908 = true;
 		func_202();

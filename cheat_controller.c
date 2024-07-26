@@ -320,15 +320,15 @@ void func_6() // Position - 0x36C Hash - 0xB13B78F4 ^0x15A61AF5
 
 	switch (character)
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			func_7(joaat("SP0_TIMES_CHEATED"), 1);
 			break;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			func_7(joaat("SP1_TIMES_CHEATED"), 1);
 			break;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			func_7(joaat("SP2_TIMES_CHEATED"), 1);
 			break;
 	}
@@ -374,7 +374,7 @@ void func_9() // Position - 0x3F6 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -387,7 +387,7 @@ void func_9() // Position - 0x3F6 Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_10(eCharacter echParam0) // Position - 0x4F3 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x4FF Hash - 0xAC4E9801 ^0xB379A75F
@@ -399,14 +399,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x4FF Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x53C Hash - 0xADCB9755 ^0xADCB9755
@@ -414,7 +414,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x53C Hash - 0xADC
 	if (func_10(character))
 		return func_13(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -655,7 +655,7 @@ void func_24(char* sParam0) // Position - 0xA23 Hash - 0x559B898E ^0x383146A1
 void func_25() // Position - 0xA4E Hash - 0xB839C67 ^0x33057EE4
 {
 	if (PED::IS_PED_ON_FOOT(PLAYER::PLAYER_PED_ID()))
-		if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_AIM))
+		if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 25 /*INPUT_AIM*/))
 			if (func_26(PLAYER::PLAYER_PED_ID()) != joaat("WEAPON_UNARMED") && func_26(PLAYER::PLAYER_PED_ID()) != joaat("OBJECT"))
 				MISC::SET_TIME_SCALE(fLocal_76);
 			else
@@ -762,16 +762,16 @@ void func_32() // Position - 0xBFA Hash - 0x46DD98A9 ^0xA3EB7992
 			break;
 	
 		case 5:
-			PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_SELECT_WEAPON, true);
-			PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_CHARACTER_WHEEL, true);
+			PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 37 /*INPUT_SELECT_WEAPON*/, true);
+			PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 19 /*INPUT_CHARACTER_WHEEL*/, true);
 		
-			if (!PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()) || func_28() || func_34() || func_33(true) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_SELECT_WEAPON) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CHARACTER_WHEEL) || func_27(23) || func_27(21) || func_27(16))
+			if (!PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()) || func_28() || func_34() || func_33(true) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 37 /*INPUT_SELECT_WEAPON*/) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 19 /*INPUT_CHARACTER_WHEEL*/) || func_27(23) || func_27(21) || func_27(16))
 				iLocal_61 = 9;
 			break;
 	
 		case 9:
-			PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_SELECT_WEAPON, true);
-			PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_CHARACTER_WHEEL, true);
+			PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 37 /*INPUT_SELECT_WEAPON*/, true);
+			PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 19 /*INPUT_CHARACTER_WHEEL*/, true);
 			func_24("CHEAT_SLOW_MO" /*Slow Motion.*/);
 			func_31(16, false);
 			iLocal_74 = 0;
@@ -878,13 +878,13 @@ void func_36() // Position - 0xD99 Hash - 0x2D872249 ^0xA0635CBA
 		case 4:
 			if (func_38(1000, iLocal_70))
 			{
-				PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_PARACHUTE_DEPLOY, true);
-				PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_PARACHUTE_PITCH_UD, true);
+				PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 144 /*INPUT_PARACHUTE_DEPLOY*/, true);
+				PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 149 /*INPUT_PARACHUTE_PITCH_UD*/, true);
 			
-				if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
-					PED::SET_PED_COMPONENT_VARIATION(PLAYER::PLAYER_PED_ID(), PV_COMP_TASK, 0, 0, 0);
+				if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
+					PED::SET_PED_COMPONENT_VARIATION(PLAYER::PLAYER_PED_ID(), 9 /*PV_COMP_TASK*/, 0, 0, 0);
 				else
-					PED::SET_PED_COMPONENT_VARIATION(PLAYER::PLAYER_PED_ID(), PV_COMP_ACCS, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(PLAYER::PLAYER_PED_ID(), 8 /*PV_COMP_ACCS*/, 0, 0, 0);
 			
 				CAM::DO_SCREEN_FADE_IN(250);
 				iLocal_70 = MISC::GET_GAME_TIMER();
@@ -901,8 +901,8 @@ void func_36() // Position - 0xD99 Hash - 0x2D872249 ^0xA0635CBA
 				break;
 			}
 		
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_PARACHUTE_DEPLOY, true);
-			HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_WEAPON_ICON);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 144 /*INPUT_PARACHUTE_DEPLOY*/, true);
+			HUD::HIDE_HUD_COMPONENT_THIS_FRAME(2 /*HUD_WEAPON_ICON*/);
 		
 			if (PED::IS_PED_IN_PARACHUTE_FREE_FALL(PLAYER::PLAYER_PED_ID()))
 			{
@@ -2329,7 +2329,7 @@ BOOL func_84(eCharacter echParam0, int iParam1, char* sParam2, var uParam3) // P
 
 	switch (echParam0)
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			if (iParam1 == 0)
 			{
 				TEXT_LABEL_ASSIGN_STRING(sParam2, "Michael - Beverly Hills", 32);
@@ -2344,7 +2344,7 @@ BOOL func_84(eCharacter echParam0, int iParam1, char* sParam2, var uParam3) // P
 			}
 			break;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			if (iParam1 == 0)
 			{
 				TEXT_LABEL_ASSIGN_STRING(sParam2, "Franklin - Aunt", 32);
@@ -2359,7 +2359,7 @@ BOOL func_84(eCharacter echParam0, int iParam1, char* sParam2, var uParam3) // P
 			}
 			break;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			if (iParam1 == 0)
 			{
 				TEXT_LABEL_ASSIGN_STRING(sParam2, "Trevor - Countryside", 32);
@@ -2398,7 +2398,7 @@ Hash func_85(eCharacter echParam0, int iParam1) // Position - 0x2931 Hash - 0x3C
 	}
 	else
 	{
-		echParam0 != _CHAR_NULL;
+		echParam0 != 145 /*_CHAR_NULL*/;
 	}
 
 	return 0;
@@ -2418,7 +2418,7 @@ void func_86(eCharacter echParam0, var uParam1, int iParam2) // Position - 0x297
 
 	switch (echParam0)
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			num = joaat("tailgater");
 		
 			if (Global_113969.f_9088.f_99.f_58[128] && !Global_113969.f_9088.f_99.f_58[131])
@@ -2448,7 +2448,7 @@ void func_86(eCharacter echParam0, var uParam1, int iParam2) // Position - 0x297
 			}
 			break;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			num = joaat("bodhi2");
 		
 			switch (num)
@@ -2468,7 +2468,7 @@ void func_86(eCharacter echParam0, var uParam1, int iParam2) // Position - 0x297
 			}
 			break;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			if (iParam2 == 1)
 				num = joaat("buffalo2");
 			else if (iParam2 == 2)
@@ -2559,7 +2559,7 @@ void func_87() // Position - 0x2BCF Hash - 0xCFA276E4 ^0x679871EF
 void func_88() // Position - 0x2C78 Hash - 0x83B715C3 ^0x48ACF6CB
 {
 	if (func_111() || iLocal_92 != 0 || func_15(14))
-		PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_ENTER_CHEAT_CODE, true);
+		PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 243 /*INPUT_ENTER_CHEAT_CODE*/, true);
 
 	func_110();
 

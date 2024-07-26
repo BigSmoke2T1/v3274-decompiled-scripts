@@ -53,7 +53,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				{
 					if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 					{
-						Global_23405[3 /*42*/].f_27[0] = _GET_PLAYER_CASH(CHAR_TREVOR);
+						Global_23405[3 /*42*/].f_27[0] = _GET_PLAYER_CASH(2 /*CHAR_TREVOR*/);
 						func_50(2, 32, Global_23405[3 /*42*/].f_27[0]);
 					}
 				
@@ -65,7 +65,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 					Global_23405[3 /*42*/].f_37[1] = 0;
 				
 					if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
-						Global_23405[3 /*42*/].f_27[1] = _GET_PLAYER_CASH(CHAR_TREVOR);
+						Global_23405[3 /*42*/].f_27[1] = _GET_PLAYER_CASH(2 /*CHAR_TREVOR*/);
 				
 					func_43(2, 3, true, 1);
 					func_40("PA_TREV1A" /*Current wealth $~1~.*/, Global_23405[3 /*42*/].f_27[1]);
@@ -76,9 +76,9 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 			case 1:
 				if (PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 				{
-					Global_23405[3 /*42*/].f_27[1] = _GET_PLAYER_CASH(CHAR_TREVOR);
+					Global_23405[3 /*42*/].f_27[1] = _GET_PLAYER_CASH(2 /*CHAR_TREVOR*/);
 				
-					if (func_39(CHAR_TREVOR, 999999))
+					if (func_39(2 /*CHAR_TREVOR*/, 999999))
 					{
 						func_38("PA_COMPLETE" /*Goal achieved ~a~*/, "PA_TREV1" /*Earn one million dollars.*/, 2000, 1);
 						Global_23405[3 /*42*/].f_37[1] = 1;
@@ -86,7 +86,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 						iLocal_22 = MISC::GET_GAME_TIMER();
 						iLocal_16 = 2;
 					}
-					else if (func_39(CHAR_TREVOR, 499999))
+					else if (func_39(2 /*CHAR_TREVOR*/, 499999))
 					{
 						if (!bLocal_20)
 						{
@@ -1476,15 +1476,15 @@ int _GET_PLAYER_CASH(eCharacter echParam0) // Position - 0x19E5 Hash - 0x263E14E
 
 	switch (echParam0)
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			STATS::STAT_GET_INT(joaat("SP0_TOTAL_CASH"), &outValue, -1);
 			return outValue;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			STATS::STAT_GET_INT(joaat("SP1_TOTAL_CASH"), &outValue, -1);
 			return outValue;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			STATS::STAT_GET_INT(joaat("SP2_TOTAL_CASH"), &outValue, -1);
 			return outValue;
 	

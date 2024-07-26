@@ -410,7 +410,7 @@ BOOL func_1() // Position - 0x1F5 Hash - 0xDCB39E8D ^0xE8DB014A
 		
 			if (SYSTEM::VDIST2(entityCoords, entityCoords2) < 25f)
 			{
-				if (CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(ON_FOOT) != FIRST_PERSON)
+				if (CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(0 /*ON_FOOT*/) != 4 /*FIRST_PERSON*/)
 				{
 					if (_CONVERSATION_ADD_LINE(&uLocal_61, "TOWAUD", "TONYA_MESS", 8, 0, 0, 0))
 					{
@@ -448,7 +448,7 @@ void func_2() // Position - 0x4CF Hash - 0x176C524F ^0xB1C7F2D5
 
 	if (ENTITY::DOES_ENTITY_EXIST(pedLocal_36) && !ENTITY::IS_ENTITY_DEAD(pedLocal_36, false))
 		if (ENTITY::DOES_ENTITY_EXIST(obLocal_37))
-			if (TASK::GET_SCRIPT_TASK_STATUS(pedLocal_36, SCRIPT_TASK_START_SCENARIO_IN_PLACE) == 1)
+			if (TASK::GET_SCRIPT_TASK_STATUS(pedLocal_36, joaat("SCRIPT_TASK_START_SCENARIO_IN_PLACE") /*SCRIPT_TASK_START_SCENARIO_IN_PLACE*/) == 1)
 				OBJECT::DELETE_OBJECT(&obLocal_37);
 
 	return;
@@ -473,7 +473,7 @@ BOOL func_4() // Position - 0x569 Hash - 0x41659D03 ^0x6B22B643
 		
 			AUDIO::STOP_SCRIPTED_CONVERSATION(false);
 		
-			if (TASK::GET_SCRIPT_TASK_STATUS(pedLocal_36, SCRIPT_TASK_SMART_FLEE_PED) != 1)
+			if (TASK::GET_SCRIPT_TASK_STATUS(pedLocal_36, joaat("SCRIPT_TASK_SMART_FLEE_PED") /*SCRIPT_TASK_SMART_FLEE_PED*/) != 1)
 			{
 				PED::SET_PED_KEEP_TASK(pedLocal_36, true);
 				TASK::TASK_SMART_FLEE_PED(pedLocal_36, PLAYER::PLAYER_PED_ID(), 1000f, -1, false, false);
@@ -817,26 +817,26 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0xB58 Hash - 0x98476CE1 ^0
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[0 /*29*/])
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[1 /*29*/])
-				Global_20930 = CHAR_FRANKLIN;
+				Global_20930 = 1 /*CHAR_FRANKLIN*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[2 /*29*/])
-				Global_20930 = CHAR_TREVOR;
+				Global_20930 = 2 /*CHAR_TREVOR*/;
 			else
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 	}
 	else
 	{
 		Global_20930 = _GET_CURRENT_PLAYER_CHARACTER();
 	
-		if (Global_20930 == _CHAR_NULL)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 == 145 /*_CHAR_NULL*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
 		if (Global_79389)
-			Global_20930 = CHAR_MULTIPLAYER;
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
-		if (Global_20930 > CHAR_MULTIPLAYER)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 > 3 /*CHAR_MULTIPLAYER*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	}
 
 	return;
@@ -870,7 +870,7 @@ void func_18() // Position - 0xC13 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -883,7 +883,7 @@ void func_18() // Position - 0xC13 Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_19(eCharacter echParam0) // Position - 0xD10 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xD1C Hash - 0xAC4E9801 ^0xB379A75F
@@ -895,14 +895,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xD1C Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xD59 Hash - 0xADCB9755 ^0xADCB9755
@@ -910,7 +910,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xD59 Hash - 0xADC
 	if (func_19(character))
 		return func_22(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -1038,7 +1038,7 @@ BOOL func_28() // Position - 0xED8 Hash - 0x953CB015 ^0x8A89B0C2
 		
 			if (!_IS_NULL_VECTOR(uLocal_55))
 			{
-				if (TASK::GET_SCRIPT_TASK_STATUS(pedLocal_36, SCRIPT_TASK_FOLLOW_NAV_MESH_TO_COORD) != 1)
+				if (TASK::GET_SCRIPT_TASK_STATUS(pedLocal_36, joaat("SCRIPT_TASK_FOLLOW_NAV_MESH_TO_COORD") /*SCRIPT_TASK_FOLLOW_NAV_MESH_TO_COORD*/) != 1)
 				{
 					TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(pedLocal_36, uLocal_55, 1f, -1, 0.25f, 0, fLocal_58);
 					PED::SET_PED_KEEP_TASK(pedLocal_36, true);

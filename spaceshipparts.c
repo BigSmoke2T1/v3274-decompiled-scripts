@@ -658,7 +658,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 		
 			if (bLocal_606)
 			{
-				if (!(_GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN))
+				if (!(_GET_CURRENT_PLAYER_CHARACTER() == 1 /*CHAR_FRANKLIN*/))
 					func_1("SSHIP_SWITCH" /*Switch to Franklin to deliver the spaceship parts to Omega.*/, 1, 0, 20000, 10000, 3, 0, 0, 0);
 			
 				func_53();
@@ -785,7 +785,7 @@ void func_5() // Position - 0x451 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -803,7 +803,7 @@ BOOL func_6(int iParam0) // Position - 0x54E Hash - 0x937D8816 ^0x937D8816
 
 BOOL func_7(eCharacter echParam0) // Position - 0x55C Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x568 Hash - 0xAC4E9801 ^0xB379A75F
@@ -815,14 +815,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x568 Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x5A5 Hash - 0xADCB9755 ^0xADCB9755
@@ -830,7 +830,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x5A5 Hash - 0xADC
 	if (func_7(character))
 		return func_10(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -866,7 +866,7 @@ BOOL func_11(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 	if (iParam2 < 1 || iParam2 > 7)
 		return 0;
 
-	if (Global_113969.f_7691.f_764 < CHAR_MIKE_FRANK_CONF)
+	if (Global_113969.f_7691.f_764 < 8 /*CHAR_MIKE_FRANK_CONF*/)
 	{
 		num = iParam0;
 		num.f_3 = func_13(iParam1);
@@ -884,7 +884,7 @@ BOOL func_11(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, in
 		MISC::CLEAR_BIT(&(num.f_1), 0);
 		Global_113969.f_7691.f_651[Global_113969.f_7691.f_764 /*14*/] = { num };
 		Global_113969.f_7691.f_764 = Global_113969.f_7691.f_764 + 1;
-		func_12(CHAR_MICHAEL);
+		func_12(0 /*CHAR_MICHAEL*/);
 		func_12(1);
 		func_12(2);
 		return 1;
@@ -904,14 +904,14 @@ void func_12(int iParam0) // Position - 0x6F1 Hash - 0xDBA91FA2 ^0x62041168
 	if (!func_7(iParam0))
 		return;
 
-	for (i = CHAR_MICHAEL; i < Global_113969.f_7691.f_136; i = i + 1)
+	for (i = 0 /*CHAR_MICHAEL*/; i < Global_113969.f_7691.f_136; i = i + 1)
 	{
 		if (IS_BIT_SET(Global_113969.f_7691[i /*15*/].f_2, iParam0))
 			if (Global_113969.f_7691[i /*15*/].f_3 > num)
 				num = Global_113969.f_7691[i /*15*/].f_3;
 	}
 
-	for (j = CHAR_MICHAEL; j < Global_113969.f_7691.f_764; j = j + 1)
+	for (j = 0 /*CHAR_MICHAEL*/; j < Global_113969.f_7691.f_764; j = j + 1)
 	{
 		if (IS_BIT_SET(Global_113969.f_7691.f_651[j /*14*/].f_2, iParam0))
 			if (Global_113969.f_7691.f_651[j /*14*/].f_3 == 5)
@@ -1286,7 +1286,7 @@ void func_28(var uParam0, var uParam1, int iParam2) // Position - 0xE73 Hash - 0
 	if (*uParam0 == 1 || *uParam0 == 0)
 		func_38(*uParam0, iParam2, true);
 
-	PAD::SET_CONTROL_SHAKE(PLAYER_CONTROL, 200, 250);
+	PAD::SET_CONTROL_SHAKE(0 /*PLAYER_CONTROL*/, 200, 250);
 	STATS::STAT_INCREMENT(uParam0->f_6, 1f);
 
 	if (bLocal_39)

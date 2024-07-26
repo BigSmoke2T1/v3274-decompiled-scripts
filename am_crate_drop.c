@@ -981,7 +981,7 @@ BOOL func_19(int iParam0) // Position - 0xAB9 Hash - 0x25287F14 ^0xB2697FD8
 			{
 				if (func_21(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_2, 1086324736, 1065353216, 1065353216, 1084227584, true, true, true, 1123024896, false, -1, true, 0, false, 0, false, false))
 				{
-					if (func_20(&iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/], PED_TYPE_CRIMINAL, iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_1, iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_2, iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_5, true, true, true))
+					if (func_20(&iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/], 22 /*PED_TYPE_CRIMINAL*/, iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_1, iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_2, iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_5, true, true, true))
 					{
 						PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), Global_1837312);
 						ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), true, 0);
@@ -990,8 +990,8 @@ BOOL func_19(int iParam0) // Position - 0xAB9 Hash - 0x25287F14 ^0xB2697FD8
 						WEAPON::GIVE_DELAYED_WEAPON_TO_PED(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_14, 25000, true);
 						PED::SET_PED_ACCURACY(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_15);
 						PED::SET_PED_COMBAT_ABILITY(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), 1);
-						PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), CM_WillAdvance);
-						PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), BF_CanUseCover, true);
+						PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), 2 /*CM_WillAdvance*/);
+						PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), 0 /*BF_CanUseCover*/, true);
 						PED::SET_PED_TARGET_LOSS_RESPONSE(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), 1);
 						PED::SET_PED_HIGHLY_PERCEPTIVE(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), true);
 						ENTITY::SET_ENTITY_HEALTH(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), SYSTEM::ROUND(200f * Global_262145.f_156), 0, 0);
@@ -1386,7 +1386,7 @@ int func_41(int iParam0) // Position - 0x14D3 Hash - 0xB9D74DF9 ^0x92AFD972
 				{
 					if (func_39(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_1))
 					{
-						if (func_42(&iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/], iLocal_90.f_2.f_68[iParam0 /*104*/].f_78[0 /*17*/], PED_TYPE_CRIMINAL, iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_1, i - 1, true, true, true))
+						if (func_42(&iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/], iLocal_90.f_2.f_68[iParam0 /*104*/].f_78[0 /*17*/], 22 /*PED_TYPE_CRIMINAL*/, iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_1, i - 1, true, true, true))
 						{
 							PED::SET_PED_RELATIONSHIP_GROUP_HASH(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), Global_1837312);
 							ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), true, 0);
@@ -1394,10 +1394,10 @@ int func_41(int iParam0) // Position - 0x14D3 Hash - 0xB9D74DF9 ^0x92AFD972
 							WEAPON::GIVE_DELAYED_WEAPON_TO_PED(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), joaat("WEAPON_PISTOL"), 25000, false);
 							WEAPON::GIVE_DELAYED_WEAPON_TO_PED(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_14, 25000, true);
 							PED::SET_PED_ACCURACY(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/].f_15);
-							PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), BF_CanDoDrivebys, true);
+							PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), 2 /*BF_CanDoDrivebys*/, true);
 							PED::SET_PED_COMBAT_ABILITY(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), 1);
-							PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), CM_WillAdvance);
-							PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), BF_CanUseCover, true);
+							PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), 2 /*CM_WillAdvance*/);
+							PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), 0 /*BF_CanUseCover*/, true);
 							PED::SET_PED_TARGET_LOSS_RESPONSE(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), 1);
 							PED::SET_PED_HIGHLY_PERCEPTIVE(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), true);
 							ENTITY::SET_ENTITY_HEALTH(NETWORK::NET_TO_PED(iLocal_90.f_2.f_68[iParam0 /*104*/].f_5[i /*18*/]), SYSTEM::ROUND(200f * Global_262145.f_156), 0, 0);
@@ -4395,7 +4395,7 @@ Vector3 func_132(Object obParam0, BOOL bParam1) // Position - 0x797E Hash - 0x1F
 	if (CAM::IS_GAMEPLAY_CAM_RENDERING())
 		gameplayCamRot = { CAM::GET_GAMEPLAY_CAM_ROT(2) };
 
-	if (obParam0 == func_133(PLAYER::PLAYER_PED_ID()) && CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == FIRST_PERSON)
+	if (obParam0 == func_133(PLAYER::PLAYER_PED_ID()) && CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == 4 /*FIRST_PERSON*/)
 		offsetFromEntityInWorldCoords = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(obParam0, 0f, 8f, -0.2f) };
 	else
 		offsetFromEntityInWorldCoords = { ENTITY::GET_ENTITY_COORDS(obParam0, false) };
@@ -4406,7 +4406,7 @@ Vector3 func_132(Object obParam0, BOOL bParam1) // Position - 0x797E Hash - 0x1F
 	{
 		entityHeading = ENTITY::GET_ENTITY_HEADING(obParam0);
 	
-		if (CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == FIRST_PERSON)
+		if (CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == 4 /*FIRST_PERSON*/)
 			entityHeading = gameplayCamRot.f_2;
 	}
 
@@ -6373,7 +6373,7 @@ void func_201(int iParam0) // Position - 0xA2DE Hash - 0xF0CEE489 ^0xA8FB7BC0
 	{
 		uLocal_411[iParam0] = HUD::ADD_BLIP_FOR_ENTITY(NETWORK::NET_TO_OBJ(iLocal_90.f_2.f_1[iParam0 /*66*/].f_1));
 		HUD::SET_BLIP_SCALE(uLocal_411[iParam0], 1.2f);
-		HUD::SET_BLIP_SPRITE(uLocal_411[iParam0], BLIP_CRATEDROP);
+		HUD::SET_BLIP_SPRITE(uLocal_411[iParam0], 306 /*BLIP_CRATEDROP*/);
 		HUD::SET_BLIP_COLOUR(uLocal_411[iParam0], 2);
 		HUD::SET_BLIP_ALPHA(uLocal_411[iParam0], 120);
 		HUD::SET_BLIP_NAME_FROM_TEXT_FILE(uLocal_411[iParam0], "ACD_BLIPN" /*Crate*/);
@@ -44858,7 +44858,7 @@ void func_316(var uParam0, int iParam1) // Position - 0x33132 Hash - 0x5E4F0835 
 						func_366(&num, false);
 					
 						if (iParam1 == 1)
-							func_321("GB_BCUT_TICK1" /*You paid ~a~ ~s~a $~1~ ~s~cut.*/, _GET_BOSS_OF_LOCAL_PLAYER(), num, HUD_COLOUR_PURE_WHITE, false, true);
+							func_321("GB_BCUT_TICK1" /*You paid ~a~ ~s~a $~1~ ~s~cut.*/, _GET_BOSS_OF_LOCAL_PLAYER(), num, 0 /*HUD_COLOUR_PURE_WHITE*/, false, true);
 					
 						func_320(20);
 						func_317(_GET_BOSS_OF_LOCAL_PLAYER(), num, 1);
@@ -44931,7 +44931,7 @@ int func_321(char* sParam0, Player plParam1, int iParam2, eHudColour ehcParam3, 
 		HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(func_324(plParam1, -2, true, false, false));
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(func_322(&unk));
 	
-		if (!(ehcParam3 == HUD_COLOUR_PURE_WHITE))
+		if (!(ehcParam3 == 0 /*HUD_COLOUR_PURE_WHITE*/))
 			HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(ehcParam3);
 	
 		HUD::ADD_TEXT_COMPONENT_INTEGER(iParam2);
@@ -44963,13 +44963,13 @@ eHudColour func_324(Player plParam0, int iParam1, BOOL bParam2, BOOL bParam3, BO
 	Ped ped;
 
 	if (!func_27(plParam0))
-		return HUD_COLOUR_WHITE;
+		return 1 /*HUD_COLOUR_WHITE*/;
 
 	if (func_364(plParam0) && !bParam4)
 		if (bParam2)
-			return HUD_COLOUR_PURE_WHITE;
+			return 0 /*HUD_COLOUR_PURE_WHITE*/;
 		else
-			return HUD_COLOUR_WHITE;
+			return 1 /*HUD_COLOUR_WHITE*/;
 
 	if (iParam1 == -2)
 	{
@@ -46768,7 +46768,7 @@ BOOL func_426() // Position - 0x3546E Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x3547D Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

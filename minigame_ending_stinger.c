@@ -46,7 +46,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 		{
 			switch (_GET_PLAYER_CHARACTER_FROM_PED(PLAYER::PLAYER_PED_ID()))
 			{
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					if (AUDIO::LOAD_STREAM("MISSION_COMPLETE_FRANKLIN_SMALL", 0))
 					{
 						AUDIO::PLAY_STREAM_FRONTEND();
@@ -54,7 +54,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 					}
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					if (AUDIO::LOAD_STREAM("MISSION_COMPLETE_TREVOR_SMALL", 0))
 					{
 						AUDIO::PLAY_STREAM_FRONTEND();
@@ -95,14 +95,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xD2 Hash
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x10F Hash - 0xADCB9755 ^0xADCB9755
@@ -110,7 +110,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x10F Hash - 0xADC
 	if (func_4(character))
 		return func_3(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -122,7 +122,7 @@ Hash func_3(eCharacter echParam0) // Position - 0x134 Hash - 0xE4CEEC2C ^0xE4CEE
 
 BOOL func_4(eCharacter echParam0) // Position - 0x143 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 void func_5() // Position - 0x14F Hash - 0x96997D50 ^0xB102C97B

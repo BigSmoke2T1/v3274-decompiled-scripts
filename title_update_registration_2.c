@@ -3,9 +3,9 @@ void main() // Position - 0x0 Hash - 0x4804C07B ^0x20431930
 {
 	Global_4456520 = -1;
 	Global_4456521 = -1;
-	Global_4456522 = PV_COMP_INVALID;
-	Global_4456523 = PV_COMP_INVALID;
-	Global_4456524 = PV_COMP_INVALID;
+	Global_4456522 = -1 /*PV_COMP_INVALID*/;
+	Global_4456523 = -1 /*PV_COMP_INVALID*/;
+	Global_4456524 = -1 /*PV_COMP_INVALID*/;
 	Global_4537436 = true;
 	Global_4537438 = 1;
 	Global_4537439 = 1;
@@ -38,7 +38,7 @@ void main() // Position - 0x0 Hash - 0x4804C07B ^0x20431930
 	Global_4543360 = 1;
 	TEXT_LABEL_ASSIGN_STRING(&Global_4543373, "", 16);
 	Global_4543383 = 8f;
-	Global_4544079 = HUD_COLOUR_YELLOW;
+	Global_4544079 = 12 /*HUD_COLOUR_YELLOW*/;
 	Global_4544080 = 12;
 	Global_4594775 = 100f;
 	return;

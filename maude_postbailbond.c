@@ -169,7 +169,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 					break;
 			
 				case 2:
-					if (!func_4(pedLocal_80, SCRIPT_TASK_SMART_FLEE_PED) && !PED::IS_PED_FLEEING(pedLocal_80))
+					if (!func_4(pedLocal_80, joaat("SCRIPT_TASK_SMART_FLEE_PED") /*SCRIPT_TASK_SMART_FLEE_PED*/) && !PED::IS_PED_FLEEING(pedLocal_80))
 						if (!ENTITY::IS_ENTITY_PLAYING_ANIM(pedLocal_80, func_11(), func_3(), 3))
 							func_1();
 					else
@@ -206,8 +206,8 @@ void func_2(var uParam0) // Position - 0x1E3 Hash - 0x8D1B0ABA ^0x3B49CB15
 		PED::SET_PED_FLEE_ATTRIBUTES(*uParam0, 8, false);
 		PED::SET_PED_FLEE_ATTRIBUTES(*uParam0, 1, false);
 		PED::SET_PED_FLEE_ATTRIBUTES(*uParam0, 32, false);
-		PED::SET_PED_COMBAT_ATTRIBUTES(*uParam0, BF_AlwaysFight, false);
-		PED::SET_PED_COMBAT_ATTRIBUTES(*uParam0, BF_AlwaysFlee, true);
+		PED::SET_PED_COMBAT_ATTRIBUTES(*uParam0, 5 /*BF_AlwaysFight*/, false);
+		PED::SET_PED_COMBAT_ATTRIBUTES(*uParam0, 17 /*BF_AlwaysFlee*/, true);
 		PED::SET_PED_CONFIG_FLAG(*uParam0, 118, true);
 	}
 
@@ -246,7 +246,7 @@ BOOL func_5(var uParam0, var uParam1, var uParam2) // Position - 0x289 Hash - 0x
 					PED::SET_SYNCHRONIZED_SCENE_LOOPED(*uParam2, false);
 					PED::SET_SYNCHRONIZED_SCENE_HOLD_LAST_FRAME(*uParam2, false);
 				
-					if (func_4(*uParam0, SCRIPT_TASK_SYNCHRONIZED_SCENE))
+					if (func_4(*uParam0, joaat("SCRIPT_TASK_SYNCHRONIZED_SCENE") /*SCRIPT_TASK_SYNCHRONIZED_SCENE*/))
 						ENTITY::STOP_SYNCHRONIZED_ENTITY_ANIM(*uParam0, -1000f, true);
 				
 					TASK::TASK_SYNCHRONIZED_SCENE(*uParam0, *uParam2, func_11(), func_3(), 1000f, -4f, 4626, 0, 1148846080, 0);

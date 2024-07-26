@@ -89,7 +89,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				
 					if (unk[i] > Global_48594[i /*46*/].f_43)
 					{
-						if (func_34(7, _CHAR_VIRTUAL_MP, 2, -1, 0))
+						if (func_34(7, 144 /*_CHAR_VIRTUAL_MP*/, 2, -1, 0))
 						{
 							func_32(i, false);
 							unk[i] = 0;
@@ -156,7 +156,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 							}
 							else if (Global_55992[num6 /*53*/].f_2 < 1)
 							{
-								if (func_34(7, _CHAR_NULL, 2, -1, 0))
+								if (func_34(7, 145 /*_CHAR_NULL*/, 2, -1, 0))
 								{
 									flag5 = false;
 								
@@ -304,22 +304,22 @@ void func_1(int iParam0) // Position - 0x439 Hash - 0xC453BCCD ^0xAAF81BE
 				break;
 		}
 	
-		func_2(CHAR_FRANKLIN, Global_45269[num2 /*12*/].f_2, num2, str, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		func_2(1 /*CHAR_FRANKLIN*/, Global_45269[num2 /*12*/].f_2, num2, str, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 	}
 	else
 	{
 		switch (Global_45269[num2 /*12*/].f_3)
 		{
 			case 0:
-				func_2(CHAR_MICHAEL, Global_45269[num2 /*12*/].f_2, num2, &unk, &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
+				func_2(0 /*CHAR_MICHAEL*/, Global_45269[num2 /*12*/].f_2, num2, &unk, &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
 				break;
 		
 			case 1:
-				func_2(CHAR_FRANKLIN, Global_45269[num2 /*12*/].f_2, num2, &unk, &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
+				func_2(1 /*CHAR_FRANKLIN*/, Global_45269[num2 /*12*/].f_2, num2, &unk, &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
 				break;
 		
 			case 2:
-				func_2(CHAR_TREVOR, Global_45269[num2 /*12*/].f_2, num2, &unk, &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
+				func_2(2 /*CHAR_TREVOR*/, Global_45269[num2 /*12*/].f_2, num2, &unk, &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[0 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[1 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[2 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[3 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[4 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[5 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[6 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[7 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[8 /*4*/], &Global_54569[num /*203*/].f_10[num3 /*48*/].f_7[9 /*4*/]);
 				break;
 		}
 	}
@@ -398,7 +398,7 @@ void func_2(eCharacter echParam0, int iParam1, int iParam2, char* sParam3, const
 	
 		switch (Global_20930)
 		{
-			case CHAR_MICHAEL:
+			case 0 /*CHAR_MICHAEL*/:
 				TEXT_LABEL_ASSIGN_STRING(&Global_20919, "Phone_SoundSet_Michael", 24);
 				Global_45261 = Global_45261 + 1;
 			
@@ -406,7 +406,7 @@ void func_2(eCharacter echParam0, int iParam1, int iParam2, char* sParam3, const
 					Global_45261 = 16;
 				break;
 		
-			case CHAR_TREVOR:
+			case 2 /*CHAR_TREVOR*/:
 				TEXT_LABEL_ASSIGN_STRING(&Global_20919, "Phone_SoundSet_Trevor", 24);
 				Global_45263 = Global_45263 + 1;
 			
@@ -414,7 +414,7 @@ void func_2(eCharacter echParam0, int iParam1, int iParam2, char* sParam3, const
 					Global_45263 = 16;
 				break;
 		
-			case CHAR_FRANKLIN:
+			case 1 /*CHAR_FRANKLIN*/:
 				TEXT_LABEL_ASSIGN_STRING(&Global_20919, "Phone_SoundSet_Franklin", 24);
 				Global_45262 = Global_45262 + 1;
 			
@@ -844,7 +844,7 @@ void func_7() // Position - 0x10FB Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -862,7 +862,7 @@ BOOL func_8(int iParam0) // Position - 0x11F8 Hash - 0x937D8816 ^0x937D8816
 
 BOOL func_9(eCharacter echParam0) // Position - 0x1206 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x1212 Hash - 0xAC4E9801 ^0xB379A75F
@@ -874,14 +874,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x1212 Ha
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x124F Hash - 0xADCB9755 ^0xADCB9755
@@ -889,7 +889,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x124F Hash - 0xAD
 	if (func_9(character))
 		return func_12(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -1231,13 +1231,13 @@ void func_18(int iParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOOL bParam4)
 			
 				case 1:
 					if (num3 == 249)
-						func_2(CHAR_FRANKLIN, num2, num3, "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+						func_2(1 /*CHAR_FRANKLIN*/, num2, num3, "PW_FEED_EM_1" /*You've been nominated to take part in Southern San Andreas' premier amateur photography competition in the wildlife sector. You'll join hundreds of other young, talented...*/, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					else
-						func_2(CHAR_FRANKLIN, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+						func_2(1 /*CHAR_FRANKLIN*/, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			
 				case 2:
-					func_2(CHAR_TREVOR, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+					func_2(2 /*CHAR_TREVOR*/, num2, num3, &unk, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 					break;
 			}
 		}
@@ -1801,7 +1801,7 @@ BOOL func_34(int iParam0, eCharacter echParam1, int iParam2, int iParam3, int iP
 		if (func_46(50f, true) != -1)
 			return false;
 	
-		if (echParam1 == CHAR_AMANDA || echParam1 == CHAR_LAMAR || echParam1 == CHAR_JIMMY || echParam1 == CHAR_MICHAEL || echParam1 == CHAR_FRANKLIN || echParam1 == CHAR_TREVOR)
+		if (echParam1 == 17 /*CHAR_AMANDA*/ || echParam1 == 19 /*CHAR_LAMAR*/ || echParam1 == 14 /*CHAR_JIMMY*/ || echParam1 == 0 /*CHAR_MICHAEL*/ || echParam1 == 1 /*CHAR_FRANKLIN*/ || echParam1 == 2 /*CHAR_TREVOR*/)
 		{
 			if (IS_BIT_SET(iParam0, _GET_CURRENT_PLAYER_CHARACTER_0()))
 			{
@@ -1854,59 +1854,59 @@ BOOL func_34(int iParam0, eCharacter echParam1, int iParam2, int iParam3, int iP
 	
 		switch (echParam1)
 		{
-			case CHAR_ALL_PLAYERS_CONF:
+			case 4 /*CHAR_ALL_PLAYERS_CONF*/:
 				switch (character)
 				{
-					case CHAR_MICHAEL:
-						unk17[0] = _GET_CHARACTER_MODEL(CHAR_FRANKLIN);
-						unk17[1] = _GET_CHARACTER_MODEL(CHAR_TREVOR);
+					case 0 /*CHAR_MICHAEL*/:
+						unk17[0] = _GET_CHARACTER_MODEL(1 /*CHAR_FRANKLIN*/);
+						unk17[1] = _GET_CHARACTER_MODEL(2 /*CHAR_TREVOR*/);
 						break;
 				
-					case CHAR_FRANKLIN:
-						unk17[0] = _GET_CHARACTER_MODEL(CHAR_MICHAEL);
-						unk17[1] = _GET_CHARACTER_MODEL(CHAR_TREVOR);
+					case 1 /*CHAR_FRANKLIN*/:
+						unk17[0] = _GET_CHARACTER_MODEL(0 /*CHAR_MICHAEL*/);
+						unk17[1] = _GET_CHARACTER_MODEL(2 /*CHAR_TREVOR*/);
 						break;
 				
-					case CHAR_TREVOR:
-						unk17[0] = _GET_CHARACTER_MODEL(CHAR_MICHAEL);
-						unk17[1] = _GET_CHARACTER_MODEL(CHAR_FRANKLIN);
+					case 2 /*CHAR_TREVOR*/:
+						unk17[0] = _GET_CHARACTER_MODEL(0 /*CHAR_MICHAEL*/);
+						unk17[1] = _GET_CHARACTER_MODEL(1 /*CHAR_FRANKLIN*/);
 						break;
 				}
 				break;
 		
-			case CHAR_FRANK_TREV_CONF:
-				unk17[0] = _GET_CHARACTER_MODEL(CHAR_FRANKLIN);
-				unk17[1] = _GET_CHARACTER_MODEL(CHAR_TREVOR);
+			case 5 /*CHAR_FRANK_TREV_CONF*/:
+				unk17[0] = _GET_CHARACTER_MODEL(1 /*CHAR_FRANKLIN*/);
+				unk17[1] = _GET_CHARACTER_MODEL(2 /*CHAR_TREVOR*/);
 				break;
 		
-			case CHAR_LEST_FRANK_CONF:
-				unk17[0] = func_35(CHAR_LESTER);
-				unk17[1] = _GET_CHARACTER_MODEL(CHAR_FRANKLIN);
+			case 6 /*CHAR_LEST_FRANK_CONF*/:
+				unk17[0] = func_35(12 /*CHAR_LESTER*/);
+				unk17[1] = _GET_CHARACTER_MODEL(1 /*CHAR_FRANKLIN*/);
 				break;
 		
-			case CHAR_LEST_MIKE_CONF:
-				unk17[0] = func_35(CHAR_LESTER);
-				unk17[1] = _GET_CHARACTER_MODEL(CHAR_MICHAEL);
+			case 7 /*CHAR_LEST_MIKE_CONF*/:
+				unk17[0] = func_35(12 /*CHAR_LESTER*/);
+				unk17[1] = _GET_CHARACTER_MODEL(0 /*CHAR_MICHAEL*/);
 				break;
 		
-			case CHAR_MIKE_FRANK_CONF:
-				unk17[0] = _GET_CHARACTER_MODEL(CHAR_MICHAEL);
-				unk17[1] = _GET_CHARACTER_MODEL(CHAR_FRANKLIN);
+			case 8 /*CHAR_MIKE_FRANK_CONF*/:
+				unk17[0] = _GET_CHARACTER_MODEL(0 /*CHAR_MICHAEL*/);
+				unk17[1] = _GET_CHARACTER_MODEL(1 /*CHAR_FRANKLIN*/);
 				break;
 		
-			case CHAR_MIKE_TREV_CONF:
-				unk17[0] = _GET_CHARACTER_MODEL(CHAR_MICHAEL);
-				unk17[1] = _GET_CHARACTER_MODEL(CHAR_TREVOR);
+			case 9 /*CHAR_MIKE_TREV_CONF*/:
+				unk17[0] = _GET_CHARACTER_MODEL(0 /*CHAR_MICHAEL*/);
+				unk17[1] = _GET_CHARACTER_MODEL(2 /*CHAR_TREVOR*/);
 				break;
 		
-			case CHAR_STEVE_MIKE_CONF:
-				unk17[0] = func_35(CHAR_STEVE);
-				unk17[1] = _GET_CHARACTER_MODEL(CHAR_MICHAEL);
+			case 10 /*CHAR_STEVE_MIKE_CONF*/:
+				unk17[0] = func_35(23 /*CHAR_STEVE*/);
+				unk17[1] = _GET_CHARACTER_MODEL(0 /*CHAR_MICHAEL*/);
 				break;
 		
-			case CHAR_STEVE_TREV_CONF:
-				unk17[0] = func_35(CHAR_STEVE);
-				unk17[1] = _GET_CHARACTER_MODEL(CHAR_MICHAEL);
+			case 11 /*CHAR_STEVE_TREV_CONF*/:
+				unk17[0] = func_35(23 /*CHAR_STEVE*/);
+				unk17[1] = _GET_CHARACTER_MODEL(0 /*CHAR_MICHAEL*/);
 				break;
 		
 			default:
@@ -1992,7 +1992,7 @@ Hash func_35(eCharacter echParam0) // Position - 0x2A06 Hash - 0xBF0B24A5 ^0xBF0
 	if (!func_9(echParam0))
 		return func_12(echParam0);
 	else
-		echParam0 != _CHAR_NULL;
+		echParam0 != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -2176,13 +2176,13 @@ int func_42(int iParam0, int iParam1) // Position - 0x2B6A Hash - 0x9B3F919B ^0x
 
 int func_43(eCharacter echParam0) // Position - 0x2CF4 Hash - 0xFC9AD598 ^0xFC9AD598
 {
-	if (echParam0 == _CHAR_NULL)
+	if (echParam0 == 145 /*_CHAR_NULL*/)
 		return 7;
 
 	if (echParam0 < func_45())
 		return func_44(echParam0);
 
-	if (echParam0 == _CHAR_VIRTUAL_MP)
+	if (echParam0 == 144 /*_CHAR_VIRTUAL_MP*/)
 		return 7;
 
 	if (echParam0 == func_45())
@@ -3038,13 +3038,13 @@ int func_52() // Position - 0x48CA Hash - 0x35BC7314 ^0x35BC7314
 
 	switch (Global_113969.f_2366.f_539.f_4321)
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			return 1;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			return 2;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			return 4;
 	}
 

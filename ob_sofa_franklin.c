@@ -472,7 +472,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 	{
 		SYSTEM::WAIT(0);
 	
-		if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && _GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() && !PLAYER::IS_PLAYER_WANTED_LEVEL_GREATER(PLAYER::PLAYER_ID(), 0) && INTERIOR::GET_INTERIOR_FROM_ENTITY(PLAYER::PLAYER_PED_ID()) != 0)
+		if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()) && _GET_CURRENT_PLAYER_CHARACTER() == 1 /*CHAR_FRANKLIN*/ && !STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() && !PLAYER::IS_PLAYER_WANTED_LEVEL_GREATER(PLAYER::PLAYER_ID(), 0) && INTERIOR::GET_INTERIOR_FROM_ENTITY(PLAYER::PLAYER_PED_ID()) != 0)
 		{
 			if (MISC::GET_DISTANCE_BETWEEN_COORDS(uLocal_334, ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), true) < 3f)
 			{
@@ -560,7 +560,7 @@ void func_3() // Position - 0x362 Hash - 0x7EDA9AF1 ^0xF9FA02E6
 {
 	int randomIntInRange;
 
-	if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
+	if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
 	{
 		randomIntInRange = MISC::GET_RANDOM_INT_IN_RANGE(0, 10);
 		_CONVERSATION_INITIALIZE_ACTOR(&uLocal_121, 0, PLAYER::PLAYER_PED_ID(), "MICHAEL", 0, 1);
@@ -611,7 +611,7 @@ void func_3() // Position - 0x362 Hash - 0x7EDA9AF1 ^0xF9FA02E6
 				break;
 		}
 	}
-	else if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN)
+	else if (_GET_CURRENT_PLAYER_CHARACTER() == 1 /*CHAR_FRANKLIN*/)
 	{
 		GRAPHICS::ENABLE_MOVIE_SUBTITLES(false);
 		randomIntInRange = MISC::GET_RANDOM_INT_IN_RANGE(0, 11);
@@ -1040,26 +1040,26 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0xC58 Hash - 0x98476CE1 ^0
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[0 /*29*/])
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[1 /*29*/])
-				Global_20930 = CHAR_FRANKLIN;
+				Global_20930 = 1 /*CHAR_FRANKLIN*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[2 /*29*/])
-				Global_20930 = CHAR_TREVOR;
+				Global_20930 = 2 /*CHAR_TREVOR*/;
 			else
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 	}
 	else
 	{
 		Global_20930 = _GET_CURRENT_PLAYER_CHARACTER();
 	
-		if (Global_20930 == _CHAR_NULL)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 == 145 /*_CHAR_NULL*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
 		if (Global_79389)
-			Global_20930 = CHAR_MULTIPLAYER;
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
-		if (Global_20930 > CHAR_MULTIPLAYER)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 > 3 /*CHAR_MULTIPLAYER*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	}
 
 	return;
@@ -1213,17 +1213,17 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 			{
 				if (func_91(uLocal_334, unk))
 				{
-					if (!PLAYER::IS_PLAYER_FREE_AIMING(PLAYER::PLAYER_ID()) && !PLAYER::IS_PLAYER_TARGETTING_ANYTHING(PLAYER::PLAYER_ID()) && PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT) && func_89())
+					if (!PLAYER::IS_PLAYER_FREE_AIMING(PLAYER::PLAYER_ID()) && !PLAYER::IS_PLAYER_TARGETTING_ANYTHING(PLAYER::PLAYER_ID()) && PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 51 /*INPUT_CONTEXT*/) && func_89())
 					{
 						if (_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP0" /*Press ~INPUT_CONTEXT~ to sit on the couch.*/))
 							HUD::CLEAR_HELP(true);
 					
 						MISC::CLEAR_AREA_OF_PROJECTILES(uLocal_337, 3f, 0);
 					
-						if (CAM::GET_FOLLOW_PED_CAM_VIEW_MODE() != FIRST_PERSON)
+						if (CAM::GET_FOLLOW_PED_CAM_VIEW_MODE() != 4 /*FIRST_PERSON*/)
 							PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), false, 0);
 						else
-							PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), false, SPC_LEAVE_CAMERA_CONTROL_ON);
+							PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), false, 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/);
 					
 						bLocal_49 = true;
 						WEAPON::SET_CURRENT_PED_WEAPON(PLAYER::PLAYER_PED_ID(), joaat("WEAPON_UNARMED"), true);
@@ -1247,9 +1247,9 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 		case 2:
 			func_75();
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_NEXT_CAMERA, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 0 /*INPUT_NEXT_CAMERA*/, true);
 		
-			if (CAM::GET_FOLLOW_PED_CAM_VIEW_MODE() != FIRST_PERSON)
+			if (CAM::GET_FOLLOW_PED_CAM_VIEW_MODE() != 4 /*FIRST_PERSON*/)
 			{
 				caLocal_325 = CAM::CREATE_CAMERA(joaat("DEFAULT_SCRIPTED_CAMERA"), false);
 			
@@ -1295,7 +1295,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 		case 3:
 			func_75();
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_NEXT_CAMERA, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 0 /*INPUT_NEXT_CAMERA*/, true);
 		
 			if (func_74(caLocal_325))
 				if (Global_33009[0 /*11*/].f_2)
@@ -1331,7 +1331,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 		case 4:
 			func_75();
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_NEXT_CAMERA, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 0 /*INPUT_NEXT_CAMERA*/, true);
 		
 			if (!Global_33009[0 /*11*/].f_2)
 			{
@@ -1363,7 +1363,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 		case 5:
 			func_75();
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_NEXT_CAMERA, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 0 /*INPUT_NEXT_CAMERA*/, true);
 			func_65();
 		
 			if (func_74(caLocal_325))
@@ -1372,7 +1372,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 			if (!_IS_THIS_HELP_MESSAGE_BEING_DISPLAYED("TV_HLP3" /*Press ~INPUT_CONTEXT~ to watch the TV.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/))
 				func_88("TV_HLP3" /*Press ~INPUT_CONTEXT~ to watch the TV.~n~Press ~INPUT_SCRIPT_RLEFT~ to smoke.~n~Press ~INPUT_SCRIPT_RUP~ to stand up.~n~*/);
 		
-			if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT))
+			if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 51 /*INPUT_CONTEXT*/))
 			{
 				if (!bLocal_322)
 				{
@@ -1395,7 +1395,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 			
 				iLocal_306 = 6;
 			}
-			else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_SCRIPT_RUP))
+			else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 222 /*INPUT_SCRIPT_RUP*/))
 			{
 				func_64();
 				iLocal_328 = PED::CREATE_SYNCHRONIZED_SCENE(func_73(), func_72(), 2);
@@ -1411,7 +1411,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 		case 6:
 			func_75();
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_NEXT_CAMERA, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 0 /*INPUT_NEXT_CAMERA*/, true);
 		
 			if (PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_328) > 0.6f)
 			{
@@ -1447,7 +1447,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 		case 7:
 			func_75();
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_NEXT_CAMERA, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 0 /*INPUT_NEXT_CAMERA*/, true);
 			func_65();
 		
 			if (func_74(caLocal_325))
@@ -1459,7 +1459,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 			if (!_CONVERSATION_IS_DIALOGUE_IN_PROGRESS())
 				GRAPHICS::ENABLE_MOVIE_SUBTITLES(true);
 		
-			if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT))
+			if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 51 /*INPUT_CONTEXT*/))
 			{
 				iLocal_328 = PED::CREATE_SYNCHRONIZED_SCENE(func_73(), func_72(), 2);
 				TASK::TASK_SYNCHRONIZED_SCENE(PLAYER::PLAYER_PED_ID(), iLocal_328, sLocal_333, "tv_exit", 8f, -8f, 0, 0, 1148846080, 0);
@@ -1471,7 +1471,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 				bLocal_316 = true;
 				iLocal_306 = 9;
 			}
-			else if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_SCRIPT_RUP))
+			else if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 222 /*INPUT_SCRIPT_RUP*/))
 			{
 				func_64();
 				iLocal_328 = PED::CREATE_SYNCHRONIZED_SCENE(func_73(), func_72(), 2);
@@ -1500,7 +1500,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 		case 8:
 			func_75();
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_NEXT_CAMERA, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 0 /*INPUT_NEXT_CAMERA*/, true);
 		
 			if (func_74(caLocal_325))
 				func_70(caLocal_325, uLocal_359);
@@ -1537,7 +1537,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 		case 9:
 			func_75();
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_NEXT_CAMERA, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 0 /*INPUT_NEXT_CAMERA*/, true);
 		
 			if (PED::GET_SYNCHRONIZED_SCENE_PHASE(iLocal_328) < 0.9f)
 			{
@@ -1574,7 +1574,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 		case 10:
 			func_75();
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_NEXT_CAMERA, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 0 /*INPUT_NEXT_CAMERA*/, true);
 		
 			if (Global_33009[0 /*11*/].f_2)
 			{
@@ -1798,7 +1798,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 		case 11:
 			func_75();
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_NEXT_CAMERA, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 0 /*INPUT_NEXT_CAMERA*/, true);
 		
 			if (!PED::IS_SYNCHRONIZED_SCENE_RUNNING(iLocal_328))
 			{
@@ -1816,7 +1816,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 		case 12:
 			func_75();
 			HUD::HIDE_HUD_AND_RADAR_THIS_FRAME();
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_NEXT_CAMERA, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 0 /*INPUT_NEXT_CAMERA*/, true);
 		
 			if (AUDIO::IS_AUDIO_SCENE_ACTIVE("TV_FRANKLINS_HOUSE_SOCEN"))
 				AUDIO::STOP_AUDIO_SCENE("TV_FRANKLINS_HOUSE_SOCEN");
@@ -1835,7 +1835,7 @@ void func_22() // Position - 0xEE0 Hash - 0xF052B204 ^0xDDBCA31F
 					if (func_74(caLocal_325))
 						CAM::STOP_RENDERING_SCRIPT_CAMS_USING_CATCH_UP(false, 0, 3, 0);
 				
-					PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), false, SPC_LEAVE_CAMERA_CONTROL_ON);
+					PLAYER::SET_PLAYER_CONTROL(PLAYER::PLAYER_ID(), false, 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/);
 					bLocal_315 = true;
 				}
 			
@@ -1896,7 +1896,7 @@ void func_23(int iParam0) // Position - 0x2240 Hash - 0xB49AB487 ^0x9321F0CE
 	{
 		Global_33009[iParam0 /*11*/].f_5 = 0;
 	
-		if (Global_33009[iParam0 /*11*/].f_2 && Global_33009[iParam0 /*11*/].f_7 == 0)
+		if (Global_33009[iParam0 /*11*/].f_2 && Global_33009[iParam0 /*11*/].f_7 == false)
 			Global_33009[iParam0 /*11*/].f_7 = 1;
 	
 		Global_33009[iParam0 /*11*/].f_8 = 0;
@@ -2478,23 +2478,23 @@ void func_46() // Position - 0x2AB0 Hash - 0x5DF4DFDF ^0x31BD8ACA
 
 void func_47(var uParam0, var uParam1, var uParam2, var uParam3, BOOL bParam4) // Position - 0x2AFB Hash - 0xABB7A2E ^0x7162746A
 {
-	*uParam0 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_X) * 127f);
-	*uParam1 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_Y) * 127f);
-	*uParam2 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_X) * 127f);
-	*uParam3 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_Y) * 127f);
+	*uParam0 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 218 /*INPUT_SCRIPT_LEFT_AXIS_X*/) * 127f);
+	*uParam1 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 219 /*INPUT_SCRIPT_LEFT_AXIS_Y*/) * 127f);
+	*uParam2 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 220 /*INPUT_SCRIPT_RIGHT_AXIS_X*/) * 127f);
+	*uParam3 = SYSTEM::FLOOR(PAD::GET_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 221 /*INPUT_SCRIPT_RIGHT_AXIS_Y*/) * 127f);
 
 	if (bParam4)
 	{
 		if ((float)*uParam0 == 0f && (float)*uParam1 == 0f)
 		{
-			*uParam0 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_X) * 127f);
-			*uParam1 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_Y) * 127f);
+			*uParam0 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 218 /*INPUT_SCRIPT_LEFT_AXIS_X*/) * 127f);
+			*uParam1 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 219 /*INPUT_SCRIPT_LEFT_AXIS_Y*/) * 127f);
 		}
 	
 		if ((float)*uParam2 == 0f && (float)*uParam3 == 0f)
 		{
-			*uParam2 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_X) * 127f);
-			*uParam3 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_Y) * 127f);
+			*uParam2 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 220 /*INPUT_SCRIPT_RIGHT_AXIS_X*/) * 127f);
+			*uParam3 = SYSTEM::FLOOR(PAD::GET_DISABLED_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 221 /*INPUT_SCRIPT_RIGHT_AXIS_Y*/) * 127f);
 		}
 	}
 
@@ -2773,7 +2773,7 @@ BOOL func_57(BOOL bParam0) // Position - 0x3264 Hash - 0x25EF1702 ^0x3A4EC47C
 	int num2;
 
 	num = 64;
-	num2 = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_X) - 127;
+	num2 = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 218 /*INPUT_SCRIPT_LEFT_AXIS_X*/) - 127;
 
 	if (bParam0 || SYSTEM::TIMERA() > 300)
 	{
@@ -2828,7 +2828,7 @@ void func_59(BOOL bParam0, BOOL bParam1) // Position - 0x32D2 Hash - 0x71275B0A 
 
 	if (bParam1)
 	{
-		num2 = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_Y) - 127;
+		num2 = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 219 /*INPUT_SCRIPT_LEFT_AXIS_Y*/) - 127;
 	
 		if (!bLocal_35)
 		{
@@ -3007,7 +3007,7 @@ void func_64() // Position - 0x35B8 Hash - 0x13029612 ^0x3914B1E9
 
 void func_65() // Position - 0x3615 Hash - 0x18B0E710 ^0xBCF96B81
 {
-	if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_SCRIPT_RLEFT))
+	if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 224 /*INPUT_SCRIPT_RLEFT*/))
 	{
 		func_66(202, 1);
 	
@@ -3107,10 +3107,10 @@ void func_70(Cam caParam0, var uParam1, var uParam2, var uParam3) // Position - 
 		camRot = { CAM::GET_CAM_ROT(caParam0, 2) };
 		num = { uParam1 };
 	
-		if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+		if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 		{
-			controlNormal = PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_CURSOR_Y);
-			controlNormal2 = PAD::GET_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_CURSOR_X);
+			controlNormal = PAD::GET_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 240 /*INPUT_CURSOR_Y*/);
+			controlNormal2 = PAD::GET_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 239 /*INPUT_CURSOR_X*/);
 			num2 = (controlNormal - 0.5f) * -6.5f * 2f;
 			num3 = (controlNormal2 - 0.5f) * -12.5f * 2f;
 			num = num + num2;
@@ -3348,7 +3348,7 @@ Vector3 func_73() // Position - 0x3BB2 Hash - 0xAA1E53C2 ^0xAA1E53C2
 
 BOOL func_74(Cam caParam0) // Position - 0x3D27 Hash - 0xE94949A3 ^0x3CB5384
 {
-	if (CAM::GET_FOLLOW_PED_CAM_VIEW_MODE() != FIRST_PERSON && CAM::DOES_CAM_EXIST(caParam0))
+	if (CAM::GET_FOLLOW_PED_CAM_VIEW_MODE() != 4 /*FIRST_PERSON*/ && CAM::DOES_CAM_EXIST(caParam0))
 		return true;
 
 	return false;
@@ -3425,7 +3425,7 @@ BOOL func_78(Player plParam0, int iParam1) // Position - 0x3EBD Hash - 0x1A32E11
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_79(-1, false) == CHAR_MIKE_FRANK_CONF;
+		flag = func_79(-1, false) == 8 /*CHAR_MIKE_FRANK_CONF*/;
 	else
 		flag = Global_1845281[plParam0 /*883*/].f_206 == 8;
 
@@ -3449,7 +3449,7 @@ eCharacter func_79(int iParam0, BOOL bParam1) // Position - 0x3F16 Hash - 0x1DCD
 	if (Global_1575063[num] == true)
 	{
 		bParam1;
-		character = CHAR_MIKE_FRANK_CONF;
+		character = 8 /*CHAR_MIKE_FRANK_CONF*/;
 	}
 	else
 	{
@@ -3989,7 +3989,7 @@ void func_103() // Position - 0x4BA3 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -4002,7 +4002,7 @@ void func_103() // Position - 0x4BA3 Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_104(eCharacter echParam0) // Position - 0x4CA0 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x4CAC Hash - 0xAC4E9801 ^0xB379A75F
@@ -4014,14 +4014,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x4CAC Ha
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x4CE9 Hash - 0xADCB9755 ^0xADCB9755
@@ -4029,7 +4029,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x4CE9 Hash - 0xAD
 	if (func_104(character))
 		return func_107(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }

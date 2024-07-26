@@ -19052,7 +19052,7 @@ eStackSize func_408(int iParam0) // Position - 0x15792 Hash - 0x859A5E02 ^0x1937
 
 	if (func_410(iParam0) == 3)
 	{
-		return SCRIPT_XML;
+		return 8344 /*SCRIPT_XML*/;
 	}
 	else if (func_410(iParam0) == 7)
 	{
@@ -19065,24 +19065,24 @@ eStackSize func_408(int iParam0) // Position - 0x15792 Hash - 0x859A5E02 ^0x1937
 			case 41:
 			case 47:
 			case 40:
-				return SCRIPT_XML;
+				return 8344 /*SCRIPT_XML*/;
 		
 			case 114:
-				return ACTIVITY_CREATOR_INT;
+				return 15900 /*ACTIVITY_CREATOR_INT*/;
 		
 			default:
 			
 		}
 	
-		return MULTIPLAYER_MISSION;
+		return 5050 /*MULTIPLAYER_MISSION*/;
 	}
 	else if (func_410(iParam0) == 0)
 	{
-		return MULTIPLAYER_MISSION;
+		return 5050 /*MULTIPLAYER_MISSION*/;
 	}
 	else if (func_410(iParam0) == 2)
 	{
-		return MULTIPLAYER_MISSION;
+		return 5050 /*MULTIPLAYER_MISSION*/;
 	}
 	else if (func_410(iParam0) == 6)
 	{
@@ -19137,24 +19137,24 @@ eStackSize func_408(int iParam0) // Position - 0x15792 Hash - 0x859A5E02 ^0x1937
 			case 122:
 			case 123:
 			case 213:
-				return MULTIPLAYER_MISSION;
+				return 5050 /*MULTIPLAYER_MISSION*/;
 		
 			case 237:
-				return MULTIPLAYER_MISSION;
+				return 5050 /*MULTIPLAYER_MISSION*/;
 		
 			case 238:
-				return DEFAULT;
+				return 1424 /*DEFAULT*/;
 		
 			case 201:
-				return SCRIPT_XML;
+				return 8344 /*SCRIPT_XML*/;
 		
 			case 87:
 			case 77:
 			case 76:
-				return SCRIPT_XML;
+				return 8344 /*SCRIPT_XML*/;
 		
 			case 163:
-				return SCRIPT_XML;
+				return 8344 /*SCRIPT_XML*/;
 		
 			case 9:
 			case 16:
@@ -19166,32 +19166,32 @@ eStackSize func_408(int iParam0) // Position - 0x15792 Hash - 0x859A5E02 ^0x1937
 			case 199:
 			case 21:
 			case 214:
-				return FRIEND;
+				return 2050 /*FRIEND*/;
 		
 			case 207:
-				return VEHICLE_SPAWN;
+				return 3568 /*VEHICLE_SPAWN*/;
 		
 			case 228:
 			case 231:
-				return SPECIAL_ABILITY;
+				return 1828 /*SPECIAL_ABILITY*/;
 		
 			case 232:
 			case 233:
 			case 234:
-				return MULTIPLAYER_MISSION;
+				return 5050 /*MULTIPLAYER_MISSION*/;
 		
 			case 240:
 			case 235:
 			case 236:
 			case 239:
 			case 241:
-				return SCRIPT_XML;
+				return 8344 /*SCRIPT_XML*/;
 		
 			case 242:
 				return func_409();
 		
 			case 142:
-				return MULTIPLAYER_MISSION;
+				return 5050 /*MULTIPLAYER_MISSION*/;
 		}
 	}
 
@@ -19201,16 +19201,16 @@ eStackSize func_408(int iParam0) // Position - 0x15792 Hash - 0x859A5E02 ^0x1937
 			return 85000;
 	
 		case 1:
-			return ACTIVITY_CREATOR_INT;
+			return 15900 /*ACTIVITY_CREATOR_INT*/;
 	
 		case 2:
-			return MULTIPLAYER_MISSION;
+			return 5050 /*MULTIPLAYER_MISSION*/;
 	
 		default:
 		
 	}
 
-	return DEFAULT;
+	return 1424 /*DEFAULT*/;
 }
 
 eStackSize func_409() // Position - 0x15B5A Hash - 0x729E933 ^0xFAD3D4FA
@@ -20957,7 +20957,7 @@ BOOL func_484() // Position - 0x179AC Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x179BB Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

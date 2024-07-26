@@ -2661,7 +2661,7 @@ void func_5(var uParam0) // Position - 0x264 Hash - 0x18E06F50 ^0xFF98D0F8
 	animDict = func_10(uParam0);
 	animName = func_8(uParam0);
 	randomFloatInRange = MISC::GET_RANDOM_FLOAT_IN_RANGE(0f, 0.7f);
-	scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(*uParam0, SCRIPT_TASK_PERFORM_SEQUENCE);
+	scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(*uParam0, joaat("SCRIPT_TASK_PERFORM_SEQUENCE") /*SCRIPT_TASK_PERFORM_SEQUENCE*/);
 
 	if (scriptTaskStatus != 0 && scriptTaskStatus != 1)
 	{
@@ -3243,16 +3243,16 @@ void func_12(var uParam0, int iParam1) // Position - 0xBA3 Hash - 0x5C3429DD ^0x
 				uParam0->f_47 = 1;
 			}
 		
-			*uParam0 = PED::CREATE_PED(PED_TYPE_MISSION, func_19(uParam0), uParam0->f_40, uParam0->f_43, false, false);
+			*uParam0 = PED::CREATE_PED(26 /*PED_TYPE_MISSION*/, func_19(uParam0), uParam0->f_40, uParam0->f_43, false, false);
 		
 			if (ENTITY::DOES_ENTITY_EXIST(*uParam0))
 			{
-				for (i = PV_COMP_HEAD; i < PV_COMP_MAX; i = i + 1)
+				for (i = 0 /*PV_COMP_HEAD*/; i < 12 /*PV_COMP_MAX*/; i = i + 1)
 				{
 					PED::SET_PED_COMPONENT_VARIATION(*uParam0, i, uParam0->f_3[i /*2*/], uParam0->f_3[i /*2*/].f_1, 0);
 				}
 			
-				for (i = PV_COMP_HEAD; i < PV_COMP_UPPR; i = i + 1)
+				for (i = 0 /*PV_COMP_HEAD*/; i < 3 /*PV_COMP_UPPR*/; i = i + 1)
 				{
 					if (uParam0->f_28[i])
 						PED::SET_PED_PROP_INDEX(*uParam0, uParam0->f_32[i], 0, uParam0->f_36[i], false, 1);
@@ -3784,7 +3784,7 @@ BOOL func_33() // Position - 0x1535 Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x1544 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

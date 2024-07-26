@@ -1696,15 +1696,15 @@ void func_47() // Position - 0x1EE1 Hash - 0xEBAA1748 ^0x19FB3621
 				case joaat("WEAPON_PETROLCAN"):
 					switch (_GET_CURRENT_PLAYER_CHARACTER())
 					{
-						case CHAR_MICHAEL:
+						case 0 /*CHAR_MICHAEL*/:
 							func_2(147, 1);
 							break;
 					
-						case CHAR_FRANKLIN:
+						case 1 /*CHAR_FRANKLIN*/:
 							func_2(148, 1);
 							break;
 					
-						case CHAR_TREVOR:
+						case 2 /*CHAR_TREVOR*/:
 							func_2(149, 1);
 							break;
 					}
@@ -1744,7 +1744,7 @@ void func_49() // Position - 0x1FCC Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -1757,7 +1757,7 @@ void func_49() // Position - 0x1FCC Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_50(eCharacter echParam0) // Position - 0x20C9 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x20D5 Hash - 0xAC4E9801 ^0xB379A75F
@@ -1769,14 +1769,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x20D5 Ha
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x2112 Hash - 0xADCB9755 ^0xADCB9755
@@ -1784,7 +1784,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x2112 Hash - 0xAD
 	if (func_50(character))
 		return func_53(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -2075,7 +2075,7 @@ BOOL func_62(var uParam0, int iParam1) // Position - 0x25D8 Hash - 0x95BCA6BD ^0
 		case 0:
 			*uParam0 = { -831.8538f, 172.1154f, 69.9058f };
 			uParam0->f_3 = 157.5705f;
-			uParam0->f_4 = func_65(CHAR_MICHAEL, 1);
+			uParam0->f_4 = func_65(0 /*CHAR_MICHAEL*/, 1);
 			uParam0->f_12 = 0;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -2085,7 +2085,7 @@ BOOL func_62(var uParam0, int iParam1) // Position - 0x25D8 Hash - 0x95BCA6BD ^0
 		case 1:
 			*uParam0 = { 1970.9434f, 3801.6838f, 31.1396f };
 			uParam0->f_3 = 301.3964f;
-			uParam0->f_4 = func_65(CHAR_MICHAEL, 1);
+			uParam0->f_4 = func_65(0 /*CHAR_MICHAEL*/, 1);
 			uParam0->f_12 = 0;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -2095,7 +2095,7 @@ BOOL func_62(var uParam0, int iParam1) // Position - 0x25D8 Hash - 0x95BCA6BD ^0
 		case 2:
 			*uParam0 = { -22.6297f, -1439.1368f, 29.6549f };
 			uParam0->f_3 = 180.0808f;
-			uParam0->f_4 = func_65(CHAR_FRANKLIN, 1);
+			uParam0->f_4 = func_65(1 /*CHAR_FRANKLIN*/, 1);
 			uParam0->f_12 = 1;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -2105,7 +2105,7 @@ BOOL func_62(var uParam0, int iParam1) // Position - 0x25D8 Hash - 0x95BCA6BD ^0
 		case 3:
 			*uParam0 = { -22.5229f, -1434.6986f, 29.6552f };
 			uParam0->f_3 = 141.6114f;
-			uParam0->f_4 = func_65(CHAR_FRANKLIN, 2);
+			uParam0->f_4 = func_65(1 /*CHAR_FRANKLIN*/, 2);
 			uParam0->f_12 = 1;
 			MISC::SET_BIT(&(uParam0->f_9), 19);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -2115,7 +2115,7 @@ BOOL func_62(var uParam0, int iParam1) // Position - 0x25D8 Hash - 0x95BCA6BD ^0
 		case 4:
 			*uParam0 = { 10.9281f, 545.669f, 174.7951f };
 			uParam0->f_3 = 61.392f;
-			uParam0->f_4 = func_65(CHAR_FRANKLIN, 1);
+			uParam0->f_4 = func_65(1 /*CHAR_FRANKLIN*/, 1);
 			uParam0->f_12 = 1;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -2125,7 +2125,7 @@ BOOL func_62(var uParam0, int iParam1) // Position - 0x25D8 Hash - 0x95BCA6BD ^0
 		case 5:
 			*uParam0 = { 6.1093f, 544.9742f, 174.2835f };
 			uParam0->f_3 = 92.1548f;
-			uParam0->f_4 = func_65(CHAR_FRANKLIN, 2);
+			uParam0->f_4 = func_65(1 /*CHAR_FRANKLIN*/, 2);
 			uParam0->f_12 = 1;
 			MISC::SET_BIT(&(uParam0->f_9), 19);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -2135,7 +2135,7 @@ BOOL func_62(var uParam0, int iParam1) // Position - 0x25D8 Hash - 0x95BCA6BD ^0
 		case 6:
 			*uParam0 = { 1981.4163f, 3808.1313f, 31.1384f };
 			uParam0->f_3 = 117.2557f;
-			uParam0->f_4 = func_65(CHAR_TREVOR, 1);
+			uParam0->f_4 = func_65(2 /*CHAR_TREVOR*/, 1);
 			uParam0->f_12 = 2;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -2145,7 +2145,7 @@ BOOL func_62(var uParam0, int iParam1) // Position - 0x25D8 Hash - 0x95BCA6BD ^0
 		case 7:
 			*uParam0 = { -1158.4875f, -1529.3673f, 3.8995f };
 			uParam0->f_3 = 35.7505f;
-			uParam0->f_4 = func_65(CHAR_TREVOR, 1);
+			uParam0->f_4 = func_65(2 /*CHAR_TREVOR*/, 1);
 			uParam0->f_12 = 2;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -2155,7 +2155,7 @@ BOOL func_62(var uParam0, int iParam1) // Position - 0x25D8 Hash - 0x95BCA6BD ^0
 		case 8:
 			*uParam0 = { 148.2868f, -1270.5695f, 28.2252f };
 			uParam0->f_3 = 208.4685f;
-			uParam0->f_4 = func_65(CHAR_TREVOR, 1);
+			uParam0->f_4 = func_65(2 /*CHAR_TREVOR*/, 1);
 			uParam0->f_12 = 2;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -2882,7 +2882,7 @@ int func_65(eCharacter echParam0, int iParam1) // Position - 0x3DC4 Hash - 0x3C1
 	}
 	else
 	{
-		echParam0 != _CHAR_NULL;
+		echParam0 != 145 /*_CHAR_NULL*/;
 	}
 
 	return 0;
@@ -2902,7 +2902,7 @@ void func_66(eCharacter echParam0, var uParam1, int iParam2) // Position - 0x3E0
 
 	switch (echParam0)
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			num = joaat("tailgater");
 		
 			if (Global_113969.f_9088.f_99.f_58[128] && !Global_113969.f_9088.f_99.f_58[131])
@@ -2932,7 +2932,7 @@ void func_66(eCharacter echParam0, var uParam1, int iParam2) // Position - 0x3E0
 			}
 			break;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			num = joaat("bodhi2");
 		
 			switch (num)
@@ -2952,7 +2952,7 @@ void func_66(eCharacter echParam0, var uParam1, int iParam2) // Position - 0x3E0
 			}
 			break;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			if (iParam2 == 1)
 				num = joaat("buffalo2");
 			else if (iParam2 == 2)
@@ -3053,14 +3053,14 @@ void func_68() // Position - 0x409D Hash - 0x27FBF5ED ^0x27FBF5ED
 	i = 0;
 	flag = true;
 
-	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(SCRIPT_EVENT_QUEUE_AI); i = i + 1)
+	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(0 /*SCRIPT_EVENT_QUEUE_AI*/); i = i + 1)
 	{
-		eventAtIndex = SCRIPT::GET_EVENT_AT_INDEX(SCRIPT_EVENT_QUEUE_AI, i);
+		eventAtIndex = SCRIPT::GET_EVENT_AT_INDEX(0 /*SCRIPT_EVENT_QUEUE_AI*/, i);
 	
 		switch (eventAtIndex)
 		{
-			case EVENT_ENTITY_DESTROYED:
-				SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_AI, i, &eventData, 1);
+			case 142 /*EVENT_ENTITY_DESTROYED*/:
+				SCRIPT::GET_EVENT_DATA(0 /*SCRIPT_EVENT_QUEUE_AI*/, i, &eventData, 1);
 				func_78(eventData);
 				flag = true;
 			
@@ -3120,8 +3120,8 @@ void func_68() // Position - 0x409D Hash - 0x27FBF5ED ^0x27FBF5ED
 				}
 				break;
 		
-			case EVENT_ENTITY_DAMAGED:
-				SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_AI, i, &eventData, 1);
+			case 141 /*EVENT_ENTITY_DAMAGED*/:
+				SCRIPT::GET_EVENT_DATA(0 /*SCRIPT_EVENT_QUEUE_AI*/, i, &eventData, 1);
 				func_78(eventData);
 				flag = true;
 			
@@ -3140,7 +3140,7 @@ void func_68() // Position - 0x409D Hash - 0x27FBF5ED ^0x27FBF5ED
 						{
 							pedIndexFromEntityIndex = ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(eventData);
 						
-							if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL && pedIndexFromEntityIndex != PLAYER::PLAYER_PED_ID())
+							if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/ && pedIndexFromEntityIndex != PLAYER::PLAYER_PED_ID())
 								if (ENTITY::IS_ENTITY_DEAD(eventData, false) || (float)ENTITY::GET_ENTITY_HEALTH(eventData) < 0.5f * (float)PED::GET_PED_MAX_HEALTH(pedIndexFromEntityIndex))
 									if (ENTITY::IS_ENTITY_A_PED(eventData) && PED::IS_PED_HUMAN(ENTITY::GET_PED_INDEX_FROM_ENTITY_INDEX(eventData)))
 										if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::PLAYER_PED_ID(), false))
@@ -3758,15 +3758,15 @@ BOOL func_81(Hash hParam0, float fParam1) // Position - 0x4B70 Hash - 0x91966062
 		case joaat("cruiser"):
 			switch (_GET_CURRENT_PLAYER_CHARACTER())
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					func_2(141, SYSTEM::FLOOR(fParam1 / 10f));
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					func_2(142, SYSTEM::FLOOR(fParam1 / 10f));
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					func_2(143, SYSTEM::FLOOR(fParam1 / 10f));
 					break;
 			}
@@ -3801,7 +3801,7 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 
 	type = player;
 
-	if (type != PV_COMP_INVALID)
+	if (type != -1 /*PV_COMP_INVALID*/)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{

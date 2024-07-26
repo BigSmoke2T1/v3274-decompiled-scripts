@@ -404,7 +404,7 @@ void func_16() // Position - 0x60F Hash - 0x24F8329C ^0x5DB2FA5C
 
 	if (func_6(veLocal_38))
 	{
-		pedLocal_41 = PED::CREATE_PED_INSIDE_VEHICLE(veLocal_38, PED_TYPE_MISSION, hLocal_42, -1, true, true);
+		pedLocal_41 = PED::CREATE_PED_INSIDE_VEHICLE(veLocal_38, 26 /*PED_TYPE_MISSION*/, hLocal_42, -1, true, true);
 	
 		if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(pedLocal_41))
 		{

@@ -56,7 +56,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				case 7:
 					if (iLocal_19 == 1)
 					{
-						if (func_8(FRONTEND_CONTROL, Global_20899, 0))
+						if (func_8(2 /*FRONTEND_CONTROL*/, Global_20899, 0))
 						{
 							AUDIO::PLAY_SOUND_FRONTEND(-1, "Lester_Laugh_Phone", "DLC_HEIST_HACKING_SNAKE_SOUNDS", true);
 							Global_20908 = true;
@@ -81,7 +81,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 					break;
 			
 				case 8:
-					if (func_8(FRONTEND_CONTROL, Global_20898, 0))
+					if (func_8(2 /*FRONTEND_CONTROL*/, Global_20898, 0))
 					{
 						func_4();
 						Global_20908 = true;
@@ -214,7 +214,7 @@ BOOL func_8(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Po
 	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
 	{
 		if (MISC::IS_PC_VERSION())
-			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				return false;
 	
 		if (HUD::IS_PAUSE_MENU_ACTIVE() || HUD::IS_WARNING_MESSAGE_ACTIVE())

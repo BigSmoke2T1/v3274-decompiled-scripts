@@ -690,7 +690,7 @@ BOOL func_7() // Position - 0x387 Hash - 0xA9276695 ^0x3B2A651F
 						{
 							ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(NETWORK::NET_TO_VEH(iLocal_90.f_12[0]), true);
 						
-							if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Not_Allow_As_Saved_Veh", INT))
+							if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Not_Allow_As_Saved_Veh", 3 /*INT*/))
 								DECORATOR::DECOR_SET_INT(NETWORK::NET_TO_VEH(iLocal_90.f_12[0]), "Not_Allow_As_Saved_Veh", 1);
 						
 							iLocal_90.f_15 = 1;
@@ -719,7 +719,7 @@ BOOL func_7() // Position - 0x387 Hash - 0xA9276695 ^0x3B2A651F
 					{
 						if (NETWORK::NETWORK_HAS_CONTROL_OF_NETWORK_ID(iLocal_90.f_12[0]))
 						{
-							if (func_8(&iLocal_90.f_9[0], iLocal_90.f_12[0], PED_TYPE_MISSION, hash, -1, true, true, true))
+							if (func_8(&iLocal_90.f_9[0], iLocal_90.f_12[0], 26 /*PED_TYPE_MISSION*/, hash, -1, true, true, true))
 							{
 								ENTITY::SET_ENTITY_ONLY_DAMAGED_BY_PLAYER(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), true);
 								ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), true, 0);
@@ -3102,7 +3102,7 @@ void func_81(var uParam0, int iParam1) // Position - 0x33EE Hash - 0x5E4F0835 ^0
 						func_137(&num, false);
 					
 						if (iParam1 == 1)
-							func_86("GB_BCUT_TICK1" /*You paid ~a~ ~s~a $~1~ ~s~cut.*/, _GET_BOSS_OF_LOCAL_PLAYER(), num, HUD_COLOUR_PURE_WHITE, false, true);
+							func_86("GB_BCUT_TICK1" /*You paid ~a~ ~s~a $~1~ ~s~cut.*/, _GET_BOSS_OF_LOCAL_PLAYER(), num, 0 /*HUD_COLOUR_PURE_WHITE*/, false, true);
 					
 						func_85(20);
 						func_82(_GET_BOSS_OF_LOCAL_PLAYER(), num, 1);
@@ -3175,7 +3175,7 @@ int func_86(char* sParam0, Player plParam1, int iParam2, eHudColour ehcParam3, B
 		HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(func_93(plParam1, -2, true, false, false));
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(func_91(&unk));
 	
-		if (!(ehcParam3 == HUD_COLOUR_PURE_WHITE))
+		if (!(ehcParam3 == 0 /*HUD_COLOUR_PURE_WHITE*/))
 			HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(ehcParam3);
 	
 		HUD::ADD_TEXT_COMPONENT_INTEGER(iParam2);
@@ -3276,13 +3276,13 @@ eHudColour func_93(Player plParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOO
 	Ped ped;
 
 	if (!func_20(plParam0))
-		return HUD_COLOUR_WHITE;
+		return 1 /*HUD_COLOUR_WHITE*/;
 
 	if (func_363(plParam0) && !bParam4)
 		if (bParam2)
-			return HUD_COLOUR_PURE_WHITE;
+			return 0 /*HUD_COLOUR_PURE_WHITE*/;
 		else
-			return HUD_COLOUR_WHITE;
+			return 1 /*HUD_COLOUR_WHITE*/;
 
 	if (iParam1 == -2)
 	{
@@ -3817,7 +3817,7 @@ eHudColour func_108(Player plParam0, Player plParam1, int iParam2, BOOL bParam3,
 		}
 	
 		if (Global_1836675 && Global_1836148.f_14 == plParam0)
-			return HUD_COLOUR_NET_PLAYER1;
+			return 28 /*HUD_COLOUR_NET_PLAYER1*/;
 	}
 
 	num2 = func_113(plParam0);
@@ -3826,9 +3826,9 @@ eHudColour func_108(Player plParam0, Player plParam1, int iParam2, BOOL bParam3,
 		return func_111(num2);
 
 	if (bParam3)
-		return HUD_COLOUR_PURE_WHITE;
+		return 0 /*HUD_COLOUR_PURE_WHITE*/;
 
-	return HUD_COLOUR_WHITE;
+	return 1 /*HUD_COLOUR_WHITE*/;
 }
 
 eHudColour func_109(BOOL bParam0) // Position - 0x438F Hash - 0x7105E6CE ^0x7105E6CE
@@ -4116,7 +4116,7 @@ eHudColour func_132(int iParam0, Player plParam1, BOOL bParam2) // Position - 0x
 
 	if (num2 > -1 && num2 < 17)
 		if (IS_BIT_SET(Global_4718592.f_3592[iParam0 /*25891*/].f_8534[num2], 24))
-			return HUD_COLOUR_GREEN;
+			return 18 /*HUD_COLOUR_GREEN*/;
 
 	if (iParam0 > -1 && plParam1 != _INVALID_PLAYER_INDEX())
 	{
@@ -6065,15 +6065,15 @@ void func_213(int iParam0) // Position - 0x697C Hash - 0x19E6533E ^0xF46758E8
 								{
 									switch (Global_20930)
 									{
-										case CHAR_MICHAEL:
+										case 0 /*CHAR_MICHAEL*/:
 											value3 = Global_45261;
 											break;
 									
-										case CHAR_FRANKLIN:
+										case 1 /*CHAR_FRANKLIN*/:
 											value3 = Global_45262;
 											break;
 									
-										case CHAR_TREVOR:
+										case 2 /*CHAR_TREVOR*/:
 											value3 = Global_45263;
 											break;
 									
@@ -7046,7 +7046,7 @@ BOOL func_253(eCharacter echParam0, Player plParam1, char* sParam2, BOOL bParam3
 	player = _INVALID_PLAYER_INDEX();
 	num = 0;
 
-	if (echParam0 == _CHAR_NULL)
+	if (echParam0 == 145 /*_CHAR_NULL*/)
 	{
 		player = plParam1;
 		playerName = PLAYER::GET_PLAYER_NAME(player);
@@ -7181,21 +7181,21 @@ int func_258(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char
 	switch (iParam16)
 	{
 		case 0:
-			if (Global_20930 == CHAR_MICHAEL)
+			if (Global_20930 == 0 /*CHAR_MICHAEL*/)
 				num = 0;
 			else
 				num = 1;
 			break;
 	
 		case 2:
-			if (Global_20930 == CHAR_TREVOR)
+			if (Global_20930 == 2 /*CHAR_TREVOR*/)
 				num = 0;
 			else
 				num = 1;
 			break;
 	
 		case 1:
-			if (Global_20930 == CHAR_FRANKLIN)
+			if (Global_20930 == 1 /*CHAR_FRANKLIN*/)
 				num = 0;
 			else
 				num = 1;
@@ -7278,19 +7278,19 @@ int func_258(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char
 	{
 		switch (Global_20930)
 		{
-			case CHAR_MICHAEL:
+			case 0 /*CHAR_MICHAEL*/:
 				func_265(0);
 				break;
 		
-			case CHAR_FRANKLIN:
+			case 1 /*CHAR_FRANKLIN*/:
 				func_265(1);
 				break;
 		
-			case CHAR_TREVOR:
+			case 2 /*CHAR_TREVOR*/:
 				func_265(2);
 				break;
 		
-			case CHAR_MULTIPLAYER:
+			case 3 /*CHAR_MULTIPLAYER*/:
 				func_265(3);
 				break;
 		
@@ -7335,15 +7335,15 @@ int func_258(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char
 		{
 			switch (Global_20930)
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					TEXT_LABEL_ASSIGN_STRING(&Global_20919, "Phone_SoundSet_Michael", 24);
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					TEXT_LABEL_ASSIGN_STRING(&Global_20919, "Phone_SoundSet_Trevor", 24);
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					TEXT_LABEL_ASSIGN_STRING(&Global_20919, "Phone_SoundSet_Franklin", 24);
 					break;
 			
@@ -7604,26 +7604,26 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0x88A5 Hash - 0x98476CE1 ^
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[0 /*29*/])
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[1 /*29*/])
-				Global_20930 = CHAR_FRANKLIN;
+				Global_20930 = 1 /*CHAR_FRANKLIN*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[2 /*29*/])
-				Global_20930 = CHAR_TREVOR;
+				Global_20930 = 2 /*CHAR_TREVOR*/;
 			else
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 	}
 	else
 	{
 		Global_20930 = _GET_CURRENT_PLAYER_CHARACTER();
 	
-		if (Global_20930 == _CHAR_NULL)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 == 145 /*_CHAR_NULL*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
 		if (Global_79389)
-			Global_20930 = CHAR_MULTIPLAYER;
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
-		if (Global_20930 > CHAR_MULTIPLAYER)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 > 3 /*CHAR_MULTIPLAYER*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	}
 
 	return;
@@ -7657,7 +7657,7 @@ void func_272() // Position - 0x8960 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -7670,7 +7670,7 @@ void func_272() // Position - 0x8960 Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_273(eCharacter echParam0) // Position - 0x8A5D Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x8A69 Hash - 0xAC4E9801 ^0xB379A75F
@@ -7682,14 +7682,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x8A69 Ha
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x8AA6 Hash - 0xADCB9755 ^0xADCB9755
@@ -7697,7 +7697,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x8AA6 Hash - 0xAD
 	if (func_273(character))
 		return func_276(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -8017,7 +8017,7 @@ BOOL func_290(eCharacter echParam0, Player plParam1, char* sParam2, BOOL bParam3
 	player = _INVALID_PLAYER_INDEX();
 	num = 0;
 
-	if (echParam0 == _CHAR_NULL)
+	if (echParam0 == 145 /*_CHAR_NULL*/)
 	{
 		player = plParam1;
 		playerName = PLAYER::GET_PLAYER_NAME(player);
@@ -8150,21 +8150,21 @@ int func_294(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char
 	switch (iParam16)
 	{
 		case 0:
-			if (Global_20930 == CHAR_MICHAEL)
+			if (Global_20930 == 0 /*CHAR_MICHAEL*/)
 				num = 0;
 			else
 				num = 1;
 			break;
 	
 		case 2:
-			if (Global_20930 == CHAR_TREVOR)
+			if (Global_20930 == 2 /*CHAR_TREVOR*/)
 				num = 0;
 			else
 				num = 1;
 			break;
 	
 		case 1:
-			if (Global_20930 == CHAR_FRANKLIN)
+			if (Global_20930 == 1 /*CHAR_FRANKLIN*/)
 				num = 0;
 			else
 				num = 1;
@@ -8260,22 +8260,22 @@ int func_294(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char
 		{
 			switch (Global_20930)
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					func_265(0);
 					Global_9506 = 0;
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					func_265(1);
 					Global_9506 = 1;
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					func_265(2);
 					Global_9506 = 2;
 					break;
 			
-				case CHAR_MULTIPLAYER:
+				case 3 /*CHAR_MULTIPLAYER*/:
 					func_265(3);
 					Global_9506 = 3;
 					break;
@@ -8332,15 +8332,15 @@ int func_294(eCharacter echParam0, char* sParam1, int iParam2, int iParam3, char
 		{
 			switch (Global_20930)
 			{
-				case CHAR_MICHAEL:
+				case 0 /*CHAR_MICHAEL*/:
 					TEXT_LABEL_ASSIGN_STRING(&Global_20919, "Phone_SoundSet_Michael", 24);
 					break;
 			
-				case CHAR_TREVOR:
+				case 2 /*CHAR_TREVOR*/:
 					TEXT_LABEL_ASSIGN_STRING(&Global_20919, "Phone_SoundSet_Trevor", 24);
 					break;
 			
-				case CHAR_FRANKLIN:
+				case 1 /*CHAR_FRANKLIN*/:
 					TEXT_LABEL_ASSIGN_STRING(&Global_20919, "Phone_SoundSet_Franklin", 24);
 					break;
 			
@@ -9406,13 +9406,13 @@ void func_345(eCharacter echParam0, eCharacter echParam1, BOOL bParam2) // Posit
 			func_350(echParam0, num, 1);
 			func_349(echParam0, num, 1);
 		
-			if (echParam0 == CHAR_SESSANTA && !IS_BIT_SET(Global_2738934.f_6969, 4))
+			if (echParam0 == 172 /*CHAR_SESSANTA*/ && !IS_BIT_SET(Global_2738934.f_6969, 4))
 				bParam2 = false;
 		
-			if (echParam0 == CHAR_ISLDJ4 && !IS_BIT_SET(Global_2738934.f_6969, 3))
+			if (echParam0 == 171 /*CHAR_ISLDJ4*/ && !IS_BIT_SET(Global_2738934.f_6969, 3))
 				bParam2 = false;
 		
-			if (echParam0 == CHAR_KDJ && !IS_BIT_SET(Global_2738934.f_6969, 3))
+			if (echParam0 == 173 /*CHAR_KDJ*/ && !IS_BIT_SET(Global_2738934.f_6969, 3))
 				bParam2 = false;
 		}
 	
@@ -9506,7 +9506,7 @@ void func_349(eCharacter echParam0, int iParam1, int iParam2) // Position - 0xA9
 
 	Global_2169[echParam0 /*29*/].f_24[iParam1] = iParam2;
 
-	if (echParam0 < _CHAR_UNUSED)
+	if (echParam0 < 162 /*_CHAR_UNUSED*/)
 		Global_113969.f_28054[echParam0 /*29*/].f_24[iParam1] = iParam2;
 
 	return;
@@ -9519,7 +9519,7 @@ void func_350(eCharacter echParam0, int iParam1, int iParam2) // Position - 0xA9
 
 	Global_2169[echParam0 /*29*/].f_12[iParam1] = iParam2;
 
-	if (echParam0 < _CHAR_UNUSED)
+	if (echParam0 < 162 /*_CHAR_UNUSED*/)
 		Global_113969.f_28054[echParam0 /*29*/].f_12[iParam1] = iParam2;
 
 	return;
@@ -10065,7 +10065,7 @@ void func_382() // Position - 0xB3F9 Hash - 0x1E855C34 ^0x57862B1A
 					if (func_9(iLocal_90.f_12[0]))
 						if (!func_41(iLocal_90.f_9[0]))
 							if (PED::IS_PED_SITTING_IN_VEHICLE(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), NETWORK::NET_TO_VEH(iLocal_90.f_12[0])))
-								if (TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), SCRIPT_TASK_VEHICLE_DRIVE_WANDER) != 1 && TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), SCRIPT_TASK_VEHICLE_DRIVE_WANDER) != 0)
+								if (TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), joaat("SCRIPT_TASK_VEHICLE_DRIVE_WANDER") /*SCRIPT_TASK_VEHICLE_DRIVE_WANDER*/) != 1 && TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), joaat("SCRIPT_TASK_VEHICLE_DRIVE_WANDER") /*SCRIPT_TASK_VEHICLE_DRIVE_WANDER*/) != 0)
 									TASK::TASK_VEHICLE_DRIVE_WANDER(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), NETWORK::NET_TO_VEH(iLocal_90.f_12[0]), 20f, 786603);
 			break;
 	
@@ -10082,7 +10082,7 @@ void func_382() // Position - 0xB3F9 Hash - 0x1E855C34 ^0x57862B1A
 							{
 								if (PED::IS_PED_SITTING_IN_VEHICLE(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), NETWORK::NET_TO_VEH(iLocal_90.f_12[0])))
 								{
-									if (TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), SCRIPT_TASK_VEHICLE_DRIVE_WANDER) != 1 && TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), SCRIPT_TASK_VEHICLE_DRIVE_WANDER) != 0 || IS_BIT_SET(iLocal_90, 9))
+									if (TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), joaat("SCRIPT_TASK_VEHICLE_DRIVE_WANDER") /*SCRIPT_TASK_VEHICLE_DRIVE_WANDER*/) != 1 && TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), joaat("SCRIPT_TASK_VEHICLE_DRIVE_WANDER") /*SCRIPT_TASK_VEHICLE_DRIVE_WANDER*/) != 0 || IS_BIT_SET(iLocal_90, 9))
 									{
 										TASK::TASK_VEHICLE_DRIVE_WANDER(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), NETWORK::NET_TO_VEH(iLocal_90.f_12[0]), 30f, 786469);
 									
@@ -10100,7 +10100,7 @@ void func_382() // Position - 0xB3F9 Hash - 0x1E855C34 ^0x57862B1A
 		case 3:
 			if (NETWORK::NETWORK_DOES_ENTITY_EXIST_WITH_NETWORK_ID(iLocal_90.f_9[0]))
 				if (!func_41(iLocal_90.f_9[0]))
-					if (TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), SCRIPT_TASK_LEAVE_ANY_VEHICLE) != 1 && TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), SCRIPT_TASK_LEAVE_ANY_VEHICLE) != 0)
+					if (TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), joaat("SCRIPT_TASK_LEAVE_ANY_VEHICLE") /*SCRIPT_TASK_LEAVE_ANY_VEHICLE*/) != 1 && TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), joaat("SCRIPT_TASK_LEAVE_ANY_VEHICLE") /*SCRIPT_TASK_LEAVE_ANY_VEHICLE*/) != 0)
 						if (func_386(iLocal_90.f_9[0]))
 							if (NETWORK::NETWORK_HAS_CONTROL_OF_NETWORK_ID(iLocal_90.f_9[0]))
 								TASK::TASK_LEAVE_ANY_VEHICLE(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), 0, 0);
@@ -10110,7 +10110,7 @@ void func_382() // Position - 0xB3F9 Hash - 0x1E855C34 ^0x57862B1A
 			if (NETWORK::NETWORK_DOES_ENTITY_EXIST_WITH_NETWORK_ID(iLocal_90.f_9[0]))
 				if (!func_41(iLocal_90.f_9[0]))
 					if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()))
-						if (TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), SCRIPT_TASK_SMART_FLEE_PED) != 1 && TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), SCRIPT_TASK_SMART_FLEE_PED) != 0)
+						if (TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), joaat("SCRIPT_TASK_SMART_FLEE_PED") /*SCRIPT_TASK_SMART_FLEE_PED*/) != 1 && TASK::GET_SCRIPT_TASK_STATUS(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), joaat("SCRIPT_TASK_SMART_FLEE_PED") /*SCRIPT_TASK_SMART_FLEE_PED*/) != 0)
 							if (func_386(iLocal_90.f_9[0]))
 								if (NETWORK::NETWORK_HAS_CONTROL_OF_NETWORK_ID(iLocal_90.f_9[0]))
 									TASK::TASK_SMART_FLEE_PED(NETWORK::NET_TO_PED(iLocal_90.f_9[0]), PLAYER::PLAYER_PED_ID(), 500f, -1, false, true);
@@ -10456,7 +10456,7 @@ BOOL func_398() // Position - 0xBC2B Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0xBC3A Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

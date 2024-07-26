@@ -7742,7 +7742,7 @@ void func_213() // Position - 0xAA5D Hash - 0xAC7D6003 ^0x7FBE6000
 			else
 				HUD::SET_BLIP_SCALE(blLocal_169, 1.2f);
 		
-			HUD::SET_BLIP_SPRITE(blLocal_169, BLIP_TESTOSTERONE);
+			HUD::SET_BLIP_SPRITE(blLocal_169, 403 /*BLIP_TESTOSTERONE*/);
 			HUD::SET_BLIP_COLOUR(blLocal_169, 2);
 			HUD::SET_BLIP_NAME_FROM_TEXT_FILE(blLocal_169, "ABB_BLIPN" /*Bull Shark Testosterone*/);
 		}
@@ -7864,7 +7864,7 @@ BOOL func_222() // Position - 0xAC53 Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0xAC62 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

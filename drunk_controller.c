@@ -535,7 +535,7 @@ void func_16(int iParam0) // Position - 0x770 Hash - 0x40E7AFA2 ^0x807EC556
 	Global_45036[num /*5*/].f_1 = Global_45005[iParam0 /*6*/].f_1;
 	Global_45036[num /*5*/].f_2 = 0;
 	args = { Global_45005[iParam0 /*6*/] };
-	SYSTEM::START_NEW_SCRIPT_WITH_ARGS("drunk", &args, 6, DEFAULT);
+	SYSTEM::START_NEW_SCRIPT_WITH_ARGS("drunk", &args, 6, 1424 /*DEFAULT*/);
 	SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("drunk");
 	func_19(iParam0);
 	return;

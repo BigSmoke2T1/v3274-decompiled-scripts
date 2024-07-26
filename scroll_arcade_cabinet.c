@@ -3779,18 +3779,18 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 	else
 	{
 		flag = true;
-		flag2 = espcfParam2 & SPC_AMBIENT_SCRIPT != 0;
-		flag3 = espcfParam2 & SPC_CLEAR_TASKS != 0;
-		flag4 = espcfParam2 & SPC_REMOVE_FIRES != 0;
-		flag5 = espcfParam2 & SPC_REMOVE_EXPLOSIONS != 0;
-		flag6 = espcfParam2 & SPC_REMOVE_PROJECTILES != 0;
-		flag7 = espcfParam2 & SPC_DEACTIVATE_GADGETS != 0;
-		flag8 = espcfParam2 & SPC_REENABLE_CONTROL_ON_DEATH != 0;
-		flag9 = espcfParam2 & SPC_LEAVE_CAMERA_CONTROL_ON != 0;
-		flag10 = espcfParam2 & SPC_ALLOW_PLAYER_DAMAGE != 0;
-		flag11 = espcfParam2 & SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER != 0;
-		flag12 = espcfParam2 & SPC_PREVENT_EVERYBODY_BACKOFF != 0;
-		flag13 = espcfParam2 & SPC_ALLOW_PAD_SHAKE != 0;
+		flag2 = espcfParam2 & 2 /*SPC_AMBIENT_SCRIPT*/ != 0;
+		flag3 = espcfParam2 & 4 /*SPC_CLEAR_TASKS*/ != 0;
+		flag4 = espcfParam2 & 8 /*SPC_REMOVE_FIRES*/ != 0;
+		flag5 = espcfParam2 & 16 /*SPC_REMOVE_EXPLOSIONS*/ != 0;
+		flag6 = espcfParam2 & 32 /*SPC_REMOVE_PROJECTILES*/ != 0;
+		flag7 = espcfParam2 & 64 /*SPC_DEACTIVATE_GADGETS*/ != 0;
+		flag8 = espcfParam2 & 128 /*SPC_REENABLE_CONTROL_ON_DEATH*/ != 0;
+		flag9 = espcfParam2 & 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/ != 0;
+		flag10 = espcfParam2 & 512 /*SPC_ALLOW_PLAYER_DAMAGE*/ != 0;
+		flag11 = espcfParam2 & 1024 /*SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER*/ != 0;
+		flag12 = espcfParam2 & 2048 /*SPC_PREVENT_EVERYBODY_BACKOFF*/ != 0;
+		flag13 = espcfParam2 & 4096 /*SPC_ALLOW_PAD_SHAKE*/ != 0;
 		flag14 = espcfParam2 & 8192 != 0;
 		flag15 = espcfParam2 & 16384 != 0;
 		toggle = espcfParam2 & 32768 != 0;
@@ -3947,40 +3947,40 @@ void _SET_PLAYER_CONTROL_EX(Player plParam0, BOOL bParam1, eSetPlayerControlFlag
 			flags2 = 0;
 		
 			if (flag2)
-				flags2 = flags2 | SPC_AMBIENT_SCRIPT;
+				flags2 = flags2 | 2 /*SPC_AMBIENT_SCRIPT*/;
 		
 			if (flag3)
-				flags2 = flags2 | SPC_CLEAR_TASKS;
+				flags2 = flags2 | 4 /*SPC_CLEAR_TASKS*/;
 		
 			if (flag4)
-				flags2 = flags2 | SPC_REMOVE_FIRES;
+				flags2 = flags2 | 8 /*SPC_REMOVE_FIRES*/;
 		
 			if (flag5)
-				flags2 = flags2 | SPC_REMOVE_EXPLOSIONS;
+				flags2 = flags2 | 16 /*SPC_REMOVE_EXPLOSIONS*/;
 		
 			if (flag6)
-				flags2 = flags2 | SPC_REMOVE_PROJECTILES;
+				flags2 = flags2 | 32 /*SPC_REMOVE_PROJECTILES*/;
 		
 			if (flag7)
-				flags2 = flags2 | SPC_DEACTIVATE_GADGETS;
+				flags2 = flags2 | 64 /*SPC_DEACTIVATE_GADGETS*/;
 		
 			if (flag8)
-				flags2 = flags2 | SPC_REENABLE_CONTROL_ON_DEATH;
+				flags2 = flags2 | 128 /*SPC_REENABLE_CONTROL_ON_DEATH*/;
 		
 			if (flag9)
-				flags2 = flags2 | SPC_LEAVE_CAMERA_CONTROL_ON;
+				flags2 = flags2 | 256 /*SPC_LEAVE_CAMERA_CONTROL_ON*/;
 		
 			if (flag10)
-				flags2 = flags2 | SPC_ALLOW_PLAYER_DAMAGE;
+				flags2 = flags2 | 512 /*SPC_ALLOW_PLAYER_DAMAGE*/;
 		
 			if (flag11)
-				flags2 = flags2 | SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER;
+				flags2 = flags2 | 1024 /*SPC_DONT_STOP_OTHER_CARS_AROUND_PLAYER*/;
 		
 			if (flag12)
-				flags2 = flags2 | SPC_PREVENT_EVERYBODY_BACKOFF;
+				flags2 = flags2 | 2048 /*SPC_PREVENT_EVERYBODY_BACKOFF*/;
 		
 			if (flag13)
-				flags2 = flags2 | SPC_ALLOW_PAD_SHAKE;
+				flags2 = flags2 | 4096 /*SPC_ALLOW_PAD_SHAKE*/;
 		
 			PLAYER::SET_PLAYER_CONTROL(plParam0, bParam1, flags2);
 		}
@@ -4028,7 +4028,7 @@ BOOL func_24(Ped pedParam0) // Position - 0xD9C Hash - 0x93DB01D2 ^0x43DCC591
 	}
 	else
 	{
-		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(pedParam0, SCRIPT_TASK_ENTER_VEHICLE);
+		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(pedParam0, joaat("SCRIPT_TASK_ENTER_VEHICLE") /*SCRIPT_TASK_ENTER_VEHICLE*/);
 	
 		if (scriptTaskStatus == 0)
 			return true;
@@ -4062,7 +4062,7 @@ void func_25(BOOL bParam0, Ped pedParam1, int iParam2) // Position - 0xDCD Hash 
 			{
 				if (IS_BIT_SET(Global_2621446.f_67, 2))
 				{
-					for (i = ON_FOOT; i < 8; i = i + 1)
+					for (i = 0 /*ON_FOOT*/; i < 8; i = i + 1)
 					{
 						CAM::SET_CAM_VIEW_MODE_FOR_CONTEXT(i, Global_2621446.f_58[i]);
 					}
@@ -4104,7 +4104,7 @@ void func_27() // Position - 0xEB9 Hash - 0xEFF6029E ^0x224AB476
 	{
 		if (!IS_BIT_SET(Global_2621446.f_67, 2))
 		{
-			for (i = ON_FOOT; i < 8; i = i + 1)
+			for (i = 0 /*ON_FOOT*/; i < 8; i = i + 1)
 			{
 				Global_2621446.f_58[i] = CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(i);
 			}
@@ -4145,7 +4145,7 @@ BOOL func_30(Player plParam0, int iParam1) // Position - 0xF5E Hash - 0x1A32E11A
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_31(-1, false) == CHAR_MIKE_FRANK_CONF;
+		flag = func_31(-1, false) == 8 /*CHAR_MIKE_FRANK_CONF*/;
 	else
 		flag = Global_1845281[plParam0 /*883*/].f_206 == 8;
 
@@ -4169,7 +4169,7 @@ eCharacter func_31(int iParam0, BOOL bParam1) // Position - 0xFB7 Hash - 0x1DCD3
 	if (Global_1575063[num] == true)
 	{
 		bParam1;
-		character = CHAR_MIKE_FRANK_CONF;
+		character = 8 /*CHAR_MIKE_FRANK_CONF*/;
 	}
 	else
 	{
@@ -4291,7 +4291,7 @@ int func_43() // Position - 0x116F Hash - 0x6762479D ^0xFEBE63BC
 {
 	if (PLAYER::PLAYER_ID() != _INVALID_PLAYER_INDEX())
 	{
-		if (func_46() != PV_COMP_INVALID)
+		if (func_46() != -1 /*PV_COMP_INVALID*/)
 		{
 			switch (func_44())
 			{
@@ -4320,7 +4320,7 @@ int func_44() // Position - 0x11C4 Hash - 0xB285BB6 ^0xB285BB6
 
 	type = func_46();
 
-	if (type == PV_COMP_INVALID)
+	if (type == -1 /*PV_COMP_INVALID*/)
 		return -1;
 
 	return func_45(type);
@@ -4330,19 +4330,19 @@ int func_45(ePedComponentType epctParam0) // Position - 0x11E2 Hash - 0xEE599357
 {
 	switch (epctParam0)
 	{
-		case PV_COMP_HEAD:
-		case PV_COMP_BERD:
-		case PV_COMP_HAIR:
-		case PV_COMP_UPPR:
-		case PV_COMP_LOWR:
-		case PV_COMP_HAND:
-		case PV_COMP_FEET:
-		case PV_COMP_TEEF:
-		case PV_COMP_ACCS:
-		case PV_COMP_TASK:
-		case PV_COMP_DECL:
-		case PV_COMP_JBIB:
-		case PV_COMP_MAX:
+		case 0 /*PV_COMP_HEAD*/:
+		case 1 /*PV_COMP_BERD*/:
+		case 2 /*PV_COMP_HAIR*/:
+		case 3 /*PV_COMP_UPPR*/:
+		case 4 /*PV_COMP_LOWR*/:
+		case 5 /*PV_COMP_HAND*/:
+		case 6 /*PV_COMP_FEET*/:
+		case 7 /*PV_COMP_TEEF*/:
+		case 8 /*PV_COMP_ACCS*/:
+		case 9 /*PV_COMP_TASK*/:
+		case 10 /*PV_COMP_DECL*/:
+		case 11 /*PV_COMP_JBIB*/:
+		case 12 /*PV_COMP_MAX*/:
 		case 13:
 		case 14:
 		case 15:
@@ -4802,12 +4802,12 @@ BOOL func_64() // Position - 0x1A8F Hash - 0x2A46DB35 ^0x8DCBFE6A
 {
 	eControlAction action;
 
-	action = INPUT_FRONTEND_PAUSE;
+	action = 199 /*INPUT_FRONTEND_PAUSE*/;
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-		action = INPUT_FRONTEND_ACCEPT;
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
+		action = 201 /*INPUT_FRONTEND_ACCEPT*/;
 
-	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action))
+	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action))
 		return true;
 
 	return false;
@@ -4835,7 +4835,7 @@ void func_65() // Position - 0x1AB6 Hash - 0x21AACD92 ^0x1B8EBBF9
 		TEXT_LABEL_ASSIGN_STRING(&unk, "IAP_H_LBD2", 16);
 	}
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 		TEXT_LABEL_APPEND_STRING(&unk, "_PC", 16);
 
 	if (func_68(&unk))
@@ -4913,20 +4913,20 @@ void func_70() // Position - 0x1B9E Hash - 0xED4C1AD4 ^0x4CED426B
 	if (fLocal_164.f_2943 >= 3)
 		return;
 
-	action = INPUT_SCRIPT_RB;
-	action2 = INPUT_SCRIPT_LB;
-	action3 = INPUT_FRONTEND_RDOWN;
-	action4 = INPUT_FRONTEND_RRIGHT;
+	action = 227 /*INPUT_SCRIPT_RB*/;
+	action2 = 226 /*INPUT_SCRIPT_LB*/;
+	action3 = 191 /*INPUT_FRONTEND_RDOWN*/;
+	action4 = 194 /*INPUT_FRONTEND_RRIGHT*/;
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
-		action3 = INPUT_CURSOR_ACCEPT;
-		action4 = INPUT_CURSOR_CANCEL;
-		action = INPUT_FRONTEND_UP;
-		action2 = INPUT_FRONTEND_DOWN;
+		action3 = 237 /*INPUT_CURSOR_ACCEPT*/;
+		action4 = 238 /*INPUT_CURSOR_CANCEL*/;
+		action = 188 /*INPUT_FRONTEND_UP*/;
+		action2 = 187 /*INPUT_FRONTEND_DOWN*/;
 	}
 
-	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action3))
+	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action3))
 	{
 		fLocal_164.f_2943 = fLocal_164.f_2943 + 1;
 	
@@ -4945,7 +4945,7 @@ void func_70() // Position - 0x1B9E Hash - 0xED4C1AD4 ^0x4CED426B
 		return;
 	}
 
-	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action4))
+	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action4))
 	{
 		if (fLocal_164.f_2943 > 0)
 			fLocal_164.f_2943 = fLocal_164.f_2943 - 1;
@@ -4955,9 +4955,9 @@ void func_70() // Position - 0x1B9E Hash - 0xED4C1AD4 ^0x4CED426B
 
 	num = 0;
 
-	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action))
+	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action))
 		num = 1;
-	else if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action2))
+	else if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action2))
 		num = -1;
 
 	if (num == 0)
@@ -5188,7 +5188,7 @@ ePedComponentType func_79(ePedComponentType epctParam0) // Position - 0x20BB Has
 	if (epctParam0 == _INVALID_PLAYER_INDEX())
 		return epctParam0;
 
-	if (func_83(epctParam0) != PV_COMP_INVALID)
+	if (func_83(epctParam0) != -1 /*PV_COMP_INVALID*/)
 	{
 		num = func_45(func_83(epctParam0));
 	
@@ -5247,7 +5247,7 @@ ePedComponentType func_83(ePedComponentType epctParam0) // Position - 0x21DA Has
 		else if (Global_1575083 || Global_2635563.f_2980 && epctParam0 == PLAYER::PLAYER_ID() && _NETWORK_IS_PLAYER_VALID(epctParam0, true, false))
 			return Global_2657971[epctParam0 /*465*/].f_322.f_8;
 
-	return PV_COMP_INVALID;
+	return -1 /*PV_COMP_INVALID*/;
 }
 
 BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bUnk) // Position - 0x2249 Hash - 0x3FF6E4CA ^0xE6B59972
@@ -5256,7 +5256,7 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 
 	type = player;
 
-	if (type != PV_COMP_INVALID)
+	if (type != -1 /*PV_COMP_INVALID*/)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -7495,12 +7495,12 @@ BOOL func_125() // Position - 0x74F8 Hash - 0xAFA213E8 ^0x4B270F6C
 	if (fLocal_164.f_2878 < func_137(3) + 60 + 10)
 		return false;
 
-	action = INPUT_SCRIPT_RDOWN;
+	action = 223 /*INPUT_SCRIPT_RDOWN*/;
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-		action = INPUT_CURSOR_ACCEPT;
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
+		action = 237 /*INPUT_CURSOR_ACCEPT*/;
 
-	isDisabledControlJustPressed = PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action);
+	isDisabledControlJustPressed = PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action);
 
 	if (isDisabledControlJustPressed)
 		fLocal_164.f_2725 = func_48();
@@ -9406,7 +9406,7 @@ void func_210() // Position - 0xA605 Hash - 0xA15ACE32 ^0x3439E1BE
 
 	if (fLocal_164.f_2902 == -1)
 	{
-		if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+		if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 			TEXT_LABEL_APPEND_STRING(&unk, "_PC", 16);
 	}
 	else
@@ -12918,18 +12918,18 @@ void func_298() // Position - 0x10873 Hash - 0x3C6AAF91 ^0xB3B199C6
 		return;
 	}
 
-	action = INPUT_SCRIPT_RDOWN;
-	action2 = INPUT_SCRIPT_RT;
+	action = 223 /*INPUT_SCRIPT_RDOWN*/;
+	action2 = 229 /*INPUT_SCRIPT_RT*/;
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
-		action = INPUT_CURSOR_ACCEPT;
-		action2 = INPUT_VEH_ATTACKRIGHT;
+		action = 237 /*INPUT_CURSOR_ACCEPT*/;
+		action2 = 70 /*INPUT_VEH_ATTACKRIGHT*/;
 	}
 
-	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action) || action2 != 365 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action2))
+	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action) || action2 != 365 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action2))
 		func_299(fLocal_164.f_2368.f_2 == 0);
-	else if (PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, action) || action2 != 365 && PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, action2))
+	else if (PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, action) || action2 != 365 && PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, action2))
 		func_299(false);
 	else if (fLocal_164.f_2368.f_338 > -1)
 		func_279();
@@ -13285,34 +13285,34 @@ void func_309() // Position - 0x111A1 Hash - 0x2D2841A4 ^0x7B09CEBF
 	if (func_308())
 		return;
 
-	action = INPUT_SCRIPT_PAD_LEFT;
-	action2 = INPUT_SCRIPT_PAD_RIGHT;
-	action3 = INPUT_SCRIPT_RLEFT;
-	action4 = INPUT_SCRIPT_LB;
-	action5 = INPUT_SCRIPT_RB;
-	action6 = INPUT_SCRIPT_LT;
+	action = 234 /*INPUT_SCRIPT_PAD_LEFT*/;
+	action2 = 235 /*INPUT_SCRIPT_PAD_RIGHT*/;
+	action3 = 224 /*INPUT_SCRIPT_RLEFT*/;
+	action4 = 226 /*INPUT_SCRIPT_LB*/;
+	action5 = 227 /*INPUT_SCRIPT_RB*/;
+	action6 = 228 /*INPUT_SCRIPT_LT*/;
 	action7 = 365;
 	num = 1f;
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
-		action = INPUT_SCRIPT_PAD_LEFT;
-		action2 = INPUT_SCRIPT_PAD_RIGHT;
-		action6 = INPUT_CURSOR_CANCEL;
-		action7 = INPUT_FRONTEND_DOWN;
-		action4 = INPUT_FRONTEND_LEFT;
-		action5 = INPUT_FRONTEND_RIGHT;
-		action3 = INPUT_FRONTEND_X;
+		action = 234 /*INPUT_SCRIPT_PAD_LEFT*/;
+		action2 = 235 /*INPUT_SCRIPT_PAD_RIGHT*/;
+		action6 = 238 /*INPUT_CURSOR_CANCEL*/;
+		action7 = 187 /*INPUT_FRONTEND_DOWN*/;
+		action4 = 189 /*INPUT_FRONTEND_LEFT*/;
+		action5 = 190 /*INPUT_FRONTEND_RIGHT*/;
+		action3 = 203 /*INPUT_FRONTEND_X*/;
 		num = 0.3f;
 	}
 
-	disabledControlNormal = PAD::GET_DISABLED_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_LEFT_AXIS_X);
+	disabledControlNormal = PAD::GET_DISABLED_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 218 /*INPUT_SCRIPT_LEFT_AXIS_X*/);
 
-	if (disabledControlNormal < -0.65f * num || action != 365 && PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, action))
+	if (disabledControlNormal < -0.65f * num || action != 365 && PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, action))
 	{
 		func_312(false);
 	}
-	else if (disabledControlNormal > 0.65f * num || action2 != 365 && PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, action2))
+	else if (disabledControlNormal > 0.65f * num || action2 != 365 && PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, action2))
 	{
 		func_312(true);
 	}
@@ -13325,21 +13325,21 @@ void func_309() // Position - 0x111A1 Hash - 0x2D2841A4 ^0x7B09CEBF
 			AUDIO::SET_VARIABLE_ON_SOUND(fLocal_164.f_2368.f_339, "TankSpeed", num2);
 	}
 
-	if (PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, action3))
+	if (PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, action3))
 		func_311();
 
-	disabledControlNormal2 = PAD::GET_DISABLED_CONTROL_NORMAL(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_X);
+	disabledControlNormal2 = PAD::GET_DISABLED_CONTROL_NORMAL(2 /*FRONTEND_CONTROL*/, 220 /*INPUT_SCRIPT_RIGHT_AXIS_X*/);
 
-	if (action4 != 365 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action4))
+	if (action4 != 365 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action4))
 		func_310(1, true, 0);
-	else if (action5 != 365 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action5))
+	else if (action5 != 365 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action5))
 		func_310(-1, true, 0);
-	else if (action4 != 365 && PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, action4) || disabledControlNormal2 < -0.65f * num)
+	else if (action4 != 365 && PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, action4) || disabledControlNormal2 < -0.65f * num)
 		func_310(1, false, disabledControlNormal2);
-	else if (action5 != 365 && PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, action5) || disabledControlNormal2 > 0.65f * num)
+	else if (action5 != 365 && PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, action5) || disabledControlNormal2 > 0.65f * num)
 		func_310(-1, false, disabledControlNormal2);
 
-	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action6) || action7 != 365 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action7))
+	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action6) || action7 != 365 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action7))
 	{
 		if (fLocal_164.f_2368.f_325 != 0)
 			func_234("Tank_Turret_Move", &(fLocal_164.f_2368.f_342));
@@ -13357,7 +13357,7 @@ void func_310(int iParam0, BOOL bParam1, float fParam2) // Position - 0x113BA Ha
 
 	num = 100;
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL) && fParam2 > 0.65f * 0.3f || fParam2 < -0.65f * 0.3f)
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/) && fParam2 > 0.65f * 0.3f || fParam2 < -0.65f * 0.3f)
 		num = 50;
 
 	if (!bParam1)
@@ -13807,7 +13807,7 @@ void func_328() // Position - 0x11EA7 Hash - 0x9EA1D450 ^0x9EDDA814
 	if (action == 365)
 		return;
 
-	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, action))
+	if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, action))
 	{
 		fLocal_164.f_2908 = NETWORK::GET_NETWORK_TIME() + 600;
 		fLocal_164.f_2909 = fLocal_164.f_2909 + 1;
@@ -13831,7 +13831,7 @@ eControlAction func_329() // Position - 0x11F41 Hash - 0xD04D1C06 ^0x6B78C787
 	{
 		case 0:
 		case 1:
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				return 188;
 			else
 				return 232;
@@ -13839,7 +13839,7 @@ eControlAction func_329() // Position - 0x11F41 Hash - 0xD04D1C06 ^0x6B78C787
 	
 		case 2:
 		case 3:
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				return 187;
 			else
 				return 233;
@@ -13847,7 +13847,7 @@ eControlAction func_329() // Position - 0x11F41 Hash - 0xD04D1C06 ^0x6B78C787
 	
 		case 4:
 		case 6:
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				return 189;
 			else
 				return 234;
@@ -13855,21 +13855,21 @@ eControlAction func_329() // Position - 0x11F41 Hash - 0xD04D1C06 ^0x6B78C787
 	
 		case 5:
 		case 7:
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				return 190;
 			else
 				return 235;
 			break;
 	
 		case 8:
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				return 238;
 			else
 				return 225;
 			break;
 	
 		case 9:
-			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+			if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 				return 237;
 			else
 				return 223;
@@ -13916,7 +13916,7 @@ void func_331() // Position - 0x120D9 Hash - 0xC09B0DBE ^0x132541EE
 
 	if (IS_PLAYSTATION_PLATFORM())
 		TEXT_LABEL_APPEND_STRING(&unk, "_PS4", 16);
-	else if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	else if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 		TEXT_LABEL_APPEND_STRING(&unk, "_PC", 16);
 
 	if (func_68(&unk))
@@ -15160,17 +15160,17 @@ void func_361() // Position - 0x15B6F Hash - 0xC77C1D22 ^0x55BED14E
 void func_362(BOOL bParam0) // Position - 0x15C32 Hash - 0x8355760D ^0xA9DED841
 {
 	func_375();
-	PAD::ALLOW_ALTERNATIVE_SCRIPT_CONTROLS_LAYOUT(PLAYER_CONTROL);
-	PAD::ALLOW_ALTERNATIVE_SCRIPT_CONTROLS_LAYOUT(FRONTEND_CONTROL);
+	PAD::ALLOW_ALTERNATIVE_SCRIPT_CONTROLS_LAYOUT(0 /*PLAYER_CONTROL*/);
+	PAD::ALLOW_ALTERNATIVE_SCRIPT_CONTROLS_LAYOUT(2 /*FRONTEND_CONTROL*/);
 
 	if (MISC::IS_PC_VERSION())
-		PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE_ALTERNATE, true);
+		PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 200 /*INPUT_FRONTEND_PAUSE_ALTERNATE*/, true);
 
-	PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE, true);
+	PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/, true);
 	GRAPHICS::SET_SCRIPT_GFX_DRAW_BEHIND_PAUSEMENU(false);
 	func_374(1);
 	func_373(4, -1);
-	HUD::HIDE_SCRIPTED_HUD_COMPONENT_THIS_FRAME(HUD_WEAPON_WHEEL);
+	HUD::HIDE_SCRIPTED_HUD_COMPONENT_THIS_FRAME(19 /*HUD_WEAPON_WHEEL*/);
 	func_372();
 	func_371();
 	HUD::THEFEED_HIDE_THIS_FRAME();
@@ -15407,12 +15407,12 @@ void func_380() // Position - 0x16030 Hash - 0x7B8F0131 ^0xCF055C52
 	eventData.f_4 = 10;
 	eventData.f_15 = 10;
 
-	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(SCRIPT_EVENT_QUEUE_NETWORK); i = i + 1)
+	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/); i = i + 1)
 	{
-		if (SCRIPT::GET_EVENT_AT_INDEX(SCRIPT_EVENT_QUEUE_NETWORK, i) != EVENT_NETWORK_SCRIPT_EVENT)
+		if (SCRIPT::GET_EVENT_AT_INDEX(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, i) != 174 /*EVENT_NETWORK_SCRIPT_EVENT*/)
 		{
 		}
-		else if (SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_NETWORK, i, &eventData, 26))
+		else if (SCRIPT::GET_EVENT_DATA(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, i, &eventData, 26))
 		{
 			if (eventData == -2031658982)
 			{
@@ -15607,7 +15607,7 @@ BOOL func_385(ePedComponentType epctParam0) // Position - 0x16399 Hash - 0xFE840
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID)
+			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/)
 				return func_45(Global_2657971[epctParam0 /*465*/].f_322.f_8) == 17;
 
 	return false;
@@ -15635,17 +15635,17 @@ BOOL func_386() // Position - 0x163E0 Hash - 0x5E6E4DF9 ^0x1C88A628
 	if (fLocal_164.f_2870 < 2)
 		return false;
 
-	action = INPUT_FRONTEND_CANCEL;
+	action = 202 /*INPUT_FRONTEND_CANCEL*/;
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
-		action = INPUT_FRONTEND_DELETE;
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
+		action = 214 /*INPUT_FRONTEND_DELETE*/;
 
-	if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, action) || PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, action))
+	if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, action) || PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, action))
 		func_387(1000 - MISC::ABSI(NETWORK::GET_NETWORK_TIME() - fLocal_164.f_2906), 1000, "DEG_GAME_QUIT" /*Fill bar to quit the game.*/, 1, -1, 2, -1082130432, -1082130432, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, -1, 0, -1, -1082130432, -1082130432, 0, 1, 0, 0, 1, -1, 0, -1, 1, 255, 0, -1082130432);
 	else
-		func_387(PV_COMP_HEAD, 1000, "DEG_GAME_QUIT" /*Fill bar to quit the game.*/, PV_COMP_BERD, PV_COMP_INVALID, 2, -1082130432, -1082130432, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, -1, 0, -1, -1082130432, -1082130432, 0, 1, 0, 0, 1, -1, 0, -1, 1, 255, 0, -1082130432);
+		func_387(0 /*PV_COMP_HEAD*/, 1000, "DEG_GAME_QUIT" /*Fill bar to quit the game.*/, 1 /*PV_COMP_BERD*/, -1 /*PV_COMP_INVALID*/, 2, -1082130432, -1082130432, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 1, -1, 0, -1, -1082130432, -1082130432, 0, 1, 0, 0, 1, -1, 0, -1, 1, 255, 0, -1082130432);
 
-	if (PAD::IS_DISABLED_CONTROL_PRESSED(FRONTEND_CONTROL, action))
+	if (PAD::IS_DISABLED_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, action))
 	{
 		if (fLocal_164.f_2906 == -2147483647)
 			fLocal_164.f_2906 = NETWORK::GET_NETWORK_TIME() + 1000;
@@ -15778,7 +15778,7 @@ BOOL func_393(Player plParam0, int iParam1) // Position - 0x168C9 Hash - 0x7CD50
 BOOL func_394(Player plParam0, BOOL bParam1) // Position - 0x168E1 Hash - 0x3654624B ^0x97E7BA1
 {
 	if (func_33(plParam0))
-		if (Global_1887305[plParam0 /*610*/].f_10.f_33 != PV_COMP_INVALID || bParam1 && Global_1887305[plParam0 /*610*/].f_10.f_32 != PV_COMP_INVALID)
+		if (Global_1887305[plParam0 /*610*/].f_10.f_33 != -1 /*PV_COMP_INVALID*/ || bParam1 && Global_1887305[plParam0 /*610*/].f_10.f_32 != -1 /*PV_COMP_INVALID*/)
 			return true;
 
 	return false;
@@ -15799,7 +15799,7 @@ BOOL func_396(Player plParam0) // Position - 0x1694C Hash - 0xDB07D527 ^0x6C64BC
 {
 	if (plParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(plParam0, true, true))
-			if (Global_2657971[plParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID)
+			if (Global_2657971[plParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/)
 				return func_45(Global_2657971[plParam0 /*465*/].f_322.f_8) == 15;
 
 	return false;

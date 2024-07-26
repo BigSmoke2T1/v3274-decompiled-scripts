@@ -204,7 +204,7 @@ void func_2() // Position - 0x1FD Hash - 0x7B00D8DB ^0xABCC9974
 		}
 	
 		uLocal_46.f_2 = fLocal_43.f_2 - 1f;
-		pedLocal_50 = PED::CREATE_PED(PED_TYPE_DEALER, joaat("G_M_Y_MexGoon_02"), fLocal_43, fLocal_43.f_1, uLocal_46.f_2, 0f, true, true);
+		pedLocal_50 = PED::CREATE_PED(19 /*PED_TYPE_DEALER*/, joaat("G_M_Y_MexGoon_02"), fLocal_43, fLocal_43.f_1, uLocal_46.f_2, 0f, true, true);
 	
 		if (!ENTITY::IS_ENTITY_DEAD(pedLocal_50, false))
 		{
@@ -219,7 +219,7 @@ void func_2() // Position - 0x1FD Hash - 0x7B00D8DB ^0xABCC9974
 		if (iLocal_49 == 1)
 		{
 			uLocal_46 = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(pedLocal_50, 3.8f, 0.8f, 0f) };
-			pedLocal_51 = PED::CREATE_PED(PED_TYPE_CIVFEMALE, joaat("A_F_M_BevHills_02"), uLocal_46, 0f, true, true);
+			pedLocal_51 = PED::CREATE_PED(5 /*PED_TYPE_CIVFEMALE*/, joaat("A_F_M_BevHills_02"), uLocal_46, 0f, true, true);
 		
 			if (!ENTITY::IS_ENTITY_DEAD(pedLocal_51, false))
 				TASK::TASK_TURN_PED_TO_FACE_COORD(pedLocal_51, fLocal_43, 0);
@@ -413,7 +413,7 @@ BOOL func_13() // Position - 0xB9B Hash - 0x7FE517FE ^0x128A3BC8
 
 BOOL func_14(eCharacter echParam0) // Position - 0xBB7 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_CURRENT_PLAYER_CHARACTER() // Position - 0xBC3 Hash - 0x3C5423D7 ^0x3C5423D7
@@ -444,7 +444,7 @@ void func_16() // Position - 0xBDC Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -464,14 +464,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xCD9 Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xD16 Hash - 0xADCB9755 ^0xADCB9755
@@ -479,7 +479,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xD16 Hash - 0xADC
 	if (func_14(character))
 		return func_19(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }

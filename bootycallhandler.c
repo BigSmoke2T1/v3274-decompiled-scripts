@@ -303,11 +303,11 @@ void func_1() // Position - 0xB8 Hash - 0x4C4FF34 ^0x9BC97DEC
 								TEXT_LABEL_ASSIGN_STRING(&unk, "BC_STRN_", 64);
 							}
 						
-							if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_TREVOR)
+							if (_GET_CURRENT_PLAYER_CHARACTER() == 2 /*CHAR_TREVOR*/)
 								_CONVERSATION_INITIALIZE_ACTOR(&uLocal_34, 0, PLAYER::PLAYER_PED_ID(), "TREVOR", 0, 1);
-							else if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
+							else if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
 								_CONVERSATION_INITIALIZE_ACTOR(&uLocal_34, 0, PLAYER::PLAYER_PED_ID(), "MICHAEL", 0, 1);
-							else if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN)
+							else if (_GET_CURRENT_PLAYER_CHARACTER() == 1 /*CHAR_FRANKLIN*/)
 								_CONVERSATION_INITIALIZE_ACTOR(&uLocal_34, 0, PLAYER::PLAYER_PED_ID(), "FRANKLIN", 0, 1);
 						
 							TEXT_LABEL_APPEND_INT(&unk, i, 64);
@@ -420,9 +420,9 @@ int func_4(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4, int 
 		MISC::CLEAR_BIT(&(num.f_1), 0);
 		Global_113969.f_7691.f_651[Global_113969.f_7691.f_764 /*14*/] = { num };
 		Global_113969.f_7691.f_764 = Global_113969.f_7691.f_764 + 1;
-		func_5(CHAR_MICHAEL);
-		func_5(CHAR_FRANKLIN);
-		func_5(CHAR_TREVOR);
+		func_5(0 /*CHAR_MICHAEL*/);
+		func_5(1 /*CHAR_FRANKLIN*/);
+		func_5(2 /*CHAR_TREVOR*/);
 		return 1;
 	}
 
@@ -460,7 +460,7 @@ void func_5(eCharacter echParam0) // Position - 0x445 Hash - 0xDBA91FA2 ^0x62041
 
 BOOL func_6(eCharacter echParam0) // Position - 0x503 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 int func_7(int iParam0) // Position - 0x50F Hash - 0x17C68833 ^0x17C68833
@@ -505,13 +505,13 @@ int func_9() // Position - 0x5A1 Hash - 0x35BC7314 ^0x35BC7314
 
 	switch (Global_113969.f_2366.f_539.f_4321)
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			return 1;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			return 2;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			return 4;
 	}
 
@@ -540,7 +540,7 @@ void func_10() // Position - 0x5E7 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -565,14 +565,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x6F2 Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x72F Hash - 0xADCB9755 ^0xADCB9755
@@ -580,7 +580,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x72F Hash - 0xADC
 	if (func_6(character))
 		return func_14(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }
@@ -660,7 +660,7 @@ void func_19(int iParam0) // Position - 0x7F7 Hash - 0x134FF4EE ^0xB73F4CFA
 			args.f_3 = -1;
 			args.f_4 = 1;
 			args.f_5 = 1;
-			SYSTEM::START_NEW_SCRIPT_WITH_ARGS("stripperhome", &args, 6, DEFAULT);
+			SYSTEM::START_NEW_SCRIPT_WITH_ARGS("stripperhome", &args, 6, 1424 /*DEFAULT*/);
 			func_29(Global_112962.f_1, -1);
 			Global_112962 = 3;
 		}
@@ -684,7 +684,7 @@ void func_19(int iParam0) // Position - 0x7F7 Hash - 0x134FF4EE ^0xB73F4CFA
 				args2.f_3 = iLocal_199;
 				args2.f_4 = 1;
 				args2.f_5 = 0;
-				SYSTEM::START_NEW_SCRIPT_WITH_ARGS("stripperhome", &args2, 6, DEFAULT);
+				SYSTEM::START_NEW_SCRIPT_WITH_ARGS("stripperhome", &args2, 6, 1424 /*DEFAULT*/);
 				func_29(Global_112962.f_1, -1);
 				Global_112962 = 3;
 			}
@@ -720,13 +720,13 @@ int func_21() // Position - 0x92B Hash - 0x807C9078 ^0x807C9078
 
 	switch (character)
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			return 0;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			return 1;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			return 2;
 	
 		default:
@@ -1354,26 +1354,26 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0x1383 Hash - 0x98476CE1 ^
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[0 /*29*/])
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[1 /*29*/])
-				Global_20930 = CHAR_FRANKLIN;
+				Global_20930 = 1 /*CHAR_FRANKLIN*/;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[2 /*29*/])
-				Global_20930 = CHAR_TREVOR;
+				Global_20930 = 2 /*CHAR_TREVOR*/;
 			else
-				Global_20930 = CHAR_MICHAEL;
+				Global_20930 = 0 /*CHAR_MICHAEL*/;
 	}
 	else
 	{
 		Global_20930 = _GET_CURRENT_PLAYER_CHARACTER();
 	
-		if (Global_20930 == _CHAR_NULL)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 == 145 /*_CHAR_NULL*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
 		if (Global_79389)
-			Global_20930 = CHAR_MULTIPLAYER;
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	
-		if (Global_20930 > CHAR_MULTIPLAYER)
-			Global_20930 = CHAR_MULTIPLAYER;
+		if (Global_20930 > 3 /*CHAR_MULTIPLAYER*/)
+			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
 	}
 
 	return;
@@ -1604,11 +1604,11 @@ struct<16> func_54() // Position - 0x1809 Hash - 0x324A6C54 ^0x324A6C54
 
 	TEXT_LABEL_ASSIGN_STRING(&unk, "BC_PLYRQ_", 64);
 
-	if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
+	if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
 		TEXT_LABEL_APPEND_STRING(&unk, "M", 64);
-	else if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_TREVOR)
+	else if (_GET_CURRENT_PLAYER_CHARACTER() == 2 /*CHAR_TREVOR*/)
 		TEXT_LABEL_APPEND_STRING(&unk, "T", 64);
-	else if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN)
+	else if (_GET_CURRENT_PLAYER_CHARACTER() == 1 /*CHAR_FRANKLIN*/)
 		TEXT_LABEL_APPEND_STRING(&unk, "F", 64);
 
 	return unk;
@@ -1933,13 +1933,13 @@ int func_75() // Position - 0x1E9B Hash - 0x1911CE0F ^0x81824E2F
 {
 	switch (_GET_PLAYER_CHARACTER_FROM_PED(PLAYER::PLAYER_PED_ID()))
 	{
-		case CHAR_MICHAEL:
+		case 0 /*CHAR_MICHAEL*/:
 			return 0;
 	
-		case CHAR_TREVOR:
+		case 2 /*CHAR_TREVOR*/:
 			return 2;
 	
-		case CHAR_FRANKLIN:
+		case 1 /*CHAR_FRANKLIN*/:
 			return 1;
 	}
 

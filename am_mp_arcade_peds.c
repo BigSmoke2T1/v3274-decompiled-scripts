@@ -729,7 +729,7 @@ void func_11() // Position - 0x47B Hash - 0x91CB549F ^0xA5E3D0FF
 	for (i = 5; i <= func_138() - 1; i = i + 1)
 	{
 		if (func_137(&uLocal_45[i /*22*/], i))
-			if (ENTITY::DOES_ENTITY_EXIST(uLocal_45[i /*22*/]) && TASK::GET_SCRIPT_TASK_STATUS(uLocal_45[i /*22*/], SCRIPT_TASK_PERFORM_SEQUENCE) == 1 || TASK::GET_SCRIPT_TASK_STATUS(uLocal_45[i /*22*/], SCRIPT_TASK_SYNCHRONIZED_SCENE) == 1)
+			if (ENTITY::DOES_ENTITY_EXIST(uLocal_45[i /*22*/]) && TASK::GET_SCRIPT_TASK_STATUS(uLocal_45[i /*22*/], joaat("SCRIPT_TASK_PERFORM_SEQUENCE") /*SCRIPT_TASK_PERFORM_SEQUENCE*/) == 1 || TASK::GET_SCRIPT_TASK_STATUS(uLocal_45[i /*22*/], joaat("SCRIPT_TASK_SYNCHRONIZED_SCENE") /*SCRIPT_TASK_SYNCHRONIZED_SCENE*/) == 1)
 				if (!IS_BIT_SET(uLocal_45[i /*22*/].f_5, 1))
 					if (func_12(&uLocal_45[i /*22*/], true))
 						MISC::SET_BIT(&(uLocal_45[i /*22*/].f_5), 1);
@@ -968,7 +968,7 @@ void func_26() // Position - 0x8CD Hash - 0xB044B442 ^0xCE9CBD21
 	
 		for (i = 0; i < func_138(); i = i + 1)
 		{
-			if (ENTITY::DOES_ENTITY_EXIST(uLocal_45[i /*22*/]) && TASK::GET_SCRIPT_TASK_STATUS(uLocal_45[i /*22*/], SCRIPT_TASK_PERFORM_SEQUENCE) == 1 || TASK::GET_SCRIPT_TASK_STATUS(uLocal_45[i /*22*/], SCRIPT_TASK_SYNCHRONIZED_SCENE) == 1 || uLocal_45[i /*22*/].f_17 || uLocal_45[i /*22*/].f_9 > iLocal_447.f_1 || uLocal_45.f_390 && !uLocal_45[i /*22*/].f_18 && !Global_1579724 || !uLocal_45.f_390 && uLocal_45[i /*22*/].f_18 && !Global_1579724 || !func_27(i) && uLocal_45.f_391)
+			if (ENTITY::DOES_ENTITY_EXIST(uLocal_45[i /*22*/]) && TASK::GET_SCRIPT_TASK_STATUS(uLocal_45[i /*22*/], joaat("SCRIPT_TASK_PERFORM_SEQUENCE") /*SCRIPT_TASK_PERFORM_SEQUENCE*/) == 1 || TASK::GET_SCRIPT_TASK_STATUS(uLocal_45[i /*22*/], joaat("SCRIPT_TASK_SYNCHRONIZED_SCENE") /*SCRIPT_TASK_SYNCHRONIZED_SCENE*/) == 1 || uLocal_45[i /*22*/].f_17 || uLocal_45[i /*22*/].f_9 > iLocal_447.f_1 || uLocal_45.f_390 && !uLocal_45[i /*22*/].f_18 && !Global_1579724 || !uLocal_45.f_390 && uLocal_45[i /*22*/].f_18 && !Global_1579724 || !func_27(i) && uLocal_45.f_391)
 				num = num + 1;
 		}
 	
@@ -2978,7 +2978,7 @@ void func_87(var uParam0) // Position - 0x2A29 Hash - 0x5B14CD4 ^0xF6A4BB4E
 	}
 	else
 	{
-		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(*uParam0, SCRIPT_TASK_PERFORM_SEQUENCE);
+		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(*uParam0, joaat("SCRIPT_TASK_PERFORM_SEQUENCE") /*SCRIPT_TASK_PERFORM_SEQUENCE*/);
 	
 		if (scriptTaskStatus != 0 && scriptTaskStatus != 1)
 		{
@@ -3159,7 +3159,7 @@ void func_92(var uParam0) // Position - 0x2D3A Hash - 0x10B511D7 ^0xFA4CA64D
 	}
 	else
 	{
-		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(*uParam0, SCRIPT_TASK_SYNCHRONIZED_SCENE);
+		scriptTaskStatus = TASK::GET_SCRIPT_TASK_STATUS(*uParam0, joaat("SCRIPT_TASK_SYNCHRONIZED_SCENE") /*SCRIPT_TASK_SYNCHRONIZED_SCENE*/);
 	
 		if (scriptTaskStatus != 0 && scriptTaskStatus != 1 || PED::GET_SYNCHRONIZED_SCENE_PHASE(uParam0->f_10) >= 1f)
 		{
@@ -3572,14 +3572,14 @@ void func_99(var uParam0, int iParam1) // Position - 0x3449 Hash - 0xA588AE0B ^0
 	eEventType eventAtIndex;
 	struct<3> eventData;
 
-	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(SCRIPT_EVENT_QUEUE_NETWORK); i = i + 1)
+	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/); i = i + 1)
 	{
-		eventAtIndex = SCRIPT::GET_EVENT_AT_INDEX(SCRIPT_EVENT_QUEUE_NETWORK, i);
+		eventAtIndex = SCRIPT::GET_EVENT_AT_INDEX(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, i);
 	
 		switch (eventAtIndex)
 		{
-			case EVENT_NETWORK_SCRIPT_EVENT:
-				SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_NETWORK, i, &eventData, 3);
+			case 174 /*EVENT_NETWORK_SCRIPT_EVENT*/:
+				SCRIPT::GET_EVENT_DATA(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, i, &eventData, 3);
 			
 				switch (eventData)
 				{
@@ -3601,7 +3601,7 @@ void func_100(var uParam0, int iParam1, int iParam2) // Position - 0x34B2 Hash -
 {
 	struct<5> eventData;
 
-	if (SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_NETWORK, iParam2, &eventData, 5))
+	if (SCRIPT::GET_EVENT_DATA(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam2, &eventData, 5))
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_A_PARTICIPANT(eventData.f_1))
 		{
@@ -4281,7 +4281,7 @@ void func_111(var uParam0, int iParam1) // Position - 0x3F8A Hash - 0x644A9434 ^
 		
 			if (func_132(uParam0, iParam1))
 			{
-				*uParam0 = PED::CREATE_PED(PED_TYPE_MISSION, func_131(iParam1, uParam0->f_16, uLocal_45.f_386, uLocal_45.f_387, uLocal_45.f_388, uParam0->f_11), uParam0->f_13, uParam0->f_12, false, false);
+				*uParam0 = PED::CREATE_PED(26 /*PED_TYPE_MISSION*/, func_131(iParam1, uParam0->f_16, uLocal_45.f_386, uLocal_45.f_387, uLocal_45.f_388, uParam0->f_11), uParam0->f_13, uParam0->f_12, false, false);
 			
 				if (ENTITY::DOES_ENTITY_EXIST(*uParam0))
 				{
@@ -4617,36 +4617,36 @@ void func_120(var uParam0, int iParam1) // Position - 0x45C5 Hash - 0xDBDCC334 ^
 			{
 				case 1:
 					PED::SET_PED_DEFAULT_COMPONENT_VARIATION(*uParam0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HEAD, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HAIR, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_UPPR, 4, 2, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_LOWR, 3, 2, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_FEET, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_ACCS, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_TASK, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_DECL, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 0 /*PV_COMP_HEAD*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 2 /*PV_COMP_HAIR*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 3 /*PV_COMP_UPPR*/, 4, 2, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 4 /*PV_COMP_LOWR*/, 3, 2, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 6 /*PV_COMP_FEET*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 8 /*PV_COMP_ACCS*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 9 /*PV_COMP_TASK*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 10 /*PV_COMP_DECL*/, 1, 0, 0);
 					break;
 			
 				case 2:
 					PED::SET_PED_DEFAULT_COMPONENT_VARIATION(*uParam0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HEAD, 2, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HAIR, 2, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_UPPR, 2, 2, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_LOWR, 2, 2, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_FEET, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_ACCS, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_TASK, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_DECL, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 0 /*PV_COMP_HEAD*/, 2, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 2 /*PV_COMP_HAIR*/, 2, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 3 /*PV_COMP_UPPR*/, 2, 2, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 4 /*PV_COMP_LOWR*/, 2, 2, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 6 /*PV_COMP_FEET*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 8 /*PV_COMP_ACCS*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 9 /*PV_COMP_TASK*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 10 /*PV_COMP_DECL*/, 1, 0, 0);
 					break;
 			
 				case 4:
 					PED::SET_PED_DEFAULT_COMPONENT_VARIATION(*uParam0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HEAD, 1, 1, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HAIR, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_UPPR, 0, 1, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_LOWR, 1, 1, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_ACCS, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_DECL, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 0 /*PV_COMP_HEAD*/, 1, 1, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 2 /*PV_COMP_HAIR*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 3 /*PV_COMP_UPPR*/, 0, 1, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 4 /*PV_COMP_LOWR*/, 1, 1, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 10 /*PV_COMP_DECL*/, 1, 0, 0);
 					break;
 			
 				case 5:
@@ -4660,32 +4660,32 @@ void func_120(var uParam0, int iParam1) // Position - 0x45C5 Hash - 0xDBDCC334 ^
 			{
 				case 1:
 					PED::SET_PED_DEFAULT_COMPONENT_VARIATION(*uParam0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HEAD, 2, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HAIR, 3, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_UPPR, 3, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_LOWR, 3, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HAND, 2, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_ACCS, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 0 /*PV_COMP_HEAD*/, 2, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 2 /*PV_COMP_HAIR*/, 3, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 3 /*PV_COMP_UPPR*/, 3, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 4 /*PV_COMP_LOWR*/, 3, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 5 /*PV_COMP_HAND*/, 2, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
 					PED::SET_PED_PROP_INDEX(*uParam0, 1, 0, 0, false, 1);
 					PED::SET_PED_PROP_INDEX(*uParam0, 2, 0, 0, false, 1);
 					break;
 			
 				case 2:
 					PED::SET_PED_DEFAULT_COMPONENT_VARIATION(*uParam0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HEAD, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HAIR, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_UPPR, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_LOWR, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HAND, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_ACCS, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 0 /*PV_COMP_HEAD*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 2 /*PV_COMP_HAIR*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 3 /*PV_COMP_UPPR*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 4 /*PV_COMP_LOWR*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 5 /*PV_COMP_HAND*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
 					break;
 			
 				case 3:
 					PED::SET_PED_DEFAULT_COMPONENT_VARIATION(*uParam0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HEAD, 5, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_UPPR, 5, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_LOWR, 5, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_ACCS, 4, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 0 /*PV_COMP_HEAD*/, 5, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 3 /*PV_COMP_UPPR*/, 5, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 4 /*PV_COMP_LOWR*/, 5, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 8 /*PV_COMP_ACCS*/, 4, 0, 0);
 					break;
 			}
 			break;
@@ -4695,39 +4695,39 @@ void func_120(var uParam0, int iParam1) // Position - 0x45C5 Hash - 0xDBDCC334 ^
 			{
 				case 1:
 					PED::SET_PED_DEFAULT_COMPONENT_VARIATION(*uParam0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HEAD, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_BERD, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HAIR, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_UPPR, 6, 2, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_LOWR, 6, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_FEET, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_ACCS, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_TASK, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_DECL, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 0 /*PV_COMP_HEAD*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 1 /*PV_COMP_BERD*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 2 /*PV_COMP_HAIR*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 3 /*PV_COMP_UPPR*/, 6, 2, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 4 /*PV_COMP_LOWR*/, 6, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 6 /*PV_COMP_FEET*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 9 /*PV_COMP_TASK*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 10 /*PV_COMP_DECL*/, 1, 0, 0);
 					break;
 			
 				case 2:
 					PED::SET_PED_DEFAULT_COMPONENT_VARIATION(*uParam0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HEAD, 4, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_BERD, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HAIR, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_UPPR, 6, 1, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_LOWR, 6, 1, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_FEET, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_ACCS, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_TASK, 0, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_DECL, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 0 /*PV_COMP_HEAD*/, 4, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 1 /*PV_COMP_BERD*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 2 /*PV_COMP_HAIR*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 3 /*PV_COMP_UPPR*/, 6, 1, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 4 /*PV_COMP_LOWR*/, 6, 1, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 6 /*PV_COMP_FEET*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 9 /*PV_COMP_TASK*/, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 10 /*PV_COMP_DECL*/, 1, 0, 0);
 					break;
 			
 				case 5:
 					PED::SET_PED_DEFAULT_COMPONENT_VARIATION(*uParam0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HEAD, 5, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_BERD, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_HAIR, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_UPPR, 6, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_LOWR, 6, 2, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_FEET, 1, 0, 0);
-					PED::SET_PED_COMPONENT_VARIATION(*uParam0, PV_COMP_ACCS, 0, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 0 /*PV_COMP_HEAD*/, 5, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 1 /*PV_COMP_BERD*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 2 /*PV_COMP_HAIR*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 3 /*PV_COMP_UPPR*/, 6, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 4 /*PV_COMP_LOWR*/, 6, 2, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 6 /*PV_COMP_FEET*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(*uParam0, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
 					break;
 			
 				case 4:
@@ -4768,12 +4768,12 @@ void func_122(Ped pedParam0, int* piParam1, int* piParam2) // Position - 0x4A4D 
 
 	unk = 10;
 
-	for (i = PV_COMP_HEAD; i < PV_COMP_MAX; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i < 12 /*PV_COMP_MAX*/; i = i + 1)
 	{
 		pedDrawableVariation = PED::GET_PED_DRAWABLE_VARIATION(pedParam0, i);
 		pedTextureVariation = PED::GET_PED_TEXTURE_VARIATION(pedParam0, i);
 	
-		if (i < PV_COMP_DECL)
+		if (i < 10 /*PV_COMP_DECL*/)
 		{
 			unk[i /*2*/] = pedDrawableVariation;
 			unk[i /*2*/].f_1 = pedTextureVariation;
@@ -4869,7 +4869,7 @@ void func_126(Ped pedParam0, var uParam1, var uParam2, var uParam3, var uParam4,
 {
 	ePedComponentType i;
 
-	for (i = PV_COMP_HEAD; i < PV_COMP_DECL; i = i + 1)
+	for (i = 0 /*PV_COMP_HEAD*/; i < 10 /*PV_COMP_DECL*/; i = i + 1)
 	{
 		PED::SET_PED_COMPONENT_VARIATION(pedParam0, i, uParam1[i /*2*/], uParam1[i /*2*/].f_1, 0);
 	}
@@ -5612,7 +5612,7 @@ BOOL func_154() // Position - 0x5948 Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x5957 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

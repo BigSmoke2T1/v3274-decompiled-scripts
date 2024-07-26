@@ -4046,7 +4046,7 @@ void func_20() // Position - 0x7D4 Hash - 0x29345548 ^0xAA15C6B
 																	}
 																	else if (!IS_BIT_SET(iLocal_557, 11))
 																	{
-																		func_168("KOTC_OTHRKGGN" /*A member of ~a~ ~s~is the King of the Castle ~a~~s~. Help them defend the Castle area.*/, func_209(), HUD_COLOUR_WHITE, "KOTC_KINGBLIP" /*~BLIP_PLAYER_KING~*/, func_169(PLAYER::PLAYER_ID(), -2, false, false, false), -1);
+																		func_168("KOTC_OTHRKGGN" /*A member of ~a~ ~s~is the King of the Castle ~a~~s~. Help them defend the Castle area.*/, func_209(), 1 /*HUD_COLOUR_WHITE*/, "KOTC_KINGBLIP" /*~BLIP_PLAYER_KING~*/, func_169(PLAYER::PLAYER_ID(), -2, false, false, false), -1);
 																		func_251(true);
 																		MISC::SET_BIT(&iLocal_557, 11);
 																	}
@@ -4263,7 +4263,7 @@ void func_20() // Position - 0x7D4 Hash - 0x29345548 ^0xAA15C6B
 										else
 										{
 											str3 = "KOTC_OVER3" /*<C>~a~</C> ~s~won King of the Castle with a score of ~1~*/;
-											func_34(str3, iLocal_98.f_6[i /*204*/].f_74[0 /*4*/].f_1, HUD_COLOUR_WHITE, func_82(iLocal_98.f_6[i /*204*/].f_74[0 /*4*/].f_3), false, false, false, true, false);
+											func_34(str3, iLocal_98.f_6[i /*204*/].f_74[0 /*4*/].f_1, 1 /*HUD_COLOUR_WHITE*/, func_82(iLocal_98.f_6[i /*204*/].f_74[0 /*4*/].f_3), false, false, false, true, false);
 										}
 									}
 								}
@@ -5400,7 +5400,7 @@ BOOL func_68(Player plParam0) // Position - 0x2AF8 Hash - 0xD5FE95C3 ^0xB96E335E
 		if (plParam0 == PLAYER::PLAYER_ID())
 			return true;
 		else if (NETWORK::NETWORK_HAVE_USER_CONTENT_PRIVILEGES(0))
-			if (NETWORK::NETWORK_CAN_VIEW_GAMER_USER_CONTENT(&gamerHandle) && unk_0x9F633448E4C73207(&gamerHandle))
+			if (NETWORK::NETWORK_CAN_VIEW_GAMER_USER_CONTENT(&gamerHandle) && _NETWORK_CAN_TEXT_FROM_GAMER_BE_VIEWED(&gamerHandle))
 				return true;
 
 	return false;
@@ -5417,7 +5417,7 @@ BOOL func_69(Player plParam0) // Position - 0x2B43 Hash - 0x81D8AE75 ^0x40264861
 		if (func_71(&gamerHandle))
 			return true;
 	
-		if (!unk_0x9F633448E4C73207(&gamerHandle))
+		if (!_NETWORK_CAN_TEXT_FROM_GAMER_BE_VIEWED(&gamerHandle))
 			return true;
 	
 		if (MISC::IS_ORBIS_VERSION() && !MISC::IS_PROSPERO_VERSION() || MISC::IS_PC_VERSION())
@@ -5648,20 +5648,20 @@ eHudColour func_87(int iParam0, BOOL bParam1) // Position - 0x2F96 Hash - 0x646E
 	if (func_8(iParam0) <= -1)
 	{
 		if (bParam1)
-			return HUD_COLOUR_PURPLE;
+			return 21 /*HUD_COLOUR_PURPLE*/;
 	
-		return HUD_COLOUR_PURPLE;
+		return 21 /*HUD_COLOUR_PURPLE*/;
 	}
 	else if (func_8(iParam0) == NETWORK::PARTICIPANT_ID_TO_INT())
 	{
-		return HUD_COLOUR_BLUE;
+		return 9 /*HUD_COLOUR_BLUE*/;
 	}
 	else if (func_219(PLAYER::PLAYER_ID(), func_7(iParam0)))
 	{
 		return func_169(PLAYER::PLAYER_ID(), -2, false, false, false);
 	}
 
-	return HUD_COLOUR_RED;
+	return 6 /*HUD_COLOUR_RED*/;
 }
 
 int func_88(int iParam0, BOOL bParam1) // Position - 0x2FF2 Hash - 0x866675C4 ^0x866675C4
@@ -9665,10 +9665,10 @@ struct<16> func_139(int iParam0, const char* sParam1) // Position - 0x9F41 Hash 
 
 void func_140() // Position - 0x9FE3 Hash - 0x36043CD4 ^0xFD205E70
 {
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_VEHICLE_CLASS);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_STREET_NAME);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_VEHICLE_NAME);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_AREA_NAME);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(8 /*HUD_VEHICLE_CLASS*/);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(9 /*HUD_STREET_NAME*/);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(6 /*HUD_VEHICLE_NAME*/);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(7 /*HUD_AREA_NAME*/);
 	Global_2698056 = 1;
 	return;
 }
@@ -10264,12 +10264,12 @@ void func_168(char* sParam0, const char* sParam1, eHudColour ehcParam2, char* sP
 {
 	HUD::BEGIN_TEXT_COMMAND_DISPLAY_HELP(sParam0);
 
-	if (!(ehcParam2 == HUD_COLOUR_PURE_WHITE))
+	if (!(ehcParam2 == 0 /*HUD_COLOUR_PURE_WHITE*/))
 		HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(ehcParam2);
 
 	HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(sParam1);
 
-	if (!(ehcParam4 == HUD_COLOUR_PURE_WHITE))
+	if (!(ehcParam4 == 0 /*HUD_COLOUR_PURE_WHITE*/))
 		HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(ehcParam4);
 
 	HUD::ADD_TEXT_COMPONENT_SUBSTRING_TEXT_LABEL(sParam3);
@@ -16294,12 +16294,12 @@ BOOL func_459(int* piParam0, int iParam1, var uParam2, int iParam3, BOOL bParam4
 			{
 				HUD::THEFEED_HIDE_THIS_FRAME();
 				HUD::THEFEED_SET_SCRIPTED_MENU_HEIGHT(pos);
-				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_GAME_STREAM);
+				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(18 /*HUD_GAME_STREAM*/);
 			
 				if (HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 					HUD::HIDE_HELP_TEXT_THIS_FRAME();
 			
-				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_HELP_TEXT);
+				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(10 /*HUD_HELP_TEXT*/);
 			}
 		}
 	}
@@ -16335,7 +16335,7 @@ BOOL func_459(int* piParam0, int iParam1, var uParam2, int iParam3, BOOL bParam4
 		if (HUD::IS_HELP_MESSAGE_BEING_DISPLAYED())
 			HUD::HIDE_HELP_TEXT_THIS_FRAME();
 	
-		HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_HELP_TEXT);
+		HUD::HIDE_HUD_COMPONENT_THIS_FRAME(10 /*HUD_HELP_TEXT*/);
 	
 		if (_STOPWATCH_HAS_TIME_PASSED(&(uParam2->f_19), 10000, false) || func_503() == 0 && !bParam5)
 		{
@@ -16351,7 +16351,7 @@ BOOL func_459(int* piParam0, int iParam1, var uParam2, int iParam3, BOOL bParam4
 				if (iParam1 == 29 || iParam1 == 30)
 					HUD::THEFEED_HIDE_THIS_FRAME();
 			
-				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_GAME_STREAM);
+				HUD::HIDE_HUD_COMPONENT_THIS_FRAME(18 /*HUD_GAME_STREAM*/);
 			}
 		
 			if (!IS_BIT_SET(uParam2->f_33, 0))
@@ -16363,7 +16363,7 @@ BOOL func_459(int* piParam0, int iParam1, var uParam2, int iParam3, BOOL bParam4
 					if (iParam1 == 29 || iParam1 == 30)
 						HUD::THEFEED_HIDE_THIS_FRAME();
 				
-					HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_GAME_STREAM);
+					HUD::HIDE_HUD_COMPONENT_THIS_FRAME(18 /*HUD_GAME_STREAM*/);
 				}
 			
 				HUD::THEFEED_SET_SCRIPTED_MENU_HEIGHT(pos);
@@ -17516,22 +17516,22 @@ BOOL func_496(BOOL bParam0) // Position - 0x12CBF Hash - 0xCE5DD307 ^0xCD1D2820
 	if (PAD::GET_ALLOW_MOVEMENT_WHILE_ZOOMED())
 		if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()))
 			if (func_497(PLAYER::PLAYER_PED_ID()))
-				if (PAD::IS_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_AIM) || PAD::IS_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_VEH_AIM))
+				if (PAD::IS_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 25 /*INPUT_AIM*/) || PAD::IS_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 68 /*INPUT_VEH_AIM*/))
 					return 0;
 
 	if (Global_23692.f_130)
 		return 0;
 
-	if (PAD::IS_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_CHARACTER_WHEEL) || !bParam0 && PAD::IS_DISABLED_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_CHARACTER_WHEEL))
+	if (PAD::IS_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 19 /*INPUT_CHARACTER_WHEEL*/) || !bParam0 && PAD::IS_DISABLED_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 19 /*INPUT_CHARACTER_WHEEL*/))
 		return 1;
 
 	if (MISC::IS_PC_VERSION())
 	{
-		if (PAD::IS_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_SELECT_CHARACTER_MICHAEL) || PAD::IS_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_SELECT_CHARACTER_FRANKLIN) || PAD::IS_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_SELECT_CHARACTER_TREVOR) || PAD::IS_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_SELECT_CHARACTER_MULTIPLAYER))
+		if (PAD::IS_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 166 /*INPUT_SELECT_CHARACTER_MICHAEL*/) || PAD::IS_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 167 /*INPUT_SELECT_CHARACTER_FRANKLIN*/) || PAD::IS_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 168 /*INPUT_SELECT_CHARACTER_TREVOR*/) || PAD::IS_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 169 /*INPUT_SELECT_CHARACTER_MULTIPLAYER*/))
 			return 1;
 	
 		if (!bParam0)
-			if (PAD::IS_DISABLED_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_SELECT_CHARACTER_MICHAEL) || PAD::IS_DISABLED_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_SELECT_CHARACTER_FRANKLIN) || PAD::IS_DISABLED_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_SELECT_CHARACTER_TREVOR) || PAD::IS_DISABLED_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_SELECT_CHARACTER_MULTIPLAYER))
+			if (PAD::IS_DISABLED_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 166 /*INPUT_SELECT_CHARACTER_MICHAEL*/) || PAD::IS_DISABLED_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 167 /*INPUT_SELECT_CHARACTER_FRANKLIN*/) || PAD::IS_DISABLED_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 168 /*INPUT_SELECT_CHARACTER_TREVOR*/) || PAD::IS_DISABLED_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 169 /*INPUT_SELECT_CHARACTER_MULTIPLAYER*/))
 				return 1;
 	}
 
@@ -17879,7 +17879,7 @@ void func_518(int iParam0) // Position - 0x133EF Hash - 0x8482BB43 ^0x36A0A342
 		if (HUD::DOES_TEXT_LABEL_EXIST("KOTC_AREANAME" /*King of the Castle*/))
 			HUD::SET_BLIP_NAME_FROM_TEXT_FILE(func_92(iParam0), "KOTC_AREANAME" /*King of the Castle*/);
 	
-		HUD::SET_BLIP_SPRITE(func_92(iParam0), BLIP_KING_OF_THE_CASTLE);
+		HUD::SET_BLIP_SPRITE(func_92(iParam0), 438 /*BLIP_KING_OF_THE_CASTLE*/);
 		func_519(&(uLocal_1243[iParam0 /*68*/].f_27), func_87(iParam0, true));
 	
 		if (!IS_BIT_SET(iLocal_557, 13))
@@ -17932,157 +17932,157 @@ int func_520(eHudColour ehcParam0) // Position - 0x13522 Hash - 0x434C2D6E ^0x43
 
 	switch (ehcParam0)
 	{
-		case HUD_COLOUR_WHITE:
+		case 1 /*HUD_COLOUR_WHITE*/:
 			return 4;
 	
-		case HUD_COLOUR_PURE_WHITE:
+		case 0 /*HUD_COLOUR_PURE_WHITE*/:
 			return 4;
 	
-		case HUD_COLOUR_RED:
+		case 6 /*HUD_COLOUR_RED*/:
 			return 59;
 	
-		case HUD_COLOUR_GREEN:
+		case 18 /*HUD_COLOUR_GREEN*/:
 			return 2;
 	
-		case HUD_COLOUR_YELLOWLIGHT:
+		case 13 /*HUD_COLOUR_YELLOWLIGHT*/:
 			return 5;
 	
-		case HUD_COLOUR_FREEMODE:
+		case 116 /*HUD_COLOUR_FREEMODE*/:
 			return 38;
 	
-		case HUD_COLOUR_NET_PLAYER1:
+		case 28 /*HUD_COLOUR_NET_PLAYER1*/:
 			return 6;
 	
-		case HUD_COLOUR_NET_PLAYER2:
+		case 29 /*HUD_COLOUR_NET_PLAYER2*/:
 			return 7;
 	
-		case HUD_COLOUR_NET_PLAYER3:
+		case 30 /*HUD_COLOUR_NET_PLAYER3*/:
 			return 8;
 	
-		case HUD_COLOUR_NET_PLAYER4:
+		case 31 /*HUD_COLOUR_NET_PLAYER4*/:
 			return 9;
 	
-		case HUD_COLOUR_NET_PLAYER5:
+		case 32 /*HUD_COLOUR_NET_PLAYER5*/:
 			return 10;
 	
-		case HUD_COLOUR_NET_PLAYER6:
+		case 33 /*HUD_COLOUR_NET_PLAYER6*/:
 			return 11;
 	
-		case HUD_COLOUR_NET_PLAYER7:
+		case 34 /*HUD_COLOUR_NET_PLAYER7*/:
 			return 12;
 	
-		case HUD_COLOUR_NET_PLAYER8:
+		case 35 /*HUD_COLOUR_NET_PLAYER8*/:
 			return 13;
 	
-		case HUD_COLOUR_NET_PLAYER9:
+		case 36 /*HUD_COLOUR_NET_PLAYER9*/:
 			return 14;
 	
-		case HUD_COLOUR_NET_PLAYER10:
+		case 37 /*HUD_COLOUR_NET_PLAYER10*/:
 			return 15;
 	
-		case HUD_COLOUR_NET_PLAYER11:
+		case 38 /*HUD_COLOUR_NET_PLAYER11*/:
 			return 16;
 	
-		case HUD_COLOUR_NET_PLAYER12:
+		case 39 /*HUD_COLOUR_NET_PLAYER12*/:
 			return 17;
 	
-		case HUD_COLOUR_NET_PLAYER13:
+		case 40 /*HUD_COLOUR_NET_PLAYER13*/:
 			return 18;
 	
-		case HUD_COLOUR_NET_PLAYER14:
+		case 41 /*HUD_COLOUR_NET_PLAYER14*/:
 			return 19;
 	
-		case HUD_COLOUR_NET_PLAYER15:
+		case 42 /*HUD_COLOUR_NET_PLAYER15*/:
 			return 20;
 	
-		case HUD_COLOUR_NET_PLAYER16:
+		case 43 /*HUD_COLOUR_NET_PLAYER16*/:
 			return 21;
 	
-		case HUD_COLOUR_NET_PLAYER17:
+		case 44 /*HUD_COLOUR_NET_PLAYER17*/:
 			return 22;
 	
-		case HUD_COLOUR_NET_PLAYER18:
+		case 45 /*HUD_COLOUR_NET_PLAYER18*/:
 			return 23;
 	
-		case HUD_COLOUR_NET_PLAYER19:
+		case 46 /*HUD_COLOUR_NET_PLAYER19*/:
 			return 24;
 	
-		case HUD_COLOUR_NET_PLAYER20:
+		case 47 /*HUD_COLOUR_NET_PLAYER20*/:
 			return 25;
 	
-		case HUD_COLOUR_NET_PLAYER21:
+		case 48 /*HUD_COLOUR_NET_PLAYER21*/:
 			return 26;
 	
-		case HUD_COLOUR_NET_PLAYER22:
+		case 49 /*HUD_COLOUR_NET_PLAYER22*/:
 			return 27;
 	
-		case HUD_COLOUR_NET_PLAYER23:
+		case 50 /*HUD_COLOUR_NET_PLAYER23*/:
 			return 28;
 	
-		case HUD_COLOUR_NET_PLAYER24:
+		case 51 /*HUD_COLOUR_NET_PLAYER24*/:
 			return 29;
 	
-		case HUD_COLOUR_NET_PLAYER25:
+		case 52 /*HUD_COLOUR_NET_PLAYER25*/:
 			return 30;
 	
-		case HUD_COLOUR_NET_PLAYER26:
+		case 53 /*HUD_COLOUR_NET_PLAYER26*/:
 			return 31;
 	
-		case HUD_COLOUR_NET_PLAYER27:
+		case 54 /*HUD_COLOUR_NET_PLAYER27*/:
 			return 32;
 	
-		case HUD_COLOUR_NET_PLAYER28:
+		case 55 /*HUD_COLOUR_NET_PLAYER28*/:
 			return 33;
 	
-		case HUD_COLOUR_NET_PLAYER29:
+		case 56 /*HUD_COLOUR_NET_PLAYER29*/:
 			return 34;
 	
-		case HUD_COLOUR_NET_PLAYER30:
+		case 57 /*HUD_COLOUR_NET_PLAYER30*/:
 			return 35;
 	
-		case HUD_COLOUR_NET_PLAYER31:
+		case 58 /*HUD_COLOUR_NET_PLAYER31*/:
 			return 36;
 	
-		case HUD_COLOUR_NET_PLAYER32:
+		case 59 /*HUD_COLOUR_NET_PLAYER32*/:
 			return 37;
 	
-		case HUD_COLOUR_BLUE:
+		case 9 /*HUD_COLOUR_BLUE*/:
 			return 57;
 	
-		case HUD_COLOUR_BLUELIGHT:
+		case 10 /*HUD_COLOUR_BLUELIGHT*/:
 			return 53;
 	
-		case HUD_COLOUR_FRIENDLY:
+		case 118 /*HUD_COLOUR_FRIENDLY*/:
 			return 57;
 	
-		case HUD_COLOUR_YELLOWDARK:
+		case 14 /*HUD_COLOUR_YELLOWDARK*/:
 			return 56;
 	
-		case HUD_COLOUR_GREY:
+		case 3 /*HUD_COLOUR_GREY*/:
 			return 55;
 	
-		case HUD_COLOUR_PURPLE:
+		case 21 /*HUD_COLOUR_PURPLE*/:
 			return 50;
 	
-		case HUD_COLOUR_ORANGE:
+		case 15 /*HUD_COLOUR_ORANGE*/:
 			return 51;
 	
-		case HUD_COLOUR_GREENDARK:
+		case 20 /*HUD_COLOUR_GREENDARK*/:
 			return 52;
 	
-		case HUD_COLOUR_BLUEDARK:
+		case 11 /*HUD_COLOUR_BLUEDARK*/:
 			return 54;
 	
-		case HUD_COLOUR_PURPLEDARK:
+		case 23 /*HUD_COLOUR_PURPLEDARK*/:
 			return 58;
 	
-		case HUD_COLOUR_YELLOW:
+		case 12 /*HUD_COLOUR_YELLOW*/:
 			return 60;
 	
-		case HUD_COLOUR_PINK:
+		case 24 /*HUD_COLOUR_PINK*/:
 			return 61;
 	
-		case HUD_COLOUR_GREYLIGHT:
+		case 4 /*HUD_COLOUR_GREYLIGHT*/:
 			return 62;
 	
 		default:
@@ -19590,7 +19590,7 @@ void func_568() // Position - 0x14F0C Hash - 0xAAEF7FDC ^0x5454CF56
 					}
 				}
 			
-				hudColorIndex = HUD_COLOUR_RED;
+				hudColorIndex = 6 /*HUD_COLOUR_RED*/;
 			
 				if (PLAYER::PLAYER_ID() != uLocal_1139[j /*3*/])
 					if (func_219(PLAYER::PLAYER_ID(), uLocal_1139[j /*3*/]))
@@ -19784,7 +19784,7 @@ void func_578(Player plParam0) // Position - 0x1582B Hash - 0x43CBC095 ^0xC8B22A
 {
 	eHudColour color;
 
-	color = HUD_COLOUR_RED;
+	color = 6 /*HUD_COLOUR_RED*/;
 
 	if (plParam0 > -1)
 	{
@@ -19868,7 +19868,7 @@ void func_583(Player plParam0) // Position - 0x159CF Hash - 0x547724EE ^0x4DAA87
 {
 	eHudColour color;
 
-	color = HUD_COLOUR_RED;
+	color = 6 /*HUD_COLOUR_RED*/;
 
 	if (IS_BIT_SET(iLocal_3198, plParam0))
 	{
@@ -20071,14 +20071,14 @@ void func_600() // Position - 0x15D71 Hash - 0xCAADBF4A ^0x8AF65376
 	int i;
 	eEventType eventAtIndex;
 
-	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(SCRIPT_EVENT_QUEUE_NETWORK); i = i + 1)
+	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/); i = i + 1)
 	{
-		eventAtIndex = SCRIPT::GET_EVENT_AT_INDEX(SCRIPT_EVENT_QUEUE_NETWORK, i);
+		eventAtIndex = SCRIPT::GET_EVENT_AT_INDEX(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, i);
 	
-		if (eventAtIndex == EVENT_NETWORK_DAMAGE_ENTITY)
+		if (eventAtIndex == 186 /*EVENT_NETWORK_DAMAGE_ENTITY*/)
 			func_601(i);
 	
-		eventAtIndex == EVENT_NETWORK_PLAYER_LEFT_SCRIPT;
+		eventAtIndex == 154 /*EVENT_NETWORK_PLAYER_LEFT_SCRIPT*/;
 	}
 
 	return;
@@ -20104,7 +20104,7 @@ void func_601(int iParam0) // Position - 0x15DAC Hash - 0x2AD720C4 ^0x54A1DEA1
 	num = -1;
 	num2 = -1;
 	player = -1;
-	SCRIPT::GET_EVENT_DATA(SCRIPT_EVENT_QUEUE_NETWORK, iParam0, &eventData, 13);
+	SCRIPT::GET_EVENT_DATA(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0, &eventData, 13);
 
 	if (ENTITY::DOES_ENTITY_EXIST(eventData))
 	{
@@ -20354,7 +20354,7 @@ Vector3 func_610(Ped pedParam0, BOOL bParam1) // Position - 0x16229 Hash - 0x1FB
 	if (CAM::IS_GAMEPLAY_CAM_RENDERING())
 		gameplayCamRot = { CAM::GET_GAMEPLAY_CAM_ROT(2) };
 
-	if (pedParam0 == func_611(PLAYER::PLAYER_PED_ID()) && CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == FIRST_PERSON)
+	if (pedParam0 == func_611(PLAYER::PLAYER_PED_ID()) && CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == 4 /*FIRST_PERSON*/)
 		offsetFromEntityInWorldCoords = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(pedParam0, 0f, 8f, -0.2f) };
 	else
 		offsetFromEntityInWorldCoords = { ENTITY::GET_ENTITY_COORDS(pedParam0, false) };
@@ -20365,7 +20365,7 @@ Vector3 func_610(Ped pedParam0, BOOL bParam1) // Position - 0x16229 Hash - 0x1FB
 	{
 		entityHeading = ENTITY::GET_ENTITY_HEADING(pedParam0);
 	
-		if (CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == FIRST_PERSON)
+		if (CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == 4 /*FIRST_PERSON*/)
 			entityHeading = gameplayCamRot.f_2;
 	}
 
@@ -22280,7 +22280,7 @@ void func_668(var uParam0, int iParam1) // Position - 0x18A02 Hash - 0x5E4F0835 
 						func_674(&num, false);
 					
 						if (iParam1 == 1)
-							func_673("GB_BCUT_TICK1" /*You paid ~a~ ~s~a $~1~ ~s~cut.*/, _GET_BOSS_OF_LOCAL_PLAYER(), num, HUD_COLOUR_PURE_WHITE, false, true);
+							func_673("GB_BCUT_TICK1" /*You paid ~a~ ~s~a $~1~ ~s~cut.*/, _GET_BOSS_OF_LOCAL_PLAYER(), num, 0 /*HUD_COLOUR_PURE_WHITE*/, false, true);
 					
 						func_672(20);
 						func_669(_GET_BOSS_OF_LOCAL_PLAYER(), num, 1);
@@ -22353,7 +22353,7 @@ int func_673(char* sParam0, Player plParam1, int iParam2, eHudColour ehcParam3, 
 		HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(func_169(plParam1, -2, true, false, false));
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(func_44(&unk));
 	
-		if (!(ehcParam3 == HUD_COLOUR_PURE_WHITE))
+		if (!(ehcParam3 == 0 /*HUD_COLOUR_PURE_WHITE*/))
 			HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(ehcParam3);
 	
 		HUD::ADD_TEXT_COMPONENT_INTEGER(iParam2);
@@ -23382,7 +23382,7 @@ BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x1A04F Hash - 0x52E21E9B 
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x1A0D3 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

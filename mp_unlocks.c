@@ -1582,10 +1582,10 @@ BOOL func_40(int iParam0) // Position - 0x22EB Hash - 0x29D43DB3 ^0x29D43DB3
 			return func_35(81, -1);
 	
 		case 5:
-			return func_13(1259, -1) > PV_COMP_HEAD;
+			return func_13(1259, -1) > 0 /*PV_COMP_HEAD*/;
 	
 		case 6:
-			return func_13(1261, -1) > PV_COMP_HEAD;
+			return func_13(1261, -1) > 0 /*PV_COMP_HEAD*/;
 	
 		case 7:
 			return func_35(83, -1);
@@ -1651,25 +1651,25 @@ BOOL func_40(int iParam0) // Position - 0x22EB Hash - 0x29D43DB3 ^0x29D43DB3
 			return func_35(84, -1);
 	
 		case 28:
-			return func_13(1265, -1) > PV_COMP_HEAD;
+			return func_13(1265, -1) > 0 /*PV_COMP_HEAD*/;
 	
 		case 29:
 			return func_35(85, -1);
 	
 		case 30:
-			return func_13(1263, -1) > PV_COMP_HEAD;
+			return func_13(1263, -1) > 0 /*PV_COMP_HEAD*/;
 	
 		case 31:
-			return func_13(1267, -1) > PV_COMP_HEAD;
+			return func_13(1267, -1) > 0 /*PV_COMP_HEAD*/;
 	
 		case 32:
-			return func_13(1260, -1) > PV_COMP_HEAD;
+			return func_13(1260, -1) > 0 /*PV_COMP_HEAD*/;
 	
 		case 33:
-			return func_13(1266, -1) > PV_COMP_HEAD;
+			return func_13(1266, -1) > 0 /*PV_COMP_HEAD*/;
 	
 		case 34:
-			return func_13(1249, -1) > PV_COMP_HEAD;
+			return func_13(1249, -1) > 0 /*PV_COMP_HEAD*/;
 	
 		case 35:
 			return func_35(86, -1);
@@ -1688,10 +1688,10 @@ BOOL func_40(int iParam0) // Position - 0x22EB Hash - 0x29D43DB3 ^0x29D43DB3
 			return _STAT_GET_PACKED_BOOL(26, -1);
 	
 		case 39:
-			return func_13(1258, -1) > PV_COMP_HEAD;
+			return func_13(1258, -1) > 0 /*PV_COMP_HEAD*/;
 	
 		case 40:
-			return func_13(1168, -1) > PV_COMP_HEAD;
+			return func_13(1168, -1) > 0 /*PV_COMP_HEAD*/;
 	
 		case 41:
 			return _STAT_GET_PACKED_BOOL(5, -1);
@@ -1700,7 +1700,7 @@ BOOL func_40(int iParam0) // Position - 0x22EB Hash - 0x29D43DB3 ^0x29D43DB3
 			return _STAT_GET_PACKED_BOOL(1, -1);
 	
 		case 43:
-			return func_13(1148, -1) > PV_COMP_HEAD || func_13(1149, -1) > PV_COMP_HEAD;
+			return func_13(1148, -1) > 0 /*PV_COMP_HEAD*/ || func_13(1149, -1) > 0 /*PV_COMP_HEAD*/;
 	
 		case 44:
 			return _STAT_GET_PACKED_BOOL(10, -1);
@@ -1724,7 +1724,7 @@ BOOL func_41() // Position - 0x2646 Hash - 0x34774387 ^0xBA7626C0
 
 	num = 0;
 
-	if (func_13(2090, -1) > PV_COMP_HEAD)
+	if (func_13(2090, -1) > 0 /*PV_COMP_HEAD*/)
 		num = 1;
 
 	return num;
@@ -2031,7 +2031,7 @@ ePedComponentType func_54(int iParam0) // Position - 0x29D7 Hash - 0x9415D4FD ^0
 			return type;
 	}
 
-	return PV_COMP_INVALID;
+	return -1 /*PV_COMP_INVALID*/;
 }
 
 ePedComponentType func_55() // Position - 0x2BD0 Hash - 0x6D95EA00 ^0x6D95EA00
@@ -2053,7 +2053,7 @@ int func_56(int iParam0) // Position - 0x2BED Hash - 0x70D78BC4 ^0x15063988
 	for (i = 0; i < 1500; i = i + 1)
 	{
 		if (IS_BIT_SET(Global_794744.f_4[i /*89*/].f_76, 14))
-			if (Global_794744.f_4[i /*89*/].f_65 < 13 && Global_794744.f_4[i /*89*/].f_70 <= 1000 && Global_794744.f_4[i /*89*/].f_68 == iParam0 && Global_794744.f_4[i /*89*/].f_65 == PV_COMP_HAIR)
+			if (Global_794744.f_4[i /*89*/].f_65 < 13 && Global_794744.f_4[i /*89*/].f_70 <= 1000 && Global_794744.f_4[i /*89*/].f_68 == iParam0 && Global_794744.f_4[i /*89*/].f_65 == 2 /*PV_COMP_HAIR*/)
 				num = num + 1;
 	}
 
@@ -2178,7 +2178,7 @@ ePedComponentType func_64(int iParam0) // Position - 0x2DEC Hash - 0xC61E502D ^0
 		switch (iParam0)
 		{
 			case 1:
-				return PV_COMP_HEAD;
+				return 0 /*PV_COMP_HEAD*/;
 		
 			case 2:
 				return 800;
@@ -2505,7 +2505,7 @@ ePedComponentType func_66(Player plParam0) // Position - 0x333A Hash - 0xA3072EF
 	else
 		return func_13(640, -1);
 
-	return PV_COMP_HEAD;
+	return 0 /*PV_COMP_HEAD*/;
 }
 
 BOOL func_67(Player plParam0) // Position - 0x3391 Hash - 0x392A396A ^0x1DEEBA83
@@ -2654,7 +2654,7 @@ BOOL func_75(eControlAction ecaParam0) // Position - 0x35E3 Hash - 0x8A518C92 ^0
 	num = func_20(action);
 	offset = func_9(action);
 
-	if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, ecaParam0) || PAD::IS_DISABLED_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, ecaParam0) || func_76(ecaParam0, &(Global_1668667.f_1060), 1))
+	if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, ecaParam0) || PAD::IS_DISABLED_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, ecaParam0) || func_76(ecaParam0, &(Global_1668667.f_1060), 1))
 	{
 		if (!IS_BIT_SET(Global_1668667.f_1049[num], offset))
 		{
@@ -2676,13 +2676,13 @@ BOOL func_76(eControlAction ecaParam0, var uParam1, int iParam2) // Position - 0
 	int num2;
 	int num3;
 
-	num = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_FRONTEND_AXIS_X) - 127;
-	num2 = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_FRONTEND_AXIS_Y) - 127;
-	num3 = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT_AXIS_X) - 127;
+	num = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 195 /*INPUT_FRONTEND_AXIS_X*/) - 127;
+	num2 = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 196 /*INPUT_FRONTEND_AXIS_Y*/) - 127;
+	num3 = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 197 /*INPUT_FRONTEND_RIGHT_AXIS_X*/) - 127;
 
 	switch (ecaParam0)
 	{
-		case INPUT_FRONTEND_LEFT:
+		case 189 /*INPUT_FRONTEND_LEFT*/:
 			if (num < -30)
 			{
 				if (*uParam1 < MISC::GET_GAME_TIMER() || iParam2 == 0)
@@ -2693,7 +2693,7 @@ BOOL func_76(eControlAction ecaParam0, var uParam1, int iParam2) // Position - 0
 			}
 			break;
 	
-		case INPUT_FRONTEND_RIGHT:
+		case 190 /*INPUT_FRONTEND_RIGHT*/:
 			if (num > 30)
 			{
 				if (*uParam1 < MISC::GET_GAME_TIMER() || iParam2 == 0)
@@ -2704,7 +2704,7 @@ BOOL func_76(eControlAction ecaParam0, var uParam1, int iParam2) // Position - 0
 			}
 			break;
 	
-		case INPUT_FRONTEND_UP:
+		case 188 /*INPUT_FRONTEND_UP*/:
 			if (num2 < -30)
 			{
 				if (*uParam1 < MISC::GET_GAME_TIMER() || iParam2 == 0)
@@ -2715,7 +2715,7 @@ BOOL func_76(eControlAction ecaParam0, var uParam1, int iParam2) // Position - 0
 			}
 			break;
 	
-		case INPUT_FRONTEND_DOWN:
+		case 187 /*INPUT_FRONTEND_DOWN*/:
 			if (num2 > 30)
 			{
 				if (*uParam1 < MISC::GET_GAME_TIMER() || iParam2 == 0)
@@ -2726,7 +2726,7 @@ BOOL func_76(eControlAction ecaParam0, var uParam1, int iParam2) // Position - 0
 			}
 			break;
 	
-		case INPUT_FRONTEND_RRIGHT:
+		case 194 /*INPUT_FRONTEND_RRIGHT*/:
 			if (num3 > 30)
 			{
 				if (*uParam1 < MISC::GET_GAME_TIMER() || iParam2 == 0)
@@ -2737,7 +2737,7 @@ BOOL func_76(eControlAction ecaParam0, var uParam1, int iParam2) // Position - 0
 			}
 			break;
 	
-		case INPUT_FRONTEND_RLEFT:
+		case 193 /*INPUT_FRONTEND_RLEFT*/:
 			if (num3 < -30)
 			{
 				if (*uParam1 < MISC::GET_GAME_TIMER() || iParam2 == 0)
@@ -2756,9 +2756,9 @@ void func_77() // Position - 0x37DA Hash - 0x3DF3E21E ^0x1AEAF3AB
 {
 	int controlValue;
 
-	if (!PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (!PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
-		controlValue = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_SCRIPT_RIGHT_AXIS_Y);
+		controlValue = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 221 /*INPUT_SCRIPT_RIGHT_AXIS_Y*/);
 	
 		if (controlValue > 180)
 		{

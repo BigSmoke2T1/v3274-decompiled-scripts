@@ -267,8 +267,8 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 	while (true)
 	{
 		func_125();
-		PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE, true);
-		PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE_ALTERNATE, true);
+		PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/, true);
+		PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 200 /*INPUT_FRONTEND_PAUSE_ALTERNATE*/, true);
 	
 		if (_SHOULD_NETWORK_SCRIPT_TERMINATE())
 			func_126();
@@ -349,7 +349,7 @@ void func_3(var uParam0, var uParam1) // Position - 0x1B3 Hash - 0x8BC2932B ^0x3
 	func_9();
 	finalRenderedCamCoord = { CAM::GET_FINAL_RENDERED_CAM_COORD() };
 
-	if (HUD::IS_PAUSE_MENU_ACTIVE() || func_8() || PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE) || PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE) || PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE))
+	if (HUD::IS_PAUSE_MENU_ACTIVE() || func_8() || PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/) || PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/) || PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/))
 	{
 		HUD::SET_FAKE_PAUSEMAP_PLAYER_POSITION_THIS_FRAME(finalRenderedCamCoord, finalRenderedCamCoord.f_1);
 		HUD::SET_FAKE_GPS_PLAYER_POSITION_THIS_FRAME(finalRenderedCamCoord, finalRenderedCamCoord.f_1, 0);
@@ -375,7 +375,7 @@ void func_3(var uParam0, var uParam1) // Position - 0x1B3 Hash - 0x8BC2932B ^0x3
 	if (!HUD::DOES_BLIP_EXIST(*uParam0))
 	{
 		*uParam1 = func_5(finalRenderedCamCoord, false);
-		HUD::SET_BLIP_SPRITE(*uParam1, BLIP_CENTRE_STROKE);
+		HUD::SET_BLIP_SPRITE(*uParam1, 425 /*BLIP_CENTRE_STROKE*/);
 		HUD::SHOW_HEIGHT_ON_BLIP(*uParam1, false);
 		HUD::SET_BLIP_DISPLAY(*uParam1, 4);
 		HUD::SET_BLIP_COLOUR(*uParam1, func_4(2));
@@ -383,10 +383,10 @@ void func_3(var uParam0, var uParam1) // Position - 0x1B3 Hash - 0x8BC2932B ^0x3
 		HUD::SET_BLIP_SCALE(*uParam1, 0.54f);
 		HUD::SET_BLIP_PRIORITY(*uParam1, 13 + 1);
 		*uParam0 = func_5(finalRenderedCamCoord, false);
-		HUD::SET_BLIP_SPRITE(*uParam0, BLIP_CENTRE_STROKE);
+		HUD::SET_BLIP_SPRITE(*uParam0, 425 /*BLIP_CENTRE_STROKE*/);
 		HUD::SHOW_HEIGHT_ON_BLIP(*uParam0, false);
 		HUD::SET_BLIP_DISPLAY(*uParam0, 4);
-		HUD::SET_BLIP_COLOUR(*uParam0, func_4(HUD_COLOUR_GREEN));
+		HUD::SET_BLIP_COLOUR(*uParam0, func_4(18 /*HUD_COLOUR_GREEN*/));
 		HUD::SET_BLIP_SHOW_CONE(*uParam0, true, 11);
 		HUD::SET_BLIP_SCALE(*uParam0, 0.44f);
 		HUD::SET_BLIP_PRIORITY(*uParam0, 13 + 1);
@@ -679,7 +679,7 @@ void func_14(var uParam0, var uParam1) // Position - 0x761 Hash - 0x48BC390F ^0x
 	
 		if (flag)
 		{
-			if (!*uParam1 || PAD::HAVE_CONTROLS_CHANGED(FRONTEND_CONTROL) || PAD::HAVE_CONTROLS_CHANGED(PLAYER_CONTROL))
+			if (!*uParam1 || PAD::HAVE_CONTROLS_CHANGED(2 /*FRONTEND_CONTROL*/) || PAD::HAVE_CONTROLS_CHANGED(0 /*PLAYER_CONTROL*/))
 			{
 				func_31(-1);
 			
@@ -741,14 +741,14 @@ void func_15(int iParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4, 
 
 	if (Global_23831.f_5326 != 0)
 	{
-		if (PAD::HAVE_CONTROLS_CHANGED(FRONTEND_CONTROL))
+		if (PAD::HAVE_CONTROLS_CHANGED(2 /*FRONTEND_CONTROL*/))
 		{
 			for (i = 0; i < Global_23831.f_5326; i = i + 1)
 			{
 				if (Global_23831.f_5625[i] != 365)
-					TEXT_LABEL_ASSIGN_STRING(&Global_23831.f_5328[i /*16*/], PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, Global_23831.f_5625[i], true), 64);
+					TEXT_LABEL_ASSIGN_STRING(&Global_23831.f_5328[i /*16*/], PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, Global_23831.f_5625[i], true), 64);
 				else if (Global_23831.f_5640[i] != 32)
-					TEXT_LABEL_ASSIGN_STRING(&Global_23831.f_5328[i /*16*/], PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, Global_23831.f_5640[i], true), 64);
+					TEXT_LABEL_ASSIGN_STRING(&Global_23831.f_5328[i /*16*/], PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, Global_23831.f_5640[i], true), 64);
 			}
 		
 			Global_23831.f_5327 = 0;
@@ -914,13 +914,13 @@ void func_15(int iParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4, 
 		{
 			if (!Global_23831.f_9116)
 			{
-				HUD::SET_HUD_COMPONENT_POSITION(HUD_SUBTITLE_TEXT, 0f, -0.0375f);
+				HUD::SET_HUD_COMPONENT_POSITION(15 /*HUD_SUBTITLE_TEXT*/, 0f, -0.0375f);
 				Global_23831.f_9116 = 1;
 			}
 		}
 		else if (Global_23831.f_9116)
 		{
-			HUD::RESET_HUD_COMPONENT_VALUES(HUD_SUBTITLE_TEXT);
+			HUD::RESET_HUD_COMPONENT_VALUES(15 /*HUD_SUBTITLE_TEXT*/);
 			Global_23831.f_9116 = 0;
 		}
 	
@@ -963,7 +963,7 @@ BOOL func_18(Player plParam0, int iParam1) // Position - 0xD1C Hash - 0x1A32E11A
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_19(-1, false) == CHAR_MIKE_FRANK_CONF;
+		flag = func_19(-1, false) == 8 /*CHAR_MIKE_FRANK_CONF*/;
 	else
 		flag = Global_1845281[plParam0 /*883*/].f_206 == 8;
 
@@ -987,7 +987,7 @@ eCharacter func_19(int iParam0, BOOL bParam1) // Position - 0xD75 Hash - 0x1DCD3
 	if (Global_1575063[num] == true)
 	{
 		bParam1;
-		character = CHAR_MIKE_FRANK_CONF;
+		character = 8 /*CHAR_MIKE_FRANK_CONF*/;
 	}
 	else
 	{
@@ -1057,7 +1057,7 @@ BOOL func_24(BOOL bParam0, BOOL bParam1) // Position - 0xE6C Hash - 0x64BEBD7A ^
 	if (Global_2672855.f_1728.f_701 != 0)
 		return true;
 
-	if (!CAM::IS_SCREEN_FADED_IN() || func_26(8, -1) && func_25() != TRANSITION_STATE_WAITING_FOR_EXTERNAL_TERMINATION_CALL || HUD::GET_PAUSE_MENU_STATE() != 0 && !bParam1 || STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() && !bParam0 || NETWORK::IS_COMMERCE_STORE_OPEN() || Global_79650 || Global_23831.f_9115 || HUD::IS_WARNING_MESSAGE_ACTIVE() || Global_101585.f_1482)
+	if (!CAM::IS_SCREEN_FADED_IN() || func_26(8, -1) && func_25() != 65 /*TRANSITION_STATE_WAITING_FOR_EXTERNAL_TERMINATION_CALL*/ || HUD::GET_PAUSE_MENU_STATE() != 0 && !bParam1 || STREAMING::IS_PLAYER_SWITCH_IN_PROGRESS() && !bParam0 || NETWORK::IS_COMMERCE_STORE_OPEN() || Global_79650 || Global_23831.f_9115 || HUD::IS_WARNING_MESSAGE_ACTIVE() || Global_101585.f_1482)
 		return false;
 
 	return true;
@@ -1133,7 +1133,7 @@ void func_29(eControlAction ecaParam0, char* sParam1, int iParam2, BOOL bParam3)
 {
 	const char* controlInstructionalButtonsString;
 
-	controlInstructionalButtonsString = PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, ecaParam0, true);
+	controlInstructionalButtonsString = PAD::GET_CONTROL_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, ecaParam0, true);
 
 	if (Global_23831.f_5326 >= 14)
 	{
@@ -1160,7 +1160,7 @@ void func_30(int iParam0, char* sParam1, int iParam2) // Position - 0x10B0 Hash 
 {
 	const char* controlGroupInstructionalButtonsString;
 
-	controlGroupInstructionalButtonsString = PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(FRONTEND_CONTROL, iParam0, true);
+	controlGroupInstructionalButtonsString = PAD::GET_CONTROL_GROUP_INSTRUCTIONAL_BUTTONS_STRING(2 /*FRONTEND_CONTROL*/, iParam0, true);
 
 	if (Global_23831.f_5326 >= 14)
 	{
@@ -1265,47 +1265,47 @@ BOOL func_32(char* sParam0, int iParam1, BOOL bParam2) // Position - 0x1218 Hash
 	return flag && flag2;
 }
 
-BOOL func_33(int iParam0) // Position - 0x131F Hash - 0x55978EE6 ^0xF39227AE
+BOOL func_33(int* piParam0) // Position - 0x131F Hash - 0x55978EE6 ^0xF39227AE
 {
-	switch (iParam0->f_9)
+	switch (piParam0->f_9)
 	{
 		case 0:
-			if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
+			if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
 			{
-				*iParam0 = GRAPHICS::REQUEST_SCALEFORM_MOVIE(&(iParam0->f_1));
-				iParam0->f_9 = 1;
+				*piParam0 = GRAPHICS::REQUEST_SCALEFORM_MOVIE(&(piParam0->f_1));
+				piParam0->f_9 = 1;
 			
-				if (iParam0->f_7)
+				if (piParam0->f_7)
 				{
-					if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
+					if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
 					{
-						iParam0->f_8 = MISC::GET_GAME_TIMER();
-						iParam0->f_9 = 2;
+						piParam0->f_8 = MISC::GET_GAME_TIMER();
+						piParam0->f_9 = 2;
 					}
 				}
 			}
 			else
 			{
-				iParam0->f_8 = MISC::GET_GAME_TIMER();
-				iParam0->f_9 = 2;
+				piParam0->f_8 = MISC::GET_GAME_TIMER();
+				piParam0->f_9 = 2;
 			}
 			break;
 	
 		case 1:
-			if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
+			if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
 			{
-				iParam0->f_8 = MISC::GET_GAME_TIMER();
-				iParam0->f_9 = 2;
+				piParam0->f_8 = MISC::GET_GAME_TIMER();
+				piParam0->f_9 = 2;
 			}
 			break;
 	
 		case 2:
-			if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
-				iParam0->f_9 = 0;
+			if (!GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
+				piParam0->f_9 = 0;
 			break;
 	}
 
-	return iParam0->f_9 == 2;
+	return piParam0->f_9 == 2;
 }
 
 void func_34() // Position - 0x13C1 Hash - 0xE5CA81A ^0xC6B722C5
@@ -1605,10 +1605,10 @@ struct<4> func_47(Cam caParam0, var uParam1, var uParam2, var uParam3, var uPara
 	camFov = CAM::GET_CAM_FOV(caParam0);
 	num = -camFov;
 	num.f_1 = { -*uParam1 };
-	disabledControlNormal = PAD::GET_DISABLED_CONTROL_NORMAL(PLAYER_CONTROL, INPUT_SNIPER_ZOOM);
-	vector = { -{ PAD::GET_DISABLED_CONTROL_UNBOUND_NORMAL(PLAYER_CONTROL, INPUT_SCALED_LOOK_LR), 0f, PAD::GET_DISABLED_CONTROL_UNBOUND_NORMAL(PLAYER_CONTROL, INPUT_SCALED_LOOK_UD) } };
+	disabledControlNormal = PAD::GET_DISABLED_CONTROL_NORMAL(0 /*PLAYER_CONTROL*/, 39 /*INPUT_SNIPER_ZOOM*/);
+	vector = { -{ PAD::GET_DISABLED_CONTROL_UNBOUND_NORMAL(0 /*PLAYER_CONTROL*/, 290 /*INPUT_SCALED_LOOK_LR*/), 0f, PAD::GET_DISABLED_CONTROL_UNBOUND_NORMAL(0 /*PLAYER_CONTROL*/, 291 /*INPUT_SCALED_LOOK_UD*/) } };
 
-	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
+	if (PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
 	{
 		fParam8 = fParam8 * 8f;
 	}
@@ -1959,7 +1959,7 @@ Player _INVALID_PLAYER_INDEX() // Position - 0x20BC Hash - 0x478900E4 ^0x478900E
 
 BOOL func_65() // Position - 0x20C5 Hash - 0x14E9F131 ^0x443A55F9
 {
-	return IS_BIT_SET(Global_2707890, 4) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_SCRIPT_RT);
+	return IS_BIT_SET(Global_2707890, 4) || PAD::IS_DISABLED_CONTROL_JUST_PRESSED(0 /*PLAYER_CONTROL*/, 229 /*INPUT_SCRIPT_RT*/);
 }
 
 BOOL func_66(int iParam0, float fParam1, float fParam2, float fParam3, var uParam4, var uParam5, var uParam6, float fParam7, float fParam8, float fParam9) // Position - 0x20E0 Hash - 0x5CB8EE08 ^0x8BA8EA24
@@ -1995,7 +1995,7 @@ BOOL func_66(int iParam0, float fParam1, float fParam2, float fParam3, var uPara
 		{
 			if (!NETWORK::NETWORK_IS_SCRIPT_ACTIVE("AM_MP_DRONE", instance_id, true, 0))
 			{
-				iLocal_48 = SYSTEM::START_NEW_SCRIPT_WITH_NAME_HASH_AND_ARGS(joaat("am_mp_drone"), &instance_id, 12, DEFAULT);
+				iLocal_48 = SYSTEM::START_NEW_SCRIPT_WITH_NAME_HASH_AND_ARGS(joaat("am_mp_drone"), &instance_id, 12, 1424 /*DEFAULT*/);
 				SCRIPT::SET_SCRIPT_WITH_NAME_HASH_AS_NO_LONGER_NEEDED(joaat("am_mp_drone"));
 				_STOPWATCH_DESTROY(&uLocal_46);
 			}
@@ -2066,7 +2066,7 @@ void func_71() // Position - 0x225A Hash - 0x1A48AC0E ^0x86166B91
 		
 			func_77(&(caLocal_159.f_22.f_5));
 			func_76(&(caLocal_159.f_22.f_6), "Bleep", "DLC_IE_Steal_EITS_Sounds", true);
-			color = HUD_COLOUR_RED;
+			color = 6 /*HUD_COLOUR_RED*/;
 		}
 		else
 		{
@@ -2077,7 +2077,7 @@ void func_71() // Position - 0x225A Hash - 0x1A48AC0E ^0x86166B91
 			}
 		
 			func_76(&(caLocal_159.f_22.f_5), "VULKAN_LOCK_ON_AMBER", 0, true);
-			color = HUD_COLOUR_BLUE;
+			color = 9 /*HUD_COLOUR_BLUE*/;
 		}
 	
 		func_73(caLocal_159.f_22.f_4, !flag, color);
@@ -2342,7 +2342,7 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 
 	type = player;
 
-	if (type != PV_COMP_INVALID)
+	if (type != -1 /*PV_COMP_INVALID*/)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -2454,7 +2454,7 @@ void func_86() // Position - 0x2912 Hash - 0xE1337140 ^0x5C5B36CF
 	}
 
 	if (flag && !flag2)
-		if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(PLAYER_CONTROL, INPUT_SCRIPT_RRIGHT))
+		if (PAD::IS_DISABLED_CONTROL_JUST_PRESSED(0 /*PLAYER_CONTROL*/, 225 /*INPUT_SCRIPT_RRIGHT*/))
 			func_91();
 
 	if (!flag2 && func_90())
@@ -2535,7 +2535,7 @@ Vector3 func_89(Vector3 vParam0, var uParam1, var uParam2, float fParam3) // Pos
 
 BOOL func_90() // Position - 0x2C37 Hash - 0x14E9F131 ^0x434E20B3
 {
-	return IS_BIT_SET(Global_2707890, 4) || PAD::IS_DISABLED_CONTROL_PRESSED(PLAYER_CONTROL, INPUT_SCRIPT_RT);
+	return IS_BIT_SET(Global_2707890, 4) || PAD::IS_DISABLED_CONTROL_PRESSED(0 /*PLAYER_CONTROL*/, 229 /*INPUT_SCRIPT_RT*/);
 }
 
 void func_91() // Position - 0x2C52 Hash - 0x134C5E55 ^0xC25F5FBF
@@ -3007,7 +3007,7 @@ void func_105(BOOL bParam0, int iParam1) // Position - 0x370D Hash - 0x8F233D4 ^
 
 	if (Global_23831.f_9116)
 	{
-		HUD::RESET_HUD_COMPONENT_VALUES(HUD_SUBTITLE_TEXT);
+		HUD::RESET_HUD_COMPONENT_VALUES(15 /*HUD_SUBTITLE_TEXT*/);
 		Global_23831.f_9116 = 0;
 	}
 
@@ -3045,15 +3045,15 @@ void func_105(BOOL bParam0, int iParam1) // Position - 0x370D Hash - 0x8F233D4 ^
 	return;
 }
 
-void func_106(int iParam0) // Position - 0x37D0 Hash - 0x294B53C7 ^0x1978B7FB
+void func_106(int* piParam0) // Position - 0x37D0 Hash - 0x294B53C7 ^0x1978B7FB
 {
-	if (iParam0->f_9 != 0)
+	if (piParam0->f_9 != 0)
 	{
-		if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*iParam0))
-			GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(iParam0);
+		if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(*piParam0))
+			GRAPHICS::SET_SCALEFORM_MOVIE_AS_NO_LONGER_NEEDED(piParam0);
 	
-		*iParam0 = 0;
-		iParam0->f_9 = 0;
+		*piParam0 = 0;
+		piParam0->f_9 = 0;
 	}
 
 	return;
@@ -3323,7 +3323,7 @@ BOOL func_121() // Position - 0x3C6D Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x3C7C Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;
@@ -3427,7 +3427,7 @@ void func_130(int iParam0) // Position - 0x3DB7 Hash - 0xF1DF2755 ^0xF3910FAB
 	{
 		if (!Global_2635563.f_2992.f_1)
 		{
-			if (!(Global_2635563.f_2988 == PV_COMP_INVALID))
+			if (!(Global_2635563.f_2988 == -1 /*PV_COMP_INVALID*/))
 			{
 				if (Global_2635563.f_2988 < 255 && !func_131() && !IS_BIT_SET(*Global_4718592.f_185622, 0) && !(AUDIO::AUDIO_IS_SCRIPTED_MUSIC_PLAYING() && Global_2635563.f_2989 == 0 && iParam0 == 0))
 				{

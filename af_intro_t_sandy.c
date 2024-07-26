@@ -404,9 +404,9 @@ void func_8(int iParam0) // Position - 0x756 Hash - 0xEC7DB104 ^0xEC7DB104
 		Global_113969.f_7691.f_764 = Global_113969.f_7691.f_764 - 1;
 	}
 
-	func_9(CHAR_MICHAEL);
-	func_9(CHAR_FRANKLIN);
-	func_9(CHAR_TREVOR);
+	func_9(0 /*CHAR_MICHAEL*/);
+	func_9(1 /*CHAR_FRANKLIN*/);
+	func_9(2 /*CHAR_TREVOR*/);
 	return;
 }
 
@@ -441,7 +441,7 @@ void func_9(eCharacter echParam0) // Position - 0x81E Hash - 0xDBA91FA2 ^0x62041
 
 BOOL func_10(eCharacter echParam0) // Position - 0x8DC Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 void func_11(int iParam0) // Position - 0x8E8 Hash - 0x137FFF25 ^0x82C17B
@@ -527,7 +527,7 @@ void func_14(int iParam0, eCharacter echParam1) // Position - 0xAA7 Hash - 0xB53
 
 	if (Global_118[iParam0 /*10*/].f_8 != 181)
 	{
-		if (echParam1 > CHAR_MULTIPLAYER)
+		if (echParam1 > 3 /*CHAR_MULTIPLAYER*/)
 		{
 		}
 		else
@@ -543,7 +543,7 @@ void func_14(int iParam0, eCharacter echParam1) // Position - 0xAA7 Hash - 0xB53
 
 void func_15(int iParam0, eCharacter echParam1, int iParam2) // Position - 0xADC Hash - 0xAB9B6CC ^0x1B5EEB55
 {
-	if (echParam1 < CHAR_MICHAEL || echParam1 > CHAR_ALL_PLAYERS_CONF)
+	if (echParam1 < 0 /*CHAR_MICHAEL*/ || echParam1 > 4 /*CHAR_ALL_PLAYERS_CONF*/)
 		return;
 
 	Global_2169[iParam0 /*29*/].f_24[echParam1] = iParam2;
@@ -556,7 +556,7 @@ void func_15(int iParam0, eCharacter echParam1, int iParam2) // Position - 0xADC
 
 void func_16(int iParam0, eCharacter echParam1, int iParam2) // Position - 0xB21 Hash - 0xAB9B6CC ^0x80AE0F15
 {
-	if (echParam1 < CHAR_MICHAEL || echParam1 > CHAR_ALL_PLAYERS_CONF)
+	if (echParam1 < 0 /*CHAR_MICHAEL*/ || echParam1 > 4 /*CHAR_ALL_PLAYERS_CONF*/)
 		return;
 
 	Global_2169[iParam0 /*29*/].f_12[echParam1] = iParam2;
@@ -569,7 +569,7 @@ void func_16(int iParam0, eCharacter echParam1, int iParam2) // Position - 0xB21
 
 int func_17(int iParam0, eCharacter echParam1) // Position - 0xB66 Hash - 0x97DCD8A1 ^0xF8178EDD
 {
-	if (echParam1 < CHAR_MICHAEL || echParam1 > CHAR_ALL_PLAYERS_CONF)
+	if (echParam1 < 0 /*CHAR_MICHAEL*/ || echParam1 > 4 /*CHAR_ALL_PLAYERS_CONF*/)
 		return 0;
 
 	return Global_2169[iParam0 /*29*/].f_24[echParam1];
@@ -587,7 +587,7 @@ void func_18(int iParam0, eCharacter echParam1, int iParam2) // Position - 0xB90
 
 int func_19(int iParam0, eCharacter echParam1) // Position - 0xBC1 Hash - 0x97DCD8A1 ^0xFBF2A354
 {
-	if (echParam1 < CHAR_MICHAEL || echParam1 > CHAR_ALL_PLAYERS_CONF)
+	if (echParam1 < 0 /*CHAR_MICHAEL*/ || echParam1 > 4 /*CHAR_ALL_PLAYERS_CONF*/)
 		return 0;
 
 	return Global_2169[iParam0 /*29*/].f_19[echParam1];
@@ -618,7 +618,7 @@ void func_20(eCharacter echParam0) // Position - 0xBEB Hash - 0x4FA51D98 ^0x238D
 		Global_113969.f_7691.f_136 = Global_113969.f_7691.f_136 - 1;
 	}
 
-	for (i = CHAR_MICHAEL; i < CHAR_MULTIPLAYER; i = i + 1)
+	for (i = 0 /*CHAR_MICHAEL*/; i < 3 /*CHAR_MULTIPLAYER*/; i = i + 1)
 	{
 		if (IS_BIT_SET(num, i))
 			func_9(i);
@@ -664,7 +664,7 @@ BOOL func_23() // Position - 0xDA9 Hash - 0x354EF177 ^0x8F14C962
 	if (!PLAYER::IS_PLAYER_PLAYING(PLAYER::PLAYER_ID()))
 		return false;
 
-	if (_GET_CURRENT_PLAYER_CHARACTER() != CHAR_TREVOR)
+	if (_GET_CURRENT_PLAYER_CHARACTER() != 2 /*CHAR_TREVOR*/)
 		return false;
 
 	if (Global_32951)
@@ -725,7 +725,7 @@ void func_26() // Position - 0xE52 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -750,14 +750,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xF5D Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xF9A Hash - 0xADCB9755 ^0xADCB9755
@@ -765,7 +765,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xF9A Hash - 0xADC
 	if (func_10(character))
 		return func_30(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }

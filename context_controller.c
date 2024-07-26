@@ -264,14 +264,14 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 			case 0:
 				num3 = func_15();
 			
-				if (PAD::IS_CONTROL_RELEASED(FRONTEND_CONTROL, INPUT_CONTEXT))
+				if (PAD::IS_CONTROL_RELEASED(2 /*FRONTEND_CONTROL*/, 51 /*INPUT_CONTEXT*/))
 					flag3 = true;
 			
 				if (!func_19())
 				{
 					if (num3 > -1 && flag3)
 					{
-						if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT))
+						if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 51 /*INPUT_CONTEXT*/))
 						{
 							Global_44799[num3 /*32*/].f_4 = 1;
 							Global_44799[num3 /*32*/].f_29 = 0;
@@ -294,16 +294,16 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 						{
 							if (PED::IS_PED_IN_ANY_VEHICLE(PLAYER::GET_PLAYER_PED(PLAYER::GET_PLAYER_INDEX()), false))
 							{
-								if (PAD::IS_CONTROL_ENABLED(PLAYER_CONTROL, INPUT_VEH_ROOF))
+								if (PAD::IS_CONTROL_ENABLED(0 /*PLAYER_CONTROL*/, 101 /*INPUT_VEH_ROOF*/))
 								{
 									flag2 = true;
-									PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_VEH_ROOF, true);
+									PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 101 /*INPUT_VEH_ROOF*/, true);
 								}
 							
-								if (PAD::IS_CONTROL_ENABLED(PLAYER_CONTROL, INPUT_VEH_HEADLIGHT))
+								if (PAD::IS_CONTROL_ENABLED(0 /*PLAYER_CONTROL*/, 74 /*INPUT_VEH_HEADLIGHT*/))
 								{
 									flag = true;
-									PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_VEH_HEADLIGHT, true);
+									PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 74 /*INPUT_VEH_HEADLIGHT*/, true);
 								}
 							}
 						}
@@ -312,13 +312,13 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 					{
 						if (flag2)
 						{
-							PAD::ENABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_VEH_ROOF, true);
+							PAD::ENABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 101 /*INPUT_VEH_ROOF*/, true);
 							flag2 = false;
 						}
 					
 						if (flag)
 						{
-							PAD::ENABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_VEH_HEADLIGHT, true);
+							PAD::ENABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 74 /*INPUT_VEH_HEADLIGHT*/, true);
 							flag = false;
 						}
 					}
@@ -356,7 +356,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				if (Global_44992)
 					func_25();
 			
-				if (PAD::IS_CONTROL_JUST_PRESSED(FRONTEND_CONTROL, INPUT_CONTEXT))
+				if (PAD::IS_CONTROL_JUST_PRESSED(2 /*FRONTEND_CONTROL*/, 51 /*INPUT_CONTEXT*/))
 					if (num3 > -1)
 						Global_44799[num3 /*32*/].f_29 = 0;
 			
@@ -388,8 +388,8 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 	
 		if (num3 > -1)
 		{
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_TALK, true);
-			PAD::DISABLE_CONTROL_ACTION(PLAYER_CONTROL, INPUT_WEAPON_SPECIAL_TWO, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 46 /*INPUT_TALK*/, true);
+			PAD::DISABLE_CONTROL_ACTION(0 /*PLAYER_CONTROL*/, 54 /*INPUT_WEAPON_SPECIAL_TWO*/, true);
 		}
 	
 		if (num != num2)
@@ -742,7 +742,7 @@ BOOL func_19() // Position - 0x92B Hash - 0xBA493EFF ^0x17E68CAD
 	if (Global_44998)
 		return true;
 
-	if (HUD::IS_HUD_COMPONENT_ACTIVE(HUD_WEAPON_WHEEL))
+	if (HUD::IS_HUD_COMPONENT_ACTIVE(19 /*HUD_WEAPON_WHEEL*/))
 		return true;
 
 	if (func_21(true))
@@ -961,7 +961,7 @@ void func_27(int iParam0, int iParam1) // Position - 0xB97 Hash - 0x73CB6EFA ^0x
 			SYSTEM::WAIT(0);
 		}
 	
-		SYSTEM::START_NEW_SCRIPT("appSecuroServ", APP_INTERNET);
+		SYSTEM::START_NEW_SCRIPT("appSecuroServ", 4592 /*APP_INTERNET*/);
 		SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("appSecuroServ");
 	}
 	else if (flag2)
@@ -974,7 +974,7 @@ void func_27(int iParam0, int iParam1) // Position - 0xB97 Hash - 0x73CB6EFA ^0x
 			SYSTEM::WAIT(0);
 		}
 	
-		SYSTEM::START_NEW_SCRIPT("appBikerBusiness", APP_INTERNET);
+		SYSTEM::START_NEW_SCRIPT("appBikerBusiness", 4592 /*APP_INTERNET*/);
 		SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("appBikerBusiness");
 	}
 	else if (flag3)
@@ -987,7 +987,7 @@ void func_27(int iParam0, int iParam1) // Position - 0xB97 Hash - 0x73CB6EFA ^0x
 			SYSTEM::WAIT(0);
 		}
 	
-		SYSTEM::START_NEW_SCRIPT("appImportExport", APP_INTERNET);
+		SYSTEM::START_NEW_SCRIPT("appImportExport", 4592 /*APP_INTERNET*/);
 		SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("appImportExport");
 	}
 	else
@@ -1000,7 +1000,7 @@ void func_27(int iParam0, int iParam1) // Position - 0xB97 Hash - 0x73CB6EFA ^0x
 			SYSTEM::WAIT(0);
 		}
 	
-		SYSTEM::START_NEW_SCRIPT("appInternet", APP_INTERNET);
+		SYSTEM::START_NEW_SCRIPT("appInternet", 4592 /*APP_INTERNET*/);
 		SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("appInternet");
 	}
 

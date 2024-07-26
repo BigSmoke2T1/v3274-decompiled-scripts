@@ -636,9 +636,9 @@ BOOL func_11() // Position - 0x5AD Hash - 0x227035F9 ^0xA9E4989E
 		if (!NETWORK::NETWORK_DOES_NETWORK_ID_EXIST(iLocal_90.f_4[i]) && func_43(iLocal_90.f_11) && NETWORK::NETWORK_DOES_NETWORK_ID_EXIST(iLocal_90.f_2))
 			if (func_17(iLocal_90.f_2))
 				if (iLocal_90.f_12 == 0)
-					if (func_16(&iLocal_90.f_4[i], iLocal_90.f_2, PED_TYPE_CRIMINAL, iLocal_90.f_11, i, true, true, true))
+					if (func_16(&iLocal_90.f_4[i], iLocal_90.f_2, 22 /*PED_TYPE_CRIMINAL*/, iLocal_90.f_11, i, true, true, true))
 						func_13(&iLocal_90.f_4[i]);
-				else if (func_12(&iLocal_90.f_4[i], PED_TYPE_CRIMINAL, iLocal_90.f_11, iLocal_90.f_28[i /*3*/], iLocal_90.f_38[i], true, true, true))
+				else if (func_12(&iLocal_90.f_4[i], 22 /*PED_TYPE_CRIMINAL*/, iLocal_90.f_11, iLocal_90.f_28[i /*3*/], iLocal_90.f_38[i], true, true, true))
 					func_13(&iLocal_90.f_4[i]);
 	}
 
@@ -695,29 +695,29 @@ void func_13(var uParam0) // Position - 0x6F3 Hash - 0x323A175F ^0x766F24C5
 	randomIntInRange = MISC::GET_RANDOM_INT_IN_RANGE(0, 10);
 
 	if (randomIntInRange == 0 || randomIntInRange == 1 || randomIntInRange == 2)
-		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), BF_AlwaysFight, true);
+		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), 5 /*BF_AlwaysFight*/, true);
 	else if (randomIntInRange == 3)
-		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), BF_AlwaysFlee, true);
+		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), 17 /*BF_AlwaysFlee*/, true);
 	else if (randomIntInRange == 4 || randomIntInRange == 5 || randomIntInRange == 6)
-		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), BF_Aggressive, true);
+		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), 13 /*BF_Aggressive*/, true);
 
 	if (_GET_RANDOM_BOOL())
-		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), BF_CanTauntInVehicle, true);
+		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), 20 /*BF_CanTauntInVehicle*/, true);
 
-	PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), BF_CanDoDrivebys, true);
+	PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), 2 /*BF_CanDoDrivebys*/, true);
 	randomIntInRange = MISC::GET_RANDOM_INT_IN_RANGE(0, 4);
 
 	if (randomIntInRange == 0)
-		PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(*uParam0), CM_WillAdvance);
+		PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(*uParam0), 2 /*CM_WillAdvance*/);
 	else if (randomIntInRange == 1)
-		PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(*uParam0), CM_Defensive);
+		PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(*uParam0), 1 /*CM_Defensive*/);
 	else if (randomIntInRange == 2)
-		PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(*uParam0), CM_WillRetreat);
+		PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(*uParam0), 3 /*CM_WillRetreat*/);
 
 	PED::SET_PED_ALLOW_MINOR_REACTIONS_AS_MISSION_PED(NETWORK::NET_TO_PED(*uParam0), true);
 	PED::SET_PED_GET_OUT_UPSIDE_DOWN_VEHICLE(NETWORK::NET_TO_PED(*uParam0), true);
 	PED::SET_PED_CONFIG_FLAG(NETWORK::NET_TO_PED(*uParam0), 29, true);
-	PED::SET_PED_CAN_BE_KNOCKED_OFF_VEHICLE(NETWORK::NET_TO_PED(*uParam0), KNOCKOFFVEHICLE_HARD);
+	PED::SET_PED_CAN_BE_KNOCKED_OFF_VEHICLE(NETWORK::NET_TO_PED(*uParam0), 3 /*KNOCKOFFVEHICLE_HARD*/);
 	ENTITY::SET_ENTITY_HEALTH(NETWORK::NET_TO_PED(*uParam0), SYSTEM::ROUND(200f * Global_262145.f_156), 0, 0);
 	return;
 }
@@ -1009,13 +1009,13 @@ int func_19() // Position - 0xD26 Hash - 0x2742A255 ^0x429DB38E
 		{
 			if (iLocal_90.f_12 == 1)
 			{
-				if (func_12(&(iLocal_90.f_3), PED_TYPE_CRIMINAL, iLocal_90.f_11, iLocal_90.f_24, iLocal_90.f_27, true, true, true))
+				if (func_12(&(iLocal_90.f_3), 22 /*PED_TYPE_CRIMINAL*/, iLocal_90.f_11, iLocal_90.f_24, iLocal_90.f_27, true, true, true))
 				{
 					func_13(&(iLocal_90.f_3));
 					func_20();
 				}
 			}
-			else if (func_16(&(iLocal_90.f_3), iLocal_90.f_2, PED_TYPE_CRIMINAL, iLocal_90.f_11, -1, true, true, true))
+			else if (func_16(&(iLocal_90.f_3), iLocal_90.f_2, 22 /*PED_TYPE_CRIMINAL*/, iLocal_90.f_11, -1, true, true, true))
 			{
 				func_13(&(iLocal_90.f_3));
 				func_20();
@@ -1065,10 +1065,10 @@ int func_21() // Position - 0xE48 Hash - 0x8104968E ^0x5BCB81BF
 					VEHICLE::SET_VEHICLE_ENGINE_ON(NETWORK::NET_TO_VEH(iLocal_90.f_2), true, true, false);
 					ENTITY::SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(NETWORK::NET_TO_VEH(iLocal_90.f_2), false);
 				
-					if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Not_Allow_As_Saved_Veh", INT))
+					if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Not_Allow_As_Saved_Veh", 3 /*INT*/))
 						DECORATOR::DECOR_SET_INT(NETWORK::NET_TO_VEH(iLocal_90.f_2), "Not_Allow_As_Saved_Veh", 1);
 				
-					if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MPBitset", INT))
+					if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MPBitset", 3 /*INT*/))
 					{
 						if (DECORATOR::DECOR_EXIST_ON(NETWORK::NET_TO_VEH(iLocal_90.f_2), "MPBitset"))
 							_int = DECORATOR::DECOR_GET_INT(NETWORK::NET_TO_VEH(iLocal_90.f_2), "MPBitset");
@@ -2785,7 +2785,7 @@ void func_78(var uParam0, int iParam1) // Position - 0x31E8 Hash - 0x5E4F0835 ^0
 						func_135(&num, false);
 					
 						if (iParam1 == 1)
-							func_83("GB_BCUT_TICK1" /*You paid ~a~ ~s~a $~1~ ~s~cut.*/, _GET_BOSS_OF_LOCAL_PLAYER(), num, HUD_COLOUR_PURE_WHITE, false, true);
+							func_83("GB_BCUT_TICK1" /*You paid ~a~ ~s~a $~1~ ~s~cut.*/, _GET_BOSS_OF_LOCAL_PLAYER(), num, 0 /*HUD_COLOUR_PURE_WHITE*/, false, true);
 					
 						func_82(20);
 						func_79(_GET_BOSS_OF_LOCAL_PLAYER(), num, 1);
@@ -2858,7 +2858,7 @@ int func_83(char* sParam0, Player plParam1, int iParam2, eHudColour ehcParam3, B
 		HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(func_90(plParam1, -2, true, false, false));
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(func_88(&unk));
 	
-		if (!(ehcParam3 == HUD_COLOUR_PURE_WHITE))
+		if (!(ehcParam3 == 0 /*HUD_COLOUR_PURE_WHITE*/))
 			HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(ehcParam3);
 	
 		HUD::ADD_TEXT_COMPONENT_INTEGER(iParam2);
@@ -2959,13 +2959,13 @@ eHudColour func_90(Player plParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOO
 	Ped ped;
 
 	if (!func_32(plParam0))
-		return HUD_COLOUR_WHITE;
+		return 1 /*HUD_COLOUR_WHITE*/;
 
 	if (func_133(plParam0) && !bParam4)
 		if (bParam2)
-			return HUD_COLOUR_PURE_WHITE;
+			return 0 /*HUD_COLOUR_PURE_WHITE*/;
 		else
-			return HUD_COLOUR_WHITE;
+			return 1 /*HUD_COLOUR_WHITE*/;
 
 	if (iParam1 == -2)
 	{
@@ -4221,7 +4221,7 @@ Vector3 func_163(Ped pedParam0, BOOL bParam1) // Position - 0x4D34 Hash - 0x1FBE
 	if (CAM::IS_GAMEPLAY_CAM_RENDERING())
 		gameplayCamRot = { CAM::GET_GAMEPLAY_CAM_ROT(2) };
 
-	if (pedParam0 == func_164(PLAYER::PLAYER_PED_ID()) && CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == FIRST_PERSON)
+	if (pedParam0 == func_164(PLAYER::PLAYER_PED_ID()) && CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == 4 /*FIRST_PERSON*/)
 		offsetFromEntityInWorldCoords = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(pedParam0, 0f, 8f, -0.2f) };
 	else
 		offsetFromEntityInWorldCoords = { ENTITY::GET_ENTITY_COORDS(pedParam0, false) };
@@ -4232,7 +4232,7 @@ Vector3 func_163(Ped pedParam0, BOOL bParam1) // Position - 0x4D34 Hash - 0x1FBE
 	{
 		entityHeading = ENTITY::GET_ENTITY_HEADING(pedParam0);
 	
-		if (CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == FIRST_PERSON)
+		if (CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == 4 /*FIRST_PERSON*/)
 			entityHeading = gameplayCamRot.f_2;
 	}
 
@@ -5453,9 +5453,9 @@ void func_217() // Position - 0x62AF Hash - 0xD7603504 ^0xD8CEE69C
 			blLocal_239 = HUD::ADD_BLIP_FOR_ENTITY(NETWORK::NET_TO_VEH(iLocal_90.f_2));
 		
 			if (!VEHICLE::IS_THIS_MODEL_A_BIKE(iLocal_90.f_10))
-				HUD::SET_BLIP_SPRITE(blLocal_239, BLIP_GANG_VEHICLE);
+				HUD::SET_BLIP_SPRITE(blLocal_239, 225 /*BLIP_GANG_VEHICLE*/);
 			else
-				HUD::SET_BLIP_SPRITE(blLocal_239, BLIP_GANG_BIKE);
+				HUD::SET_BLIP_SPRITE(blLocal_239, 348 /*BLIP_GANG_BIKE*/);
 		
 			HUD::SET_BLIP_COLOUR(blLocal_239, 1);
 			HUD::SET_BLIP_FLASH_TIMER(blLocal_239, 7000);
@@ -5739,7 +5739,7 @@ BOOL func_230() // Position - 0x6872 Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x6881 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
 		return true;
 
 	return false;

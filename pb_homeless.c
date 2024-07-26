@@ -401,13 +401,13 @@ void func_7() // Position - 0x6C5 Hash - 0xBA94F0A9 ^0xB7024E26
 	
 		PED::ADD_RELATIONSHIP_GROUP("homeless", &hLocal_51);
 		uLocal_48.f_2 = fLocal_45.f_2 - 1f;
-		pedLocal_52 = PED::CREATE_PED(PED_TYPE_DEALER, joaat("A_M_O_Tramp_01"), fLocal_45, fLocal_45.f_1, uLocal_48.f_2, 0f, true, true);
+		pedLocal_52 = PED::CREATE_PED(19 /*PED_TYPE_DEALER*/, joaat("A_M_O_Tramp_01"), fLocal_45, fLocal_45.f_1, uLocal_48.f_2, 0f, true, true);
 		PED::SET_PED_RELATIONSHIP_GROUP_HASH(pedLocal_52, hLocal_51);
 	
 		if (iLocal_42 == 1)
 		{
 			uLocal_48 = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(pedLocal_52, 0.8f, 0.8f, -1f) };
-			pedLocal_53 = PED::CREATE_PED(PED_TYPE_CIVFEMALE, joaat("G_M_Y_StrPunk_01"), uLocal_48, 0f, true, true);
+			pedLocal_53 = PED::CREATE_PED(5 /*PED_TYPE_CIVFEMALE*/, joaat("G_M_Y_StrPunk_01"), uLocal_48, 0f, true, true);
 			PED::ADD_RELATIONSHIP_GROUP("homeless", &hLocal_51);
 			PED::SET_PED_RELATIONSHIP_GROUP_HASH(pedLocal_53, hLocal_51);
 		
@@ -620,7 +620,7 @@ BOOL func_18() // Position - 0x10AD Hash - 0x7FE517FE ^0x128A3BC8
 
 BOOL func_19(eCharacter echParam0) // Position - 0x10C9 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_CURRENT_PLAYER_CHARACTER() // Position - 0x10D5 Hash - 0x3C5423D7 ^0x3C5423D7
@@ -651,7 +651,7 @@ void func_21() // Position - 0x10EE Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -671,14 +671,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x11EB Ha
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x1228 Hash - 0xADCB9755 ^0xADCB9755
@@ -686,7 +686,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x1228 Hash - 0xAD
 	if (func_19(character))
 		return func_24(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }

@@ -1016,14 +1016,14 @@ void func_6(var uParam0) // Position - 0x3D9 Hash - 0x6DFB18C8 ^0x1535B0C5
 											if (uParam0->[j /*122*/].f_2[i /*20*/].f_16 == 0)
 											{
 												PED::SET_PED_COMBAT_RANGE(uParam0->[j /*122*/].f_2[i /*20*/], 0);
-												PED::SET_PED_COMBAT_MOVEMENT(uParam0->[j /*122*/].f_2[i /*20*/], CM_WillAdvance);
-												PED::SET_PED_COMBAT_ATTRIBUTES(uParam0->[j /*122*/].f_2[i /*20*/], BF_CanUseVehicles, PED::IS_PED_IN_ANY_VEHICLE(uParam0->[j /*122*/].f_2[i /*20*/], false));
-												PED::SET_PED_COMBAT_ATTRIBUTES(uParam0->[j /*122*/].f_2[i /*20*/], BF_CanLeaveVehicle, !PED::IS_PED_IN_ANY_VEHICLE(uParam0->[j /*122*/].f_2[i /*20*/], false));
+												PED::SET_PED_COMBAT_MOVEMENT(uParam0->[j /*122*/].f_2[i /*20*/], 2 /*CM_WillAdvance*/);
+												PED::SET_PED_COMBAT_ATTRIBUTES(uParam0->[j /*122*/].f_2[i /*20*/], 1 /*BF_CanUseVehicles*/, PED::IS_PED_IN_ANY_VEHICLE(uParam0->[j /*122*/].f_2[i /*20*/], false));
+												PED::SET_PED_COMBAT_ATTRIBUTES(uParam0->[j /*122*/].f_2[i /*20*/], 3 /*BF_CanLeaveVehicle*/, !PED::IS_PED_IN_ANY_VEHICLE(uParam0->[j /*122*/].f_2[i /*20*/], false));
 											
 												if (uParam0->[j /*122*/].f_117 == i)
 												{
 													PED::SET_COMBAT_FLOAT(uParam0->[j /*122*/].f_2[i /*20*/], 13, 10f);
-													PED::SET_PED_COMBAT_ATTRIBUTES(uParam0->[j /*122*/].f_2[i /*20*/], BF_MaintainMinDistanceToTarget, true);
+													PED::SET_PED_COMBAT_ATTRIBUTES(uParam0->[j /*122*/].f_2[i /*20*/], 31 /*BF_MaintainMinDistanceToTarget*/, true);
 												}
 											
 												if (uParam0->[j /*122*/].f_117 != i)
@@ -1064,9 +1064,9 @@ void func_6(var uParam0) // Position - 0x3D9 Hash - 0x6DFB18C8 ^0x1535B0C5
 											if (uParam0->[j /*122*/].f_2[i /*20*/].f_16 == 0)
 											{
 												PED::REMOVE_PED_DEFENSIVE_AREA(uParam0->[j /*122*/].f_2[i /*20*/], false);
-												PED::SET_PED_COMBAT_MOVEMENT(uParam0->[j /*122*/].f_2[i /*20*/], CM_WillAdvance);
-												PED::SET_PED_COMBAT_ATTRIBUTES(uParam0->[j /*122*/].f_2[i /*20*/], BF_CanUseVehicles, false);
-												PED::SET_PED_COMBAT_ATTRIBUTES(uParam0->[j /*122*/].f_2[i /*20*/], BF_CanLeaveVehicle, true);
+												PED::SET_PED_COMBAT_MOVEMENT(uParam0->[j /*122*/].f_2[i /*20*/], 2 /*CM_WillAdvance*/);
+												PED::SET_PED_COMBAT_ATTRIBUTES(uParam0->[j /*122*/].f_2[i /*20*/], 1 /*BF_CanUseVehicles*/, false);
+												PED::SET_PED_COMBAT_ATTRIBUTES(uParam0->[j /*122*/].f_2[i /*20*/], 3 /*BF_CanLeaveVehicle*/, true);
 												TASK::TASK_COMBAT_HATED_TARGETS_AROUND_PED(uParam0->[j /*122*/].f_2[i /*20*/], 300f, 0);
 												PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(uParam0->[j /*122*/].f_2[i /*20*/], false);
 												uParam0->[j /*122*/].f_2[i /*20*/].f_16 = 1;
@@ -1330,12 +1330,12 @@ Ped func_15(var uParam0, int iParam1, int iParam2) // Position - 0xC01 Hash - 0x
 	Ped ped;
 	int num;
 
-	ped = PED::CREATE_PED(PED_TYPE_MISSION, iLocal_34.f_53[0], uParam0->[iParam1 /*122*/].f_2[iParam2 /*20*/].f_10, uParam0->[iParam1 /*122*/].f_2[iParam2 /*20*/].f_13, true, true);
+	ped = PED::CREATE_PED(26 /*PED_TYPE_MISSION*/, iLocal_34.f_53[0], uParam0->[iParam1 /*122*/].f_2[iParam2 /*20*/].f_10, uParam0->[iParam1 /*122*/].f_2[iParam2 /*20*/].f_13, true, true);
 	PED::SET_PED_DIES_WHEN_INJURED(ped, true);
 	PED::SET_PED_AS_ENEMY(ped, true);
 	PED::SET_PED_RELATIONSHIP_GROUP_HASH(ped, iLocal_34.f_52);
 	ENTITY::SET_ENTITY_IS_TARGET_PRIORITY(ped, true, 0);
-	PED::SET_PED_COMBAT_ATTRIBUTES(ped, BF_AlwaysFight, true);
+	PED::SET_PED_COMBAT_ATTRIBUTES(ped, 5 /*BF_AlwaysFight*/, true);
 	PED::SET_PED_TARGET_LOSS_RESPONSE(ped, 1);
 	PED::SET_PED_CONFIG_FLAG(ped, 42, true);
 	PED::SET_PED_CONFIG_FLAG(ped, 132, true);

@@ -72,7 +72,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				func_23();
 				func_19();
 			
-				if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN)
+				if (_GET_CURRENT_PLAYER_CHARACTER() == 1 /*CHAR_FRANKLIN*/)
 				{
 					switch (iLocal_26)
 					{
@@ -388,7 +388,7 @@ void func_13() // Position - 0x636 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
+			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -406,7 +406,7 @@ BOOL func_14(int iParam0) // Position - 0x733 Hash - 0x937D8816 ^0x937D8816
 
 BOOL func_15(eCharacter echParam0) // Position - 0x741 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < CHAR_MULTIPLAYER;
+	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x74D Hash - 0xAC4E9801 ^0xB379A75F
@@ -418,14 +418,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x74D Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
+		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return _CHAR_NULL;
+	return 145 /*_CHAR_NULL*/;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x78A Hash - 0xADCB9755 ^0xADCB9755
@@ -433,7 +433,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x78A Hash - 0xADC
 	if (func_15(character))
 		return func_18(character);
 	else
-		character != _CHAR_NULL;
+		character != 145 /*_CHAR_NULL*/;
 
 	return 0;
 }

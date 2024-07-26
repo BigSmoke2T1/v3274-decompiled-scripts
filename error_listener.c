@@ -119,14 +119,14 @@ void func_2() // Position - 0xAE Hash - 0x9849FBAF ^0xF10EECE0
 	eEventType type;
 	var unk3;
 
-	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(SCRIPT_EVENT_QUEUE_ERRORS); i = i + 1)
+	for (i = 0; i < SCRIPT::GET_NUMBER_OF_EVENTS(2 /*SCRIPT_EVENT_QUEUE_ERRORS*/); i = i + 1)
 	{
-		eventAtIndex = SCRIPT::GET_EVENT_AT_INDEX(SCRIPT_EVENT_QUEUE_ERRORS, i);
+		eventAtIndex = SCRIPT::GET_EVENT_AT_INDEX(2 /*SCRIPT_EVENT_QUEUE_ERRORS*/, i);
 	
 		if (func_10(eventAtIndex))
 		{
 			func_9(&type);
-			func_8(SCRIPT_EVENT_QUEUE_ERRORS, i, eventAtIndex, &type);
+			func_8(2 /*SCRIPT_EVENT_QUEUE_ERRORS*/, i, eventAtIndex, &type);
 			type.f_1 = MISC::GET_FRAME_COUNT() - 1;
 			type = eventAtIndex;
 		
@@ -146,7 +146,7 @@ void func_3(var uParam0) // Position - 0x116 Hash - 0x4D586789 ^0x72E5C9C2
 
 	type = *uParam0;
 
-	if (_IS_FMMC_ACTIVE() && func_4(type) && type != EVENT_ERRORS_ARRAY_OVERFLOW && NETWORK::NETWORK_CAN_BAIL())
+	if (_IS_FMMC_ACTIVE() && func_4(type) && type != 249 /*EVENT_ERRORS_ARRAY_OVERFLOW*/ && NETWORK::NETWORK_CAN_BAIL())
 		NETWORK::NETWORK_BAIL(0, 1, 0);
 
 	return;
@@ -154,7 +154,7 @@ void func_3(var uParam0) // Position - 0x116 Hash - 0x4D586789 ^0x72E5C9C2
 
 BOOL func_4(eEventType eetParam0) // Position - 0x14F Hash - 0x6AE23759 ^0x6AE23759
 {
-	return eetParam0 == EVENT_ERRORS_INSTRUCTION_LIMIT || eetParam0 == EVENT_ERRORS_STACK_OVERFLOW || eetParam0 == EVENT_0x063E563B || eetParam0 == EVENT_ERRORS_ARRAY_OVERFLOW;
+	return eetParam0 == 250 /*EVENT_ERRORS_INSTRUCTION_LIMIT*/ || eetParam0 == 251 /*EVENT_ERRORS_STACK_OVERFLOW*/ || eetParam0 == 252 /*EVENT_0x063E563B*/ || eetParam0 == 249 /*EVENT_ERRORS_ARRAY_OVERFLOW*/;
 }
 
 BOOL _IS_FMMC_ACTIVE() // Position - 0x17D Hash - 0x9A79549B ^0x4A0EF303
@@ -194,7 +194,7 @@ void func_8(eEventGroup eegParam0, int iParam1, eEventType eetParam2, var uParam
 {
 	var eventData;
 
-	if (eetParam2 == EVENT_ERRORS_ARRAY_OVERFLOW || eetParam2 == EVENT_ERRORS_INSTRUCTION_LIMIT || eetParam2 == EVENT_ERRORS_STACK_OVERFLOW || eetParam2 == EVENT_0x063E563B)
+	if (eetParam2 == 249 /*EVENT_ERRORS_ARRAY_OVERFLOW*/ || eetParam2 == 250 /*EVENT_ERRORS_INSTRUCTION_LIMIT*/ || eetParam2 == 251 /*EVENT_ERRORS_STACK_OVERFLOW*/ || eetParam2 == 252 /*EVENT_0x063E563B*/)
 		if (SCRIPT::GET_EVENT_DATA(eegParam0, iParam1, &eventData, 1))
 			uParam3->f_2 = eventData;
 
