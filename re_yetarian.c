@@ -1306,13 +1306,13 @@ int func_22() // Position - 0x14AF Hash - 0x35BC7314 ^0x35BC7314
 
 	switch (Global_113969.f_2366.f_539.f_4321)
 	{
-		case 0 /*CHAR_MICHAEL*/:
+		case CHAR_MICHAEL:
 			return 1;
 	
-		case 1 /*CHAR_FRANKLIN*/:
+		case CHAR_FRANKLIN:
 			return 2;
 	
-		case 2 /*CHAR_TREVOR*/:
+		case CHAR_TREVOR:
 			return 4;
 	}
 
@@ -1341,7 +1341,7 @@ void func_23() // Position - 0x14F5 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
+			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -1359,7 +1359,7 @@ BOOL func_24(int iParam0) // Position - 0x15F2 Hash - 0x937D8816 ^0x937D8816
 
 BOOL func_25(eCharacter echParam0) // Position - 0x1600 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x160C Hash - 0xAC4E9801 ^0xB379A75F
@@ -1371,14 +1371,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x160C Ha
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
+		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x1649 Hash - 0xADCB9755 ^0xADCB9755
@@ -1386,7 +1386,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x1649 Hash - 0xAD
 	if (func_25(character))
 		return func_28(character);
 	else
-		character != 145 /*_CHAR_NULL*/;
+		character != _CHAR_NULL;
 
 	return 0;
 }
@@ -1650,7 +1650,7 @@ void func_36() // Position - 0x19D9 Hash - 0xFB3B1689 ^0xFCF49849
 			}
 		
 			if (iLocal_112 == 0)
-				if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
+				if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
 					if (_CONVERSATION_ADD_LINE(&uLocal_150, sLocal_149, "RE_YETA_MIKE", 7, 0, 0, 0))
 						iLocal_112 = 1;
 				else if (_CONVERSATION_ADD_LINE(&uLocal_150, sLocal_149, "RE_YETA_FRAN", 7, 0, 0, 0))
@@ -2144,26 +2144,26 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0x2247 Hash - 0x98476CE1 ^
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[0 /*29*/])
-				Global_20930 = 0 /*CHAR_MICHAEL*/;
+				Global_20930 = CHAR_MICHAEL;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[1 /*29*/])
-				Global_20930 = 1 /*CHAR_FRANKLIN*/;
+				Global_20930 = CHAR_FRANKLIN;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[2 /*29*/])
-				Global_20930 = 2 /*CHAR_TREVOR*/;
+				Global_20930 = CHAR_TREVOR;
 			else
-				Global_20930 = 0 /*CHAR_MICHAEL*/;
+				Global_20930 = CHAR_MICHAEL;
 	}
 	else
 	{
 		Global_20930 = _GET_CURRENT_PLAYER_CHARACTER();
 	
-		if (Global_20930 == 145 /*_CHAR_NULL*/)
-			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
+		if (Global_20930 == _CHAR_NULL)
+			Global_20930 = CHAR_MULTIPLAYER;
 	
 		if (Global_79389)
-			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
+			Global_20930 = CHAR_MULTIPLAYER;
 	
-		if (Global_20930 > 3 /*CHAR_MULTIPLAYER*/)
-			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
+		if (Global_20930 > CHAR_MULTIPLAYER)
+			Global_20930 = CHAR_MULTIPLAYER;
 	}
 
 	return;
@@ -2301,23 +2301,23 @@ BOOL func_58() // Position - 0x24FB Hash - 0xC3E6CAFA ^0xED09E887
 	{
 		if (!bLocal_108)
 		{
-			if (MISC::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), ENTITY::GET_ENTITY_COORDS(pedLocal_88, false), true) <= 7f || TASK::GET_SCRIPT_TASK_STATUS(pedLocal_88, joaat("SCRIPT_TASK_PERFORM_SEQUENCE") /*SCRIPT_TASK_PERFORM_SEQUENCE*/) == 7)
+			if (MISC::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), ENTITY::GET_ENTITY_COORDS(pedLocal_88, false), true) <= 7f || TASK::GET_SCRIPT_TASK_STATUS(pedLocal_88, SCRIPT_TASK_PERFORM_SEQUENCE) == 7)
 			{
 				if (!bLocal_110)
 				{
 					MISC::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), ENTITY::GET_ENTITY_COORDS(pedLocal_88, false), true) <= 7f;
-					TASK::GET_SCRIPT_TASK_STATUS(pedLocal_88, joaat("SCRIPT_TASK_PERFORM_SEQUENCE") /*SCRIPT_TASK_PERFORM_SEQUENCE*/) == 7;
+					TASK::GET_SCRIPT_TASK_STATUS(pedLocal_88, SCRIPT_TASK_PERFORM_SEQUENCE) == 7;
 				}
 			
 				return true;
 			}
 		}
-		else if (MISC::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), ENTITY::GET_ENTITY_COORDS(pedLocal_88, false), true) <= 4.5f || TASK::GET_SCRIPT_TASK_STATUS(pedLocal_88, joaat("SCRIPT_TASK_PERFORM_SEQUENCE") /*SCRIPT_TASK_PERFORM_SEQUENCE*/) == 7)
+		else if (MISC::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), ENTITY::GET_ENTITY_COORDS(pedLocal_88, false), true) <= 4.5f || TASK::GET_SCRIPT_TASK_STATUS(pedLocal_88, SCRIPT_TASK_PERFORM_SEQUENCE) == 7)
 		{
 			if (!bLocal_110)
 			{
 				MISC::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), ENTITY::GET_ENTITY_COORDS(pedLocal_88, false), true) <= 4.5f;
-				TASK::GET_SCRIPT_TASK_STATUS(pedLocal_88, joaat("SCRIPT_TASK_PERFORM_SEQUENCE") /*SCRIPT_TASK_PERFORM_SEQUENCE*/) == 7;
+				TASK::GET_SCRIPT_TASK_STATUS(pedLocal_88, SCRIPT_TASK_PERFORM_SEQUENCE) == 7;
 			}
 		
 			return true;
@@ -2395,7 +2395,7 @@ void func_61() // Position - 0x265F Hash - 0x8083E922 ^0x78AB84CB
 							{
 								TASK::CLEAR_PED_TASKS(pedLocal_88);
 								TASK::OPEN_SEQUENCE_TASK(&iLocal_145);
-								TASK::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1, 12 /*SLF_EXTEND_YAW_LIMIT | 8*/, 2);
+								TASK::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1, SLF_EXTEND_YAW_LIMIT | 8, 2);
 								TASK::TASK_PLAY_ANIM(0, "cellphone@", "cellphone_call_out", 1090519040, -1056964608, -1, 0, 0, false, false, false);
 								TASK::CLOSE_SEQUENCE_TASK(iLocal_145);
 								TASK::TASK_PERFORM_SEQUENCE(pedLocal_88, iLocal_145);
@@ -2405,7 +2405,7 @@ void func_61() // Position - 0x265F Hash - 0x8083E922 ^0x78AB84CB
 							{
 								TASK::CLEAR_PED_TASKS(pedLocal_88);
 								TASK::OPEN_SEQUENCE_TASK(&iLocal_145);
-								TASK::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1, 12 /*SLF_EXTEND_YAW_LIMIT | 8*/, 2);
+								TASK::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1, SLF_EXTEND_YAW_LIMIT | 8, 2);
 								TASK::TASK_PLAY_ANIM(0, "cellphone@", "cellphone_call_out", 1090519040, -1056964608, -1, 0, 0, false, false, false);
 								TASK::CLOSE_SEQUENCE_TASK(iLocal_145);
 								TASK::TASK_PERFORM_SEQUENCE(pedLocal_88, iLocal_145);
@@ -2475,7 +2475,7 @@ void func_61() // Position - 0x265F Hash - 0x8083E922 ^0x78AB84CB
 
 void func_62() // Position - 0x28B8 Hash - 0xFAA467B2 ^0x9F61C0BE
 {
-	if (_GET_CURRENT_PLAYER_CHARACTER() == 1 /*CHAR_FRANKLIN*/)
+	if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN)
 		_CONVERSATION_INITIALIZE_ACTOR(&uLocal_150, 1, PLAYER::PLAYER_PED_ID(), "FRANKLIN", 0, 1);
 	else
 		_CONVERSATION_INITIALIZE_ACTOR(&uLocal_150, 0, PLAYER::PLAYER_PED_ID(), "MICHAEL", 0, 1);
@@ -2487,9 +2487,9 @@ void func_62() // Position - 0x28B8 Hash - 0xFAA467B2 ^0x9F61C0BE
 	else if (bLocal_107)
 		_CONVERSATION_ADD_LINE(&uLocal_150, sLocal_149, "RE_YETA_EXT", 7, 1, 0, 0);
 	else if (func_63())
-		if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
+		if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
 			_CONVERSATION_ADD_LINE(&uLocal_150, sLocal_149, "RE_YETAM", 7, 0, 0, 0);
-		else if (_GET_CURRENT_PLAYER_CHARACTER() == 1 /*CHAR_FRANKLIN*/)
+		else if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN)
 			_CONVERSATION_ADD_LINE(&uLocal_150, sLocal_149, "RE_YETAF", 7, 0, 0, 0);
 	else
 		_CONVERSATION_ADD_LINE(&uLocal_150, sLocal_149, "RE_YETA_SNIP", 7, 0, 0, 0);
@@ -2977,7 +2977,7 @@ void func_79() // Position - 0x31F6 Hash - 0x8447096D ^0x83664A30
 		case 1:
 			if (!_DOES_ENTITY_EXIST_AND_IS_ALIVE(pedLocal_89) || !_DOES_ENTITY_EXIST_AND_IS_ALIVE(pedLocal_90))
 			{
-				func_81(&pedLocal_89, 18 /*CHAR_SIMEON*/, uLocal_97, fLocal_100, true);
+				func_81(&pedLocal_89, CHAR_SIMEON, uLocal_97, fLocal_100, true);
 			
 				if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(pedLocal_89))
 				{
@@ -3006,7 +3006,7 @@ void func_79() // Position - 0x31F6 Hash - 0x8447096D ^0x83664A30
 					ENTITY::FREEZE_ENTITY_POSITION(pedLocal_89, true);
 				}
 			
-				func_81(&pedLocal_90, 18 /*CHAR_SIMEON*/, uLocal_101, fLocal_104, true);
+				func_81(&pedLocal_90, CHAR_SIMEON, uLocal_101, fLocal_104, true);
 			
 				if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(pedLocal_90))
 				{
@@ -3093,12 +3093,12 @@ int func_81(Ped* ppedParam0, eCharacter echParam1, Vector3 vParam2, var uParam3,
 			if (ENTITY::DOES_ENTITY_EXIST(*ppedParam0))
 				PED::DELETE_PED(ppedParam0);
 		
-			*ppedParam0 = PED::CREATE_PED(26 /*PED_TYPE_MISSION*/, model, vParam2, fParam5, false, false);
+			*ppedParam0 = PED::CREATE_PED(PED_TYPE_MISSION, model, vParam2, fParam5, false, false);
 			PED::SET_PED_DEFAULT_COMPONENT_VARIATION(*ppedParam0);
 		
 			if (model == joaat("IG_LamarDavis"))
-				if (PED::GET_PED_DRAWABLE_VARIATION(*ppedParam0, 3 /*PV_COMP_UPPR*/) == 0)
-					PED::SET_PED_COMPONENT_VARIATION(*ppedParam0, 5 /*PV_COMP_HAND*/, 2, 0, 0);
+				if (PED::GET_PED_DRAWABLE_VARIATION(*ppedParam0, PV_COMP_UPPR) == 0)
+					PED::SET_PED_COMPONENT_VARIATION(*ppedParam0, PV_COMP_HAND, 2, 0, 0);
 		
 			func_82(*ppedParam0, echParam1);
 		
@@ -3118,15 +3118,15 @@ int func_82(Ped pedParam0, eCharacter echParam1) // Position - 0x36A7 Hash - 0x5
 
 	num = 7;
 
-	if (echParam1 == 19 /*CHAR_LAMAR*/)
+	if (echParam1 == CHAR_LAMAR)
 	{
 		num = 3;
 	}
-	else if (echParam1 == 14 /*CHAR_JIMMY*/)
+	else if (echParam1 == CHAR_JIMMY)
 	{
 		num = 4;
 	}
-	else if (echParam1 == 17 /*CHAR_AMANDA*/)
+	else if (echParam1 == CHAR_AMANDA)
 	{
 		num = 5;
 	}
@@ -3145,7 +3145,7 @@ Hash func_83(eCharacter echParam0) // Position - 0x36ED Hash - 0xBF0B24A5 ^0xBF0
 	if (!func_25(echParam0))
 		return func_28(echParam0);
 	else
-		echParam0 != 145 /*_CHAR_NULL*/;
+		echParam0 != _CHAR_NULL;
 
 	return 0;
 }
@@ -4059,7 +4059,7 @@ void func_97(int iParam0) // Position - 0x539A Hash - 0x841B9912 ^0xF0543253
 			{
 				if (!_DOES_ENTITY_EXIST_AND_IS_ALIVE(uLocal_45[iParam0 /*20*/].f_1))
 				{
-					uLocal_45[iParam0 /*20*/].f_1 = PED::CREATE_PED(22 /*PED_TYPE_CRIMINAL*/, uLocal_45[iParam0 /*20*/], uLocal_45[iParam0 /*20*/].f_10, uLocal_45[iParam0 /*20*/].f_13, true, true);
+					uLocal_45[iParam0 /*20*/].f_1 = PED::CREATE_PED(PED_TYPE_CRIMINAL, uLocal_45[iParam0 /*20*/], uLocal_45[iParam0 /*20*/].f_10, uLocal_45[iParam0 /*20*/].f_13, true, true);
 				
 					if (_DOES_ENTITY_EXIST_AND_IS_ALIVE(uLocal_45[iParam0 /*20*/].f_1))
 					{
@@ -4069,19 +4069,19 @@ void func_97(int iParam0) // Position - 0x539A Hash - 0x841B9912 ^0xF0543253
 							PED::SET_PED_SHOULD_PLAY_NORMAL_SCENARIO_EXIT(uLocal_45[iParam0 /*20*/].f_1);
 							PED::SET_PED_SHOULD_IGNORE_SCENARIO_EXIT_COLLISION_CHECKS(uLocal_45[iParam0 /*20*/].f_1, true);
 							PED::SET_PED_SPHERE_DEFENSIVE_AREA(uLocal_45[iParam0 /*20*/].f_1, -37.347847f, -1102.0222f, 25.42232f, 3f, false, false);
-							PED::SET_PED_COMBAT_ATTRIBUTES(uLocal_45[iParam0 /*20*/].f_1, 37 /*BF_0x2B84C2BF*/, true);
+							PED::SET_PED_COMBAT_ATTRIBUTES(uLocal_45[iParam0 /*20*/].f_1, BF_0x2B84C2BF, true);
 						}
 					
 						PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(uLocal_45[iParam0 /*20*/].f_1, true);
 						PED::SET_PED_RELATIONSHIP_GROUP_HASH(uLocal_45[iParam0 /*20*/].f_1, hLocal_146);
 						ENTITY::SET_ENTITY_CAN_BE_DAMAGED_BY_RELATIONSHIP_GROUP(uLocal_45[iParam0 /*20*/].f_1, false, hLocal_146);
-						PED::SET_PED_COMBAT_ATTRIBUTES(uLocal_45[iParam0 /*20*/].f_1, 23 /*BF_0xCD7168B8*/, false);
-						PED::SET_PED_COMBAT_ATTRIBUTES(uLocal_45[iParam0 /*20*/].f_1, 1 /*BF_CanUseVehicles*/, false);
-						PED::SET_PED_COMBAT_ATTRIBUTES(uLocal_45[iParam0 /*20*/].f_1, 28 /*BF_CanUseFrustratedAdvance*/, true);
+						PED::SET_PED_COMBAT_ATTRIBUTES(uLocal_45[iParam0 /*20*/].f_1, BF_0xCD7168B8, false);
+						PED::SET_PED_COMBAT_ATTRIBUTES(uLocal_45[iParam0 /*20*/].f_1, BF_CanUseVehicles, false);
+						PED::SET_PED_COMBAT_ATTRIBUTES(uLocal_45[iParam0 /*20*/].f_1, BF_CanUseFrustratedAdvance, true);
 						WEAPON::SET_PED_CHANCE_OF_FIRING_BLANKS(uLocal_45[iParam0 /*20*/].f_1, 0.7f, 0.3f);
 						uLocal_114[iParam0] = 0;
 					
-						if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
+						if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
 							WEAPON::GIVE_WEAPON_TO_PED(uLocal_45[iParam0 /*20*/].f_1, uLocal_45[iParam0 /*20*/].f_17, -1, true, true);
 					
 						STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(uLocal_45[iParam0 /*20*/]);
@@ -4101,7 +4101,7 @@ void func_97(int iParam0) // Position - 0x539A Hash - 0x841B9912 ^0xF0543253
 					TASK::CLEAR_PED_TASKS(uLocal_45[iParam0 /*20*/].f_1);
 					PED::SET_PED_USING_ACTION_MODE(uLocal_45[iParam0 /*20*/].f_1, true, -1, "DEFAULT_ACTION");
 					TASK::OPEN_SEQUENCE_TASK(&iLocal_145);
-					TASK::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1, 12 /*SLF_EXTEND_YAW_LIMIT | 8*/, 2);
+					TASK::TASK_LOOK_AT_ENTITY(0, PLAYER::PLAYER_PED_ID(), -1, SLF_EXTEND_YAW_LIMIT | 8, 2);
 					TASK::TASK_FOLLOW_NAV_MESH_TO_COORD(0, uLocal_45[iParam0 /*20*/].f_14, 1f, -1, 3f, 0, 1193033728);
 					TASK::TASK_TURN_PED_TO_FACE_ENTITY(0, PLAYER::PLAYER_PED_ID(), 0);
 					TASK::CLOSE_SEQUENCE_TASK(iLocal_145);
@@ -4124,7 +4124,7 @@ void func_97(int iParam0) // Position - 0x539A Hash - 0x841B9912 ^0xF0543253
 			{
 				func_99(uLocal_45[iParam0 /*20*/].f_1, &(uLocal_45[iParam0 /*20*/].f_2), -1, 0, false, false, -1082130432, 0, -1, -1, true, false, false);
 			
-				if (TASK::GET_SCRIPT_TASK_STATUS(uLocal_45[iParam0 /*20*/].f_1, joaat("SCRIPT_TASK_PERFORM_SEQUENCE") /*SCRIPT_TASK_PERFORM_SEQUENCE*/) == 7 || MISC::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), ENTITY::GET_ENTITY_COORDS(uLocal_45[iParam0 /*20*/].f_1, false), true) <= 5f)
+				if (TASK::GET_SCRIPT_TASK_STATUS(uLocal_45[iParam0 /*20*/].f_1, SCRIPT_TASK_PERFORM_SEQUENCE) == 7 || MISC::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), ENTITY::GET_ENTITY_COORDS(uLocal_45[iParam0 /*20*/].f_1, false), true) <= 5f)
 				{
 					TASK::TASK_LOOK_AT_ENTITY(uLocal_45[iParam0 /*20*/].f_1, PLAYER::PLAYER_PED_ID(), -1, 0, 2);
 					TASK::TASK_COMBAT_PED(uLocal_45[iParam0 /*20*/].f_1, PLAYER::PLAYER_PED_ID(), 0, 16);
@@ -4153,14 +4153,14 @@ void func_97(int iParam0) // Position - 0x539A Hash - 0x841B9912 ^0xF0543253
 			{
 				if (uLocal_114[iParam0] == 0)
 				{
-					if (!func_63() || _GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
+					if (!func_63() || _GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
 					{
 						WEAPON::GIVE_WEAPON_TO_PED(uLocal_45[iParam0 /*20*/].f_1, uLocal_45[iParam0 /*20*/].f_17, -1, false, true);
 						uLocal_114[iParam0] = 1;
 					}
 				}
 			
-				if (TASK::GET_SCRIPT_TASK_STATUS(uLocal_45[iParam0 /*20*/].f_1, joaat("SCRIPT_TASK_COMBAT") /*SCRIPT_TASK_COMBAT*/) == 7)
+				if (TASK::GET_SCRIPT_TASK_STATUS(uLocal_45[iParam0 /*20*/].f_1, SCRIPT_TASK_COMBAT) == 7)
 					TASK::TASK_COMBAT_PED(uLocal_45[iParam0 /*20*/].f_1, PLAYER::PLAYER_PED_ID(), 0, 16);
 			
 				if (MISC::GET_DISTANCE_BETWEEN_COORDS(ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false), ENTITY::GET_ENTITY_COORDS(uLocal_45[iParam0 /*20*/].f_1, false), true) >= 75f)
@@ -5373,17 +5373,17 @@ BOOL func_134() // Position - 0x6FD3 Hash - 0x70B4A54B ^0xF137E5FF
 
 	switch (_GET_CURRENT_PLAYER_CHARACTER())
 	{
-		case 0 /*CHAR_MICHAEL*/:
+		case CHAR_MICHAEL:
 			if (Global_113969.f_9088.f_99.f_58[65])
 				return true;
 			break;
 	
-		case 1 /*CHAR_FRANKLIN*/:
+		case CHAR_FRANKLIN:
 			if (Global_113969.f_9088.f_99.f_58[66])
 				return true;
 			break;
 	
-		case 2 /*CHAR_TREVOR*/:
+		case CHAR_TREVOR:
 			if (Global_113969.f_9088.f_99.f_58[65])
 				return true;
 			break;
@@ -5401,9 +5401,9 @@ int func_135(int iParam0) // Position - 0x7052 Hash - 0x46546439 ^0x46546439
 	if (func_136(iParam0))
 		return 1;
 
-	if (iParam0 == 49 /*CHAR_BARRY*/)
+	if (iParam0 == CHAR_BARRY)
 	{
-		if (character == 1 /*CHAR_FRANKLIN*/)
+		if (character == CHAR_FRANKLIN)
 			if (IS_BIT_SET(Global_113969.f_7232[5], 0) || IS_BIT_SET(Global_113969.f_7232[6], 0))
 				return 0;
 	
@@ -5423,7 +5423,7 @@ int func_135(int iParam0) // Position - 0x7052 Hash - 0x46546439 ^0x46546439
 		case 44:
 		case 45:
 		case 46:
-			if (character == 0 /*CHAR_MICHAEL*/)
+			if (character == CHAR_MICHAEL)
 				if (IS_BIT_SET(Global_113969.f_7232[0], 0))
 					return 0;
 		
@@ -5438,7 +5438,7 @@ int func_135(int iParam0) // Position - 0x7052 Hash - 0x46546439 ^0x46546439
 		case 47:
 		case 48:
 		case 49:
-			if (character == 1 /*CHAR_FRANKLIN*/)
+			if (character == CHAR_FRANKLIN)
 				if (IS_BIT_SET(Global_113969.f_7232[5], 0))
 					return 0;
 		
@@ -5448,7 +5448,7 @@ int func_135(int iParam0) // Position - 0x7052 Hash - 0x46546439 ^0x46546439
 			break;
 	
 		case 50:
-			if (character == 1 /*CHAR_FRANKLIN*/)
+			if (character == CHAR_FRANKLIN)
 				if (IS_BIT_SET(Global_113969.f_7232[6], 0))
 					return 0;
 		
@@ -5459,7 +5459,7 @@ int func_135(int iParam0) // Position - 0x7052 Hash - 0x46546439 ^0x46546439
 	
 		case 51:
 		case 52:
-			if (character == 2 /*CHAR_TREVOR*/)
+			if (character == CHAR_TREVOR)
 			{
 				if (IS_BIT_SET(Global_113969.f_7232[2], 0))
 					return 0;
@@ -5468,7 +5468,7 @@ int func_135(int iParam0) // Position - 0x7052 Hash - 0x46546439 ^0x46546439
 					if (IS_BIT_SET(Global_96540[2], character))
 						return 0;
 			}
-			else if (character == 0 /*CHAR_MICHAEL*/)
+			else if (character == CHAR_MICHAEL)
 			{
 				if (IS_BIT_SET(Global_113969.f_7232[1], 0))
 					return 0;
@@ -5480,7 +5480,7 @@ int func_135(int iParam0) // Position - 0x7052 Hash - 0x46546439 ^0x46546439
 			break;
 	
 		case 53:
-			if (character == 2 /*CHAR_TREVOR*/)
+			if (character == CHAR_TREVOR)
 				if (IS_BIT_SET(Global_113969.f_7232[3], 0))
 					return 0;
 		
@@ -5500,7 +5500,7 @@ BOOL func_136(eCharacter echParam0) // Position - 0x727A Hash - 0x5A075A23 ^0x27
 {
 	Hash entityModel;
 
-	if (echParam0 == 40 /*CHAR_PATRICIA*/ || echParam0 == 49 /*CHAR_BARRY*/ || echParam0 == 52 /*CHAR_DOM*/)
+	if (echParam0 == CHAR_PATRICIA || echParam0 == CHAR_BARRY || echParam0 == CHAR_DOM)
 	{
 		if (!PED::IS_PED_INJURED(PLAYER::PLAYER_PED_ID()))
 		{
@@ -7553,7 +7553,7 @@ BOOL func_145(var uParam0, var uParam1, var uParam2, int iParam3, int iParam4, B
 	
 		if (func_25(_GET_CURRENT_PLAYER_CHARACTER()))
 		{
-			for (i = 0 /*CHAR_MICHAEL*/; i < 3 /*CHAR_MULTIPLAYER*/; i = i + 1)
+			for (i = CHAR_MICHAEL; i < CHAR_MULTIPLAYER; i = i + 1)
 			{
 				vector = { Global_113969.f_2366.f_539.f_2300[i /*3*/] };
 				num = Global_113969.f_2366.f_539.f_2296[i];
@@ -8017,27 +8017,27 @@ BOOL func_167(int iParam0, int iParam1, eCharacter echParam2) // Position - 0xBA
 	switch (iParam0)
 	{
 		case 18:
-			if (character == 2 /*CHAR_TREVOR*/)
+			if (character == CHAR_TREVOR)
 				num = 1;
 			break;
 	
 		case 19:
-			if (character != 2 /*CHAR_TREVOR*/)
+			if (character != CHAR_TREVOR)
 				num = 1;
 			break;
 	
 		case 20:
-			if (character != 1 /*CHAR_FRANKLIN*/)
+			if (character != CHAR_FRANKLIN)
 				num = 1;
 			break;
 	
 		case 28:
-			if (character != 2 /*CHAR_TREVOR*/)
+			if (character != CHAR_TREVOR)
 				num = 1;
 			break;
 	
 		case 13:
-			if (character == 0 /*CHAR_MICHAEL*/)
+			if (character == CHAR_MICHAEL)
 				if (iParam1 == 2)
 					num = 0;
 				else
@@ -8047,12 +8047,12 @@ BOOL func_167(int iParam0, int iParam1, eCharacter echParam2) // Position - 0xBA
 			break;
 	
 		case 22:
-			if (iParam1 == 2 || character != 2 /*CHAR_TREVOR*/)
+			if (iParam1 == 2 || character != CHAR_TREVOR)
 				num = 1;
 			break;
 	
 		case 30:
-			if (character != 2 /*CHAR_TREVOR*/)
+			if (character != CHAR_TREVOR)
 				num = 1;
 			break;
 	

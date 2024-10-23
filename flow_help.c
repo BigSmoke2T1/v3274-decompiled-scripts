@@ -424,7 +424,7 @@ void func_13() // Position - 0xA60 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
+			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -449,14 +449,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xB6B Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
+		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xBA8 Hash - 0xADCB9755 ^0xADCB9755
@@ -464,7 +464,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xBA8 Hash - 0xADC
 	if (func_18(character))
 		return func_17(character);
 	else
-		character != 145 /*_CHAR_NULL*/;
+		character != _CHAR_NULL;
 
 	return 0;
 }
@@ -476,7 +476,7 @@ Hash func_17(eCharacter echParam0) // Position - 0xBCD Hash - 0xE4CEEC2C ^0xE4CE
 
 BOOL func_18(eCharacter echParam0) // Position - 0xBDC Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 eCharacter _GET_CURRENT_PLAYER_CHARACTER_0() // Position - 0xBE8 Hash - 0x3C5423D7 ^0x3C5423D7

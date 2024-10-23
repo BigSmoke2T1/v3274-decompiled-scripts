@@ -964,17 +964,17 @@ BOOL func_3(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4) // 
 
 BOOL func_4() // Position - 0x17D8 Hash - 0x783A4D58 ^0xCF43DD97
 {
-	if (Global_2697896 == -15)
+	if (Global_2697897 == -15)
 	{
-		Global_2697896 = func_23();
-		func_15(&Global_2697896, 0, 0, 0, 1, 0, 0);
+		Global_2697897 = func_23();
+		func_15(&Global_2697897, 0, 0, 0, 1, 0, 0);
 		return 1;
 	}
 
-	if (func_5(func_23(), Global_2697896))
+	if (func_5(func_23(), Global_2697897))
 	{
-		Global_2697896 = func_23();
-		func_15(&Global_2697896, 0, 0, 0, 1, 0, 0);
+		Global_2697897 = func_23();
+		func_15(&Global_2697897, 0, 0, 0, 1, 0, 0);
 		return 1;
 	}
 

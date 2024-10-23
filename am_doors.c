@@ -476,7 +476,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 		
 			case 1:
 				func_24();
-				Global_2738934.f_4622 = 1;
+				Global_2738935.f_4622 = 1;
 				func_14();
 				func_9();
 				break;
@@ -704,15 +704,15 @@ void func_9() // Position - 0x5A4 Hash - 0x582971EC ^0x3A49F93F
 	vector = { _GET_PLAYER_COORDS(PLAYER::PLAYER_ID()) };
 	num = SYSTEM::VDIST(vector, uLocal_128[iLocal_182 /*17*/].f_3);
 
-	if (IS_BIT_SET(Global_2748865, iLocal_182) || IS_BIT_SET(Global_2748865.f_1, iLocal_182) || IS_BIT_SET(Global_2748865.f_2, iLocal_182))
+	if (IS_BIT_SET(Global_2748866, iLocal_182) || IS_BIT_SET(Global_2748866.f_1, iLocal_182) || IS_BIT_SET(Global_2748866.f_2, iLocal_182))
 	{
-		if (IS_BIT_SET(Global_2748865, iLocal_182))
+		if (IS_BIT_SET(Global_2748866, iLocal_182))
 			MISC::SET_BIT(&(uLocal_218[PLAYER::PLAYER_ID() /*4*/].f_2), iLocal_182);
 	
-		if (IS_BIT_SET(Global_2748865.f_1, iLocal_182))
+		if (IS_BIT_SET(Global_2748866.f_1, iLocal_182))
 			MISC::CLEAR_BIT(&(uLocal_218[PLAYER::PLAYER_ID() /*4*/].f_2), iLocal_182);
 	
-		if (IS_BIT_SET(Global_2748865.f_2, iLocal_182))
+		if (IS_BIT_SET(Global_2748866.f_2, iLocal_182))
 			MISC::SET_BIT(&(uLocal_218[PLAYER::PLAYER_ID() /*4*/].f_3), iLocal_182);
 	}
 	else if (num <= 20f)
@@ -4129,7 +4129,7 @@ BOOL _NETWORK_WAIT_FOR_HOST_BROADCAST_DATA() // Position - 0x5A5E Hash - 0xBB119
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x5AB7 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
 		return true;
 
 	return false;
@@ -5459,8 +5459,8 @@ int func_50(int iParam0, BOOL bParam1) // Position - 0x667C Hash - 0xC74E3D8B ^0
 void func_51() // Position - 0x6D5F Hash - 0x2202F2F6 ^0x2202F2F6
 {
 	func_52(iLocal_126);
-	Global_2738934.f_1756 = 0;
-	Global_2738934.f_4622 = 0;
+	Global_2738935.f_1756 = 0;
+	Global_2738935.f_4622 = 0;
 	func_46();
 	return;
 }
@@ -5492,7 +5492,7 @@ BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x6DD8 Hash - 0x52E21E9B ^
 	if (func_43())
 		return true;
 
-	if (Global_2698757)
+	if (Global_2698758)
 		return true;
 
 	if (func_57())
@@ -5531,7 +5531,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x6E5C Hash - 0x90B51
 
 Hash func_55() // Position - 0x6E8F Hash - 0x61402777 ^0xB9FAC976
 {
-	switch (Global_2698864)
+	switch (Global_2698865)
 	{
 		case 0:
 			return joaat("freemode");

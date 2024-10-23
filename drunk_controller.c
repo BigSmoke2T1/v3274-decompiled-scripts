@@ -322,7 +322,7 @@ void func_4() // Position - 0x4E2 Hash - 0x12B08A66 ^0x24D40A1B
 
 BOOL func_5() // Position - 0x518 Hash - 0x47FF56D2 ^0x47FF56D2
 {
-	return Global_2710419;
+	return Global_2710420;
 }
 
 BOOL func_6(Ped pedParam0) // Position - 0x524 Hash - 0xD8C74549 ^0xD8C74549
@@ -535,7 +535,7 @@ void func_16(int iParam0) // Position - 0x770 Hash - 0x40E7AFA2 ^0x807EC556
 	Global_45036[num /*5*/].f_1 = Global_45005[iParam0 /*6*/].f_1;
 	Global_45036[num /*5*/].f_2 = 0;
 	args = { Global_45005[iParam0 /*6*/] };
-	SYSTEM::START_NEW_SCRIPT_WITH_ARGS("drunk", &args, 6, 1424 /*DEFAULT*/);
+	SYSTEM::START_NEW_SCRIPT_WITH_ARGS("drunk", &args, 6, DEFAULT);
 	SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("drunk");
 	func_19(iParam0);
 	return;

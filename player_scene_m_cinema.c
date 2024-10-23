@@ -238,7 +238,7 @@ int func_3(Ped pedParam0, int iParam1) // Position - 0x153 Hash - 0x2D409515 ^0x
 					return 0;
 				}
 			
-				if (TASK::GET_SCRIPT_TASK_STATUS(pedParam0, joaat("SCRIPT_TASK_WANDER_STANDARD") /*SCRIPT_TASK_WANDER_STANDARD*/) != 1)
+				if (TASK::GET_SCRIPT_TASK_STATUS(pedParam0, SCRIPT_TASK_WANDER_STANDARD) != 1)
 				{
 					TASK::TASK_WANDER_STANDARD(pedParam0, 1193033728, 0);
 					PED::SET_PED_KEEP_TASK(iLocal_71[iParam1], true);
@@ -254,7 +254,7 @@ int func_3(Ped pedParam0, int iParam1) // Position - 0x153 Hash - 0x2D409515 ^0x
 			
 				if (!MISC::IS_STRING_NULL_OR_EMPTY(&uLocal_86[iParam1 /*4*/]))
 				{
-					SYSTEM::START_NEW_SCRIPT_WITH_ARGS(&uLocal_86[iParam1 /*4*/], &iLocal_71[iParam1], 1, 1424 /*DEFAULT*/);
+					SYSTEM::START_NEW_SCRIPT_WITH_ARGS(&uLocal_86[iParam1 /*4*/], &iLocal_71[iParam1], 1, DEFAULT);
 					iLocal_81[iParam1] = 4;
 					return 0;
 				}
@@ -292,7 +292,7 @@ int func_3(Ped pedParam0, int iParam1) // Position - 0x153 Hash - 0x2D409515 ^0x
 					return 0;
 				}
 			
-				if (TASK::GET_SCRIPT_TASK_STATUS(pedParam0, joaat("SCRIPT_TASK_SMART_FLEE_PED") /*SCRIPT_TASK_SMART_FLEE_PED*/) != 1)
+				if (TASK::GET_SCRIPT_TASK_STATUS(pedParam0, SCRIPT_TASK_SMART_FLEE_PED) != 1)
 				{
 					TASK::CLEAR_PED_TASKS(pedParam0);
 					TASK::TASK_SMART_FLEE_PED(pedParam0, PLAYER::PLAYER_PED_ID(), 50f, 20000, true, false);
@@ -437,13 +437,13 @@ int func_10() // Position - 0x52E Hash - 0x35BC7314 ^0x35BC7314
 
 	switch (Global_113969.f_2366.f_539.f_4321)
 	{
-		case 0 /*CHAR_MICHAEL*/:
+		case CHAR_MICHAEL:
 			return 1;
 	
-		case 1 /*CHAR_FRANKLIN*/:
+		case CHAR_FRANKLIN:
 			return 2;
 	
-		case 2 /*CHAR_TREVOR*/:
+		case CHAR_TREVOR:
 			return 4;
 	}
 
@@ -472,7 +472,7 @@ void func_11() // Position - 0x574 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
+			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -485,7 +485,7 @@ void func_11() // Position - 0x574 Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_12(eCharacter echParam0) // Position - 0x671 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x67D Hash - 0xAC4E9801 ^0xB379A75F
@@ -497,14 +497,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x67D Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
+		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x6BA Hash - 0xADCB9755 ^0xADCB9755
@@ -512,7 +512,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x6BA Hash - 0xADC
 	if (func_12(character))
 		return func_15(character);
 	else
-		character != 145 /*_CHAR_NULL*/;
+		character != _CHAR_NULL;
 
 	return 0;
 }
@@ -615,11 +615,11 @@ void func_21() // Position - 0x769 Hash - 0x1893571B ^0x24CB31BD
 	{
 		if (iLocal_76[i] != 0)
 		{
-			iLocal_71[i] = PED::CREATE_PED(4 /*PED_TYPE_CIVMALE*/, iLocal_76[i], uLocal_103 + uLocal_107[i /*3*/], 0, true, true);
+			iLocal_71[i] = PED::CREATE_PED(PED_TYPE_CIVMALE, iLocal_76[i], uLocal_103 + uLocal_107[i /*3*/], 0, true, true);
 			ENTITY::SET_ENTITY_HEADING(iLocal_71[i], fLocal_106 + uLocal_120[i]);
 			PED::SET_PED_RANDOM_COMPONENT_VARIATION(iLocal_71[i], 0);
-			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_71[i], 13 /*BF_Aggressive*/, false);
-			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_71[i], 17 /*BF_AlwaysFlee*/, true);
+			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_71[i], BF_Aggressive, false);
+			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_71[i], BF_AlwaysFlee, true);
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_71[i], true);
 			PED::SET_PED_CAN_RAGDOLL(iLocal_71[i], false);
 		}

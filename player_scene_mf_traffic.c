@@ -702,13 +702,13 @@ int func_23() // Position - 0x7DB Hash - 0x35BC7314 ^0x35BC7314
 
 	switch (Global_113969.f_2366.f_539.f_4321)
 	{
-		case 0 /*CHAR_MICHAEL*/:
+		case CHAR_MICHAEL:
 			return 1;
 	
-		case 1 /*CHAR_FRANKLIN*/:
+		case CHAR_FRANKLIN:
 			return 2;
 	
-		case 2 /*CHAR_TREVOR*/:
+		case CHAR_TREVOR:
 			return 4;
 	}
 
@@ -737,7 +737,7 @@ void func_24() // Position - 0x821 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
+			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -750,7 +750,7 @@ void func_24() // Position - 0x821 Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_25(eCharacter echParam0) // Position - 0x91E Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x92A Hash - 0xAC4E9801 ^0xB379A75F
@@ -762,14 +762,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x92A Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
+		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x967 Hash - 0xADCB9755 ^0xADCB9755
@@ -777,7 +777,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x967 Hash - 0xADC
 	if (func_25(character))
 		return func_28(character);
 	else
-		character != 145 /*_CHAR_NULL*/;
+		character != _CHAR_NULL;
 
 	return 0;
 }
@@ -973,7 +973,7 @@ void func_33() // Position - 0xA08 Hash - 0x650FC288 ^0x5F36E8BB
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(iLocal_76[i], false))
 		{
-			ped = PED::CREATE_PED_INSIDE_VEHICLE(iLocal_76[i], 4 /*PED_TYPE_CIVMALE*/, iLocal_71[func_36()], -1, true, true);
+			ped = PED::CREATE_PED_INSIDE_VEHICLE(iLocal_76[i], PED_TYPE_CIVMALE, iLocal_71[func_36()], -1, true, true);
 			func_34(ped);
 			ENTITY::SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(iLocal_76[i], true);
 			ENTITY::SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(ped, true);
@@ -987,7 +987,7 @@ void func_33() // Position - 0xA08 Hash - 0x650FC288 ^0x5F36E8BB
 		{
 			if (VEHICLE::GET_VEHICLE_MAX_NUMBER_OF_PASSENGERS(iLocal_152[i]) > 0)
 			{
-				ped2 = PED::CREATE_PED_INSIDE_VEHICLE(iLocal_152[i], 4 /*PED_TYPE_CIVMALE*/, iLocal_71[func_36()], -1, true, true);
+				ped2 = PED::CREATE_PED_INSIDE_VEHICLE(iLocal_152[i], PED_TYPE_CIVMALE, iLocal_71[func_36()], -1, true, true);
 				func_34(ped2);
 				ENTITY::SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(iLocal_76[i], true);
 				ENTITY::SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(ped2, true);
@@ -1008,7 +1008,7 @@ void func_33() // Position - 0xA08 Hash - 0x650FC288 ^0x5F36E8BB
 		{
 			if (VEHICLE::GET_VEHICLE_MAX_NUMBER_OF_PASSENGERS(iLocal_180[i]) > 0)
 			{
-				ped3 = PED::CREATE_PED_INSIDE_VEHICLE(iLocal_180[i], 4 /*PED_TYPE_CIVMALE*/, iLocal_71[func_36()], -1, true, true);
+				ped3 = PED::CREATE_PED_INSIDE_VEHICLE(iLocal_180[i], PED_TYPE_CIVMALE, iLocal_71[func_36()], -1, true, true);
 				func_34(ped3);
 				ENTITY::SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(iLocal_76[i], true);
 				ENTITY::SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(ped3, true);
@@ -1023,7 +1023,7 @@ void func_33() // Position - 0xA08 Hash - 0x650FC288 ^0x5F36E8BB
 		{
 			if (VEHICLE::GET_VEHICLE_MAX_NUMBER_OF_PASSENGERS(iLocal_208[i]) > 0)
 			{
-				ped4 = PED::CREATE_PED_INSIDE_VEHICLE(iLocal_208[i], 4 /*PED_TYPE_CIVMALE*/, iLocal_71[func_36()], -1, true, true);
+				ped4 = PED::CREATE_PED_INSIDE_VEHICLE(iLocal_208[i], PED_TYPE_CIVMALE, iLocal_71[func_36()], -1, true, true);
 				func_34(ped4);
 				ENTITY::SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(iLocal_76[i], true);
 				ENTITY::SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(ped4, true);
@@ -1045,11 +1045,11 @@ void func_34(Ped pedParam0) // Position - 0xF87 Hash - 0xBF1A2005 ^0xBEFD47E8
 	PED::SET_PED_RANDOM_COMPONENT_VARIATION(pedParam0, 0);
 
 	if (ENTITY::GET_ENTITY_MODEL(pedParam0) == joaat("A_M_M_Salton_01"))
-		if (PED::GET_PED_DRAWABLE_VARIATION(pedParam0, 3 /*PV_COMP_UPPR*/) == 1)
+		if (PED::GET_PED_DRAWABLE_VARIATION(pedParam0, PV_COMP_UPPR) == 1)
 			if (_GET_RANDOM_BOOL())
-				PED::SET_PED_COMPONENT_VARIATION(pedParam0, 3 /*PV_COMP_UPPR*/, 0, PED::GET_PED_TEXTURE_VARIATION(pedParam0, 3 /*PV_COMP_UPPR*/), 0);
+				PED::SET_PED_COMPONENT_VARIATION(pedParam0, PV_COMP_UPPR, 0, PED::GET_PED_TEXTURE_VARIATION(pedParam0, PV_COMP_UPPR), 0);
 			else
-				PED::SET_PED_COMPONENT_VARIATION(pedParam0, 3 /*PV_COMP_UPPR*/, 2, PED::GET_PED_TEXTURE_VARIATION(pedParam0, 3 /*PV_COMP_UPPR*/), 0);
+				PED::SET_PED_COMPONENT_VARIATION(pedParam0, PV_COMP_UPPR, 2, PED::GET_PED_TEXTURE_VARIATION(pedParam0, PV_COMP_UPPR), 0);
 
 	return;
 }

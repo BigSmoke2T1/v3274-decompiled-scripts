@@ -1195,26 +1195,26 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0x77B Hash - 0x98476CE1 ^0
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[0 /*29*/])
-				Global_20930 = 0 /*CHAR_MICHAEL*/;
+				Global_20930 = CHAR_MICHAEL;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[1 /*29*/])
-				Global_20930 = 1 /*CHAR_FRANKLIN*/;
+				Global_20930 = CHAR_FRANKLIN;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[2 /*29*/])
-				Global_20930 = 2 /*CHAR_TREVOR*/;
+				Global_20930 = CHAR_TREVOR;
 			else
-				Global_20930 = 0 /*CHAR_MICHAEL*/;
+				Global_20930 = CHAR_MICHAEL;
 	}
 	else
 	{
 		Global_20930 = _GET_CURRENT_PLAYER_CHARACTER();
 	
-		if (Global_20930 == 145 /*_CHAR_NULL*/)
-			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
+		if (Global_20930 == _CHAR_NULL)
+			Global_20930 = CHAR_MULTIPLAYER;
 	
 		if (Global_79389)
-			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
+			Global_20930 = CHAR_MULTIPLAYER;
 	
-		if (Global_20930 > 3 /*CHAR_MULTIPLAYER*/)
-			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
+		if (Global_20930 > CHAR_MULTIPLAYER)
+			Global_20930 = CHAR_MULTIPLAYER;
 	}
 
 	return;
@@ -1248,7 +1248,7 @@ void func_16() // Position - 0x836 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
+			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -1261,7 +1261,7 @@ void func_16() // Position - 0x836 Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_17(eCharacter echParam0) // Position - 0x933 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x93F Hash - 0xAC4E9801 ^0xB379A75F
@@ -1273,14 +1273,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x93F Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
+		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x97C Hash - 0xADCB9755 ^0xADCB9755
@@ -1288,7 +1288,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x97C Hash - 0xADC
 	if (func_17(character))
 		return func_20(character);
 	else
-		character != 145 /*_CHAR_NULL*/;
+		character != _CHAR_NULL;
 
 	return 0;
 }
@@ -1556,7 +1556,7 @@ void func_26(Ped pedParam0, int iParam1) // Position - 0xAF9 Hash - 0xEDC6376E ^
 						PED::SET_PED_AS_GROUP_MEMBER(iLocal_236[iParam1], iLocal_251);
 				}
 			
-				if (TASK::GET_SCRIPT_TASK_STATUS(pedParam0, joaat("SCRIPT_TASK_FOLLOW_NAV_MESH_TO_COORD") /*SCRIPT_TASK_FOLLOW_NAV_MESH_TO_COORD*/) != 1)
+				if (TASK::GET_SCRIPT_TASK_STATUS(pedParam0, SCRIPT_TASK_FOLLOW_NAV_MESH_TO_COORD) != 1)
 				{
 					if (uLocal_293[iParam1] == 0f)
 						uLocal_293[iParam1] = SYSTEM::VMAG(uLocal_283[iParam1 /*3*/]) * 0.75f;
@@ -1595,7 +1595,7 @@ void func_26(Ped pedParam0, int iParam1) // Position - 0xAF9 Hash - 0xEDC6376E ^
 				break;
 		
 			case 4:
-				if (TASK::GET_SCRIPT_TASK_STATUS(pedParam0, joaat("SCRIPT_TASK_SMART_FLEE_PED") /*SCRIPT_TASK_SMART_FLEE_PED*/) != 1)
+				if (TASK::GET_SCRIPT_TASK_STATUS(pedParam0, SCRIPT_TASK_SMART_FLEE_PED) != 1)
 					iLocal_239[iParam1] = 1;
 				break;
 		
@@ -2250,13 +2250,13 @@ int func_42() // Position - 0x1E5E Hash - 0x35BC7314 ^0x35BC7314
 
 	switch (Global_113969.f_2366.f_539.f_4321)
 	{
-		case 0 /*CHAR_MICHAEL*/:
+		case CHAR_MICHAEL:
 			return 1;
 	
-		case 1 /*CHAR_FRANKLIN*/:
+		case CHAR_FRANKLIN:
 			return 2;
 	
-		case 2 /*CHAR_TREVOR*/:
+		case CHAR_TREVOR:
 			return 4;
 	}
 
@@ -2373,16 +2373,16 @@ void func_47() // Position - 0x1F11 Hash - 0x1893571B ^0x24CB31BD
 	{
 		if (iLocal_242[i] != 0)
 		{
-			iLocal_236[i] = PED::CREATE_PED(26 /*PED_TYPE_MISSION*/, iLocal_242[i], uLocal_272 + uLocal_276[i /*3*/], 0, true, true);
+			iLocal_236[i] = PED::CREATE_PED(PED_TYPE_MISSION, iLocal_242[i], uLocal_272 + uLocal_276[i /*3*/], 0, true, true);
 			ENTITY::SET_ENTITY_HEADING(iLocal_236[i], fLocal_275 + uLocal_290[i]);
 			PED::SET_PED_RANDOM_COMPONENT_VARIATION(iLocal_236[i], 0);
 		
 			if (iLocal_242[i] == joaat("A_F_Y_Beach_01"))
 				if (iLocal_69 == 288)
-					PED::SET_PED_COMPONENT_VARIATION(iLocal_236[i], 8 /*PV_COMP_ACCS*/, 1, 0, 0);
+					PED::SET_PED_COMPONENT_VARIATION(iLocal_236[i], PV_COMP_ACCS, 1, 0, 0);
 		
-			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_236[i], 13 /*BF_Aggressive*/, false);
-			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_236[i], 17 /*BF_AlwaysFlee*/, true);
+			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_236[i], BF_Aggressive, false);
+			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_236[i], BF_AlwaysFlee, true);
 			TASK::TASK_PLAY_ANIM(iLocal_236[i], &uLocal_344, &uLocal_360[i /*16*/], 8f, -8f, -1, 1, 0f, false, false, false);
 		}
 	}

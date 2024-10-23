@@ -249,10 +249,10 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				}
 			
 				if (num3 == 0)
-					if (func_152(189 /*INPUT_FRONTEND_LEFT*/) || func_152(190 /*INPUT_FRONTEND_RIGHT*/))
+					if (func_152(INPUT_FRONTEND_LEFT) || func_152(INPUT_FRONTEND_RIGHT))
 						num = 1;
 			
-				if (func_152(202 /*INPUT_FRONTEND_CANCEL*/))
+				if (func_152(INPUT_FRONTEND_CANCEL))
 				{
 					func_149();
 				
@@ -339,28 +339,28 @@ void func_1(var uParam0, var uParam1, var uParam2) // Position - 0x30C Hash - 0x
 	if (!_STOPWATCH_IS_INITIALIZED(uParam2) || _STOPWATCH_IS_INITIALIZED(uParam2) && _STOPWATCH_HAS_TIME_PASSED(uParam2, 250, false))
 		flag = true;
 
-	if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 187 /*INPUT_FRONTEND_DOWN*/) || func_6(187 /*INPUT_FRONTEND_DOWN*/, &(Global_1668667.f_1060), 1) && flag)
+	if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_DOWN) || func_6(INPUT_FRONTEND_DOWN, &(Global_1668667.f_1060), 1) && flag)
 	{
 		_STOPWATCH_DESTROY(uParam2);
 		_STOPWATCH_INITIALIZE(uParam2, false, false);
 		MISC::SET_BIT(&(uParam0->f_285), 0);
 	}
 
-	if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 188 /*INPUT_FRONTEND_UP*/) || func_6(188 /*INPUT_FRONTEND_UP*/, &(Global_1668667.f_1060), 1) && flag)
+	if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_UP) || func_6(INPUT_FRONTEND_UP, &(Global_1668667.f_1060), 1) && flag)
 	{
 		_STOPWATCH_DESTROY(uParam2);
 		_STOPWATCH_INITIALIZE(uParam2, false, false);
 		MISC::SET_BIT(&(uParam0->f_285), 1);
 	}
 
-	if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 189 /*INPUT_FRONTEND_LEFT*/) || PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 241 /*INPUT_CURSOR_SCROLL_UP*/) || func_6(189 /*INPUT_FRONTEND_LEFT*/, &(Global_1668667.f_1060), 1) && flag)
+	if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_LEFT) || PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_UP) || func_6(INPUT_FRONTEND_LEFT, &(Global_1668667.f_1060), 1) && flag)
 	{
 		_STOPWATCH_DESTROY(uParam2);
 		_STOPWATCH_INITIALIZE(uParam2, false, false);
 		MISC::SET_BIT(&(uParam0->f_285), 2);
 	}
 
-	if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 190 /*INPUT_FRONTEND_RIGHT*/) || PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 242 /*INPUT_CURSOR_SCROLL_DOWN*/) || func_6(190 /*INPUT_FRONTEND_RIGHT*/, &(Global_1668667.f_1060), 1) && flag)
+	if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT) || PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_CURSOR_SCROLL_DOWN) || func_6(INPUT_FRONTEND_RIGHT, &(Global_1668667.f_1060), 1) && flag)
 	{
 		MISC::SET_BIT(&(uParam0->f_285), 3);
 		_STOPWATCH_DESTROY(uParam2);
@@ -577,13 +577,13 @@ BOOL func_6(eControlAction ecaParam0, var uParam1, int iParam2) // Position - 0x
 	int num2;
 	int num3;
 
-	num = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 195 /*INPUT_FRONTEND_AXIS_X*/) - 127;
-	num2 = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 196 /*INPUT_FRONTEND_AXIS_Y*/) - 127;
-	num3 = PAD::GET_CONTROL_VALUE(2 /*FRONTEND_CONTROL*/, 197 /*INPUT_FRONTEND_RIGHT_AXIS_X*/) - 127;
+	num = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_FRONTEND_AXIS_X) - 127;
+	num2 = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_FRONTEND_AXIS_Y) - 127;
+	num3 = PAD::GET_CONTROL_VALUE(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT_AXIS_X) - 127;
 
 	switch (ecaParam0)
 	{
-		case 189 /*INPUT_FRONTEND_LEFT*/:
+		case INPUT_FRONTEND_LEFT:
 			if (num < -30)
 			{
 				if (*uParam1 < MISC::GET_GAME_TIMER() || iParam2 == 0)
@@ -594,7 +594,7 @@ BOOL func_6(eControlAction ecaParam0, var uParam1, int iParam2) // Position - 0x
 			}
 			break;
 	
-		case 190 /*INPUT_FRONTEND_RIGHT*/:
+		case INPUT_FRONTEND_RIGHT:
 			if (num > 30)
 			{
 				if (*uParam1 < MISC::GET_GAME_TIMER() || iParam2 == 0)
@@ -605,7 +605,7 @@ BOOL func_6(eControlAction ecaParam0, var uParam1, int iParam2) // Position - 0x
 			}
 			break;
 	
-		case 188 /*INPUT_FRONTEND_UP*/:
+		case INPUT_FRONTEND_UP:
 			if (num2 < -30)
 			{
 				if (*uParam1 < MISC::GET_GAME_TIMER() || iParam2 == 0)
@@ -616,7 +616,7 @@ BOOL func_6(eControlAction ecaParam0, var uParam1, int iParam2) // Position - 0x
 			}
 			break;
 	
-		case 187 /*INPUT_FRONTEND_DOWN*/:
+		case INPUT_FRONTEND_DOWN:
 			if (num2 > 30)
 			{
 				if (*uParam1 < MISC::GET_GAME_TIMER() || iParam2 == 0)
@@ -627,7 +627,7 @@ BOOL func_6(eControlAction ecaParam0, var uParam1, int iParam2) // Position - 0x
 			}
 			break;
 	
-		case 194 /*INPUT_FRONTEND_RRIGHT*/:
+		case INPUT_FRONTEND_RRIGHT:
 			if (num3 > 30)
 			{
 				if (*uParam1 < MISC::GET_GAME_TIMER() || iParam2 == 0)
@@ -638,7 +638,7 @@ BOOL func_6(eControlAction ecaParam0, var uParam1, int iParam2) // Position - 0x
 			}
 			break;
 	
-		case 193 /*INPUT_FRONTEND_RLEFT*/:
+		case INPUT_FRONTEND_RLEFT:
 			if (num3 < -30)
 			{
 				if (*uParam1 < MISC::GET_GAME_TIMER() || iParam2 == 0)
@@ -2586,13 +2586,13 @@ int func_34(int iParam0) // Position - 0x2D80 Hash - 0x1A3F3220 ^0x1A3F3220
 	
 		if (num2 > -1)
 		{
-			Global_2750949 = 0;
+			Global_2750950 = 0;
 			num = num2;
 		}
 		else
 		{
 			num = 0;
-			Global_2750949 = 1;
+			Global_2750950 = 1;
 		}
 	}
 
@@ -7445,9 +7445,9 @@ void func_76(Hash hParam0, Hash hParam1, BOOL bParam2) // Position - 0x81FE Hash
 
 	if (action > -1)
 		if (bParam2)
-			MISC::SET_BIT(&Global_2749863.f_991[func_77(hParam0, hParam1)], func_28(action));
+			MISC::SET_BIT(&Global_2749864.f_991[func_77(hParam0, hParam1)], func_28(action));
 		else
-			MISC::CLEAR_BIT(&Global_2749863.f_991[func_77(hParam0, hParam1)], func_28(action));
+			MISC::CLEAR_BIT(&Global_2749864.f_991[func_77(hParam0, hParam1)], func_28(action));
 
 	return;
 }
@@ -8178,7 +8178,7 @@ int* func_84(Hash hParam0, Hash hParam1) // Position - 0x9087 Hash - 0x4BB862F8 
 {
 	int* p_num;
 
-	p_num = Global_2749863.f_991[func_77(hParam0, hParam1)];
+	p_num = Global_2749864.f_991[func_77(hParam0, hParam1)];
 	return p_num;
 }
 
@@ -12610,7 +12610,7 @@ BOOL func_152(eControlAction ecaParam0) // Position - 0xF102 Hash - 0x8A518C92 ^
 	num = func_37(action);
 	offset = func_28(action);
 
-	if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, ecaParam0) || PAD::IS_DISABLED_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, ecaParam0) || func_6(ecaParam0, &(Global_1668667.f_1060), 1))
+	if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, ecaParam0) || PAD::IS_DISABLED_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, ecaParam0) || func_6(ecaParam0, &(Global_1668667.f_1060), 1))
 	{
 		if (!IS_BIT_SET(Global_1668667.f_1049[num], offset))
 		{

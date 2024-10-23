@@ -372,7 +372,7 @@ void func_7() // Position - 0x191 Hash - 0xF01BBF2C ^0x9A1FFEFD
 									SYSTEM::WAIT(0);
 								}
 							
-								SYSTEM::START_NEW_SCRIPT("emergencycall", 512 /*MINI*/);
+								SYSTEM::START_NEW_SCRIPT("emergencycall", MINI);
 							}
 						
 							iLocal_42 = 1;
@@ -389,7 +389,7 @@ void func_7() // Position - 0x191 Hash - 0xF01BBF2C ^0x9A1FFEFD
 								SYSTEM::WAIT(0);
 							}
 						
-							SYSTEM::START_NEW_SCRIPT("emergencycall", 512 /*MINI*/);
+							SYSTEM::START_NEW_SCRIPT("emergencycall", MINI);
 						}
 					
 						iLocal_42 = 1;
@@ -400,7 +400,7 @@ void func_7() // Position - 0x191 Hash - 0xF01BBF2C ^0x9A1FFEFD
 	
 		case 1:
 			if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("emergencycall")) == 0)
-				if (!func_36(130 /*_CHAR_TAXI_IS*/))
+				if (!func_36(_CHAR_TAXI_IS))
 					iLocal_41 = 1;
 			break;
 	}
@@ -750,26 +750,26 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0x898 Hash - 0x98476CE1 ^0
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[0 /*29*/])
-				Global_20930 = 0 /*CHAR_MICHAEL*/;
+				Global_20930 = CHAR_MICHAEL;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[1 /*29*/])
-				Global_20930 = 1 /*CHAR_FRANKLIN*/;
+				Global_20930 = CHAR_FRANKLIN;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[2 /*29*/])
-				Global_20930 = 2 /*CHAR_TREVOR*/;
+				Global_20930 = CHAR_TREVOR;
 			else
-				Global_20930 = 0 /*CHAR_MICHAEL*/;
+				Global_20930 = CHAR_MICHAEL;
 	}
 	else
 	{
 		Global_20930 = _GET_CURRENT_PLAYER_CHARACTER();
 	
-		if (Global_20930 == 145 /*_CHAR_NULL*/)
-			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
+		if (Global_20930 == _CHAR_NULL)
+			Global_20930 = CHAR_MULTIPLAYER;
 	
 		if (Global_79389)
-			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
+			Global_20930 = CHAR_MULTIPLAYER;
 	
-		if (Global_20930 > 3 /*CHAR_MULTIPLAYER*/)
-			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
+		if (Global_20930 > CHAR_MULTIPLAYER)
+			Global_20930 = CHAR_MULTIPLAYER;
 	}
 
 	return;
@@ -803,7 +803,7 @@ void func_21() // Position - 0x953 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
+			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -816,7 +816,7 @@ void func_21() // Position - 0x953 Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_22(eCharacter echParam0) // Position - 0xA50 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xA5C Hash - 0xAC4E9801 ^0xB379A75F
@@ -828,14 +828,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xA5C Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
+		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xA99 Hash - 0xADCB9755 ^0xADCB9755
@@ -843,7 +843,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xA99 Hash - 0xADC
 	if (func_22(character))
 		return func_25(character);
 	else
-		character != 145 /*_CHAR_NULL*/;
+		character != _CHAR_NULL;
 
 	return 0;
 }

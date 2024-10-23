@@ -58,7 +58,7 @@ void func_1() // Position - 0x4F Hash - 0xA6977AA7 ^0xE28B3708
 		{
 			ENTITY::SET_ENTITY_AS_MISSION_ENTITY(pedLocal_18, true, true);
 		
-			if (TASK::GET_SCRIPT_TASK_STATUS(pedLocal_18, joaat("SCRIPT_TASK_ANY") /*SCRIPT_TASK_ANY*/) != 7)
+			if (TASK::GET_SCRIPT_TASK_STATUS(pedLocal_18, SCRIPT_TASK_ANY) != 7)
 				TASK::CLEAR_PED_TASKS(pedLocal_18);
 		
 			entityCoords = { ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false) };
@@ -108,41 +108,41 @@ void func_2(Ped pedParam0) // Position - 0x13C Hash - 0xECD121EF ^0x1CFFB18C
 
 	if (!PED::IS_PED_INJURED(pedParam0))
 	{
-		if (echLocal_17 == 1 /*CHAR_FRANKLIN*/)
+		if (echLocal_17 == CHAR_FRANKLIN)
 		{
 			switch (_GET_PLAYER_CHARACTER_FROM_PED(PLAYER::PLAYER_PED_ID()))
 			{
-				case 2 /*CHAR_TREVOR*/:
+				case CHAR_TREVOR:
 					func_3(pedParam0, "BUDDY_SEES_TREVOR_DEATH", "FRANKLIN_NORMAL", 3, false);
 					break;
 			
-				case 0 /*CHAR_MICHAEL*/:
+				case CHAR_MICHAEL:
 					func_3(pedParam0, "BUDDY_SEES_MICHAEL_DEATH", "FRANKLIN_NORMAL", 3, false);
 					break;
 			}
 		}
-		else if (echLocal_17 == 2 /*CHAR_TREVOR*/)
+		else if (echLocal_17 == CHAR_TREVOR)
 		{
 			switch (_GET_PLAYER_CHARACTER_FROM_PED(PLAYER::PLAYER_PED_ID()))
 			{
-				case 1 /*CHAR_FRANKLIN*/:
+				case CHAR_FRANKLIN:
 					func_3(pedParam0, "BUDDY_SEES_FRANKLIN_DEATH", "TREVOR_NORMAL", 3, false);
 					break;
 			
-				case 0 /*CHAR_MICHAEL*/:
+				case CHAR_MICHAEL:
 					func_3(pedParam0, "BUDDY_SEES_MICHAEL_DEATH", "TREVOR_NORMAL", 3, false);
 					break;
 			}
 		}
-		else if (echLocal_17 == 0 /*CHAR_MICHAEL*/)
+		else if (echLocal_17 == CHAR_MICHAEL)
 		{
 			switch (_GET_PLAYER_CHARACTER_FROM_PED(PLAYER::PLAYER_PED_ID()))
 			{
-				case 2 /*CHAR_TREVOR*/:
+				case CHAR_TREVOR:
 					func_3(pedParam0, "BUDDY_SEES_TREVOR_DEATH", "MICHAEL_NORMAL", 3, false);
 					break;
 			
-				case 1 /*CHAR_FRANKLIN*/:
+				case CHAR_FRANKLIN:
 					func_3(pedParam0, "BUDDY_SEES_FRANKLIN_DEATH", "MICHAEL_NORMAL", 3, false);
 					break;
 			}
@@ -292,14 +292,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x443 Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
+		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x480 Hash - 0xADCB9755 ^0xADCB9755
@@ -307,7 +307,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x480 Hash - 0xADC
 	if (func_8(character))
 		return func_7(character);
 	else
-		character != 145 /*_CHAR_NULL*/;
+		character != _CHAR_NULL;
 
 	return 0;
 }
@@ -319,7 +319,7 @@ Hash func_7(eCharacter echParam0) // Position - 0x4A5 Hash - 0xE4CEEC2C ^0xE4CEE
 
 BOOL func_8(eCharacter echParam0) // Position - 0x4B4 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 BOOL func_9(var uParam0) // Position - 0x4C0 Hash - 0x5D6C301A ^0xD5FFE8CA
@@ -340,7 +340,7 @@ BOOL func_9(var uParam0) // Position - 0x4C0 Hash - 0x5D6C301A ^0xD5FFE8CA
 						{
 							echLocal_17 = _GET_PLAYER_CHARACTER_FROM_PED(Global_98882[iLocal_16]);
 						
-							if (echLocal_17 == 0 /*CHAR_MICHAEL*/ || echLocal_17 == 2 /*CHAR_TREVOR*/ || echLocal_17 == 1 /*CHAR_FRANKLIN*/)
+							if (echLocal_17 == CHAR_MICHAEL || echLocal_17 == CHAR_TREVOR || echLocal_17 == CHAR_FRANKLIN)
 							{
 								if (echLocal_17 != _GET_CURRENT_PLAYER_CHARACTER())
 								{
@@ -398,7 +398,7 @@ void func_11() // Position - 0x61E Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
+			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;

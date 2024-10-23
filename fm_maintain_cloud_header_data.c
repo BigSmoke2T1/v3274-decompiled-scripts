@@ -188,7 +188,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 	if (!func_339())
 		Global_1835433.f_14 = 0;
 
-	while (!Global_2697885)
+	while (!Global_2697886)
 	{
 		if (func_341())
 			func_336();
@@ -228,7 +228,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 	
 		if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS() && NETWORK::NETWORK_IS_ACTIVITY_SESSION() && !func_42())
 		{
-			if (Global_4718592 == 0 /*PV_COMP_HEAD*/ && Global_4718592.f_2 == 7 /*PV_COMP_TEEF*/ || Global_4718592.f_2 == 1 /*PV_COMP_BERD*/)
+			if (Global_4718592 == PV_COMP_HEAD && Global_4718592.f_2 == PV_COMP_TEEF || Global_4718592.f_2 == PV_COMP_BERD)
 			{
 				if (func_37(PLAYER::PLAYER_ID()) || func_36(PLAYER::PLAYER_ID()))
 				{
@@ -498,13 +498,13 @@ int func_16(int iParam0) // Position - 0x5EB Hash - 0x1A3F3220 ^0x1A3F3220
 	
 		if (num2 > -1)
 		{
-			Global_2750949 = 0;
+			Global_2750950 = 0;
 			num = num2;
 		}
 		else
 		{
 			num = 0;
-			Global_2750949 = 1;
+			Global_2750950 = 1;
 		}
 	}
 
@@ -1521,7 +1521,7 @@ void func_53(int iParam0, int iParam1, int iParam2, int iParam3, BOOL bParam4) /
 
 void func_54(BOOL bParam0) // Position - 0x1798 Hash - 0xE49C42EC ^0xE49C42EC
 {
-	Global_2696683 = bParam0;
+	Global_2696684 = bParam0;
 	return;
 }
 
@@ -2009,7 +2009,7 @@ void func_68(var uParam0, BOOL bParam1) // Position - 0x1E52 Hash - 0x4C7617FF ^
 	Global_999154.f_33[num /*89*/].f_69 = DATAFILE::DATADICT_GET_INT(dict2, "min");
 	Global_999154.f_33[num /*89*/].f_71 = DATAFILE::DATADICT_GET_INT(dict2, "num");
 
-	if (Global_999154.f_33[num /*89*/].f_71 == -1 /*PV_COMP_INVALID*/)
+	if (Global_999154.f_33[num /*89*/].f_71 == PV_COMP_INVALID)
 		Global_999154.f_33[num /*89*/].f_71 = func_108();
 
 	TEXT_LABEL_ASSIGN_STRING(&(Global_999154.f_33[num /*89*/].f_22), NETWORK::UGC_GET_CONTENT_NAME(uParam0->f_6), 64);
@@ -2579,7 +2579,7 @@ BOOL func_103(Hash hParam0) // Position - 0x2FC0 Hash - 0xEA5FFDB7 ^0xDFC9B0D5
 
 void func_104(ePedComponentType epctParam0, ePedComponentType epctParam1, ePedComponentType epctParam2) // Position - 0x304D Hash - 0xC7902025 ^0xC7902025
 {
-	if (epctParam0 == 1 /*PV_COMP_BERD*/)
+	if (epctParam0 == PV_COMP_BERD)
 		if (*epctParam2 < 2)
 			*epctParam2 = 2;
 	else if (*epctParam2 < 1)
@@ -2708,7 +2708,7 @@ BOOL func_112(Hash hParam0) // Position - 0x3335 Hash - 0x696BB521 ^0x696BB521
 	{
 		for (j = 0; j < 24; j = j + 1)
 		{
-			if (Global_262145.f_6951[j] == 2 /*PV_COMP_HAIR*/)
+			if (Global_262145.f_6951[j] == PV_COMP_HAIR)
 			{
 				for (i = 0; i < Global_262145.f_6131[j]; i = i + 1)
 				{
@@ -3078,11 +3078,11 @@ void func_134(var uParam0, int iParam1, int iParam2) // Position - 0x3A27 Hash -
 {
 	if (iParam1 == 0 || iParam1 == 1)
 		if (NETWORK::UGC_GET_CONTENT_IS_VERIFIED(uParam0->f_6))
-			if (Global_982384.f_4[iParam2 /*89*/].f_65 == 2 /*PV_COMP_HAIR*/)
+			if (Global_982384.f_4[iParam2 /*89*/].f_65 == PV_COMP_HAIR)
 				func_138(Global_987974.f_4[iParam2 /*89*/].f_22);
-			else if (Global_982384.f_4[iParam2 /*89*/].f_65 == 1 /*PV_COMP_BERD*/)
+			else if (Global_982384.f_4[iParam2 /*89*/].f_65 == PV_COMP_BERD)
 				func_137(Global_987974.f_4[iParam2 /*89*/].f_22);
-			else if (Global_982384.f_4[iParam2 /*89*/].f_65 == 4 /*PV_COMP_LOWR*/)
+			else if (Global_982384.f_4[iParam2 /*89*/].f_65 == PV_COMP_LOWR)
 				func_135(Global_987974.f_4[iParam2 /*89*/].f_22);
 
 	return;
@@ -32499,9 +32499,9 @@ ePedComponentType func_201(int iParam0, int iParam1) // Position - 0x1FC2F Hash 
 
 	if (num == 14835)
 		if (func_106() == 2 && func_197() == 2)
-			return 0 /*PV_COMP_HEAD*/;
+			return PV_COMP_HEAD;
 		else
-			return 0 /*PV_COMP_HEAD*/;
+			return PV_COMP_HEAD;
 
 	type = func_144(num, iParam1);
 	return type;
@@ -32771,9 +32771,9 @@ void func_209(int iParam0, BOOL bParam1) // Position - 0x2010C Hash - 0x2C1528D2
 
 	if (num > -1)
 		if (bParam1)
-			MISC::SET_BIT(&Global_2749863.f_1032[func_198(num)], func_200(num));
+			MISC::SET_BIT(&Global_2749864.f_1032[func_198(num)], func_200(num));
 		else
-			MISC::CLEAR_BIT(&Global_2749863.f_1032[func_198(num)], func_200(num));
+			MISC::CLEAR_BIT(&Global_2749864.f_1032[func_198(num)], func_200(num));
 
 	return;
 }
@@ -33582,7 +33582,7 @@ int* func_217(int iParam0) // Position - 0x2113C Hash - 0x15BD0E63 ^0x15BD0E63
 {
 	int* p_num;
 
-	p_num = Global_2749863.f_1032[func_198(iParam0)];
+	p_num = Global_2749864.f_1032[func_198(iParam0)];
 	return p_num;
 }
 
@@ -34076,11 +34076,11 @@ BOOL func_227(Vector3 vParam0, var uParam1, var uParam2) // Position - 0x21B2B H
 	if (OBJECT::IS_POINT_IN_ANGLED_AREA(vParam0, -1004.441f, -775.809f, 57.428f, -1004.215f, -746.208f, 74.382f, 25f, false, true))
 		return true;
 
-	if (Global_2709259)
+	if (Global_2709260)
 	{
 		for (i = 0; i < 10; i = i + 1)
 		{
-			if (OBJECT::IS_POINT_IN_ANGLED_AREA(vParam0, Global_2709259.f_1[i /*3*/], Global_2709259.f_32[i /*3*/], Global_2709259.f_63[i], false, true))
+			if (OBJECT::IS_POINT_IN_ANGLED_AREA(vParam0, Global_2709260.f_1[i /*3*/], Global_2709260.f_32[i /*3*/], Global_2709260.f_63[i], false, true))
 				return true;
 		}
 	}
@@ -34305,7 +34305,7 @@ void func_230(ePedComponentType epctParam0, int iParam1, ePedComponentType epctP
 
 	if (func_20())
 	{
-		if (epctParam0 == 0 /*PV_COMP_HEAD*/)
+		if (epctParam0 == PV_COMP_HEAD)
 			if (iParam1 != 6 && iParam1 != 5 && iParam1 != 4 && iParam1 != 9)
 				if (func_235(PLAYER::PLAYER_ID()) < epctParam2)
 					return;
@@ -34360,35 +34360,35 @@ Hash func_234(ePedComponentType epctParam0, int iParam1, BOOL bParam2) // Positi
 {
 	switch (epctParam0)
 	{
-		case 2 /*PV_COMP_HAIR*/:
+		case PV_COMP_HAIR:
 			if (bParam2)
 				return joaat("MPPLY_AVAILABLE_RACES_V");
 			else
 				return joaat("MPPLY_AVAILABLE_RACES");
 			break;
 	
-		case 1 /*PV_COMP_BERD*/:
+		case PV_COMP_BERD:
 			if (bParam2)
 				return joaat("MPPLY_AVAILABLE_DMS_V");
 			else
 				return joaat("MPPLY_AVAILABLE_DMS");
 			break;
 	
-		case 8 /*PV_COMP_ACCS*/:
+		case PV_COMP_ACCS:
 			if (bParam2)
 				return joaat("MPPLY_AVAILABLE_PARAS_V");
 			else
 				return joaat("MPPLY_AVAILABLE_PARAS");
 			break;
 	
-		case 3 /*PV_COMP_UPPR*/:
+		case PV_COMP_UPPR:
 			if (bParam2)
 				return joaat("MPPLY_AVAILABLE_SURVIVAL_V");
 			else
 				return joaat("MPPLY_AVAILABLE_SURVIVAL");
 			break;
 	
-		case 0 /*PV_COMP_HEAD*/:
+		case PV_COMP_HEAD:
 			switch (iParam1)
 			{
 				case 6:
@@ -34443,8 +34443,8 @@ ePedComponentType func_235(Player plParam0) // Position - 0x226CA Hash - 0x7E91F
 
 	type = func_238(plParam0);
 
-	if (type < 0 /*PV_COMP_HEAD*/)
-		return 0 /*PV_COMP_HEAD*/;
+	if (type < PV_COMP_HEAD)
+		return PV_COMP_HEAD;
 
 	return func_236(type, 0);
 }
@@ -34513,7 +34513,7 @@ ePedComponentType func_237(int iParam0) // Position - 0x227A6 Hash - 0xC61E502D 
 		switch (iParam0)
 		{
 			case 1:
-				return 0 /*PV_COMP_HEAD*/;
+				return PV_COMP_HEAD;
 		
 			case 2:
 				return 800;
@@ -34834,7 +34834,7 @@ ePedComponentType func_238(Player plParam0) // Position - 0x22CE1 Hash - 0xA3072
 	else
 		return func_144(640, -1);
 
-	return 0 /*PV_COMP_HEAD*/;
+	return PV_COMP_HEAD;
 }
 
 BOOL func_239(Player plParam0) // Position - 0x22D38 Hash - 0x392A396A ^0x1DEEBA83
@@ -34870,11 +34870,11 @@ void func_241(ePedComponentType epctParam0, int iParam1, BOOL bParam2, ePedCompo
 	if (!bParam2)
 		return;
 
-	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
+	if (epctParam0 == PV_COMP_HEAD)
 		if (iParam1 != 6 && iParam1 != 5 && iParam1 != 4 && iParam1 != 9)
 			if (func_235(PLAYER::PLAYER_ID()) < epctParam3)
 				return;
-	else if (epctParam0 == 2 /*PV_COMP_HAIR*/)
+	else if (epctParam0 == PV_COMP_HAIR)
 		if (epctParam3 >= 9999)
 			return;
 
@@ -34891,35 +34891,35 @@ Hash func_242(ePedComponentType epctParam0, int iParam1, BOOL bParam2) // Positi
 {
 	switch (epctParam0)
 	{
-		case 2 /*PV_COMP_HAIR*/:
+		case PV_COMP_HAIR:
 			if (bParam2)
 				return joaat("MPPLY_UNIQUE_RACES_V");
 			else
 				return joaat("MPPLY_UNIQUE_RACES");
 			break;
 	
-		case 1 /*PV_COMP_BERD*/:
+		case PV_COMP_BERD:
 			if (bParam2)
 				return joaat("MPPLY_UNIQUE_DMS_V");
 			else
 				return joaat("MPPLY_UNIQUE_DMS");
 			break;
 	
-		case 8 /*PV_COMP_ACCS*/:
+		case PV_COMP_ACCS:
 			if (bParam2)
 				return joaat("MPPLY_UNIQUE_PARAS_V");
 			else
 				return joaat("MPPLY_UNIQUE_PARAS");
 			break;
 	
-		case 3 /*PV_COMP_UPPR*/:
+		case PV_COMP_UPPR:
 			if (bParam2)
 				return joaat("MPPLY_UNIQUE_SURVIVAL_V");
 			else
 				return joaat("MPPLY_UNIQUE_SURVIVAL");
 			break;
 	
-		case 0 /*PV_COMP_HEAD*/:
+		case PV_COMP_HEAD:
 			switch (iParam1)
 			{
 				case 6:
@@ -35100,7 +35100,7 @@ void func_245(var uParam0, BOOL bParam1) // Position - 0x22F7F Hash - 0x81A8C4B5
 	Global_794744.f_4[uParam0->f_8 /*89*/].f_69 = DATAFILE::DATADICT_GET_INT(dict2, "min");
 	Global_794744.f_4[uParam0->f_8 /*89*/].f_71 = DATAFILE::DATADICT_GET_INT(dict2, "num");
 
-	if (Global_794744.f_4[uParam0->f_8 /*89*/].f_71 == -1 /*PV_COMP_INVALID*/)
+	if (Global_794744.f_4[uParam0->f_8 /*89*/].f_71 == PV_COMP_INVALID)
 		Global_794744.f_4[uParam0->f_8 /*89*/].f_71 = func_108();
 
 	TEXT_LABEL_ASSIGN_STRING(&(Global_794744.f_4[uParam0->f_8 /*89*/].f_22), NETWORK::UGC_GET_CONTENT_NAME(uParam0->f_6), 64);
@@ -35126,7 +35126,7 @@ void func_245(var uParam0, BOOL bParam1) // Position - 0x22F7F Hash - 0x81A8C4B5
 	hashKey = MISC::GET_HASH_KEY(&Global_794744.f_4[uParam0->f_8 /*89*/]);
 	Global_794744.f_135107[uParam0->f_8 /*13*/].f_3 = hashKey;
 
-	if (Global_794744.f_4[uParam0->f_8 /*89*/].f_65 == 6 /*PV_COMP_FEET*/ && !bParam1)
+	if (Global_794744.f_4[uParam0->f_8 /*89*/].f_65 == PV_COMP_FEET && !bParam1)
 	{
 		if (Global_1001983.f_684 < 85)
 		{
@@ -35205,7 +35205,7 @@ void func_245(var uParam0, BOOL bParam1) // Position - 0x22F7F Hash - 0x81A8C4B5
 		if (flag)
 			Global_794744.f_4[uParam0->f_8 /*89*/].f_69 = Global_794744.f_4[uParam0->f_8 /*89*/].f_71;
 	
-		if (*Global_794744.f_154886 < 5 && Global_794744.f_4[uParam0->f_8 /*89*/].f_65 == 0 /*PV_COMP_HEAD*/ && Global_794744.f_4[uParam0->f_8 /*89*/].f_68 == 1)
+		if (*Global_794744.f_154886 < 5 && Global_794744.f_4[uParam0->f_8 /*89*/].f_65 == PV_COMP_HEAD && Global_794744.f_4[uParam0->f_8 /*89*/].f_68 == 1)
 		{
 			Global_794744.f_135107[uParam0->f_8 /*13*/].f_10 = *Global_794744.f_154886;
 			TEXT_LABEL_ASSIGN_STRING(&Global_794744.f_154855[*Global_794744.f_154886 /*6*/], NETWORK::UGC_GET_ROOT_CONTENT_ID(uParam0->f_6), 24);
@@ -35252,7 +35252,7 @@ void func_245(var uParam0, BOOL bParam1) // Position - 0x22F7F Hash - 0x81A8C4B5
 		}
 	}
 
-	if (Global_794744.f_4[uParam0->f_8 /*89*/].f_65 == 6 /*PV_COMP_FEET*/)
+	if (Global_794744.f_4[uParam0->f_8 /*89*/].f_65 == PV_COMP_FEET)
 		Global_1002668[0 /*50*/] = Global_1002668[0 /*50*/] + 1;
 
 	uParam0->f_8 = uParam0->f_8 + 1;
@@ -35317,7 +35317,7 @@ BOOL func_248(ePedComponentType epctParam0, int iParam1, int iParam2, var uParam
 {
 	int num;
 
-	if (epctParam0 != 0 /*PV_COMP_HEAD*/)
+	if (epctParam0 != PV_COMP_HEAD)
 		return false;
 
 	if (iParam1 != 2)
@@ -36642,7 +36642,7 @@ BOOL func_298() // Position - 0x25879 Hash - 0x1C9B9817 ^0x5956764E
 
 BOOL func_299() // Position - 0x25899 Hash - 0x47FF56D2 ^0x47FF56D2
 {
-	return Global_2696683;
+	return Global_2696684;
 }
 
 BOOL func_300(var uParam0) // Position - 0x258A5 Hash - 0xD609967 ^0xF4499187
@@ -37269,7 +37269,7 @@ void func_321(var uParam0) // Position - 0x262A8 Hash - 0x57BEFE42 ^0x18A04E01
 	Global_786550.f_1[uParam0->f_8 + uParam0->f_11 /*89*/].f_69 = DATAFILE::DATADICT_GET_INT(dict2, "min");
 	Global_786550.f_1[uParam0->f_8 + uParam0->f_11 /*89*/].f_71 = DATAFILE::DATADICT_GET_INT(dict2, "num");
 
-	if (Global_786550.f_1[uParam0->f_8 + uParam0->f_11 /*89*/].f_71 == -1 /*PV_COMP_INVALID*/)
+	if (Global_786550.f_1[uParam0->f_8 + uParam0->f_11 /*89*/].f_71 == PV_COMP_INVALID)
 		Global_786550.f_1[uParam0->f_8 + uParam0->f_11 /*89*/].f_71 = func_108();
 
 	TEXT_LABEL_ASSIGN_STRING(&(Global_786550.f_1[uParam0->f_8 + uParam0->f_11 /*89*/].f_22), NETWORK::UGC_GET_CONTENT_NAME(uParam0->f_6), 64);
@@ -37557,8 +37557,8 @@ BOOL func_332() // Position - 0x26C91 Hash - 0x541E5E04 ^0x9B3DFD0C
 
 	if (SCRIPT::HAS_SCRIPT_LOADED("UGC_Global_Registration") && SCRIPT::HAS_SCRIPT_LOADED("UGC_Global_Registration_2"))
 	{
-		SYSTEM::START_NEW_SCRIPT("UGC_Global_Registration", 128 /*MICRO*/);
-		SYSTEM::START_NEW_SCRIPT("UGC_Global_Registration_2", 128 /*MICRO*/);
+		SYSTEM::START_NEW_SCRIPT("UGC_Global_Registration", MICRO);
+		SYSTEM::START_NEW_SCRIPT("UGC_Global_Registration_2", MICRO);
 		SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("UGC_Global_Registration");
 		SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("UGC_Global_Registration_2");
 		return true;
@@ -37574,7 +37574,7 @@ BOOL func_333() // Position - 0x26CEC Hash - 0x4228A1C2 ^0x5D82C45B
 
 BOOL func_334() // Position - 0x26CFA Hash - 0x9FFBCA6 ^0x9FFBCA6
 {
-	if (Global_1575011 == 68 /*TRANSITION_STATE_DLC_INTRO_BINK*/)
+	if (Global_1575011 == TRANSITION_STATE_DLC_INTRO_BINK)
 		return true;
 
 	return false;

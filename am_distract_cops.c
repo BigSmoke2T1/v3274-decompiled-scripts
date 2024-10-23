@@ -619,7 +619,7 @@ void func_14() // Position - 0x51B Hash - 0x7C1B4107 ^0x4BFF6478
 		if (uLocal_110[NETWORK::PARTICIPANT_ID_TO_INT() /*4*/].f_2 > 0)
 		{
 			num = uLocal_110[NETWORK::PARTICIPANT_ID_TO_INT() /*4*/].f_2 * Global_262145.f_8627;
-			Global_2698715 = num;
+			Global_2698716 = num;
 			func_121(&num, 1);
 		
 			if (num > 0)
@@ -700,13 +700,13 @@ int func_19(int iParam0) // Position - 0x6AF Hash - 0x1A3F3220 ^0x1A3F3220
 	
 		if (num2 > -1)
 		{
-			Global_2750949 = 0;
+			Global_2750950 = 0;
 			num = num2;
 		}
 		else
 		{
 			num = 0;
-			Global_2750949 = 1;
+			Global_2750950 = 1;
 		}
 	}
 
@@ -1058,13 +1058,13 @@ eHudColour func_38(Player plParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOO
 	Ped ped;
 
 	if (!func_86(plParam0))
-		return 1 /*HUD_COLOUR_WHITE*/;
+		return HUD_COLOUR_WHITE;
 
 	if (func_84(plParam0) && !bParam4)
 		if (bParam2)
-			return 0 /*HUD_COLOUR_PURE_WHITE*/;
+			return HUD_COLOUR_PURE_WHITE;
 		else
-			return 1 /*HUD_COLOUR_WHITE*/;
+			return HUD_COLOUR_WHITE;
 
 	if (iParam1 == -2)
 	{
@@ -1075,7 +1075,7 @@ eHudColour func_38(Player plParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOO
 				iParam1 = playerTeam;
 	}
 
-	if (func_84(PLAYER::PLAYER_ID()) || func_83() && func_82() && !IS_BIT_SET(Global_2738934.f_4712, 31) && !bParam4)
+	if (func_84(PLAYER::PLAYER_ID()) || func_83() && func_82() && !IS_BIT_SET(Global_2738935.f_4712, 31) && !bParam4)
 	{
 		ped = func_81();
 	
@@ -2702,7 +2702,7 @@ int func_106(var uParam0, int iParam1, Hash hParam2, Hash hParam3, Hash hParam4,
 			return 0;
 		}
 	
-		if (Global_2697634)
+		if (Global_2697635)
 		{
 			if (hParam3 == joaat("CATEGORY_WEAPON_AMMO") || hParam3 == joaat("CATEGORY_MART"))
 			{
@@ -2889,8 +2889,8 @@ BOOL func_111(int iParam0) // Position - 0x31C6 Hash - 0x117606EA ^0x642E4F1E
 
 void func_112(int iParam0, Hash hParam1) // Position - 0x31F1 Hash - 0x8B1B3DA8 ^0x8B1B3DA8
 {
-	Global_2698855 = hParam1;
-	Global_2698854 = iParam0;
+	Global_2698856 = hParam1;
+	Global_2698855 = iParam0;
 	return;
 }
 
@@ -3059,7 +3059,7 @@ void func_121(var uParam0, int iParam1) // Position - 0x34BF Hash - 0x5E4F0835 ^
 						func_133(&num, false);
 					
 						if (iParam1 == 1)
-							func_126("GB_BCUT_TICK1" /*You paid ~a~ ~s~a $~1~ ~s~cut.*/, _GET_BOSS_OF_LOCAL_PLAYER(), num, 0 /*HUD_COLOUR_PURE_WHITE*/, false, true);
+							func_126("GB_BCUT_TICK1" /*You paid ~a~ ~s~a $~1~ ~s~cut.*/, _GET_BOSS_OF_LOCAL_PLAYER(), num, HUD_COLOUR_PURE_WHITE, false, true);
 					
 						func_125(20);
 						func_122(_GET_BOSS_OF_LOCAL_PLAYER(), num, 1);
@@ -3109,7 +3109,7 @@ void func_125(int iParam0) // Position - 0x35E4 Hash - 0xF11EB1F3 ^0x618C6F9E
 
 	num = iParam0 / 32;
 	offset = iParam0 % 32;
-	MISC::SET_BIT(&Global_2738934.f_5249.f_7[num], offset);
+	MISC::SET_BIT(&Global_2738935.f_5249.f_7[num], offset);
 	return;
 }
 
@@ -3132,7 +3132,7 @@ int func_126(char* sParam0, Player plParam1, int iParam2, eHudColour ehcParam3, 
 		HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(func_38(plParam1, -2, true, false, false));
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(func_131(&unk));
 	
-		if (!(ehcParam3 == 0 /*HUD_COLOUR_PURE_WHITE*/))
+		if (!(ehcParam3 == HUD_COLOUR_PURE_WHITE))
 			HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(ehcParam3);
 	
 		HUD::ADD_TEXT_COMPONENT_INTEGER(iParam2);
@@ -3326,7 +3326,7 @@ void func_143() // Position - 0x39F1 Hash - 0xD81E2542 ^0xF3FF801D
 			{
 				func_236();
 				MISC::SET_BIT(&(uLocal_110[NETWORK::PARTICIPANT_ID_TO_INT() /*4*/].f_1), 0);
-				MISC::SET_BIT(&(Global_2738934.f_4714), 0);
+				MISC::SET_BIT(&(Global_2738935.f_4714), 0);
 				uLocal_110[NETWORK::PARTICIPANT_ID_TO_INT() /*4*/].f_3 = 1;
 			}
 		
@@ -3559,7 +3559,7 @@ Vector3 func_158(Ped pedParam0, BOOL bParam1) // Position - 0x3F53 Hash - 0x1FBE
 	if (CAM::IS_GAMEPLAY_CAM_RENDERING())
 		gameplayCamRot = { CAM::GET_GAMEPLAY_CAM_ROT(2) };
 
-	if (pedParam0 == func_159(PLAYER::PLAYER_PED_ID()) && CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == 4 /*FIRST_PERSON*/)
+	if (pedParam0 == func_159(PLAYER::PLAYER_PED_ID()) && CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == FIRST_PERSON)
 		offsetFromEntityInWorldCoords = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(pedParam0, 0f, 8f, -0.2f) };
 	else
 		offsetFromEntityInWorldCoords = { ENTITY::GET_ENTITY_COORDS(pedParam0, false) };
@@ -3570,7 +3570,7 @@ Vector3 func_158(Ped pedParam0, BOOL bParam1) // Position - 0x3F53 Hash - 0x1FBE
 	{
 		entityHeading = ENTITY::GET_ENTITY_HEADING(pedParam0);
 	
-		if (CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == 4 /*FIRST_PERSON*/)
+		if (CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == FIRST_PERSON)
 			entityHeading = gameplayCamRot.f_2;
 	}
 
@@ -4495,17 +4495,17 @@ BOOL func_188(Player plParam0, Player plParam1) // Position - 0x4FD1 Hash - 0x4B
 {
 	if (NETWORK::NETWORK_CLAN_SERVICE_IS_VALID())
 	{
-		Global_2707307 = { GET_GAMER_HANDLE_PLAYER(plParam0) };
-		Global_2707320 = { GET_GAMER_HANDLE_PLAYER(plParam1) };
+		Global_2707308 = { GET_GAMER_HANDLE_PLAYER(plParam0) };
+		Global_2707321 = { GET_GAMER_HANDLE_PLAYER(plParam1) };
 	
-		if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2707307))
+		if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2707308))
 		{
-			if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2707320))
+			if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2707321))
 			{
-				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2707237, 35, &Global_2707307);
-				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2707272, 35, &Global_2707320);
+				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2707238, 35, &Global_2707308);
+				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2707273, 35, &Global_2707321);
 			
-				if (Global_2707237 == Global_2707272)
+				if (Global_2707238 == Global_2707273)
 					return true;
 			}
 		}
@@ -4824,7 +4824,7 @@ void func_212() // Position - 0x55D4 Hash - 0xF8C30F06 ^0xBB3F04F5
 	func_213();
 	MISC::CLEAR_BIT(&(uLocal_110[NETWORK::PARTICIPANT_ID_TO_INT() /*4*/].f_1), 0);
 	MISC::CLEAR_BIT(&iLocal_239, 3);
-	MISC::SET_BIT(&(Global_2738934.f_4714), 0);
+	MISC::SET_BIT(&(Global_2738935.f_4714), 0);
 
 	if (!IS_BIT_SET(iLocal_239, 5))
 		MISC::SET_BIT(&iLocal_239, 5);
@@ -4981,7 +4981,7 @@ void func_221(int iParam0, int iParam1, int iParam2, int iParam3, int iParam4) /
 
 BOOL func_222() // Position - 0x597B Hash - 0xDEC5A9F8 ^0x16E06DFF
 {
-	if (func_201(PLAYER::PLAYER_ID()) == 229 || func_201(PLAYER::PLAYER_ID()) == 191 || func_230(*Global_4718592.f_185586) || func_229() || func_228() || func_227() || Global_2708057.f_227 == 1 || Global_2635563.f_2053 && func_223(PLAYER::PLAYER_ID()))
+	if (func_201(PLAYER::PLAYER_ID()) == 229 || func_201(PLAYER::PLAYER_ID()) == 191 || func_230(*Global_4718592.f_185586) || func_229() || func_228() || func_227() || Global_2708058.f_227 == 1 || Global_2635563.f_2053 && func_223(PLAYER::PLAYER_ID()))
 		return false;
 
 	return true;
@@ -5022,7 +5022,7 @@ BOOL func_226(Player plParam0) // Position - 0x5A4C Hash - 0xB55D4C83 ^0xBA42B9E
 
 BOOL func_227() // Position - 0x5A6F Hash - 0x47FF56D2 ^0x47FF56D2
 {
-	return Global_2708056;
+	return Global_2708057;
 }
 
 BOOL func_228() // Position - 0x5A7B Hash - 0x47FF56D2 ^0x47FF56D2
@@ -5669,7 +5669,7 @@ BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x6717 Hash - 0x52E21E9B ^
 	if (func_276())
 		return true;
 
-	if (Global_2698757)
+	if (Global_2698758)
 		return true;
 
 	if (func_275())
@@ -5708,7 +5708,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x679B Hash - 0x90B51
 
 Hash func_272() // Position - 0x67CE Hash - 0x61402777 ^0xB9FAC976
 {
-	switch (Global_2698864)
+	switch (Global_2698865)
 	{
 		case 0:
 			return joaat("freemode");
@@ -5727,7 +5727,7 @@ BOOL func_273() // Position - 0x67F2 Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x6801 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
 		return true;
 
 	return false;
@@ -5759,7 +5759,7 @@ void func_278() // Position - 0x6840 Hash - 0x815F38A4 ^0xC36FFF4D
 
 	func_213();
 	func_280(16, false);
-	MISC::SET_BIT(&(Global_2738934.f_4714), 0);
+	MISC::SET_BIT(&(Global_2738935.f_4714), 0);
 	func_279();
 	return;
 }

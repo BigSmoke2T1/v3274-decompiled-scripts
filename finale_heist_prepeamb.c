@@ -1462,7 +1462,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 	fLocal_29 = 140f;
 	fLocal_30 = 180f;
 	iLocal_33 = 3;
-	echLocal_41 = 145 /*_CHAR_NULL*/;
+	echLocal_41 = _CHAR_NULL;
 	iLocal_98 = -1;
 	fLocal_102 = 0f;
 	uLocal_104 = { 0f, 0f, 0f };
@@ -1648,7 +1648,7 @@ void func_7() // Position - 0x306 Hash - 0x95FB8767 ^0x95FB8767
 {
 	if (IS_BIT_SET(iLocal_103, 0) && !IS_BIT_SET(iLocal_103, 1) && !IS_BIT_SET(iLocal_103, 14) && func_13())
 	{
-		if (func_12(0 /*PLAYER_CONTROL*/, 172 /*INPUT_CELLPHONE_UP*/, 0) || func_12(0 /*PLAYER_CONTROL*/, 173 /*INPUT_CELLPHONE_DOWN*/, 0))
+		if (func_12(PLAYER_CONTROL, INPUT_CELLPHONE_UP, 0) || func_12(PLAYER_CONTROL, INPUT_CELLPHONE_DOWN, 0))
 			iLocal_1269 = MISC::GET_GAME_TIMER();
 	
 		if (iLocal_1269 != -1)
@@ -1659,7 +1659,7 @@ void func_7() // Position - 0x306 Hash - 0x95FB8767 ^0x95FB8767
 	}
 	else
 	{
-		echLocal_41 = 145 /*_CHAR_NULL*/;
+		echLocal_41 = _CHAR_NULL;
 		iLocal_1269 = -1;
 	}
 
@@ -1676,12 +1676,12 @@ eCharacter func_8() // Position - 0x37F Hash - 0x79350FEC ^0x630C1556
 	int gameTimer2;
 	int num;
 
-	character = 0 /*CHAR_MICHAEL*/;
-	character2 = 145 /*_CHAR_NULL*/;
+	character = CHAR_MICHAEL;
+	character2 = _CHAR_NULL;
 
 	if (Global_79389)
 	{
-		character2 = 145 /*_CHAR_NULL*/;
+		character2 = _CHAR_NULL;
 	}
 	else if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(Global_20911) == true)
 	{
@@ -1712,24 +1712,24 @@ eCharacter func_8() // Position - 0x37F Hash - 0x79350FEC ^0x630C1556
 				character2 = character;
 			
 				if (GRAPHICS::HAS_SCALEFORM_MOVIE_LOADED(Global_20911) == false)
-					character2 = 145 /*_CHAR_NULL*/;
+					character2 = _CHAR_NULL;
 			
 				if (num == 1)
-					character2 = 145 /*_CHAR_NULL*/;
+					character2 = _CHAR_NULL;
 			}
 			else
 			{
-				character2 = 145 /*_CHAR_NULL*/;
+				character2 = _CHAR_NULL;
 			}
 		}
 		else
 		{
-			character2 = 145 /*_CHAR_NULL*/;
+			character2 = _CHAR_NULL;
 		}
 	}
 	else
 	{
-		character2 = 145 /*_CHAR_NULL*/;
+		character2 = _CHAR_NULL;
 	}
 
 	return character2;
@@ -1764,7 +1764,7 @@ int func_12(eControlType ectParam0, eControlAction ecaParam1, int iParam2) // Po
 	if (PAD::IS_CONTROL_JUST_PRESSED(ectParam0, ecaParam1) || iParam2 == 1 && PAD::IS_DISABLED_CONTROL_JUST_PRESSED(ectParam0, ecaParam1))
 	{
 		if (MISC::IS_PC_VERSION())
-			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/))
+			if (MISC::UPDATE_ONSCREEN_KEYBOARD() == 0 || NETWORK::NETWORK_TEXT_CHAT_IS_TYPING() && PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL))
 				return 0;
 	
 		if (HUD::IS_PAUSE_MENU_ACTIVE() || HUD::IS_WARNING_MESSAGE_ACTIVE())
@@ -2096,7 +2096,7 @@ void func_22(int iParam0, Vehicle veParam1, int iParam2) // Position - 0xB07 Has
 					vehicle = func_76(iParam0);
 				
 					if (ENTITY::DOES_ENTITY_EXIST(vehicle) && VEHICLE::IS_VEHICLE_DRIVEABLE(vehicle, false) && veParam1 != vehicle)
-						func_23(vehicle, 145 /*_CHAR_NULL*/);
+						func_23(vehicle, _CHAR_NULL);
 				}
 			
 				Global_79085 = veParam1;
@@ -2118,7 +2118,7 @@ void func_23(Vehicle veParam0, eCharacter echParam1) // Position - 0xC1E Hash - 
 	if (!func_24(veParam0))
 		return;
 
-	if (echParam1 != 0 /*CHAR_MICHAEL*/ && echParam1 != 1 /*CHAR_FRANKLIN*/ && echParam1 != 2 /*CHAR_TREVOR*/)
+	if (echParam1 != CHAR_MICHAEL && echParam1 != CHAR_FRANKLIN && echParam1 != CHAR_TREVOR)
 	{
 		pedInVehicleSeat = VEHICLE::GET_PED_IN_VEHICLE_SEAT(veParam0, -1, false);
 	
@@ -2127,13 +2127,13 @@ void func_23(Vehicle veParam0, eCharacter echParam1) // Position - 0xC1E Hash - 
 	
 		if (ENTITY::DOES_ENTITY_EXIST(pedInVehicleSeat) && !PED::IS_PED_INJURED(pedInVehicleSeat))
 			if (ENTITY::GET_ENTITY_MODEL(pedInVehicleSeat) == joaat("Player_Zero"))
-				echParam1 = 0 /*CHAR_MICHAEL*/;
+				echParam1 = CHAR_MICHAEL;
 			else if (ENTITY::GET_ENTITY_MODEL(pedInVehicleSeat) == joaat("Player_One"))
-				echParam1 = 1 /*CHAR_FRANKLIN*/;
+				echParam1 = CHAR_FRANKLIN;
 			else if (ENTITY::GET_ENTITY_MODEL(pedInVehicleSeat) == joaat("Player_Two"))
-				echParam1 = 2 /*CHAR_TREVOR*/;
+				echParam1 = CHAR_TREVOR;
 	
-		if (echParam1 != 0 /*CHAR_MICHAEL*/ && echParam1 != 1 /*CHAR_FRANKLIN*/ && echParam1 != 2 /*CHAR_TREVOR*/)
+		if (echParam1 != CHAR_MICHAEL && echParam1 != CHAR_FRANKLIN && echParam1 != CHAR_TREVOR)
 			echParam1 = Global_113969.f_2366.f_539.f_4321;
 	}
 
@@ -2172,14 +2172,14 @@ void func_23(Vehicle veParam0, eCharacter echParam1) // Position - 0xC1E Hash - 
 
 BOOL func_24(Vehicle veParam0) // Position - 0xE20 Hash - 0x835CB3EF ^0xB88368F0
 {
-	if (!ENTITY::DOES_ENTITY_EXIST(veParam0) || !VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false) || func_41(veParam0, 0, false) || func_41(veParam0, 1, false) || func_41(veParam0, 2, false) || func_63(veParam0) != 145 /*_CHAR_NULL*/ || func_40(veParam0) || func_39(veParam0) || func_38(veParam0) || func_37(veParam0) || !func_25(ENTITY::GET_ENTITY_MODEL(veParam0)))
+	if (!ENTITY::DOES_ENTITY_EXIST(veParam0) || !VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false) || func_41(veParam0, 0, false) || func_41(veParam0, 1, false) || func_41(veParam0, 2, false) || func_63(veParam0) != _CHAR_NULL || func_40(veParam0) || func_39(veParam0) || func_38(veParam0) || func_37(veParam0) || !func_25(ENTITY::GET_ENTITY_MODEL(veParam0)))
 	{
 		func_39(veParam0);
 		func_39(veParam0);
 		func_41(veParam0, 0, false);
 		func_41(veParam0, 1, false);
 		func_41(veParam0, 2, false);
-		func_63(veParam0) != 145 /*_CHAR_NULL*/;
+		func_63(veParam0) != _CHAR_NULL;
 		return false;
 	}
 
@@ -2392,10 +2392,10 @@ BOOL func_29(Hash hParam0, int iParam1) // Position - 0x131D Hash - 0xD1D0764E ^
 	int cloudTimeAsInt;
 	int num;
 
-	if (Global_2707347)
+	if (Global_2707348)
 		return true;
 
-	if (!Global_2707348 && iParam1 >= 0 && iParam1 <= 517)
+	if (!Global_2707349 && iParam1 >= 0 && iParam1 <= 517)
 		if (IS_BIT_SET(Global_1586521[iParam1 /*142*/].f_103, 2))
 			return true;
 
@@ -2887,7 +2887,7 @@ BOOL func_54(var uParam0, int iParam1) // Position - 0x1C9A Hash - 0x9AD44AE ^0x
 		case 0:
 			*uParam0 = { -831.8538f, 172.1154f, 69.9058f };
 			uParam0->f_3 = 157.5705f;
-			uParam0->f_4 = func_55(0 /*CHAR_MICHAEL*/, 1);
+			uParam0->f_4 = func_55(CHAR_MICHAEL, 1);
 			uParam0->f_12 = 0;
 			MISC::SET_BIT(&(uParam0->f_9), 20);
 			MISC::SET_BIT(&(uParam0->f_9), 7);
@@ -3643,7 +3643,7 @@ int func_55(int iParam0, int iParam1) // Position - 0x3387 Hash - 0x3C1119CD ^0x
 	}
 	else
 	{
-		iParam0 != 145 /*_CHAR_NULL*/;
+		iParam0 != _CHAR_NULL;
 	}
 
 	return 0;
@@ -3766,7 +3766,7 @@ void func_56(int iParam0, var uParam1, int iParam2) // Position - 0x33C9 Hash - 
 
 BOOL func_57(eCharacter echParam0) // Position - 0x3625 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 void func_58(int iParam0, var uParam1, var uParam2, var uParam3, var uParam4, float fParam5, eCharacter echParam6) // Position - 0x3631 Hash - 0xE596DE1C ^0xAEF9731A
@@ -3889,10 +3889,10 @@ eCharacter func_63(Vehicle veParam0) // Position - 0x3905 Hash - 0x593067C2 ^0x2
 	int i;
 
 	if (!ENTITY::DOES_ENTITY_EXIST(veParam0))
-		return 145 /*_CHAR_NULL*/;
+		return _CHAR_NULL;
 
 	if (!VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false))
-		return 145 /*_CHAR_NULL*/;
+		return _CHAR_NULL;
 
 	for (i = 0; i < 9; i = i + 1)
 	{
@@ -3901,7 +3901,7 @@ eCharacter func_63(Vehicle veParam0) // Position - 0x3905 Hash - 0x593067C2 ^0x2
 				return Global_98854[i];
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 void func_64(Vehicle veParam0, var uParam1) // Position - 0x3968 Hash - 0x5E84B52A ^0xEF20F807
@@ -4227,7 +4227,7 @@ void func_70(BOOL bParam0) // Position - 0x3FAC Hash - 0x5E679A2A ^0x833FC55E
 {
 	if (IS_BIT_SET(iLocal_103, 14))
 	{
-		if (_GET_PLAYER_CHARACTER_FROM_PED(PLAYER::PLAYER_PED_ID()) == 0 /*CHAR_MICHAEL*/)
+		if (_GET_PLAYER_CHARACTER_FROM_PED(PLAYER::PLAYER_PED_ID()) == CHAR_MICHAEL)
 			if (bParam0)
 				func_71(10);
 			else
@@ -4290,14 +4290,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x40B0 Ha
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
+		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x40ED Hash - 0xADCB9755 ^0xADCB9755
@@ -4305,7 +4305,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x40ED Hash - 0xAD
 	if (func_57(character))
 		return func_74(character);
 	else
-		character != 145 /*_CHAR_NULL*/;
+		character != _CHAR_NULL;
 
 	return 0;
 }
@@ -4409,13 +4409,13 @@ int func_84() // Position - 0x42C6 Hash - 0x35BC7314 ^0x35BC7314
 
 	switch (Global_113969.f_2366.f_539.f_4321)
 	{
-		case 0 /*CHAR_MICHAEL*/:
+		case CHAR_MICHAEL:
 			return 1;
 	
-		case 1 /*CHAR_FRANKLIN*/:
+		case CHAR_FRANKLIN:
 			return 2;
 	
-		case 2 /*CHAR_TREVOR*/:
+		case CHAR_TREVOR:
 			return 4;
 	}
 
@@ -4444,7 +4444,7 @@ void func_85() // Position - 0x430C Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
+			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -4497,21 +4497,21 @@ void func_90(BOOL bParam0) // Position - 0x449F Hash - 0x3826E0FF ^0xC89C44C1
 
 	switch (_GET_CURRENT_PLAYER_CHARACTER())
 	{
-		case 0 /*CHAR_MICHAEL*/:
+		case CHAR_MICHAEL:
 			if (bParam0)
 				audioName = "MICHAEL_SMALL_01";
 			else
 				audioName = "MICHAEL_BIG_01";
 			break;
 	
-		case 1 /*CHAR_FRANKLIN*/:
+		case CHAR_FRANKLIN:
 			if (bParam0)
 				audioName = "FRANKLIN_SMALL_01";
 			else
 				audioName = "FRANKLIN_BIG_01";
 			break;
 	
-		case 2 /*CHAR_TREVOR*/:
+		case CHAR_TREVOR:
 			if (bParam0)
 				audioName = "TREVOR_SMALL_01";
 			else
@@ -4991,7 +4991,7 @@ void func_111() // Position - 0x4DB1 Hash - 0xA493FAC ^0x63B96B3D
 				break;
 		
 			case 5:
-				if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
+				if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
 				{
 					if (iLocal_40 == 0)
 					{
@@ -5037,11 +5037,11 @@ void func_111() // Position - 0x4DB1 Hash - 0xA493FAC ^0x63B96B3D
 void func_112(BOOL bParam0) // Position - 0x4F24 Hash - 0x1FCFDFBE ^0xC61B76
 {
 	if (bParam0)
-		func_113(1527885205, 0, _GET_CURRENT_PLAYER_CHARACTER(), 23 /*CHAR_STEVE*/, 3, 6000, 6000, -1, 0, -1, 0);
+		func_113(1527885205, 0, _GET_CURRENT_PLAYER_CHARACTER(), CHAR_STEVE, 3, 6000, 6000, -1, 0, -1, 0);
 	else if (!func_244(3))
-		func_113(-224691627, 0, _GET_CURRENT_PLAYER_CHARACTER(), 23 /*CHAR_STEVE*/, 3, 6000, 6000, -1, 50, -1, 0);
+		func_113(-224691627, 0, _GET_CURRENT_PLAYER_CHARACTER(), CHAR_STEVE, 3, 6000, 6000, -1, 50, -1, 0);
 	else
-		func_113(-224691627, 0, _GET_CURRENT_PLAYER_CHARACTER(), 23 /*CHAR_STEVE*/, 3, 6000, 6000, -1, 0, -1, 0);
+		func_113(-224691627, 0, _GET_CURRENT_PLAYER_CHARACTER(), CHAR_STEVE, 3, 6000, 6000, -1, 0, -1, 0);
 
 	return;
 }
@@ -5069,10 +5069,10 @@ int func_113(int iParam0, int iParam1, eCharacter echParam2, eCharacter echParam
 	if (echParam3 == echParam2)
 		return 0;
 
-	if (echParam2 != 144 /*_CHAR_VIRTUAL_MP*/ && echParam2 != 0 /*CHAR_MICHAEL*/ && echParam2 != 1 /*CHAR_FRANKLIN*/ && echParam2 != 2 /*CHAR_TREVOR*/)
+	if (echParam2 != _CHAR_VIRTUAL_MP && echParam2 != CHAR_MICHAEL && echParam2 != CHAR_FRANKLIN && echParam2 != CHAR_TREVOR)
 		return 0;
 
-	if (Global_113969.f_7691.f_136 < 9 /*CHAR_MIKE_TREV_CONF*/)
+	if (Global_113969.f_7691.f_136 < CHAR_MIKE_TREV_CONF)
 	{
 		num = iParam0;
 	
@@ -5119,14 +5119,14 @@ void func_114(eCharacter echParam0) // Position - 0x50E6 Hash - 0xDBA91FA2 ^0x62
 	if (!func_57(echParam0))
 		return;
 
-	for (i = 0 /*CHAR_MICHAEL*/; i < Global_113969.f_7691.f_136; i = i + 1)
+	for (i = CHAR_MICHAEL; i < Global_113969.f_7691.f_136; i = i + 1)
 	{
 		if (IS_BIT_SET(Global_113969.f_7691[i /*15*/].f_2, echParam0))
 			if (Global_113969.f_7691[i /*15*/].f_3 > num)
 				num = Global_113969.f_7691[i /*15*/].f_3;
 	}
 
-	for (j = 0 /*CHAR_MICHAEL*/; j < Global_113969.f_7691.f_764; j = j + 1)
+	for (j = CHAR_MICHAEL; j < Global_113969.f_7691.f_764; j = j + 1)
 	{
 		if (IS_BIT_SET(Global_113969.f_7691.f_651[j /*14*/].f_2, echParam0))
 			if (Global_113969.f_7691.f_651[j /*14*/].f_3 == 5)
@@ -5277,11 +5277,11 @@ struct<4> func_123(BOOL bParam0) // Position - 0x53BE Hash - 0x794BD6F ^0x2BC284
 	{
 		switch (_GET_CURRENT_PLAYER_CHARACTER())
 		{
-			case 1 /*CHAR_FRANKLIN*/:
+			case CHAR_FRANKLIN:
 				TEXT_LABEL_ASSIGN_STRING(&unk, "AHF_C8", 16);
 				break;
 		
-			case 0 /*CHAR_MICHAEL*/:
+			case CHAR_MICHAEL:
 				TEXT_LABEL_ASSIGN_STRING(&unk, "AHF_C5", 16);
 				break;
 		}
@@ -5290,11 +5290,11 @@ struct<4> func_123(BOOL bParam0) // Position - 0x53BE Hash - 0x794BD6F ^0x2BC284
 	{
 		switch (_GET_CURRENT_PLAYER_CHARACTER())
 		{
-			case 1 /*CHAR_FRANKLIN*/:
+			case CHAR_FRANKLIN:
 				TEXT_LABEL_ASSIGN_STRING(&unk, "AHF_C9", 16);
 				break;
 		
-			case 0 /*CHAR_MICHAEL*/:
+			case CHAR_MICHAEL:
 				TEXT_LABEL_ASSIGN_STRING(&unk, "AHF_C6", 16);
 				break;
 		}
@@ -5311,11 +5311,11 @@ struct<4> func_124(BOOL bParam0) // Position - 0x5428 Hash - 0x794BD6F ^0x884939
 	{
 		switch (_GET_CURRENT_PLAYER_CHARACTER())
 		{
-			case 1 /*CHAR_FRANKLIN*/:
+			case CHAR_FRANKLIN:
 				TEXT_LABEL_ASSIGN_STRING(&unk, "FBI4_ISAGO", 16);
 				break;
 		
-			case 2 /*CHAR_TREVOR*/:
+			case CHAR_TREVOR:
 				TEXT_LABEL_ASSIGN_STRING(&unk, "FBI4_ISAGO", 16);
 				break;
 		}
@@ -5324,11 +5324,11 @@ struct<4> func_124(BOOL bParam0) // Position - 0x5428 Hash - 0x794BD6F ^0x884939
 	{
 		switch (_GET_CURRENT_PLAYER_CHARACTER())
 		{
-			case 1 /*CHAR_FRANKLIN*/:
+			case CHAR_FRANKLIN:
 				TEXT_LABEL_ASSIGN_STRING(&unk, "FBI4_THATSIT", 16);
 				break;
 		
-			case 2 /*CHAR_TREVOR*/:
+			case CHAR_TREVOR:
 				TEXT_LABEL_ASSIGN_STRING(&unk, "FBI4_THATSIT", 16);
 				break;
 		}
@@ -5341,11 +5341,11 @@ void func_125(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 {
 	if (func_103())
 		if (func_126())
-			if (_GET_CURRENT_PLAYER_CHARACTER() != 0 /*CHAR_MICHAEL*/)
+			if (_GET_CURRENT_PLAYER_CHARACTER() != CHAR_MICHAEL)
 				func_122(uParam0, true);
 			else
 				iLocal_38 = 3;
-		else if (_GET_CURRENT_PLAYER_CHARACTER() != 0 /*CHAR_MICHAEL*/)
+		else if (_GET_CURRENT_PLAYER_CHARACTER() != CHAR_MICHAEL)
 			func_122(uParam0, false);
 		else
 			iLocal_38 = 3;
@@ -5424,7 +5424,7 @@ void func_133() // Position - 0x55BE Hash - 0x42D6E5B3 ^0x328C71F3
 	if (func_135() == 85)
 		if (_IS_MISSION_REPLAY_IN_PROGRESS() && !func_75(25, 0))
 			if (uLocal_112.f_66 != 0)
-				func_58(25, &uLocal_112, uLocal_108, fLocal_111, 145 /*_CHAR_NULL*/);
+				func_58(25, &uLocal_112, uLocal_108, fLocal_111, _CHAR_NULL);
 
 	return;
 }
@@ -5833,7 +5833,7 @@ void func_153() // Position - 0x5CC9 Hash - 0xF8F3111B ^0xD4849891
 												func_71(9);
 												MISC::SET_BIT(&iLocal_103, 19);
 											}
-											else if (_GET_PLAYER_CHARACTER_FROM_PED(PLAYER::PLAYER_PED_ID()) == 0 /*CHAR_MICHAEL*/)
+											else if (_GET_PLAYER_CHARACTER_FROM_PED(PLAYER::PLAYER_PED_ID()) == CHAR_MICHAEL)
 											{
 												func_71(17);
 											}
@@ -6109,19 +6109,19 @@ BOOL func_166(Vehicle veParam0) // Position - 0x6227 Hash - 0xA0AD9A9A ^0xA0AD9A
 
 	character = func_63(veParam0);
 
-	if (character == 0 /*CHAR_MICHAEL*/)
+	if (character == CHAR_MICHAEL)
 	{
 		func_71(25);
 		return true;
 	}
 
-	if (character == 1 /*CHAR_FRANKLIN*/)
+	if (character == CHAR_FRANKLIN)
 	{
 		func_71(26);
 		return true;
 	}
 
-	if (character == 2 /*CHAR_TREVOR*/)
+	if (character == CHAR_TREVOR)
 	{
 		func_71(27);
 		return true;
@@ -6606,26 +6606,26 @@ void _UPDATE_CURRENT_PLAYER_CHARACTER() // Position - 0x6A29 Hash - 0x98476CE1 ^
 	{
 		if (!ENTITY::IS_ENTITY_DEAD(PLAYER::PLAYER_PED_ID(), false))
 			if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[0 /*29*/])
-				Global_20930 = 0 /*CHAR_MICHAEL*/;
+				Global_20930 = CHAR_MICHAEL;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[1 /*29*/])
-				Global_20930 = 1 /*CHAR_FRANKLIN*/;
+				Global_20930 = CHAR_FRANKLIN;
 			else if (ENTITY::GET_ENTITY_MODEL(PLAYER::PLAYER_PED_ID()) == Global_113969.f_28054[2 /*29*/])
-				Global_20930 = 2 /*CHAR_TREVOR*/;
+				Global_20930 = CHAR_TREVOR;
 			else
-				Global_20930 = 0 /*CHAR_MICHAEL*/;
+				Global_20930 = CHAR_MICHAEL;
 	}
 	else
 	{
 		Global_20930 = _GET_CURRENT_PLAYER_CHARACTER();
 	
-		if (Global_20930 == 145 /*_CHAR_NULL*/)
-			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
+		if (Global_20930 == _CHAR_NULL)
+			Global_20930 = CHAR_MULTIPLAYER;
 	
 		if (Global_79389)
-			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
+			Global_20930 = CHAR_MULTIPLAYER;
 	
-		if (Global_20930 > 3 /*CHAR_MULTIPLAYER*/)
-			Global_20930 = 3 /*CHAR_MULTIPLAYER*/;
+		if (Global_20930 > CHAR_MULTIPLAYER)
+			Global_20930 = CHAR_MULTIPLAYER;
 	}
 
 	return;
@@ -6731,7 +6731,7 @@ void func_192(eCharacter echParam0, char* sParam1) // Position - 0x6C20 Hash - 0
 
 	switch (echParam0)
 	{
-		case 0 /*CHAR_MICHAEL*/:
+		case CHAR_MICHAEL:
 			iLocal_42 = 0;
 			iLocal_42.f_1 = "MICHAEL";
 		
@@ -6756,7 +6756,7 @@ void func_192(eCharacter echParam0, char* sParam1) // Position - 0x6C20 Hash - 0
 			func_199(echParam0);
 			break;
 	
-		case 1 /*CHAR_FRANKLIN*/:
+		case CHAR_FRANKLIN:
 			iLocal_42 = 1;
 			iLocal_42.f_1 = "FRANKLIN";
 		
@@ -6781,7 +6781,7 @@ void func_192(eCharacter echParam0, char* sParam1) // Position - 0x6C20 Hash - 0
 			func_199(echParam0);
 			break;
 	
-		case 2 /*CHAR_TREVOR*/:
+		case CHAR_TREVOR:
 			iLocal_42 = 2;
 			iLocal_42.f_1 = "TREVOR";
 		
@@ -6809,7 +6809,7 @@ void func_192(eCharacter echParam0, char* sParam1) // Position - 0x6C20 Hash - 0
 
 	if (iLocal_40 == 1)
 	{
-		if (echParam0 == 0 /*CHAR_MICHAEL*/)
+		if (echParam0 == CHAR_MICHAEL)
 			num = 0;
 		else
 			num = 1;
@@ -6878,13 +6878,13 @@ void func_194(eCharacter echParam0, eCharacter echParam1, BOOL bParam2) // Posit
 			func_118(echParam0, num, 1);
 			func_117(echParam0, num, 1);
 		
-			if (echParam0 == 172 /*CHAR_SESSANTA*/ && !IS_BIT_SET(Global_2738934.f_6969, 4))
+			if (echParam0 == CHAR_SESSANTA && !IS_BIT_SET(Global_2738935.f_6969, 4))
 				bParam2 = false;
 		
-			if (echParam0 == 171 /*CHAR_ISLDJ4*/ && !IS_BIT_SET(Global_2738934.f_6969, 3))
+			if (echParam0 == CHAR_ISLDJ4 && !IS_BIT_SET(Global_2738935.f_6969, 3))
 				bParam2 = false;
 		
-			if (echParam0 == 173 /*CHAR_KDJ*/ && !IS_BIT_SET(Global_2738934.f_6969, 3))
+			if (echParam0 == CHAR_KDJ && !IS_BIT_SET(Global_2738935.f_6969, 3))
 				bParam2 = false;
 		}
 	
@@ -6989,9 +6989,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	{
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "SanAnd" /*San Andreas*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M77";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F78";
 			else
 				iLocal_42.f_7 = "LOC_T78";
@@ -7001,9 +7001,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Alamo" /*Alamo Sea*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M101";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F1";
 			else
 				iLocal_42.f_7 = "LOC_T1";
@@ -7013,9 +7013,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Alta" /*Alta*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M1";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F2";
 			else
 				iLocal_42.f_7 = "LOC_T2";
@@ -7025,9 +7025,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Airp" /*Los Santos International Airport*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M48";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F49";
 			else
 				iLocal_42.f_7 = "LOC_T49";
@@ -7037,9 +7037,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "ArmyB" /*Fort Zancudo*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M28";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F29";
 			else
 				iLocal_42.f_7 = "LOC_T29";
@@ -7049,9 +7049,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "BhamCa" /*Banham Canyon*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M2";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F3";
 			else
 				iLocal_42.f_7 = "LOC_T3";
@@ -7061,9 +7061,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Banning" /*Banning*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M3";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F4";
 			else
 				iLocal_42.f_7 = "LOC_T4";
@@ -7073,9 +7073,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Baytre" /*Baytree Canyon*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M4";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F5";
 			else
 				iLocal_42.f_7 = "LOC_T5";
@@ -7085,9 +7085,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Beach" /*Vespucci Beach*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M93";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F94";
 			else
 				iLocal_42.f_7 = "LOC_T94";
@@ -7097,9 +7097,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "BradT" /*Braddock Tunnel*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M7";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F8";
 			else
 				iLocal_42.f_7 = "LOC_T8";
@@ -7109,9 +7109,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "BradP" /*Braddock Pass*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M6";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F7";
 			else
 				iLocal_42.f_7 = "LOC_T7";
@@ -7121,9 +7121,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Burton" /*Burton*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M8";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F9";
 			else
 				iLocal_42.f_7 = "LOC_T9";
@@ -7133,9 +7133,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "CANNY" /*Raton Canyon*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M70";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F71";
 			else
 				iLocal_42.f_7 = "LOC_T71";
@@ -7145,9 +7145,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "CCreak" /*Cassidy Creek*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M10";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F11";
 			else
 				iLocal_42.f_7 = "LOC_T11";
@@ -7157,9 +7157,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "CalafB" /*Calafia Bridge*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M9";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F10";
 			else
 				iLocal_42.f_7 = "LOC_T10";
@@ -7169,9 +7169,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "ChamH" /*Chamberlain Hills*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M11";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F12";
 			else
 				iLocal_42.f_7 = "LOC_T12";
@@ -7181,9 +7181,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "CHU" /*Chumash*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M13";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F14";
 			else
 				iLocal_42.f_7 = "LOC_T14";
@@ -7193,9 +7193,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "CHIL" /*Vinewood Hills*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M96";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F97";
 			else
 				iLocal_42.f_7 = "LOC_T97";
@@ -7205,9 +7205,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "COSI" /*Countryside*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M14";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F15";
 			else
 				iLocal_42.f_7 = "LOC_T15";
@@ -7217,9 +7217,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "CMSW" /*Chiliad Mountain State Wilderness*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M12";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F13";
 			else
 				iLocal_42.f_7 = "LOC_T13";
@@ -7229,9 +7229,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Cypre" /*Cypress Flats*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M15";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F16";
 			else
 				iLocal_42.f_7 = "LOC_T16";
@@ -7241,9 +7241,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Davis" /*Davis*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M16";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F17";
 			else
 				iLocal_42.f_7 = "LOC_T17";
@@ -7253,9 +7253,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Desrt" /*Grand Senora Desert*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M32";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F33";
 			else
 				iLocal_42.f_7 = "LOC_T33";
@@ -7265,9 +7265,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "DelBe" /*Del Perro Beach*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M19";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F20";
 			else
 				iLocal_42.f_7 = "LOC_T20";
@@ -7277,9 +7277,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "DelPe" /*Del Perro*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M18";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F19";
 			else
 				iLocal_42.f_7 = "LOC_T19";
@@ -7289,9 +7289,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "DelSol" /*La Puerta*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M41";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F42";
 			else
 				iLocal_42.f_7 = "LOC_T42";
@@ -7301,9 +7301,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Downt" /*Downtown*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M20";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F21";
 			else
 				iLocal_42.f_7 = "LOC_T21";
@@ -7313,9 +7313,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "DTVine" /*Downtown Vinewood*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M21";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F22";
 			else
 				iLocal_42.f_7 = "LOC_T22";
@@ -7325,9 +7325,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Eclips" /*Eclipse*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M24";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F25";
 			else
 				iLocal_42.f_7 = "LOC_T25";
@@ -7337,9 +7337,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "ELSant" /*East Los Santos*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M22";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F23";
 			else
 				iLocal_42.f_7 = "LOC_T23";
@@ -7349,9 +7349,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "EBuro" /*El Burro Heights*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M25";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F26";
 			else
 				iLocal_42.f_7 = "LOC_T26";
@@ -7361,9 +7361,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "ELGorl" /*El Gordo Lighthouse*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M26";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F27";
 			else
 				iLocal_42.f_7 = "LOC_T27";
@@ -7373,9 +7373,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Elysian" /*Elysian Island*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M27";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F28";
 			else
 				iLocal_42.f_7 = "LOC_T28";
@@ -7385,9 +7385,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Galli" /*Galileo Park*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M31";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F32";
 			else
 				iLocal_42.f_7 = "LOC_T32";
@@ -7397,9 +7397,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Galfish" /*Galilee*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M29";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F30";
 			else
 				iLocal_42.f_7 = "LOC_T30";
@@ -7409,9 +7409,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Greatc" /*Great Chaparral*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M34";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F35";
 			else
 				iLocal_42.f_7 = "LOC_T35";
@@ -7421,9 +7421,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Golf" /*GWC and Golfing Society*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M35";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F36";
 			else
 				iLocal_42.f_7 = "LOC_T36";
@@ -7433,9 +7433,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "GrapeS" /*Grapeseed*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M33";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F34";
 			else
 				iLocal_42.f_7 = "LOC_T34";
@@ -7445,9 +7445,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Hawick" /*Hawick*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M37";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F38";
 			else
 				iLocal_42.f_7 = "LOC_T38";
@@ -7457,9 +7457,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Harmo" /*Harmony*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M36";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F37";
 			else
 				iLocal_42.f_7 = "LOC_T37";
@@ -7469,9 +7469,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Heart" /*Heart Attacks Beach*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M38";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F39";
 			else
 				iLocal_42.f_7 = "LOC_T39";
@@ -7481,9 +7481,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "HumLab" /*Humane Labs and Research*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M39";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F40";
 			else
 				iLocal_42.f_7 = "LOC_T40";
@@ -7493,9 +7493,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "HORS" /*Vinewood Racetrack*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M97";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F98";
 			else
 				iLocal_42.f_7 = "LOC_T98";
@@ -7505,9 +7505,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Koreat" /*Little Seoul*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M46";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F47";
 			else
 				iLocal_42.f_7 = "LOC_T47";
@@ -7517,9 +7517,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Jail" /*Bolingbroke Penitentiary*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M5";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F6";
 			else
 				iLocal_42.f_7 = "LOC_T6";
@@ -7529,9 +7529,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "LAct" /*Land Act Reservoir*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M45";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F46";
 			else
 				iLocal_42.f_7 = "LOC_T46";
@@ -7541,9 +7541,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "LDam" /*Land Act Dam*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M44";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F45";
 			else
 				iLocal_42.f_7 = "LOC_T45";
@@ -7553,9 +7553,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Lago" /*Lago Zancudo*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M43";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F44";
 			else
 				iLocal_42.f_7 = "LOC_T44";
@@ -7565,9 +7565,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "LegSqu" /*Legion Square*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F";
 			else
 				iLocal_42.f_7 = "LOC_T";
@@ -7577,9 +7577,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "LosSF" /*Los Santos Freeway*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M47";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F48";
 			else
 				iLocal_42.f_7 = "LOC_T48";
@@ -7589,9 +7589,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "LMesa" /*La Mesa*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M40";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F41";
 			else
 				iLocal_42.f_7 = "LOC_T41";
@@ -7601,9 +7601,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "LosPuer" /*La Puerta*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M41";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F42";
 			else
 				iLocal_42.f_7 = "LOC_T42";
@@ -7613,9 +7613,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "LosPFy" /*La Puerta Fwy*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M42";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F43";
 			else
 				iLocal_42.f_7 = "LOC_T43";
@@ -7625,9 +7625,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "LOSTMC" /*Lost MC*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F";
 			else
 				iLocal_42.f_7 = "LOC_T";
@@ -7637,9 +7637,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Mirr" /*Mirror Park*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M50";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F51";
 			else
 				iLocal_42.f_7 = "LOC_T51";
@@ -7649,9 +7649,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Morn" /*Morningwood*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M52";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F53";
 			else
 				iLocal_42.f_7 = "LOC_T53";
@@ -7661,9 +7661,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Murri" /*Murrieta Heights*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M56";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F57";
 			else
 				iLocal_42.f_7 = "LOC_T57";
@@ -7673,9 +7673,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "MTChil" /*Mount Chiliad*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M53";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F54";
 			else
 				iLocal_42.f_7 = "LOC_T54";
@@ -7685,9 +7685,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "MTJose" /*Mount Josiah*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M55";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F56";
 			else
 				iLocal_42.f_7 = "LOC_T56";
@@ -7697,9 +7697,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "MTGordo" /*Mount Gordo*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M54";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F55";
 			else
 				iLocal_42.f_7 = "LOC_T55";
@@ -7709,9 +7709,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Movie" /*Richards Majestic*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M72";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F73";
 			else
 				iLocal_42.f_7 = "LOC_T73";
@@ -7721,9 +7721,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "NCHU" /*North Chumash*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M57";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F58";
 			else
 				iLocal_42.f_7 = "LOC_T58";
@@ -7733,9 +7733,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Noose" /*N.O.O.S.E*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M84";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F85";
 			else
 				iLocal_42.f_7 = "LOC_T85";
@@ -7745,9 +7745,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Oceana" /*Pacific Ocean*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M60";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F61";
 			else
 				iLocal_42.f_7 = "LOC_T61";
@@ -7757,9 +7757,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Observ" /*Galileo Observatory*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M30";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F31";
 			else
 				iLocal_42.f_7 = "LOC_T31";
@@ -7769,9 +7769,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(*iLocal_42.f_6, "Palmpow" /*Palmer-Taylor Power Station*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M64";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F65";
 			else
 				iLocal_42.f_7 = "LOC_T65";
@@ -7781,9 +7781,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "PBOX" /*Pillbox Hill*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M66";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F67";
 			else
 				iLocal_42.f_7 = "LOC_T67";
@@ -7793,9 +7793,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "PBluff" /*Pacific Bluffs*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M59";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F60";
 			else
 				iLocal_42.f_7 = "LOC_T60";
@@ -7805,9 +7805,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Paleto" /*Paleto Bay*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M61";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F62";
 			else
 				iLocal_42.f_7 = "LOC_T62";
@@ -7817,9 +7817,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "PalCov" /*Paleto Cove*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M62";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F63";
 			else
 				iLocal_42.f_7 = "LOC_T63";
@@ -7829,9 +7829,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "PalFor" /*Paleto Forest*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M63";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F64";
 			else
 				iLocal_42.f_7 = "LOC_T64";
@@ -7841,9 +7841,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "PalHigh" /*Palomino Highlands*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M65";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F66";
 			else
 				iLocal_42.f_7 = "LOC_T66";
@@ -7853,9 +7853,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "ProcoB" /*Procopio Beach*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M68";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F69";
 			else
 				iLocal_42.f_7 = "LOC_T69";
@@ -7865,9 +7865,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Prol" /*North Yankton*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M58";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F59";
 			else
 				iLocal_42.f_7 = "LOC_T59";
@@ -7877,9 +7877,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "RTRAK" /*Redwood Lights Track*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M71";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F72";
 			else
 				iLocal_42.f_7 = "LOC_T72";
@@ -7889,9 +7889,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Rancho" /*Rancho*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M69";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F70";
 			else
 				iLocal_42.f_7 = "LOC_T70";
@@ -7901,9 +7901,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "RGLEN" /*Richman Glen*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M74";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F75";
 			else
 				iLocal_42.f_7 = "LOC_T75";
@@ -7913,9 +7913,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Richm" /*Richman*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M73";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F74";
 			else
 				iLocal_42.f_7 = "LOC_T74";
@@ -7925,9 +7925,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Rockf" /*Rockford Hills*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M75";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F76";
 			else
 				iLocal_42.f_7 = "LOC_T76";
@@ -7937,9 +7937,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "SANDY" /*Sandy Shores*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M79";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F80";
 			else
 				iLocal_42.f_7 = "LOC_T80";
@@ -7949,9 +7949,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "TongvaH" /*Tongva Hills*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M87";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F88";
 			else
 				iLocal_42.f_7 = "LOC_T88";
@@ -7961,9 +7961,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "TongvaV" /*Tongva Valley*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M88";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F89";
 			else
 				iLocal_42.f_7 = "LOC_T89";
@@ -7973,9 +7973,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "East_V" /*East Vinewood*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M23";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F24";
 			else
 				iLocal_42.f_7 = "LOC_T24";
@@ -7985,9 +7985,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Zenora" /*Senora Freeway*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M80";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F81";
 			else
 				iLocal_42.f_7 = "LOC_T81";
@@ -7997,9 +7997,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Slab" /*Stab City*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M81";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F82";
 			else
 				iLocal_42.f_7 = "LOC_T82";
@@ -8009,9 +8009,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "SKID" /*Mission Row*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M51";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F52";
 			else
 				iLocal_42.f_7 = "LOC_T52";
@@ -8021,9 +8021,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "SLSant" /*South Los Santos*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M82";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F83";
 			else
 				iLocal_42.f_7 = "LOC_T83";
@@ -8033,9 +8033,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Stad" /*Maze Bank Arena*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M49";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F50";
 			else
 				iLocal_42.f_7 = "LOC_T50";
@@ -8045,9 +8045,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Tatamo" /*Tataviam Mountains*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M84";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F85";
 			else
 				iLocal_42.f_7 = "LOC_T85";
@@ -8057,9 +8057,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Termina" /*Terminal*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M85";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F86";
 			else
 				iLocal_42.f_7 = "LOC_T86";
@@ -8069,9 +8069,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "TEXTI" /*Textile City*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M86";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F87";
 			else
 				iLocal_42.f_7 = "LOC_T87";
@@ -8081,9 +8081,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "WVine" /*West Vinewood*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M99";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F100";
 			else
 				iLocal_42.f_7 = "LOC_T100";
@@ -8093,9 +8093,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "UtopiaG" /*Utopia Gardens*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M89";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F90";
 			else
 				iLocal_42.f_7 = "LOC_T90";
@@ -8105,9 +8105,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Vesp" /*Vespucci*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M92";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F93";
 			else
 				iLocal_42.f_7 = "LOC_T93";
@@ -8117,9 +8117,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "VCana" /*Vespucci Canals*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M94";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F95";
 			else
 				iLocal_42.f_7 = "LOC_T95";
@@ -8129,9 +8129,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Vine" /*Vinewood*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M95";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F96";
 			else
 				iLocal_42.f_7 = "LOC_T96";
@@ -8141,9 +8141,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "WMirror" /*West Mirror Drive*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M98";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F99";
 			else
 				iLocal_42.f_7 = "LOC_T99";
@@ -8153,9 +8153,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "WindF" /*Ron Alternates Wind Farm*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M76";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F77";
 			else
 				iLocal_42.f_7 = "LOC_T77";
@@ -8165,9 +8165,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "Zancudo" /*Zancudo River*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M100";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F101";
 			else
 				iLocal_42.f_7 = "LOC_T101";
@@ -8177,9 +8177,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "SanChia" /*San Chianski Mountain Range*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M78";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F79";
 			else
 				iLocal_42.f_7 = "LOC_T79";
@@ -8189,9 +8189,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "STRAW" /*Strawberry*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M83";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F84";
 			else
 				iLocal_42.f_7 = "LOC_T84";
@@ -8201,9 +8201,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "zQ_UAR" /*Davis Quartz*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M17";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F18";
 			else
 				iLocal_42.f_7 = "LOC_T18";
@@ -8213,9 +8213,9 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 	
 		if (MISC::ARE_STRINGS_EQUAL(iLocal_42.f_6, "ZP_ORT" /*Port of South Los Santos*/))
 		{
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				iLocal_42.f_7 = "LOC_M67";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				iLocal_42.f_7 = "LOC_F68";
 			else
 				iLocal_42.f_7 = "LOC_T68";
@@ -8223,18 +8223,18 @@ void func_200(eCharacter echParam0) // Position - 0x70AE Hash - 0x34E99704 ^0x85
 			return;
 		}
 	
-		if (echParam0 == 0 /*CHAR_MICHAEL*/)
+		if (echParam0 == CHAR_MICHAEL)
 			iLocal_42.f_7 = "LOC_M";
-		else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+		else if (echParam0 == CHAR_FRANKLIN)
 			iLocal_42.f_7 = "LOC_M";
 		else
 			iLocal_42.f_7 = "LOC_M";
 	}
-	else if (echParam0 == 0 /*CHAR_MICHAEL*/)
+	else if (echParam0 == CHAR_MICHAEL)
 	{
 		iLocal_42.f_7 = "LOC_M";
 	}
-	else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+	else if (echParam0 == CHAR_FRANKLIN)
 	{
 		iLocal_42.f_7 = "LOC_F";
 	}
@@ -8260,36 +8260,36 @@ char* func_201(eCharacter echParam0) // Position - 0x893F Hash - 0x97B07D67 ^0xF
 			sLocal_1270 = "FHFAUD";
 	
 		if (iLocal_40 == 0)
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				str = "FBI_3_MDRPC";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				str = "FBI_3_FDRPC";
-			else if (echParam0 == 2 /*CHAR_TREVOR*/)
+			else if (echParam0 == CHAR_TREVOR)
 				str = "FBI_3_TDRPC";
 		else if (iLocal_40 == 1)
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				str = "AH_MDRPC";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				str = "AH_FDRPC";
-			else if (echParam0 == 2 /*CHAR_TREVOR*/)
+			else if (echParam0 == CHAR_TREVOR)
 				str = "AH_TDRPC";
 		else if (iLocal_40 == 2)
-			if (echParam0 == 0 /*CHAR_MICHAEL*/)
+			if (echParam0 == CHAR_MICHAEL)
 				str = "FHP_PICKCM";
-			else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+			else if (echParam0 == CHAR_FRANKLIN)
 				str = "FHP_PICKCF";
-			else if (echParam0 == 2 /*CHAR_TREVOR*/)
+			else if (echParam0 == CHAR_TREVOR)
 				str = "FHP_PICKCT";
 	}
 	else
 	{
 		sLocal_1270 = "FHFAUD";
 	
-		if (echParam0 == 0 /*CHAR_MICHAEL*/)
+		if (echParam0 == CHAR_MICHAEL)
 			str = "FHP_MOVEM";
-		else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+		else if (echParam0 == CHAR_FRANKLIN)
 			str = "FHP_MOVEF";
-		else if (echParam0 == 2 /*CHAR_TREVOR*/)
+		else if (echParam0 == CHAR_TREVOR)
 			str = "FHP_MOVET";
 	}
 
@@ -8754,7 +8754,7 @@ BOOL func_216(eCharacter echParam0) // Position - 0x91AA Hash - 0xC6AD3CEE ^0x14
 	{
 		if (func_217(echParam0))
 		{
-			for (i = 0 /*CHAR_MICHAEL*/; i < Global_113969.f_7691.f_136; i = i + 1)
+			for (i = CHAR_MICHAEL; i < Global_113969.f_7691.f_136; i = i + 1)
 			{
 				if (Global_113969.f_7691[i /*15*/].f_3 == 5)
 					return true;
@@ -8771,19 +8771,19 @@ BOOL func_217(eCharacter echParam0) // Position - 0x91F4 Hash - 0x4FC9EAF1 ^0xCB
 
 	!func_57(echParam0);
 
-	for (i = 0 /*CHAR_MICHAEL*/; i < Global_113969.f_7691.f_136; i = i + 1)
+	for (i = CHAR_MICHAEL; i < Global_113969.f_7691.f_136; i = i + 1)
 	{
 		if (IS_BIT_SET(Global_113969.f_7691[i /*15*/].f_2, echParam0))
 			return true;
 	}
 
-	for (i = 0 /*CHAR_MICHAEL*/; i < Global_113969.f_7691.f_764; i = i + 1)
+	for (i = CHAR_MICHAEL; i < Global_113969.f_7691.f_764; i = i + 1)
 	{
 		if (IS_BIT_SET(Global_113969.f_7691.f_651[i /*14*/].f_2, echParam0))
 			return true;
 	}
 
-	for (i = 0 /*CHAR_MICHAEL*/; i < Global_113969.f_7691.f_866; i = i + 1)
+	for (i = CHAR_MICHAEL; i < Global_113969.f_7691.f_866; i = i + 1)
 	{
 		if (IS_BIT_SET(Global_113969.f_7691.f_765[i /*10*/].f_2, echParam0))
 			return true;
@@ -9090,7 +9090,7 @@ BOOL func_228() // Position - 0x9753 Hash - 0xFBEEF83E ^0x94376766
 {
 	if (iLocal_40 != 2)
 	{
-		if (iLocal_40 == 1 && _GET_CURRENT_PLAYER_CHARACTER() == 2 /*CHAR_TREVOR*/)
+		if (iLocal_40 == 1 && _GET_CURRENT_PLAYER_CHARACTER() == CHAR_TREVOR)
 		{
 			if (!IS_BIT_SET(iLocal_103, 16))
 				MISC::SET_BIT(&iLocal_103, 16);
@@ -9221,13 +9221,13 @@ int func_237(int iParam0) // Position - 0x99D3 Hash - 0x1A3F3220 ^0x1A3F3220
 	
 		if (num2 > -1)
 		{
-			Global_2750949 = 0;
+			Global_2750950 = 0;
 			num = num2;
 		}
 		else
 		{
 			num = 0;
-			Global_2750949 = 1;
+			Global_2750950 = 1;
 		}
 	}
 
@@ -9875,12 +9875,12 @@ void func_253(BOOL bParam0) // Position - 0xB9DA Hash - 0x92B796E7 ^0xB9E40662
 		}
 		else if (iLocal_40 == 0)
 		{
-			if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
+			if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
 			{
 				func_260(str);
 				func_259(str);
 			}
-			else if (_GET_CURRENT_PLAYER_CHARACTER() == 1 /*CHAR_FRANKLIN*/)
+			else if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN)
 			{
 				func_258(str);
 			}
@@ -9891,12 +9891,12 @@ void func_253(BOOL bParam0) // Position - 0xB9DA Hash - 0x92B796E7 ^0xB9E40662
 		}
 		else if (iLocal_40 == 1)
 		{
-			if (_GET_CURRENT_PLAYER_CHARACTER() == 0 /*CHAR_MICHAEL*/)
+			if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_MICHAEL)
 			{
 				func_260(str);
 				func_261(str);
 			}
-			else if (_GET_CURRENT_PLAYER_CHARACTER() == 1 /*CHAR_FRANKLIN*/)
+			else if (_GET_CURRENT_PLAYER_CHARACTER() == CHAR_FRANKLIN)
 			{
 				func_258(str);
 				func_261(str);

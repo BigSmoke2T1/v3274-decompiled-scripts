@@ -228,7 +228,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 			func_228();
 	
 		if (uScriptParam_0.f_16 >= 32)
-			if (func_227(PLAYER::PLAYER_ID()) != 1 && !IS_BIT_SET(Global_2738934.f_932.f_7, 0))
+			if (func_227(PLAYER::PLAYER_ID()) != 1 && !IS_BIT_SET(Global_2738935.f_932.f_7, 0))
 				func_228();
 	}
 
@@ -267,7 +267,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 					uLocal_70[NETWORK::PARTICIPANT_ID_TO_INT() /*3*/] = 3;
 			
 				if (uLocal_70[NETWORK::PARTICIPANT_ID_TO_INT() /*3*/].f_2 == 0)
-					if (!ENTITY::IS_ENTITY_AT_COORD(PLAYER::PLAYER_PED_ID(), iLocal_59.f_3, 500f, 500f, 500f, false, true, 0) && func_227(PLAYER::PLAYER_ID()) != 1 && !IS_BIT_SET(Global_2738934.f_932.f_7, 0))
+					if (!ENTITY::IS_ENTITY_AT_COORD(PLAYER::PLAYER_PED_ID(), iLocal_59.f_3, 500f, 500f, 500f, false, true, 0) && func_227(PLAYER::PLAYER_ID()) != 1 && !IS_BIT_SET(Global_2738935.f_932.f_7, 0))
 						uLocal_70[NETWORK::PARTICIPANT_ID_TO_INT() /*3*/] = 4;
 				break;
 		
@@ -324,7 +324,7 @@ BOOL func_1() // Position - 0x254 Hash - 0x2EE4DDA7 ^0x2EE4DDA7
 BOOL func_2() // Position - 0x268 Hash - 0xF62D8A14 ^0x8585B052
 {
 	if (iLocal_59.f_7 >= 32 && func_227(PLAYER::PLAYER_ID()) == 1)
-		if (_IS_NULL_VECTOR(Global_2738934.f_932.f_1))
+		if (_IS_NULL_VECTOR(Global_2738935.f_932.f_1))
 			return true;
 
 	if (_IS_PLAYER_IN_ANIMAL_FORM(PLAYER::PLAYER_ID()))
@@ -346,7 +346,7 @@ BOOL _IS_PLAYER_IN_ANIMAL_FORM(Player plParam0) // Position - 0x2BB Hash - 0x147
 
 	if (plParam0 == PLAYER::PLAYER_ID())
 	{
-		return Global_2708056;
+		return Global_2708057;
 	}
 	else
 	{
@@ -441,8 +441,8 @@ BOOL func_7() // Position - 0x404 Hash - 0xD455166F ^0x4EE3EA41
 			
 				if (IS_BIT_SET(iLocal_59.f_1, 8))
 				{
-					vector = { Global_2738934.f_932.f_1 };
-					heading = Global_2738934.f_932.f_4;
+					vector = { Global_2738935.f_932.f_1 };
+					heading = Global_2738935.f_932.f_4;
 				}
 			
 				if (func_227(PLAYER::PLAYER_ID()) == 7)
@@ -3895,9 +3895,9 @@ BOOL func_81(Player plParam0) // Position - 0x5653 Hash - 0x80C23257 ^0x68833FB2
 	if (func_86(PLAYER::PLAYER_ID(), plParam0))
 		return true;
 
-	Global_2707307 = { GET_GAMER_HANDLE_PLAYER(plParam0) };
+	Global_2707308 = { GET_GAMER_HANDLE_PLAYER(plParam0) };
 
-	if (NETWORK::NETWORK_IS_FRIEND(&Global_2707307))
+	if (NETWORK::NETWORK_IS_FRIEND(&Global_2707308))
 		return true;
 
 	if (func_82(PLAYER::PLAYER_ID(), plParam0))
@@ -3954,17 +3954,17 @@ BOOL func_86(Player plParam0, Player plParam1) // Position - 0x571F Hash - 0x4B2
 {
 	if (NETWORK::NETWORK_CLAN_SERVICE_IS_VALID())
 	{
-		Global_2707307 = { GET_GAMER_HANDLE_PLAYER(plParam0) };
-		Global_2707320 = { GET_GAMER_HANDLE_PLAYER(plParam1) };
+		Global_2707308 = { GET_GAMER_HANDLE_PLAYER(plParam0) };
+		Global_2707321 = { GET_GAMER_HANDLE_PLAYER(plParam1) };
 	
-		if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2707307))
+		if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2707308))
 		{
-			if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2707320))
+			if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2707321))
 			{
-				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2707237, 35, &Global_2707307);
-				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2707272, 35, &Global_2707320);
+				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2707238, 35, &Global_2707308);
+				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2707273, 35, &Global_2707321);
 			
-				if (Global_2707237 == Global_2707272)
+				if (Global_2707238 == Global_2707273)
 					return true;
 			}
 		}
@@ -7514,13 +7514,13 @@ int func_201(int iParam0) // Position - 0xA654 Hash - 0x1A3F3220 ^0x1A3F3220
 	
 		if (num2 > -1)
 		{
-			Global_2750949 = 0;
+			Global_2750950 = 0;
 			num = num2;
 		}
 		else
 		{
 			num = 0;
-			Global_2750949 = 1;
+			Global_2750950 = 1;
 		}
 	}
 
@@ -7742,7 +7742,7 @@ void func_213() // Position - 0xAA5D Hash - 0xAC7D6003 ^0x7FBE6000
 			else
 				HUD::SET_BLIP_SCALE(blLocal_169, 1.2f);
 		
-			HUD::SET_BLIP_SPRITE(blLocal_169, 403 /*BLIP_TESTOSTERONE*/);
+			HUD::SET_BLIP_SPRITE(blLocal_169, BLIP_TESTOSTERONE);
 			HUD::SET_BLIP_COLOUR(blLocal_169, 2);
 			HUD::SET_BLIP_NAME_FROM_TEXT_FILE(blLocal_169, "ABB_BLIPN" /*Bull Shark Testosterone*/);
 		}
@@ -7806,7 +7806,7 @@ BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0xAB78 Hash - 0x52E21E9B ^
 	if (func_225())
 		return true;
 
-	if (Global_2698757)
+	if (Global_2698758)
 		return true;
 
 	if (func_224())
@@ -7845,7 +7845,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0xABFC Hash - 0x90B51
 
 Hash func_221() // Position - 0xAC2F Hash - 0x61402777 ^0xB9FAC976
 {
-	switch (Global_2698864)
+	switch (Global_2698865)
 	{
 		case 0:
 			return joaat("freemode");
@@ -7864,7 +7864,7 @@ BOOL func_222() // Position - 0xAC53 Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0xAC62 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
 		return true;
 
 	return false;
@@ -7926,11 +7926,11 @@ void func_229() // Position - 0xAD15 Hash - 0xCE5FB49E ^0x214A59D5
 
 void func_230() // Position - 0xAD21 Hash - 0x3306C2DA ^0xE8FF0415
 {
-	Global_2738934.f_932 = 0;
-	Global_2738934.f_932.f_1 = { 0f, 0f, 0f };
-	Global_2738934.f_932.f_4 = 0f;
-	Global_2738934.f_932.f_8 = 0;
-	MISC::CLEAR_BIT(&(Global_2738934.f_932.f_7), 0);
+	Global_2738935.f_932 = 0;
+	Global_2738935.f_932.f_1 = { 0f, 0f, 0f };
+	Global_2738935.f_932.f_4 = 0f;
+	Global_2738935.f_932.f_8 = 0;
+	MISC::CLEAR_BIT(&(Global_2738935.f_932.f_7), 0);
 	return;
 }
 
@@ -8022,7 +8022,7 @@ BOOL func_234(var uParam0, var uParam1, var uParam2, var uParam3, var uParam4, v
 		Global_1680240 = iLocal_59.f_7;
 		iLocal_59.f_3 = { ENTITY::GET_ENTITY_COORDS(PLAYER::PLAYER_PED_ID(), false) };
 	
-		if (!_IS_NULL_VECTOR(Global_2738934.f_932.f_1))
+		if (!_IS_NULL_VECTOR(Global_2738935.f_932.f_1))
 			MISC::SET_BIT(&(iLocal_59.f_1), 8);
 	}
 

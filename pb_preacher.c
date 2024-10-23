@@ -199,7 +199,7 @@ void func_2() // Position - 0x1FE Hash - 0x7A00A7BA ^0x5234247F
 	}
 
 	uLocal_46.f_2 = fLocal_43.f_2 - 1f;
-	pedLocal_50 = PED::CREATE_PED(19 /*PED_TYPE_DEALER*/, joaat("S_M_M_StrPreach_01"), fLocal_43, fLocal_43.f_1, uLocal_46.f_2, 0f, true, true);
+	pedLocal_50 = PED::CREATE_PED(PED_TYPE_DEALER, joaat("S_M_M_StrPreach_01"), fLocal_43, fLocal_43.f_1, uLocal_46.f_2, 0f, true, true);
 
 	if (!ENTITY::IS_ENTITY_DEAD(pedLocal_50, false))
 	{
@@ -397,7 +397,7 @@ BOOL func_13() // Position - 0xB11 Hash - 0x7FE517FE ^0x128A3BC8
 
 BOOL func_14(eCharacter echParam0) // Position - 0xB2D Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 eCharacter _GET_CURRENT_PLAYER_CHARACTER() // Position - 0xB39 Hash - 0x3C5423D7 ^0x3C5423D7
@@ -428,7 +428,7 @@ void func_16() // Position - 0xB52 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
+			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -448,14 +448,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xC4F Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
+		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xC8C Hash - 0xADCB9755 ^0xADCB9755
@@ -463,7 +463,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xC8C Hash - 0xADC
 	if (func_14(character))
 		return func_19(character);
 	else
-		character != 145 /*_CHAR_NULL*/;
+		character != _CHAR_NULL;
 
 	return 0;
 }

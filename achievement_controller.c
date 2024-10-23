@@ -294,7 +294,7 @@ void func_2() // Position - 0x29D Hash - 0xACF26543 ^0x7AF4DA1B
 			func_116(40, 1);
 
 	if (!PLAYER::HAS_ACHIEVEMENT_BEEN_PASSED(41))
-		if (IS_BIT_SET(Global_2738934.f_2342.f_18, 1))
+		if (IS_BIT_SET(Global_2738935.f_2342.f_18, 1))
 			func_116(41, 1);
 
 	if (!PLAYER::HAS_ACHIEVEMENT_BEEN_PASSED(43))
@@ -384,13 +384,13 @@ int func_6(int iParam0) // Position - 0x4EF Hash - 0x1A3F3220 ^0x1A3F3220
 	
 		if (num2 > -1)
 		{
-			Global_2750949 = 0;
+			Global_2750950 = 0;
 			num = num2;
 		}
 		else
 		{
 			num = 0;
-			Global_2750949 = 1;
+			Global_2750950 = 1;
 		}
 	}
 
@@ -8544,7 +8544,7 @@ int func_31(int iParam0, eCharacter echParam1) // Position - 0xA9CD Hash - 0x7D7
 
 BOOL func_32(eCharacter echParam0) // Position - 0xA9E9 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 eCharacter _GET_CURRENT_PLAYER_CHARACTER() // Position - 0xA9F5 Hash - 0x3C5423D7 ^0x3C5423D7
@@ -8575,7 +8575,7 @@ void func_34() // Position - 0xAA0E Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
+			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -8595,14 +8595,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0xAB0B Ha
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
+		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xAB48 Hash - 0xADCB9755 ^0xADCB9755
@@ -8610,7 +8610,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0xAB48 Hash - 0xAD
 	if (func_32(character))
 		return func_37(character);
 	else
-		character != 145 /*_CHAR_NULL*/;
+		character != _CHAR_NULL;
 
 	return 0;
 }
@@ -16223,17 +16223,17 @@ int func_145() // Position - 0x129A4 Hash - 0x833A8C2C ^0x833A8C2C
 	Ped ped;
 
 	num = 0;
-	ped = func_147(2 /*CHAR_TREVOR*/);
+	ped = func_147(CHAR_TREVOR);
 
 	if (func_146(ped, 0) || IS_BIT_SET(Global_97364, 2))
 		num = num + 1;
 
-	ped = func_147(1 /*CHAR_FRANKLIN*/);
+	ped = func_147(CHAR_FRANKLIN);
 
 	if (func_146(ped, 0) || IS_BIT_SET(Global_97364, 1))
 		num = num + 1;
 
-	ped = func_147(0 /*CHAR_MICHAEL*/);
+	ped = func_147(CHAR_MICHAEL);
 
 	if (func_146(ped, 0) || IS_BIT_SET(Global_97364, 0))
 		num = num + 1;
@@ -16248,7 +16248,7 @@ BOOL func_146(Ped pedParam0, int iParam1) // Position - 0x12A1A Hash - 0xE4F8E1F
 
 Ped func_147(eCharacter echParam0) // Position - 0x12A73 Hash - 0x44474C2F ^0xB8583860
 {
-	if (echParam0 > 3 /*CHAR_MULTIPLAYER*/)
+	if (echParam0 > CHAR_MULTIPLAYER)
 		return 0;
 
 	if (echParam0 == _GET_CURRENT_PLAYER_CHARACTER())
@@ -16259,13 +16259,13 @@ Ped func_147(eCharacter echParam0) // Position - 0x12A73 Hash - 0x44474C2F ^0xB8
 
 int func_148(eCharacter echParam0) // Position - 0x12AA4 Hash - 0x379BF8EA ^0x379BF8EA
 {
-	if (echParam0 == 0 /*CHAR_MICHAEL*/)
+	if (echParam0 == CHAR_MICHAEL)
 		return 0;
-	else if (echParam0 == 2 /*CHAR_TREVOR*/)
+	else if (echParam0 == CHAR_TREVOR)
 		return 2;
-	else if (echParam0 == 1 /*CHAR_FRANKLIN*/)
+	else if (echParam0 == CHAR_FRANKLIN)
 		return 1;
-	else if (echParam0 == 145 /*_CHAR_NULL*/)
+	else if (echParam0 == _CHAR_NULL)
 		return 3;
 
 	return 4;

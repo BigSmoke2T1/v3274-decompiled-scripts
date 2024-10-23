@@ -132,7 +132,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 
 void func_1() // Position - 0x49 Hash - 0xE02BDBCD ^0xE02BDBCD
 {
-	if (Global_1836583 == 0 /*PV_COMP_HEAD*/ || Global_1836583 == 2 /*PV_COMP_HAIR*/)
+	if (Global_1836583 == PV_COMP_HEAD || Global_1836583 == PV_COMP_HAIR)
 		iLocal_18 = 3;
 
 	switch (iLocal_18)
@@ -184,12 +184,12 @@ void func_2() // Position - 0xA4 Hash - 0xEA0966C0 ^0xBF72B3E4
 
 	switch (epctLocal_19)
 	{
-		case 1 /*PV_COMP_BERD*/:
+		case PV_COMP_BERD:
 			func_3();
 			break;
 	}
 
-	Global_1836583 = 0 /*PV_COMP_HEAD*/;
+	Global_1836583 = PV_COMP_HEAD;
 	i = 0;
 
 	for (i = 0; i < 3; i = i + 1)
@@ -261,11 +261,11 @@ void func_6() // Position - 0x25A Hash - 0x4B0BC368 ^0xC6A0B252
 
 	switch (epctLocal_19)
 	{
-		case 0 /*PV_COMP_HEAD*/:
+		case PV_COMP_HEAD:
 			iLocal_18 = 3;
 			break;
 	
-		case 1 /*PV_COMP_BERD*/:
+		case PV_COMP_BERD:
 			func = &func_8;
 			break;
 	}
@@ -636,7 +636,7 @@ void func_12() // Position - 0xB95 Hash - 0x3D9E681C ^0x6DAE3400
 
 	switch (epctLocal_19)
 	{
-		case 1 /*PV_COMP_BERD*/:
+		case PV_COMP_BERD:
 			func = &func_105;
 			func2 = &func_15;
 			break;
@@ -720,9 +720,9 @@ BOOL func_14(var uParam0) // Position - 0xCC1 Hash - 0x14878DCB ^0xB85C9954
 	if (*uParam0 == 1)
 	{
 		if (uParam0->f_6 != -1 && ENTITY::DOES_ENTITY_EXIST(uLocal_23[uParam0->f_6]) && ENTITY::IS_ENTITY_A_VEHICLE(uLocal_23[uParam0->f_6]))
-			ped = PED::CREATE_PED_INSIDE_VEHICLE(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(uLocal_23[uParam0->f_6]), 26 /*PED_TYPE_MISSION*/, uParam0->f_1, uParam0->f_7, false, false);
+			ped = PED::CREATE_PED_INSIDE_VEHICLE(ENTITY::GET_VEHICLE_INDEX_FROM_ENTITY_INDEX(uLocal_23[uParam0->f_6]), PED_TYPE_MISSION, uParam0->f_1, uParam0->f_7, false, false);
 		else
-			ped = PED::CREATE_PED(26 /*PED_TYPE_MISSION*/, uParam0->f_1, uParam0->f_2, uParam0->f_5, false, false);
+			ped = PED::CREATE_PED(PED_TYPE_MISSION, uParam0->f_1, uParam0->f_2, uParam0->f_5, false, false);
 	
 		PED::SET_PED_TREATED_AS_FRIENDLY(ped, 1, 1);
 		PED::SET_PED_CONFIG_FLAG(ped, 150, true);
@@ -1426,638 +1426,638 @@ void func_15(int iParam0, var uParam1) // Position - 0xE2C Hash - 0x12CBC6C3 ^0x
 	
 		if (iParam0 == 28)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 5, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 5, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 29)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 5, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 3, 6, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 5, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 3, 6, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 2, 0, false, 1);
 		}
 		else if (iParam0 == 30)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 4, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 5, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 5, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 4, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 5, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 5, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 2, 0, false, 1);
 		}
 		else if (iParam0 == 31)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 4, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 5, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 5, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 4, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 5, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 5, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 2, 0, false, 1);
 		}
 		else if (iParam0 == 32)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 2, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 0, 8, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 1, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 2, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 0, 8, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 1, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 33)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 5, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 5, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 5, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 5, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 5, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 5, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 34)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 4, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 5, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 4, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 5, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 0, 2, 0, false, 1);
 		}
 		else if (iParam0 == 35)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 2, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 0, 8, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 1, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 2, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 0, 8, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 1, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 36)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 3, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 2, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 9, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 3, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 2, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 9, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 37)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 3, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 2, 5, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 3, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 3, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 2, 5, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 3, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 38)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 5, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 3, 6, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 5, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 3, 6, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 2, 0, false, 1);
 		}
 		else if (iParam0 == 39)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 40)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 3, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 2, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 3, 7, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 3, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 2, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 3, 7, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 41)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 4, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 5, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 5, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 0, 8, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 5, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 4, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 5, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 5, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 0, 8, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 5, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 42)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 4, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 4, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 2, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 4, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 4, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 4, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 2, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 4, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 43)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 4, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 4, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 3, 8, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 4, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 4, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 3, 8, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 0, 1, false, 1);
 		}
 		else if (iParam0 == 44)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 3, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 4, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 3, 6, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 3, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 3, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 4, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 3, 6, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 3, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 0, 0, 0, false, 1);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 0, 1, false, 1);
 		}
 		else if (iParam0 == 45)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 6, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 5, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 6, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 5, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 46)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 6, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 5, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 6, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 5, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 47)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 5, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 3, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 5, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 3, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 5, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 3, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 5, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 3, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 48)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 4, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 4, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 3, 8, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 4, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 4, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 3, 8, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 0, 1, false, 1);
 		}
 		else if (iParam0 == 49)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 6, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 3, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 3, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 1, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 6, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 3, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 3, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 1, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 0, 1, 0, false, 1);
 		}
 		else if (iParam0 == 50)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 3, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 3, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 0, 0, false, 1);
 		}
 		else if (iParam0 == 51)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 5, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 3, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 3, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 5, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 3, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 3, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 52)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 5, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 3, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 4, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 5, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 3, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 4, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 53)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 0, 1, 0, false, 1);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 0, 0, false, 1);
 		}
 		else if (iParam0 == 54)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 4, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 4, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 55)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 4, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 4, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 56)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 6, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 3, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 3, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 1, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 6, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 3, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 3, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 1, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 0, 1, 0, false, 1);
 		}
 		else if (iParam0 == 57)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 4, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 4, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 3, 8, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 4, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 4, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 3, 8, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 0, 1, false, 1);
 		}
 		else if (iParam0 == 58)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 5, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 3, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 5, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 3, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 5, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 3, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 5, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 3, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 59)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 5, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 3, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 3, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 5, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 3, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 3, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 60)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 5, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 3, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 3, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 5, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 3, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 3, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 61)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 3, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 3, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 0, 0, false, 1);
 		}
 		else if (iParam0 == 62)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 6, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 3, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 3, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 1, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 6, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 3, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 3, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 1, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 0, 1, 0, false, 1);
 		}
 		else if (iParam0 == 63)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 3, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 3, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 0, 0, false, 1);
 		}
 		else if (iParam0 == 64)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 3, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 4, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 3, 6, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 3, 2, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 3, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 4, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 3, 6, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 3, 2, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 0, 0, 0, false, 1);
 			PED::SET_PED_PROP_INDEX(pedIndexFromEntityIndex, 1, 0, 1, false, 1);
 		}
 		else if (iParam0 == 65)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 66)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 1, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 1, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 67)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 4, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 1, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 3, 9, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 0, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 4, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 1, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 3, 9, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 0, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 		else if (iParam0 == 68)
 		{
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 0 /*PV_COMP_HEAD*/, 6, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 1 /*PV_COMP_BERD*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 2 /*PV_COMP_HAIR*/, 5, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 3 /*PV_COMP_UPPR*/, 4, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 4 /*PV_COMP_LOWR*/, 2, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 5 /*PV_COMP_HAND*/, 0, 3, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 6 /*PV_COMP_FEET*/, 2, 1, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 7 /*PV_COMP_TEEF*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 8 /*PV_COMP_ACCS*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 9 /*PV_COMP_TASK*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 10 /*PV_COMP_DECL*/, 0, 0, 0);
-			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, 11 /*PV_COMP_JBIB*/, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HEAD, 6, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_BERD, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAIR, 5, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_UPPR, 4, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_LOWR, 2, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_HAND, 0, 3, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_FEET, 2, 1, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TEEF, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_ACCS, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_TASK, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_DECL, 0, 0, 0);
+			PED::SET_PED_COMPONENT_VARIATION(pedIndexFromEntityIndex, PV_COMP_JBIB, 0, 0, 0);
 		}
 	}
 
@@ -2222,7 +2222,7 @@ void func_16(Vehicle veParam0, var uParam1, BOOL bParam2, BOOL bParam3, BOOL bPa
 						{
 						}
 					}
-					else if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Player_Vehicle", 3 /*INT*/))
+					else if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Player_Vehicle", INT))
 					{
 						DECORATOR::DECOR_SET_INT(veParam0, "Player_Vehicle", -1);
 					}
@@ -2230,9 +2230,9 @@ void func_16(Vehicle veParam0, var uParam1, BOOL bParam2, BOOL bParam3, BOOL bPa
 			
 				case 2:
 					if (IS_BIT_SET(uParam1->f_95, 1) && IS_BIT_SET(uParam1->f_95, 2))
-						if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Veh_Modded_By_Player", 3 /*INT*/))
+						if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Veh_Modded_By_Player", INT))
 							DECORATOR::DECOR_SET_INT(veParam0, "Veh_Modded_By_Player", NETWORK::NETWORK_HASH_FROM_PLAYER_HANDLE(PLAYER::PLAYER_ID()));
-					else if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Veh_Modded_By_Player", 3 /*INT*/))
+					else if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Veh_Modded_By_Player", INT))
 						if (IS_GAMER_HANDLE_VALID(uParam1->f_81) && NETWORK::NETWORK_IS_GAMER_IN_MY_SESSION(&(uParam1->f_81)))
 							DECORATOR::DECOR_SET_INT(veParam0, "Veh_Modded_By_Player", NETWORK::NETWORK_HASH_FROM_PLAYER_HANDLE(NETWORK::NETWORK_GET_PLAYER_FROM_GAMER_HANDLE(&(uParam1->f_81))));
 						else
@@ -2339,7 +2339,7 @@ void func_21(Vehicle veParam0) // Position - 0x3B32 Hash - 0xCAA4A78 ^0x3D37D2A3
 				entityModel = ENTITY::GET_ENTITY_MODEL(veParam0);
 				entityModel.f_1 = MISC::GET_HASH_KEY(VEHICLE::GET_VEHICLE_NUMBER_PLATE_TEXT(veParam0));
 			
-				if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("RandomID", 3 /*INT*/))
+				if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("RandomID", INT))
 				{
 					if (!DECORATOR::DECOR_EXIST_ON(veParam0, "RandomID"))
 					{
@@ -2463,7 +2463,7 @@ BOOL _NETWORK_IS_PLAYER_VALID(ePedComponentType player, BOOL bIsPlaying, BOOL bU
 
 	type = player;
 
-	if (type != -1 /*PV_COMP_INVALID*/)
+	if (type != PV_COMP_INVALID)
 	{
 		if (NETWORK::NETWORK_IS_PLAYER_ACTIVE(player))
 		{
@@ -2556,13 +2556,13 @@ int func_34(int iParam0) // Position - 0x3E7E Hash - 0x1A3F3220 ^0x1A3F3220
 	
 		if (num2 > -1)
 		{
-			Global_2750949 = 0;
+			Global_2750950 = 0;
 			num = num2;
 		}
 		else
 		{
 			num = 0;
-			Global_2750949 = 1;
+			Global_2750950 = 1;
 		}
 	}
 
@@ -3055,7 +3055,7 @@ void func_41(Vehicle veParam0) // Position - 0x47FD Hash - 0xB6BBC6E5 ^0xFA2A8CB
 {
 	int _int;
 
-	if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MPBitset", 3 /*INT*/))
+	if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MPBitset", INT))
 		if (ENTITY::DOES_ENTITY_EXIST(veParam0) && VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false))
 			if (DECORATOR::DECOR_EXIST_ON(veParam0, "MPBitset"))
 				_int = DECORATOR::DECOR_GET_INT(veParam0, "MPBitset");
@@ -6865,7 +6865,7 @@ BOOL func_48(Vehicle veParam0) // Position - 0xA86E Hash - 0x393C1294 ^0x73C1AEA
 {
 	int _int;
 
-	if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MPBitset", 3 /*INT*/))
+	if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MPBitset", INT))
 	{
 		if (ENTITY::DOES_ENTITY_EXIST(veParam0) && VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false))
 		{
@@ -6905,7 +6905,7 @@ BOOL func_49(Vehicle veParam0, Any* panParam1) // Position - 0xA8B9 Hash - 0xC92
 	{
 		type = Global_2359296[func_56() /*5570*/].f_681.f_2;
 	
-		if (type > -1 /*PV_COMP_INVALID*/ && type < 517)
+		if (type > PV_COMP_INVALID && type < 517)
 			if (IS_BIT_SET(Global_1586521[type /*142*/].f_103, 8))
 				flag = true;
 	}
@@ -7053,7 +7053,7 @@ BOOL func_50(Vehicle veParam0) // Position - 0xAA16 Hash - 0x760B040D ^0x601BFA7
 
 int func_51(Vehicle veParam0) // Position - 0xAD3D Hash - 0x2BB30050 ^0xE11A762A
 {
-	if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("FMDeliverableID", 3 /*INT*/))
+	if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("FMDeliverableID", INT))
 		if (DECORATOR::DECOR_EXIST_ON(veParam0, "FMDeliverableID"))
 			return DECORATOR::DECOR_GET_INT(veParam0, "FMDeliverableID");
 
@@ -7079,7 +7079,7 @@ int func_53(Player plParam0) // Position - 0xAD89 Hash - 0x48014DA ^0xC49B9410
 BOOL func_54(Player plParam0, BOOL bParam1) // Position - 0xADAC Hash - 0x3654624B ^0x97E7BA1
 {
 	if (func_27(plParam0))
-		if (Global_1887305[plParam0 /*610*/].f_10.f_33 != -1 /*PV_COMP_INVALID*/ || bParam1 && Global_1887305[plParam0 /*610*/].f_10.f_32 != -1 /*PV_COMP_INVALID*/)
+		if (Global_1887305[plParam0 /*610*/].f_10.f_33 != PV_COMP_INVALID || bParam1 && Global_1887305[plParam0 /*610*/].f_10.f_32 != PV_COMP_INVALID)
 			return true;
 
 	return false;
@@ -7091,7 +7091,7 @@ ePedComponentType func_55(Player plParam0) // Position - 0xADF0 Hash - 0x5EA8DF5
 		if (func_54(plParam0, false))
 			return Global_1887305[plParam0 /*610*/].f_10.f_33;
 
-	return -1 /*PV_COMP_INVALID*/;
+	return PV_COMP_INVALID;
 }
 
 int func_56() // Position - 0xAE1C Hash - 0xF9396AAC ^0xF9396AAC
@@ -7215,7 +7215,7 @@ BOOL func_67(ePedComponentType epctParam0) // Position - 0xAFE8 Hash - 0xA4C8B8D
 {
 	if (epctParam0 != _INVALID_PLAYER_INDEX())
 		if (_NETWORK_IS_PLAYER_VALID(epctParam0, true, true))
-			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != -1 /*PV_COMP_INVALID*/)
+			if (Global_2657971[epctParam0 /*465*/].f_322.f_8 != PV_COMP_INVALID)
 				return func_68(Global_2657971[epctParam0 /*465*/].f_322.f_8) == 22;
 
 	return false;
@@ -7225,19 +7225,19 @@ int func_68(ePedComponentType epctParam0) // Position - 0xB02F Hash - 0xEE599357
 {
 	switch (epctParam0)
 	{
-		case 0 /*PV_COMP_HEAD*/:
-		case 1 /*PV_COMP_BERD*/:
-		case 2 /*PV_COMP_HAIR*/:
-		case 3 /*PV_COMP_UPPR*/:
-		case 4 /*PV_COMP_LOWR*/:
-		case 5 /*PV_COMP_HAND*/:
-		case 6 /*PV_COMP_FEET*/:
-		case 7 /*PV_COMP_TEEF*/:
-		case 8 /*PV_COMP_ACCS*/:
-		case 9 /*PV_COMP_TASK*/:
-		case 10 /*PV_COMP_DECL*/:
-		case 11 /*PV_COMP_JBIB*/:
-		case 12 /*PV_COMP_MAX*/:
+		case PV_COMP_HEAD:
+		case PV_COMP_BERD:
+		case PV_COMP_HAIR:
+		case PV_COMP_UPPR:
+		case PV_COMP_LOWR:
+		case PV_COMP_HAND:
+		case PV_COMP_FEET:
+		case PV_COMP_TEEF:
+		case PV_COMP_ACCS:
+		case PV_COMP_TASK:
+		case PV_COMP_DECL:
+		case PV_COMP_JBIB:
+		case PV_COMP_MAX:
 		case 13:
 		case 14:
 		case 15:
@@ -8386,7 +8386,7 @@ BOOL func_82(ePedComponentType epctParam0) // Position - 0xC6C1 Hash - 0x16FCD26
 
 	type = epctParam0;
 
-	if (type != -1 /*PV_COMP_INVALID*/)
+	if (type != PV_COMP_INVALID)
 		return Global_1882632[type /*146*/].f_82.f_63 != 0;
 
 	return false;
@@ -8398,7 +8398,7 @@ BOOL func_83(ePedComponentType epctParam0) // Position - 0xC6E5 Hash - 0xE40D632
 
 	type = epctParam0;
 
-	if (type != -1 /*PV_COMP_INVALID*/)
+	if (type != PV_COMP_INVALID)
 		return func_84(epctParam0, 9);
 
 	return false;
@@ -8933,7 +8933,7 @@ BOOL func_98(Vehicle veParam0) // Position - 0xD05F Hash - 0xB4BAF94A ^0x5613266
 	{
 		if (VEHICLE::IS_VEHICLE_DRIVEABLE(veParam0, false))
 		{
-			if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MPBitset", 3 /*INT*/))
+			if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MPBitset", INT))
 			{
 				if (DECORATOR::DECOR_EXIST_ON(veParam0, "MPBitset"))
 					_int = DECORATOR::DECOR_GET_INT(veParam0, "MPBitset");
@@ -9673,13 +9673,13 @@ BOOL func_105(var uParam0, int iParam1) // Position - 0xD2A7 Hash - 0x67419445 ^
 
 void func_106() // Position - 0xE3A7 Hash - 0x29F07290 ^0xB4766614
 {
-	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_creator")) == 0 || Global_1836583 == 0 /*PV_COMP_HEAD*/)
+	if (SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(joaat("fm_mission_creator")) == 0 || Global_1836583 == PV_COMP_HEAD)
 		iLocal_18 = 3;
 
-	if (epctLocal_19 != 0 /*PV_COMP_HEAD*/)
+	if (epctLocal_19 != PV_COMP_HEAD)
 		iLocal_18 = 3;
 
-	if (epctLocal_19 == 0 /*PV_COMP_HEAD*/)
+	if (epctLocal_19 == PV_COMP_HEAD)
 		epctLocal_19 = Global_1836583;
 
 	Global_1836578 = 0;

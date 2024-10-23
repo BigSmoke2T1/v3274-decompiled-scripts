@@ -99,13 +99,13 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				
 					if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 					{
-						if (MISC::CREATE_INCIDENT_WITH_ENTITY(7 /*DT_PoliceVehicleRequest*/, PLAYER::PLAYER_PED_ID(), 2, 3f, &iLocal_47, 0, 0))
+						if (MISC::CREATE_INCIDENT_WITH_ENTITY(DT_PoliceVehicleRequest, PLAYER::PLAYER_PED_ID(), 2, 3f, &iLocal_47, 0, 0))
 						{
 							iLocal_46 = MISC::GET_GAME_TIMER();
 							iLocal_41 = 5;
 						}
 					}
-					else if (MISC::CREATE_INCIDENT(7 /*DT_PoliceVehicleRequest*/, uLocal_43, 2, 3f, &iLocal_47, 0, 0))
+					else if (MISC::CREATE_INCIDENT(DT_PoliceVehicleRequest, uLocal_43, 2, 3f, &iLocal_47, 0, 0))
 					{
 						iLocal_46 = MISC::GET_GAME_TIMER();
 						iLocal_41 = 5;
@@ -124,13 +124,13 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 						
 							iLocal_41 = 5;
 						}
-						else if (MISC::CREATE_INCIDENT_WITH_ENTITY(5 /*DT_AmbulanceDepartment*/, PLAYER::PLAYER_PED_ID(), 2, 3f, &iLocal_47, 0, 0))
+						else if (MISC::CREATE_INCIDENT_WITH_ENTITY(DT_AmbulanceDepartment, PLAYER::PLAYER_PED_ID(), 2, 3f, &iLocal_47, 0, 0))
 						{
 							iLocal_46 = MISC::GET_GAME_TIMER();
 							iLocal_41 = 5;
 						}
 					}
-					else if (MISC::CREATE_INCIDENT(5 /*DT_AmbulanceDepartment*/, uLocal_43, 2, 3f, &iLocal_47, 0, 0))
+					else if (MISC::CREATE_INCIDENT(DT_AmbulanceDepartment, uLocal_43, 2, 3f, &iLocal_47, 0, 0))
 					{
 						iLocal_46 = MISC::GET_GAME_TIMER();
 						iLocal_41 = 5;
@@ -142,13 +142,13 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				
 					if (NETWORK::NETWORK_IS_GAME_IN_PROGRESS())
 					{
-						if (MISC::CREATE_INCIDENT_WITH_ENTITY(3 /*DT_FireDepartment*/, PLAYER::PLAYER_PED_ID(), 4, 3f, &iLocal_47, 0, 0))
+						if (MISC::CREATE_INCIDENT_WITH_ENTITY(DT_FireDepartment, PLAYER::PLAYER_PED_ID(), 4, 3f, &iLocal_47, 0, 0))
 						{
 							iLocal_46 = MISC::GET_GAME_TIMER();
 							iLocal_41 = 5;
 						}
 					}
-					else if (MISC::CREATE_INCIDENT(3 /*DT_FireDepartment*/, uLocal_43, 4, 3f, &iLocal_47, 0, 0))
+					else if (MISC::CREATE_INCIDENT(DT_FireDepartment, uLocal_43, 4, 3f, &iLocal_47, 0, 0))
 					{
 						if (Global_98010.f_358 == MISC::GET_HASH_KEY("AGENCY_PREP_1") || SCRIPT::GET_NUMBER_OF_THREADS_RUNNING_THE_SCRIPT_WITH_THIS_HASH(MISC::GET_HASH_KEY("agency_prep1")) > 0 && _IS_MISSION_REPEAT_ACTIVE(false))
 							Global_98010.f_358 = MISC::GET_HASH_KEY("AHP1_TRUCKCALLED");

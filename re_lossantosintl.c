@@ -351,7 +351,7 @@ void func_4() // Position - 0x493 Hash - 0xE2D5B067 ^0xE2D5B067
 			{
 				if (ENTITY::DOES_ENTITY_EXIST(uLocal_47[i]))
 				{
-					uLocal_53[i] = PED::CREATE_PED_INSIDE_VEHICLE(uLocal_47[i], 4 /*PED_TYPE_CIVMALE*/, hLocal_82, -1, true, true);
+					uLocal_53[i] = PED::CREATE_PED_INSIDE_VEHICLE(uLocal_47[i], PED_TYPE_CIVMALE, hLocal_82, -1, true, true);
 					ENTITY::SET_ENTITY_LOD_DIST(uLocal_47[i], 1000);
 					VEHICLE::SET_VEHICLE_ENGINE_ON(uLocal_47[i], true, true, false);
 					PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(uLocal_53[i], true);
@@ -590,7 +590,7 @@ void func_7() // Position - 0xBF2 Hash - 0x53B97EE ^0xD2333E3D
 				ENTITY::SET_ENTITY_LOD_DIST(veLocal_52, 1000);
 				VEHICLE::SET_VEHICLE_ENGINE_ON(veLocal_52, true, true, false);
 				VEHICLE::SET_VEHICLE_GENERATES_ENGINE_SHOCKING_EVENTS(veLocal_52, false);
-				pedLocal_58 = PED::CREATE_PED_INSIDE_VEHICLE(veLocal_52, 4 /*PED_TYPE_CIVMALE*/, hLocal_82, -1, true, true);
+				pedLocal_58 = PED::CREATE_PED_INSIDE_VEHICLE(veLocal_52, PED_TYPE_CIVMALE, hLocal_82, -1, true, true);
 				PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(pedLocal_58, true);
 				iLocal_81 = 1;
 			}

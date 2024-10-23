@@ -123,7 +123,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 	switch (iLocal_54)
 	{
 		case 0:
-			func_32(joaat("standard_global_init"), 1424 /*DEFAULT*/);
+			func_32(joaat("standard_global_init"), DEFAULT);
 			SCRIPT::SET_SCRIPT_WITH_NAME_HASH_AS_NO_LONGER_NEEDED(joaat("standard_global_init"));
 			break;
 	}
@@ -138,7 +138,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 		case 0:
 			Global_2883694 = false;
 			Global_2883693 = false;
-			func_32(joaat("standard_global_reg"), 1424 /*DEFAULT*/);
+			func_32(joaat("standard_global_reg"), DEFAULT);
 			SCRIPT::SET_SCRIPT_AS_NO_LONGER_NEEDED("standard_global_reg");
 		
 			while (!IS_BIT_SET(Global_4543942, 0) || !IS_BIT_SET(Global_4543942, 1) || !IS_BIT_SET(Global_4543942, 2))
@@ -1554,8 +1554,8 @@ void func_30() // Position - 0x308E Hash - 0x8335644F ^0x8335644F
 	for (i = 0; i < 16; i = i + 1)
 	{
 		if (!func_31(Global_113969.f_24907[i /*4*/]))
-			if (Global_113969.f_24907[i /*4*/] != 145 /*_CHAR_NULL*/)
-				Global_113969.f_24907[i /*4*/] = 145 /*_CHAR_NULL*/;
+			if (Global_113969.f_24907[i /*4*/] != _CHAR_NULL)
+				Global_113969.f_24907[i /*4*/] = _CHAR_NULL;
 	}
 
 	return;
@@ -1563,7 +1563,7 @@ void func_30() // Position - 0x308E Hash - 0x8335644F ^0x8335644F
 
 BOOL func_31(eCharacter echParam0) // Position - 0x30D9 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 void func_32(Hash hParam0, eStackSize essParam1) // Position - 0x30E5 Hash - 0xF4E4A08F ^0xFF44AEEF
@@ -13155,7 +13155,7 @@ void func_77() // Position - 0x22F6C Hash - 0xFDE1CC0C ^0x61DB6169
 			
 				if (SCRIPT::HAS_SCRIPT_WITH_NAME_HASH_LOADED(scriptHash) && func_79(i, address))
 				{
-					SYSTEM::START_NEW_SCRIPT_WITH_NAME_HASH(scriptHash, 1424 /*DEFAULT*/);
+					SYSTEM::START_NEW_SCRIPT_WITH_NAME_HASH(scriptHash, DEFAULT);
 					SCRIPT::SET_SCRIPT_WITH_NAME_HASH_AS_NO_LONGER_NEEDED(scriptHash);
 					MISC::SET_BIT(&address, i);
 				

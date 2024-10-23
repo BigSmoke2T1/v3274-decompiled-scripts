@@ -221,7 +221,7 @@ int _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x214 Hash - 0x52E21E9B ^0x
 	if (func_14())
 		return 1;
 
-	if (Global_2698757)
+	if (Global_2698758)
 		return 1;
 
 	if (func_13())
@@ -260,7 +260,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x298 Hash - 0x90B516
 
 Hash func_9() // Position - 0x2CB Hash - 0x61402777 ^0xB9FAC976
 {
-	switch (Global_2698864)
+	switch (Global_2698865)
 	{
 		case 0:
 			return joaat("freemode");
@@ -284,7 +284,7 @@ BOOL func_11() // Position - 0x2FA Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x309 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
 		return true;
 
 	return false;

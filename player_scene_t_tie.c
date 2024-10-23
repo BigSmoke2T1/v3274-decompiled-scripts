@@ -398,13 +398,13 @@ int func_9() // Position - 0x314 Hash - 0x35BC7314 ^0x35BC7314
 
 	switch (Global_113969.f_2366.f_539.f_4321)
 	{
-		case 0 /*CHAR_MICHAEL*/:
+		case CHAR_MICHAEL:
 			return 1;
 	
-		case 1 /*CHAR_FRANKLIN*/:
+		case CHAR_FRANKLIN:
 			return 2;
 	
-		case 2 /*CHAR_TREVOR*/:
+		case CHAR_TREVOR:
 			return 4;
 	}
 
@@ -433,7 +433,7 @@ void func_10() // Position - 0x35A Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
+			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -446,7 +446,7 @@ void func_10() // Position - 0x35A Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_11(eCharacter echParam0) // Position - 0x457 Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x463 Hash - 0xAC4E9801 ^0xB379A75F
@@ -458,14 +458,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x463 Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
+		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x4A0 Hash - 0xADCB9755 ^0xADCB9755
@@ -473,7 +473,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x4A0 Hash - 0xADC
 	if (func_11(character))
 		return func_14(character);
 	else
-		character != 145 /*_CHAR_NULL*/;
+		character != _CHAR_NULL;
 
 	return 0;
 }
@@ -588,22 +588,22 @@ void func_20() // Position - 0x54F Hash - 0x1893571B ^0x24CB31BD
 	{
 		if (iLocal_76[i] != 0)
 		{
-			iLocal_71[i] = PED::CREATE_PED(26 /*PED_TYPE_MISSION*/, iLocal_76[i], uLocal_81 + uLocal_85[i /*3*/], 0, true, true);
+			iLocal_71[i] = PED::CREATE_PED(PED_TYPE_MISSION, iLocal_76[i], uLocal_81 + uLocal_85[i /*3*/], 0, true, true);
 			ENTITY::SET_ENTITY_ROTATION(iLocal_71[i], { fLocal_84, 0f, 0f } + uLocal_98[i /*3*/], 2, true);
 			PED::SET_PED_RANDOM_COMPONENT_VARIATION(iLocal_71[i], 0);
 		
 			if (iLocal_69 == 288)
 			{
-				PED::SET_PED_COMPONENT_VARIATION(iLocal_71[i], 3 /*PV_COMP_UPPR*/, 1, 0, 0);
-				PED::SET_PED_COMPONENT_VARIATION(iLocal_71[i], 4 /*PV_COMP_LOWR*/, 0, 0, 0);
+				PED::SET_PED_COMPONENT_VARIATION(iLocal_71[i], PV_COMP_UPPR, 1, 0, 0);
+				PED::SET_PED_COMPONENT_VARIATION(iLocal_71[i], PV_COMP_LOWR, 0, 0, 0);
 			}
 			else
 			{
 				PED::SET_PED_RANDOM_COMPONENT_VARIATION(iLocal_71[i], 0);
 			}
 		
-			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_71[i], 13 /*BF_Aggressive*/, false);
-			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_71[i], 17 /*BF_AlwaysFlee*/, true);
+			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_71[i], BF_Aggressive, false);
+			PED::SET_PED_COMBAT_ATTRIBUTES(iLocal_71[i], BF_AlwaysFlee, true);
 			PED::SET_BLOCKING_OF_NON_TEMPORARY_EVENTS(iLocal_71[i], true);
 			PED::SET_PED_CAN_BE_TARGETTED(iLocal_71[i], false);
 			TASK::TASK_PLAY_ANIM_ADVANCED(iLocal_71[i], &uLocal_116, &uLocal_124[i /*8*/], uLocal_81 + uLocal_85[i /*3*/], { fLocal_84, 0f, 0f } + uLocal_98[i /*3*/], 1000f, -8f, -1, iLocal_157, 0, 2, 0);

@@ -495,13 +495,13 @@ int func_11() // Position - 0x46A Hash - 0x35BC7314 ^0x35BC7314
 
 	switch (Global_113969.f_2366.f_539.f_4321)
 	{
-		case 0 /*CHAR_MICHAEL*/:
+		case CHAR_MICHAEL:
 			return 1;
 	
-		case 1 /*CHAR_FRANKLIN*/:
+		case CHAR_FRANKLIN:
 			return 2;
 	
-		case 2 /*CHAR_TREVOR*/:
+		case CHAR_TREVOR:
 			return 4;
 	}
 
@@ -530,7 +530,7 @@ void func_12() // Position - 0x4B0 Hash - 0xD1F2D853 ^0xF9F5FD4D
 		}
 		else
 		{
-			if (Global_113969.f_2366.f_539.f_4321 != 145 /*_CHAR_NULL*/)
+			if (Global_113969.f_2366.f_539.f_4321 != _CHAR_NULL)
 				Global_113969.f_2366.f_539.f_4323 = Global_113969.f_2366.f_539.f_4321;
 		
 			return;
@@ -543,7 +543,7 @@ void func_12() // Position - 0x4B0 Hash - 0xD1F2D853 ^0xF9F5FD4D
 
 BOOL func_13(eCharacter echParam0) // Position - 0x5AD Hash - 0x8907F004 ^0x8907F004
 {
-	return echParam0 < 3 /*CHAR_MULTIPLAYER*/;
+	return echParam0 < CHAR_MULTIPLAYER;
 }
 
 eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x5B9 Hash - 0xAC4E9801 ^0xB379A75F
@@ -555,14 +555,14 @@ eCharacter _GET_PLAYER_CHARACTER_FROM_PED(Ped pedParam0) // Position - 0x5B9 Has
 	{
 		entityModel = ENTITY::GET_ENTITY_MODEL(pedParam0);
 	
-		for (i = 0 /*CHAR_MICHAEL*/; i <= 2 /*CHAR_TREVOR*/; i = i + 1)
+		for (i = CHAR_MICHAEL; i <= CHAR_TREVOR; i = i + 1)
 		{
 			if (_GET_CHARACTER_MODEL(i) == entityModel)
 				return i;
 		}
 	}
 
-	return 145 /*_CHAR_NULL*/;
+	return _CHAR_NULL;
 }
 
 Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x5F6 Hash - 0xADCB9755 ^0xADCB9755
@@ -570,7 +570,7 @@ Hash _GET_CHARACTER_MODEL(eCharacter character) // Position - 0x5F6 Hash - 0xADC
 	if (func_13(character))
 		return func_16(character);
 	else
-		character != 145 /*_CHAR_NULL*/;
+		character != _CHAR_NULL;
 
 	return 0;
 }
@@ -659,7 +659,7 @@ void func_22() // Position - 0x6A5 Hash - 0x4E5C8B7C ^0x1553D247
 		VEHICLE::SET_VEHICLE_ENGINE_ON(veLocal_73, true, true, false);
 		VEHICLE::SET_VEHICLE_DOORS_LOCKED(veLocal_73, 2);
 		VEHICLE::SET_VEHICLE_ON_GROUND_PROPERLY(veLocal_73, 1084227584);
-		pedLocal_71 = PED::CREATE_PED_INSIDE_VEHICLE(veLocal_73, 4 /*PED_TYPE_CIVMALE*/, hLocal_72, -1, true, true);
+		pedLocal_71 = PED::CREATE_PED_INSIDE_VEHICLE(veLocal_73, PED_TYPE_CIVMALE, hLocal_72, -1, true, true);
 		PED::SET_PED_RANDOM_COMPONENT_VARIATION(pedLocal_71, 0);
 		STREAMING::SET_MODEL_AS_NO_LONGER_NEEDED(hLocal_72);
 	}
@@ -4552,7 +4552,7 @@ void func_30(int iParam0, var uParam1, int iParam2) // Position - 0x7803 Hash - 
 
 int func_31(int iParam0, var uParam1, int iParam2) // Position - 0x7A5F Hash - 0x36C85017 ^0xB53359F3
 {
-	if (Global_100937[iParam0 /*98*/] == 0 /*PV_COMP_HEAD*/)
+	if (Global_100937[iParam0 /*98*/] == PV_COMP_HEAD)
 	{
 		func_30(iParam0, uParam1, iParam2);
 		uParam1->f_91 = iParam2;
@@ -4676,7 +4676,7 @@ BOOL func_32(ePedComponentType epctParam0, BOOL bParam1, int iParam2) // Positio
 	int i;
 	Hash outData;
 
-	if (epctParam0 == 0 /*PV_COMP_HEAD*/)
+	if (epctParam0 == PV_COMP_HEAD)
 		return false;
 
 	if (!STREAMING::IS_MODEL_A_VEHICLE(epctParam0))
@@ -4800,10 +4800,10 @@ BOOL func_35(ePedComponentType epctParam0, int iParam1) // Position - 0x7EFF Has
 	int cloudTimeAsInt;
 	int num;
 
-	if (Global_2707347)
+	if (Global_2707348)
 		return true;
 
-	if (!Global_2707348 && iParam1 >= 0 && iParam1 <= 517)
+	if (!Global_2707349 && iParam1 >= 0 && iParam1 <= 517)
 		if (IS_BIT_SET(Global_1586521[iParam1 /*142*/].f_103, 2))
 			return true;
 

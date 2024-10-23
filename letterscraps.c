@@ -741,7 +741,7 @@ void func_1() // Position - 0xF8 Hash - 0x6A9C345F ^0x926B9885
 			{
 				if (!bLocal_617)
 				{
-					if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 190 /*INPUT_FRONTEND_RIGHT*/))
+					if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT))
 					{
 						if (iLocal_611 >= 0 && iLocal_611 < 3)
 						{
@@ -753,7 +753,7 @@ void func_1() // Position - 0xF8 Hash - 0x6A9C345F ^0x926B9885
 					
 						bLocal_617 = true;
 					}
-					else if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 189 /*INPUT_FRONTEND_LEFT*/))
+					else if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_LEFT))
 					{
 						if (iLocal_611 > 0 && iLocal_611 < 4)
 						{
@@ -765,7 +765,7 @@ void func_1() // Position - 0xF8 Hash - 0x6A9C345F ^0x926B9885
 					
 						bLocal_617 = true;
 					}
-					else if (PAD::IS_CONTROL_JUST_RELEASED(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/))
+					else if (PAD::IS_CONTROL_JUST_RELEASED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL))
 					{
 						iLocal_41 = 2;
 					}
@@ -797,7 +797,7 @@ void func_1() // Position - 0xF8 Hash - 0x6A9C345F ^0x926B9885
 
 BOOL func_2() // Position - 0x304 Hash - 0xE2824AFA ^0xFBEF29B7
 {
-	if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 190 /*INPUT_FRONTEND_RIGHT*/) || PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 189 /*INPUT_FRONTEND_LEFT*/) || PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 202 /*INPUT_FRONTEND_CANCEL*/))
+	if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_RIGHT) || PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_LEFT) || PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_CANCEL))
 		return true;
 
 	return false;
@@ -1533,7 +1533,7 @@ void func_40(var uParam0, var uParam1, int iParam2) // Position - 0x118C Hash - 
 	if (*uParam0 == 1 || *uParam0 == 0)
 		func_50(*uParam0, iParam2, true);
 
-	PAD::SET_CONTROL_SHAKE(0 /*PLAYER_CONTROL*/, 200, 250);
+	PAD::SET_CONTROL_SHAKE(PLAYER_CONTROL, 200, 250);
 	STATS::STAT_INCREMENT(uParam0->f_6, 1f);
 
 	if (bLocal_39)

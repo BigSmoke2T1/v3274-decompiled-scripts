@@ -350,7 +350,7 @@ void main() // Position - 0x0 Hash - 0x5D84F89F ^0x5D84F89F
 				GRAPHICS::DRAW_SCALEFORM_MOVIE_FULLSCREEN(iLocal_51, 255, 255, 255, 255, 0);
 				func_1(&uLocal_70, 1128792064, 1, false, true, 1065353216);
 			
-				if (PAD::IS_CONTROL_PRESSED(2 /*FRONTEND_CONTROL*/, 201 /*INPUT_FRONTEND_ACCEPT*/))
+				if (PAD::IS_CONTROL_PRESSED(FRONTEND_CONTROL, INPUT_FRONTEND_ACCEPT))
 					iLocal_50 = 3;
 				break;
 		
@@ -405,7 +405,7 @@ void func_1(var uParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4, i
 	HUD::HIDE_LOADING_ON_FADE_THIS_FRAME();
 	GRAPHICS::SET_SCRIPT_GFX_DRAW_ORDER(iParam2);
 
-	if (!func_6(uParam0->f_1, 256) || func_6(uParam0->f_1, 8192) && PAD::HAVE_CONTROLS_CHANGED(2 /*FRONTEND_CONTROL*/))
+	if (!func_6(uParam0->f_1, 256) || func_6(uParam0->f_1, 8192) && PAD::HAVE_CONTROLS_CHANGED(FRONTEND_CONTROL))
 	{
 		GRAPHICS::BEGIN_SCALEFORM_MOVIE_METHOD(*uParam0, "SET_CLEAR_SPACE");
 		GRAPHICS::SCALEFORM_MOVIE_METHOD_ADD_PARAM_FLOAT(iParam1);
@@ -434,11 +434,11 @@ void func_1(var uParam0, int iParam1, int iParam2, BOOL bParam3, BOOL bParam4, i
 					break;
 			
 				case 1:
-					isUsingKeyboardAndMouse = PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/);
+					isUsingKeyboardAndMouse = PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL);
 					break;
 			
 				case 2:
-					isUsingKeyboardAndMouse = !PAD::IS_USING_KEYBOARD_AND_MOUSE(2 /*FRONTEND_CONTROL*/);
+					isUsingKeyboardAndMouse = !PAD::IS_USING_KEYBOARD_AND_MOUSE(FRONTEND_CONTROL);
 					break;
 			
 				default:
@@ -767,7 +767,7 @@ BOOL func_18() // Position - 0xA8B Hash - 0x1C9B9817 ^0x5956764E
 
 BOOL func_19() // Position - 0xAAB Hash - 0x47FF56D2 ^0x47FF56D2
 {
-	return Global_2696683;
+	return Global_2696684;
 }
 
 struct<4> func_20(var uParam0) // Position - 0xAB7 Hash - 0x8EE51222 ^0xC61C721F
@@ -1456,12 +1456,12 @@ void func_42(char* sParam0) // Position - 0x1746 Hash - 0x8E2F5FE2 ^0x29D9D432
 
 void func_43() // Position - 0x1758 Hash - 0xFE631EF0 ^0x72422F77
 {
-	PAD::DISABLE_CONTROL_ACTION(2 /*FRONTEND_CONTROL*/, 199 /*INPUT_FRONTEND_PAUSE*/, true);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(7 /*HUD_AREA_NAME*/);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(7 /*HUD_AREA_NAME*/);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(6 /*HUD_VEHICLE_NAME*/);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(8 /*HUD_VEHICLE_CLASS*/);
-	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(9 /*HUD_STREET_NAME*/);
+	PAD::DISABLE_CONTROL_ACTION(FRONTEND_CONTROL, INPUT_FRONTEND_PAUSE, true);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_AREA_NAME);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_AREA_NAME);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_VEHICLE_NAME);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_VEHICLE_CLASS);
+	HUD::HIDE_HUD_COMPONENT_THIS_FRAME(HUD_STREET_NAME);
 	func_44(0);
 	return;
 }
@@ -1644,7 +1644,7 @@ BOOL func_53(Player plParam0, int iParam1) // Position - 0x1ABB Hash - 0x1A32E11
 		return false;
 
 	if (plParam0 == PLAYER::PLAYER_ID())
-		flag = func_54(-1, false) == 8 /*CHAR_MIKE_FRANK_CONF*/;
+		flag = func_54(-1, false) == CHAR_MIKE_FRANK_CONF;
 	else
 		flag = Global_1845281[plParam0 /*883*/].f_206 == 8;
 
@@ -1668,7 +1668,7 @@ eCharacter func_54(int iParam0, BOOL bParam1) // Position - 0x1B14 Hash - 0x1DCD
 	if (Global_1575063[num] == true)
 	{
 		bParam1;
-		character = 8 /*CHAR_MIKE_FRANK_CONF*/;
+		character = CHAR_MIKE_FRANK_CONF;
 	}
 	else
 	{

@@ -636,9 +636,9 @@ BOOL func_11() // Position - 0x5AD Hash - 0x227035F9 ^0xA9E4989E
 		if (!NETWORK::NETWORK_DOES_NETWORK_ID_EXIST(iLocal_90.f_4[i]) && func_43(iLocal_90.f_11) && NETWORK::NETWORK_DOES_NETWORK_ID_EXIST(iLocal_90.f_2))
 			if (func_17(iLocal_90.f_2))
 				if (iLocal_90.f_12 == 0)
-					if (func_16(&iLocal_90.f_4[i], iLocal_90.f_2, 22 /*PED_TYPE_CRIMINAL*/, iLocal_90.f_11, i, true, true, true))
+					if (func_16(&iLocal_90.f_4[i], iLocal_90.f_2, PED_TYPE_CRIMINAL, iLocal_90.f_11, i, true, true, true))
 						func_13(&iLocal_90.f_4[i]);
-				else if (func_12(&iLocal_90.f_4[i], 22 /*PED_TYPE_CRIMINAL*/, iLocal_90.f_11, iLocal_90.f_28[i /*3*/], iLocal_90.f_38[i], true, true, true))
+				else if (func_12(&iLocal_90.f_4[i], PED_TYPE_CRIMINAL, iLocal_90.f_11, iLocal_90.f_28[i /*3*/], iLocal_90.f_38[i], true, true, true))
 					func_13(&iLocal_90.f_4[i]);
 	}
 
@@ -695,29 +695,29 @@ void func_13(var uParam0) // Position - 0x6F3 Hash - 0x323A175F ^0x766F24C5
 	randomIntInRange = MISC::GET_RANDOM_INT_IN_RANGE(0, 10);
 
 	if (randomIntInRange == 0 || randomIntInRange == 1 || randomIntInRange == 2)
-		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), 5 /*BF_AlwaysFight*/, true);
+		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), BF_AlwaysFight, true);
 	else if (randomIntInRange == 3)
-		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), 17 /*BF_AlwaysFlee*/, true);
+		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), BF_AlwaysFlee, true);
 	else if (randomIntInRange == 4 || randomIntInRange == 5 || randomIntInRange == 6)
-		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), 13 /*BF_Aggressive*/, true);
+		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), BF_Aggressive, true);
 
 	if (_GET_RANDOM_BOOL())
-		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), 20 /*BF_CanTauntInVehicle*/, true);
+		PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), BF_CanTauntInVehicle, true);
 
-	PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), 2 /*BF_CanDoDrivebys*/, true);
+	PED::SET_PED_COMBAT_ATTRIBUTES(NETWORK::NET_TO_PED(*uParam0), BF_CanDoDrivebys, true);
 	randomIntInRange = MISC::GET_RANDOM_INT_IN_RANGE(0, 4);
 
 	if (randomIntInRange == 0)
-		PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(*uParam0), 2 /*CM_WillAdvance*/);
+		PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(*uParam0), CM_WillAdvance);
 	else if (randomIntInRange == 1)
-		PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(*uParam0), 1 /*CM_Defensive*/);
+		PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(*uParam0), CM_Defensive);
 	else if (randomIntInRange == 2)
-		PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(*uParam0), 3 /*CM_WillRetreat*/);
+		PED::SET_PED_COMBAT_MOVEMENT(NETWORK::NET_TO_PED(*uParam0), CM_WillRetreat);
 
 	PED::SET_PED_ALLOW_MINOR_REACTIONS_AS_MISSION_PED(NETWORK::NET_TO_PED(*uParam0), true);
 	PED::SET_PED_GET_OUT_UPSIDE_DOWN_VEHICLE(NETWORK::NET_TO_PED(*uParam0), true);
 	PED::SET_PED_CONFIG_FLAG(NETWORK::NET_TO_PED(*uParam0), 29, true);
-	PED::SET_PED_CAN_BE_KNOCKED_OFF_VEHICLE(NETWORK::NET_TO_PED(*uParam0), 3 /*KNOCKOFFVEHICLE_HARD*/);
+	PED::SET_PED_CAN_BE_KNOCKED_OFF_VEHICLE(NETWORK::NET_TO_PED(*uParam0), KNOCKOFFVEHICLE_HARD);
 	ENTITY::SET_ENTITY_HEALTH(NETWORK::NET_TO_PED(*uParam0), SYSTEM::ROUND(200f * Global_262145.f_156), 0, 0);
 	return;
 }
@@ -1009,13 +1009,13 @@ int func_19() // Position - 0xD26 Hash - 0x2742A255 ^0x429DB38E
 		{
 			if (iLocal_90.f_12 == 1)
 			{
-				if (func_12(&(iLocal_90.f_3), 22 /*PED_TYPE_CRIMINAL*/, iLocal_90.f_11, iLocal_90.f_24, iLocal_90.f_27, true, true, true))
+				if (func_12(&(iLocal_90.f_3), PED_TYPE_CRIMINAL, iLocal_90.f_11, iLocal_90.f_24, iLocal_90.f_27, true, true, true))
 				{
 					func_13(&(iLocal_90.f_3));
 					func_20();
 				}
 			}
-			else if (func_16(&(iLocal_90.f_3), iLocal_90.f_2, 22 /*PED_TYPE_CRIMINAL*/, iLocal_90.f_11, -1, true, true, true))
+			else if (func_16(&(iLocal_90.f_3), iLocal_90.f_2, PED_TYPE_CRIMINAL, iLocal_90.f_11, -1, true, true, true))
 			{
 				func_13(&(iLocal_90.f_3));
 				func_20();
@@ -1065,10 +1065,10 @@ int func_21() // Position - 0xE48 Hash - 0x8104968E ^0x5BCB81BF
 					VEHICLE::SET_VEHICLE_ENGINE_ON(NETWORK::NET_TO_VEH(iLocal_90.f_2), true, true, false);
 					ENTITY::SET_ENTITY_SHOULD_FREEZE_WAITING_ON_COLLISION(NETWORK::NET_TO_VEH(iLocal_90.f_2), false);
 				
-					if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Not_Allow_As_Saved_Veh", 3 /*INT*/))
+					if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("Not_Allow_As_Saved_Veh", INT))
 						DECORATOR::DECOR_SET_INT(NETWORK::NET_TO_VEH(iLocal_90.f_2), "Not_Allow_As_Saved_Veh", 1);
 				
-					if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MPBitset", 3 /*INT*/))
+					if (DECORATOR::DECOR_IS_REGISTERED_AS_TYPE("MPBitset", INT))
 					{
 						if (DECORATOR::DECOR_EXIST_ON(NETWORK::NET_TO_VEH(iLocal_90.f_2), "MPBitset"))
 							_int = DECORATOR::DECOR_GET_INT(NETWORK::NET_TO_VEH(iLocal_90.f_2), "MPBitset");
@@ -1115,7 +1115,7 @@ BOOL func_22(var uParam0, Hash hParam1, Vector3 vParam2, var uParam3, var uParam
 	if (ENTITY::DOES_ENTITY_EXIST(vehicle))
 	{
 		*uParam0 = NETWORK::VEH_TO_NET(vehicle);
-		Global_2738934.f_6799 = vehicle;
+		Global_2738935.f_6799 = vehicle;
 	
 		if (NETWORK::NETWORK_DOES_NETWORK_ID_EXIST(*uParam0))
 		{
@@ -1484,9 +1484,9 @@ BOOL func_37(Player plParam0) // Position - 0x1843 Hash - 0x80C23257 ^0x68833FB2
 	if (func_41(PLAYER::PLAYER_ID(), plParam0))
 		return true;
 
-	Global_2707307 = { GET_GAMER_HANDLE_PLAYER(plParam0) };
+	Global_2707308 = { GET_GAMER_HANDLE_PLAYER(plParam0) };
 
-	if (NETWORK::NETWORK_IS_FRIEND(&Global_2707307))
+	if (NETWORK::NETWORK_IS_FRIEND(&Global_2707308))
 		return true;
 
 	if (func_38(PLAYER::PLAYER_ID(), plParam0))
@@ -1528,17 +1528,17 @@ BOOL func_41(Player plParam0, Player plParam1) // Position - 0x18ED Hash - 0x4B2
 {
 	if (NETWORK::NETWORK_CLAN_SERVICE_IS_VALID())
 	{
-		Global_2707307 = { GET_GAMER_HANDLE_PLAYER(plParam0) };
-		Global_2707320 = { GET_GAMER_HANDLE_PLAYER(plParam1) };
+		Global_2707308 = { GET_GAMER_HANDLE_PLAYER(plParam0) };
+		Global_2707321 = { GET_GAMER_HANDLE_PLAYER(plParam1) };
 	
-		if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2707307))
+		if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2707308))
 		{
-			if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2707320))
+			if (NETWORK::NETWORK_CLAN_PLAYER_IS_ACTIVE(&Global_2707321))
 			{
-				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2707237, 35, &Global_2707307);
-				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2707272, 35, &Global_2707320);
+				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2707238, 35, &Global_2707308);
+				NETWORK::NETWORK_CLAN_PLAYER_GET_DESC(&Global_2707273, 35, &Global_2707321);
 			
-				if (Global_2707237 == Global_2707272)
+				if (Global_2707238 == Global_2707273)
 					return true;
 			}
 		}
@@ -1850,7 +1850,7 @@ void func_52() // Position - 0x1E9D Hash - 0x9BE255CB ^0x1616D297
 						func_145(86, "DSV_PASS1" /*Haha. Them idiots had a note on that stash. They goin be paying that for a long time. You real, you know that.*/, 0, false, -99);
 				
 					num = Global_262145.f_8630;
-					Global_2698715 = num;
+					Global_2698716 = num;
 					func_78(&num, 1);
 				
 					if (num > 0)
@@ -1880,10 +1880,10 @@ void func_52() // Position - 0x1E9D Hash - 0x9BE255CB ^0x1616D297
 				}
 			
 				if (_NETWORK_IS_PLAYER_VALID(PLAYER::PLAYER_ID(), true, true) && func_60(PLAYER::PLAYER_PED_ID(), NETWORK::NET_TO_VEH(iLocal_90.f_2), false))
-					if (!IS_BIT_SET(Global_2738934.f_4714, 1))
-						MISC::SET_BIT(&(Global_2738934.f_4714), 1);
-				else if (IS_BIT_SET(Global_2738934.f_4714, 1))
-					MISC::CLEAR_BIT(&(Global_2738934.f_4714), 1);
+					if (!IS_BIT_SET(Global_2738935.f_4714, 1))
+						MISC::SET_BIT(&(Global_2738935.f_4714), 1);
+				else if (IS_BIT_SET(Global_2738935.f_4714, 1))
+					MISC::CLEAR_BIT(&(Global_2738935.f_4714), 1);
 			
 				func_53();
 			}
@@ -1966,13 +1966,13 @@ int func_58(int iParam0) // Position - 0x215C Hash - 0x1A3F3220 ^0x1A3F3220
 	
 		if (num2 > -1)
 		{
-			Global_2750949 = 0;
+			Global_2750950 = 0;
 			num = num2;
 		}
 		else
 		{
 			num = 0;
-			Global_2750949 = 1;
+			Global_2750950 = 1;
 		}
 	}
 
@@ -2422,7 +2422,7 @@ int func_62(var uParam0, int iParam1, Hash hParam2, Hash hParam3, Hash hParam4, 
 			return 0;
 		}
 	
-		if (Global_2697634)
+		if (Global_2697635)
 		{
 			if (hParam3 == joaat("CATEGORY_WEAPON_AMMO") || hParam3 == joaat("CATEGORY_MART"))
 			{
@@ -2609,8 +2609,8 @@ BOOL func_67(int iParam0) // Position - 0x2EDB Hash - 0x117606EA ^0x642E4F1E
 
 void func_68(int iParam0, Hash hParam1) // Position - 0x2F06 Hash - 0x8B1B3DA8 ^0x8B1B3DA8
 {
-	Global_2698855 = hParam1;
-	Global_2698854 = iParam0;
+	Global_2698856 = hParam1;
+	Global_2698855 = iParam0;
 	return;
 }
 
@@ -2785,7 +2785,7 @@ void func_78(var uParam0, int iParam1) // Position - 0x31E8 Hash - 0x5E4F0835 ^0
 						func_135(&num, false);
 					
 						if (iParam1 == 1)
-							func_83("GB_BCUT_TICK1" /*You paid ~a~ ~s~a $~1~ ~s~cut.*/, _GET_BOSS_OF_LOCAL_PLAYER(), num, 0 /*HUD_COLOUR_PURE_WHITE*/, false, true);
+							func_83("GB_BCUT_TICK1" /*You paid ~a~ ~s~a $~1~ ~s~cut.*/, _GET_BOSS_OF_LOCAL_PLAYER(), num, HUD_COLOUR_PURE_WHITE, false, true);
 					
 						func_82(20);
 						func_79(_GET_BOSS_OF_LOCAL_PLAYER(), num, 1);
@@ -2835,7 +2835,7 @@ void func_82(int iParam0) // Position - 0x330D Hash - 0xF11EB1F3 ^0x618C6F9E
 
 	num = iParam0 / 32;
 	offset = iParam0 % 32;
-	MISC::SET_BIT(&Global_2738934.f_5249.f_7[num], offset);
+	MISC::SET_BIT(&Global_2738935.f_5249.f_7[num], offset);
 	return;
 }
 
@@ -2858,7 +2858,7 @@ int func_83(char* sParam0, Player plParam1, int iParam2, eHudColour ehcParam3, B
 		HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(func_90(plParam1, -2, true, false, false));
 		HUD::ADD_TEXT_COMPONENT_SUBSTRING_PLAYER_NAME(func_88(&unk));
 	
-		if (!(ehcParam3 == 0 /*HUD_COLOUR_PURE_WHITE*/))
+		if (!(ehcParam3 == HUD_COLOUR_PURE_WHITE))
 			HUD::SET_COLOUR_OF_NEXT_TEXT_COMPONENT(ehcParam3);
 	
 		HUD::ADD_TEXT_COMPONENT_INTEGER(iParam2);
@@ -2959,13 +2959,13 @@ eHudColour func_90(Player plParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOO
 	Ped ped;
 
 	if (!func_32(plParam0))
-		return 1 /*HUD_COLOUR_WHITE*/;
+		return HUD_COLOUR_WHITE;
 
 	if (func_133(plParam0) && !bParam4)
 		if (bParam2)
-			return 0 /*HUD_COLOUR_PURE_WHITE*/;
+			return HUD_COLOUR_PURE_WHITE;
 		else
-			return 1 /*HUD_COLOUR_WHITE*/;
+			return HUD_COLOUR_WHITE;
 
 	if (iParam1 == -2)
 	{
@@ -2976,7 +2976,7 @@ eHudColour func_90(Player plParam0, int iParam1, BOOL bParam2, BOOL bParam3, BOO
 				iParam1 = playerTeam;
 	}
 
-	if (func_133(PLAYER::PLAYER_ID()) || func_132() && func_131() && !IS_BIT_SET(Global_2738934.f_4712, 31) && !bParam4)
+	if (func_133(PLAYER::PLAYER_ID()) || func_132() && func_131() && !IS_BIT_SET(Global_2738935.f_4712, 31) && !bParam4)
 	{
 		ped = func_130();
 	
@@ -4221,7 +4221,7 @@ Vector3 func_163(Ped pedParam0, BOOL bParam1) // Position - 0x4D34 Hash - 0x1FBE
 	if (CAM::IS_GAMEPLAY_CAM_RENDERING())
 		gameplayCamRot = { CAM::GET_GAMEPLAY_CAM_ROT(2) };
 
-	if (pedParam0 == func_164(PLAYER::PLAYER_PED_ID()) && CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == 4 /*FIRST_PERSON*/)
+	if (pedParam0 == func_164(PLAYER::PLAYER_PED_ID()) && CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == FIRST_PERSON)
 		offsetFromEntityInWorldCoords = { ENTITY::GET_OFFSET_FROM_ENTITY_IN_WORLD_COORDS(pedParam0, 0f, 8f, -0.2f) };
 	else
 		offsetFromEntityInWorldCoords = { ENTITY::GET_ENTITY_COORDS(pedParam0, false) };
@@ -4232,7 +4232,7 @@ Vector3 func_163(Ped pedParam0, BOOL bParam1) // Position - 0x4D34 Hash - 0x1FBE
 	{
 		entityHeading = ENTITY::GET_ENTITY_HEADING(pedParam0);
 	
-		if (CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == 4 /*FIRST_PERSON*/)
+		if (CAM::GET_CAM_VIEW_MODE_FOR_CONTEXT(CAM::GET_CAM_ACTIVE_VIEW_MODE_CONTEXT()) == FIRST_PERSON)
 			entityHeading = gameplayCamRot.f_2;
 	}
 
@@ -5453,9 +5453,9 @@ void func_217() // Position - 0x62AF Hash - 0xD7603504 ^0xD8CEE69C
 			blLocal_239 = HUD::ADD_BLIP_FOR_ENTITY(NETWORK::NET_TO_VEH(iLocal_90.f_2));
 		
 			if (!VEHICLE::IS_THIS_MODEL_A_BIKE(iLocal_90.f_10))
-				HUD::SET_BLIP_SPRITE(blLocal_239, 225 /*BLIP_GANG_VEHICLE*/);
+				HUD::SET_BLIP_SPRITE(blLocal_239, BLIP_GANG_VEHICLE);
 			else
-				HUD::SET_BLIP_SPRITE(blLocal_239, 348 /*BLIP_GANG_BIKE*/);
+				HUD::SET_BLIP_SPRITE(blLocal_239, BLIP_GANG_BIKE);
 		
 			HUD::SET_BLIP_COLOUR(blLocal_239, 1);
 			HUD::SET_BLIP_FLASH_TIMER(blLocal_239, 7000);
@@ -5676,7 +5676,7 @@ BOOL _SHOULD_NETWORK_SCRIPT_TERMINATE() // Position - 0x678C Hash - 0x52E21E9B ^
 	if (func_233())
 		return true;
 
-	if (Global_2698757)
+	if (Global_2698758)
 		return true;
 
 	if (func_232())
@@ -5715,7 +5715,7 @@ Hash _GET_CURRENT_SESSION_TYPE_SCRIPT_HASH() // Position - 0x6810 Hash - 0x90B51
 
 Hash func_228() // Position - 0x6843 Hash - 0x61402777 ^0xB9FAC976
 {
-	switch (Global_2698864)
+	switch (Global_2698865)
 	{
 		case 0:
 			return joaat("freemode");
@@ -5739,7 +5739,7 @@ BOOL func_230() // Position - 0x6872 Hash - 0x974E48B4 ^0x974E48B4
 
 BOOL _DOES_EVENT_OF_TYPE_EXIST(int iParam0) // Position - 0x6881 Hash - 0xA28ADBB4 ^0x6EB81E64
 {
-	if (SCRIPT::GET_EVENT_EXISTS(1 /*SCRIPT_EVENT_QUEUE_NETWORK*/, iParam0))
+	if (SCRIPT::GET_EVENT_EXISTS(SCRIPT_EVENT_QUEUE_NETWORK, iParam0))
 		return true;
 
 	return false;
@@ -5771,7 +5771,7 @@ void func_235() // Position - 0x68C0 Hash - 0x8518D19E ^0xCF75A811
 	if (func_220() == 4 && iLocal_90.f_10 != 0)
 		VEHICLE::SET_VEHICLE_MODEL_IS_SUPPRESSED(iLocal_90.f_10, false);
 
-	MISC::CLEAR_BIT(&(Global_2738934.f_4714), 1);
+	MISC::CLEAR_BIT(&(Global_2738935.f_4714), 1);
 	func_237(17, false);
 	func_236();
 	return;
